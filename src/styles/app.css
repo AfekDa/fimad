@@ -1,0 +1,39 @@
+/*
+ * Application shell.
+ *
+ * Implements only the viewport rules the plan states directly:
+ *  - fluid between 320 and 480 px
+ *  - above 480 px, centre the interface in a 480 px-wide viewport
+ *
+ * No Figma-derived values appear here; those belong in tokens.css.
+ */
+
+.appShell {
+  width: 100%;
+  max-width: var(--app-max-width);
+  min-width: var(--app-min-width);
+  margin-inline: auto;
+  position: relative;
+}
+
+/* Visible focus treatment, applied globally and never removed. */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Skip link — visible on focus only. */
+.skipLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 8px 12px;
+  background: #fff;
+  color: #000;
+  transform: translateY(-200%);
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}

@@ -1,0 +1,340 @@
+/*
+ * Homepage — Figma frame 1:90, 430 x 1697.
+ *
+ * The frame stacks five overlapping layers (hero image, hero scrim, hero title,
+ * content, nav scrim + nav). Absolute positioning is used only for that genuine
+ * overlap; everything inside the content block is normal flow so it wraps
+ * fluidly between 320 and 480px.
+ */
+
+/* Width constraint and centring live on the app shell (see app.css); this
+ * element only owns the frame's own painting and stacking context. */
+.page {
+  position: relative;
+  width: 100%;
+  background: var(--color-navy);
+  /* Frame height 1697 - content end 1630. */
+  padding-bottom: var(--frame-tail-height);
+}
+
+/* ---- Hero (1:91, 1:92, 1:93) -------------------------------------------- */
+
+.hero {
+  position: relative;
+  height: var(--hero-height);
+  z-index: var(--layer-hero-image);
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/*
+ * Figma crops this at exactly 430px wide (w 128.37%, h 120.37%, left -16.05%).
+ * Expressing it as an aspect-locked leaf reproduces those numbers at 430 while
+ * keeping the source proportions intact at every other width, which raw
+ * percentages would not do.
+ */
+.heroImageLeaf {
+  position: absolute;
+  top: -20.37%;
+  height: 120.37%;
+  width: auto;
+  max-width: none;
+  aspect-ratio: 916 / 1296;
+  left: 50%;
+  transform: translateX(calc(-50% - 8.5px));
+}
+
+.heroScrim {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--hero-scrim-top);
+  height: var(--hero-scrim-height);
+  background: var(--gradient-hero);
+  z-index: var(--layer-hero-scrim);
+  pointer-events: none;
+}
+
+.heroTitle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--hero-title-top);
+  height: var(--hero-title-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-32) var(--content-padding-inline) var(--space-56);
+  z-index: var(--layer-hero-title);
+}
+
+.yearMark {
+  position: relative;
+  width: 301px;
+  max-width: 100%;
+  height: 54px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.yearMarkLeaf {
+  position: absolute;
+  top: 0;
+  height: 104.44%;
+  width: auto;
+  max-width: none;
+  aspect-ratio: 1528 / 220;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ---- Content (1:96) ------------------------------------------------------ */
+
+.content {
+  position: relative;
+  z-index: var(--layer-content);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  align-items: flex-start;
+  background: var(--color-navy);
+  padding: var(--content-padding-top) var(--content-padding-inline)
+    var(--content-padding-bottom);
+}
+
+.title {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-family-base);
+  font-size: var(--font-h4-size);
+  line-height: var(--font-h4-line);
+  font-weight: var(--font-h4-weight);
+  color: var(--color-white);
+  overflow-wrap: break-word;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.body {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc2-r-size);
+  line-height: var(--font-bc2-r-line);
+  font-weight: var(--font-bc2-r-weight);
+  color: var(--color-white);
+  overflow-wrap: break-word;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+/* ---- Feature cards (1:99 - 1:111) ---------------------------------------- */
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.featureCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  width: 100%;
+  padding: var(--space-24) var(--space-16);
+  border-radius: var(--radius-card);
+  background: var(--surface-card);
+}
+
+.featureBadge {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.featureBadgeLeaf {
+  position: absolute;
+  top: -3.01%;
+  left: -3.5%;
+  width: 109.5%;
+  height: 104.54%;
+  max-width: none;
+}
+
+.featureText {
+  flex: 1 0 0;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc1-sb-size);
+  line-height: var(--font-bc1-sb-line);
+  font-weight: var(--font-bc1-sb-weight);
+  color: var(--color-white);
+  overflow-wrap: break-word;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+/* ---- Divider (1:113) ----------------------------------------------------- */
+
+/*
+ * The rule is 398px wide inside a 382px content box: in Figma it deliberately
+ * bleeds 8px past each edge. calc(100% + 16px) keeps that bleed at every width.
+ */
+.divider {
+  position: relative;
+  height: 0;
+  width: calc(100% + 16px);
+  flex-shrink: 0;
+}
+
+.dividerLeaf {
+  position: absolute;
+  inset: -0.25px 0;
+  display: block;
+  width: 100%;
+  height: 0.5px;
+}
+
+/* ---- Footer (1:114) ------------------------------------------------------ */
+
+/*
+ * Figma lays the footer out as one row with space-between. At 430px the two
+ * groups (147px + 144px) fit inside the 382px content box, but below ~355px
+ * they do not. Rather than clip or shrink design-fixed elements, the row is
+ * allowed to wrap: the social group drops to a second line and stays
+ * right-aligned. Above 355px the layout is identical to the design.
+ */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: var(--space-16);
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-shrink: 0;
+}
+
+.avatar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-avatar);
+  background: var(--color-white);
+  overflow: hidden;
+}
+
+.avatarLeaf {
+  width: 100%;
+  height: 100%;
+  object-position: bottom;
+}
+
+.signature {
+  width: 99px;
+  height: 35px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-24);
+  height: 32px;
+  flex-shrink: 0;
+  /* Keeps the group on the right edge once the footer wraps. */
+  margin-inline-start: auto;
+}
+
+.socialLink {
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  transition: opacity 120ms ease-out;
+}
+
+@media (hover: hover) {
+  .socialLink:hover {
+    opacity: 0.75;
+  }
+}
+
+.socialLink:active {
+  opacity: 0.6;
+}
+
+.socialLink:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 3px;
+}
+
+.socialIcon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Docked chrome (1:126, 1:127) ---------------------------------------- */
+
+/*
+ * The scrim (1:126) and the nav (1:127) are the only layers in the frame whose
+ * geometry is measured from the device viewport rather than the document: the
+ * scrim's bottom edge lands on 747 + 185 = 932, the exact viewport height the
+ * 430px frame is drawn for. They are fixed so they stay docked while the
+ * document scrolls, which reproduces the frame at scroll offset 0 and keeps the
+ * nav reachable everywhere else.
+ *
+ * Fixed positioning resolves against the viewport, not the 480px app shell, so
+ * the dock repeats the shell's own width constraint and centring.
+ */
+.navDock {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--app-max-width);
+  min-width: var(--app-min-width);
+  height: var(--nav-scrim-height);
+  background: var(--gradient-nav-scrim);
+  z-index: var(--layer-nav-scrim);
+  /* The scrim is decoration; only the nav inside it accepts pointer input. */
+  pointer-events: none;
+}
+
+.nav {
+  position: absolute;
+  left: var(--nav-inset-inline);
+  right: var(--nav-inset-inline);
+  bottom: var(--nav-bottom-offset);
+  z-index: var(--layer-nav);
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .socialLink {
+    transition: none;
+  }
+}

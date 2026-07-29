@@ -1,0 +1,163 @@
+/*
+ * Figma-derived design tokens.
+ *
+ * GENERATED FROM FIGMA — DO NOT HAND-AUTHOR VALUES.
+ *
+ * Source: file LLdGlhexL3wmfFd4HBeOKm, page "Page 1", read via Figma MCP.
+ * Every property below carries the Figma node id or variable name it came from.
+ */
+
+:root {
+  /* ---------------------------------------------------------------------
+   * Colour — from Figma variables and node fills
+   * ------------------------------------------------------------------ */
+
+  /* Figma variable: fanduel-blue */
+  --fanduel-blue: #0078ff;
+  /* Figma variable: grey */
+  --grey: #ababab;
+
+  /* Fill of frame "Homepage" (1:90) */
+  --color-navy: #011556;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Feature card fill (1:100, 1:103, 1:106, 1:109) */
+  --surface-card: rgba(255, 255, 255, 0.1);
+  /* Nav bar fill (1:127) */
+  --surface-nav: rgba(0, 0, 0, 0.1);
+
+  /*
+   * Nav glass (1:127). MEASURED FROM THE 2x FRAME EXPORT, not read from the
+   * file: Figma's code output for 1:127 lists the fill, radius and padding but
+   * omits its effects entirely. See BLOCKER-004 for the derivation and for the
+   * one-line change if the file's own values turn out to differ.
+   */
+  --nav-backdrop-blur: 3px; /* fitted sigma 6.5 export px = 3.25 CSS px */
+  --nav-stroke: rgba(255, 255, 255, 0.5); /* 1 export px rim at ~50% white */
+  --nav-stroke-width: 0.5px;
+
+  /* Hero scrim (1:92): transparent blue -> solid blue, from 55.093% */
+  --gradient-hero: linear-gradient(
+    to bottom,
+    rgba(0, 120, 255, 0) 55.093%,
+    #0078ff 100%
+  );
+  /* Nav scrim (1:126) */
+  --gradient-nav-scrim: linear-gradient(
+    176.5750930099435deg,
+    rgba(1, 21, 86, 0) 7.4283%,
+    rgb(1, 21, 86) 95.217%
+  );
+
+  /* ---------------------------------------------------------------------
+   * Typography — Figma text styles, family "General Sans"
+   * ------------------------------------------------------------------ */
+
+  --font-family-base: 'General Sans', system-ui, -apple-system, 'Segoe UI',
+    sans-serif;
+
+  /* Mb/H4 — Medium 500, 24/28 */
+  --font-h4-size: 24px;
+  --font-h4-line: 28px;
+  --font-h4-weight: 500;
+
+  /* Mb/BC1_SB — Semibold 600, 20/24 */
+  --font-bc1-sb-size: 20px;
+  --font-bc1-sb-line: 24px;
+  --font-bc1-sb-weight: 600;
+
+  /* Mb/BC2_R — Regular 400, 16/23 */
+  --font-bc2-r-size: 16px;
+  --font-bc2-r-line: 23px;
+  --font-bc2-r-weight: 400;
+
+  /* BodyCopy/BC2_M — Medium 500, 16/19 */
+  --font-bc2-m-size: 16px;
+  --font-bc2-m-line: 19px;
+  --font-bc2-m-weight: 500;
+
+  /* Mb/BC3_R — Regular 400, 14/20 */
+  --font-bc3-r-size: 14px;
+  --font-bc3-r-line: 20px;
+  --font-bc3-r-weight: 400;
+
+  /* Nav item label (I1:127;1:132) — Regular 400, 13/19 */
+  --font-nav-size: 13px;
+  --font-nav-line: 19px;
+  --font-nav-weight: 400;
+
+  /* ---------------------------------------------------------------------
+   * Radii — from node corner radii
+   * ------------------------------------------------------------------ */
+  --radius-card: 8px; /* 1:100 */
+  --radius-pill: 30px; /* 1:20 button family */
+  --radius-nav: 70px; /* 1:127 */
+  --radius-avatar: 130px; /* 1:116 */
+
+  /* ---------------------------------------------------------------------
+   * Spacing — from auto-layout padding and gaps
+   * ------------------------------------------------------------------ */
+  --space-2: 2.5px;
+  --space-4: 4px;
+  --space-5: 5px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-36: 36px;
+  --space-40: 40px;
+  --space-56: 56px;
+  --space-80: 80px;
+
+  /* Content frame 1:96 padding: 56 top, 80 bottom, 24 inline */
+  --content-padding-inline: 24px;
+  --content-padding-top: 56px;
+  --content-padding-bottom: 80px;
+
+  /* ---------------------------------------------------------------------
+   * Layering — z-order of the overlapping layers in frame 1:90
+   * ------------------------------------------------------------------ */
+  --layer-hero-image: 0; /* 1:91 */
+  --layer-hero-scrim: 1; /* 1:92 */
+  --layer-hero-title: 2; /* 1:93 */
+  --layer-content: 3; /* 1:96 */
+  --layer-nav-scrim: 4; /* 1:126 */
+  --layer-nav: 5; /* 1:127 */
+
+  /* ---------------------------------------------------------------------
+   * Frame geometry — frame "Homepage" (1:90)
+   * ------------------------------------------------------------------ */
+  --frame-width: 430px;
+  --frame-height: 1697px;
+  --hero-height: 648px; /* 1:91 */
+  --hero-scrim-top: 245px; /* 1:92 */
+  --hero-scrim-height: 403px;
+  --hero-title-top: 476px; /* 1:93 */
+  --hero-title-height: 142px;
+  --content-top: 648px; /* 1:96 */
+  --content-height: 982px;
+  --nav-scrim-top: 747px; /* 1:126 */
+  --nav-scrim-height: 185px;
+  --nav-top: 811px; /* 1:127 */
+  --nav-height: 81px;
+  --nav-inset-inline: 24px;
+
+  /*
+   * The nav scrim ends at 747 + 185 = 932, exactly the device viewport height
+   * the 430px frame is drawn for (iPhone 14 Pro Max). The scrim and the nav are
+   * therefore viewport-anchored chrome that the frame happens to render at its
+   * scrolled-to-top position, not content at document offset 747/811.
+   */
+  --design-viewport-height: 932px;
+  /* Nav bottom edge 811 + 81 = 892; 932 - 892 = 40 above the viewport edge. */
+  --nav-bottom-offset: 40px;
+
+  /* Frame height 1697 minus content end (648 + 982 = 1630). */
+  --frame-tail-height: 67px;
+
+  /* Plan: fluid 320-480, centred in a 480px viewport above that. */
+  --app-max-width: 480px;
+  --app-min-width: 320px;
+}

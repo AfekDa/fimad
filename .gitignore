@@ -1,0 +1,27 @@
+node_modules
+dist
+dist-ssr
+coverage
+*.local
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Secrets — Figma tokens must never be committed
+.env
+.env.*
+!.env.example
