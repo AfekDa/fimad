@@ -1,0 +1,134 @@
+---
+/**
+ * Button / Filter — Figma frame "Button/Filter" (1:19).
+ *
+ * Four types x two states, exactly as the sheet defines them:
+ *   Secondary Button (1:20 / 1:23), Button (1:26 / 1:29),
+ *   Filter (1:32 / 1:34), Fanduel (1:37 / 1:40).
+ */
+import styles from './Button.module.css'
+
+import arrowGrey from '../../assets/icon-arrow-grey.svg?url'
+import arrowBlue from '../../assets/icon-arrow-blue.svg?url'
+import arrowBlack from '../../assets/icon-arrow-black.svg?url'
+import arrowWhite from '../../assets/icon-arrow-white.svg?url'
+import fanduelMark from '../../assets/icon-fanduel-mark.png?url'
+import clearRing from '../../assets/icon-clear-circle.svg?url'
+import clearCross from '../../assets/icon-clear-cross.svg?url'
+
+/** Figma variant property "Type" on component set 1:19. */
+export type ButtonType = 'secondary' | 'button' | 'filter' | 'fanduel'
+/** Figma variant property "State". */
+export type ButtonState = 'default' | 'active'
+
+export interface Props {
+  readonly variant: ButtonType
+  readonly state?: ButtonState
+  readonly label: string
+  /** Figma boolean property "Functional Icon". */
+  readonly showIcon?: boolean
+  readonly class?: string | undefined
+}
+
+const NODE_IDS: Record<ButtonType, Record<ButtonState, string>> = {
+  secondary: { default: '1:20', active: '1:23' },
+  button: { default: '1:26', active: '1:29' },
+  filter: { default: '1:32', active: '1:34' },
+  fanduel: { default: '1:37', active: '1:40' },
+}
+
+const {
+  variant,
+  state = 'default',
+  label,
+  showIcon = true,
+  class: className,
+} = Astro.props
+
+const active = state === 'active'
+
+const variantClass =
+  variant === 'secondary'
+    ? [styles.secondary, active ? styles.secondaryActive : styles.secondaryDefault]
+    : variant === 'button'
+      ? [styles.button, active ? styles.buttonActive : styles.buttonDefault]
+      : variant === 'filter'
+        ? [styles.filter, active ? styles.filterActive : styles.filterDefault]
+        : [styles.fanduel, active ? styles.fanduelActive : styles.fanduelDefault]
+---
+
+<button
+  type="button"
+  class:list={[styles.base, variantClass, className]}
+  data-node-id={NODE_IDS[variant][state]}
+  data-state={state}
+  aria-pressed={variant === 'filter' ? (active ? 'true' : 'false') : undefined}
+>
+  {
+    variant === 'secondary' && (
+      <Fragment>
+        {showIcon && (
+          <span class={styles.arrow}>
+            <img
+              class={styles.arrowLeaf}
+              src={active ? arrowBlue : arrowGrey}
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        )}
+        <span class={styles.secondaryLabel}>{label}</span>
+      </Fragment>
+    )
+  }
+
+  {
+    variant === 'button' && (
+      <Fragment>
+        <span class={styles.buttonLabel}>{label}</span>
+        {showIcon && (
+          <span class={styles.arrow}>
+            <img
+              class={styles.arrowLeaf}
+              src={active ? arrowWhite : arrowBlack}
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        )}
+      </Fragment>
+    )
+  }
+
+  {
+    variant === 'filter' && (
+      <Fragment>
+        <span class={styles.filterLabel}>{label}</span>
+        {active && showIcon && (
+          <span class={styles.clear}>
+            <img class={styles.clearRing} src={clearRing} alt="" aria-hidden="true" />
+            <img class={styles.clearCross} src={clearCross} alt="" aria-hidden="true" />
+          </span>
+        )}
+      </Fragment>
+    )
+  }
+
+  {
+    variant === 'fanduel' && (
+      <Fragment>
+        {showIcon && (
+          <span class={styles.fanduelMark}>
+            <img
+              class={styles.fanduelMarkLeaf}
+              src={fanduelMark}
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+        )}
+        <span class={styles.fanduelLabel}>{label}</span>
+      </Fragment>
+    )
+  }
+</button>

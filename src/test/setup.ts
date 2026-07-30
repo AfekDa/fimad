@@ -1,7 +1,6 @@
+/*
+ * Astro components render to an HTML string, not into a live document, so there
+ * is nothing to unmount between tests — see src/test/render.ts. Only the
+ * jest-dom matchers need registering.
+ */
 import '@testing-library/jest-dom/vitest'
-import { cleanup } from '@testing-library/react'
-import { afterEach } from 'vitest'
-
-afterEach(() => {
-  cleanup()
-})

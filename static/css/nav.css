@@ -1,11 +1,12 @@
 /* Bottom navigation — Figma component "Nav", variant Type=Mobile (1:129),
  * as instanced on the Homepage (1:127).
  *
- * Tab selection is a native radio group: one hidden input per tab, each item a
- * <label> for its input. Selected state, keyboard arrow-key navigation and
- * screen-reader semantics all come from the platform, so the page ships no
- * JavaScript. The Figma page contains only one full-screen frame, so no tab has
- * a prototype destination to navigate to in any case. */
+ * Tab selection was React state in the component build. Here it is a native
+ * radio group: one hidden input per tab, each item a <label> for its input, so
+ * the selected state, keyboard support and screen-reader semantics all come
+ * from the platform and the page needs no JavaScript. The Figma page has only
+ * one full-screen frame, so no tab has a destination to navigate to either way.
+ */
 
 /*
  * The bar is frosted glass: a 10% black fill over a blurred backdrop, with a
@@ -30,9 +31,9 @@
   box-shadow: inset 0 0 0 var(--nav-stroke-width) var(--nav-stroke);
 }
 
-/* Taken out of flow so the inputs do not become flex items; still focusable, so
- * keyboard users get the native radio-group arrow-key behaviour. */
-.navInput {
+/* Taken out of flow so the inputs do not become flex items; still focusable,
+ * so keyboard users get the native radio-group arrow-key behaviour. */
+.nav-input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -41,7 +42,7 @@
   pointer-events: none;
 }
 
-.item {
+.nav-item {
   /* Figma gives each item a fixed 32px box; the label is allowed to overflow
    * it symmetrically, which is what produces the even icon spacing. */
   box-sizing: border-box;
@@ -61,11 +62,11 @@
 }
 
 /* State=Active: 3px white underline (I1:127;1:130). */
-.navInput:checked + .item {
+.nav-input:checked + .nav-item {
   border-bottom-color: var(--color-white);
 }
 
-.label {
+.nav-label {
   font-family: var(--font-family-base);
   font-size: var(--font-nav-size);
   line-height: var(--font-nav-line);
@@ -81,24 +82,24 @@
  * pressed are expressed as opacity on the same treatment rather than invented
  * colours. */
 @media (hover: hover) {
-  .item:hover {
+  .nav-item:hover {
     opacity: 0.75;
   }
 }
 
-.item:active {
+.nav-item:active {
   opacity: 0.6;
 }
 
 /* The focus ring belongs on the label, since the input itself is invisible. */
-.navInput:focus-visible + .item {
+.nav-input:focus-visible + .nav-item {
   outline: 2px solid var(--color-white);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .item {
+  .nav-item {
     transition: none;
   }
 }

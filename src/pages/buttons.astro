@@ -1,0 +1,42 @@
+---
+/**
+ * Component sheet for Button / Filter — Figma frame 1:19.
+ *
+ * No screen in the design renders these controls, so they have no place on the
+ * Homepage; this page exists so every variant the design defines stays visible
+ * and testable.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Button from '../components/Button/Button.astro'
+import '../styles/sheet.css'
+
+const GROUPS = [
+  { title: 'Type=Secondary Button (1:20 / 1:23)', variant: 'secondary', label: 'Secondary Button' },
+  { title: 'Type=Button (1:26 / 1:29)', variant: 'button', label: 'Button' },
+  { title: 'Type=Filter (1:32 / 1:34)', variant: 'filter', label: 'Filter' },
+  { title: 'Type=Fanduel (1:37 / 1:40)', variant: 'fanduel', label: 'Fanduel' },
+] as const
+---
+
+<BaseLayout title="Button / Filter — component sheet">
+  <main class="sheet">
+    <h1 class="sheet-title">Button / Filter</h1>
+    <p class="sheet-note">
+      Figma frame 1:19 — four types by two states. This page is a component sheet, not a
+      screen: no route in the design renders these controls, so the buttons here have no
+      action attached.
+    </p>
+
+    {
+      GROUPS.map((group) => (
+        <section class="sheet-group">
+          <h2 class="sheet-group-title">{group.title}</h2>
+          <div class="sheet-row">
+            <Button variant={group.variant} state="default" label={group.label} />
+            <Button variant={group.variant} state="active" label={group.label} />
+          </div>
+        </section>
+      ))
+    }
+  </main>
+</BaseLayout>

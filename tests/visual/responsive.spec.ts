@@ -46,6 +46,41 @@ test.describe('responsive integrity', () => {
     })
   }
 
+  /*
+   * Nav selection is a native radio group with no JavaScript behind it, so it
+   * cannot be exercised in a unit test — the behaviour only exists in a
+   * browser. These tests cover what the component test used to assert about
+   * clicking and keyboard operation.
+   */
+  test('nav selection works with no JavaScript on the page', async ({ page }) => {
+    await page.goto('/')
+
+    await expect(page.locator('#nav-tab-home')).toBeChecked()
+    expect(await page.locator('script').count(), 'The page shipped a script').toBe(0)
+
+    await page.getByText('All Bets').click()
+
+    await expect(page.locator('#nav-tab-all-bets')).toBeChecked()
+    await expect(page.locator('#nav-tab-home')).not.toBeChecked()
+    await expect(page.locator('label[for="nav-tab-all-bets"]')).toHaveCSS(
+      'border-bottom-color',
+      'rgb(255, 255, 255)',
+    )
+  })
+
+  test('nav is keyboard operable', async ({ page }) => {
+    await page.goto('/')
+
+    await page.locator('#nav-tab-home').focus()
+    await expect(page.locator('#nav-tab-home')).toBeFocused()
+
+    // Native radio-group behaviour: arrow keys move and select in one step.
+    await page.keyboard.press('ArrowRight')
+
+    await expect(page.locator('#nav-tab-teams')).toBeChecked()
+    await expect(page.locator('#nav-tab-home')).not.toBeChecked()
+  })
+
   test('responsive suite has screens to exercise', () => {
     expect(
       SCREENS.length,

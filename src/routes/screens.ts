@@ -1,9 +1,9 @@
 /**
  * Screen manifest — pure data, no component or stylesheet imports.
  *
- * Kept separate from registry.ts so that tooling which cannot process CSS
- * modules or asset imports (the Playwright specs, in particular) can still read
- * the route geometry.
+ * Routing itself is file-based (src/pages/), so this is no longer a registry:
+ * it is the record of each screen's Figma geometry, read by the Playwright
+ * fidelity specs, which cannot process CSS modules or asset imports.
  *
  * Source: Figma file LLdGlhexL3wmfFd4HBeOKm, page "Page 1".
  */

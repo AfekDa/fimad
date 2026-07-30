@@ -1,0 +1,17 @@
+---
+/**
+ * The app's only route — Figma frame "Homepage" (1:90), the prototype's
+ * starting frame. See src/routes/screens.ts for the frame manifest.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Homepage from '../screens/Homepage/Homepage.astro'
+---
+
+<BaseLayout title="Figma Mobile Frontend">
+  <div class="appShell">
+    <a class="skipLink" href="#main">Skip to content</a>
+    <main id="main" tabindex="-1">
+      <Homepage />
+    </main>
+  </div>
+</BaseLayout>

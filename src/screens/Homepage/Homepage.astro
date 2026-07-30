@@ -1,0 +1,130 @@
+---
+/** Homepage — Figma frame 1:90, 430 x 1697. */
+import Nav from '../../components/Nav/Nav.astro'
+import styles from './Homepage.module.css'
+
+import heroPoster from '../../assets/hero-poster.png?url'
+import year2026 from '../../assets/year-2026.png?url'
+import featureBadge from '../../assets/feature-badge.png?url'
+import divider from '../../assets/divider.svg?url'
+import avatarCody from '../../assets/avatar-cody.png?url'
+import signature from '../../assets/signature.png?url'
+import socialX from '../../assets/social-x.svg?url'
+import socialFacebook from '../../assets/social-facebook.png?url'
+import socialInstagram from '../../assets/social-instagram.svg?url'
+
+interface Feature {
+  readonly nodeId: string
+  /** Rendered as separate lines when Figma sets an explicit break. */
+  readonly lines: readonly string[]
+}
+
+/** Feature list from 1:99. Card 1 (1:102) carries a designed line break. */
+const FEATURES: readonly Feature[] = [
+  { nodeId: '1:100', lines: ['Parlays, Flyers and', 'Best Bets for every game week'] },
+  { nodeId: '1:103', lines: ['Data Sheets to help you pick your own winners'] },
+  { nodeId: '1:106', lines: ['Algorithms to identify the best matchups'] },
+  { nodeId: '1:109', lines: ['Giveaways and competitions'] },
+]
+
+const SOCIAL_LINKS = [
+  { nodeId: '1:119', label: 'X', src: socialX },
+  { nodeId: '1:122', label: 'Facebook', src: socialFacebook },
+  { nodeId: '1:123', label: 'Instagram', src: socialInstagram },
+] as const
+---
+
+<div class={styles.page} data-node-id="1:90">
+  <div class={styles.hero}>
+    <div class={styles.heroImage} data-node-id="1:91">
+      <img class={styles.heroImageLeaf} src={heroPoster} alt="" aria-hidden="true" />
+    </div>
+    <div class={styles.heroScrim} data-node-id="1:92"></div>
+    <div class={styles.heroTitle} data-node-id="1:93">
+      <div class={styles.yearMark} data-node-id="1:95">
+        <img
+          class={styles.yearMarkLeaf}
+          src={year2026}
+          alt="Year 2026-27, sponsored by FanDuel"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class={styles.content} data-node-id="1:96">
+    <h1 class={styles.title} data-node-id="1:97">
+      WELCOME TO MY NFL BETTING GUIDE 2026
+    </h1>
+
+    <p class={styles.body} data-node-id="1:98">
+      This is the third straight season I&rsquo;ve written my guide and this version is
+      by far the best yet. I&rsquo;ve spent countless hours studying every team so I can
+      give us the best chance of making money this season.
+      <br aria-hidden="true" />
+      <br aria-hidden="true" />
+      If you&rsquo;re just discovering me, the main thing you need to know is that
+      absolutely everything I post is free. Here&rsquo;s a glimpse at what I&rsquo;ll be
+      sharing with you throughout the NFL season&hellip;
+    </p>
+
+    <ul class={styles.features} data-node-id="1:99">
+      {
+        FEATURES.map((feature) => (
+          <li class={styles.featureCard} data-node-id={feature.nodeId}>
+            <span class={styles.featureBadge}>
+              <img
+                class={styles.featureBadgeLeaf}
+                src={featureBadge}
+                alt=""
+                aria-hidden="true"
+              />
+            </span>
+            {/* Written on one line: Astro preserves template whitespace, so
+                indenting the spans would insert a space into the text. */}
+            <p class={styles.featureText}>
+              {feature.lines.map((line, index) => (<span>{index > 0 && <br />}{line}</span>))}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class={styles.body} data-node-id="1:112">
+      Whether you&rsquo;re a bettor, a fantasy football player or simply an NFL fan, this
+      guide will give you more knowledge than all your buddies going into the 2025
+      season. Hope you enjoy it.
+    </p>
+
+    <div class={styles.divider} data-node-id="1:113">
+      <img class={styles.dividerLeaf} src={divider} alt="" aria-hidden="true" />
+    </div>
+
+    <div class={styles.footer} data-node-id="1:114">
+      <div class={styles.identity} data-node-id="1:115">
+        <span class={styles.avatar} data-node-id="1:116">
+          <img class={styles.avatarLeaf} src={avatarCody} alt="" aria-hidden="true" />
+        </span>
+        <img class={styles.signature} src={signature} alt="Cody Brown" />
+      </div>
+
+      <div class={styles.social} data-node-id="1:118">
+        {
+          SOCIAL_LINKS.map((link) => (
+            <button
+              type="button"
+              class={styles.socialLink}
+              data-node-id={link.nodeId}
+              aria-label={link.label}
+            >
+              <img class={styles.socialIcon} src={link.src} alt="" aria-hidden="true" />
+            </button>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class={styles.navDock} data-node-id="1:126">
+    <Nav class={styles.nav} selectedId="home" />
+  </div>
+</div>

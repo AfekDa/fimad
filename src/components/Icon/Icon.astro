@@ -1,0 +1,30 @@
+---
+/** Icon — Figma frame "Icons" (1:43). Data and asset urls live in icons.ts. */
+import styles from './Icon.module.css'
+import { ICON_OUTER_SIZE, ICON_SOURCES, type IconName } from './icons'
+
+export interface Props {
+  readonly name: IconName
+  /** Overrides the design's default outer box. Both dimensions are explicit. */
+  readonly width?: number | undefined
+  readonly height?: number | undefined
+  readonly class?: string | undefined
+}
+
+const { name, width, height, class: className } = Astro.props
+
+const fallback = ICON_OUTER_SIZE[name]
+const style = {
+  width: `${String(width ?? fallback.width)}px`,
+  height: `${String(height ?? fallback.height)}px`,
+}
+---
+
+<span class:list={[styles.icon, className]} style={style}>
+  <img
+    class:list={[styles.leaf, styles[name]]}
+    src={ICON_SOURCES[name]}
+    alt=""
+    aria-hidden="true"
+  />
+</span>

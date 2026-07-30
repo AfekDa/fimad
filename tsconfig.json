@@ -1,7 +1,18 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    /* Strictness beyond Astro's strict preset — the plan requires it. */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "verbatimModuleSyntax": true,
+
+    "types": ["astro/client", "vitest/globals", "@testing-library/jest-dom"]
+  },
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist", "static", "node_modules", "playwright-report", "test-results"]
 }

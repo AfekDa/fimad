@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Button / Filter — component sheet</title>
+
+    <!--
+      Static mirror of the Button component (Figma frame "Button/Filter", 1:19).
+      No route renders this component, so it has no place in index.html; it is
+      shown here so every variant the design defines stays visible and testable.
+    -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/button.css" />
+    <link rel="stylesheet" href="css/sheet.css" />
+  </head>
+  <body>
+    <main class="sheet">
+      <h1 class="sheet-title">Button / Filter</h1>
+      <p class="sheet-note">
+        Figma frame 1:19 — four types by two states. This page is a component
+        sheet, not a screen: no route in the design renders these controls, so
+        the buttons here have no action attached.
+      </p>
+
+      <section class="sheet-group">
+        <h2 class="sheet-group-title">Type=Secondary Button (1:20 / 1:23)</h2>
+        <div class="sheet-row">
+          <button
+            type="button"
+            class="btn btn--secondary"
+            data-node-id="1:20"
+            data-state="default"
+          >
+            <span class="btn-arrow">
+              <img
+                class="btn-arrow-leaf"
+                src="assets/icon-arrow-grey.svg"
+                alt=""
+                aria-hidden="true"
+              />
+            </span>
+            <span class="btn-label--secondary">Secondary Button</span>
+          </button>
+
+          <button
+            type="button"
+            class="btn btn--secondary"
+            data-node-id="1:23"
+            data-state="active"
+          >
+            <span class="btn-arrow">
+              <img
+                class="btn-arrow-leaf"
+                src="assets/icon-arrow-blue.svg"
+                alt=""
+                aria-hidden="true"
+              />
+            </span>
+            <span class="btn-label--secondary">Secondary Button</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="sheet-group">
+        <h2 class="sheet-group-title">Type=Button (1:26 / 1:29)</h2>
+        <div class="sheet-row">
+          <button
+            type="button"
+            class="btn btn--button"
+            data-node-id="1:26"
+            data-state="default"
+          >
+            <span class="btn-label--button">Button</span>
+            <span class="btn-arrow">
+              <img
+                class="btn-arrow-leaf"
+                src="assets/icon-arrow-black.svg"
+                alt=""
+                aria-hidden="true"
+              />
+            </span>
+          </button>
+
+          <button
+            type="button"
+            class="btn btn--button"
+            data-node-id="1:29"
+            data-state="active"
+          >
+            <span class="btn-label--button">Button</span>
+            <span class="btn-arrow">
+              <img
+                class="btn-arrow-leaf"
+                src="assets/icon-arrow-white.svg"
+                alt=""
+                aria-hidden="true"
+              />
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section class="sheet-group">
+        <h2 class="sheet-group-title">Type=Filter (1:32 / 1:34)</h2>
+        <div class="sheet-row">
+          <button
+            type="button"
+            class="btn btn--filter"
+            data-node-id="1:32"
+            data-state="default"
+            aria-pressed="false"
+          >
+            <span class="btn-label--filter">Filter</span>
+          </button>
+
+          <button
+            type="button"
+            class="btn btn--filter"
+            data-node-id="1:34"
+            data-state="active"
+            aria-pressed="true"
+          >
+            <span class="btn-label--filter">Filter</span>
+            <span class="btn-clear">
+              <img
+                class="btn-clear-ring"
+                src="assets/icon-clear-circle.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              <img
+                class="btn-clear-cross"
+                src="assets/icon-clear-cross.svg"
+                alt=""
+                aria-hidden="true"
+              />
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section class="sheet-group">
+        <h2 class="sheet-group-title">Type=Fanduel (1:37 / 1:40)</h2>
+        <div class="sheet-row">
+          <button
+            type="button"
+            class="btn btn--fanduel"
+            data-node-id="1:37"
+            data-state="default"
+          >
+            <span class="btn-fanduel-mark">
+              <img
+                class="btn-fanduel-mark-leaf"
+                src="assets/icon-fanduel-mark.png"
+                alt=""
+                aria-hidden="true"
+              />
+            </span>
+            <span class="btn-label--fanduel">Fanduel</span>
+          </button>
+
+          <button
+            type="button"
+            class="btn btn--fanduel"
+            data-node-id="1:40"
+            data-state="active"
+          >
+            <span class="btn-fanduel-mark">
+              <img
+                class="btn-fanduel-mark-leaf"
+                src="assets/icon-fanduel-mark.png"
+                alt=""
+                aria-hidden="true"
+              />
+            </span>
+            <span class="btn-label--fanduel">Fanduel</span>
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

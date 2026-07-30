@@ -1,4 +1,4 @@
-import type { IconName } from '../Icon/Icon'
+import type { IconName } from '../Icon/icons'
 
 export interface NavItem {
   readonly id: string

@@ -1,18 +1,29 @@
-import { render, screen, within } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
-import { describe, expect, it } from 'vitest'
-import { Homepage } from './Homepage'
+import { within } from '@testing-library/dom'
+import { beforeAll, describe, expect, it } from 'vitest'
+import Homepage from './Homepage.astro'
+import { renderToDom } from '../../test/render'
+
+/*
+ * The screen is static markup, so it is rendered once for the whole suite.
+ * Tab switching is no longer component state — it is a native radio group, and
+ * its behaviour is asserted in a real browser by tests/visual/responsive.spec.ts.
+ */
+let body: HTMLElement
+let screen: ReturnType<typeof within>
+
+beforeAll(async () => {
+  body = await renderToDom(Homepage)
+  screen = within(body)
+})
 
 describe('Homepage', () => {
   it('renders the headline from Figma node 1:97', () => {
-    render(<Homepage />)
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
       'WELCOME TO MY NFL BETTING GUIDE 2026',
     )
   })
 
   it('renders the four feature cards in design order', () => {
-    render(<Homepage />)
     const items = within(screen.getByRole('list')).getAllByRole('listitem')
 
     expect(items).toHaveLength(4)
@@ -22,35 +33,21 @@ describe('Homepage', () => {
     expect(items[3]).toHaveTextContent('Giveaways and competitions')
   })
 
-  it('selects Home by default and moves selection on click', async () => {
-    const user = userEvent.setup()
-    render(<Homepage />)
+  it('selects Home by default', () => {
+    const nav = within(screen.getByRole('navigation', { name: 'Primary' }))
 
-    const nav = screen.getByRole('navigation', { name: 'Primary' })
-    expect(within(nav).getByRole('button', { name: 'Home' })).toHaveAttribute(
-      'aria-current',
-      'page',
-    )
-
-    await user.click(within(nav).getByRole('button', { name: 'Fanduel' }))
-
-    expect(within(nav).getByRole('button', { name: 'Fanduel' })).toHaveAttribute(
-      'aria-current',
-      'page',
-    )
-    expect(within(nav).getByRole('button', { name: 'Home' })).not.toHaveAttribute('aria-current')
+    expect(nav.getByRole('radio', { name: 'Home' })).toBeChecked()
+    expect(nav.getByRole('radio', { name: 'Fanduel' })).not.toBeChecked()
   })
 
   it('labels the social controls', () => {
-    render(<Homepage />)
     for (const name of ['X', 'Facebook', 'Instagram']) {
       expect(screen.getByRole('button', { name })).toBeInTheDocument()
     }
   })
 
   it('gives meaningful images alternative text and hides decorative ones', () => {
-    const { container } = render(<Homepage />)
-    const images = [...container.querySelectorAll('img')]
+    const images = [...body.querySelectorAll('img')]
     expect(images.length).toBeGreaterThan(0)
 
     const meaningful = images.filter((img) => img.getAttribute('aria-hidden') !== 'true')
@@ -65,15 +62,17 @@ describe('Homepage', () => {
   })
 
   it('docks the nav inside the scrim layer from Figma node 1:126', () => {
-    const { container } = render(<Homepage />)
-    const dock = container.querySelector('[data-node-id="1:126"]')
+    const dock = body.querySelector('[data-node-id="1:126"]')
 
     expect(dock).toBeInTheDocument()
     expect(dock).toContainElement(screen.getByRole('navigation', { name: 'Primary' }))
   })
 
   it('traces the frame back to its Figma node', () => {
-    const { container } = render(<Homepage />)
-    expect(container.querySelector('[data-node-id="1:90"]')).toBeInTheDocument()
+    expect(body.querySelector('[data-node-id="1:90"]')).toBeInTheDocument()
+  })
+
+  it('ships no client-side script', () => {
+    expect(body.querySelectorAll('script')).toHaveLength(0)
   })
 })

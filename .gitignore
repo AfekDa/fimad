@@ -4,6 +4,9 @@ dist-ssr
 coverage
 *.local
 
+# Astro generated types
+.astro/
+
 # Playwright
 /test-results/
 /playwright-report/

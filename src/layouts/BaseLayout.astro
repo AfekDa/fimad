@@ -1,0 +1,30 @@
+---
+/**
+ * Document shell shared by every page.
+ *
+ * Owns the global stylesheets only — layout and design values live with the
+ * screens and components, and every Figma-derived value lives in tokens.css.
+ */
+import '../styles/reset.css'
+import '../styles/fonts.css'
+import '../styles/tokens.css'
+import '../styles/app.css'
+
+export interface Props {
+  readonly title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

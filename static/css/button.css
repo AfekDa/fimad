@@ -1,0 +1,235 @@
+/*
+ * Button / Filter — Figma frame "Button/Filter" (1:19).
+ *
+ * Four types x two states, exactly as the sheet defines them:
+ *   Secondary Button (1:20 / 1:23), Button (1:26 / 1:29),
+ *   Filter (1:32 / 1:34), Fanduel (1:37 / 1:40).
+ *
+ * The React build selected the state with a class computed from a prop; here it
+ * is read straight off the `data-state` attribute the markup already carries.
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-family-base);
+  transition:
+    background-color 120ms ease-out,
+    opacity 120ms ease-out;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--fanduel-blue);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .btn:hover {
+    opacity: 0.85;
+  }
+}
+
+.btn:active {
+  opacity: 0.7;
+}
+
+/* ---- Type=Secondary Button (1:20, 1:23) ---------------------------------- */
+
+.btn--secondary {
+  gap: var(--space-4);
+  background: transparent;
+  padding: 0;
+}
+
+.btn-label--secondary {
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: var(--font-bc3-r-weight);
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  white-space: nowrap;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.btn--secondary[data-state='default'] .btn-label--secondary {
+  color: var(--grey);
+}
+
+.btn--secondary[data-state='active'] .btn-label--secondary {
+  color: var(--fanduel-blue);
+}
+
+/* ---- Type=Button (1:26, 1:29) -------------------------------------------- */
+
+.btn--button {
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-16);
+}
+
+.btn--button[data-state='default'] {
+  background: var(--color-white);
+}
+
+.btn--button[data-state='active'] {
+  background: var(--fanduel-blue);
+}
+
+.btn-label--button {
+  font-size: var(--font-bc2-m-size);
+  line-height: var(--font-bc2-m-line);
+  font-weight: var(--font-bc2-m-weight);
+  white-space: nowrap;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.btn--button[data-state='default'] .btn-label--button {
+  color: var(--color-black);
+}
+
+.btn--button[data-state='active'] .btn-label--button {
+  color: var(--color-white);
+}
+
+/* ---- Type=Filter (1:32, 1:34) -------------------------------------------- */
+
+.btn--filter {
+  height: 33px;
+}
+
+.btn--filter[data-state='default'] {
+  background: var(--color-white);
+  padding: var(--space-8) var(--space-16);
+}
+
+.btn--filter[data-state='active'] {
+  background: var(--fanduel-blue);
+  gap: var(--space-8);
+  padding: var(--space-8) var(--space-4) var(--space-8) var(--space-12);
+}
+
+.btn-label--filter {
+  font-size: var(--font-bc2-m-size);
+  line-height: var(--font-bc2-m-line);
+  font-weight: var(--font-bc2-m-weight);
+  white-space: nowrap;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.btn--filter[data-state='default'] .btn-label--filter {
+  color: var(--color-black);
+}
+
+.btn--filter[data-state='active'] .btn-label--filter {
+  color: var(--color-white);
+}
+
+/* ---- Type=Fanduel (1:37, 1:40) ------------------------------------------- */
+
+.btn--fanduel {
+  gap: var(--space-5);
+  height: 36px;
+  padding: var(--space-8) var(--space-16);
+}
+
+.btn--fanduel[data-state='default'] {
+  background: var(--color-white);
+}
+
+.btn--fanduel[data-state='active'] {
+  background: var(--fanduel-blue);
+}
+
+.btn-label--fanduel {
+  font-size: var(--font-bc2-m-size);
+  line-height: 23px;
+  font-weight: var(--font-bc2-m-weight);
+  white-space: nowrap;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.btn--fanduel[data-state='default'] .btn-label--fanduel {
+  color: var(--color-black);
+}
+
+.btn--fanduel[data-state='active'] .btn-label--fanduel {
+  color: var(--color-white);
+}
+
+/* ---- Icons --------------------------------------------------------------- */
+
+/* Forward arrow (1:59): an 11x9 glyph inside an 11.993x12 box. */
+.btn-arrow {
+  position: relative;
+  width: 11.993px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.btn-arrow-leaf {
+  position: absolute;
+  left: 0.507px;
+  top: 1.5px;
+  width: 11px;
+  height: 9px;
+  display: block;
+}
+
+/* FanDuel mark (1:51) inside a 20x20 box. */
+.btn-fanduel-mark {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Explicit width: an absolutely positioned <img> does not stretch to
+ * `left: 0; right: 0` — it would fall back to its intrinsic size. */
+.btn-fanduel-mark-leaf {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  aspect-ratio: 112 / 113;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* Clear control on Filter/Active (1:36): 25x25 ring with an 8.33px cross. */
+.btn-clear {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+}
+
+.btn-clear-ring {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Figma insets 33.47% left / 33.17% right / 33.33% top and bottom, stated as
+ * explicit width and height for the same replaced-element reason. */
+.btn-clear-cross {
+  position: absolute;
+  left: 33.47%;
+  top: 33.33%;
+  width: 33.36%;
+  height: 33.34%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
