@@ -33,11 +33,11 @@ describe('Homepage', () => {
     expect(items[3]).toHaveTextContent('Giveaways and competitions')
   })
 
-  it('selects Home by default', () => {
-    const nav = within(screen.getByRole('navigation', { name: 'Primary' }))
+  it('marks Home as the current tab, from the route rather than a prop', () => {
+    const nav = screen.getByRole('navigation', { name: 'Primary' })
 
-    expect(nav.getByRole('radio', { name: 'Home' })).toBeChecked()
-    expect(nav.getByRole('radio', { name: 'Fanduel' })).not.toBeChecked()
+    expect(nav.querySelector('[data-nav-id="home"]')).toHaveAttribute('aria-current', 'page')
+    expect(nav.querySelectorAll('[aria-current="page"]')).toHaveLength(1)
   })
 
   it('labels the social controls', () => {

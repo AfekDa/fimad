@@ -47,38 +47,49 @@ test.describe('responsive integrity', () => {
   }
 
   /*
-   * Nav selection is a native radio group with no JavaScript behind it, so it
-   * cannot be exercised in a unit test — the behaviour only exists in a
-   * browser. These tests cover what the component test used to assert about
-   * clicking and keyboard operation.
+   * The nav marks the current route from the URL and navigates with plain
+   * links, so the behaviour only exists in a browser — a unit test can assert
+   * the markup but not that following a tab actually lands somewhere.
    */
-  test('nav selection works with no JavaScript on the page', async ({ page }) => {
+  test('nav marks the current route with no JavaScript on the page', async ({ page }) => {
     await page.goto('/')
 
-    await expect(page.locator('#nav-tab-home')).toBeChecked()
     expect(await page.locator('script').count(), 'The page shipped a script').toBe(0)
 
-    await page.getByText('All Bets').click()
-
-    await expect(page.locator('#nav-tab-all-bets')).toBeChecked()
-    await expect(page.locator('#nav-tab-home')).not.toBeChecked()
-    await expect(page.locator('label[for="nav-tab-all-bets"]')).toHaveCSS(
-      'border-bottom-color',
-      'rgb(255, 255, 255)',
-    )
+    const home = page.locator('[data-nav-id="home"]')
+    await expect(home).toHaveAttribute('aria-current', 'page')
+    await expect(home).toHaveCSS('border-bottom-color', 'rgb(255, 255, 255)')
+    await expect(page.locator('[aria-current="page"]')).toHaveCount(1)
   })
 
-  test('nav is keyboard operable', async ({ page }) => {
+  test('nav is keyboard operable and its links navigate', async ({ page }) => {
     await page.goto('/')
 
-    await page.locator('#nav-tab-home').focus()
-    await expect(page.locator('#nav-tab-home')).toBeFocused()
+    const home = page.locator('[data-nav-id="home"]')
+    await home.focus()
+    await expect(home).toBeFocused()
 
-    // Native radio-group behaviour: arrow keys move and select in one step.
-    await page.keyboard.press('ArrowRight')
+    await page.keyboard.press('Enter')
+    await expect(page).toHaveURL(/\/$/)
+    await expect(page.locator('[data-nav-id="home"]')).toHaveAttribute('aria-current', 'page')
+  })
 
-    await expect(page.locator('#nav-tab-teams')).toBeChecked()
-    await expect(page.locator('#nav-tab-home')).not.toBeChecked()
+  /*
+   * Four tabs have no screen yet. They must be visible, because the design
+   * draws all five, but must not behave like destinations — no href, and not
+   * in the tab order.
+   */
+  test('nav tabs without a page are inert', async ({ page }) => {
+    await page.goto('/')
+
+    for (const id of ['teams', 'awards', 'all-bets', 'fanduel']) {
+      const tab = page.locator(`[data-nav-id="${id}"]`)
+      await expect(tab).toBeVisible()
+      await expect(tab).toHaveAttribute('aria-disabled', 'true')
+      expect(await tab.evaluate((el) => el.tagName)).toBe('SPAN')
+    }
+
+    await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(1)
   })
 
   test('responsive suite has screens to exercise', () => {
