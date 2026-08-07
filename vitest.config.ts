@@ -15,6 +15,6 @@ export default getViteConfig({
     setupFiles: ['./src/test/setup.ts'],
     css: true,
     include: ['src/**/*.{test,spec}.{ts,tsx}'],
-    exclude: ['tests/visual/**', 'node_modules/**', 'dist/**', 'static/**'],
+    exclude: ['tests/visual/**', 'node_modules/**', 'dist/**'],
   },
 })
