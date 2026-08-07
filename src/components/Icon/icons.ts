@@ -5,24 +5,19 @@
  * declared inside an .astro component cannot be imported from other files, and
  * navItems.ts needs `IconName`.
  *
- * Assets are imported with `?url` so a missing or renamed file fails the build
- * instead of 404ing at runtime.
+ * Image urls come from the asset registry — see src/assets/assets.ts.
  */
-import iconHome from '../../assets/icon-home.png?url'
-import iconAwards from '../../assets/icon-awards.png?url'
-import iconBets from '../../assets/icon-bets.png?url'
-import iconFanduel from '../../assets/icon-fanduel.png?url'
-import iconTeams from '../../assets/icon-teams.png?url'
+import { ASSETS } from '../../assets/assets'
 
 /** Icon variants defined in Figma frame "Icons" (1:43). */
 export type IconName = 'home' | 'awards' | 'bets' | 'fanduel' | 'teams'
 
 export const ICON_SOURCES: Readonly<Record<IconName, string>> = {
-  home: iconHome,
-  awards: iconAwards,
-  bets: iconBets,
-  fanduel: iconFanduel,
-  teams: iconTeams,
+  home: ASSETS.iconHome,
+  awards: ASSETS.iconAwards,
+  bets: ASSETS.iconBets,
+  fanduel: ASSETS.iconFanduel,
+  teams: ASSETS.iconTeams,
 }
 
 /**

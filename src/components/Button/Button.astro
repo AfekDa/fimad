@@ -7,14 +7,7 @@
  *   Filter (1:32 / 1:34), Fanduel (1:37 / 1:40).
  */
 import styles from './Button.module.css'
-
-import arrowGrey from '../../assets/icon-arrow-grey.svg?url'
-import arrowBlue from '../../assets/icon-arrow-blue.svg?url'
-import arrowBlack from '../../assets/icon-arrow-black.svg?url'
-import arrowWhite from '../../assets/icon-arrow-white.svg?url'
-import fanduelMark from '../../assets/icon-fanduel-mark.png?url'
-import clearRing from '../../assets/icon-clear-circle.svg?url'
-import clearCross from '../../assets/icon-clear-cross.svg?url'
+import { ASSETS } from '../../assets/assets'
 
 /** Figma variant property "Type" on component set 1:19. */
 export type ButtonType = 'secondary' | 'button' | 'filter' | 'fanduel'
@@ -71,7 +64,7 @@ const variantClass =
           <span class={styles.arrow}>
             <img
               class={styles.arrowLeaf}
-              src={active ? arrowBlue : arrowGrey}
+              src={active ? ASSETS.arrowBlue : ASSETS.arrowGrey}
               alt=""
               aria-hidden="true"
             />
@@ -90,7 +83,7 @@ const variantClass =
           <span class={styles.arrow}>
             <img
               class={styles.arrowLeaf}
-              src={active ? arrowWhite : arrowBlack}
+              src={active ? ASSETS.arrowWhite : ASSETS.arrowBlack}
               alt=""
               aria-hidden="true"
             />
@@ -106,8 +99,8 @@ const variantClass =
         <span class={styles.filterLabel}>{label}</span>
         {active && showIcon && (
           <span class={styles.clear}>
-            <img class={styles.clearRing} src={clearRing} alt="" aria-hidden="true" />
-            <img class={styles.clearCross} src={clearCross} alt="" aria-hidden="true" />
+            <img class={styles.clearRing} src={ASSETS.clearRing} alt="" aria-hidden="true" />
+            <img class={styles.clearCross} src={ASSETS.clearCross} alt="" aria-hidden="true" />
           </span>
         )}
       </Fragment>
@@ -121,7 +114,7 @@ const variantClass =
           <span class={styles.fanduelMark}>
             <img
               class={styles.fanduelMarkLeaf}
-              src={fanduelMark}
+              src={ASSETS.fanduelMark}
               alt=""
               aria-hidden="true"
             />
