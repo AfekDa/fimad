@@ -41,7 +41,7 @@ test.describe('frame fidelity', () => {
   test('the screen manifest is populated', () => {
     expect(
       SCREENS.length,
-      'No screens are implemented. Figma extraction has not run — see BLOCKERS.md.',
+      'No screens are implemented, so nothing below this ran. src/routes/screens.ts is empty.',
     ).toBeGreaterThan(0)
   })
 

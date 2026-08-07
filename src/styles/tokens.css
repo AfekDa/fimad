@@ -30,8 +30,15 @@
   /*
    * Nav glass (1:127). MEASURED FROM THE 2x FRAME EXPORT, not read from the
    * file: Figma's code output for 1:127 lists the fill, radius and padding but
-   * omits its effects entirely. See BLOCKER-004 for the derivation and for the
-   * one-line change if the file's own values turn out to differ.
+   * omits its effects entirely, while the export plainly shows both a blur and
+   * a hairline rim. The blur is a gaussian fit against a sharp text line above
+   * the bar (sigma 6.5 export px, good to about +/-0.75); the rim is a 1
+   * export px edge sampling at roughly 50% white, though its blue channel runs
+   * ~35% high, so the real stroke is likely a touch bluer.
+   *
+   * These are the only two unverified values in this file. If the Figma file's
+   * own effect values are ever read back, correcting them is a change to these
+   * two declarations and nothing else.
    */
   --nav-backdrop-blur: 3px; /* fitted sigma 6.5 export px = 3.25 CSS px */
   --nav-stroke: rgba(255, 255, 255, 0.5); /* 1 export px rim at ~50% white */

@@ -84,7 +84,7 @@ test.describe('responsive integrity', () => {
   test('responsive suite has screens to exercise', () => {
     expect(
       SCREENS.length,
-      'No screens are implemented. Figma extraction has not run — see BLOCKERS.md.',
+      'No screens are implemented, so nothing below this ran. src/routes/screens.ts is empty.',
     ).toBeGreaterThan(0)
   })
 })
