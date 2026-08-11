@@ -76,10 +76,6 @@
   }
 }
 
-.item:not([aria-disabled='true']):active {
-  opacity: 0.6;
-}
-
 .item:focus-visible {
   outline: 2px solid var(--color-white);
   outline-offset: 2px;

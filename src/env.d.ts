@@ -5,6 +5,8 @@
  * service (and `tsc`) resolve those imports as Astro component factories.
  */
 declare module '*.astro' {
-  const Component: import('astro/runtime/server/index.js').AstroComponentFactory
+  import type { AstroComponentFactory } from 'astro/runtime/server/index.js'
+
+  const Component: AstroComponentFactory
   export default Component
 }
