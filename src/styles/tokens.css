@@ -161,14 +161,12 @@
   --font-h2-weight: 700;
   --font-display-letter-spacing: -0.01em;
 
-  /* Search field 162:1776 and status bar 162:1824. */
+  /* Search field 162:1776. */
   --surface-search: #000b2e;
-  --surface-status: rgba(16, 19, 25, 0.5);
-  --status-backdrop-blur: 25px;
 
-  /* Frame and content geometry: 162:1760 and 181:1247. */
-  --teams-frame-height: 2931px;
-  --teams-content-top: 78px;
+  /* Frame and content geometry after removing the 54px device status bar. */
+  --teams-frame-height: 2877px;
+  --teams-content-top: var(--space-24);
   --teams-content-tail: 137px;
   --teams-card-height: 295px;
   --teams-card-gap: 16px;
@@ -187,8 +185,4 @@
     rgba(1, 21, 86, 0) 7.4283%,
     rgb(1, 21, 86) 95.217%
   );
-
-  /* Status Bar - iPhone instance 162:1824. */
-  --status-height: 54px;
-  --status-content-top: 21px;
 }

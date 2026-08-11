@@ -149,7 +149,8 @@ test.describe('responsive integrity', () => {
       )
     })
 
-    await expect(page.locator('[data-node-id="162:1760"]')).toHaveCSS('min-height', '2931px')
+    await expect(page.locator('[data-node-id="162:1760"]')).toHaveCSS('min-height', '2877px')
+    expect(await page.locator('[data-node-id="162:1773"]').boundingBox()).toMatchObject({ y: 24 })
 
     const cards = page.locator('[data-node-id="181:325"] article')
     await expect(cards).toHaveCount(8)

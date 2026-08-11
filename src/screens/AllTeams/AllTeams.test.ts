@@ -30,8 +30,8 @@ describe('All Teams', () => {
     expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument()
   })
 
-  it('does not render an example status-bar time', () => {
-    expect(body).not.toHaveTextContent('9:41')
+  it('starts with page content instead of a device status bar', () => {
+    expect(body.querySelector('[data-node-id="162:1824"]')).not.toBeInTheDocument()
   })
 
   it('exposes search and filter controls', () => {

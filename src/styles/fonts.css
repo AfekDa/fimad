@@ -30,15 +30,6 @@
   font-display: block;
 }
 
-/* Inter Semibold — iPhone status time in instance 162:1824. */
-@font-face {
-  font-family: 'Inter';
-  src: url('../assets/fonts/Inter-Semibold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: block;
-}
-
 @font-face {
   font-family: 'General Sans';
   src: url('../assets/fonts/GeneralSans-Medium.woff2') format('woff2');

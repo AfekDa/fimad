@@ -255,62 +255,6 @@
   text-align: center;
 }
 
-.statusBar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: var(--status-height);
-  padding-top: var(--status-content-top);
-  background: var(--surface-status);
-  backdrop-filter: blur(var(--status-backdrop-blur));
-  -webkit-backdrop-filter: blur(var(--status-backdrop-blur));
-  z-index: var(--layer-nav);
-}
-
-.statusRow {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 124px minmax(0, 1fr);
-  align-items: center;
-  width: 100%;
-}
-
-.statusLevels {
-  display: flex;
-  min-width: 0;
-  align-items: center;
-  justify-content: center;
-}
-
-.dynamicIsland {
-  grid-column: 2;
-  width: 124px;
-  height: 10px;
-  flex-shrink: 0;
-}
-
-.statusLevels {
-  grid-column: 3;
-  gap: 7px;
-  padding-left: 6px;
-  padding-right: var(--space-16);
-}
-
-.cellular {
-  width: 19.2px;
-  height: 12.226px;
-}
-
-.wifi {
-  width: 17.142px;
-  height: 12.328px;
-}
-
-.battery {
-  width: 27.328px;
-  height: 13px;
-}
-
 .visuallyHidden {
   position: absolute;
   width: 1px;

@@ -57,9 +57,6 @@ import teamsClearAllCross from './teams-clear-all-cross.svg?url'
 import teamsDivider from './teams-divider.svg?url'
 import teamsNavHome from './teams-nav-home.svg?url'
 import teamsNavTeams from './teams-nav-teams.svg?url'
-import teamsStatusCellular from './teams-status-cellular.svg?url'
-import teamsStatusWifi from './teams-status-wifi.svg?url'
-import teamsStatusBattery from './teams-status-battery.svg?url'
 import teamsCardBuffalo from './teams-card-buffalo.png?url'
 import teamsCardCincinnati from './teams-card-cincinnati.png?url'
 import teamsCardCleveland from './teams-card-cleveland.png?url'
@@ -105,9 +102,6 @@ export const ASSETS = {
   teamsDivider,
   teamsNavHome,
   teamsNavTeams,
-  teamsStatusCellular,
-  teamsStatusWifi,
-  teamsStatusBattery,
   teamsCardBuffalo,
   teamsCardCincinnati,
   teamsCardCleveland,
