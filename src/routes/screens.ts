@@ -43,4 +43,13 @@ export const SCREENS: readonly ScreenMeta[] = [
     /* Nav scrim 1:126 ends at 747 + 185 = 932. */
     viewportHeight: 932,
   },
+  {
+    path: '/teams',
+    frameName: 'All Teams Page',
+    nodeId: '162:1760',
+    width: 430,
+    height: 2931,
+    /* Nav scrim 162:1822 ends at the 932px device viewport edge. */
+    viewportHeight: 932,
+  },
 ]

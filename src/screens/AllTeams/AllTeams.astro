@@ -1,0 +1,101 @@
+---
+/** All Teams — Figma frame 162:1760, 430 × 2931. */
+import Button from '../../components/Button/Button.astro'
+import AppNav from '../../components/AppNav/AppNav.astro'
+import { ASSETS } from '../../assets/assets'
+import TeamCard from './TeamCard.astro'
+import { ALL_TEAMS_CARDS } from './content'
+import styles from './AllTeams.module.css'
+
+---
+
+<div class={styles.page} data-node-id="162:1760">
+  <div class={styles.content} data-node-id="181:1247">
+    <header class={styles.header} data-node-id="181:1243">
+      <div class={styles.brand} data-node-id="162:1773">
+        <p class={styles.brandByline} data-node-id="162:1774">Cody Brown’s</p>
+        <p class={styles.brandTitle} data-node-id="162:1775">NFL BETTING GUIDE</p>
+      </div>
+
+      <form class={styles.search} data-node-id="162:1776" role="search">
+        <span class={styles.searchIcon} data-node-id="181:1230">
+          <img src={ASSETS.teamsIconSearch} alt="" aria-hidden="true" />
+        </span>
+        <label class={styles.visuallyHidden} for="team-search">Search teams</label>
+        <input
+          id="team-search"
+          class={styles.searchInput}
+          type="search"
+          placeholder="Search your favorite team..."
+        />
+        <button class={styles.searchClear} type="reset" aria-label="Clear search">
+          <img class={styles.searchClearRing} src={ASSETS.teamsClearRing} alt="" />
+          <img class={styles.searchClearCross} src={ASSETS.teamsClearCross} alt="" />
+        </button>
+      </form>
+    </header>
+
+    <section class={styles.filters} data-node-id="181:1244" aria-labelledby="teams-heading">
+      <h1 id="teams-heading" class={styles.heading} data-node-id="162:1761">ALL 32 TEAMS</h1>
+      <div class={styles.filterRow} data-node-id="162:1762">
+        <div class={styles.filterChoices} data-node-id="188:2364">
+          <Button
+            variant="filter"
+            state="active"
+            label="AFC"
+            nodeId="181:297"
+            assetSet="teams-page"
+          />
+          <Button
+            variant="filter"
+            label="NFC"
+            showIcon={false}
+            nodeId="181:301"
+            assetSet="teams-page"
+          />
+          <Button
+            variant="filter"
+            label="Filter"
+            showIcon={false}
+            nodeId="181:305"
+            assetSet="teams-page"
+          />
+        </div>
+
+        <button class={styles.clearAll} type="button" data-node-id="188:2356">
+          <span class={styles.clearAllIcon} aria-hidden="true">
+            <img class={styles.clearAllRing} src={ASSETS.teamsClearRing} alt="" />
+            <img class={styles.clearAllCross} src={ASSETS.teamsClearAllCross} alt="" />
+          </span>
+          <span>Clear All</span>
+        </button>
+      </div>
+    </section>
+
+    <div class={styles.divider} data-node-id="162:1771">
+      <img src={ASSETS.teamsDivider} alt="" aria-hidden="true" />
+    </div>
+
+    <div class={styles.cards} data-node-id="181:325">
+      {ALL_TEAMS_CARDS.map((card) => <TeamCard card={card} />)}
+    </div>
+  </div>
+
+  <AppNav />
+
+  <div class={styles.statusBar} data-node-id="162:1824" aria-hidden="true">
+    <div class={styles.statusRow}>
+      <div class={styles.statusTime}><span>9:41</span></div>
+      <div class={styles.dynamicIsland}></div>
+      <div class={styles.statusLevels}>
+        <img
+          class={styles.cellular}
+          src={ASSETS.teamsStatusCellular}
+          alt=""
+        />
+        <img class={styles.wifi} src={ASSETS.teamsStatusWifi} alt="" />
+        <img class={styles.battery} src={ASSETS.teamsStatusBattery} alt="" />
+      </div>
+    </div>
+  </div>
+</div>

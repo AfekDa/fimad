@@ -5,7 +5,7 @@
  * Structure and styling only. Every string and image url comes from
  * ./content.ts; images resolve through the registry in src/assets/assets.ts.
  */
-import Nav from '../../components/Nav/Nav.astro'
+import AppNav from '../../components/AppNav/AppNav.astro'
 import { ASSETS } from '../../assets/assets'
 import { HOMEPAGE_CONTENT as content } from './content'
 import styles from './Homepage.module.css'
@@ -94,7 +94,5 @@ import styles from './Homepage.module.css'
     </div>
   </div>
 
-  <div class={styles.navDock} data-node-id="1:126">
-    <Nav class={styles.nav} />
-  </div>
+  <AppNav />
 </div>

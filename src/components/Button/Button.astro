@@ -21,6 +21,9 @@ export interface Props {
   /** Figma boolean property "Functional Icon". */
   readonly showIcon?: boolean
   readonly class?: string | undefined
+  readonly nodeId?: string | undefined
+  readonly ariaLabel?: string | undefined
+  readonly assetSet?: 'default' | 'teams-page'
 }
 
 const NODE_IDS: Record<ButtonType, Record<ButtonState, string>> = {
@@ -36,6 +39,9 @@ const {
   label,
   showIcon = true,
   class: className,
+  nodeId,
+  ariaLabel,
+  assetSet = 'default',
 } = Astro.props
 
 const active = state === 'active'
@@ -53,8 +59,9 @@ const variantClass =
 <button
   type="button"
   class:list={[styles.base, variantClass, className]}
-  data-node-id={NODE_IDS[variant][state]}
+  data-node-id={nodeId ?? NODE_IDS[variant][state]}
   data-state={state}
+  aria-label={ariaLabel}
   aria-pressed={variant === 'filter' ? (active ? 'true' : 'false') : undefined}
 >
   {
@@ -83,7 +90,13 @@ const variantClass =
           <span class={styles.arrow}>
             <img
               class={styles.arrowLeaf}
-              src={active ? ASSETS.arrowWhite : ASSETS.arrowBlack}
+              src={
+                active
+                  ? ASSETS.arrowWhite
+                  : assetSet === 'teams-page'
+                    ? ASSETS.teamsIconArrow
+                    : ASSETS.arrowBlack
+              }
               alt=""
               aria-hidden="true"
             />
@@ -99,8 +112,18 @@ const variantClass =
         <span class={styles.filterLabel}>{label}</span>
         {active && showIcon && (
           <span class={styles.clear}>
-            <img class={styles.clearRing} src={ASSETS.clearRing} alt="" aria-hidden="true" />
-            <img class={styles.clearCross} src={ASSETS.clearCross} alt="" aria-hidden="true" />
+            <img
+              class={styles.clearRing}
+              src={assetSet === 'teams-page' ? ASSETS.teamsActiveRing : ASSETS.clearRing}
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class={styles.clearCross}
+              src={assetSet === 'teams-page' ? ASSETS.teamsActiveCross : ASSETS.clearCross}
+              alt=""
+              aria-hidden="true"
+            />
           </span>
         )}
       </Fragment>

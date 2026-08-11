@@ -1,0 +1,46 @@
+---
+import Button from '../../components/Button/Button.astro'
+import { ASSETS } from '../../assets/assets'
+import type { TeamCardContent } from './content'
+import styles from './TeamCard.module.css'
+
+export interface Props {
+  readonly card: TeamCardContent
+}
+
+const { card } = Astro.props
+---
+
+<article class={styles.card} data-node-id={card.nodeId}>
+  <div
+    class:list={[styles.imageBox, styles[card.crop]]}
+    data-node-id={card.imageNodeId}
+  >
+    <img class={styles.imageLeaf} src={card.image} alt={card.imageAlt} />
+  </div>
+
+  {card.crop === 'buffalo' && <div class={styles.scrim} aria-hidden="true"></div>}
+
+  <span class={styles.conference}>AFC</span>
+
+  <div class={styles.details}>
+    <span class={styles.teamLogo} data-node-id="181:1340">
+      <img
+        class={styles.teamLogoLeaf}
+        src={ASSETS.teamsLogoBuffalo}
+        alt=""
+        aria-hidden="true"
+      />
+    </span>
+    <h2 class={styles.teamName}>BUFFALO BILLS</h2>
+    <Button
+      variant="button"
+      label="Team Preview"
+      nodeId={card.buttonNodeId}
+      ariaLabel="Preview Buffalo Bills"
+      assetSet="teams-page"
+      class={styles.preview}
+    />
+  </div>
+</article>
+

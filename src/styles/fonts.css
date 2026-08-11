@@ -17,6 +17,28 @@
   font-display: block;
 }
 
+/*
+ * Alumni Sans Bold — Figma styles Mb/H1 and Mb/H2 on All Teams (162:1760).
+ * Vendored from the official Google Fonts distribution for a self-contained
+ * build; only the Latin subset used by this screen is included.
+ */
+@font-face {
+  font-family: 'Alumni Sans';
+  src: url('../assets/fonts/AlumniSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Inter Semibold — iPhone status time in instance 162:1824. */
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+
 @font-face {
   font-family: 'General Sans';
   src: url('../assets/fonts/GeneralSans-Medium.woff2') format('woff2');

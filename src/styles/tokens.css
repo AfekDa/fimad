@@ -24,24 +24,12 @@
 
   /* Feature card fill (1:100, 1:103, 1:106, 1:109) */
   --surface-card: rgba(255, 255, 255, 0.1);
-  /* Nav bar fill (1:127) */
+  /* Canonical Homepage Nav bar fill (1:127) */
   --surface-nav: rgba(0, 0, 0, 0.1);
 
-  /*
-   * Nav glass (1:127). MEASURED FROM THE 2x FRAME EXPORT, not read from the
-   * file: Figma's code output for 1:127 lists the fill, radius and padding but
-   * omits its effects entirely, while the export plainly shows both a blur and
-   * a hairline rim. The blur is a gaussian fit against a sharp text line above
-   * the bar (sigma 6.5 export px, good to about +/-0.75); the rim is a 1
-   * export px edge sampling at roughly 50% white, though its blue channel runs
-   * ~35% high, so the real stroke is likely a touch bluer.
-   *
-   * These are the only two unverified values in this file. If the Figma file's
-   * own effect values are ever read back, correcting them is a change to these
-   * two declarations and nothing else.
-   */
-  --nav-backdrop-blur: 3px; /* fitted sigma 6.5 export px = 3.25 CSS px */
-  --nav-stroke: rgba(255, 255, 255, 0.5); /* 1 export px rim at ~50% white */
+  /* Nav glass treatment measured from the Homepage 2x frame export. */
+  --nav-backdrop-blur: 3px;
+  --nav-stroke: rgba(255, 255, 255, 0.5);
   --nav-stroke-width: 0.5px;
 
   /* Hero scrim (1:92): transparent blue -> solid blue, from 55.093% */
@@ -50,13 +38,6 @@
     rgba(0, 120, 255, 0) 55.093%,
     #0078ff 100%
   );
-  /* Nav scrim (1:126) */
-  --gradient-nav-scrim: linear-gradient(
-    176.5750930099435deg,
-    rgba(1, 21, 86, 0) 7.4283%,
-    rgb(1, 21, 86) 95.217%
-  );
-
   /* ---------------------------------------------------------------------
    * Typography — Figma text styles, family "General Sans"
    * ------------------------------------------------------------------ */
@@ -145,8 +126,6 @@
   --hero-title-height: 142px;
   --content-top: 648px; /* 1:96 */
   --content-height: 982px;
-  --nav-scrim-top: 747px; /* 1:126 */
-  --nav-scrim-height: 185px;
   --nav-top: 811px; /* 1:127 */
   --nav-height: 81px;
   --nav-inset-inline: 24px;
@@ -167,4 +146,49 @@
   /* Plan: fluid 320-480, centred in a 480px viewport above that. */
   --app-max-width: 480px;
   --app-min-width: 320px;
+
+  /* ---------------------------------------------------------------------
+   * All Teams — file hrRMGXvPDGwzDZmt9mv841, frame 162:1760
+   * ------------------------------------------------------------------ */
+
+  /* Mb/H1 and Mb/H2 text styles reported by get_design_context. */
+  --font-family-display: 'Alumni Sans', sans-serif;
+  --font-h1-size: 54px;
+  --font-h1-line: 42px;
+  --font-h1-weight: 700;
+  --font-h2-size: 36px;
+  --font-h2-line: 30px;
+  --font-h2-weight: 700;
+  --font-display-letter-spacing: -0.01em;
+
+  /* Search field 162:1776 and status bar 162:1824. */
+  --surface-search: #000b2e;
+  --surface-status: rgba(16, 19, 25, 0.5);
+  --status-backdrop-blur: 25px;
+
+  /* Frame and content geometry: 162:1760 and 181:1247. */
+  --teams-frame-height: 2931px;
+  --teams-content-top: 78px;
+  --teams-content-tail: 137px;
+  --teams-card-height: 295px;
+  --teams-card-gap: 16px;
+
+  /* Card component 181:1360. */
+  --gradient-team-card: linear-gradient(
+    187.53793753459576deg,
+    rgba(0, 0, 0, 0) 43.309%,
+    rgba(0, 0, 0, 0.5) 91.444%
+  );
+
+  /* Canonical Homepage docked chrome in a 932px device viewport. */
+  --app-nav-scrim-height: 185px; /* 1:126 */
+  --gradient-app-nav-scrim: linear-gradient(
+    176.5750930099435deg,
+    rgba(1, 21, 86, 0) 7.4283%,
+    rgb(1, 21, 86) 95.217%
+  );
+
+  /* Status Bar - iPhone instance 162:1824. */
+  --status-height: 54px;
+  --status-content-top: 21px;
 }

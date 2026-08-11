@@ -74,22 +74,120 @@ test.describe('responsive integrity', () => {
     await expect(page.locator('[data-nav-id="home"]')).toHaveAttribute('aria-current', 'page')
   })
 
+  test('Teams tab navigates to the All Teams screen and becomes current', async ({ page }) => {
+    await page.goto('/')
+
+    const teams = page.locator('[data-nav-id="teams"]')
+    await teams.focus()
+    await expect(teams).toBeFocused()
+
+    await page.keyboard.press('Enter')
+    await expect(page).toHaveURL(/\/teams\/?$/)
+    await expect(page.locator('[data-nav-id="teams"]')).toHaveAttribute('aria-current', 'page')
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('ALL 32 TEAMS')
+  })
+
+  test('application navigation has the same visual contract on every route', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+
+    async function readAppNavContract(path: string) {
+      await page.goto(path)
+
+      return await page.locator('[data-app-nav-dock]').evaluate((dock) => {
+        const nav = dock.querySelector<HTMLElement>('[data-app-nav]')
+        if (nav === null) throw new Error('AppNav rendered without its navigation bar')
+
+        const dockBox = dock.getBoundingClientRect()
+        const navBox = nav.getBoundingClientRect()
+        const dockStyle = getComputedStyle(dock)
+        const navStyle = getComputedStyle(nav)
+
+        return {
+          dock: {
+            x: dockBox.x,
+            y: dockBox.y,
+            width: dockBox.width,
+            height: dockBox.height,
+            backgroundImage: dockStyle.backgroundImage,
+          },
+          nav: {
+            x: navBox.x,
+            y: navBox.y,
+            width: navBox.width,
+            height: navBox.height,
+            backgroundColor: navStyle.backgroundColor,
+            borderRadius: navStyle.borderRadius,
+            paddingInline: navStyle.paddingInline,
+            backdropFilter: navStyle.backdropFilter,
+            boxShadow: navStyle.boxShadow,
+          },
+          icons: Array.from(nav.querySelectorAll('img')).map((image) => ({
+            src: image.currentSrc,
+            box: {
+              x: image.getBoundingClientRect().x - navBox.x,
+              y: image.getBoundingClientRect().y - navBox.y,
+              width: image.getBoundingClientRect().width,
+              height: image.getBoundingClientRect().height,
+            },
+          })),
+        }
+      })
+    }
+
+    const homepage = await readAppNavContract('/')
+    const allTeams = await readAppNavContract('/teams')
+
+    expect(allTeams).toEqual(homepage)
+  })
+
+  test('All Teams preserves the source frame and asset boxes at 430px', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/teams')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(
+        Array.from(document.images).map((image) => image.decode().catch(() => undefined)),
+      )
+    })
+
+    await expect(page.locator('[data-node-id="162:1760"]')).toHaveCSS('min-height', '2931px')
+
+    const cards = page.locator('[data-node-id="181:325"] article')
+    await expect(cards).toHaveCount(8)
+
+    const firstCard = cards.first()
+    expect(await firstCard.boundingBox()).toMatchObject({ width: 382, height: 295 })
+
+    const firstImage = page.locator('[data-node-id="I181:1360;162:2225"] img')
+    expect(await firstImage.boundingBox()).toMatchObject({ width: 382, height: 295 })
+
+    const cincinnatiImage = page.locator('[data-node-id="474:1383"] img')
+    expect(await cincinnatiImage.boundingBox()).toMatchObject({ width: 938, height: 625 })
+
+    const logoBox = firstCard.locator('[data-node-id="181:1340"]')
+    expect(await logoBox.boundingBox()).toMatchObject({ width: 60, height: 40 })
+
+    const teamsIcon = page.locator('[data-nav-id="teams"] > span[style]')
+    const teamsIconBox = await teamsIcon.boundingBox()
+    expect(teamsIconBox).toMatchObject({ width: 40, height: 32 })
+  })
+
   /*
-   * Four tabs have no screen yet. They must be visible, because the design
+   * Three tabs have no screen yet. They must be visible, because the design
    * draws all five, but must not behave like destinations — no href, and not
    * in the tab order.
    */
   test('nav tabs without a page are inert', async ({ page }) => {
     await page.goto('/')
 
-    for (const id of ['teams', 'awards', 'all-bets', 'fanduel']) {
+    for (const id of ['awards', 'all-bets', 'fanduel']) {
       const tab = page.locator(`[data-nav-id="${id}"]`)
       await expect(tab).toBeVisible()
       await expect(tab).toHaveAttribute('aria-disabled', 'true')
       expect(await tab.evaluate((el) => el.tagName)).toBe('SPAN')
     }
 
-    await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(1)
+    await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(2)
   })
 
   test('responsive suite has screens to exercise', () => {

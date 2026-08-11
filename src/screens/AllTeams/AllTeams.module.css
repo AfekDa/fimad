@@ -1,0 +1,324 @@
+/* All Teams — Figma frame 162:1760, 430 × 2931. */
+
+.page {
+  position: relative;
+  width: 100%;
+  min-height: var(--teams-frame-height);
+  padding: var(--teams-content-top) var(--content-padding-inline)
+    var(--teams-content-tail);
+  background: var(--color-navy);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-24);
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  color: var(--color-white);
+}
+
+.brandByline,
+.brandTitle,
+.heading {
+  margin: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.brandByline {
+  width: 193px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: var(--font-bc3-r-weight);
+}
+
+.brandTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-h2-size);
+  line-height: var(--font-h2-line);
+  font-weight: var(--font-h2-weight);
+  letter-spacing: var(--font-display-letter-spacing);
+  white-space: nowrap;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  height: 36px;
+  margin: 0;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-card);
+  background: var(--surface-search);
+  opacity: 0.8;
+}
+
+.searchIcon {
+  position: relative;
+  width: 11.993px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.searchIcon img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  max-width: none;
+}
+
+.searchInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: var(--font-bc3-r-weight);
+}
+
+.searchInput::placeholder {
+  color: var(--color-white);
+  opacity: 1;
+}
+
+.searchInput::-webkit-search-cancel-button {
+  display: none;
+}
+
+.searchClear {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.searchClearRing {
+  position: absolute;
+  inset: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.searchClearCross {
+  position: absolute;
+  left: 33.47%;
+  top: 33.33%;
+  width: 33.35%;
+  height: 33.34%;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+.heading {
+  width: 100%;
+  color: var(--color-white);
+  font-family: var(--font-family-display);
+  font-size: var(--font-h1-size);
+  line-height: var(--font-h1-line);
+  font-weight: var(--font-h1-weight);
+  letter-spacing: var(--font-display-letter-spacing);
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.filterRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 33px;
+  gap: var(--space-16);
+}
+
+.filterChoices {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  flex-shrink: 0;
+}
+
+.clearAll {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 0;
+  border-radius: var(--radius-pill);
+  color: var(--grey);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: var(--font-bc3-r-weight);
+  text-decoration: underline;
+  text-underline-position: from-font;
+  white-space: nowrap;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.clearAllIcon {
+  position: relative;
+  width: 11.993px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.clearAllRing {
+  position: absolute;
+  inset: 0;
+  width: 12px;
+  height: 12px;
+}
+
+.clearAllCross {
+  position: absolute;
+  left: 33.47%;
+  top: 33.33%;
+  width: 33.35%;
+  height: 33.34%;
+}
+
+.divider {
+  position: relative;
+  width: 100%;
+  height: 0;
+  flex-shrink: 0;
+}
+
+.divider img {
+  position: absolute;
+  inset: -0.5px 0;
+  width: 100%;
+  height: 1px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--teams-card-gap);
+  width: 100%;
+}
+
+.statusBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: var(--status-height);
+  padding-top: var(--status-content-top);
+  background: var(--surface-status);
+  backdrop-filter: blur(var(--status-backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--status-backdrop-blur));
+  z-index: var(--layer-nav);
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.statusTime,
+.statusLevels {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.statusTime {
+  padding-left: var(--space-16);
+  padding-right: 6px;
+  color: var(--color-white);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dynamicIsland {
+  width: 124px;
+  height: 10px;
+  flex-shrink: 0;
+}
+
+.statusLevels {
+  gap: 7px;
+  padding-left: 6px;
+  padding-right: var(--space-16);
+}
+
+.cellular {
+  width: 19.2px;
+  height: 12.226px;
+}
+
+.wifi {
+  width: 17.142px;
+  height: 12.328px;
+}
+
+.battery {
+  width: 27.328px;
+  height: 13px;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 389px) {
+  .filterRow {
+    flex-wrap: wrap;
+  }
+
+  .clearAll {
+    margin-left: auto;
+  }
+}

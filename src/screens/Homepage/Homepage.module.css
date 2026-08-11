@@ -296,43 +296,6 @@
   height: 100%;
 }
 
-/* ---- Docked chrome (1:126, 1:127) ---------------------------------------- */
-
-/*
- * The scrim (1:126) and the nav (1:127) are the only layers in the frame whose
- * geometry is measured from the device viewport rather than the document: the
- * scrim's bottom edge lands on 747 + 185 = 932, the exact viewport height the
- * 430px frame is drawn for. They are fixed so they stay docked while the
- * document scrolls, which reproduces the frame at scroll offset 0 and keeps the
- * nav reachable everywhere else.
- *
- * Fixed positioning resolves against the viewport, not the 480px app shell, so
- * the dock repeats the shell's own width constraint and centring.
- */
-.navDock {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: var(--app-max-width);
-  min-width: var(--app-min-width);
-  height: var(--nav-scrim-height);
-  background: var(--gradient-nav-scrim);
-  z-index: var(--layer-nav-scrim);
-  /* The scrim is decoration; only the nav inside it accepts pointer input. */
-  pointer-events: none;
-}
-
-.nav {
-  position: absolute;
-  left: var(--nav-inset-inline);
-  right: var(--nav-inset-inline);
-  bottom: var(--nav-bottom-offset);
-  z-index: var(--layer-nav);
-  pointer-events: auto;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .socialLink {
     transition: none;

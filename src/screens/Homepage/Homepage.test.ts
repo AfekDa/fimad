@@ -61,10 +61,11 @@ describe('Homepage', () => {
     }
   })
 
-  it('docks the nav inside the scrim layer from Figma node 1:126', () => {
-    const dock = body.querySelector('[data-node-id="1:126"]')
+  it('uses the canonical application navigation', () => {
+    const dock = body.querySelector('[data-app-nav-dock]')
 
     expect(dock).toBeInTheDocument()
+    expect(dock).toHaveAttribute('data-node-id', '1:126')
     expect(dock).toContainElement(screen.getByRole('navigation', { name: 'Primary' }))
   })
 

@@ -9,21 +9,27 @@ export interface Props {
   readonly width?: number | undefined
   readonly height?: number | undefined
   readonly class?: string | undefined
+  /** Exact exported source for a screen-specific Figma instance. */
+  readonly source?: string | undefined
+  /** Geometry of the 162:1823 All Teams App Nav export. */
+  readonly geometry?: 'default' | 'teams-page'
 }
 
-const { name, width, height, class: className } = Astro.props
+const { name, width, height, class: className, source, geometry = 'default' } = Astro.props
 
 const fallback = ICON_OUTER_SIZE[name]
 const style = {
   width: `${String(width ?? fallback.width)}px`,
   height: `${String(height ?? fallback.height)}px`,
 }
+
+const leafClass = geometry === 'teams-page' ? styles[`${name}Teams`] : styles[name]
 ---
 
 <span class:list={[styles.icon, className]} style={style}>
   <img
-    class:list={[styles.leaf, styles[name]]}
-    src={ICON_SOURCES[name]}
+    class:list={[styles.leaf, leafClass]}
+    src={source ?? ICON_SOURCES[name]}
     alt=""
     aria-hidden="true"
   />

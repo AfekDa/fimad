@@ -1,0 +1,156 @@
+/* Team Card 181:1360 and detached card frames 474:1382–474:1454. */
+
+.card {
+  position: relative;
+  width: 100%;
+  height: var(--teams-card-height);
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--color-white);
+}
+
+.imageBox {
+  position: absolute;
+  pointer-events: none;
+}
+
+.imageLeaf {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+/* Exported image boxes and offsets returned for each card image node. */
+.buffalo {
+  inset: 0;
+}
+
+.buffalo .imageLeaf {
+  object-position: bottom;
+}
+
+.cincinnati {
+  left: -251px;
+  top: -47px;
+  width: 938px;
+  height: 625px;
+}
+
+.cleveland {
+  left: -99px;
+  top: -54px;
+  width: 636px;
+  height: 423px;
+}
+
+.pittsburgh {
+  left: -143px;
+  top: -36px;
+  width: 644px;
+  height: 429px;
+}
+
+.miami {
+  left: -120px;
+  top: -43px;
+  width: 653px;
+  height: 435px;
+}
+
+.jets {
+  left: -200px;
+  top: -51px;
+  width: 822px;
+  height: 548px;
+}
+
+.houston {
+  left: -64px;
+  top: -57px;
+  width: 556px;
+  height: 371px;
+}
+
+.jacksonville {
+  left: -147px;
+  top: -42px;
+  width: 711px;
+  height: 474px;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-team-card);
+  pointer-events: none;
+}
+
+.conference {
+  position: absolute;
+  left: var(--space-24);
+  top: var(--space-24);
+  display: flex;
+  align-items: center;
+  height: 33px;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc2-m-size);
+  line-height: var(--font-bc2-m-line);
+  font-weight: var(--font-bc2-m-weight);
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.details {
+  position: absolute;
+  left: var(--space-24);
+  right: var(--space-24);
+  top: 147px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+}
+
+.teamLogo {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 40px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.teamLogoLeaf {
+  position: absolute;
+  left: -9.61%;
+  top: -39.44%;
+  width: 119.17%;
+  height: 177.74%;
+  max-width: none;
+}
+
+.teamName {
+  width: 100%;
+  margin: 0;
+  color: var(--color-white);
+  font-family: var(--font-family-display);
+  font-size: var(--font-h1-size);
+  line-height: var(--font-h1-line);
+  font-weight: var(--font-h1-weight);
+  letter-spacing: var(--font-display-letter-spacing);
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.preview {
+  flex-shrink: 0;
+}
+

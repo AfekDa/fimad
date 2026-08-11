@@ -42,6 +42,33 @@ import fanduelMark from './icon-fanduel-mark.png?url'
 import clearRing from './icon-clear-circle.svg?url'
 import clearCross from './icon-clear-cross.svg?url'
 
+/* All Teams — Figma frame 162:1760 in file hrRMGXvPDGwzDZmt9mv841 */
+import teamsFanduelMask from './teams-fanduel-mask.png?url'
+import teamsIconAwards from './teams-icon-awards.svg?url'
+import teamsIconBets from './teams-icon-bets.svg?url'
+import teamsIconArrow from './teams-icon-arrow.svg?url'
+import teamsClearRing from './teams-clear-ring.svg?url'
+import teamsClearCross from './teams-clear-cross.svg?url'
+import teamsLogoBuffalo from './teams-logo-buffalo.png?url'
+import teamsIconSearch from './teams-icon-search.svg?url'
+import teamsActiveRing from './teams-active-ring.svg?url'
+import teamsActiveCross from './teams-active-cross.svg?url'
+import teamsClearAllCross from './teams-clear-all-cross.svg?url'
+import teamsDivider from './teams-divider.svg?url'
+import teamsNavHome from './teams-nav-home.svg?url'
+import teamsNavTeams from './teams-nav-teams.svg?url'
+import teamsStatusCellular from './teams-status-cellular.svg?url'
+import teamsStatusWifi from './teams-status-wifi.svg?url'
+import teamsStatusBattery from './teams-status-battery.svg?url'
+import teamsCardBuffalo from './teams-card-buffalo.png?url'
+import teamsCardCincinnati from './teams-card-cincinnati.png?url'
+import teamsCardCleveland from './teams-card-cleveland.png?url'
+import teamsCardPittsburgh from './teams-card-pittsburgh.png?url'
+import teamsCardMiami from './teams-card-miami.png?url'
+import teamsCardJets from './teams-card-jets.png?url'
+import teamsCardHouston from './teams-card-houston.png?url'
+import teamsCardJacksonville from './teams-card-jacksonville.png?url'
+
 export const ASSETS = {
   heroPoster,
   yearMark,
@@ -64,6 +91,31 @@ export const ASSETS = {
   fanduelMark,
   clearRing,
   clearCross,
+  teamsFanduelMask,
+  teamsIconAwards,
+  teamsIconBets,
+  teamsIconArrow,
+  teamsClearRing,
+  teamsClearCross,
+  teamsLogoBuffalo,
+  teamsIconSearch,
+  teamsActiveRing,
+  teamsActiveCross,
+  teamsClearAllCross,
+  teamsDivider,
+  teamsNavHome,
+  teamsNavTeams,
+  teamsStatusCellular,
+  teamsStatusWifi,
+  teamsStatusBattery,
+  teamsCardBuffalo,
+  teamsCardCincinnati,
+  teamsCardCleveland,
+  teamsCardPittsburgh,
+  teamsCardMiami,
+  teamsCardJets,
+  teamsCardHouston,
+  teamsCardJacksonville,
 } as const
 
 export type AssetName = keyof typeof ASSETS

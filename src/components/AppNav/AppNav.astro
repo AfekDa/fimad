@@ -1,0 +1,62 @@
+---
+/**
+ * Canonical mobile application navigation — Homepage Nav 1:126 / 1:127.
+ *
+ * The component owns the dock, scrim, bar, icon exports, and route state. A
+ * screen can render AppNav, but cannot restyle it or select a screen-specific
+ * asset set. That boundary keeps the application chrome identical by design.
+ */
+import Icon from '../Icon/Icon.astro'
+import styles from './AppNav.module.css'
+import { APP_NAV_ITEMS } from './navItems'
+
+export interface Props {
+  /** Only for isolated component tests, where Astro has no route request. */
+  readonly currentPath?: string | undefined
+}
+
+const { currentPath } = Astro.props
+
+function normalise(path: string): string {
+  const trimmed = path.replace(/\/+$/, '')
+  return trimmed === '' ? '/' : trimmed
+}
+
+const here = normalise(currentPath ?? Astro.url.pathname)
+---
+
+<div
+  class={styles.dock}
+  data-app-nav-dock
+  data-node-id="1:126"
+>
+  <nav
+    class={styles.nav}
+    aria-label="Primary"
+    data-app-nav
+    data-node-id="1:127"
+  >
+    {
+      APP_NAV_ITEMS.map((item) => {
+        const icon = <Icon name={item.icon} />
+
+        return item.href === undefined ? (
+          <span class={styles.item} data-nav-id={item.id} aria-disabled="true">
+            {icon}
+            <span class={styles.label}>{item.label}</span>
+          </span>
+        ) : (
+          <a
+            class={styles.item}
+            href={item.href}
+            data-nav-id={item.id}
+            aria-current={normalise(item.href) === here ? 'page' : undefined}
+          >
+            {icon}
+            <span class={styles.label}>{item.label}</span>
+          </a>
+        )
+      })
+    }
+  </nav>
+</div>

@@ -72,7 +72,7 @@ test.describe('frame fidelity', () => {
       // fidelity is asserted by the test above; here it is taken out of the way
       // so the document band underneath can be compared.
       await page.addStyleTag({
-        content: '[data-node-id="1:126"] { display: none !important; }',
+        content: '[data-app-nav-dock] { display: none !important; }',
       })
 
       // Clipped to the frame rather than the document: the document runs ~2px
