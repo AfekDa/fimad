@@ -22,39 +22,42 @@
   top: 0;
   left: 0;
   z-index: var(--layer-content);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
   width: 100%;
-  height: 64px;
-  padding-top: 10px;
+  height: 83px;
   color: var(--color-white);
   pointer-events: none;
 }
 
 .brandByline,
 .brandTitle {
+  position: absolute;
+  left: 50%;
   margin: 0;
+  text-align: center;
+  transform: translateX(-50%);
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
+  white-space: nowrap;
 }
 
 .brandByline {
+  top: 32px;
+  width: 100px;
   font-family: var(--font-family-base);
-  font-size: 11.4px;
-  line-height: 16px;
-  font-weight: var(--font-bc3-r-weight);
-  transform: translateY(1px);
+  font-size: var(--font-bc2-r-size);
+  line-height: var(--font-bc2-r-line);
+  font-weight: var(--font-bc2-r-weight);
 }
 
 .brandTitle {
+  top: 51px;
+  left: calc(50% + 0.5px);
+  width: 289px;
   font-family: var(--font-family-display);
-  font-size: 38.3px;
-  line-height: 32px;
-  font-weight: var(--font-h2-weight);
+  font-size: var(--font-h1-size);
+  line-height: var(--font-h1-line);
+  font-weight: var(--font-h1-weight);
   letter-spacing: var(--font-display-letter-spacing);
-  white-space: nowrap;
 }
 
 /* ---- Hero (1:91, 1:92, 1:93) -------------------------------------------- */

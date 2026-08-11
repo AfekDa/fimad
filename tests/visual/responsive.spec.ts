@@ -172,7 +172,7 @@ test.describe('responsive integrity', () => {
     expect(teamsIconBox).toMatchObject({ width: 40, height: 32 })
   })
 
-  test('Homepage overlays the compact Cody Brown brand lockup without shifting the hero', async ({
+  test('Homepage positions the Cody Brown brand at the status-bar-adjusted Figma coordinates', async ({
     page,
   }) => {
     await page.setViewportSize({ width: 430, height: 932 })
@@ -181,9 +181,24 @@ test.describe('responsive integrity', () => {
     const brand = page.locator('[data-homepage-brand]')
     await expect(brand).toContainText('Cody Brown’s')
     await expect(brand).toContainText('NFL BETTING GUIDE')
-    await expect(brand).toHaveCSS('align-items', 'center')
     await expect(brand).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)')
-    expect(await brand.boundingBox()).toMatchObject({ x: 0, y: 0, width: 430, height: 64 })
+    expect(await brand.boundingBox()).toMatchObject({ x: 0, y: 0, width: 430, height: 83 })
+
+    const byline = brand.locator('[data-node-id="162:1730"]')
+    const bylineBox = await byline.boundingBox()
+    expect(bylineBox).not.toBeNull()
+    expect(bylineBox?.x).toBeCloseTo(165, 0)
+    expect(bylineBox?.y).toBeCloseTo(32, 0)
+    expect(bylineBox?.width).toBeCloseTo(100, 0)
+    expect(bylineBox?.height).toBeCloseTo(11, 0)
+
+    const title = brand.locator('[data-node-id="162:1731"]')
+    const titleBox = await title.boundingBox()
+    expect(titleBox).not.toBeNull()
+    expect(titleBox?.x).toBeCloseTo(71, 0)
+    expect(titleBox?.y).toBeCloseTo(51, 0)
+    expect(titleBox?.width).toBeCloseTo(289, 0)
+    expect(titleBox?.height).toBeCloseTo(32, 0)
 
     const hero = page.locator('[data-node-id="1:91"]')
     expect(await hero.boundingBox()).toMatchObject({ x: 0, y: 0, width: 430, height: 648 })
