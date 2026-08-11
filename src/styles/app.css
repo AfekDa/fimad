@@ -20,7 +20,7 @@
  * their mobile-only shell until their desktop designs are implemented. */
 @media (min-width: 768px) {
   .appShellHomepage {
-    max-width: var(--desktop-frame-width);
+    max-width: none;
   }
 }
 

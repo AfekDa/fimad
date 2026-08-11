@@ -33,7 +33,7 @@ test.describe('responsive integrity', () => {
       })
     }
 
-    const routeMaxWidth = route.path === '/' ? 1280 : 480
+    const routeMaxWidth = route.path === '/' ? 1400 : 480
 
     test(`${route.frameName} centres within ${routeMaxWidth}px above the max width`, async ({ page }) => {
       await page.setViewportSize({ width: 1400, height: route.height })
@@ -268,6 +268,31 @@ test.describe('responsive integrity', () => {
 
     const documentWidth = await page.evaluate(() => document.documentElement.scrollWidth)
     expect(documentWidth).toBe(1280)
+  })
+
+  test('Homepage background and hero cover viewports wider than the Figma frame', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/')
+
+    expect(await page.locator('[data-desktop-node-id="311:4398"]').boundingBox()).toMatchObject({
+      x: 0,
+      width: 1440,
+    })
+    expect(await page.locator('[data-node-id="1:91"]').boundingBox()).toMatchObject({
+      x: 0,
+      width: 1440,
+    })
+    const dividerBox = await page.locator('[data-node-id="1:113"]').boundingBox()
+    expect(dividerBox).not.toBeNull()
+    expect(dividerBox?.x).toBeCloseTo(160, 0)
+    expect(dividerBox?.width).toBeCloseTo(1120, 0)
+    expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
+      x: 370,
+      width: 700,
+    })
+
+    const documentWidth = await page.evaluate(() => document.documentElement.scrollWidth)
+    expect(documentWidth).toBe(1440)
   })
 
   test('All Teams filters cards by conference and team name', async ({ page }) => {

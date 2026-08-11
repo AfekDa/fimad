@@ -196,7 +196,12 @@
   --desktop-frame-height: 1771px;
   --desktop-hero-height: min(58.75vw, 752px);
   --desktop-nav-top: min(47.8125vw, 612px);
-  --desktop-content-inline: clamp(32px, 6.25vw, 80px);
+  /* Preserve the 1120px Figma content grid while allowing the page itself to
+   * span the viewport beyond the 1280px source frame. */
+  --desktop-content-inline: max(
+    clamp(32px, 6.25vw, 80px),
+    calc((100vw - 1120px) / 2)
+  );
 
   /* Dt/H2, Dt/H4, Dt/BC1 and Dt/BC2 from the desktop design context. */
   --font-dt-h2-size: 64px;
