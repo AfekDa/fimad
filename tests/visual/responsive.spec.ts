@@ -172,7 +172,7 @@ test.describe('responsive integrity', () => {
     expect(teamsIconBox).toMatchObject({ width: 40, height: 32 })
   })
 
-  test('Homepage overlays the centered Cody Brown brand header without shifting the hero', async ({
+  test('Homepage overlays the compact Cody Brown brand lockup without shifting the hero', async ({
     page,
   }) => {
     await page.setViewportSize({ width: 430, height: 932 })
@@ -182,7 +182,8 @@ test.describe('responsive integrity', () => {
     await expect(brand).toContainText('Cody Brown’s')
     await expect(brand).toContainText('NFL BETTING GUIDE')
     await expect(brand).toHaveCSS('align-items', 'center')
-    expect(await brand.boundingBox()).toMatchObject({ x: 0, y: 0, width: 430, height: 63 })
+    await expect(brand).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)')
+    expect(await brand.boundingBox()).toMatchObject({ x: 0, y: 0, width: 430, height: 64 })
 
     const hero = page.locator('[data-node-id="1:91"]')
     expect(await hero.boundingBox()).toMatchObject({ x: 0, y: 0, width: 430, height: 648 })

@@ -19,17 +19,17 @@
 
 .brandHeader {
   position: absolute;
-  inset: 0 0 auto;
+  top: 0;
+  left: 0;
   z-index: var(--layer-content);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
   width: 100%;
-  height: 63px;
-  padding-inline: var(--content-padding-inline);
+  height: 64px;
+  padding-top: 10px;
   color: var(--color-white);
-  background: var(--color-navy);
   pointer-events: none;
 }
 
@@ -42,15 +42,16 @@
 
 .brandByline {
   font-family: var(--font-family-base);
-  font-size: var(--font-bc3-r-size);
-  line-height: var(--font-bc3-r-line);
+  font-size: 11.4px;
+  line-height: 16px;
   font-weight: var(--font-bc3-r-weight);
+  transform: translateY(1px);
 }
 
 .brandTitle {
   font-family: var(--font-family-display);
-  font-size: var(--font-h2-size);
-  line-height: var(--font-h2-line);
+  font-size: 38.3px;
+  line-height: 32px;
   font-weight: var(--font-h2-weight);
   letter-spacing: var(--font-display-letter-spacing);
   white-space: nowrap;
