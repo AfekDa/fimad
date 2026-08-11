@@ -172,6 +172,17 @@ test.describe('responsive integrity', () => {
     expect(teamsIconBox).toMatchObject({ width: 40, height: 32 })
   })
 
+  test('Homepage starts with the centered Cody Brown brand header', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/')
+
+    const brand = page.locator('[data-homepage-brand]')
+    await expect(brand).toContainText('Cody Brown’s')
+    await expect(brand).toContainText('NFL BETTING GUIDE')
+    await expect(brand).toHaveCSS('align-items', 'center')
+    expect(await brand.boundingBox()).toMatchObject({ x: 0, y: 0, width: 430, height: 63 })
+  })
+
   test('All Teams filters cards by conference and team name', async ({ page }) => {
     await page.goto('/teams')
 

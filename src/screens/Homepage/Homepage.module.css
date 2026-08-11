@@ -17,6 +17,41 @@
   padding-bottom: var(--frame-tail-height);
 }
 
+.brandHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 63px;
+  padding-inline: var(--content-padding-inline);
+  color: var(--color-white);
+  background: var(--color-navy);
+}
+
+.brandByline,
+.brandTitle {
+  margin: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.brandByline {
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: var(--font-bc3-r-weight);
+}
+
+.brandTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-h2-size);
+  line-height: var(--font-h2-line);
+  font-weight: var(--font-h2-weight);
+  letter-spacing: var(--font-display-letter-spacing);
+  white-space: nowrap;
+}
+
 /* ---- Hero (1:91, 1:92, 1:93) -------------------------------------------- */
 
 .hero {

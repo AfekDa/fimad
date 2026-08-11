@@ -24,6 +24,10 @@ export interface SocialLink {
 }
 
 export interface HomepageContent {
+  readonly brand: {
+    readonly byline: string
+    readonly title: string
+  }
   readonly hero: {
     readonly poster: string
     readonly yearMark: string
@@ -43,6 +47,11 @@ export interface HomepageContent {
 }
 
 export const HOMEPAGE_CONTENT: HomepageContent = {
+  brand: {
+    byline: 'Cody Brown’s',
+    title: 'NFL BETTING GUIDE',
+  },
+
   /* 1:91 hero image, 1:95 year mark */
   hero: {
     poster: ASSETS.heroPoster,

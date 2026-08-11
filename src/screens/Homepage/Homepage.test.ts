@@ -17,6 +17,13 @@ beforeAll(async () => {
 })
 
 describe('Homepage', () => {
+  it('starts with the Cody Brown brand header', () => {
+    const brand = body.querySelector('[data-homepage-brand]')
+
+    expect(brand).toHaveTextContent('Cody Brown’s')
+    expect(brand).toHaveTextContent('NFL BETTING GUIDE')
+  })
+
   it('renders the headline from Figma node 1:97', () => {
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
       'WELCOME TO MY NFL BETTING GUIDE 2026',

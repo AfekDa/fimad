@@ -12,6 +12,11 @@ import styles from './Homepage.module.css'
 ---
 
 <div class={styles.page} data-node-id="1:90">
+  <header class={styles.brandHeader} data-homepage-brand>
+    <p class={styles.brandByline}>{content.brand.byline}</p>
+    <p class={styles.brandTitle}>{content.brand.title}</p>
+  </header>
+
   <div class={styles.hero}>
     <div class={styles.heroImage} data-node-id="1:91">
       <img class={styles.heroImageLeaf} src={content.hero.poster} alt="" aria-hidden="true" />
