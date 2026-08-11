@@ -16,6 +16,14 @@
   position: relative;
 }
 
+/* The Homepage has a dedicated 1280px desktop frame. Other routes remain on
+ * their mobile-only shell until their desktop designs are implemented. */
+@media (min-width: 768px) {
+  .appShellHomepage {
+    max-width: var(--desktop-frame-width);
+  }
+}
+
 /* Visible focus treatment, applied globally and never removed. */
 :focus-visible {
   outline: 2px solid currentColor;

@@ -36,6 +36,14 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.items {
+  display: contents;
+}
+
+.desktopSearch {
+  display: none;
+}
+
 .item {
   box-sizing: border-box;
   width: 32px;
@@ -92,5 +100,113 @@
 @media (prefers-reduced-motion: reduce) {
   .item {
     transition: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .dock {
+    position: absolute;
+    top: var(--desktop-nav-top);
+    bottom: auto;
+    width: min(700px, calc(100% - 48px));
+    max-width: 700px;
+    min-width: 0;
+    height: 64px;
+    background: none;
+  }
+
+  .nav {
+    inset: 0;
+    height: 64px;
+    padding: 0 16px 0 32px;
+    border-radius: 80px;
+  }
+
+  .items {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 100%;
+  }
+
+  .item {
+    width: 73px;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6px;
+    padding-block: 24px;
+    border-bottom-width: 2px;
+  }
+
+  .item > span:first-child {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .item[data-nav-id='teams'] > span:first-child {
+    width: 20px !important;
+  }
+
+  .label {
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 500;
+  }
+
+  .desktopSearch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 180px;
+    height: 28px;
+    padding: 4px 4px 4px 8px;
+    flex-shrink: 0;
+    border-radius: 68px;
+    background: var(--color-white);
+    color: var(--color-black);
+  }
+
+  .searchIcon {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    filter: brightness(0);
+  }
+
+  .searchLabel {
+    width: 120px;
+    font-family: var(--font-family-base);
+    font-size: 10px;
+    line-height: 15px;
+    font-weight: 400;
+  }
+
+  .searchClear {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .searchClearRing,
+  .searchClearCross {
+    position: absolute;
+    display: block;
+  }
+
+  .searchClearRing {
+    inset: 0;
+    width: 20px;
+    height: 20px;
+    filter: brightness(0);
+  }
+
+  .searchClearCross {
+    top: 6.67px;
+    left: 6.67px;
+    width: 6.67px;
+    height: 6.67px;
+    filter: invert(1);
   }
 }

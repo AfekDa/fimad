@@ -185,4 +185,26 @@
     rgba(1, 21, 86, 0) 7.4283%,
     rgb(1, 21, 86) 95.217%
   );
+
+  /* ---------------------------------------------------------------------
+   * Homepage desktop — file hrRMGXvPDGwzDZmt9mv841, frame 311:4398
+   * Browser chrome 366:245 / 366:246 is deliberately omitted, so all page
+   * coordinates below are adjusted upward by its 118px height.
+   * ------------------------------------------------------------------ */
+
+  --desktop-frame-width: 1280px;
+  --desktop-frame-height: 1771px;
+  --desktop-hero-height: min(58.75vw, 752px);
+  --desktop-nav-top: min(47.8125vw, 612px);
+  --desktop-content-inline: clamp(32px, 6.25vw, 80px);
+
+  /* Dt/H2, Dt/H4, Dt/BC1 and Dt/BC2 from the desktop design context. */
+  --font-dt-h2-size: 64px;
+  --font-dt-h2-line: 44px;
+  --font-dt-h4-size: 32px;
+  --font-dt-h4-line: 36px;
+  --font-dt-bc1-size: 24px;
+  --font-dt-bc1-line: 30px;
+  --font-dt-bc2-size: 20px;
+  --font-dt-bc2-line: 26px;
 }

@@ -1,6 +1,6 @@
 ---
 /**
- * Homepage — Figma frame 1:90, 430 x 1697.
+ * Homepage — mobile frame 1:90 and desktop frame 311:4398.
  *
  * Structure and styling only. Every string and image url comes from
  * ./content.ts; images resolve through the registry in src/assets/assets.ts.
@@ -11,18 +11,19 @@ import { HOMEPAGE_CONTENT as content } from './content'
 import styles from './Homepage.module.css'
 ---
 
-<div class={styles.page} data-node-id="1:90">
+<div class={styles.page} data-node-id="1:90" data-desktop-node-id="311:4398">
   <header class={styles.brandHeader} data-homepage-brand>
-    <p class={styles.brandByline} data-node-id="162:1730">{content.brand.byline}</p>
-    <p class={styles.brandTitle} data-node-id="162:1731">{content.brand.title}</p>
+    <p class={styles.brandByline} data-node-id="162:1730" data-desktop-node-id="488:1506">{content.brand.byline}</p>
+    <p class={styles.brandTitle} data-node-id="162:1731" data-desktop-node-id="488:1507">{content.brand.title}</p>
   </header>
 
   <div class={styles.hero}>
-    <div class={styles.heroImage} data-node-id="1:91">
+    <div class={styles.heroImage} data-node-id="1:91" data-desktop-node-id="488:1504">
       <img class={styles.heroImageLeaf} src={content.hero.poster} alt="" aria-hidden="true" />
     </div>
     <div class={styles.heroScrim} data-node-id="1:92"></div>
-    <div class={styles.heroTitle} data-node-id="1:93">
+    <div class={styles.desktopHeroTransition} data-node-id="366:238"></div>
+    <div class={styles.heroTitle} data-node-id="1:93" data-desktop-node-id="488:1508">
       <div class={styles.yearMark} data-node-id="1:95">
         <img
           class={styles.yearMarkLeaf}
@@ -34,55 +35,55 @@ import styles from './Homepage.module.css'
   </div>
 
   <div class={styles.content} data-node-id="1:96">
-    <h1 class={styles.title} data-node-id="1:97">
+    <h1 class={styles.title} data-node-id="1:97" data-desktop-node-id="366:235">
       {content.headline}
     </h1>
 
     {/* Written on one line: Astro preserves template whitespace, so indenting
         the fragments would insert a space around the breaks. */}
-    <p class={styles.body} data-node-id="1:98">
-      {content.intro.map((paragraph, index) => (<Fragment>{index > 0 && <Fragment><br aria-hidden="true" /><br aria-hidden="true" /></Fragment>}{paragraph}</Fragment>))}
-    </p>
+    <div class={styles.desktopBody}>
+      <p class={styles.body} data-node-id="1:98" data-desktop-node-id="366:236">
+        {content.intro.map((paragraph, index) => (<Fragment>{index > 0 && <Fragment><br aria-hidden="true" /><br aria-hidden="true" /></Fragment>}{paragraph}</Fragment>))}
+      </p>
 
-    <ul class={styles.features} data-node-id="1:99">
-      {
-        content.features.map((feature) => (
-          <li class={styles.featureCard} data-node-id={feature.nodeId}>
-            <span class={styles.featureBadge}>
-              <img
-                class={styles.featureBadgeLeaf}
-                src={ASSETS.featureBadge}
-                alt=""
-                aria-hidden="true"
-              />
-            </span>
-            {/* Written on one line: Astro preserves template whitespace, so
-                indenting the spans would insert a space into the text. */}
-            <p class={styles.featureText}>
-              {feature.lines.map((line, index) => (<span>{index > 0 && <br />}{line}</span>))}
-            </p>
-          </li>
-        ))
-      }
-    </ul>
+      <ul class={styles.features} data-node-id="1:99" data-desktop-node-id="377:170">
+        {
+          content.features.map((feature) => (
+            <li class={styles.featureCard} data-node-id={feature.nodeId}>
+              <span class={styles.featureBadge}>
+                <img
+                  class={styles.featureBadgeLeaf}
+                  src={ASSETS.featureBadge}
+                  alt=""
+                  aria-hidden="true"
+                />
+              </span>
+              <p class={styles.featureText}>
+                {feature.lines.map((line, index) => (<span>{index > 0 && <Fragment><br class={styles.mobileBreak} /><span class={styles.desktopWordSpace}> </span></Fragment>}{line}</span>))}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
 
-    <p class={styles.body} data-node-id="1:112">
-      {content.outro}
-    </p>
+      <p class={styles.body} data-node-id="1:112" data-desktop-node-id="366:262">
+        {content.outro}
+      </p>
+    </div>
 
-    <div class={styles.divider} data-node-id="1:113">
+    <div class={styles.divider} data-node-id="1:113" data-desktop-node-id="366:277">
       <img class={styles.dividerLeaf} src={ASSETS.divider} alt="" aria-hidden="true" />
     </div>
 
-    <div class={styles.footer} data-node-id="1:114">
-      <div class={styles.identity} data-node-id="1:115">
-        <span class={styles.avatar} data-node-id="1:116">
+    <div class={styles.footer} data-node-id="1:114" data-desktop-node-id="366:263">
+      <div class={styles.identity} data-node-id="1:115" data-desktop-node-id="366:264">
+        <span class={styles.avatar} data-node-id="1:116" data-desktop-node-id="366:265">
           <img class={styles.avatarLeaf} src={content.author.avatar} alt="" aria-hidden="true" />
         </span>
         <img class={styles.signature} src={content.author.signature} alt={content.author.name} />
       </div>
 
-      <div class={styles.social} data-node-id="1:118">
+      <div class={styles.social} data-node-id="1:118" data-desktop-node-id="366:269">
         {
           content.social.map((link) => (
             <button

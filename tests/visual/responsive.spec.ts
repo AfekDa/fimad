@@ -33,16 +33,18 @@ test.describe('responsive integrity', () => {
       })
     }
 
-    test(`${route.frameName} centres within ${480}px above the max width`, async ({ page }) => {
-      await page.setViewportSize({ width: 900, height: route.height })
+    const routeMaxWidth = route.path === '/' ? 1280 : 480
+
+    test(`${route.frameName} centres within ${routeMaxWidth}px above the max width`, async ({ page }) => {
+      await page.setViewportSize({ width: 1400, height: route.height })
       await page.goto(route.path)
 
       const shell = page.locator('.appShell')
       const box = await shell.boundingBox()
       expect(box, 'App shell was not rendered').not.toBeNull()
-      expect(box?.width).toBeLessThanOrEqual(480)
+      expect(box?.width).toBeLessThanOrEqual(routeMaxWidth)
       // Equal gutters either side.
-      expect(Math.abs((box?.x ?? 0) - (900 - (box?.width ?? 0) - (box?.x ?? 0)))).toBeLessThanOrEqual(1)
+      expect(Math.abs((box?.x ?? 0) - (1400 - (box?.width ?? 0) - (box?.x ?? 0)))).toBeLessThanOrEqual(1)
     })
   }
 
@@ -202,6 +204,70 @@ test.describe('responsive integrity', () => {
 
     const hero = page.locator('[data-node-id="1:91"]')
     expect(await hero.boundingBox()).toMatchObject({ x: 0, y: 0, width: 430, height: 648 })
+  })
+
+  test('Homepage matches the browser-chrome-adjusted desktop Figma geometry', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 })
+    await page.goto('/')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(
+        Array.from(document.images).map((image) => image.decode().catch(() => undefined)),
+      )
+    })
+
+    const root = page.locator('[data-desktop-node-id="311:4398"]')
+    expect(await root.boundingBox()).toMatchObject({ x: 0, y: 0, width: 1280 })
+
+    expect(await page.locator('[data-node-id="162:1730"]').boundingBox()).toMatchObject({
+      x: 565,
+      y: 40,
+      width: 150,
+    })
+    expect(await page.locator('[data-node-id="162:1731"]').boundingBox()).toMatchObject({
+      x: 469,
+      y: 70,
+      width: 342,
+    })
+    expect(await page.locator('[data-node-id="1:91"]').boundingBox()).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 1280,
+      height: 752,
+    })
+    expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
+      x: 290,
+      y: 612,
+      width: 700,
+      height: 64,
+    })
+    expect(await page.getByRole('heading', { level: 1 }).boundingBox()).toMatchObject({
+      x: 80,
+      y: 808,
+      width: 405,
+    })
+    const introBox = await page.locator('[data-desktop-node-id="366:236"]').boundingBox()
+    expect(introBox).not.toBeNull()
+    expect(introBox?.x).toBeCloseTo(461, 0)
+    expect(introBox?.y).toBeCloseTo(808, 0)
+    expect(introBox?.width).toBeCloseTo(739, 0)
+
+    const featuresBox = await page.locator('[data-desktop-node-id="377:170"]').boundingBox()
+    expect(featuresBox).not.toBeNull()
+    expect(featuresBox?.x).toBeCloseTo(461, 0)
+    expect(featuresBox?.y).toBeCloseTo(1010, 0)
+    expect(featuresBox?.width).toBeCloseTo(739, 0)
+    expect(featuresBox?.height).toBeCloseTo(440, 0)
+
+    const footerBox = await page.locator('[data-node-id="1:114"]').boundingBox()
+    expect(footerBox).not.toBeNull()
+    expect(footerBox?.x).toBeCloseTo(80, 0)
+    expect(footerBox?.y).toBeCloseTo(1628, 0)
+    expect(footerBox?.width).toBeCloseTo(1120, 0)
+    expect(footerBox?.height).toBeCloseTo(52, 0)
+
+    const documentWidth = await page.evaluate(() => document.documentElement.scrollWidth)
+    expect(documentWidth).toBe(1280)
   })
 
   test('All Teams filters cards by conference and team name', async ({ page }) => {

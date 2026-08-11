@@ -1,5 +1,6 @@
 /**
- * Everything the Homepage says and shows — Figma frame "Homepage" (1:90).
+ * Everything the Homepage says and shows — mobile frame 1:90 and desktop
+ * frame 311:4398.
  *
  * Copy and imagery live here so they can be changed without touching layout.
  * Homepage.astro owns structure and styling and reads every string and image

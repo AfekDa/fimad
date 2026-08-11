@@ -103,6 +103,10 @@
   pointer-events: none;
 }
 
+.desktopHeroTransition {
+  display: none;
+}
+
 .heroTitle {
   position: absolute;
   left: 0;
@@ -148,6 +152,10 @@
   background: var(--color-navy);
   padding: var(--content-padding-top) var(--content-padding-inline)
     var(--content-padding-bottom);
+}
+
+.desktopBody {
+  display: contents;
 }
 
 .title {
@@ -227,6 +235,10 @@
   overflow-wrap: break-word;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
+}
+
+.desktopWordSpace {
+  display: none;
 }
 
 /* ---- Divider (1:113) ----------------------------------------------------- */
@@ -342,5 +354,185 @@
 @media (prefers-reduced-motion: reduce) {
   .socialLink {
     transition: none;
+  }
+}
+
+/* Desktop frame 311:4398. The 118px Chrome capture at the top of the Figma
+ * frame is not product UI, so the hero and everything below it start at y=0. */
+@media (min-width: 768px) {
+  .page {
+    min-height: var(--desktop-frame-height);
+    padding-bottom: 0;
+  }
+
+  .brandHeader {
+    height: 114px;
+  }
+
+  .brandByline {
+    top: 40px;
+    width: 150px;
+    font-size: var(--font-dt-bc2-size);
+    line-height: var(--font-dt-bc2-line);
+  }
+
+  .brandTitle {
+    top: 70px;
+    left: 50%;
+    width: 342px;
+    font-size: var(--font-dt-h2-size);
+    line-height: var(--font-dt-h2-line);
+    letter-spacing: -0.01em;
+  }
+
+  .hero {
+    height: var(--desktop-hero-height);
+  }
+
+  .heroImageLeaf {
+    top: -56.59%;
+    left: 0;
+    width: 100%;
+    height: 240.83%;
+    aspect-ratio: auto;
+    transform: none;
+  }
+
+  .heroScrim {
+    inset: 0;
+    height: auto;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 120, 255, 0) 61.037%,
+      var(--fanduel-blue) 100%
+    );
+  }
+
+  .desktopHeroTransition {
+    position: absolute;
+    top: 66.223%;
+    left: 0;
+    z-index: var(--layer-hero-title);
+    display: block;
+    width: 100%;
+    height: 28.989%;
+    background: linear-gradient(
+      178.64284797333963deg,
+      rgba(1, 21, 86, 0) 7.4283%,
+      var(--color-navy) 95.217%
+    );
+    pointer-events: none;
+  }
+
+  .heroTitle {
+    top: 68.75%;
+    height: auto;
+    padding: 0 var(--desktop-content-inline);
+  }
+
+  .yearMark {
+    width: 322px;
+    height: 47px;
+  }
+
+  .yearMarkLeaf {
+    top: 0;
+    width: 322px;
+    height: 46.36px;
+    aspect-ratio: auto;
+  }
+
+  .content {
+    display: block;
+    padding: 56px var(--desktop-content-inline) 91px;
+  }
+
+  .title {
+    position: absolute;
+    top: 56px;
+    left: var(--desktop-content-inline);
+    width: min(405px, 36.16%);
+    font-size: var(--font-dt-h4-size);
+    line-height: var(--font-dt-h4-line);
+  }
+
+  .desktopBody {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: min(739px, 66%);
+    margin-left: min(381px, 34.02%);
+  }
+
+  .body {
+    font-size: var(--font-dt-bc2-size);
+    line-height: var(--font-dt-bc2-line);
+  }
+
+  .features {
+    gap: 16px;
+  }
+
+  .featureCard {
+    gap: 24px;
+    min-height: 98px;
+    padding: 24px;
+  }
+
+  .featureBadge {
+    width: 50px;
+    height: 50px;
+  }
+
+  .featureText {
+    font-size: var(--font-dt-bc1-size);
+    line-height: var(--font-dt-bc1-line);
+  }
+
+  .mobileBreak {
+    display: none;
+  }
+
+  .desktopWordSpace {
+    display: inline;
+  }
+
+  .desktopWordSpace::before {
+    content: '\00a0';
+  }
+
+  .divider {
+    width: 100%;
+    height: 0.5px;
+    margin-top: 56px;
+  }
+
+  .footer {
+    gap: 24px;
+    margin-top: 23px;
+  }
+
+  .identity {
+    gap: 10.4px;
+  }
+
+  .avatar {
+    width: 52px;
+    height: 52px;
+  }
+
+  .signature {
+    width: 132.6px;
+    height: 46.8px;
+  }
+
+  .social {
+    gap: 24px;
+    height: 52px;
+  }
+
+  .socialLink {
+    width: 52px;
+    height: 52px;
   }
 }
