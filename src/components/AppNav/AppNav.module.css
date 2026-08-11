@@ -31,6 +31,9 @@
   box-shadow: inset 0 0 0 var(--nav-stroke-width) var(--nav-stroke);
   z-index: var(--layer-nav);
   pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .item {
@@ -74,6 +77,10 @@
   .item:not([aria-disabled='true']):hover {
     opacity: 0.75;
   }
+}
+
+.item:not([aria-disabled='true']):active {
+  opacity: 0.6;
 }
 
 .item:focus-visible {
