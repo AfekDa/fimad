@@ -18,6 +18,9 @@
 }
 
 .brandHeader {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: var(--layer-content);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +30,7 @@
   padding-inline: var(--content-padding-inline);
   color: var(--color-white);
   background: var(--color-navy);
+  pointer-events: none;
 }
 
 .brandByline,

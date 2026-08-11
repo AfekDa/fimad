@@ -172,7 +172,9 @@ test.describe('responsive integrity', () => {
     expect(teamsIconBox).toMatchObject({ width: 40, height: 32 })
   })
 
-  test('Homepage starts with the centered Cody Brown brand header', async ({ page }) => {
+  test('Homepage overlays the centered Cody Brown brand header without shifting the hero', async ({
+    page,
+  }) => {
     await page.setViewportSize({ width: 430, height: 932 })
     await page.goto('/')
 
@@ -181,6 +183,9 @@ test.describe('responsive integrity', () => {
     await expect(brand).toContainText('NFL BETTING GUIDE')
     await expect(brand).toHaveCSS('align-items', 'center')
     expect(await brand.boundingBox()).toMatchObject({ x: 0, y: 0, width: 430, height: 63 })
+
+    const hero = page.locator('[data-node-id="1:91"]')
+    expect(await hero.boundingBox()).toMatchObject({ x: 0, y: 0, width: 430, height: 648 })
   })
 
   test('All Teams filters cards by conference and team name', async ({ page }) => {
