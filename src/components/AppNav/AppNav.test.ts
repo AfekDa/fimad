@@ -57,6 +57,14 @@ describe('AppNav', () => {
     expect(body.querySelector('[data-nav-id="teams"]')).toHaveAttribute('href', '/teams')
   })
 
+  it('prefetches implemented destinations when the navigation enters the viewport', async () => {
+    const body = await renderAppNav('/')
+
+    for (const link of body.querySelectorAll('nav a')) {
+      expect(link).toHaveAttribute('data-astro-prefetch', 'viewport')
+    }
+  })
+
   it('renders unfinished destinations as inert items', async () => {
     const body = await renderAppNav()
 

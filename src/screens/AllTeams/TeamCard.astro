@@ -11,7 +11,13 @@ export interface Props {
 const { card } = Astro.props
 ---
 
-<article class={styles.card} data-node-id={card.nodeId}>
+<article
+  class={styles.card}
+  data-node-id={card.nodeId}
+  data-team-card
+  data-team={card.team}
+  data-conference={card.conference}
+>
   <div
     class:list={[styles.imageBox, styles[card.crop]]}
     data-node-id={card.imageNodeId}
@@ -43,4 +49,3 @@ const { card } = Astro.props
     />
   </div>
 </article>
-

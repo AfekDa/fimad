@@ -125,6 +125,29 @@
   color: var(--color-white);
 }
 
+/* The All Teams screen updates filter state in the browser. Keep the Figma
+ * state classes for static renders, and also honour the state attribute so
+ * the visual treatment follows an interaction without a component rerender. */
+.filter[data-state='default'] {
+  background: var(--color-white);
+  gap: 0;
+  padding: var(--space-8) var(--space-16);
+}
+
+.filter[data-state='active'] {
+  background: var(--fanduel-blue);
+  gap: var(--space-8);
+  padding: var(--space-8) var(--space-4) var(--space-8) var(--space-12);
+}
+
+.filter[data-state='default'] .filterLabel {
+  color: var(--color-black);
+}
+
+.filter[data-state='active'] .filterLabel {
+  color: var(--color-white);
+}
+
 /* ---- Type=Fanduel (1:37, 1:40) ------------------------------------------- */
 
 .fanduel {

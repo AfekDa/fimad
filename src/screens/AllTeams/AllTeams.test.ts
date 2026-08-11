@@ -43,7 +43,7 @@ describe('All Teams', () => {
     for (const image of images) expect(image.getAttribute('alt')).toBeTruthy()
   })
 
-  it('ships no client-side script', () => {
-    expect(body.querySelectorAll('script')).toHaveLength(0)
+  it('ships the client-side filter controller', () => {
+    expect(body.querySelectorAll('script')).toHaveLength(1)
   })
 })

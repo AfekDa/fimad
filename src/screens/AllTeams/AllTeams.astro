@@ -9,7 +9,7 @@ import styles from './AllTeams.module.css'
 
 ---
 
-<div class={styles.page} data-node-id="162:1760">
+<div class={styles.page} data-node-id="162:1760" data-teams-page>
   <div class={styles.content} data-node-id="181:1247">
     <header class={styles.header} data-node-id="181:1243">
       <div class={styles.brand} data-node-id="162:1773">
@@ -45,6 +45,7 @@ import styles from './AllTeams.module.css'
             label="AFC"
             nodeId="181:297"
             assetSet="teams-page"
+            filterValue="AFC"
           />
           <Button
             variant="filter"
@@ -52,6 +53,7 @@ import styles from './AllTeams.module.css'
             showIcon={false}
             nodeId="181:301"
             assetSet="teams-page"
+            filterValue="NFC"
           />
           <Button
             variant="filter"
@@ -59,10 +61,11 @@ import styles from './AllTeams.module.css'
             showIcon={false}
             nodeId="181:305"
             assetSet="teams-page"
+            ariaLabel="Filter teams by name"
           />
         </div>
 
-        <button class={styles.clearAll} type="button" data-node-id="188:2356">
+        <button class={styles.clearAll} type="button" data-node-id="188:2356" data-clear-filters>
           <span class={styles.clearAllIcon} aria-hidden="true">
             <img class={styles.clearAllRing} src={ASSETS.teamsClearRing} alt="" />
             <img class={styles.clearAllCross} src={ASSETS.teamsClearAllCross} alt="" />
@@ -75,6 +78,9 @@ import styles from './AllTeams.module.css'
     <div class={styles.divider} data-node-id="162:1771">
       <img src={ASSETS.teamsDivider} alt="" aria-hidden="true" />
     </div>
+
+    <p class={styles.resultsStatus} role="status" aria-live="polite" data-results-status></p>
+    <p class={styles.emptyState} data-empty-results hidden>No teams match your filters.</p>
 
     <div class={styles.cards} data-node-id="181:325">
       {ALL_TEAMS_CARDS.map((card) => <TeamCard card={card} />)}
@@ -99,3 +105,93 @@ import styles from './AllTeams.module.css'
     </div>
   </div>
 </div>
+
+<script>
+  const teamsPage = document.querySelector<HTMLElement>('[data-teams-page]')
+
+  if (teamsPage === null) throw new Error('All Teams filter controller requires its page root')
+
+  const searchInput = teamsPage.querySelector<HTMLInputElement>('#team-search')
+  const cards = [...teamsPage.querySelectorAll<HTMLElement>('[data-team-card]')]
+  const conferenceButtons = [
+    ...teamsPage.querySelectorAll<HTMLButtonElement>('[data-filter-value]'),
+  ]
+  const filterButton = teamsPage.querySelector<HTMLButtonElement>('[aria-label="Filter teams by name"]')
+  const clearAllButton = teamsPage.querySelector<HTMLButtonElement>('[data-clear-filters]')
+  const emptyState = teamsPage.querySelector<HTMLElement>('[data-empty-results]')
+  const resultsStatus = teamsPage.querySelector<HTMLElement>('[data-results-status]')
+
+  if (
+    searchInput === null ||
+    filterButton === null ||
+    clearAllButton === null ||
+    emptyState === null ||
+    resultsStatus === null
+  ) {
+    throw new Error('All Teams filter controller is missing a required control')
+  }
+
+  const requiredSearchInput = searchInput
+  const requiredEmptyState = emptyState
+  const requiredResultsStatus = resultsStatus
+
+  function setConference(button: HTMLButtonElement, active: boolean) {
+    button.setAttribute('aria-pressed', String(active))
+    button.dataset.state = active ? 'active' : 'default'
+
+    let clearIcon = button.querySelector<HTMLElement>('[data-filter-clear]')
+    if (clearIcon === null && active) {
+      const activeIcon = conferenceButtons
+        .map((candidate) => candidate.querySelector<HTMLElement>('[data-filter-clear]'))
+        .find((icon) => icon !== null)
+
+      if (activeIcon === undefined) throw new Error('No conference filter provides an active-state icon')
+      clearIcon = activeIcon.cloneNode(true) as HTMLElement
+      button.append(clearIcon)
+    }
+
+    if (clearIcon === null) return
+    clearIcon.hidden = !active
+  }
+
+  function applyFilters() {
+    const selectedConference = conferenceButtons.find(
+      (button) => button.getAttribute('aria-pressed') === 'true',
+    )?.dataset.filterValue
+    const query = requiredSearchInput.value.trim().toLocaleLowerCase()
+    let visibleCount = 0
+
+    for (const card of cards) {
+      const matchesConference = selectedConference === undefined || card.dataset.conference === selectedConference
+      const matchesSearch = card.dataset.team?.toLocaleLowerCase().includes(query) ?? false
+      const isVisible = matchesConference && matchesSearch
+      card.hidden = !isVisible
+      if (isVisible) visibleCount += 1
+    }
+
+    requiredEmptyState.hidden = visibleCount !== 0
+    requiredResultsStatus.textContent = `${visibleCount} ${visibleCount === 1 ? 'team' : 'teams'} shown`
+  }
+
+  for (const button of conferenceButtons) {
+    button.addEventListener('click', () => {
+      const isActive = button.getAttribute('aria-pressed') === 'true'
+      for (const candidate of conferenceButtons) setConference(candidate, candidate === button && !isActive)
+      applyFilters()
+    })
+  }
+
+  filterButton.addEventListener('click', () => searchInput.focus())
+  searchInput.addEventListener('input', applyFilters)
+  // Filtering is client-only; block native submit (Enter) so a reload cannot wipe state.
+  searchInput.form?.addEventListener('submit', (event) => event.preventDefault())
+  // Reset clears the input after the event; wait a frame so applyFilters reads the empty value.
+  searchInput.form?.addEventListener('reset', () => requestAnimationFrame(applyFilters))
+  clearAllButton.addEventListener('click', () => {
+    searchInput.value = ''
+    for (const button of conferenceButtons) setConference(button, false)
+    applyFilters()
+  })
+
+  applyFilters()
+</script>

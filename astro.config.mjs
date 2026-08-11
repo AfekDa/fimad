@@ -2,14 +2,19 @@
 import { defineConfig } from 'astro/config'
 
 /**
- * Static output: every page is rendered to HTML at build time and no client
- * runtime is shipped. Nothing in this project uses a `client:*` directive, so
- * `dist/` contains HTML, CSS and assets only.
+ * Static output: every page is rendered to HTML at build time. Astro's small
+ * prefetch runtime warms visible navigation destinations without changing the
+ * rendered UI or turning the site into a client-side application.
  *
  * https://astro.build/config
  */
 export default defineConfig({
   output: 'static',
+
+  prefetch: {
+    prefetchAll: false,
+    defaultStrategy: 'viewport',
+  },
 
   server: {
     host: '127.0.0.1',

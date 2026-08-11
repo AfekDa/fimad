@@ -17,6 +17,8 @@ export interface TeamCardContent {
   readonly image: string
   readonly imageAlt: string
   readonly crop: TeamCardCrop
+  readonly team: string
+  readonly conference: 'AFC' | 'NFC'
 }
 
 /**
@@ -32,6 +34,8 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardBuffalo,
     imageAlt: 'Buffalo Bills player portrait',
     crop: 'buffalo',
+    team: 'Buffalo Bills',
+    conference: 'AFC',
   },
   {
     nodeId: '474:1382',
@@ -40,6 +44,8 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardCincinnati,
     imageAlt: "Cincinnati Bengals wide receiver Ja'Marr Chase",
     crop: 'cincinnati',
+    team: 'Cincinnati Bengals',
+    conference: 'AFC',
   },
   {
     nodeId: '474:1389',
@@ -48,6 +54,8 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardCleveland,
     imageAlt: 'Cleveland Browns quarterback Shedeur Sanders',
     crop: 'cleveland',
+    team: 'Cleveland Browns',
+    conference: 'AFC',
   },
   {
     nodeId: '474:1396',
@@ -56,6 +64,8 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardPittsburgh,
     imageAlt: 'Pittsburgh Steelers quarterback Aaron Rodgers',
     crop: 'pittsburgh',
+    team: 'Pittsburgh Steelers',
+    conference: 'AFC',
   },
   {
     nodeId: '474:1427',
@@ -64,6 +74,8 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardMiami,
     imageAlt: "Miami Dolphins running back De'Von Achane",
     crop: 'miami',
+    team: 'Miami Dolphins',
+    conference: 'AFC',
   },
   {
     nodeId: '474:1434',
@@ -72,6 +84,8 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardJets,
     imageAlt: 'New York Jets running back Breece Hall',
     crop: 'jets',
+    team: 'New York Jets',
+    conference: 'AFC',
   },
   {
     nodeId: '474:1441',
@@ -80,6 +94,8 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardHouston,
     imageAlt: 'Houston Texans wide receiver Nico Collins',
     crop: 'houston',
+    team: 'Houston Texans',
+    conference: 'AFC',
   },
   {
     nodeId: '474:1448',
@@ -88,5 +104,7 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardJacksonville,
     imageAlt: 'Jacksonville Jaguars quarterback Trevor Lawrence',
     crop: 'jacksonville',
+    team: 'Jacksonville Jaguars',
+    conference: 'AFC',
   },
 ] as const

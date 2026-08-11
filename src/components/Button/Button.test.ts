@@ -59,13 +59,12 @@ describe('Button', () => {
     expect(hidden.body.querySelectorAll('img')).toHaveLength(0)
   })
 
-  it('shows the clear control only on Filter/Active', async () => {
+  it('hides the clear control until a Filter is active', async () => {
     const off = await renderButton({ variant: 'filter', state: 'default', label: 'F' })
-    expect(off.body.querySelectorAll('img')).toHaveLength(0)
+    expect(off.body.querySelector('[data-filter-clear]')).toHaveAttribute('hidden')
 
     const on = await renderButton({ variant: 'filter', state: 'active', label: 'F' })
-    // Ring + cross.
-    expect(on.body.querySelectorAll('img')).toHaveLength(2)
+    expect(on.body.querySelector('[data-filter-clear]')).not.toHaveAttribute('hidden')
   })
 
   it('renders the label text', async () => {

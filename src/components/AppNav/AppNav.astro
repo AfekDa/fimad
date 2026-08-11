@@ -49,6 +49,7 @@ const here = normalise(currentPath ?? Astro.url.pathname)
           <a
             class={styles.item}
             href={item.href}
+            data-astro-prefetch="viewport"
             data-nav-id={item.id}
             aria-current={normalise(item.href) === here ? 'page' : undefined}
           >

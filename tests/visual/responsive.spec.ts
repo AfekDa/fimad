@@ -51,15 +51,14 @@ test.describe('responsive integrity', () => {
    * links, so the behaviour only exists in a browser — a unit test can assert
    * the markup but not that following a tab actually lands somewhere.
    */
-  test('nav marks the current route with no JavaScript on the page', async ({ page }) => {
+  test('nav marks the current route and prefetches destinations without changing navigation', async ({ page }) => {
     await page.goto('/')
-
-    expect(await page.locator('script').count(), 'The page shipped a script').toBe(0)
 
     const home = page.locator('[data-nav-id="home"]')
     await expect(home).toHaveAttribute('aria-current', 'page')
     await expect(home).toHaveCSS('border-bottom-color', 'rgb(255, 255, 255)')
     await expect(page.locator('[aria-current="page"]')).toHaveCount(1)
+    await expect(page.locator('[data-nav-id="teams"]')).toHaveAttribute('data-astro-prefetch', 'viewport')
   })
 
   test('nav is keyboard operable and its links navigate', async ({ page }) => {
@@ -170,6 +169,42 @@ test.describe('responsive integrity', () => {
     const teamsIcon = page.locator('[data-nav-id="teams"] > span[style]')
     const teamsIconBox = await teamsIcon.boundingBox()
     expect(teamsIconBox).toMatchObject({ width: 40, height: 32 })
+  })
+
+  test('All Teams filters cards by conference and team name', async ({ page }) => {
+    await page.goto('/teams')
+
+    const visibleCards = page.locator('[data-team-card]:not([hidden])')
+    const afc = page.getByRole('button', { name: 'AFC' })
+    const nfc = page.getByRole('button', { name: 'NFC' })
+    const search = page.getByRole('searchbox', { name: 'Search teams' })
+
+    await expect(visibleCards).toHaveCount(8)
+    await nfc.click()
+    await expect(nfc).toHaveAttribute('aria-pressed', 'true')
+    await expect(afc).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleCards).toHaveCount(0)
+    await expect(page.getByText('No teams match your filters.')).toBeVisible()
+
+    await afc.click()
+    await search.fill('miami')
+    await expect(visibleCards).toHaveCount(1)
+    await expect(visibleCards.first()).toHaveAttribute('data-team', 'Miami Dolphins')
+
+    // Enter must not submit the search form and reload away the active filters.
+    await search.press('Enter')
+    await expect(search).toHaveValue('miami')
+    await expect(afc).toHaveAttribute('aria-pressed', 'true')
+    await expect(visibleCards).toHaveCount(1)
+
+    await page.getByRole('button', { name: 'Clear All' }).click()
+    await expect(search).toHaveValue('')
+    await expect(afc).toHaveAttribute('aria-pressed', 'false')
+    await expect(nfc).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleCards).toHaveCount(8)
+
+    await page.getByRole('button', { name: 'Filter teams by name' }).click()
+    await expect(search).toBeFocused()
   })
 
   /*

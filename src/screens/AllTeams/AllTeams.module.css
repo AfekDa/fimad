@@ -233,6 +233,28 @@
   width: 100%;
 }
 
+.resultsStatus {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.emptyState {
+  width: 100%;
+  margin: 0;
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc2-m-size);
+  line-height: var(--font-bc2-m-line);
+  text-align: center;
+}
+
 .statusBar {
   position: absolute;
   left: 0;

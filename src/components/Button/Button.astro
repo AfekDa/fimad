@@ -24,6 +24,8 @@ export interface Props {
   readonly nodeId?: string | undefined
   readonly ariaLabel?: string | undefined
   readonly assetSet?: 'default' | 'teams-page'
+  /** Optional client-side filter identifier for filter buttons. */
+  readonly filterValue?: string | undefined
 }
 
 const NODE_IDS: Record<ButtonType, Record<ButtonState, string>> = {
@@ -42,6 +44,7 @@ const {
   nodeId,
   ariaLabel,
   assetSet = 'default',
+  filterValue,
 } = Astro.props
 
 const active = state === 'active'
@@ -61,6 +64,7 @@ const variantClass =
   class:list={[styles.base, variantClass, className]}
   data-node-id={nodeId ?? NODE_IDS[variant][state]}
   data-state={state}
+  data-filter-value={filterValue}
   aria-label={ariaLabel}
   aria-pressed={variant === 'filter' ? (active ? 'true' : 'false') : undefined}
 >
@@ -110,8 +114,8 @@ const variantClass =
     variant === 'filter' && (
       <Fragment>
         <span class={styles.filterLabel}>{label}</span>
-        {active && showIcon && (
-          <span class={styles.clear}>
+        {showIcon && (
+          <span class={styles.clear} data-filter-clear hidden={!active}>
             <img
               class={styles.clearRing}
               src={assetSet === 'teams-page' ? ASSETS.teamsActiveRing : ASSETS.clearRing}
