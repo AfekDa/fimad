@@ -269,40 +269,28 @@
 }
 
 .statusRow {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 124px minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
   width: 100%;
 }
 
-.statusTime,
 .statusLevels {
   display: flex;
-  flex: 1 0 0;
   min-width: 0;
   align-items: center;
   justify-content: center;
 }
 
-.statusTime {
-  padding-left: var(--space-16);
-  padding-right: 6px;
-  color: var(--color-white);
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 17px;
-  line-height: 22px;
-  font-weight: 600;
-  text-align: center;
-  white-space: nowrap;
-}
-
 .dynamicIsland {
+  grid-column: 2;
   width: 124px;
   height: 10px;
   flex-shrink: 0;
 }
 
 .statusLevels {
+  grid-column: 3;
   gap: 7px;
   padding-left: 6px;
   padding-right: var(--space-16);

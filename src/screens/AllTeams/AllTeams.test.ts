@@ -30,6 +30,10 @@ describe('All Teams', () => {
     expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument()
   })
 
+  it('does not render an example status-bar time', () => {
+    expect(body).not.toHaveTextContent('9:41')
+  })
+
   it('exposes search and filter controls', () => {
     expect(screen.getByRole('searchbox', { name: 'Search teams' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'AFC' })).toHaveAttribute('aria-pressed', 'true')
