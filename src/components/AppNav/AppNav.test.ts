@@ -73,7 +73,7 @@ describe('AppNav', () => {
       expect(item?.tagName).toBe('SPAN')
       expect(item).toHaveAttribute('aria-disabled', 'true')
     }
-    expect(body.querySelectorAll('a')).toHaveLength(2)
+    expect(body.querySelectorAll('a')).toHaveLength(3)
   })
 
   it('exposes the primary navigation landmark', async () => {
