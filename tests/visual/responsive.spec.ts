@@ -332,21 +332,21 @@ test.describe('responsive integrity', () => {
   })
 
   /*
-   * Three tabs have no screen yet. They must be visible, because the design
+   * Two tabs have no screen yet. They must be visible, because the design
    * draws all five, but must not behave like destinations — no href, and not
    * in the tab order.
    */
   test('nav tabs without a page are inert', async ({ page }) => {
     await page.goto('/')
 
-    for (const id of ['awards', 'all-bets', 'fanduel']) {
+    for (const id of ['awards', 'fanduel']) {
       const tab = page.locator(`[data-nav-id="${id}"]`)
       await expect(tab).toBeVisible()
       await expect(tab).toHaveAttribute('aria-disabled', 'true')
       expect(await tab.evaluate((el) => el.tagName)).toBe('SPAN')
     }
 
-    await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(2)
+    await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(3)
   })
 
   test('responsive suite has screens to exercise', () => {

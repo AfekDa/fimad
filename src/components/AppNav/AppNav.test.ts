@@ -68,7 +68,7 @@ describe('AppNav', () => {
   it('renders unfinished destinations as inert items', async () => {
     const body = await renderAppNav()
 
-    for (const id of ['awards', 'all-bets', 'fanduel']) {
+    for (const id of ['awards', 'fanduel']) {
       const item = body.querySelector(`[data-nav-id="${id}"]`)
       expect(item?.tagName).toBe('SPAN')
       expect(item).toHaveAttribute('aria-disabled', 'true')

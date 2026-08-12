@@ -1,0 +1,220 @@
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 1340px;
+  padding: var(--space-24) var(--content-padding-inline) 150px;
+  background:
+    radial-gradient(circle at 100% 8%, rgba(0, 120, 255, 0.28), transparent 33%),
+    var(--color-navy);
+  color: var(--color-white);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  row-gap: var(--space-4);
+  padding-bottom: var(--space-24);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.byline,
+.brand,
+.season,
+.eyebrow,
+.heading,
+.description,
+.matchup,
+.pick,
+.detail {
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.byline {
+  grid-column: 1;
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.brand {
+  grid-column: 1;
+  font-family: var(--font-family-display);
+  font-size: var(--font-h2-size);
+  line-height: var(--font-h2-line);
+  font-weight: var(--font-h2-weight);
+  letter-spacing: var(--font-display-letter-spacing);
+}
+
+.season {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--fanduel-blue);
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-top: var(--space-16);
+}
+
+.eyebrow {
+  color: var(--fanduel-blue);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.heading {
+  font-family: var(--font-family-display);
+  font-size: var(--font-h1-size);
+  line-height: var(--font-h1-line);
+  font-weight: var(--font-h1-weight);
+  letter-spacing: var(--font-display-letter-spacing);
+}
+
+.description {
+  max-width: 35ch;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: var(--font-bc2-r-size);
+  line-height: var(--font-bc2-r-line);
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  padding-top: var(--space-8);
+}
+
+.rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--fanduel-blue), rgba(255, 255, 255, 0.22));
+}
+
+.status,
+.emptyState {
+  margin: -12px 0 0;
+  color: var(--grey);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+}
+
+.status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.betList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.betCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-16);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
+}
+
+.cardTopline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category,
+.odds {
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: 600;
+}
+
+.category {
+  color: var(--fanduel-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.odds {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.matchup {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+}
+
+.pick {
+  font-size: var(--font-bc1-sb-size);
+  line-height: var(--font-bc1-sb-line);
+  font-weight: var(--font-bc1-sb-weight);
+}
+
+.detail {
+  min-height: 40px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+}
+
+.betAction {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  align-self: flex-start;
+  padding-top: var(--space-8);
+  color: var(--color-white);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.actionArrow {
+  color: var(--fanduel-blue);
+  font-size: 20px;
+  line-height: 14px;
+}
+
+.emptyState {
+  padding: var(--space-24) 0;
+  text-align: center;
+}
+
+@media (min-width: 420px) {
+  .betList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .betCard {
+    min-height: 270px;
+  }
+}

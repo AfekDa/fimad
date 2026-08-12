@@ -1,0 +1,111 @@
+---
+import AppNav from '../../components/AppNav/AppNav.astro'
+import Button from '../../components/Button/Button.astro'
+import { ALL_BETS } from './content'
+import styles from './AllBets.module.css'
+---
+
+<div class={styles.page} data-node-id="98:627" data-bets-page>
+  <div class={styles.content} data-node-id="98:630">
+    <header class={styles.header} data-node-id="98:632">
+      <p class={styles.byline}>Cody Brown’s</p>
+      <p class={styles.brand}>NFL BETTING GUIDE</p>
+      <span class={styles.season}>2026 / 27 SEASON</span>
+    </header>
+
+    <section class={styles.intro} aria-labelledby="bets-heading" data-node-id="98:635">
+      <p class={styles.eyebrow}>THE PICKS</p>
+      <h1 id="bets-heading" class={styles.heading}>ALL BETS</h1>
+      <p class={styles.description}>
+        Every pick, parlay and player prop I’m watching this week. All bets are free to play along
+        with.
+      </p>
+    </section>
+
+    <div class={styles.filterRow} role="group" aria-label="Filter bets" data-node-id="98:638">
+      <Button variant="filter" state="active" label="All" filterValue="all" nodeId="98:639" />
+      <Button variant="filter" label="Best Bets" filterValue="Best Bet" nodeId="98:640" />
+      <Button variant="filter" label="Parlays" filterValue="Parlay" nodeId="98:641" />
+      <Button variant="filter" label="Props" filterValue="Prop" nodeId="98:642" />
+    </div>
+
+    <div class={styles.rule} aria-hidden="true"></div>
+    <p class={styles.status} role="status" aria-live="polite" data-bets-status></p>
+
+    <section class={styles.betList} aria-label="Available bets" data-node-id="98:645">
+      {
+        ALL_BETS.map((bet) => (
+          <article
+            class={styles.betCard}
+            data-bet-card
+            data-category={bet.category}
+            data-bet-id={bet.id}
+            data-node-id={bet.nodeId}
+          >
+            <div class={styles.cardTopline}>
+              <span class={styles.category}>{bet.category}</span>
+              <span class={styles.odds}>{bet.odds}</span>
+            </div>
+            <p class={styles.matchup}>{bet.matchup}</p>
+            <h2 class={styles.pick}>{bet.pick}</h2>
+            <p class={styles.detail}>{bet.detail}</p>
+            <button class={styles.betAction} type="button" aria-label={`View ${bet.pick}`}>
+              <span>VIEW BET</span>
+              <span class={styles.actionArrow} aria-hidden="true">↗</span>
+            </button>
+          </article>
+        ))
+      }
+    </section>
+    <p class={styles.emptyState} data-bets-empty hidden>No bets match this filter.</p>
+  </div>
+
+  <AppNav />
+</div>
+
+<script>
+  const page = document.querySelector<HTMLElement>('[data-bets-page]')
+  if (page === null) throw new Error('All Bets filter controller requires its page root')
+
+  const cards = [...page.querySelectorAll<HTMLElement>('[data-bet-card]')]
+  const buttons = [...page.querySelectorAll<HTMLButtonElement>('[data-filter-value]')]
+  const status = page.querySelector<HTMLElement>('[data-bets-status]')
+  const emptyState = page.querySelector<HTMLElement>('[data-bets-empty]')
+
+  if (status === null || emptyState === null) {
+    throw new Error('All Bets filter controller is missing a required status element')
+  }
+
+  const requiredStatus = status
+  const requiredEmptyState = emptyState
+
+  function setActive(activeButton: HTMLButtonElement) {
+    for (const button of buttons) {
+      const active = button === activeButton
+      button.setAttribute('aria-pressed', String(active))
+      button.dataset.state = active ? 'active' : 'default'
+    }
+  }
+
+  function applyFilter(filter: string) {
+    let visibleCount = 0
+    for (const card of cards) {
+      const visible = filter === 'all' || card.dataset.category === filter
+      card.hidden = !visible
+      if (visible) visibleCount += 1
+    }
+    requiredEmptyState.hidden = visibleCount !== 0
+    requiredStatus.textContent = `${visibleCount} ${visibleCount === 1 ? 'bet' : 'bets'} shown`
+  }
+
+  for (const button of buttons) {
+    button.addEventListener('click', () => {
+      setActive(button)
+      applyFilter(button.dataset.filterValue ?? 'all')
+    })
+  }
+
+  const initialButton = buttons.find((button) => button.getAttribute('aria-pressed') === 'true')
+  if (initialButton === undefined) throw new Error('All Bets requires an initial filter')
+  applyFilter(initialButton.dataset.filterValue ?? 'all')
+</script>
