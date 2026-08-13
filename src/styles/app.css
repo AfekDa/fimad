@@ -16,10 +16,11 @@
   position: relative;
 }
 
-/* The Homepage has a dedicated 1280px desktop frame. Other routes remain on
- * their mobile-only shell until their desktop designs are implemented. */
+/* Routes with dedicated 1280px desktop frames leave the mobile shell at the
+ * desktop breakpoint. */
 @media (min-width: 768px) {
-  .appShellHomepage {
+  .appShellHomepage,
+  .appShellTeams {
     max-width: none;
   }
 }

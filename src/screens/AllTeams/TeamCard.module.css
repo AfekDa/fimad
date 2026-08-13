@@ -154,3 +154,10 @@
   flex-shrink: 0;
 }
 
+@media (min-width: 768px) {
+  .teamName {
+    font-size: clamp(40px, 5vw, var(--font-dt-h2-size));
+    line-height: var(--font-dt-h2-line);
+    white-space: nowrap;
+  }
+}

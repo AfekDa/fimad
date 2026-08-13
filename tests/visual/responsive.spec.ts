@@ -33,7 +33,7 @@ test.describe('responsive integrity', () => {
       })
     }
 
-    const routeMaxWidth = route.path === '/' ? 1400 : 480
+    const routeMaxWidth = ['/', '/teams'].includes(route.path) ? 1400 : 480
 
     test(`${route.frameName} centres within ${routeMaxWidth}px above the max width`, async ({ page }) => {
       await page.setViewportSize({ width: 1400, height: route.height })
@@ -209,7 +209,7 @@ test.describe('responsive integrity', () => {
   })
 
   test('Homepage matches the browser-chrome-adjusted desktop Figma geometry', async ({ page }) => {
-    await page.setViewportSize({ width: 1280, height: 900 })
+    await page.setViewportSize({ width: 1280, height: 782 })
     await page.goto('/')
     await page.evaluate(async () => {
       await document.fonts.ready
@@ -349,6 +349,78 @@ test.describe('responsive integrity', () => {
     }
 
     await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(3)
+  })
+
+  test('All Teams matches the browser-chrome-adjusted desktop Figma geometry', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 782 })
+    await page.goto('/teams')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(
+        Array.from(document.images).map((image) => image.decode().catch(() => undefined)),
+      )
+    })
+
+    expect(await page.locator('[data-desktop-node-id="377:185"]').boundingBox()).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 1280,
+    })
+    expect(await page.locator('[data-node-id="162:1773"]').boundingBox()).toMatchObject({
+      x: 469,
+      y: 40,
+      width: 342,
+    })
+    const headingBox = await page.getByRole('heading', { level: 1 }).boundingBox()
+    expect(headingBox?.x).toBeCloseTo(80, 0)
+    expect(headingBox?.y).toBeCloseTo(171, 0)
+    expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
+      x: 290,
+      y: 612,
+      width: 700,
+      height: 64,
+    })
+
+    const cards = page.locator('[data-team-card]')
+    await expect(cards).toHaveCount(8)
+    const firstCardBox = await cards.first().boundingBox()
+    expect(firstCardBox?.x).toBeCloseTo(80, 0)
+    expect(firstCardBox?.y).toBeCloseTo(273, 0)
+    expect(firstCardBox?.width).toBeCloseTo(357.33, 0)
+    expect(firstCardBox?.height).toBeCloseTo(295, 0)
+
+    const secondCardBox = await cards.nth(1).boundingBox()
+    expect(secondCardBox?.x).toBeCloseTo(461.33, 0)
+    expect(secondCardBox?.y).toBeCloseTo(273, 0)
+    expect(secondCardBox?.width).toBeCloseTo(357.33, 0)
+
+    const thirdCardBox = await cards.nth(2).boundingBox()
+    expect(thirdCardBox?.x).toBeCloseTo(842.67, 0)
+    expect(thirdCardBox?.y).toBeCloseTo(273, 0)
+    expect(thirdCardBox?.width).toBeCloseTo(357.33, 0)
+  })
+
+  test('desktop navigation tracks the viewport and current page', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 782 })
+
+    for (const route of [
+      { path: '/', current: 'home' },
+      { path: '/teams', current: 'teams' },
+    ]) {
+      await page.goto(route.path)
+
+      const nav = page.locator('[data-app-nav]')
+      const atTop = await nav.boundingBox()
+      expect(atTop).toMatchObject({ x: 290, y: 612, width: 700, height: 64 })
+      await expect(page.locator(`[data-nav-id="${route.current}"]`)).toHaveAttribute(
+        'aria-current',
+        'page',
+      )
+      await expect(page.locator('[aria-current="page"]')).toHaveCount(1)
+
+      await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight))
+      expect(await nav.boundingBox()).toEqual(atTop)
+    }
   })
 
   test('All Bets preserves its source geometry and filters categories', async ({ page }) => {
