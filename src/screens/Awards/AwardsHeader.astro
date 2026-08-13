@@ -1,0 +1,45 @@
+---
+import { ASSETS } from '../../assets/assets'
+import styles from './Awards.module.css'
+
+export interface Props {
+  readonly searchId: string
+  readonly searchLabel: string
+  readonly clearLabel: string
+  readonly nodeIds: {
+    readonly header: string
+    readonly brand: string
+    readonly byline: string
+    readonly title: string
+    readonly search: string
+    readonly searchIcon: string
+  }
+}
+
+const { searchId, searchLabel, clearLabel, nodeIds } = Astro.props
+---
+
+<header class={styles.header} data-node-id={nodeIds.header}>
+  <div class={styles.brand} data-node-id={nodeIds.brand}>
+    <p class={styles.brandByline} data-node-id={nodeIds.byline}>Cody Brown’s</p>
+    <p class={styles.brandTitle} data-node-id={nodeIds.title}>NFL BETTING GUIDE</p>
+  </div>
+
+  <form class={styles.search} data-node-id={nodeIds.search} role="search">
+    <span class={styles.searchIcon} data-node-id={nodeIds.searchIcon}>
+      <img src={ASSETS.teamsIconSearch} alt="" aria-hidden="true" />
+    </span>
+    <label class={styles.visuallyHidden} for={searchId}>{searchLabel}</label>
+    <input
+      id={searchId}
+      class={styles.searchInput}
+      type="search"
+      placeholder="Search your favorite team..."
+      data-award-search
+    />
+    <button class={styles.searchClear} type="reset" aria-label={clearLabel}>
+      <img class={styles.searchClearRing} src={ASSETS.teamsClearRing} alt="" />
+      <img class={styles.searchClearCross} src={ASSETS.teamsClearCross} alt="" />
+    </button>
+  </form>
+</header>

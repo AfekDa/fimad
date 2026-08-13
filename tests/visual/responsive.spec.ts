@@ -382,6 +382,46 @@ test.describe('responsive integrity', () => {
     await expect(page.getByText('No awards match your search.')).toBeVisible()
   })
 
+  test('Most Valuable Player Picks preserves its mobile carousel geometry', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/awards/mvp')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(Array.from(document.images).map((image) => image.decode()))
+    })
+
+    expect(await page.locator('[data-node-id="188:2187"]').boundingBox()).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 430,
+      height: 139,
+    })
+    expect(await page.getByRole('heading', { level: 1 }).boundingBox()).toMatchObject({
+      x: 24,
+      y: 139,
+      width: 315,
+    })
+    const cards = page.locator('[data-mvp-card]')
+    await expect(cards).toHaveCount(3)
+    const firstMvpCard = await cards.first().boundingBox()
+    expect(firstMvpCard).not.toBeNull()
+    expect(firstMvpCard?.x).toBeCloseTo(24, 0)
+    expect(firstMvpCard?.y).toBeCloseTo(220, 0)
+    expect(firstMvpCard?.width).toBeCloseTo(316, 0)
+    expect(firstMvpCard?.height).toBeCloseTo(505, 0)
+    expect(await cards.first().locator(':scope > img').boundingBox()).toMatchObject({
+      x: 24,
+      width: 316,
+      height: 505,
+    })
+    const secondMvpCard = await cards.nth(1).boundingBox()
+    expect(secondMvpCard).not.toBeNull()
+    expect(secondMvpCard?.x).toBeCloseTo(356, 0)
+    expect(secondMvpCard?.y).toBeCloseTo(220, 0)
+    expect(secondMvpCard?.width).toBeCloseTo(316, 0)
+    await expect(page.locator('[data-nav-id="awards"]')).toHaveAttribute('aria-current', 'page')
+  })
+
   test('All Teams matches the browser-chrome-adjusted desktop Figma geometry', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 782 })
     await page.goto('/teams')

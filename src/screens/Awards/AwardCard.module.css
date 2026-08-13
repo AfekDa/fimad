@@ -46,6 +46,6 @@
   text-box-edge: cap alphabetic;
 }
 
-.card > button {
+.card > :is(button, a) {
   position: relative;
 }

@@ -68,6 +68,7 @@ import teamsCardJacksonville from './teams-card-jacksonville.png?url'
 
 /* All Awards — Figma frame 188:2037 */
 import awardCardMvp from './award-card-mvp.png?url'
+import mvpCardLamar from './mvp-card-lamar.png?url'
 
 export const ASSETS = {
   heroPoster,
@@ -114,6 +115,7 @@ export const ASSETS = {
   teamsCardHouston,
   teamsCardJacksonville,
   awardCardMvp,
+  mvpCardLamar,
 } as const
 
 export type AssetName = keyof typeof ASSETS

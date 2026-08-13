@@ -30,7 +30,9 @@ describe('Awards', () => {
 
   it('exposes search, card actions, and canonical navigation', () => {
     expect(screen.getByRole('searchbox', { name: 'Search awards' })).toBeInTheDocument()
-    expect(screen.getAllByRole('button', { name: 'Learn More' })).toHaveLength(4)
+    const actions = screen.getAllByRole('link', { name: 'Learn More' })
+    expect(actions).toHaveLength(4)
+    expect(actions[0]).toHaveAttribute('href', '/awards/mvp')
     expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument()
   })
 

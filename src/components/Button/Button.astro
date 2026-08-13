@@ -24,6 +24,7 @@ export interface Props {
   readonly nodeId?: string | undefined
   readonly ariaLabel?: string | undefined
   readonly assetSet?: 'default' | 'teams-page'
+  readonly href?: string | undefined
   /** Optional client-side filter identifier for filter buttons. */
   readonly filterValue?: string | undefined
 }
@@ -44,10 +45,12 @@ const {
   nodeId,
   ariaLabel,
   assetSet = 'default',
+  href,
   filterValue,
 } = Astro.props
 
 const active = state === 'active'
+const Element = href === undefined ? 'button' : 'a'
 
 const variantClass =
   variant === 'secondary'
@@ -59,8 +62,9 @@ const variantClass =
         : [styles.fanduel, active ? styles.fanduelActive : styles.fanduelDefault]
 ---
 
-<button
-  type="button"
+<Element
+  type={href === undefined ? 'button' : undefined}
+  href={href}
   class:list={[styles.base, variantClass, className]}
   data-node-id={nodeId ?? NODE_IDS[variant][state]}
   data-state={state}
@@ -152,4 +156,4 @@ const variantClass =
       </Fragment>
     )
   }
-</button>
+</Element>

@@ -24,6 +24,11 @@ function normalise(path: string): string {
 }
 
 const here = normalise(currentPath ?? Astro.url.pathname)
+
+function isCurrent(href: string): boolean {
+  const destination = normalise(href)
+  return destination === '/' ? here === '/' : here === destination || here.startsWith(`${destination}/`)
+}
 ---
 
 <div
@@ -54,7 +59,7 @@ const here = normalise(currentPath ?? Astro.url.pathname)
             href={item.href}
             data-astro-prefetch="viewport"
             data-nav-id={item.id}
-            aria-current={normalise(item.href) === here ? 'page' : undefined}
+            aria-current={isCurrent(item.href) ? 'page' : undefined}
           >
             {icon}
             <span class={styles.label}>{item.label}</span>

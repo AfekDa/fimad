@@ -1,0 +1,33 @@
+---
+import { ASSETS } from '../../assets/assets'
+import AppNav from '../../components/AppNav/AppNav.astro'
+import AwardsHeader from '../Awards/AwardsHeader.astro'
+import MvpPickCard from './MvpPickCard.astro'
+import { MVP_PICKS } from './content'
+import styles from './MvpPicks.module.css'
+---
+
+<div class={styles.page} data-node-id="188:2186" data-mvp-picks-page>
+  <AwardsHeader
+    searchId="mvp-search"
+    searchLabel="Search awards"
+    clearLabel="Clear search"
+    nodeIds={{ header: '188:2187', brand: '188:2188', byline: '188:2189', title: '188:2190', search: '188:2191', searchIcon: '188:2192' }}
+  />
+
+  <div class={styles.intro} data-node-id="188:2480">
+    <h1 class={styles.heading} data-node-id="188:2286">MOST VALUABLE PLAYER PICKS</h1>
+    <a class={styles.backLink} href="/awards" data-node-id="188:2319">
+      <span class={styles.backIcon} aria-hidden="true">
+        <img src={ASSETS.arrowGrey} alt="" />
+      </span>
+      <span>Back to all awards</span>
+    </a>
+  </div>
+
+  <section class={styles.carousel} aria-label="Most valuable player picks" data-node-id="188:2195">
+    {MVP_PICKS.map((pick) => <MvpPickCard pick={pick} />)}
+  </section>
+
+  <AppNav />
+</div>

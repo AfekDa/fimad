@@ -1,37 +1,19 @@
 ---
 /** All Awards — Figma frame 188:2037, 430 × 1507 (54px device status bar omitted). */
-import { ASSETS } from '../../assets/assets'
 import AppNav from '../../components/AppNav/AppNav.astro'
 import AwardCard from './AwardCard.astro'
+import AwardsHeader from './AwardsHeader.astro'
 import { AWARD_CARDS } from './content'
 import styles from './Awards.module.css'
 ---
 
 <div class={styles.page} data-node-id="188:2037" data-awards-page>
-  <header class={styles.header} data-node-id="188:2038">
-    <div class={styles.brand} data-node-id="188:2039">
-      <p class={styles.brandByline} data-node-id="188:2040">Cody Brown’s</p>
-      <p class={styles.brandTitle} data-node-id="188:2041">NFL BETTING GUIDE</p>
-    </div>
-
-    <form class={styles.search} data-node-id="188:2042" role="search">
-      <span class={styles.searchIcon} data-node-id="188:2043">
-        <img src={ASSETS.teamsIconSearch} alt="" aria-hidden="true" />
-      </span>
-      <label class={styles.visuallyHidden} for="award-search">Search awards</label>
-      <input
-        id="award-search"
-        class={styles.searchInput}
-        type="search"
-        placeholder="Search your favorite team..."
-        data-award-search
-      />
-      <button class={styles.searchClear} type="reset" aria-label="Clear award search">
-        <img class={styles.searchClearRing} src={ASSETS.teamsClearRing} alt="" />
-        <img class={styles.searchClearCross} src={ASSETS.teamsClearCross} alt="" />
-      </button>
-    </form>
-  </header>
+  <AwardsHeader
+    searchId="award-search"
+    searchLabel="Search awards"
+    clearLabel="Clear award search"
+    nodeIds={{ header: '188:2038', brand: '188:2039', byline: '188:2040', title: '188:2041', search: '188:2042', searchIcon: '188:2043' }}
+  />
 
   <section class={styles.cards} aria-label="Awards" data-node-id="188:2046">
     {AWARD_CARDS.map((card) => <AwardCard card={card} />)}

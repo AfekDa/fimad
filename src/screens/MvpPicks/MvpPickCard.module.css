@@ -1,0 +1,116 @@
+.card {
+  position: relative;
+  display: flex;
+  flex: 0 0 316px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 316px;
+  height: 505px;
+  padding: var(--space-16);
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.image,
+.scrim {
+  position: absolute;
+  inset: 0;
+  width: 316px;
+  height: 505px;
+  border-radius: inherit;
+}
+
+.image {
+  max-width: none;
+  object-position: bottom;
+}
+
+.scrim {
+  background: linear-gradient(
+    to bottom,
+    rgba(1, 21, 86, 0) 28.788%,
+    var(--color-navy) 47.011%,
+    var(--fanduel-blue) 100%
+  );
+  pointer-events: none;
+}
+
+.rank,
+.details {
+  position: relative;
+}
+
+.rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 60px;
+  background: var(--fanduel-blue);
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc1-sb-size);
+  line-height: var(--font-bc1-sb-line);
+  font-weight: var(--font-bc1-sb-weight);
+}
+
+.details,
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.details {
+  gap: var(--space-40);
+}
+
+.copy {
+  gap: var(--space-16);
+  color: var(--color-white);
+}
+
+.name,
+.description,
+.odds {
+  margin: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.name {
+  width: 100%;
+  font-family: var(--font-family-display);
+  font-size: var(--font-h1-size);
+  line-height: var(--font-h1-line);
+  font-weight: var(--font-h1-weight);
+  letter-spacing: var(--font-display-letter-spacing);
+  white-space: nowrap;
+}
+
+.description {
+  width: 100%;
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: var(--font-bc3-r-weight);
+}
+
+.bet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.odds {
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: 34px;
+  line-height: 35px;
+  font-weight: 700;
+  white-space: nowrap;
+}

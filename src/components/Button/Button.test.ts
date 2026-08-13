@@ -81,4 +81,15 @@ describe('Button', () => {
       expect(img).toHaveAttribute('alt', '')
     }
   })
+
+  it('renders a native link when a destination is provided', async () => {
+    const { screen } = await renderButton({
+      variant: 'button',
+      label: 'Learn More',
+      href: '/awards/mvp',
+    })
+
+    expect(screen.getByRole('link', { name: 'Learn More' })).toHaveAttribute('href', '/awards/mvp')
+    expect(screen.queryByRole('button')).not.toBeInTheDocument()
+  })
 })
