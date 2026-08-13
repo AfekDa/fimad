@@ -299,7 +299,7 @@
 
   .brand {
     align-items: center;
-    gap: 0;
+    gap: var(--space-12);
   }
 
   .brandByline {

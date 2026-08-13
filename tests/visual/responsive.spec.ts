@@ -402,6 +402,16 @@ test.describe('responsive integrity', () => {
       y: 40,
       width: 342,
     })
+    expect(await page.locator('[data-node-id="162:1774"]').boundingBox()).toMatchObject({
+      x: 565,
+      y: 40,
+      width: 150,
+    })
+    const brandTitleBox = await page.locator('[data-node-id="162:1775"]').boundingBox()
+    expect(brandTitleBox).not.toBeNull()
+    expect(brandTitleBox?.x).toBeCloseTo(469, 0)
+    expect(brandTitleBox?.y).toBeCloseTo(69, 0)
+    expect(brandTitleBox?.width).toBeCloseTo(342, 0)
     const headingBox = await page.getByRole('heading', { level: 1 }).boundingBox()
     expect(headingBox?.x).toBeCloseTo(80, 0)
     expect(headingBox?.y).toBeCloseTo(171, 0)
