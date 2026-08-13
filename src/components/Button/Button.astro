@@ -64,6 +64,7 @@ const variantClass =
   class:list={[styles.base, variantClass, className]}
   data-node-id={nodeId ?? NODE_IDS[variant][state]}
   data-state={state}
+  data-asset-set={assetSet}
   data-filter-value={filterValue}
   aria-label={ariaLabel}
   aria-pressed={variant === 'filter' ? (active ? 'true' : 'false') : undefined}
@@ -141,7 +142,7 @@ const variantClass =
           <span class={styles.fanduelMark}>
             <img
               class={styles.fanduelMarkLeaf}
-              src={ASSETS.fanduelMark}
+              src={assetSet === 'teams-page' ? ASSETS.teamsFanduelMask : ASSETS.fanduelMark}
               alt=""
               aria-hidden="true"
             />

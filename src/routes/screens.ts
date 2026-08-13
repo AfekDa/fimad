@@ -52,4 +52,13 @@ export const SCREENS: readonly ScreenMeta[] = [
     /* Nav scrim 162:1822 ends at the 932px device viewport edge. */
     viewportHeight: 932,
   },
+  {
+    path: '/all-bets',
+    frameName: 'Bets Page',
+    nodeId: '251:2889',
+    width: 430,
+    height: 4861,
+    /* Nav instance 251:2934 uses the same 932px mobile viewport. */
+    viewportHeight: 932,
+  },
 ]

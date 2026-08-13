@@ -1,0 +1,224 @@
+.page {
+  position: relative;
+  width: 100%;
+  min-height: var(--bets-frame-height);
+  background: var(--color-navy);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  width: 100%;
+  height: var(--bets-header-height);
+  padding: var(--space-24);
+  background: var(--color-navy);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  color: var(--color-white);
+}
+
+.brandByline,
+.brandTitle,
+.sectionTitle {
+  margin: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.brandByline {
+  width: 193px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: var(--font-bc3-r-weight);
+}
+
+.brandTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-h2-size);
+  line-height: var(--font-h2-line);
+  font-weight: var(--font-h2-weight);
+  letter-spacing: var(--font-display-letter-spacing);
+  white-space: nowrap;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  height: 36px;
+  margin: 0;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-card);
+  background: var(--surface-search);
+  opacity: 0.8;
+}
+
+.searchIcon {
+  position: relative;
+  width: 11.993px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.searchIcon img {
+  position: absolute;
+  inset: 0;
+  width: 12px;
+  height: 12px;
+  max-width: none;
+}
+
+.searchInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: var(--font-bc3-r-weight);
+}
+
+.searchInput::placeholder {
+  color: var(--color-white);
+  opacity: 1;
+}
+
+.searchInput::-webkit-search-cancel-button {
+  display: none;
+}
+
+.searchClear {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.searchClearRing,
+.searchClearCross {
+  position: absolute;
+  display: block;
+}
+
+.searchClearRing {
+  inset: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.searchClearCross {
+  left: 33.47%;
+  top: 33.33%;
+  width: 33.35%;
+  height: 33.34%;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  width: calc(100% - 2 * var(--content-padding-inline));
+  margin-inline: var(--content-padding-inline);
+}
+
+.filterRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  width: 100%;
+  min-height: 33px;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-32);
+  width: calc(100% - 2 * var(--content-padding-inline));
+  margin: var(--space-24) var(--content-padding-inline) 0;
+}
+
+.divider {
+  position: relative;
+  width: 100%;
+  height: 0;
+  flex-shrink: 0;
+}
+
+.divider img {
+  position: absolute;
+  inset: -0.5px 0;
+  width: 100%;
+  height: 1px;
+}
+
+.betSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+.sectionTitle {
+  width: 100%;
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc1-sb-size);
+  line-height: var(--font-bc1-sb-line);
+  font-weight: var(--font-bc1-sb-weight);
+  overflow-wrap: break-word;
+}
+
+.betList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  width: 100%;
+}
+
+.emptyState {
+  width: calc(100% - 2 * var(--content-padding-inline));
+  margin: var(--space-32) var(--content-padding-inline) 0;
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc2-m-size);
+  line-height: var(--font-bc2-m-line);
+  text-align: center;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 389px) {
+  .filterRow {
+    flex-wrap: wrap;
+    gap: var(--space-8);
+  }
+}

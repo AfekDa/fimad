@@ -1,0 +1,185 @@
+---
+/** All Bets — Figma frame 251:2889, 430 × 4915 (54px device status bar omitted). */
+import AppNav from '../../components/AppNav/AppNav.astro'
+import Button from '../../components/Button/Button.astro'
+import { ASSETS } from '../../assets/assets'
+import BetCard from './BetCard.astro'
+import { BET_FILTERS, BET_SECTIONS } from './content'
+import styles from './AllBets.module.css'
+---
+
+<div class={styles.page} data-node-id="251:2889" data-all-bets-page>
+  <header class={styles.header} data-node-id="251:2892">
+    <div class={styles.brand} data-node-id="251:2893">
+      <p class={styles.brandByline} data-node-id="251:2894">Cody Brown’s</p>
+      <p class={styles.brandTitle} data-node-id="251:2895">NFL BETTING GUIDE</p>
+    </div>
+
+    <form class={styles.search} data-node-id="251:2896" role="search">
+      <span class={styles.searchIcon} data-node-id="251:2897">
+        <img src={ASSETS.teamsIconSearch} alt="" aria-hidden="true" />
+      </span>
+      <label class={styles.visuallyHidden} for="bet-search">Search bets</label>
+      <input
+        id="bet-search"
+        class={styles.searchInput}
+        type="search"
+        placeholder="Search your favorite team..."
+        data-bet-search
+      />
+      <button class={styles.searchClear} type="reset" aria-label="Clear bet search">
+        <img class={styles.searchClearRing} src={ASSETS.teamsClearRing} alt="" />
+        <img class={styles.searchClearCross} src={ASSETS.teamsClearCross} alt="" />
+      </button>
+    </form>
+  </header>
+
+  <section class={styles.filters} aria-label="Bet categories" data-node-id="251:3065">
+    <div class={styles.filterRow} data-node-id="251:3001">
+      {
+        BET_FILTERS.slice(0, 3).map((filter) => (
+          <Button
+            variant="filter"
+            state={filter.id === 'all' ? 'active' : 'default'}
+            label={filter.label}
+            nodeId={filter.id === 'all' ? '251:3002' : filter.id === 'mvp' ? '251:3003' : '251:3050'}
+            assetSet="teams-page"
+            filterValue={filter.id}
+          />
+        ))
+      }
+    </div>
+    <div class={styles.filterRow} data-node-id="251:3021">
+      {
+        BET_FILTERS.slice(3, 5).map((filter, index) => (
+          <Button
+            variant="filter"
+            label={filter.label}
+            nodeId={index === 0 ? '251:3023' : '251:3031'}
+            assetSet="teams-page"
+            filterValue={filter.id}
+          />
+        ))
+      }
+    </div>
+    <div class={styles.filterRow} data-node-id="251:3034">
+      <Button
+        variant="filter"
+        label={BET_FILTERS[5].label}
+        nodeId="251:3035"
+        assetSet="teams-page"
+        filterValue={BET_FILTERS[5].id}
+      />
+    </div>
+    <div class={styles.filterRow} data-node-id="251:3039">
+      <Button
+        variant="filter"
+        label={BET_FILTERS[6].label}
+        nodeId="251:3040"
+        assetSet="teams-page"
+        filterValue={BET_FILTERS[6].id}
+      />
+    </div>
+  </section>
+
+  <div class={styles.sections} data-node-id="251:3311">
+    <div class={styles.divider} data-node-id="251:3063">
+      <img src={ASSETS.teamsDivider} alt="" aria-hidden="true" />
+    </div>
+
+    {
+      BET_SECTIONS.map((section) => (
+        <Fragment>
+          <section
+            class={styles.betSection}
+            data-node-id={section.frameNodeId}
+            data-bet-section={section.id}
+          >
+            <h1 class={styles.sectionTitle} data-node-id={section.headingNodeId}>
+              {section.title}
+            </h1>
+            <div class={styles.betList}>
+              {section.bets.map((bet) => <BetCard bet={bet} />)}
+            </div>
+          </section>
+          {section !== BET_SECTIONS.at(-1) && (
+            <div class={styles.divider} aria-hidden="true">
+              <img src={ASSETS.teamsDivider} alt="" />
+            </div>
+          )}
+        </Fragment>
+      ))
+    }
+  </div>
+
+  <p class={styles.emptyState} data-empty-bets hidden>No bets match your filters.</p>
+  <AppNav />
+</div>
+
+<script>
+  const page = document.querySelector<HTMLElement>('[data-all-bets-page]')
+
+  if (page === null) throw new Error('All Bets controller requires its page root')
+
+  const search = page.querySelector<HTMLInputElement>('[data-bet-search]')
+  const filterButtons = [...page.querySelectorAll<HTMLButtonElement>('[data-filter-value]')]
+  const sections = [...page.querySelectorAll<HTMLElement>('[data-bet-section]')]
+  const emptyState = page.querySelector<HTMLElement>('[data-empty-bets]')
+
+  if (search === null || filterButtons.length !== 7 || sections.length !== 6 || emptyState === null) {
+    throw new Error('All Bets controller is missing required filters, sections, or search controls')
+  }
+
+  const requiredSearch = search
+  const requiredEmptyState = emptyState
+
+  function selectFilter(selected: HTMLButtonElement) {
+    for (const button of filterButtons) {
+      const active = button === selected
+      button.dataset.state = active ? 'active' : 'default'
+      button.setAttribute('aria-pressed', String(active))
+      const clear = button.querySelector<HTMLElement>('[data-filter-clear]')
+      if (clear === null) throw new Error('All Bets filter is missing its clear-state icon')
+      clear.hidden = !active
+    }
+  }
+
+  function applyFilters() {
+    const selected = filterButtons.find((button) => button.getAttribute('aria-pressed') === 'true')
+    if (selected === undefined) throw new Error('All Bets requires one selected category')
+
+    const category = selected.dataset.filterValue
+    if (category === undefined) throw new Error('Selected All Bets filter has no category value')
+
+    const query = requiredSearch.value.trim().toLocaleLowerCase()
+    let visibleCards = 0
+
+    for (const section of sections) {
+      const categoryMatches = category === 'all' || section.dataset.betSection === category
+      let sectionMatches = 0
+
+      for (const card of section.querySelectorAll<HTMLElement>('[data-bet-card]')) {
+        const searchMatches = card.dataset.player?.toLocaleLowerCase().includes(query) ?? false
+        const visible = categoryMatches && searchMatches
+        card.hidden = !visible
+        if (visible) sectionMatches += 1
+      }
+
+      section.hidden = sectionMatches === 0
+      visibleCards += sectionMatches
+    }
+
+    requiredEmptyState.hidden = visibleCards !== 0
+  }
+
+  for (const button of filterButtons) {
+    button.addEventListener('click', () => {
+      selectFilter(button)
+      applyFilters()
+    })
+  }
+
+  search.addEventListener('input', applyFilters)
+  search.form?.addEventListener('submit', (event) => event.preventDefault())
+  search.form?.addEventListener('reset', () => requestAnimationFrame(applyFilters))
+</script>

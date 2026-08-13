@@ -164,6 +164,12 @@
   /* Search field 162:1776. */
   --surface-search: #000b2e;
 
+  /* All Bets card fill, frame 251:3114. */
+  --surface-bet-card: #000d36;
+  /* Bets Page 251:2889 minus the 54px iPhone status bar. */
+  --bets-header-height: 139px;
+  --bets-frame-height: 4861px;
+
   /* Frame and content geometry after removing the 54px device status bar. */
   --teams-frame-height: 2877px;
   --teams-content-top: var(--space-24);

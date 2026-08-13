@@ -137,8 +137,10 @@ test.describe('responsive integrity', () => {
 
     const homepage = await readAppNavContract('/')
     const allTeams = await readAppNavContract('/teams')
+    const allBets = await readAppNavContract('/all-bets')
 
     expect(allTeams).toEqual(homepage)
+    expect(allBets).toEqual(homepage)
   })
 
   test('All Teams preserves the source frame and asset boxes at 430px', async ({ page }) => {
@@ -332,21 +334,57 @@ test.describe('responsive integrity', () => {
   })
 
   /*
-   * Three tabs have no screen yet. They must be visible, because the design
+   * Two tabs have no screen yet. They must be visible, because the design
    * draws all five, but must not behave like destinations — no href, and not
    * in the tab order.
    */
   test('nav tabs without a page are inert', async ({ page }) => {
     await page.goto('/')
 
-    for (const id of ['awards', 'all-bets', 'fanduel']) {
+    for (const id of ['awards', 'fanduel']) {
       const tab = page.locator(`[data-nav-id="${id}"]`)
       await expect(tab).toBeVisible()
       await expect(tab).toHaveAttribute('aria-disabled', 'true')
       expect(await tab.evaluate((el) => el.tagName)).toBe('SPAN')
     }
 
-    await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(2)
+    await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(3)
+  })
+
+  test('All Bets preserves its source geometry and filters categories', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/all-bets')
+    await page.evaluate(() => document.fonts.ready)
+
+    await expect(page.locator('[data-node-id="251:2889"]')).toHaveCSS('min-height', '4861px')
+    expect(await page.locator('[data-node-id="251:2892"]').boundingBox()).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 430,
+      height: 139,
+    })
+    expect(await page.locator('[data-node-id="251:3065"]').boundingBox()).toMatchObject({
+      x: 24,
+      y: 139,
+      width: 382,
+      height: 156,
+    })
+    expect(await page.locator('[data-node-id="251:3311"]').boundingBox()).toMatchObject({
+      x: 24,
+      y: 319,
+      width: 382,
+    })
+
+    const cards = page.locator('[data-bet-card]')
+    await expect(cards).toHaveCount(37)
+    expect(await cards.first().boundingBox()).toMatchObject({ width: 382, height: 70 })
+
+    await page.getByRole('button', { name: 'Exclusive' }).click()
+    await expect(page.locator('[data-bet-section]:not([hidden])')).toHaveCount(1)
+    await expect(page.locator('[data-bet-card]:not([hidden])')).toHaveCount(2)
+
+    await page.getByRole('searchbox', { name: 'Search bets' }).fill('not a player')
+    await expect(page.getByText('No bets match your filters.')).toBeVisible()
   })
 
   test('responsive suite has screens to exercise', () => {
