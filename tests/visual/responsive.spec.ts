@@ -341,14 +341,45 @@ test.describe('responsive integrity', () => {
   test('nav tabs without a page are inert', async ({ page }) => {
     await page.goto('/')
 
-    for (const id of ['awards', 'fanduel']) {
+    for (const id of ['fanduel']) {
       const tab = page.locator(`[data-nav-id="${id}"]`)
       await expect(tab).toBeVisible()
       await expect(tab).toHaveAttribute('aria-disabled', 'true')
       expect(await tab.evaluate((el) => el.tagName)).toBe('SPAN')
     }
 
-    await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(3)
+    await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(4)
+  })
+
+  test('Awards preserves the mobile Figma geometry and filters cards', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/awards')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(Array.from(document.images).map((image) => image.decode()))
+    })
+
+    await expect(page.locator('[data-node-id="188:2037"]')).toHaveCSS('min-height', '1453px')
+    expect(await page.locator('[data-node-id="188:2038"]').boundingBox()).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 430,
+      height: 139,
+    })
+
+    const cards = page.locator('[data-award-card]')
+    await expect(cards).toHaveCount(4)
+    expect(await cards.first().boundingBox()).toMatchObject({ x: 24, y: 139, width: 382, height: 300 })
+    expect(await cards.nth(1).boundingBox()).toMatchObject({ x: 24, y: 461, width: 382, height: 300 })
+    expect(await cards.first().locator(':scope > img').boundingBox()).toMatchObject({
+      width: 382,
+      height: 300,
+    })
+
+    await expect(page.locator('[data-nav-id="awards"]')).toHaveAttribute('aria-current', 'page')
+    await page.getByRole('searchbox', { name: 'Search awards' }).fill('not an award')
+    await expect(page.locator('[data-award-card]:not([hidden])')).toHaveCount(0)
+    await expect(page.getByText('No awards match your search.')).toBeVisible()
   })
 
   test('All Teams matches the browser-chrome-adjusted desktop Figma geometry', async ({ page }) => {

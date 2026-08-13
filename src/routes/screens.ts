@@ -61,4 +61,13 @@ export const SCREENS: readonly ScreenMeta[] = [
     /* Nav instance 251:2934 uses the same 932px mobile viewport. */
     viewportHeight: 932,
   },
+  {
+    path: '/awards',
+    frameName: 'All Awards',
+    nodeId: '188:2037',
+    width: 430,
+    height: 1507,
+    /* Nav instance 188:2061 uses the same 932px mobile viewport. */
+    viewportHeight: 932,
+  },
 ]

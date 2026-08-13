@@ -170,6 +170,16 @@
   --bets-header-height: 139px;
   --bets-frame-height: 4861px;
 
+  /* All Awards 188:2037 after omitting the 54px iPhone status bar. */
+  --awards-frame-height: 1453px;
+  --awards-card-height: 300px;
+  --awards-card-gap: 22px;
+  --gradient-award-card: linear-gradient(
+    to bottom,
+    rgba(0, 120, 255, 0) 53.846%,
+    rgba(0, 120, 255, 0.7) 100%
+  );
+
   /* Frame and content geometry after removing the 54px device status bar. */
   --teams-frame-height: 2877px;
   --teams-content-top: var(--space-24);
