@@ -29,10 +29,10 @@ export default defineConfig({
        * residue is entirely edge anti-aliasing: Figma and Chromium rasterise
        * glyphs differently and resample the hero bitmap with different filters,
        * neither of which CSS can control. Toggling font-smoothing changes it by
-       * zero pixels. 0.035 leaves headroom above that floor while still failing
-       * on any real layout, colour, or asset regression.
+       * zero pixels. 0.028 sits just above that floor while still failing on
+       * any real layout, colour, or asset regression.
        */
-      maxDiffPixelRatio: 0.035,
+      maxDiffPixelRatio: 0.028,
       threshold: 0.2,
       animations: 'disabled',
       caret: 'hide',
