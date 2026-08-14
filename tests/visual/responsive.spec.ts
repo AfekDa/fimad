@@ -143,6 +143,41 @@ test.describe('responsive integrity', () => {
     expect(allBets).toEqual(homepage)
   })
 
+  test('mobile navigation uses the highlighted diagonal stroke and tighter icon scale', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/')
+
+    const appearance = await page.locator('[data-app-nav]').evaluate((nav) => {
+      const icons = Array.from(nav.querySelectorAll<HTMLElement>('[data-nav-id] > span:first-child'))
+      const boxes = icons.map((icon) => icon.getBoundingClientRect())
+
+      if (boxes.length !== 5) {
+        throw new Error(`Expected five navigation icons, received ${String(boxes.length)}`)
+      }
+
+      const home = boxes[0]
+      const teams = boxes[1]
+      if (home === undefined || teams === undefined) {
+        throw new Error('Home and Teams icon geometry is unavailable')
+      }
+
+      return {
+        stroke: getComputedStyle(nav, '::before').backgroundImage,
+        home: { width: home.width, height: home.height },
+        teams: { width: teams.width, height: teams.height },
+        homeToTeamsGap: teams.left - home.right,
+      }
+    })
+
+    expect(appearance.stroke).toContain('to left bottom')
+    expect(appearance.stroke).toContain('rgba(255, 255, 255, 0.5) 50%')
+    expect(appearance.home).toEqual({ width: 28, height: 28 })
+    expect(appearance.teams).toEqual({ width: 35, height: 28 })
+    expect(appearance.homeToTeamsGap).toBeCloseTo(36, 0)
+  })
+
   test('All Teams preserves the source frame and asset boxes at 430px', async ({ page }) => {
     await page.setViewportSize({ width: 430, height: 932 })
     await page.goto('/teams')
@@ -173,7 +208,7 @@ test.describe('responsive integrity', () => {
 
     const teamsIcon = page.locator('[data-nav-id="teams"] > span[style]')
     const teamsIconBox = await teamsIcon.boundingBox()
-    expect(teamsIconBox).toMatchObject({ width: 40, height: 32 })
+    expect(teamsIconBox).toMatchObject({ width: 35, height: 28 })
   })
 
   test('Homepage positions the Cody Brown brand at the status-bar-adjusted Figma coordinates', async ({

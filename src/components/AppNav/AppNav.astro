@@ -46,7 +46,7 @@ function isCurrent(href: string): boolean {
     <div class={styles.items}>
       {
         APP_NAV_ITEMS.map((item) => {
-        const icon = <Icon name={item.icon} />
+        const icon = <Icon class={styles.itemIcon} name={item.icon} />
 
         return item.href === undefined ? (
           <span class={styles.item} data-nav-id={item.id} aria-disabled="true">
