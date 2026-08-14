@@ -208,6 +208,26 @@ test.describe('responsive integrity', () => {
     expect(await hero.boundingBox()).toMatchObject({ x: 0, y: 0, width: 430, height: 648 })
   })
 
+  test('Homepage reveals the introduction above the navigation on shorter mobile viewports', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 430, height: 667 })
+    await page.goto('/')
+
+    const heroBox = await page.locator('[data-node-id="1:91"]').boundingBox()
+    const contentBox = await page.locator('[data-node-id="1:96"]').boundingBox()
+    const headingBox = await page.getByRole('heading', { level: 1 }).boundingBox()
+    const navBox = await page.getByRole('navigation', { name: 'Primary' }).boundingBox()
+
+    expect(heroBox).not.toBeNull()
+    expect(contentBox).not.toBeNull()
+    expect(headingBox).not.toBeNull()
+    expect(navBox).not.toBeNull()
+    expect(heroBox?.height).toBeCloseTo((667 * 648) / 932, 0)
+    expect(contentBox?.y).toBeCloseTo((heroBox?.y ?? 0) + (heroBox?.height ?? 0), 0)
+    expect(headingBox?.y).toBeLessThan(navBox?.y ?? 0)
+  })
+
   test('Homepage matches the browser-chrome-adjusted desktop Figma geometry', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 782 })
     await page.goto('/')
