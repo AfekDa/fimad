@@ -48,15 +48,17 @@
    */
   background: conic-gradient(
       from 0deg at 50% 50%,
-      rgba(180, 210, 255, 0.4) 0deg,
-      rgba(180, 210, 255, 0.43) 78deg,
-      rgba(180, 210, 255, 0.4) 90deg,
-      rgba(180, 210, 255, 0.27) 102deg,
-      rgba(180, 210, 255, 0.3) 180deg,
-      rgba(180, 210, 255, 0.32) 258deg,
-      rgba(180, 210, 255, 0.3) 270deg,
-      rgba(180, 210, 255, 0.38) 282deg,
-      rgba(180, 210, 255, 0.4) 360deg
+      rgba(255, 255, 255, 0.24) 0deg,
+      rgba(255, 255, 255, 0.55) 24deg,
+      var(--color-white) 45deg,
+      rgba(255, 255, 255, 0.42) 72deg,
+      rgba(255, 255, 255, 0.14) 105deg,
+      rgba(255, 255, 255, 0.12) 165deg,
+      rgba(255, 255, 255, 0.55) 204deg,
+      var(--color-white) 225deg,
+      rgba(255, 255, 255, 0.42) 252deg,
+      rgba(255, 255, 255, 0.14) 285deg,
+      rgba(255, 255, 255, 0.24) 360deg
     )
     border-box;
   -webkit-mask:
