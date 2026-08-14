@@ -43,15 +43,25 @@
   border: var(--nav-stroke-width) solid transparent;
   border-radius: inherit;
   /*
-   * `to bottom left` maps onto the pill's geometric corners, so 0% is top-right
-   * and 100% is bottom-left — the two opaque white stroke hotspots. A conic
-   * gradient from 45deg/225deg would light the long edges on this wide bar.
+   * Speculars only at top-right and bottom-left. Each hotspot falls off to
+   * fully transparent so the right cap, left cap, and long edges have no
+   * outline — a diagonal wash kept those ends painted white.
    */
-  background: linear-gradient(
-      to bottom left,
+  background:
+    radial-gradient(
+      52px 28px at 100% 0%,
       var(--color-white) 0%,
-      var(--nav-stroke) 50%,
-      var(--color-white) 100%
+      var(--color-white) 22%,
+      rgba(255, 255, 255, 0.4) 42%,
+      rgba(255, 255, 255, 0) 72%
+    )
+    border-box,
+    radial-gradient(
+      52px 28px at 0% 100%,
+      var(--color-white) 0%,
+      var(--color-white) 22%,
+      rgba(255, 255, 255, 0.4) 42%,
+      rgba(255, 255, 255, 0) 72%
     )
     border-box;
   -webkit-mask:

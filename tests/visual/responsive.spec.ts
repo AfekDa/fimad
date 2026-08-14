@@ -175,10 +175,10 @@ test.describe('responsive integrity', () => {
       }
     })
 
-    expect(appearance.stroke).toContain('linear-gradient')
-    expect(appearance.stroke).toContain('rgb(255, 255, 255) 0%')
-    expect(appearance.stroke).toContain('rgba(255, 255, 255, 0.5) 50%')
-    expect(appearance.stroke).toContain('rgb(255, 255, 255) 100%')
+    expect(appearance.stroke).toContain('radial-gradient')
+    expect(appearance.stroke).toContain('at 100% 0%')
+    expect(appearance.stroke).toContain('at 0% 100%')
+    expect(appearance.stroke).toContain('rgba(255, 255, 255, 0) 72%')
     expect(Number.parseFloat(appearance.strokeWidthToken)).toBe(1)
     expect(Number.parseFloat(appearance.strokeWidth)).toBe(1)
     expect(appearance.home).toEqual({ width: 28, height: 28 })
