@@ -39,26 +39,19 @@
   content: '';
   position: absolute;
   inset: 0;
-  border: var(--nav-glass-edge-width) solid transparent;
+  box-sizing: border-box;
+  border: var(--nav-stroke-width) solid transparent;
   border-radius: inherit;
   /*
-   * Figma 162:1823 has no stroke. Its diagonal highlights come from a Glass
-   * effect (45deg light), so keep the two lit corners and let the opposite
-   * diagonal fade away instead of drawing a uniformly translucent outline.
+   * `to bottom left` maps onto the pill's geometric corners, so 0% is top-right
+   * and 100% is bottom-left — the two opaque white stroke hotspots. A conic
+   * gradient from 45deg/225deg would light the long edges on this wide bar.
    */
-  background: conic-gradient(
-      from 0deg at 50% 50%,
-      rgba(255, 255, 255, 0.24) 0deg,
-      rgba(255, 255, 255, 0.55) 24deg,
-      var(--color-white) 45deg,
-      rgba(255, 255, 255, 0.42) 72deg,
-      rgba(255, 255, 255, 0.14) 105deg,
-      rgba(255, 255, 255, 0.12) 165deg,
-      rgba(255, 255, 255, 0.55) 204deg,
-      var(--color-white) 225deg,
-      rgba(255, 255, 255, 0.42) 252deg,
-      rgba(255, 255, 255, 0.14) 285deg,
-      rgba(255, 255, 255, 0.24) 360deg
+  background: linear-gradient(
+      to bottom left,
+      var(--color-white) 0%,
+      var(--nav-stroke) 50%,
+      var(--color-white) 100%
     )
     border-box;
   -webkit-mask:
