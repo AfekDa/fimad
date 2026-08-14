@@ -29,8 +29,7 @@
 
   /* Nav glass treatment measured from the Homepage 2x frame export. */
   --nav-backdrop-blur: 3px;
-  --nav-stroke: rgba(255, 255, 255, 0.5);
-  --nav-stroke-width: 0.5px;
+  --nav-glass-edge-width: 0.5px;
 
   /* Hero scrim (1:92): transparent blue -> solid blue, from 55.093% */
   --gradient-hero: linear-gradient(

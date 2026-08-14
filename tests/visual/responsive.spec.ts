@@ -143,7 +143,7 @@ test.describe('responsive integrity', () => {
     expect(allBets).toEqual(homepage)
   })
 
-  test('mobile navigation uses the highlighted diagonal stroke and tighter icon scale', async ({
+  test('mobile navigation uses the Figma glass edge lighting and tighter icon scale', async ({
     page,
   }) => {
     await page.setViewportSize({ width: 430, height: 932 })
@@ -163,16 +163,26 @@ test.describe('responsive integrity', () => {
         throw new Error('Home and Teams icon geometry is unavailable')
       }
 
+      const glassEdgeStyle = getComputedStyle(nav, '::before')
+
       return {
-        stroke: getComputedStyle(nav, '::before').backgroundImage,
+        glassEdge: glassEdgeStyle.backgroundImage,
+        glassEdgeWidth: glassEdgeStyle.borderTopWidth,
+        glassEdgeWidthToken: getComputedStyle(nav)
+          .getPropertyValue('--nav-glass-edge-width')
+          .trim(),
         home: { width: home.width, height: home.height },
         teams: { width: teams.width, height: teams.height },
         homeToTeamsGap: teams.left - home.right,
       }
     })
 
-    expect(appearance.stroke).toContain('to left bottom')
-    expect(appearance.stroke).toContain('rgba(255, 255, 255, 0.5) 50%')
+    expect(appearance.glassEdge).toContain('conic-gradient')
+    expect(appearance.glassEdge).toContain('rgba(180, 210, 255, 0.43) 78deg')
+    expect(appearance.glassEdge).toContain('rgba(180, 210, 255, 0.32) 258deg')
+    expect(Number.parseFloat(appearance.glassEdgeWidthToken)).toBe(0.5)
+    expect(Number.parseFloat(appearance.glassEdgeWidth)).toBeGreaterThan(0)
+    expect(Number.parseFloat(appearance.glassEdgeWidth)).toBeLessThanOrEqual(1)
     expect(appearance.home).toEqual({ width: 28, height: 28 })
     expect(appearance.teams).toEqual({ width: 35, height: 28 })
     expect(appearance.homeToTeamsGap).toBeCloseTo(36, 0)

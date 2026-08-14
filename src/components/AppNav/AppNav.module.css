@@ -39,13 +39,24 @@
   content: '';
   position: absolute;
   inset: 0;
-  border: var(--nav-stroke-width) solid transparent;
+  border: var(--nav-glass-edge-width) solid transparent;
   border-radius: inherit;
-  background: linear-gradient(
-      to bottom left,
-      var(--color-white) 0%,
-      var(--nav-stroke) 50%,
-      var(--color-white) 100%
+  /*
+   * Figma 162:1823 has no stroke. Its diagonal highlights come from a Glass
+   * effect (45deg light), so keep the two lit corners and let the opposite
+   * diagonal fade away instead of drawing a uniformly translucent outline.
+   */
+  background: conic-gradient(
+      from 0deg at 50% 50%,
+      rgba(180, 210, 255, 0.4) 0deg,
+      rgba(180, 210, 255, 0.43) 78deg,
+      rgba(180, 210, 255, 0.4) 90deg,
+      rgba(180, 210, 255, 0.27) 102deg,
+      rgba(180, 210, 255, 0.3) 180deg,
+      rgba(180, 210, 255, 0.32) 258deg,
+      rgba(180, 210, 255, 0.3) 270deg,
+      rgba(180, 210, 255, 0.38) 282deg,
+      rgba(180, 210, 255, 0.4) 360deg
     )
     border-box;
   -webkit-mask:
