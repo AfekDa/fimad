@@ -25,6 +25,8 @@ export interface Props {
   readonly ariaLabel?: string | undefined
   readonly assetSet?: 'default' | 'teams-page'
   readonly href?: string | undefined
+  /** Keep the accessible name while rendering the icon-only Figma variant. */
+  readonly hideLabel?: boolean
   /** Optional client-side filter identifier for filter buttons. */
   readonly filterValue?: string | undefined
 }
@@ -46,6 +48,7 @@ const {
   ariaLabel,
   assetSet = 'default',
   href,
+  hideLabel = false,
   filterValue,
 } = Astro.props
 
@@ -94,7 +97,7 @@ const variantClass =
   {
     variant === 'button' && (
       <Fragment>
-        <span class={styles.buttonLabel}>{label}</span>
+        {!hideLabel && <span class={styles.buttonLabel}>{label}</span>}
         {showIcon && (
           <span class={styles.arrow}>
             <img
@@ -146,7 +149,13 @@ const variantClass =
           <span class={styles.fanduelMark}>
             <img
               class={styles.fanduelMarkLeaf}
-              src={assetSet === 'teams-page' ? ASSETS.teamsFanduelMask : ASSETS.fanduelMark}
+              src={
+                active
+                  ? ASSETS.fanduelMark
+                  : assetSet === 'teams-page'
+                    ? ASSETS.teamsFanduelMask
+                    : ASSETS.fanduelMark
+              }
               alt=""
               aria-hidden="true"
             />

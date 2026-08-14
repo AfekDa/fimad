@@ -47,6 +47,13 @@ describe('All Teams', () => {
     for (const image of images) expect(image.getAttribute('alt')).toBeTruthy()
   })
 
+  it('links the Buffalo card to its individual team page', () => {
+    expect(screen.getByRole('link', { name: 'Preview Buffalo Bills' })).toHaveAttribute(
+      'href',
+      '/teams/buffalo-bills',
+    )
+  })
+
   it('ships the client-side filter controller', () => {
     expect(body.querySelectorAll('script')).toHaveLength(1)
   })

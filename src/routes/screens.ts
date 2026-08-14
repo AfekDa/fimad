@@ -53,6 +53,15 @@ export const SCREENS: readonly ScreenMeta[] = [
     viewportHeight: 932,
   },
   {
+    path: '/teams/buffalo-bills',
+    frameName: 'Individual Team Page',
+    nodeId: '162:1586',
+    width: 430,
+    height: 4748,
+    /* App Nav instance 162:1720 uses the same 932px mobile viewport. */
+    viewportHeight: 932,
+  },
+  {
     path: '/all-bets',
     frameName: 'Bets Page',
     nodeId: '251:2889',

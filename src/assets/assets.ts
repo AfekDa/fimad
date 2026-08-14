@@ -66,6 +66,20 @@ import teamsCardJets from './teams-card-jets.png?url'
 import teamsCardHouston from './teams-card-houston.png?url'
 import teamsCardJacksonville from './teams-card-jacksonville.png?url'
 
+/* Individual Team — Figma frame 162:1586 */
+import teamBuffaloHero from './team-buffalo-hero.png?url'
+import teamBuffaloPrediction from './team-buffalo-prediction.png?url'
+import teamBuffaloFuture from './team-buffalo-future.png?url'
+import teamOddsWinTotal from './team-odds-win-total.png?url'
+import teamOddsMakePlayoffs from './team-odds-make-playoffs.png?url'
+import teamOddsMissPlayoffs from './team-odds-miss-playoffs.png?url'
+import teamOddsSuperbowl from './team-odds-superbowl.png?url'
+import teamOddsConference from './team-odds-conference.png?url'
+import teamOddsDivision from './team-odds-division.png?url'
+import teamAccordionDown from './team-accordion-down.svg?url'
+import teamAccordionUp from './team-accordion-up.svg?url'
+import teamExploreCard from './team-explore-card.png?url'
+
 /* All Awards — Figma frame 188:2037 */
 import awardCardMvp from './award-card-mvp.png?url'
 import mvpCardLamar from './mvp-card-lamar.png?url'
@@ -114,6 +128,18 @@ export const ASSETS = {
   teamsCardJets,
   teamsCardHouston,
   teamsCardJacksonville,
+  teamBuffaloHero,
+  teamBuffaloPrediction,
+  teamBuffaloFuture,
+  teamOddsWinTotal,
+  teamOddsMakePlayoffs,
+  teamOddsMissPlayoffs,
+  teamOddsSuperbowl,
+  teamOddsConference,
+  teamOddsDivision,
+  teamAccordionDown,
+  teamAccordionUp,
+  teamExploreCard,
   awardCardMvp,
   mvpCardLamar,
 } as const

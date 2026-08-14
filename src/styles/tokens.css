@@ -187,6 +187,9 @@
   --teams-card-height: 295px;
   --teams-card-gap: 16px;
 
+  /* Individual Team 162:1586 after omitting its 54px iPhone status bar. */
+  --individual-team-frame-height: 4694px;
+
   /* Card component 181:1360. */
   --gradient-team-card: linear-gradient(
     187.53793753459576deg,

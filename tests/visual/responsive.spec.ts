@@ -351,6 +351,132 @@ test.describe('responsive integrity', () => {
     await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(4)
   })
 
+  test('Individual Team preserves its status-bar-adjusted Figma geometry and assets', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/teams/buffalo-bills')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(Array.from(document.images).map((image) => image.decode()))
+    })
+
+    await expect(page.locator('[data-node-id="162:1586"]')).toHaveCSS('min-height', '4694px')
+    expect(await page.locator('[data-node-id="181:1321"]').boundingBox()).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 430,
+      height: 175,
+    })
+    expect(await page.locator('[data-node-id="162:2215"]').boundingBox()).toMatchObject({
+      x: 0,
+      y: 175,
+      width: 430,
+      height: 319,
+    })
+    expect(await page.locator('[data-node-id="162:2236"]').boundingBox()).toMatchObject({
+      y: 494,
+      height: 825,
+    })
+    expect(await page.locator('[data-node-id="162:1668"]').boundingBox()).toMatchObject({
+      y: 1319,
+      height: 932,
+    })
+    expect(await page.locator('[data-node-id="162:1674"]').boundingBox()).toMatchObject({
+      y: 2251,
+      height: 638,
+    })
+    expect(await page.locator('[data-node-id="188:2513"]').boundingBox()).toMatchObject({
+      y: 2889,
+      height: 541,
+    })
+    const oddsBox = await page.locator('[data-node-id="162:2237"]').boundingBox()
+    expect(oddsBox?.y).toBeCloseTo(3430, 0)
+    expect(oddsBox?.height).toBeCloseTo(712.546, 1)
+    const exploreBox = await page.locator('[data-node-id="181:1446"]').boundingBox()
+    expect(exploreBox?.y).toBeCloseTo(4142.546, 1)
+    expect(exploreBox?.height).toBeCloseTo(474, 0)
+
+    expect(await page.locator('[data-node-id="162:2215"] > img').boundingBox()).toMatchObject({
+      width: 430,
+      height: 319,
+    })
+    const predictionImage = await page.locator('[data-node-id="162:1674"] img').boundingBox()
+    expect(predictionImage?.width).toBeCloseTo(430, 0)
+    expect(predictionImage?.height).toBeCloseTo(282.72, 1)
+    expect(await page.locator('[data-node-id="188:2513"] > img').boundingBox()).toMatchObject({
+      width: 430,
+      height: 541,
+    })
+
+    expect(await page.locator('[data-node-id="162:1676"]').boundingBox()).toMatchObject({
+      x: 131,
+      y: 2307,
+      width: 168,
+      height: 43,
+    })
+    expect(await page.locator('[data-node-id="162:1678"]').boundingBox()).toMatchObject({
+      x: 16,
+      y: 2374,
+      width: 398,
+      height: 115,
+    })
+    const predictionScoreLine = page.locator('[data-node-id="162:1678"] > p')
+    await expect(predictionScoreLine).toHaveCSS('line-height', '44px')
+    await expect(predictionScoreLine).toHaveCSS('text-box-trim', 'trim-both')
+    await expect(predictionScoreLine).toHaveCSS('white-space', 'nowrap')
+    expect(await page.locator('[data-node-id="162:2212"]').boundingBox()).toMatchObject({
+      x: 16,
+      y: 2513,
+      width: 398,
+      height: 126,
+    })
+
+    const expandedAccordionCopy = page.locator('[data-node-id="162:1669"] > p')
+    const accordionCopyBox = await expandedAccordionCopy.boundingBox()
+    expect(accordionCopyBox?.height).toBeCloseTo(310, 0)
+    await expect(expandedAccordionCopy).toHaveCSS('text-box-trim', 'trim-both')
+    await expect(expandedAccordionCopy).toHaveCSS('text-box-edge', 'cap alphabetic')
+    await expect(expandedAccordionCopy).toHaveCSS('white-space', 'pre-wrap')
+    await expect(expandedAccordionCopy).toHaveCSS('overflow', 'visible')
+    await expect(expandedAccordionCopy).toContainText("they’ve kept their core.")
+    const expandedAccordionBox = await page.locator('[data-node-id="162:1669"]').boundingBox()
+    const accordionBottomGap =
+      (expandedAccordionBox?.y ?? 0) +
+      (expandedAccordionBox?.height ?? 0) -
+      ((accordionCopyBox?.y ?? 0) + (accordionCopyBox?.height ?? 0))
+    expect(accordionBottomGap).toBeCloseTo(32, 0)
+
+    await expect(page.locator('[data-node-id="162:1605"] article')).toHaveCount(6)
+    await expect(page.locator('[data-nav-id="teams"]')).toHaveAttribute('aria-current', 'page')
+
+    const quarterbacks = page.getByText('QUATERBACKS', { exact: true })
+    await quarterbacks.click()
+    await expect(page.locator('[data-node-id="162:1670"]')).toHaveAttribute('open', '')
+  })
+
+  test('Individual Team keeps the prediction score on one line above its copy at 320px', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 932 })
+    await page.goto('/teams/buffalo-bills')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+    })
+
+    const score = page.locator('[data-node-id="162:1678"]')
+    const scoreLine = score.locator('> p')
+    const copy = page.locator('[data-node-id="162:2212"]')
+    const [scoreBox, copyBox, scoreLineCount] = await Promise.all([
+      score.boundingBox(),
+      copy.boundingBox(),
+      scoreLine.evaluate((element) => {
+        const range = document.createRange()
+        range.selectNodeContents(element)
+        return range.getClientRects().length
+      }),
+    ])
+
+    expect(scoreLineCount).toBe(1)
+    expect((scoreBox?.y ?? 0) + (scoreBox?.height ?? 0)).toBeLessThanOrEqual((copyBox?.y ?? 0) - 24)
+  })
+
   test('Awards preserves the mobile Figma geometry and filters cards', async ({ page }) => {
     await page.setViewportSize({ width: 430, height: 932 })
     await page.goto('/awards')
