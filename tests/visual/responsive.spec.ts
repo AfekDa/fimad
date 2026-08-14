@@ -143,7 +143,7 @@ test.describe('responsive integrity', () => {
     expect(allBets).toEqual(homepage)
   })
 
-  test('mobile navigation uses the Figma diagonal stroke and tighter icon scale', async ({
+  test('mobile navigation uses the Figma glass stroke and tighter icon scale', async ({
     page,
   }) => {
     await page.setViewportSize({ width: 430, height: 932 })
@@ -175,10 +175,17 @@ test.describe('responsive integrity', () => {
       }
     })
 
-    expect(appearance.stroke).toContain('radial-gradient')
-    expect(appearance.stroke).toContain('at 100% 0%')
-    expect(appearance.stroke).toContain('at 0% 100%')
-    expect(appearance.stroke).toContain('rgba(255, 255, 255, 0) 72%')
+    expect(appearance.stroke).toContain('conic-gradient')
+    /*
+     * The export's stroke never leaves the top or bottom run unlit — dropping
+     * those plateaus is what made the pill lose its shape — and it dies out
+     * completely in the two troughs past the right and left tips.
+     */
+    expect(appearance.stroke).toContain('rgba(255, 255, 255, 0.52) 74deg')
+    expect(appearance.stroke).toContain('rgba(255, 255, 255, 0.37) 249deg')
+    expect(appearance.stroke).toContain('rgba(255, 255, 255, 0.8) 80deg')
+    expect(appearance.stroke).toContain('rgba(255, 255, 255, 0) 96deg')
+    expect(appearance.stroke).toContain('rgba(255, 255, 255, 0) 277deg')
     expect(Number.parseFloat(appearance.strokeWidthToken)).toBe(1)
     expect(Number.parseFloat(appearance.strokeWidth)).toBe(1)
     expect(appearance.home).toEqual({ width: 28, height: 28 })
