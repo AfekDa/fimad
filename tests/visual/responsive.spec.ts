@@ -443,7 +443,7 @@ test.describe('responsive integrity', () => {
       (expandedAccordionBox?.y ?? 0) +
       (expandedAccordionBox?.height ?? 0) -
       ((accordionCopyBox?.y ?? 0) + (accordionCopyBox?.height ?? 0))
-    expect(accordionBottomGap).toBeCloseTo(32, 0)
+    expect(accordionBottomGap).toBeCloseTo(36, 0)
 
     await expect(page.locator('[data-node-id="162:1605"] article')).toHaveCount(6)
     await expect(page.locator('[data-nav-id="teams"]')).toHaveAttribute('aria-current', 'page')

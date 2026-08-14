@@ -325,8 +325,8 @@
 }
 
 .accordion[open] {
-  height: 444px;
-  padding-bottom: 32px;
+  height: 448px;
+  padding-bottom: 36px;
 }
 
 .accordionSummary {
