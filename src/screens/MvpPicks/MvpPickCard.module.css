@@ -15,18 +15,22 @@
 .image,
 .scrim {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 316px;
-  height: 505px;
   border-radius: inherit;
 }
 
 .image {
+  /* mvp-card-lamar is a 1024×683 (3:2) fill; 316×211 keeps that ratio instead of stretching into the 505px card. */
+  height: 211px;
   max-width: none;
-  object-position: bottom;
+  object-fit: cover;
+  object-position: top;
 }
 
 .scrim {
+  height: 505px;
   background: linear-gradient(
     to bottom,
     rgba(1, 21, 86, 0) 28.788%,

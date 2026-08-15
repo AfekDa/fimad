@@ -641,11 +641,13 @@ test.describe('responsive integrity', () => {
     expect(firstMvpCard?.y).toBeCloseTo(220, 0)
     expect(firstMvpCard?.width).toBeCloseTo(316, 0)
     expect(firstMvpCard?.height).toBeCloseTo(505, 0)
-    expect(await cards.first().locator(':scope > img').boundingBox()).toMatchObject({
+    const firstMvpImage = cards.first().locator(':scope > img')
+    expect(await firstMvpImage.boundingBox()).toMatchObject({
       x: 24,
       width: 316,
-      height: 505,
+      height: 211,
     })
+    await expect(firstMvpImage).toHaveCSS('object-fit', 'cover')
     const secondMvpCard = await cards.nth(1).boundingBox()
     expect(secondMvpCard).not.toBeNull()
     expect(secondMvpCard?.x).toBeCloseTo(356, 0)
