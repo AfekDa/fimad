@@ -378,19 +378,25 @@ test.describe('responsive integrity', () => {
     await page.goto('/teams')
 
     const visibleCards = page.locator('[data-team-card]:not([hidden])')
-    const all = page.getByRole('button', { name: 'All', exact: true })
+    const afc = page.getByRole('button', { name: 'AFC' })
     const nfc = page.getByRole('button', { name: 'NFC' })
     const search = page.getByRole('searchbox', { name: 'Search teams' })
 
     await expect(visibleCards).toHaveCount(8)
-    await expect(all).toHaveAttribute('aria-pressed', 'true')
+    await expect(afc).toHaveAttribute('aria-pressed', 'false')
+    await expect(nfc).toHaveAttribute('aria-pressed', 'false')
+    await expect(page.getByRole('button', { name: 'All', exact: true })).toHaveCount(0)
+
     await nfc.click()
     await expect(nfc).toHaveAttribute('aria-pressed', 'true')
-    await expect(all).toHaveAttribute('aria-pressed', 'false')
+    await expect(afc).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleCards).toHaveCount(0)
     await expect(page.getByText('No teams match your filters.')).toBeVisible()
 
-    await all.click()
+    await nfc.click()
+    await expect(nfc).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleCards).toHaveCount(8)
+
     await search.fill('miami')
     await expect(visibleCards).toHaveCount(1)
     await expect(visibleCards.first()).toHaveAttribute('data-team', 'Miami Dolphins')
@@ -398,12 +404,13 @@ test.describe('responsive integrity', () => {
     // Enter must not submit the search form and reload away the active filters.
     await search.press('Enter')
     await expect(search).toHaveValue('miami')
-    await expect(all).toHaveAttribute('aria-pressed', 'true')
+    await expect(afc).toHaveAttribute('aria-pressed', 'false')
+    await expect(nfc).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleCards).toHaveCount(1)
 
     await page.getByRole('button', { name: 'Clear All' }).click()
     await expect(search).toHaveValue('')
-    await expect(all).toHaveAttribute('aria-pressed', 'true')
+    await expect(afc).toHaveAttribute('aria-pressed', 'false')
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleCards).toHaveCount(8)
 

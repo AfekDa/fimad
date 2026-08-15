@@ -46,11 +46,10 @@ import styles from './AllTeams.module.css'
         <div class={styles.filterChoices} data-node-id="188:2364">
           <Button
             variant="filter"
-            state="active"
-            label="All"
+            label="AFC"
             nodeId="181:297"
             assetSet="teams-page"
-            filterValue="ALL"
+            filterValue="AFC"
           />
           <Button
             variant="filter"
@@ -105,7 +104,6 @@ import styles from './AllTeams.module.css'
   const filterButtons = [
     ...teamsPage.querySelectorAll<HTMLButtonElement>('[data-filter-value]'),
   ]
-  const allButton = teamsPage.querySelector<HTMLButtonElement>('[data-filter-value="ALL"]')
   const filterButton = teamsPage.querySelector<HTMLButtonElement>('[aria-label="Filter teams by name"]')
   const clearAllButton = teamsPage.querySelector<HTMLButtonElement>('[data-clear-filters]')
   const emptyState = teamsPage.querySelector<HTMLElement>('[data-empty-results]')
@@ -113,7 +111,6 @@ import styles from './AllTeams.module.css'
 
   if (
     searchInput === null ||
-    allButton === null ||
     filterButton === null ||
     clearAllButton === null ||
     emptyState === null ||
@@ -123,7 +120,6 @@ import styles from './AllTeams.module.css'
   }
 
   const requiredSearchInput = searchInput
-  const requiredAllButton = allButton
   const requiredEmptyState = emptyState
   const requiredResultsStatus = resultsStatus
 
@@ -147,20 +143,21 @@ import styles from './AllTeams.module.css'
   }
 
   function applyFilters() {
-    const selectedFilter = filterButtons.find(
+    const activeFilters = filterButtons.filter(
       (button) => button.getAttribute('aria-pressed') === 'true',
-    )?.dataset.filterValue
+    )
 
-    if (selectedFilter === undefined) {
-      throw new Error('All Teams filter controller requires exactly one active filter')
+    if (activeFilters.length > 1) {
+      throw new Error('All Teams filter controller supports at most one active conference')
     }
 
+    const selectedConference = activeFilters[0]?.dataset.filterValue
     const query = requiredSearchInput.value.trim().toLocaleLowerCase()
     let visibleCount = 0
 
     for (const card of cards) {
       const matchesConference =
-        selectedFilter === 'ALL' || card.dataset.conference === selectedFilter
+        selectedConference === undefined || card.dataset.conference === selectedConference
       const matchesSearch = card.dataset.team?.toLocaleLowerCase().includes(query) ?? false
       const isVisible = matchesConference && matchesSearch
       card.hidden = !isVisible
@@ -174,10 +171,9 @@ import styles from './AllTeams.module.css'
   for (const button of filterButtons) {
     button.addEventListener('click', () => {
       const isActive = button.getAttribute('aria-pressed') === 'true'
-      const nextActiveButton = isActive ? requiredAllButton : button
 
       for (const candidate of filterButtons) {
-        setFilter(candidate, candidate === nextActiveButton)
+        setFilter(candidate, candidate === button && !isActive)
       }
 
       applyFilters()
@@ -192,7 +188,7 @@ import styles from './AllTeams.module.css'
   searchInput.form?.addEventListener('reset', () => requestAnimationFrame(applyFilters))
   clearAllButton.addEventListener('click', () => {
     searchInput.value = ''
-    for (const button of filterButtons) setFilter(button, button === requiredAllButton)
+    for (const button of filterButtons) setFilter(button, false)
     applyFilters()
   })
 
