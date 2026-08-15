@@ -15,18 +15,20 @@
 .image,
 .scrim {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 316px;
-  height: 505px;
   border-radius: inherit;
 }
 
 .image {
+  height: 211px;
   max-width: none;
-  object-position: bottom;
+  object-fit: contain;
 }
 
 .scrim {
+  height: 505px;
   background: linear-gradient(
     to bottom,
     rgba(1, 21, 86, 0) 28.788%,
