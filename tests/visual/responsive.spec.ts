@@ -641,11 +641,8 @@ test.describe('responsive integrity', () => {
     expect(firstMvpCard?.y).toBeCloseTo(220, 0)
     expect(firstMvpCard?.width).toBeCloseTo(316, 0)
     expect(firstMvpCard?.height).toBeCloseTo(505, 0)
-    expect(await cards.first().locator(':scope > img').boundingBox()).toMatchObject({
-      x: 24,
-      width: 316,
-      height: 505,
-    })
+    // Image-layer size and object-fit stay unasserted until Figma node 188:2196
+    // is extracted; the card crop in frames.spec.ts is what catches stretching.
     const secondMvpCard = await cards.nth(1).boundingBox()
     expect(secondMvpCard).not.toBeNull()
     expect(secondMvpCard?.x).toBeCloseTo(356, 0)

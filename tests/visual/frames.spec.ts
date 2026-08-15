@@ -112,4 +112,13 @@ test.describe('frame fidelity', () => {
       expect(atBottom?.y).toBeCloseTo(atTop?.y ?? 0, 0)
     })
   }
+
+  test('MVP pick card (188:2196) matches its Figma crop', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/awards/mvp')
+    await waitForPaintableAssets(page)
+
+    // Baseline must be an MCP crop of card 188:2196 at 2x, not an app capture.
+    await expect(page.locator('[data-mvp-card]').first()).toHaveScreenshot('188-2196-card.png')
+  })
 })
