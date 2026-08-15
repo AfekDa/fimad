@@ -212,6 +212,11 @@ test.describe('responsive integrity', () => {
     const firstCard = cards.first()
     expect(await firstCard.boundingBox()).toMatchObject({ width: 382, height: 295 })
 
+    expect(await page.locator('[data-node-id="162:1771"]').boundingBox()).toMatchObject({
+      width: 382,
+      height: 1,
+    })
+
     const firstImage = page.locator('[data-node-id="I181:1360;162:2225"] img')
     expect(await firstImage.boundingBox()).toMatchObject({ width: 382, height: 295 })
 
@@ -219,7 +224,9 @@ test.describe('responsive integrity', () => {
     expect(await cincinnatiImage.boundingBox()).toMatchObject({ width: 938, height: 625 })
 
     const logoBox = firstCard.locator('[data-node-id="181:1340"]')
-    expect(await logoBox.boundingBox()).toMatchObject({ width: 60, height: 40 })
+    const logoBoxGeometry = await logoBox.boundingBox()
+    expect(logoBoxGeometry?.width).toBeCloseTo(60, 1)
+    expect(logoBoxGeometry?.height).toBeCloseTo(40, 1)
 
     const teamsIcon = page.locator('[data-nav-id="teams"] > span[style]')
     const teamsIconBox = await teamsIcon.boundingBox()
@@ -371,18 +378,19 @@ test.describe('responsive integrity', () => {
     await page.goto('/teams')
 
     const visibleCards = page.locator('[data-team-card]:not([hidden])')
-    const afc = page.getByRole('button', { name: 'AFC' })
+    const all = page.getByRole('button', { name: 'All', exact: true })
     const nfc = page.getByRole('button', { name: 'NFC' })
     const search = page.getByRole('searchbox', { name: 'Search teams' })
 
     await expect(visibleCards).toHaveCount(8)
+    await expect(all).toHaveAttribute('aria-pressed', 'true')
     await nfc.click()
     await expect(nfc).toHaveAttribute('aria-pressed', 'true')
-    await expect(afc).toHaveAttribute('aria-pressed', 'false')
+    await expect(all).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleCards).toHaveCount(0)
     await expect(page.getByText('No teams match your filters.')).toBeVisible()
 
-    await afc.click()
+    await all.click()
     await search.fill('miami')
     await expect(visibleCards).toHaveCount(1)
     await expect(visibleCards.first()).toHaveAttribute('data-team', 'Miami Dolphins')
@@ -390,17 +398,38 @@ test.describe('responsive integrity', () => {
     // Enter must not submit the search form and reload away the active filters.
     await search.press('Enter')
     await expect(search).toHaveValue('miami')
-    await expect(afc).toHaveAttribute('aria-pressed', 'true')
+    await expect(all).toHaveAttribute('aria-pressed', 'true')
     await expect(visibleCards).toHaveCount(1)
 
     await page.getByRole('button', { name: 'Clear All' }).click()
     await expect(search).toHaveValue('')
-    await expect(afc).toHaveAttribute('aria-pressed', 'false')
+    await expect(all).toHaveAttribute('aria-pressed', 'true')
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleCards).toHaveCount(8)
 
     await page.getByRole('button', { name: 'Filter teams by name' }).click()
     await expect(search).toBeFocused()
+  })
+
+  test('All Teams keeps mobile cards proportional and reveals the second card', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/teams')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(Array.from(document.images).map((image) => image.decode()))
+    })
+
+    const cards = page.locator('[data-team-card]')
+    const firstCardBox = await cards.first().boundingBox()
+    const secondCardBox = await cards.nth(1).boundingBox()
+    const navBox = await page.getByRole('navigation', { name: 'Primary' }).boundingBox()
+
+    expect(firstCardBox).not.toBeNull()
+    expect(firstCardBox?.width).toBeCloseTo(342, 0)
+    expect(firstCardBox?.height).toBeCloseTo((342 * 295) / 382, 0)
+    expect(secondCardBox).not.toBeNull()
+    expect(navBox).not.toBeNull()
+    expect((navBox?.y ?? 0) - (secondCardBox?.y ?? 0)).toBeGreaterThan(140)
   })
 
   /*

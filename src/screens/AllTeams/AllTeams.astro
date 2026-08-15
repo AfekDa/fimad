@@ -47,10 +47,10 @@ import styles from './AllTeams.module.css'
           <Button
             variant="filter"
             state="active"
-            label="AFC"
+            label="All"
             nodeId="181:297"
             assetSet="teams-page"
-            filterValue="AFC"
+            filterValue="ALL"
           />
           <Button
             variant="filter"
@@ -102,9 +102,10 @@ import styles from './AllTeams.module.css'
 
   const searchInput = teamsPage.querySelector<HTMLInputElement>('#team-search')
   const cards = [...teamsPage.querySelectorAll<HTMLElement>('[data-team-card]')]
-  const conferenceButtons = [
+  const filterButtons = [
     ...teamsPage.querySelectorAll<HTMLButtonElement>('[data-filter-value]'),
   ]
+  const allButton = teamsPage.querySelector<HTMLButtonElement>('[data-filter-value="ALL"]')
   const filterButton = teamsPage.querySelector<HTMLButtonElement>('[aria-label="Filter teams by name"]')
   const clearAllButton = teamsPage.querySelector<HTMLButtonElement>('[data-clear-filters]')
   const emptyState = teamsPage.querySelector<HTMLElement>('[data-empty-results]')
@@ -112,6 +113,7 @@ import styles from './AllTeams.module.css'
 
   if (
     searchInput === null ||
+    allButton === null ||
     filterButton === null ||
     clearAllButton === null ||
     emptyState === null ||
@@ -121,16 +123,17 @@ import styles from './AllTeams.module.css'
   }
 
   const requiredSearchInput = searchInput
+  const requiredAllButton = allButton
   const requiredEmptyState = emptyState
   const requiredResultsStatus = resultsStatus
 
-  function setConference(button: HTMLButtonElement, active: boolean) {
+  function setFilter(button: HTMLButtonElement, active: boolean) {
     button.setAttribute('aria-pressed', String(active))
     button.dataset.state = active ? 'active' : 'default'
 
     let clearIcon = button.querySelector<HTMLElement>('[data-filter-clear]')
     if (clearIcon === null && active) {
-      const activeIcon = conferenceButtons
+      const activeIcon = filterButtons
         .map((candidate) => candidate.querySelector<HTMLElement>('[data-filter-clear]'))
         .find((icon) => icon !== null)
 
@@ -144,14 +147,20 @@ import styles from './AllTeams.module.css'
   }
 
   function applyFilters() {
-    const selectedConference = conferenceButtons.find(
+    const selectedFilter = filterButtons.find(
       (button) => button.getAttribute('aria-pressed') === 'true',
     )?.dataset.filterValue
+
+    if (selectedFilter === undefined) {
+      throw new Error('All Teams filter controller requires exactly one active filter')
+    }
+
     const query = requiredSearchInput.value.trim().toLocaleLowerCase()
     let visibleCount = 0
 
     for (const card of cards) {
-      const matchesConference = selectedConference === undefined || card.dataset.conference === selectedConference
+      const matchesConference =
+        selectedFilter === 'ALL' || card.dataset.conference === selectedFilter
       const matchesSearch = card.dataset.team?.toLocaleLowerCase().includes(query) ?? false
       const isVisible = matchesConference && matchesSearch
       card.hidden = !isVisible
@@ -162,10 +171,15 @@ import styles from './AllTeams.module.css'
     requiredResultsStatus.textContent = `${visibleCount} ${visibleCount === 1 ? 'team' : 'teams'} shown`
   }
 
-  for (const button of conferenceButtons) {
+  for (const button of filterButtons) {
     button.addEventListener('click', () => {
       const isActive = button.getAttribute('aria-pressed') === 'true'
-      for (const candidate of conferenceButtons) setConference(candidate, candidate === button && !isActive)
+      const nextActiveButton = isActive ? requiredAllButton : button
+
+      for (const candidate of filterButtons) {
+        setFilter(candidate, candidate === nextActiveButton)
+      }
+
       applyFilters()
     })
   }
@@ -178,7 +192,7 @@ import styles from './AllTeams.module.css'
   searchInput.form?.addEventListener('reset', () => requestAnimationFrame(applyFilters))
   clearAllButton.addEventListener('click', () => {
     searchInput.value = ''
-    for (const button of conferenceButtons) setConference(button, false)
+    for (const button of filterButtons) setFilter(button, button === requiredAllButton)
     applyFilters()
   })
 

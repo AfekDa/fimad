@@ -36,7 +36,7 @@ describe('All Teams', () => {
 
   it('exposes search and filter controls', () => {
     expect(screen.getByRole('searchbox', { name: 'Search teams' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'AFC' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByRole('button', { name: 'All' })).toHaveAttribute('aria-pressed', 'true')
     expect(screen.getByRole('button', { name: 'NFC' })).toHaveAttribute('aria-pressed', 'false')
   })
 
