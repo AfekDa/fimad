@@ -7,7 +7,6 @@
   justify-content: space-between;
   width: 316px;
   height: 505px;
-  max-height: 100%;
   padding: var(--space-16);
   overflow: hidden;
   border-radius: var(--radius-card);
@@ -17,16 +16,14 @@
 .scrim {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  width: 316px;
+  height: 505px;
   border-radius: inherit;
 }
 
 .image {
   max-width: none;
-  /* Source is 1024×683; cover the portrait card instead of stretching into it. */
-  object-fit: cover;
-  object-position: top center;
+  object-position: bottom;
 }
 
 .scrim {
@@ -42,12 +39,6 @@
 .rank,
 .details {
   position: relative;
-}
-
-.rank,
-.bet,
-.name {
-  flex-shrink: 0;
 }
 
 .rank {
@@ -75,15 +66,10 @@
 
 .details {
   gap: var(--space-40);
-  min-height: 0;
-  flex: 1 1 auto;
-  justify-content: flex-end;
 }
 
 .copy {
   gap: var(--space-16);
-  min-height: 0;
-  flex: 0 1 auto;
   color: var(--color-white);
 }
 
@@ -107,8 +93,6 @@
 
 .description {
   width: 100%;
-  min-height: 0;
-  overflow: hidden;
   font-family: var(--font-family-base);
   font-size: var(--font-bc3-r-size);
   line-height: var(--font-bc3-r-line);
