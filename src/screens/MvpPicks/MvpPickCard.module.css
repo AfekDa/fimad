@@ -23,7 +23,6 @@
 
 .image {
   max-width: none;
-  object-fit: cover;
   object-position: bottom;
 }
 
