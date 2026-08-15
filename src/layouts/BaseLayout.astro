@@ -4,7 +4,12 @@
  *
  * Owns the global stylesheets only — layout and design values live with the
  * screens and components, and every Figma-derived value lives in tokens.css.
+ *
+ * ClientRouter also makes this the owner of section-to-section motion: tabs swap
+ * screens in place instead of tearing down the document, so the docked nav never
+ * blinks between routes.
  */
+import { ClientRouter } from 'astro:transitions'
 import '../styles/reset.css'
 import '../styles/fonts.css'
 import '../styles/tokens.css'
@@ -15,16 +20,56 @@ export interface Props {
 }
 
 const { title } = Astro.props
+
+/*
+ * The outgoing screen holds at full opacity while the incoming one fades in over
+ * it. A symmetric cross-fade would leave both snapshots part-transparent
+ * mid-flight, showing the white document canvas through two dark screens.
+ */
+const crossFade = {
+  old: {
+    name: 'sectionHold',
+    duration: 'var(--motion-duration-page)',
+    easing: 'linear',
+    fillMode: 'both',
+  },
+  new: {
+    name: 'sectionFadeIn',
+    duration: 'var(--motion-duration-page)',
+    easing: 'var(--motion-ease-page)',
+    fillMode: 'both',
+  },
+}
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:name="root" transition:animate={{ forwards: crossFade, backwards: crossFade }}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>{title}</title>
+    <ClientRouter />
   </head>
   <body>
     <slot />
   </body>
 </html>
+
+<style is:global>
+  @keyframes sectionHold {
+    from,
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes sectionFadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+</style>

@@ -8,6 +8,23 @@
  * No Figma-derived values appear here; those belong in tokens.css.
  */
 
+/*
+ * Section-to-section motion. Figma carries no motion spec, so these are product
+ * values rather than tokens: long enough to read as a transition, short enough
+ * that a tab still feels immediate.
+ */
+:root {
+  --motion-duration-page: 320ms;
+  --motion-ease-page: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Matches the reset's reduced-motion treatment: keep the swap, drop the motion. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-duration-page: 0.01ms;
+  }
+}
+
 .appShell {
   width: 100%;
   max-width: var(--app-max-width);

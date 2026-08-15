@@ -24,35 +24,45 @@ import styles from './Awards.module.css'
 </div>
 
 <script>
-  const page = document.querySelector<HTMLElement>('[data-awards-page]')
+  function startAwardsController() {
+    const page = document.querySelector<HTMLElement>('[data-awards-page]')
 
-  if (page === null) throw new Error('Awards controller requires its page root')
+    // The router keeps this listener for the session, so other routes are a no-op.
+    if (page === null) return
 
-  const search = page.querySelector<HTMLInputElement>('[data-award-search]')
-  const cards = [...page.querySelectorAll<HTMLElement>('[data-award-card]')]
-  const emptyState = page.querySelector<HTMLElement>('[data-empty-awards]')
+    const search = page.querySelector<HTMLInputElement>('[data-award-search]')
+    const cards = [...page.querySelectorAll<HTMLElement>('[data-award-card]')]
+    const emptyState = page.querySelector<HTMLElement>('[data-empty-awards]')
 
-  if (search === null || cards.length !== 4 || emptyState === null) {
-    throw new Error('Awards controller is missing its search, cards, or empty state')
-  }
-
-  const requiredSearch = search
-  const requiredEmptyState = emptyState
-
-  function applySearch() {
-    const query = requiredSearch.value.trim().toLocaleLowerCase()
-    let visibleCount = 0
-
-    for (const card of cards) {
-      const visible = card.dataset.awardTitle?.toLocaleLowerCase().includes(query) ?? false
-      card.hidden = !visible
-      if (visible) visibleCount += 1
+    if (search === null || cards.length !== 4 || emptyState === null) {
+      throw new Error('Awards controller is missing its search, cards, or empty state')
     }
 
-    requiredEmptyState.hidden = visibleCount !== 0
+    const requiredSearch = search
+    const requiredEmptyState = emptyState
+
+    function applySearch() {
+      const query = requiredSearch.value.trim().toLocaleLowerCase()
+      let visibleCount = 0
+
+      for (const card of cards) {
+        const visible = card.dataset.awardTitle?.toLocaleLowerCase().includes(query) ?? false
+        card.hidden = !visible
+        if (visible) visibleCount += 1
+      }
+
+      requiredEmptyState.hidden = visibleCount !== 0
+    }
+
+    search.addEventListener('input', applySearch)
+    search.form?.addEventListener('submit', (event) => event.preventDefault())
+    search.form?.addEventListener('reset', () => requestAnimationFrame(applySearch))
   }
 
-  search.addEventListener('input', applySearch)
-  search.form?.addEventListener('submit', (event) => event.preventDefault())
-  search.form?.addEventListener('reset', () => requestAnimationFrame(applySearch))
+  /*
+   * Bundled scripts run once per document, so client-side navigation would leave
+   * the search wired to a screen the router has already discarded. astro:page-load
+   * fires on the first render and after every swap.
+   */
+  document.addEventListener('astro:page-load', startAwardsController)
 </script>

@@ -4,6 +4,13 @@ import { SCREENS } from '../../src/routes/screens'
 /** Plan: "Test each route at 320, 375, 390, 430, and 480 px, plus the exact source width". */
 const BREAKPOINTS = [320, 375, 390, 430, 480] as const
 
+/** The production build minifies CSS times, so `320ms` reaches the browser as `.32s`. */
+function toMilliseconds(cssTime: string): number {
+  const value = Number.parseFloat(cssTime)
+
+  return cssTime.trim().endsWith('ms') ? value : value * 1000
+}
+
 test.describe('responsive integrity', () => {
   for (const route of SCREENS) {
     const widths = [...new Set<number>([...BREAKPOINTS, route.width])].sort((a, b) => a - b)
@@ -86,6 +93,98 @@ test.describe('responsive integrity', () => {
     await expect(page).toHaveURL(/\/teams\/?$/)
     await expect(page.locator('[data-nav-id="teams"]')).toHaveAttribute('aria-current', 'page')
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('ALL 32 TEAMS')
+  })
+
+  test('nav tabs cross-fade between sections instead of cutting', async ({ page }) => {
+    await page.goto('/')
+
+    const supportsViewTransitions = await page.evaluate(
+      () => typeof document.startViewTransition === 'function',
+    )
+    // Without the API the router falls back to a plain swap, which has nothing to sample.
+    test.skip(!supportsViewTransitions, 'Browser does not implement the View Transition API')
+
+    const durationToken = await page.evaluate(() =>
+      getComputedStyle(document.documentElement).getPropertyValue('--motion-duration-page').trim(),
+    )
+
+    // Sampled from inside the page: the animations only exist mid-swap.
+    const animations = await page.evaluate(async () => {
+      const sampled = new Promise<{ pseudo: string; durationMs: number }[]>((resolve) => {
+        document.addEventListener(
+          'astro:before-swap',
+          () => {
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                resolve(
+                  document.getAnimations().flatMap((animation) => {
+                    const effect = animation.effect
+                    if (!(effect instanceof KeyframeEffect)) return []
+
+                    const pseudo = effect.pseudoElement
+                    if (pseudo === null || !pseudo.includes('view-transition')) return []
+
+                    // Computed timing is milliseconds for a CSS animation.
+                    const { duration } = effect.getComputedTiming()
+
+                    return [
+                      { pseudo, durationMs: typeof duration === 'number' ? duration : Number.NaN },
+                    ]
+                  }),
+                )
+              })
+            })
+          },
+          { once: true },
+        )
+      })
+
+      document.querySelector<HTMLAnchorElement>('[data-nav-id="teams"]')?.click()
+
+      return await sampled
+    })
+
+    await expect(page).toHaveURL(/\/teams\/?$/)
+
+    /*
+     * The incoming screen must animate for exactly the shared duration: a custom
+     * property that fails to resolve inside the view-transition pseudo tree
+     * silently collapses the animation to 0s, which is the hard cut this replaces.
+     */
+    const durationMs = toMilliseconds(durationToken)
+    expect(durationMs).toBeGreaterThan(100)
+    expect(
+      animations.find((animation) => animation.pseudo === '::view-transition-new(root)')?.durationMs,
+    ).toBe(durationMs)
+    expect(
+      animations.find((animation) => animation.pseudo === '::view-transition-old(root)')?.durationMs,
+    ).toBe(durationMs)
+  })
+
+  test('All Teams filters stay live after arriving through a nav tab', async ({ page }) => {
+    await page.goto('/')
+
+    const teamsTab = page.locator('[data-nav-id="teams"]')
+    const status = page.locator('[data-results-status]')
+    const visibleCards = page.locator('[data-team-card]:not([hidden])')
+
+    await teamsTab.click()
+    await expect(page).toHaveURL(/\/teams\/?$/)
+    await expect(status).toHaveText('8 teams shown')
+
+    /*
+     * Leaving and returning is the case that breaks: the screen's script is
+     * bundled, so it runs once per document and has to re-arm on every swap
+     * rather than holding references into a screen the router has discarded.
+     */
+    await page.locator('[data-nav-id="home"]').click()
+    await expect(page).toHaveURL(/\/$/)
+    await teamsTab.click()
+    await expect(status).toHaveText('8 teams shown')
+
+    await page.getByRole('searchbox', { name: 'Search teams' }).fill('miami')
+    await expect(visibleCards).toHaveCount(1)
+    await expect(visibleCards.first()).toHaveAttribute('data-team', 'Miami Dolphins')
   })
 
   test('application navigation has the same visual contract on every route', async ({ page }) => {

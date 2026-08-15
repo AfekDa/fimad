@@ -199,19 +199,33 @@ import styles from './IndividualTeam.module.css'
 </div>
 
 <script>
-  const page = document.querySelector<HTMLElement>('[data-team-detail-page]')
-  if (page === null) throw new Error('Individual Team page controller requires its page root')
+  import { navigate } from 'astro:transitions/client'
 
-  const search = page.querySelector<HTMLFormElement>('[role="search"]')
-  const input = page.querySelector<HTMLInputElement>('#team-detail-search')
-  if (search === null || input === null) {
-    throw new Error('Individual Team page is missing its search controls')
+  function startTeamDetailController() {
+    const page = document.querySelector<HTMLElement>('[data-team-detail-page]')
+
+    // The router keeps this listener for the session, so other routes are a no-op.
+    if (page === null) return
+
+    const search = page.querySelector<HTMLFormElement>('[role="search"]')
+    const input = page.querySelector<HTMLInputElement>('#team-detail-search')
+    if (search === null || input === null) {
+      throw new Error('Individual Team page is missing its search controls')
+    }
+
+    search.addEventListener('submit', (event) => {
+      event.preventDefault()
+      const query = input.value.trim().toLocaleLowerCase()
+      if (query.includes('buffalo') || query.includes('bills')) return
+      // Routed, not assigned, so leaving for All Teams cross-fades like a tab does.
+      void navigate(`/teams?search=${encodeURIComponent(input.value.trim())}`)
+    })
   }
 
-  search.addEventListener('submit', (event) => {
-    event.preventDefault()
-    const query = input.value.trim().toLocaleLowerCase()
-    if (query.includes('buffalo') || query.includes('bills')) return
-    window.location.assign(`/teams?search=${encodeURIComponent(input.value.trim())}`)
-  })
+  /*
+   * Bundled scripts run once per document, so client-side navigation would leave
+   * the search wired to a screen the router has already discarded.
+   * astro:page-load fires on the first render and after every swap.
+   */
+  document.addEventListener('astro:page-load', startTeamDetailController)
 </script>
