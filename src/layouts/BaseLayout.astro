@@ -6,8 +6,8 @@
  * screens and components, and every Figma-derived value lives in tokens.css.
  *
  * ClientRouter also makes this the owner of section-to-section motion: tabs swap
- * screens in place instead of tearing down the document, so the docked nav never
- * blinks between routes.
+ * screens in place instead of tearing down the document. The dock is part of
+ * each screen, so the fade covers the whole page, nav included.
  */
 import { ClientRouter } from 'astro:transitions'
 import '../styles/reset.css'

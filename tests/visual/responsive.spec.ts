@@ -110,30 +110,33 @@ test.describe('responsive integrity', () => {
 
     // Sampled from inside the page: the animations only exist mid-swap.
     const animations = await page.evaluate(async () => {
-      const sampled = new Promise<{ pseudo: string; durationMs: number }[]>((resolve) => {
+      type SwapEvent = Event & { viewTransition: { ready: Promise<void> } }
+
+      const sampled = new Promise<{ pseudo: string; durationMs: number }[]>((resolve, reject) => {
         document.addEventListener(
           'astro:before-swap',
-          () => {
-            requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                resolve(
-                  document.getAnimations().flatMap((animation) => {
-                    const effect = animation.effect
-                    if (!(effect instanceof KeyframeEffect)) return []
+          (event) => {
+            const { viewTransition } = event as SwapEvent
+            // before-swap runs inside the update callback, before snapshots exist.
+            // ready fires once the ::view-transition tree is up and animations can start.
+            void viewTransition.ready.then(() => {
+              resolve(
+                document.getAnimations().flatMap((animation) => {
+                  const effect = animation.effect
+                  if (!(effect instanceof KeyframeEffect)) return []
 
-                    const pseudo = effect.pseudoElement
-                    if (pseudo === null || !pseudo.includes('view-transition')) return []
+                  const pseudo = effect.pseudoElement
+                  if (pseudo === null || !pseudo.includes('view-transition')) return []
 
-                    // Computed timing is milliseconds for a CSS animation.
-                    const { duration } = effect.getComputedTiming()
+                  // Computed timing is milliseconds for a CSS animation.
+                  const { duration } = effect.getComputedTiming()
 
-                    return [
-                      { pseudo, durationMs: typeof duration === 'number' ? duration : Number.NaN },
-                    ]
-                  }),
-                )
-              })
-            })
+                  return [
+                    { pseudo, durationMs: typeof duration === 'number' ? duration : Number.NaN },
+                  ]
+                }),
+              )
+            }, reject)
           },
           { once: true },
         )
