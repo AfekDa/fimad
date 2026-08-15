@@ -465,12 +465,12 @@ test.describe('responsive integrity', () => {
     })
     const dividerBox = await page.locator('[data-node-id="1:113"]').boundingBox()
     expect(dividerBox).not.toBeNull()
-    expect(dividerBox?.x).toBeCloseTo(160, 0)
-    expect(dividerBox?.width).toBeCloseTo(1120, 0)
-    expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
-      x: 370,
-      width: 700,
-    })
+    expect(dividerBox?.x).toBeCloseTo(90, 0)
+    expect(dividerBox?.width).toBeCloseTo(1260, 0)
+    const wideNav = await page.locator('[data-app-nav]').boundingBox()
+    expect(wideNav).not.toBeNull()
+    expect(wideNav?.x).toBeCloseTo(326.25, 0)
+    expect(wideNav?.width).toBeCloseTo(787.5, 0)
 
     const documentWidth = await page.evaluate(() => document.documentElement.scrollWidth)
     expect(documentWidth).toBe(1440)
@@ -525,7 +525,9 @@ test.describe('responsive integrity', () => {
     await page.goto('/teams')
     await page.evaluate(async () => {
       await document.fonts.ready
-      await Promise.all(Array.from(document.images).map((image) => image.decode()))
+      await Promise.all(
+        Array.from(document.images).map((image) => image.decode().catch(() => undefined)),
+      )
     })
 
     const cards = page.locator('[data-team-card]')
@@ -903,6 +905,30 @@ test.describe('responsive integrity', () => {
 
       await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight))
       expect(await nav.boundingBox()).toEqual(atTop)
+    }
+  })
+
+  test('desktop screens scale the 1280px Figma composition uniformly on wide viewports', async ({
+    page,
+  }) => {
+    const viewport = { width: 1906, height: 912 }
+    const scale = viewport.width / 1280
+    await page.setViewportSize(viewport)
+
+    for (const path of ['/', '/teams', '/teams/buffalo-bills']) {
+      await page.goto(path)
+
+      const shell = await page.locator('.appShell').boundingBox()
+      expect(shell).not.toBeNull()
+      expect(shell?.x).toBeCloseTo(0, 0)
+      expect(shell?.width).toBeCloseTo(viewport.width, 0)
+
+      const nav = await page.locator('[data-app-nav]').boundingBox()
+      expect(nav).not.toBeNull()
+      expect(nav?.x).toBeCloseTo(290 * scale, 0)
+      expect(nav?.y).toBeCloseTo(viewport.height - (106 + 64) * scale, 0)
+      expect(nav?.width).toBeCloseTo(700 * scale, 0)
+      expect(nav?.height).toBeCloseTo(64 * scale, 0)
     }
   })
 

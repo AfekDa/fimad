@@ -39,7 +39,17 @@
   .appShellHomepage,
   .appShellTeams,
   .appShellIndividualTeam {
+    width: var(--desktop-frame-width);
     max-width: none;
+    min-width: var(--desktop-frame-width);
+    margin-inline: 0;
+    zoom: calc(100vw / var(--desktop-frame-width));
+
+    /* Desktop frames are authored on a 1280px canvas. Viewport units inside a
+     * zoomed shell still resolve against the physical viewport, so keep the
+     * design grid and hero in their source coordinate system. */
+    --desktop-content-inline: 80px;
+    --desktop-hero-height: 752px;
   }
 }
 
