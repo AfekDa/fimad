@@ -40,7 +40,7 @@ test.describe('responsive integrity', () => {
       })
     }
 
-    const routeMaxWidth = ['/', '/teams'].includes(route.path) ? 1400 : 480
+    const routeMaxWidth = ['/', '/teams', '/teams/buffalo-bills'].includes(route.path) ? 1400 : 480
 
     test(`${route.frameName} centres within ${routeMaxWidth}px above the max width`, async ({ page }) => {
       await page.setViewportSize({ width: 1400, height: route.height })
@@ -603,14 +603,14 @@ test.describe('responsive integrity', () => {
     expect(exploreBox?.y).toBeCloseTo(4142.546, 1)
     expect(exploreBox?.height).toBeCloseTo(474, 0)
 
-    expect(await page.locator('[data-node-id="162:2215"] > img').boundingBox()).toMatchObject({
+    expect(await page.locator('[data-node-id="162:2215"] picture img').boundingBox()).toMatchObject({
       width: 430,
       height: 319,
     })
     const predictionImage = await page.locator('[data-node-id="162:1674"] img').boundingBox()
     expect(predictionImage?.width).toBeCloseTo(430, 0)
     expect(predictionImage?.height).toBeCloseTo(282.72, 1)
-    expect(await page.locator('[data-node-id="188:2513"] > img').boundingBox()).toMatchObject({
+    expect(await page.locator('[data-node-id="188:2513"] picture img').boundingBox()).toMatchObject({
       width: 430,
       height: 541,
     })
@@ -683,6 +683,79 @@ test.describe('responsive integrity', () => {
 
     expect(scoreLineCount).toBe(1)
     expect((scoreBox?.y ?? 0) + (scoreBox?.height ?? 0)).toBeLessThanOrEqual((copyBox?.y ?? 0) - 24)
+  })
+
+  test('Individual Team matches the browser-chrome-adjusted desktop Figma geometry', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 782 })
+    await page.goto('/teams/buffalo-bills')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(
+        Array.from(document.images).map((image) => image.decode().catch(() => undefined)),
+      )
+    })
+
+    expect(await page.locator('[data-desktop-node-id="390:1337"]').boundingBox()).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 1280,
+      height: 4517,
+    })
+
+    for (const section of [
+      { id: '390:1741', y: 0, height: 147 },
+      { id: '390:1744', y: 147, height: 487 },
+      { id: '397:1940', y: 634, height: 622 },
+      { id: '397:2129', y: 1256, height: 844 },
+      { id: '397:2201', y: 2100, height: 531 },
+      { id: '397:2207', y: 2615, height: 637 },
+      { id: '397:2265', y: 3252, height: 358 },
+      { id: '397:2318', y: 3610, height: 474 },
+    ]) {
+      expect(
+        await page.locator(`[data-desktop-node-id="${section.id}"]`).boundingBox(),
+      ).toMatchObject({ x: 0, y: section.y, width: 1280, height: section.height })
+    }
+
+    expect(await page.locator('[data-node-id="181:1323"]').boundingBox()).toMatchObject({
+      x: 565,
+      y: 40,
+      width: 150,
+    })
+    const desktopBrandTitle = await page.locator('[data-node-id="181:1324"]').boundingBox()
+    expect(desktopBrandTitle).not.toBeNull()
+    expect(desktopBrandTitle?.x).toBeCloseTo(469, 0)
+    expect(desktopBrandTitle?.y).toBeCloseTo(69, 0)
+    expect(desktopBrandTitle?.width).toBeCloseTo(342, 0)
+    expect(await page.locator('[data-node-id="162:1594"]').boundingBox()).toMatchObject({
+      x: 461,
+      y: 690,
+      width: 739,
+      height: 326,
+    })
+    expect(await page.locator('[data-node-id="162:1605"]').boundingBox()).toMatchObject({
+      x: 80,
+      y: 3386,
+      width: 1120,
+      height: 168,
+    })
+    await expect(page.locator('[data-node-id="181:1431"] article')).toHaveCount(5)
+
+    const heroImage = page.locator('[data-desktop-node-id="390:1744"] picture img')
+    const futureImage = page.locator('[data-desktop-node-id="397:2207"] picture img')
+    expect(await heroImage.getAttribute('src')).toContain('team-buffalo-hero')
+    expect(await heroImage.evaluate((image: HTMLImageElement) => image.currentSrc)).toContain(
+      'team-buffalo-hero-desktop',
+    )
+    expect(await futureImage.evaluate((image: HTMLImageElement) => image.currentSrc)).toContain(
+      'team-buffalo-future-desktop',
+    )
+    expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
+      x: 290,
+      y: 612,
+      width: 700,
+      height: 64,
+    })
   })
 
   test('Awards preserves the mobile Figma geometry and filters cards', async ({ page }) => {

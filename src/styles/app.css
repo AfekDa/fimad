@@ -37,7 +37,8 @@
  * desktop breakpoint. */
 @media (min-width: 768px) {
   .appShellHomepage,
-  .appShellTeams {
+  .appShellTeams,
+  .appShellIndividualTeam {
     max-width: none;
   }
 }

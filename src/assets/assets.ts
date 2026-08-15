@@ -68,8 +68,10 @@ import teamsCardJacksonville from './teams-card-jacksonville.png?url'
 
 /* Individual Team — Figma frame 162:1586 */
 import teamBuffaloHero from './team-buffalo-hero.png?url'
+import teamBuffaloHeroDesktop from './team-buffalo-hero-desktop.png?url'
 import teamBuffaloPrediction from './team-buffalo-prediction.png?url'
 import teamBuffaloFuture from './team-buffalo-future.png?url'
+import teamBuffaloFutureDesktop from './team-buffalo-future-desktop.png?url'
 import teamOddsWinTotal from './team-odds-win-total.png?url'
 import teamOddsMakePlayoffs from './team-odds-make-playoffs.png?url'
 import teamOddsMissPlayoffs from './team-odds-miss-playoffs.png?url'
@@ -129,8 +131,10 @@ export const ASSETS = {
   teamsCardHouston,
   teamsCardJacksonville,
   teamBuffaloHero,
+  teamBuffaloHeroDesktop,
   teamBuffaloPrediction,
   teamBuffaloFuture,
+  teamBuffaloFutureDesktop,
   teamOddsWinTotal,
   teamOddsMakePlayoffs,
   teamOddsMissPlayoffs,
