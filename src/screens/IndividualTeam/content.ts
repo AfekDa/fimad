@@ -72,5 +72,35 @@ export const ODDS = [
   },
 ] as const
 
+export const SCHEDULE = [
+  { opponent: 'IND', week: 1, location: 'Away', difficulty: 'easy', nodeId: '730:3130' },
+  { opponent: 'NO', week: 10, location: 'Home', difficulty: 'easy', nodeId: '730:3131' },
+  { opponent: 'DAL', week: 2, location: 'Away', difficulty: 'moderate', nodeId: '730:3142' },
+  { opponent: 'TEN', week: 11, location: 'Home', difficulty: 'easy', nodeId: '730:3153' },
+  { opponent: 'ATL', week: 3, location: 'Away', difficulty: 'easy', nodeId: '730:3164' },
+  { opponent: 'CLE', week: 12, location: 'Away', difficulty: 'easy', nodeId: '730:3175' },
+  { opponent: 'CIN', week: 4, location: 'Home', difficulty: 'moderate', nodeId: '730:3186' },
+  { opponent: 'BUF', week: 13, location: 'Away', difficulty: 'difficult', nodeId: '730:3197' },
+  { opponent: 'JAX', week: 5, location: 'Home', difficulty: 'moderate', nodeId: '730:3208' },
+  { opponent: 'LAC', week: 14, location: 'Home', difficulty: 'difficult', nodeId: '730:3219' },
+  { opponent: 'CAR', week: 6, location: 'Away', difficulty: 'easy', nodeId: '730:3230' },
+  { opponent: 'HOU', week: 15, location: 'Away', difficulty: 'moderate', nodeId: '730:3241' },
+  { opponent: 'NO GAME', week: 7, location: null, difficulty: null, nodeId: '730:3252' },
+  { opponent: 'TB', week: 16, location: 'Away', difficulty: 'moderate', nodeId: '730:3263' },
+  { opponent: 'PIT', week: 8, location: 'Away', difficulty: 'easy', nodeId: '730:3274' },
+  { opponent: 'CLE', week: 17, location: 'Home', difficulty: 'easy', nodeId: '730:3285' },
+  { opponent: 'CIN', week: 9, location: 'Away', difficulty: 'easy', nodeId: '730:3296' },
+  { opponent: 'PIT', week: 18, location: 'Home', difficulty: 'moderate', nodeId: '730:3307' },
+] as const
+
+const DESKTOP_SCHEDULE_WEEKS = [1, 7, 13, 2, 8, 14, 3, 9, 15, 4, 10, 16, 5, 11, 17, 6, 12, 18] as const
+const DESKTOP_SCHEDULE_NODE_IDS = ['791:2111', '791:2470', '791:2480', '791:2523', '791:2534', '791:2545', '791:2556', '791:2567', '791:2578', '791:2589', '791:2600', '791:2611', '791:2622', '791:2633', '791:2644', '791:2655', '791:2666', '791:2677'] as const
+
+export const DESKTOP_SCHEDULE = DESKTOP_SCHEDULE_WEEKS.map((week, index) => ({
+  opponent: 'IND',
+  week,
+  nodeId: DESKTOP_SCHEDULE_NODE_IDS[index],
+}))
+
 export const PREDICTION_COPY =
   'The Bills’ biggest transaction was extending QB Josh Allen for the next six years. Aside from that it was a solid, without being an exceptional offseason in Buffalo. I’m unconvinced on the signing of former Chargers’ WR Josh Palmer who went under 2 yards per route run with the elite arm of Justin Herbert.'

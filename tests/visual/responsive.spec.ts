@@ -569,7 +569,7 @@ test.describe('responsive integrity', () => {
       await Promise.all(Array.from(document.images).map((image) => image.decode()))
     })
 
-    await expect(page.locator('[data-node-id="162:1586"]')).toHaveCSS('min-height', '4694px')
+    await expect(page.locator('[data-node-id="162:1586"]')).toHaveCSS('min-height', '5469px')
     expect(await page.locator('[data-node-id="181:1321"]').boundingBox()).toMatchObject({
       x: 0,
       y: 0,
@@ -601,8 +601,14 @@ test.describe('responsive integrity', () => {
     const oddsBox = await page.locator('[data-node-id="162:2237"]').boundingBox()
     expect(oddsBox?.y).toBeCloseTo(3430, 0)
     expect(oddsBox?.height).toBeCloseTo(712.546, 1)
+    const scheduleBox = await page.locator('[data-node-id="738:4484"]').boundingBox()
+    expect(scheduleBox).toMatchObject({ x: 0, width: 430, height: 717 })
+    expect(scheduleBox?.y).toBeCloseTo(4142.546, 1)
+    const scheduleGridBox = await page.locator('[data-node-id="730:3141"]').boundingBox()
+    expect(scheduleGridBox).toMatchObject({ x: 24, width: 382, height: 605 })
+    expect(scheduleGridBox?.y).toBeCloseTo(4254.546, 1)
     const exploreBox = await page.locator('[data-node-id="181:1446"]').boundingBox()
-    expect(exploreBox?.y).toBeCloseTo(4142.546, 1)
+    expect(exploreBox?.y).toBeCloseTo(4859.546, 1)
     expect(exploreBox?.height).toBeCloseTo(474, 0)
 
     expect(await page.locator('[data-node-id="162:2215"] picture img').boundingBox()).toMatchObject({
@@ -701,7 +707,7 @@ test.describe('responsive integrity', () => {
       x: 0,
       y: 0,
       width: 1280,
-      height: 4517,
+      height: 4761,
     })
 
     for (const section of [
@@ -712,7 +718,8 @@ test.describe('responsive integrity', () => {
       { id: '397:2201', y: 2100, height: 531 },
       { id: '397:2207', y: 2615, height: 637 },
       { id: '397:2265', y: 3252, height: 358 },
-      { id: '397:2318', y: 3610, height: 474 },
+      { id: '791:2688', y: 3610, height: 677 },
+      { id: '397:2318', y: 4287, height: 474 },
     ]) {
       expect(
         await page.locator(`[data-desktop-node-id="${section.id}"]`).boundingBox(),

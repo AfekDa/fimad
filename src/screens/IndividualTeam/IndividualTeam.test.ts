@@ -27,6 +27,19 @@ describe('Individual Team', () => {
     expect(screen.getByText('FAVORITE FUTURE')).toBeInTheDocument()
   })
 
+  it('renders the Figma schedule and its difficulty treatment', () => {
+    const schedule = body.querySelector('[data-node-id="738:4484"]')
+    const mobileSchedule = body.querySelector('[data-node-id="730:3141"]')
+
+    expect(schedule).toBeInTheDocument()
+    expect(within(schedule as HTMLElement).getByRole('heading', { name: 'SCHEDULE' })).toBeInTheDocument()
+    expect(within(mobileSchedule as HTMLElement).getAllByRole('article')).toHaveLength(18)
+    expect(within(mobileSchedule as HTMLElement).getByText('NO GAME')).toBeInTheDocument()
+    expect(within(mobileSchedule as HTMLElement).getAllByText('Easy')).toHaveLength(9)
+    expect(within(mobileSchedule as HTMLElement).getAllByText('Moderate')).toHaveLength(6)
+    expect(within(mobileSchedule as HTMLElement).getAllByText('Difficult')).toHaveLength(2)
+  })
+
   it('provides team navigation and actions', () => {
     expect(screen.getByRole('searchbox', { name: 'Search teams' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Back to all teams' })).toHaveAttribute('href', '/teams')

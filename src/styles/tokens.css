@@ -21,6 +21,13 @@
   --color-navy: #011556;
   --color-white: #ffffff;
   --color-black: #000000;
+  --color-dark-grey: #222222;
+  --schedule-easy-light: #dfff78;
+  --schedule-easy-dark: #425600;
+  --schedule-moderate-light: #ffee8e;
+  --schedule-moderate-dark: #e08e00;
+  --schedule-difficult-light: #ffd7da;
+  --schedule-difficult-dark: #e20013;
 
   /* Feature card fill (1:100, 1:103, 1:106, 1:109) */
   --surface-card: rgba(255, 255, 255, 0.1);
@@ -187,10 +194,10 @@
   --teams-card-gap: 16px;
 
   /* Individual Team 162:1586 after omitting its 54px iPhone status bar. */
-  --individual-team-frame-height: 4694px;
+  --individual-team-frame-height: 5469px;
 
   /* Individual Team desktop 390:1337 after omitting 118px of browser chrome. */
-  --desktop-individual-team-frame-height: 4517px;
+  --desktop-individual-team-frame-height: 4761px;
 
   /* Card component 181:1360. */
   --gradient-team-card: linear-gradient(

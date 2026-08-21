@@ -8,6 +8,8 @@ import {
   ODDS,
   OVERVIEW_PARAGRAPHS,
   PREDICTION_COPY,
+  DESKTOP_SCHEDULE,
+  SCHEDULE,
   STAFF,
 } from './content'
 import styles from './IndividualTeam.module.css'
@@ -190,6 +192,69 @@ import styles from './IndividualTeam.module.css'
                 <span class={styles.oddLabel}>{odd.label}</span>
               </div>
               <span class={styles.oddValue}>{odd.value}</span>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section
+      class={styles.schedule}
+      data-node-id="738:4484"
+      data-desktop-node-id="791:2688"
+      aria-labelledby="schedule-title"
+    >
+      <h2 id="schedule-title" class={styles.scheduleTitle} data-node-id="730:3039" data-desktop-node-id="791:2110">
+        SCHEDULE
+      </h2>
+
+      <div class:list={[styles.scheduleGrid, styles.mobileSchedule]} data-node-id="730:3141">
+        {
+          SCHEDULE.map((game) => (
+            <article class={styles.scheduleCard} data-node-id={game.nodeId}>
+              <div class={styles.scheduleInfo}>
+                <p class:list={[styles.scheduleOpponent, game.location === null && styles.scheduleBye]}>{game.opponent}</p>
+                <p class:list={[styles.scheduleMeta, game.location === null && styles.scheduleBye]}>
+                  <span>WK {game.week}</span>
+                  {
+                    game.location !== null && (
+                      <Fragment>
+                        <span class={styles.scheduleGameDot} aria-hidden="true"></span>
+                        <span>{game.location}</span>
+                      </Fragment>
+                    )
+                  }
+                </p>
+              </div>
+              {
+                game.difficulty !== null && (
+                    <span class:list={[styles.scheduleTag, styles[`scheduleTag${game.difficulty}`]]}>
+                      <span class={styles.scheduleTagDot} aria-hidden="true"></span>
+                    {game.difficulty === 'easy' ? 'Easy' : game.difficulty === 'moderate' ? 'Moderate' : 'Difficult'}
+                  </span>
+                )
+              }
+            </article>
+          ))
+        }
+      </div>
+
+      <div class:list={[styles.scheduleGrid, styles.desktopSchedule]} data-desktop-node-id="791:2520">
+        {
+          DESKTOP_SCHEDULE.map((game) => (
+            <article class={styles.scheduleCard} data-desktop-node-id={game.nodeId}>
+              <div class={styles.scheduleInfo}>
+                <p class={styles.scheduleOpponent}>{game.opponent}</p>
+                <p class={styles.scheduleMeta}>
+                  <span>WK {game.week}</span>
+                  <span class={styles.scheduleGameDot} aria-hidden="true"></span>
+                  <span>Away</span>
+                </p>
+              </div>
+              <span class:list={[styles.scheduleTag, styles.scheduleTageasy]}>
+                <span class={styles.scheduleTagDot} aria-hidden="true"></span>
+                Easy
+              </span>
             </article>
           ))
         }
