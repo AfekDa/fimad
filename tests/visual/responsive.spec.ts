@@ -611,10 +611,13 @@ test.describe('responsive integrity', () => {
     expect(exploreBox?.y).toBeCloseTo(4859.546, 1)
     expect(exploreBox?.height).toBeCloseTo(474, 0)
 
-    expect(await page.locator('[data-node-id="162:2215"] picture img').boundingBox()).toMatchObject({
+    const heroImage = page.locator('[data-node-id="162:2215"] picture img')
+    expect(await heroImage.boundingBox()).toMatchObject({
       width: 430,
       height: 319,
     })
+    await expect(heroImage).toHaveCSS('object-fit', 'cover')
+    await expect(heroImage).toHaveCSS('object-position', '50% 100%')
     const predictionImage = await page.locator('[data-node-id="162:1674"] img').boundingBox()
     expect(predictionImage?.width).toBeCloseTo(430, 0)
     expect(predictionImage?.height).toBeCloseTo(282.72, 1)

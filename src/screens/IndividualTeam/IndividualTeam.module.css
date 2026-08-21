@@ -211,7 +211,8 @@
 }
 
 .heroImage {
-  object-fit: fill;
+  object-fit: cover;
+  object-position: bottom;
 }
 
 .heroScrim {
