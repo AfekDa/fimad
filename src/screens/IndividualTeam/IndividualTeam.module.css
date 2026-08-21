@@ -779,6 +779,22 @@
   color: var(--schedule-difficult-dark);
 }
 
+/* Figma's two-column cards are 183px wide. On narrower phones, keep the
+ * tag clear of the week and venue metadata by reserving a second line. */
+@media (max-width: 403px) {
+  .schedule {
+    height: 888px;
+  }
+
+  .scheduleCard {
+    height: 72px;
+  }
+
+  .scheduleTag {
+    top: 48px;
+  }
+}
+
 .explore {
   width: 100%;
   height: 474px;

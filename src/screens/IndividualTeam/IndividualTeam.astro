@@ -212,9 +212,9 @@ import styles from './IndividualTeam.module.css'
         {
           SCHEDULE.map((game) => (
             <article class={styles.scheduleCard} data-node-id={game.nodeId}>
-              <div class={styles.scheduleInfo}>
+              <div class={styles.scheduleInfo} data-schedule-info>
                 <p class:list={[styles.scheduleOpponent, game.location === null && styles.scheduleBye]}>{game.opponent}</p>
-                <p class:list={[styles.scheduleMeta, game.location === null && styles.scheduleBye]}>
+                <p class:list={[styles.scheduleMeta, game.location === null && styles.scheduleBye]} data-schedule-meta>
                   <span>WK {game.week}</span>
                   {
                     game.location !== null && (
@@ -228,7 +228,7 @@ import styles from './IndividualTeam.module.css'
               </div>
               {
                 game.difficulty !== null && (
-                    <span class:list={[styles.scheduleTag, styles[`scheduleTag${game.difficulty}`]]}>
+                    <span class:list={[styles.scheduleTag, styles[`scheduleTag${game.difficulty}`]]} data-schedule-tag>
                       <span class={styles.scheduleTagDot} aria-hidden="true"></span>
                     {game.difficulty === 'easy' ? 'Easy' : game.difficulty === 'moderate' ? 'Moderate' : 'Difficult'}
                   </span>

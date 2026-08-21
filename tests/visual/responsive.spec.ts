@@ -696,6 +696,48 @@ test.describe('responsive integrity', () => {
     expect((scoreBox?.y ?? 0) + (scoreBox?.height ?? 0)).toBeLessThanOrEqual((copyBox?.y ?? 0) - 24)
   })
 
+  test('Individual Team keeps Schedule metadata clear of its tags on narrow phones', async ({ page }) => {
+    for (const { width, gridWidth } of [
+      { width: 320, gridWidth: 272 },
+      { width: 360, gridWidth: 312 },
+      { width: 403, gridWidth: 355 },
+    ]) {
+      await page.setViewportSize({ width, height: 932 })
+      await page.goto('/teams/buffalo-bills')
+      await page.evaluate(async () => {
+        await document.fonts.ready
+      })
+
+      const schedule = page.locator('[data-node-id="738:4484"]')
+      const grid = page.locator('[data-node-id="730:3141"]')
+      const cards = grid.locator('article')
+
+      expect(await schedule.boundingBox()).toMatchObject({ width, height: 888 })
+      expect(await grid.boundingBox()).toMatchObject({ x: 24, width: gridWidth, height: 776 })
+      await expect(cards).toHaveCount(18)
+
+      const tagClearances = await cards.evaluateAll((scheduleCards) =>
+        scheduleCards.flatMap((card) => {
+          const metadata = card.querySelector<HTMLElement>('[data-schedule-meta]')
+          const tag = card.querySelector<HTMLElement>('[data-schedule-tag]')
+
+          if (tag === null) {
+            return []
+          }
+
+          if (metadata === null) {
+            throw new Error('Expected a tagged Schedule card to contain metadata.')
+          }
+
+          return [tag.getBoundingClientRect().top - metadata.getBoundingClientRect().bottom]
+        }),
+      )
+
+      expect(tagClearances).toHaveLength(17)
+      expect(tagClearances.every((clearance) => clearance >= 3)).toBe(true)
+    }
+  })
+
   test('Individual Team matches the browser-chrome-adjusted desktop Figma geometry', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 782 })
     await page.goto('/teams/buffalo-bills')
