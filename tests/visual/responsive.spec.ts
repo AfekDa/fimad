@@ -787,10 +787,13 @@ test.describe('responsive integrity', () => {
     await expect(cards).toHaveCount(4)
     expect(await cards.first().boundingBox()).toMatchObject({ x: 24, y: 139, width: 382, height: 300 })
     expect(await cards.nth(1).boundingBox()).toMatchObject({ x: 24, y: 461, width: 382, height: 300 })
-    expect(await cards.first().locator(':scope > img').boundingBox()).toMatchObject({
+    const firstCardImage = cards.first().locator(':scope > img')
+    expect(await firstCardImage.boundingBox()).toMatchObject({
       width: 382,
       height: 300,
     })
+    await expect(firstCardImage).toHaveCSS('object-fit', 'cover')
+    await expect(firstCardImage).toHaveCSS('object-position', '50% 100%')
 
     await expect(page.locator('[data-nav-id="awards"]')).toHaveAttribute('aria-current', 'page')
     await page.getByRole('searchbox', { name: 'Search awards' }).fill('not an award')
