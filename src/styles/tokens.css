@@ -124,10 +124,10 @@
    * Frame geometry — frame "Homepage" (1:90)
    * ------------------------------------------------------------------ */
   --frame-width: 430px;
-  --frame-height: 1697px;
-  --hero-height: 648px; /* 1:91 */
-  --hero-scrim-top: 245px; /* 1:92 */
-  --hero-scrim-height: 403px;
+  --frame-height: 1643px;
+  --hero-height: 594px; /* 791:1920, less the 54px status bar */
+  --hero-scrim-top: 211px; /* 482:1485 */
+  --hero-scrim-height: 383px;
   --hero-title-top: 476px; /* 1:93 */
   --hero-title-height: 142px;
   --content-top: 648px; /* 1:96 */

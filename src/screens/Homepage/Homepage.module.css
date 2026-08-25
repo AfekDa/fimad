@@ -1,5 +1,5 @@
 /*
- * Homepage — Figma frame 1:90, 430 x 1697.
+ * Homepage — Figma frame 162:1721, 430 x 1643 (status bar 162:1759 omitted).
  *
  * The frame stacks five overlapping layers (hero image, hero scrim, hero title,
  * content, nav scrim + nav). Absolute positioning is used only for that genuine
@@ -17,10 +17,13 @@
   padding-bottom: var(--frame-tail-height);
 }
 
-/* Desktop-only. Mobile frame 1:90 draws bare hero photo down to y=120 — the
- * brand lockup exists solely on the desktop frame (488:1506 / 488:1507). */
+/*
+ * The lockup is on both frames: 162:1730 / 162:1731 on mobile, 488:1506 /
+ * 488:1507 on desktop. Mobile draws it over the navy head of the hero, at
+ * y 86 and 105 in frame coordinates — 32 and 51 once the status bar is off.
+ */
 .brandHeader {
-  display: none;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -68,12 +71,12 @@
 .hero {
   position: relative;
   /*
-   * The source frame is 648px tall in a 932px viewport. Preserve that ratio
+   * The source frame is 594px tall in an 878px viewport. Preserve that ratio
    * when mobile browser chrome leaves less vertical room, but never enlarge
    * the hero beyond the source design. This keeps the introduction visible
    * above the docked navigation on shorter screens.
    */
-  height: min(var(--hero-height), 69.527897svh);
+  height: min(var(--hero-height), 67.653759svh);
   z-index: var(--layer-hero-image);
 }
 
@@ -85,28 +88,31 @@
 }
 
 /*
- * Figma crops this at exactly 430px wide (w 128.37%, h 120.37%, left -16.05%).
- * Expressing it as an aspect-locked leaf reproduces those numbers at 430 while
- * keeping the source proportions intact at every other width, which raw
- * percentages would not do.
+ * Figma crops this at exactly 430px wide: 791:1920 carries the fill at
+ * w 122.37%, h 125.39%, left -11.13%, top -18.57%. Expressing it as an
+ * aspect-locked leaf reproduces those numbers at 430 while keeping the source
+ * proportions intact at every other width, which raw percentages would not do.
+ *
+ * At 430 the leaf is 526.2 wide, so its centre lands 0.25px right of the box's;
+ * left -11.13% is that same edge measured from the left instead.
  */
 .heroImageLeaf {
   position: absolute;
-  top: -20.37%;
-  height: 120.37%;
+  top: -18.57%;
+  height: 125.39%;
   width: auto;
   max-width: none;
   aspect-ratio: 916 / 1296;
   left: 50%;
-  transform: translateX(calc(-50% - 8.5px));
+  transform: translateX(calc(-50% + 0.25px));
 }
 
 .heroScrim {
   position: absolute;
   left: 0;
   right: 0;
-  top: min(var(--hero-scrim-top), 26.287554svh);
-  height: min(var(--hero-scrim-height), 43.240343svh);
+  top: min(var(--hero-scrim-top), 24.031891svh);
+  height: min(var(--hero-scrim-height), 43.621868svh);
   background: var(--gradient-hero);
   z-index: var(--layer-hero-scrim);
   pointer-events: none;

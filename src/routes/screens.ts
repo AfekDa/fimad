@@ -58,11 +58,15 @@ export const SCREENS: readonly ScreenMeta[] = [
   {
     path: '/',
     frameName: 'Homepage',
-    nodeId: '1:90',
+    nodeId: '162:1721',
     width: 430,
-    height: 1697,
-    /* Nav scrim 1:126 ends at 747 + 185 = 932. */
-    viewportHeight: 932,
+    /* Frame 162:1721 is 1697 tall less its 54px device status bar (162:1759). */
+    height: 1643,
+    /*
+     * Nav scrim 162:1757 ends at 747 + 185 = 932, the device viewport edge, so
+     * the band the app actually renders is 932 - 54 = 878.
+     */
+    viewportHeight: 878,
   },
   {
     path: '/teams',

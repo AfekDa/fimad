@@ -28,13 +28,13 @@ $out = Join-Path (Split-Path $refs -Parent) '__screenshots__\figma-fidelity'
 
 $frames = @(
     @{
-        Source         = 'homepage-1-90.png'
-        Id             = '1-90'
+        Source         = 'homepage-162-1721.png'
+        Id             = '162-1721'
         Scale          = 2
         Width          = 430
-        Height         = 1697
-        ChromeHeight   = 0
-        ViewportHeight = 932
+        Height         = 1643
+        ChromeHeight   = 54
+        ViewportHeight = 878
     },
     @{
         Source         = 'all-teams-162-1760.png'

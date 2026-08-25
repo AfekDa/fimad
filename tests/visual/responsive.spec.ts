@@ -343,21 +343,24 @@ test.describe('responsive integrity', () => {
     expect(teamsIconBox).toMatchObject({ width: 35, height: 28 })
   })
 
-  test('Homepage hides the Cody Brown brand on mobile, where frame 1:90 has no lockup', async ({
-    page,
-  }) => {
-    await page.setViewportSize({ width: 430, height: 932 })
+  test('Homepage draws the Cody Brown lockup over the hero on mobile', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 878 })
     await page.goto('/')
 
-    // The brand lockup belongs to the desktop frame only (488:1506 / 488:1507);
-    // 1:90 draws bare hero photo down to y=120. Its desktop geometry is
-    // asserted by the desktop test below.
-    const brand = page.locator('[data-homepage-brand]')
-    await expect(brand).toBeHidden()
-    expect(await brand.boundingBox()).toBeNull()
+    // 162:1730 / 162:1731 sit at y 86 and 105 in frame 162:1721, which is 32
+    // and 51 once the 54px status bar the app does not draw is taken off.
+    await expect(page.locator('[data-homepage-brand]')).toBeVisible()
+    const byline = await page.locator('[data-node-id="162:1730"]').boundingBox()
+    expect(byline?.y).toBeCloseTo(32, 0)
+    expect(byline?.width).toBeCloseTo(100, 0)
+    expect(byline?.x).toBeCloseTo(165, 0)
+    const title = await page.locator('[data-node-id="162:1731"]').boundingBox()
+    expect(title?.y).toBeCloseTo(51, 0)
+    expect(title?.width).toBeCloseTo(289, 0)
+    expect(title?.x).toBeCloseTo(71, 0)
 
     const hero = page.locator('[data-node-id="1:91"]')
-    expect(await hero.boundingBox()).toMatchObject({ x: 0, y: 0, width: 430, height: 648 })
+    expect(await hero.boundingBox()).toMatchObject({ x: 0, y: 0, width: 430, height: 594 })
   })
 
   test('Homepage reveals the introduction above the navigation on shorter mobile viewports', async ({
@@ -375,7 +378,8 @@ test.describe('responsive integrity', () => {
     expect(contentBox).not.toBeNull()
     expect(headingBox).not.toBeNull()
     expect(navBox).not.toBeNull()
-    expect(heroBox?.height).toBeCloseTo((667 * 648) / 932, 0)
+    // Frame 162:1721: a 594px hero in the 878px the app renders of its viewport.
+    expect(heroBox?.height).toBeCloseTo((667 * 594) / 878, 0)
     expect(contentBox?.y).toBeCloseTo((heroBox?.y ?? 0) + (heroBox?.height ?? 0), 0)
     expect(headingBox?.y).toBeLessThan(navBox?.y ?? 0)
   })
