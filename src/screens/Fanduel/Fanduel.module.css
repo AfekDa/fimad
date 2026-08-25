@@ -10,6 +10,17 @@
   flex-direction: column;
   gap: 24px;
   padding: 24px;
+  /*
+   * The docked nav is fixed to the bottom of the viewport and its pill takes
+   * pointer events, so without a tail the page stops scrolling with the last
+   * REDEEM OFFER still underneath it — visible but impossible to tap. Scrolling
+   * one scrim height further lifts the button clear of the whole dock.
+   *
+   * Mobile only: the desktop frame 803:5180 is 1097 tall against a 782 viewport,
+   * so its last button already clears the 64px Desktop Nav, and the block below
+   * restores the frame's own 24px tail.
+   */
+  padding-bottom: var(--app-nav-scrim-height);
 }
 
 .offer {
