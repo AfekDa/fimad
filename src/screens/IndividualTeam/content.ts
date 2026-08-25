@@ -104,3 +104,13 @@ export const DESKTOP_SCHEDULE = DESKTOP_SCHEDULE_WEEKS.map((week, index) => ({
 
 export const PREDICTION_COPY =
   'The Bills’ biggest transaction was extending QB Josh Allen for the next six years. Aside from that it was a solid, without being an exceptional offseason in Buffalo. I’m unconvinced on the signing of former Chargers’ WR Josh Palmer who went under 2 yards per route run with the elite arm of Justin Herbert.'
+
+/**
+ * Frame 1310 repeats the prediction paragraph verbatim under the bet lines
+ * (823:5900 against 162:2212), so the two are aliased rather than duplicated
+ * and cannot drift apart by accident. Split them if the design ever diverges.
+ *
+ * Mobile only — the desktop frame 397:2207 carries the bet lines with no
+ * supporting copy.
+ */
+export const FAVORITE_COPY = PREDICTION_COPY

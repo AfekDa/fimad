@@ -33,6 +33,20 @@ export interface ScreenMeta {
    * nav) lands where the frame draws it.
    */
   readonly viewportHeight: number
+  /**
+   * Height of the docked nav instance this frame draws, in CSS pixels.
+   *
+   * Defaults to the mobile Nav 1:127 (81). The desktop FanDuel frame instances
+   * "Desktop Nav" instead, which is a different component and a different size.
+   */
+  readonly navHeight?: number
+  /**
+   * Gap between the bottom of the docked nav and the bottom of the viewport.
+   *
+   * Defaults to the mobile 40 (nav top 811 + height 81 = 892 in a 932
+   * viewport).
+   */
+  readonly navBottomOffset?: number
 }
 
 /**
@@ -66,7 +80,8 @@ export const SCREENS: readonly ScreenMeta[] = [
     frameName: 'Individual Team Page',
     nodeId: '162:1586',
     width: 430,
-    height: 4748,
+    /* Frame 162:1586 is 5523 tall less its 54px device status bar. */
+    height: 5469,
     /* App Nav instance 162:1720 uses the same 932px mobile viewport. */
     viewportHeight: 932,
   },
@@ -84,7 +99,8 @@ export const SCREENS: readonly ScreenMeta[] = [
     frameName: 'All Awards',
     nodeId: '188:2037',
     width: 430,
-    height: 1507,
+    /* Frame 188:2037 is 1507 tall less its 54px device status bar. */
+    height: 1453,
     /* Nav instance 188:2061 uses the same 932px mobile viewport. */
     viewportHeight: 932,
   },
@@ -93,7 +109,18 @@ export const SCREENS: readonly ScreenMeta[] = [
     frameName: 'FanDuel Page',
     nodeId: '803:5180',
     width: 1280,
-    height: 1215,
+    /*
+     * Frame 803:5180 is 1215 tall, but its top 118px are a screenshot of the
+     * macOS menu bar and Chrome's tab/address/bookmark bars (803:5315 and
+     * 803:5316) presenting the page inside a browser. That is mockup framing,
+     * not app UI, so the document itself is 1097 — the desktop counterpart of
+     * the 54px status bar the mobile frames draw.
+     */
+    height: 1097,
+    /* Places the docked nav at 612 = the frame's 730 less the 118px chrome. */
     viewportHeight: 782,
+    /* Desktop Nav 803:5318 is 64 tall at y=730, so 782 - (612 + 64) = 106. */
+    navHeight: 64,
+    navBottomOffset: 106,
   },
 ]

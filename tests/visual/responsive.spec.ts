@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test'
 import { SCREENS } from '../../src/routes/screens'
+import { APP_NAV_ITEMS } from '../../src/components/AppNav/navItems'
 
 /** Plan: "Test each route at 320, 375, 390, 430, and 480 px, plus the exact source width". */
 const BREAKPOINTS = [320, 375, 390, 430, 480] as const
@@ -40,18 +41,25 @@ test.describe('responsive integrity', () => {
       })
     }
 
-    const routeMaxWidth = ['/', '/teams', '/teams/buffalo-bills'].includes(route.path) ? 1400 : 480
-
-    test(`${route.frameName} centres within ${routeMaxWidth}px above the max width`, async ({ page }) => {
+    /*
+     * Every route in the manifest now has a dedicated 1280px desktop frame, so
+     * above the 768px breakpoint app.css drops the centred mobile shell and
+     * scales the 1280 canvas to the viewport (`zoom: 100vw / 1280`). The shell
+     * is therefore expected to span the full width with no gutters — the older
+     * "centres within 480px" contract described routes that no longer exist.
+     */
+    test(`${route.frameName} scales its desktop frame to fill 1400px`, async ({ page }) => {
       await page.setViewportSize({ width: 1400, height: route.height })
       await page.goto(route.path)
 
       const shell = page.locator('.appShell')
       const box = await shell.boundingBox()
       expect(box, 'App shell was not rendered').not.toBeNull()
-      expect(box?.width).toBeLessThanOrEqual(routeMaxWidth)
-      // Equal gutters either side.
-      expect(Math.abs((box?.x ?? 0) - (1400 - (box?.width ?? 0) - (box?.x ?? 0)))).toBeLessThanOrEqual(1)
+      expect(box?.x).toBeCloseTo(0, 0)
+      expect(box?.width).toBeCloseTo(1400, 0)
+
+      const documentWidth = await page.evaluate(() => document.documentElement.scrollWidth)
+      expect(documentWidth, 'Desktop shell overflows the viewport').toBeLessThanOrEqual(1401)
     })
   }
 
@@ -529,21 +537,24 @@ test.describe('responsive integrity', () => {
   })
 
   /*
-   * Two tabs have no screen yet. They must be visible, because the design
-   * draws all five, but must not behave like destinations — no href, and not
-   * in the tab order.
+   * Every tab the design draws now has a screen behind it. The inert-tab
+   * fallback in navItems.ts (href omitted -> <span aria-disabled>) is kept for
+   * future tabs, so this asserts the finished state instead: all five are real
+   * links, and none of them renders as the disabled span.
    */
-  test('nav tabs without a page are inert', async ({ page }) => {
+  test('every nav tab resolves to a real destination', async ({ page }) => {
     await page.goto('/')
 
-    for (const id of ['fanduel']) {
-      const tab = page.locator(`[data-nav-id="${id}"]`)
-      await expect(tab).toBeVisible()
-      await expect(tab).toHaveAttribute('aria-disabled', 'true')
-      expect(await tab.evaluate((el) => el.tagName)).toBe('SPAN')
-    }
+    const tabs = page.locator('nav[aria-label="Primary"] a')
+    await expect(tabs).toHaveCount(APP_NAV_ITEMS.length)
+    await expect(page.locator('nav[aria-label="Primary"] [aria-disabled="true"]')).toHaveCount(0)
 
-    await expect(page.locator('nav[aria-label="Primary"] a')).toHaveCount(4)
+    for (const item of APP_NAV_ITEMS) {
+      const tab = page.locator(`[data-nav-id="${item.id}"]`)
+      await expect(tab).toBeVisible()
+      expect(await tab.evaluate((el) => el.tagName)).toBe('A')
+      await expect(tab).toHaveAttribute('href', item.href ?? '')
+    }
   })
 
   test('Individual Team preserves its status-bar-adjusted Figma geometry and assets', async ({ page }) => {
@@ -579,21 +590,27 @@ test.describe('responsive integrity', () => {
       y: 2251,
       height: 638,
     })
+    // Frame 1311 is 881 tall in Figma: a 340px copy block over a 541px photo.
     expect(await page.locator('[data-node-id="188:2513"]').boundingBox()).toMatchObject({
       y: 2889,
-      height: 541,
+      height: 881,
     })
+    // 823:5900 sits under the bet lines on mobile only, and every section below
+    // Frame 1311 rides on its height — dropping it pulled them all up by 340px.
+    const favouriteCopy = await page.locator('[data-node-id="823:5900"]').boundingBox()
+    expect(favouriteCopy?.height).toBeCloseTo(126, 0)
+    expect(favouriteCopy?.y).toBeCloseTo(3051, 0)
     const oddsBox = await page.locator('[data-node-id="162:2237"]').boundingBox()
-    expect(oddsBox?.y).toBeCloseTo(3430, 0)
+    expect(oddsBox?.y).toBeCloseTo(3770, 0)
     expect(oddsBox?.height).toBeCloseTo(712.546, 1)
     const scheduleBox = await page.locator('[data-node-id="738:4484"]').boundingBox()
     expect(scheduleBox).toMatchObject({ x: 0, width: 430, height: 717 })
-    expect(scheduleBox?.y).toBeCloseTo(4142.546, 1)
+    expect(scheduleBox?.y).toBeCloseTo(4482.546, 1)
     const scheduleGridBox = await page.locator('[data-node-id="730:3141"]').boundingBox()
     expect(scheduleGridBox).toMatchObject({ x: 24, width: 382, height: 605 })
-    expect(scheduleGridBox?.y).toBeCloseTo(4254.546, 1)
+    expect(scheduleGridBox?.y).toBeCloseTo(4594.546, 1)
     const exploreBox = await page.locator('[data-node-id="181:1446"]').boundingBox()
-    expect(exploreBox?.y).toBeCloseTo(4859.546, 1)
+    expect(exploreBox?.y).toBeCloseTo(5199.546, 1)
     expect(exploreBox?.height).toBeCloseTo(474, 0)
 
     const heroImage = page.locator('[data-node-id="162:2215"] picture img')
@@ -606,10 +623,14 @@ test.describe('responsive integrity', () => {
     const predictionImage = await page.locator('[data-node-id="162:1674"] img').boundingBox()
     expect(predictionImage?.width).toBeCloseTo(430, 0)
     expect(predictionImage?.height).toBeCloseTo(282.72, 1)
-    expect(await page.locator('[data-node-id="188:2513"] picture img').boundingBox()).toMatchObject({
+    // Cover-cropped and pushed 82px down the section, per the Figma fill.
+    const favouriteImage = page.locator('[data-node-id="188:2513"] picture img')
+    expect(await favouriteImage.boundingBox()).toMatchObject({
+      y: 2971,
       width: 430,
-      height: 541,
+      height: 881,
     })
+    await expect(favouriteImage).toHaveCSS('object-fit', 'cover')
 
     expect(await page.locator('[data-node-id="162:1676"]').boundingBox()).toMatchObject({
       x: 131,

@@ -5,6 +5,7 @@ import Button from '../../components/Button/Button.astro'
 import { ASSETS } from '../../assets/assets'
 import {
   ACCORDION_SECTIONS,
+  FAVORITE_COPY,
   ODDS,
   OVERVIEW_PARAGRAPHS,
   PREDICTION_COPY,
@@ -152,10 +153,11 @@ import styles from './IndividualTeam.module.css'
       <div class={styles.favoriteScrim} aria-hidden="true"></div>
       <div class={styles.favoriteCopy} data-node-id="188:2514">
         <h2 id="favorite-title" class={styles.favoriteTitle} data-node-id="188:2515">FAVORITE FUTURE</h2>
-        <p class={styles.favoriteBet} data-node-id="188:2516">
+        <div class={styles.favoriteBet} data-node-id="188:2516">
           <span>JOSH ALLEN</span>
           <span>10+ RUSHING TOUCHDOWNS</span>
-        </p>
+          <p class={styles.favoriteBetCopy} data-node-id="823:5900">{FAVORITE_COPY}</p>
+        </div>
         <Button
           variant="fanduel"
           state="active"

@@ -6,6 +6,20 @@
 #
 # All numbers are the Figma frame geometry multiplied by 2 (Figma exports at 2x,
 # and Playwright runs at deviceScaleFactor 2).
+#
+# The exports are regenerated with the Figma MCP:
+#   download_assets(fileKey, nodeId, defaultFormat='png', defaultScale=2)
+# get_screenshot only ever renders at 1x -- its maxDimension caps, it never
+# upscales -- so it cannot produce a baseline that matches deviceScaleFactor 2.
+#
+# ChromeHeight is the device framing a frame draws at y=0 that the app itself
+# never renders: 54px for the "Status Bar - iPhone" instance on the mobile
+# frames, and 118px on the desktop FanDuel frame, whose top band is a
+# screenshot of the macOS menu bar and Chrome's tab/address/bookmark bars
+# (803:5315, 803:5316) presenting the page inside a browser. The app starts at
+# page content instead (see AllTeams.test.ts), so that band is cropped off the
+# top of the export and Height is the frame height minus it -- which is what
+# src/routes/screens.ts records and what frames.spec.ts clips to.
 
 Add-Type -AssemblyName System.Drawing
 
@@ -19,7 +33,53 @@ $frames = @(
         Scale          = 2
         Width          = 430
         Height         = 1697
+        ChromeHeight   = 0
         ViewportHeight = 932
+    },
+    @{
+        Source         = 'all-teams-162-1760.png'
+        Id             = '162-1760'
+        Scale          = 2
+        Width          = 430
+        Height         = 2877
+        ChromeHeight   = 54
+        ViewportHeight = 932
+    },
+    @{
+        Source         = 'individual-team-162-1586.png'
+        Id             = '162-1586'
+        Scale          = 2
+        Width          = 430
+        Height         = 5469
+        ChromeHeight   = 54
+        ViewportHeight = 932
+    },
+    @{
+        Source         = 'bets-251-2889.png'
+        Id             = '251-2889'
+        Scale          = 2
+        Width          = 430
+        Height         = 4861
+        ChromeHeight   = 54
+        ViewportHeight = 932
+    },
+    @{
+        Source         = 'awards-188-2037.png'
+        Id             = '188-2037'
+        Scale          = 2
+        Width          = 430
+        Height         = 1453
+        ChromeHeight   = 54
+        ViewportHeight = 932
+    },
+    @{
+        Source         = 'fanduel-803-5180.png'
+        Id             = '803-5180'
+        Scale          = 2
+        Width          = 1280
+        Height         = 1097
+        ChromeHeight   = 118
+        ViewportHeight = 782
     }
 )
 
@@ -52,14 +112,17 @@ foreach ($frame in $frames) {
     $s = $frame.Scale
     $expectedW = $frame.Width * $s
     $expectedH = $frame.Height * $s
-    if ($image.Width -ne $expectedW -or $image.Height -ne $expectedH) {
+    # The export still carries the device chrome the app does not render, so the
+    # file is that much taller than the band being compared.
+    $chromeH = $frame.ChromeHeight * $s
+    if ($image.Width -ne $expectedW -or $image.Height -ne ($expectedH + $chromeH)) {
         $image.Dispose()
-        throw "$($frame.Source) is $($image.Width)x$($image.Height); expected ${expectedW}x${expectedH}."
+        throw "$($frame.Source) is $($image.Width)x$($image.Height); expected ${expectedW}x$($expectedH + $chromeH)."
     }
 
     $foldY = $frame.ViewportHeight * $s
-    Save-Crop $image 0 0 $expectedW $foldY (Join-Path $out "$($frame.Id)-viewport.png")
-    Save-Crop $image 0 $foldY $expectedW ($expectedH - $foldY) (Join-Path $out "$($frame.Id)-below-fold.png")
+    Save-Crop $image 0 $chromeH $expectedW $foldY (Join-Path $out "$($frame.Id)-viewport.png")
+    Save-Crop $image 0 ($chromeH + $foldY) $expectedW ($expectedH - $foldY) (Join-Path $out "$($frame.Id)-below-fold.png")
 
     $image.Dispose()
 }

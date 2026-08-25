@@ -20,7 +20,10 @@
 import { expect, test, type Page } from '@playwright/test'
 import { SCREENS } from '../../src/routes/screens'
 
-/** Nav 1:127: height 81, bottom edge 811 + 81 = 892 in a 932 viewport. */
+/**
+ * Mobile Nav 1:127: height 81, bottom edge 811 + 81 = 892 in a 932 viewport.
+ * Frames that dock a different nav component override these in the manifest.
+ */
 const NAV_HEIGHT = 81
 const NAV_BOTTOM_OFFSET = 40
 
@@ -102,7 +105,10 @@ test.describe('frame fidelity', () => {
       expect(atTop, 'Nav was not rendered').not.toBeNull()
 
       // Figma: nav top 811 in a 932 viewport.
-      expect(atTop?.y).toBeCloseTo(route.viewportHeight - NAV_BOTTOM_OFFSET - NAV_HEIGHT, 0)
+      const navHeight = route.navHeight ?? NAV_HEIGHT
+      const navBottomOffset = route.navBottomOffset ?? NAV_BOTTOM_OFFSET
+      expect(atTop?.height).toBeCloseTo(navHeight, 0)
+      expect(atTop?.y).toBeCloseTo(route.viewportHeight - navBottomOffset - navHeight, 0)
 
       await page.evaluate(() => {
         window.scrollTo(0, document.documentElement.scrollHeight)

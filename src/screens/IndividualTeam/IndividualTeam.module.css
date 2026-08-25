@@ -1,4 +1,4 @@
-/* Individual Team Page — Figma frame 162:1586, 430 × 4748. */
+/* Individual Team Page — Figma frame 162:1586, 430 × 5469 (status bar omitted). */
 
 .page {
   position: relative;
@@ -46,6 +46,7 @@
 .predictionCopy,
 .favoriteTitle,
 .favoriteBet,
+.favoriteBetCopy,
 .oddsTitle,
 .exploreTeamName {
   margin: 0;
@@ -66,6 +67,7 @@
 .predictionScoreLine,
 .predictionCopy,
 .favoriteTitle,
+.favoriteBetCopy,
 .favoriteBet > span,
 .oddsTitle > span:last-child,
 .oddLabel,
@@ -482,20 +484,38 @@
   max-width: none;
 }
 
+/*
+ * Frame 1311 is 881 tall: the photo fills the whole section and the copy is
+ * overlaid on the black top of its scrim. 541 is the height of the photo below
+ * the copy block, not the section — using it squashed the portrait and pulled
+ * every section beneath this one up by 340px.
+ */
 .favorite {
   position: relative;
   width: 100%;
-  height: 541px;
+  height: 881px;
   flex-shrink: 0;
   overflow: hidden;
 }
 
+/*
+ * The asset is the full source photo, as Figma holds it. The frame crops it
+ * with a centred Fill (object-fit: cover) pushed 82px down the section, so the
+ * jersey number sits below the copy. The top 82px it leaves bare is inside the
+ * scrim's opaque black band, so nothing shows through.
+ *
+ * The previous asset was a crop baked for the old 541px section, which had
+ * lost the jersey number and the crossed arms entirely.
+ */
 .favoriteImage {
-  object-fit: fill;
+  top: 82px;
+  object-fit: cover;
+  object-position: center;
 }
 
+/* Stops are relative to the 881px section, not the 541px photo below the copy. */
 .favoriteScrim {
-  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0) 25.878%);
+  background: linear-gradient(to bottom, #000 19.41%, rgba(0, 0, 0, 0) 46.141%);
 }
 
 .favoriteCopy {
@@ -525,6 +545,19 @@
   line-height: var(--font-h4-line);
   font-weight: var(--font-h4-weight);
   text-align: center;
+}
+
+/*
+ * 823:5900 — the third child of Frame 1309, so the container's 12px gap places
+ * it. Mobile only: desktop frame 397:2207 carries the bet lines alone.
+ */
+.favoriteBetCopy {
+  width: 100%;
+  height: 126px;
+  flex-shrink: 0;
+  font-size: var(--font-bc2-r-size);
+  line-height: var(--font-bc2-r-line);
+  font-weight: var(--font-bc2-r-weight);
 }
 
 .odds {
@@ -1104,7 +1137,9 @@
     margin-top: -16px;
   }
 
+  /* Frame 397:2207 is its own composition: no 82px push, no cover crop. */
   .favoriteImage {
+    top: 0;
     object-fit: fill;
     object-position: center bottom;
   }
@@ -1131,6 +1166,11 @@
     font-size: var(--font-dt-h4-size);
     line-height: var(--font-dt-h4-line);
     text-align: left;
+  }
+
+  /* Frame 397:2207 carries the bet lines with no supporting copy. */
+  .favoriteBetCopy {
+    display: none;
   }
 
   .odds {
