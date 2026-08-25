@@ -20,9 +20,9 @@ import styles from './Fanduel.module.css'
       <img class={styles.rewardsImage} src={ASSETS.fanduelRewardsClub} alt="FanDuel Rewards Club" data-node-id="803:5555" />
       <div class={styles.rewardsContent}>
         <div class={styles.pointRows} aria-label="Rewards Club features">
-          <div class={styles.pointRow} data-node-id="803:5557"><span>COLLECT POINTS</span><span>+1</span></div>
-          <div class={styles.pointRow} data-node-id="803:5560"><span>UNLOCK LEVELS</span><span>+1</span></div>
-          <div class={styles.pointRow} data-node-id="803:5563"><span>SCORE REWARDS</span><span>+1</span></div>
+          <div class={styles.pointRow} data-node-id="803:5557"><span>COLLECT POINTS</span><span class={styles.pointValue}>+1</span></div>
+          <div class={styles.pointRow} data-node-id="803:5560"><span>UNLOCK LEVELS</span><img class={styles.lockIcon} src={ASSETS.fanduelLockIcon} alt="" aria-hidden="true" data-node-id="803:5562" /></div>
+          <div class={styles.pointRow} data-node-id="803:5563"><span>SCORE REWARDS</span><img class={styles.medalIcon} src={ASSETS.fanduelMedalIcon} alt="" aria-hidden="true" data-node-id="788:2251" /></div>
         </div>
         <Button variant="fanduel" state="active" label="REDEEM OFFER" nodeId="803:5566" ariaLabel="Redeem Rewards Club offer" width={175} />
       </div>

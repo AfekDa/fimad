@@ -87,8 +87,10 @@ import awardCardMvp from './award-card-mvp.png?url'
 import mvpCardLamar from './mvp-card-lamar.png?url'
 
 /* FanDuel Page — desktop Figma frame 803:5180. */
-import fanduelRewardsClub from './fanduel-raw-1.png?url'
+import fanduelRewardsClub from './fanduel-rewards-club-card.png?url'
 import fanduelOffer from './fanduel-offer.png?url'
+import fanduelLockIcon from './fanduel-icon-lock.svg?url'
+import fanduelMedalIcon from './fanduel-icon-medal.svg?url'
 
 export const ASSETS = {
   heroPoster,
@@ -152,6 +154,8 @@ export const ASSETS = {
   mvpCardLamar,
   fanduelRewardsClub,
   fanduelOffer,
+  fanduelLockIcon,
+  fanduelMedalIcon,
 } as const
 
 export type AssetName = keyof typeof ASSETS

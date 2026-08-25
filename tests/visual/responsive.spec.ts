@@ -1176,6 +1176,18 @@ test.describe('responsive integrity', () => {
     await expect(offerCta).toBeVisible()
     expect(await rewardsCta.boundingBox()).toMatchObject({ x: 588, y: 499, width: 175, height: 36 })
     expect(await offerCta.boundingBox()).toMatchObject({ x: 588, y: 832, width: 175, height: 36 })
+    expect(await page.locator('[data-node-id="803:5562"]').boundingBox()).toMatchObject({
+      x: 1132,
+      y: 327,
+      width: 19,
+      height: 32,
+    })
+    expect(await page.locator('[data-node-id="788:2251"]').boundingBox()).toMatchObject({
+      x: 1125,
+      y: 415,
+      width: 26,
+      height: 32,
+    })
     expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
       x: 290,
       y: 612,

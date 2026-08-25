@@ -73,6 +73,22 @@
   white-space: nowrap;
 }
 
+.lockIcon,
+.medalIcon {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.lockIcon {
+  width: 19px;
+  height: 32px;
+}
+
+.medalIcon {
+  width: 26px;
+  height: 32px;
+}
+
 .copy {
   display: flex;
   flex-direction: column;
@@ -155,7 +171,7 @@
     line-height: 44px;
   }
 
-  .pointRow span:last-child {
+  .pointValue {
     font-size: 54px;
     line-height: 42px;
   }
