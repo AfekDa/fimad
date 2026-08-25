@@ -29,6 +29,8 @@ export interface Props {
   readonly hideLabel?: boolean
   /** Optional client-side filter identifier for filter buttons. */
   readonly filterValue?: string | undefined
+  /** Exact Figma width when an instance differs from its component default. */
+  readonly width?: number | undefined
 }
 
 const NODE_IDS: Record<ButtonType, Record<ButtonState, string>> = {
@@ -50,6 +52,7 @@ const {
   href,
   hideLabel = false,
   filterValue,
+  width,
 } = Astro.props
 
 const active = state === 'active'
@@ -73,6 +76,7 @@ const variantClass =
   data-state={state}
   data-asset-set={assetSet}
   data-filter-value={filterValue}
+  style={width === undefined ? undefined : `width: ${width}px`}
   aria-label={ariaLabel}
   aria-pressed={variant === 'filter' ? (active ? 'true' : 'false') : undefined}
 >

@@ -41,7 +41,8 @@
   .appShellIndividualTeam,
   .appShellAwards,
   .appShellMvp,
-  .appShellAllBets {
+  .appShellAllBets,
+  .appShellFanduel {
     width: var(--desktop-frame-width);
     max-width: none;
     min-width: var(--desktop-frame-width);

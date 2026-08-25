@@ -259,6 +259,12 @@
 }
 
 @media (min-width: 768px) {
+  .fanduel {
+    width: 141px;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
   .filterLabel {
     text-transform: uppercase;
   }

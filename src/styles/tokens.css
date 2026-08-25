@@ -253,6 +253,9 @@
   --desktop-bets-header-height: 147px;
   --desktop-bets-card-width: 357px;
   --desktop-bets-card-height: 75px;
+  /* FanDuel Page 803:5180 after omitting 118px browser chrome. */
+  --desktop-fanduel-frame-height: 1097px;
+  --desktop-fanduel-card-gap: 24px;
 
   /* Dt/H2, Dt/H4, Dt/BC1 and Dt/BC2 from the desktop design context. */
   --font-dt-h2-size: 64px;

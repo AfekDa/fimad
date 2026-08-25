@@ -86,6 +86,10 @@ import teamExploreCard from './team-explore-card.png?url'
 import awardCardMvp from './award-card-mvp.png?url'
 import mvpCardLamar from './mvp-card-lamar.png?url'
 
+/* FanDuel Page — desktop Figma frame 803:5180. */
+import fanduelRewardsClub from './fanduel-raw-1.png?url'
+import fanduelOffer from './fanduel-offer.png?url'
+
 export const ASSETS = {
   heroPoster,
   yearMark,
@@ -146,6 +150,8 @@ export const ASSETS = {
   teamExploreCard,
   awardCardMvp,
   mvpCardLamar,
+  fanduelRewardsClub,
+  fanduelOffer,
 } as const
 
 export type AssetName = keyof typeof ASSETS

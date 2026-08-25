@@ -1,0 +1,173 @@
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-navy);
+}
+
+.offers {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+}
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  border-radius: var(--radius-card);
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.rewardsImage,
+.offerImage {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.rewardsImage {
+  aspect-ratio: 452 / 316;
+  object-position: bottom;
+}
+
+.offerImage {
+  aspect-ratio: 452 / 258;
+  object-position: center;
+}
+
+.rewardsContent,
+.standardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.pointRows {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.pointRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  padding: 16px;
+  border: 1px solid var(--fanduel-blue);
+  border-radius: var(--radius-card);
+  background: var(--surface-bet-card);
+  font-family: var(--font-family-display);
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: var(--font-display-letter-spacing);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.copy h1,
+.copy p {
+  margin: 0;
+}
+
+.copy h1 {
+  font-family: var(--font-family-base);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.copy p {
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+@media (min-width: 768px) {
+  .page {
+    min-height: var(--desktop-fanduel-frame-height);
+  }
+
+  .offers {
+    gap: 24px;
+    padding: 40px 80px 24px;
+  }
+
+  .offer {
+    flex-direction: row;
+    gap: 24px;
+    width: 1120px;
+    padding: 32px;
+  }
+
+  .rewards {
+    height: 380px;
+  }
+
+  .standardOffer {
+    height: 322px;
+  }
+
+  .rewardsImage {
+    width: 452px;
+    height: 316px;
+    flex: 0 0 452px;
+  }
+
+  .offerImage {
+    width: 452px;
+    height: 258px;
+    flex: 0 0 452px;
+    object-fit: cover;
+    object-position: 50% 56.63%;
+  }
+
+  .rewardsContent,
+  .standardContent {
+    width: 580px;
+    flex: 0 0 580px;
+  }
+
+  .pointRows {
+    gap: 16px;
+  }
+
+  .pointRow {
+    height: 72px;
+    min-height: 72px;
+    padding: 16px;
+    font-size: 64px;
+    line-height: 44px;
+  }
+
+  .pointRow span:last-child {
+    font-size: 54px;
+    line-height: 42px;
+  }
+
+  .copy {
+    width: 580px;
+    height: 177px;
+  }
+
+  .rewardsContent > :global(a),
+  .standardContent > :global(a) {
+    justify-content: center;
+    flex-shrink: 0;
+  }
+}

@@ -14,5 +14,5 @@ export const APP_NAV_ITEMS: readonly AppNavItem[] = [
   { id: 'teams', label: 'Teams', icon: 'teams', href: '/teams' },
   { id: 'awards', label: 'Awards', icon: 'awards', href: '/awards' },
   { id: 'all-bets', label: 'All Bets', icon: 'bets', href: '/all-bets' },
-  { id: 'fanduel', label: 'Fanduel', icon: 'fanduel' },
+  { id: 'fanduel', label: 'Fanduel', icon: 'fanduel', href: '/fanduel' },
 ]

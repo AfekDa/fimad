@@ -79,4 +79,12 @@ export const SCREENS: readonly ScreenMeta[] = [
     /* Nav instance 188:2061 uses the same 932px mobile viewport. */
     viewportHeight: 932,
   },
+  {
+    path: '/fanduel',
+    frameName: 'FanDuel Page',
+    nodeId: '803:5180',
+    width: 1280,
+    height: 1215,
+    viewportHeight: 782,
+  },
 ]

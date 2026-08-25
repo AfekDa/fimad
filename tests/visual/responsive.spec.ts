@@ -970,7 +970,7 @@ test.describe('responsive integrity', () => {
     const scale = viewport.width / 1280
     await page.setViewportSize(viewport)
 
-    for (const path of ['/', '/teams', '/teams/buffalo-bills', '/awards', '/awards/mvp', '/all-bets']) {
+    for (const path of ['/', '/teams', '/teams/buffalo-bills', '/awards', '/awards/mvp', '/all-bets', '/fanduel']) {
       await page.goto(path)
 
       const shell = await page.locator('.appShell').boundingBox()
@@ -1117,6 +1117,17 @@ test.describe('responsive integrity', () => {
       width: 357,
       height: 75,
     })
+    const firstBetButton = firstBet.getByRole('button', {
+      name: 'Place bet on Lamar Jackson at +430',
+      exact: true,
+    })
+    await expect(firstBetButton).toBeVisible()
+    expect(await firstBetButton.boundingBox()).toMatchObject({
+      x: 280,
+      y: 377.5,
+      width: 141,
+      height: 36,
+    })
     const desktopFutureCards = page.locator('[data-desktop-bet-card]')
     await expect(desktopFutureCards).toHaveCount(21)
     expect(await desktopFutureCards.first().boundingBox()).toMatchObject({
@@ -1131,6 +1142,47 @@ test.describe('responsive integrity', () => {
       width: 700,
       height: 64,
     })
+  })
+
+  test('desktop FanDuel renders both MCP-designed offer controls', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 782 })
+    await page.goto('/fanduel')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(Array.from(document.images).map((image) => image.decode()))
+    })
+
+    expect(await page.locator('[data-fanduel-page]').boundingBox()).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 1280,
+      height: 1097,
+    })
+    expect(await page.locator('[data-node-id="803:5181"]').boundingBox()).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 1280,
+      height: 147,
+    })
+
+    const offers = page.locator('[data-fanduel-offer]')
+    await expect(offers).toHaveCount(2)
+    expect(await offers.nth(0).boundingBox()).toMatchObject({ x: 80, y: 187, width: 1120, height: 380 })
+    expect(await offers.nth(1).boundingBox()).toMatchObject({ x: 80, y: 591, width: 1120, height: 322 })
+
+    const rewardsCta = page.getByRole('button', { name: 'Redeem Rewards Club offer', exact: true })
+    const offerCta = page.getByRole('button', { name: 'Redeem offer', exact: true })
+    await expect(rewardsCta).toBeVisible()
+    await expect(offerCta).toBeVisible()
+    expect(await rewardsCta.boundingBox()).toMatchObject({ x: 588, y: 499, width: 175, height: 36 })
+    expect(await offerCta.boundingBox()).toMatchObject({ x: 588, y: 832, width: 175, height: 36 })
+    expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
+      x: 290,
+      y: 612,
+      width: 700,
+      height: 64,
+    })
+    await expect(page.locator('[data-nav-id="fanduel"]')).toHaveAttribute('aria-current', 'page')
   })
 
   test('responsive suite has screens to exercise', () => {
