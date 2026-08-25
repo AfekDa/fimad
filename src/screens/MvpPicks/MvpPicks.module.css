@@ -29,6 +29,10 @@
   text-box-edge: cap alphabetic;
 }
 
+.desktopHeading {
+  display: none;
+}
+
 .backLink {
   display: inline-flex;
   align-items: center;
@@ -75,4 +79,46 @@
 
 .carousel::-webkit-scrollbar {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .page {
+    min-height: var(--desktop-mvp-frame-height);
+  }
+
+  .intro {
+    box-sizing: border-box;
+    width: 438px;
+    height: 44px;
+    margin: 24px 0 0 80px;
+  }
+
+  .heading {
+    width: 438px;
+    font-size: var(--font-dt-h2-size);
+    line-height: var(--font-dt-h2-line);
+  }
+
+  .mobileHeading {
+    display: none;
+  }
+
+  .desktopHeading {
+    display: inline;
+  }
+
+  .backLink {
+    display: none;
+  }
+
+  .carousel {
+    display: grid;
+    grid-template-columns: 357px 358px 357px;
+    gap: 24px;
+    width: 1120px;
+    height: var(--desktop-mvp-card-height);
+    margin: 34px 0 0 80px;
+    padding: 0;
+    overflow: visible;
+  }
 }

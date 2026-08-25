@@ -39,3 +39,17 @@
     line-height: 22px;
   }
 }
+
+@media (min-width: 768px) {
+  .card {
+    width: var(--desktop-bets-card-width);
+    height: var(--desktop-bets-card-height);
+  }
+
+  .pick {
+    flex-direction: row;
+    max-width: none;
+    font-size: var(--font-dt-bc1-size);
+    line-height: var(--font-dt-bc1-line);
+  }
+}

@@ -91,6 +91,36 @@
   white-space: nowrap;
 }
 
+@media (min-width: 768px) {
+  .card {
+    flex: 0 0 100%;
+    width: 100%;
+    height: var(--desktop-mvp-card-height);
+  }
+
+  .image,
+  .scrim {
+    width: 100%;
+    height: 100%;
+  }
+
+  .name {
+    font-size: 80px;
+    line-height: 58px;
+    letter-spacing: -0.8px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .odds {
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+
 .description {
   width: 100%;
   font-family: var(--font-family-base);

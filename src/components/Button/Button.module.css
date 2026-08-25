@@ -257,3 +257,13 @@
     transition: none;
   }
 }
+
+@media (min-width: 768px) {
+  .filterLabel {
+    text-transform: uppercase;
+  }
+
+  .filter[data-filter-value='all'] {
+    min-width: 78px;
+  }
+}

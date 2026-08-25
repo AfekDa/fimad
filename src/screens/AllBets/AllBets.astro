@@ -6,6 +6,16 @@ import { ASSETS } from '../../assets/assets'
 import BetCard from './BetCard.astro'
 import { BET_FILTERS, BET_SECTIONS } from './content'
 import styles from './AllBets.module.css'
+
+const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
+  const picks = [
+    { name: 'Lamar Jackson', odds: '+430' },
+    { name: 'Joe Burrow', odds: '+600' },
+    { name: 'Jared Goff', odds: '+430' },
+  ] as const
+
+  return picks[index % picks.length]!
+})
 ---
 
 <div class={styles.page} data-node-id="251:2889" data-all-bets-page>
@@ -100,6 +110,20 @@ import styles from './AllBets.module.css'
             </h1>
             <div class={styles.betList}>
               {section.bets.map((bet) => <BetCard bet={bet} />)}
+              {section.id === 'exclusive' && DESKTOP_FAVOURITE_FUTURES.map((bet) => (
+                <article class={styles.desktopExtraCard} data-desktop-bet-card aria-hidden="true">
+                  <p class={styles.desktopExtraPick}>
+                    <span>{bet.name}</span>
+                    <span class={styles.desktopExtraOdds}>{bet.odds}</span>
+                  </p>
+                  <Button
+                    variant="fanduel"
+                    label="PLACE BET"
+                    nodeId="181:1821"
+                    assetSet="teams-page"
+                  />
+                </article>
+              ))}
             </div>
           </section>
           {section !== BET_SECTIONS.at(-1) && (

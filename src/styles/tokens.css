@@ -241,6 +241,19 @@
   --desktop-teams-column-gap: 24px;
   --desktop-teams-row-gap: 24px;
 
+  /* Desktop Awards and Bets frames in the current Prototype (Desktop) file;
+   * browser chrome (118px) is omitted from the product coordinates. */
+  --desktop-awards-frame-height: 971px;
+  --desktop-awards-header-height: 147px;
+  --desktop-awards-card-width: 358px;
+  --desktop-awards-card-height: 300px;
+  --desktop-mvp-frame-height: 971px;
+  --desktop-mvp-card-height: 576px;
+  --desktop-bets-frame-height: 2094px;
+  --desktop-bets-header-height: 147px;
+  --desktop-bets-card-width: 357px;
+  --desktop-bets-card-height: 75px;
+
   /* Dt/H2, Dt/H4, Dt/BC1 and Dt/BC2 from the desktop design context. */
   --font-dt-h2-size: 64px;
   --font-dt-h2-line: 44px;

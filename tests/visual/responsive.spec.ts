@@ -970,7 +970,7 @@ test.describe('responsive integrity', () => {
     const scale = viewport.width / 1280
     await page.setViewportSize(viewport)
 
-    for (const path of ['/', '/teams', '/teams/buffalo-bills']) {
+    for (const path of ['/', '/teams', '/teams/buffalo-bills', '/awards', '/awards/mvp', '/all-bets']) {
       await page.goto(path)
 
       const shell = await page.locator('.appShell').boundingBox()
@@ -1021,6 +1021,116 @@ test.describe('responsive integrity', () => {
 
     await page.getByRole('searchbox', { name: 'Search bets' }).fill('not a player')
     await expect(page.getByText('No bets match your filters.')).toBeVisible()
+  })
+
+  test('desktop Awards matches the current 1280px Figma composition', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 782 })
+    await page.goto('/awards')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(Array.from(document.images).map((image) => image.decode()))
+    })
+
+    expect(await page.locator('[data-awards-page]').boundingBox()).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 1280,
+      height: 971,
+    })
+    expect(await page.locator('[data-node-id="188:2038"]').boundingBox()).toMatchObject({
+      width: 1280,
+      height: 147,
+    })
+    const awardCards = page.locator('[data-award-card]')
+    await expect(awardCards).toHaveCount(4)
+    expect(await awardCards.nth(0).boundingBox()).toMatchObject({ x: 79, y: 187, width: 358, height: 300 })
+    expect(await awardCards.nth(1).boundingBox()).toMatchObject({ x: 461, y: 187, width: 358, height: 300 })
+    expect(await awardCards.nth(3).boundingBox()).toMatchObject({ x: 79, y: 511, width: 358, height: 300 })
+    expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
+      x: 290,
+      y: 612,
+      width: 700,
+      height: 64,
+    })
+  })
+
+  test('desktop Most Valuable Player Picks matches the current 1280px Figma composition', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 782 })
+    await page.goto('/awards/mvp')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(Array.from(document.images).map((image) => image.decode()))
+    })
+
+    expect(await page.locator('[data-mvp-picks-page]').boundingBox()).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 1280,
+      height: 971,
+    })
+    expect(await page.locator('[data-node-id="188:2187"]').boundingBox()).toMatchObject({
+      width: 1280,
+      height: 147,
+    })
+    const mvpHeadingBox = await page.getByRole('heading', { level: 1 }).boundingBox()
+    expect(mvpHeadingBox).toMatchObject({
+      x: 80,
+      y: 171,
+      width: 438,
+    })
+    expect(mvpHeadingBox?.height).toBeCloseTo(38, 0)
+    const mvpCards = page.locator('[data-mvp-card]')
+    await expect(mvpCards).toHaveCount(3)
+    expect(await mvpCards.nth(0).boundingBox()).toMatchObject({ x: 80, y: 249, width: 357, height: 576 })
+    expect(await mvpCards.nth(1).boundingBox()).toMatchObject({ x: 461, y: 249, width: 358, height: 576 })
+    expect(await mvpCards.nth(2).boundingBox()).toMatchObject({ x: 843, y: 249, width: 357, height: 576 })
+  })
+
+  test('desktop All Bets matches the current 1280px Figma composition', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 782 })
+    await page.goto('/all-bets')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(Array.from(document.images).map((image) => image.decode()))
+    })
+
+    expect(await page.locator('[data-all-bets-page]').boundingBox()).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 1280,
+      height: 2094,
+    })
+    expect(await page.locator('[data-node-id="251:2892"]').boundingBox()).toMatchObject({
+      width: 1280,
+      height: 147,
+    })
+    expect(await page.locator('[data-filter-value="all"]').boundingBox()).toMatchObject({
+      x: 80,
+      y: 171,
+      width: 78,
+      height: 33,
+    })
+    const firstBet = page.locator('[data-bet-section="mvp"] [data-bet-card]').first()
+    expect(await firstBet.boundingBox()).toMatchObject({
+      x: 80,
+      y: 358,
+      width: 357,
+      height: 75,
+    })
+    const desktopFutureCards = page.locator('[data-desktop-bet-card]')
+    await expect(desktopFutureCards).toHaveCount(21)
+    expect(await desktopFutureCards.first().boundingBox()).toMatchObject({
+      x: 80,
+      y: 1338,
+      width: 357,
+      height: 75,
+    })
+    expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
+      x: 290,
+      y: 612,
+      width: 700,
+      height: 64,
+    })
   })
 
   test('responsive suite has screens to exercise', () => {

@@ -225,9 +225,184 @@
   border: 0;
 }
 
+.desktopExtraCard {
+  display: none;
+}
+
 @media (max-width: 389px) {
   .filterRow {
     flex-wrap: wrap;
     gap: var(--space-8);
+  }
+}
+
+/* Desktop frame 791:3391. The source frame includes 118px of browser chrome,
+ * so the first product divider is y=277 and each section follows the repeated
+ * 196px Figma rhythm. */
+@media (min-width: 768px) {
+  .page {
+    min-height: var(--desktop-bets-frame-height);
+  }
+
+  .header {
+    position: relative;
+    box-sizing: border-box;
+    height: var(--desktop-bets-header-height);
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .brand {
+    position: absolute;
+    top: var(--desktop-teams-header-top);
+    left: 50%;
+    align-items: center;
+    gap: var(--space-12);
+    transform: translateX(-50%);
+  }
+
+  .brandByline {
+    width: 150px;
+    font-size: var(--font-dt-bc1-size);
+    line-height: 29px;
+    text-align: center;
+  }
+
+  .brandTitle {
+    width: 342px;
+    font-size: var(--font-dt-h2-size);
+    line-height: var(--font-dt-h2-line);
+    text-align: center;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .filters {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    column-gap: 16px;
+    row-gap: 16px;
+    width: 1120px;
+    height: 106px;
+    margin: 0 80px;
+    padding-top: 24px;
+  }
+
+  .filterRow {
+    display: contents;
+  }
+
+  .sections {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 1120px;
+    margin: 24px 80px 0;
+  }
+
+  .divider {
+    height: 0;
+  }
+
+  .betSection {
+    gap: 16px;
+    margin-top: 47.765625px;
+    margin-bottom: 31.234375px;
+  }
+
+  .sectionTitle {
+    font-size: var(--font-dt-bc1-size);
+    line-height: var(--font-dt-bc1-line);
+  }
+
+  /* Desktop Figma presents the updated betting categories in a different
+   * visual order than the mobile filter/content model. Keep the semantic
+   * mobile headings intact and replace only their desktop presentation. */
+  .betSection[data-bet-section='offensive-poty'] .sectionTitle,
+  .betSection[data-bet-section='defensive-poty'] .sectionTitle,
+  .betSection[data-bet-section='offensive-roty'] .sectionTitle,
+  .betSection[data-bet-section='favourite-futures'] .sectionTitle,
+  .betSection[data-bet-section='exclusive'] .sectionTitle {
+    font-size: 0;
+    height: 26px;
+  }
+
+  .betSection[data-bet-section='offensive-poty'] .sectionTitle::after,
+  .betSection[data-bet-section='defensive-poty'] .sectionTitle::after,
+  .betSection[data-bet-section='offensive-roty'] .sectionTitle::after,
+  .betSection[data-bet-section='favourite-futures'] .sectionTitle::after,
+  .betSection[data-bet-section='exclusive'] .sectionTitle::after {
+    display: block;
+    color: var(--color-white);
+    font-family: var(--font-family-base);
+    font-size: var(--font-dt-bc1-size);
+    line-height: var(--font-dt-bc1-line);
+    font-weight: var(--font-bc1-sb-weight);
+    height: 26px;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+  }
+
+  .betSection[data-bet-section='offensive-poty'] .sectionTitle::after {
+    content: 'MOST VALUABLE PLAYER PICKS';
+  }
+
+  .betSection[data-bet-section='defensive-poty'] .sectionTitle::after {
+    content: 'OFFENSIVE PLAYER OF THE YEAR PLAYER PICKS';
+  }
+
+  .betSection[data-bet-section='offensive-roty'] .sectionTitle::after {
+    content: 'DEFENSIVE PLAYER OF THE YEAR PICKS';
+  }
+
+  .betSection[data-bet-section='favourite-futures'] .sectionTitle::after {
+    content: 'OFFENSIVE ROOKIE OF THE YEAR PICKS';
+  }
+
+  .betSection[data-bet-section='exclusive'] .sectionTitle::after {
+    content: 'FAVOURITE FUTURES';
+  }
+
+  .betList {
+    display: grid;
+    grid-template-columns: repeat(3, var(--desktop-bets-card-width));
+    gap: 16px 25px;
+  }
+
+  .betSection[data-bet-section='favourite-futures'] .betList > [data-bet-card]:nth-child(n + 4),
+  .betSection[data-bet-section='exclusive'] .betList > [data-bet-card] {
+    display: none;
+  }
+
+  .desktopExtraCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--desktop-bets-card-width);
+    height: var(--desktop-bets-card-height);
+    padding: var(--space-16);
+    border-radius: var(--radius-card);
+    background: var(--surface-bet-card);
+  }
+
+  .desktopExtraPick {
+    display: flex;
+    gap: 0;
+    margin: 0;
+    color: var(--color-white);
+    font-family: var(--font-family-base);
+    font-size: var(--font-dt-bc1-size);
+    line-height: var(--font-dt-bc1-line);
+    font-weight: var(--font-bc1-sb-weight);
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+  }
+
+  .desktopExtraOdds {
+    color: var(--fanduel-blue);
   }
 }
