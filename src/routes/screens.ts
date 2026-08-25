@@ -16,7 +16,14 @@ export interface ScreenMeta {
   readonly nodeId: string
   /** Native frame width in CSS pixels, from Figma. */
   readonly width: number
-  /** Native frame height in CSS pixels, from Figma. */
+  /**
+   * Height of the rendered document in CSS pixels.
+   *
+   * This is the Figma frame height minus any device chrome the frame draws but
+   * the app deliberately does not render (see All Teams below). The fidelity
+   * specs clip to this, so it has to describe the app's document, not the
+   * artboard.
+   */
   readonly height: number
   /**
    * Height of the device viewport the frame is drawn for, in CSS pixels.
@@ -48,7 +55,9 @@ export const SCREENS: readonly ScreenMeta[] = [
     frameName: 'All Teams Page',
     nodeId: '162:1760',
     width: 430,
-    height: 2931,
+    /* Frame 162:1760 is 2931 tall, but its top 54px are the device status bar,
+     * which the app does not render (--teams-frame-height, AllTeams.test.ts). */
+    height: 2877,
     /* Nav scrim 162:1822 ends at the 932px device viewport edge. */
     viewportHeight: 932,
   },

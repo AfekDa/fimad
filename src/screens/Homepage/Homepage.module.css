@@ -17,7 +17,10 @@
   padding-bottom: var(--frame-tail-height);
 }
 
+/* Desktop-only. Mobile frame 1:90 draws bare hero photo down to y=120 — the
+ * brand lockup exists solely on the desktop frame (488:1506 / 488:1507). */
 .brandHeader {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -366,6 +369,7 @@
   }
 
   .brandHeader {
+    display: block;
     height: 114px;
   }
 
