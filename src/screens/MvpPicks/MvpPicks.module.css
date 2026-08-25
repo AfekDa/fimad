@@ -1,0 +1,124 @@
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 932px;
+  overflow: hidden;
+  background: var(--color-navy);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  width: 315px;
+  margin-left: var(--content-padding-inline);
+}
+
+.heading {
+  width: 315px;
+  margin: 0;
+  color: var(--color-white);
+  font-family: var(--font-family-display);
+  font-size: var(--font-h2-size);
+  line-height: var(--font-h2-line);
+  font-weight: var(--font-h2-weight);
+  letter-spacing: var(--font-display-letter-spacing);
+  white-space: nowrap;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.desktopHeading {
+  display: none;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  border-radius: var(--radius-pill);
+  color: var(--grey);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: var(--font-bc3-r-weight);
+  white-space: nowrap;
+}
+
+.backIcon {
+  position: relative;
+  width: 11.993px;
+  height: 12px;
+  flex-shrink: 0;
+  transform: scaleX(-1);
+}
+
+.backIcon img {
+  position: absolute;
+  top: 1.5px;
+  left: 0.507px;
+  width: 11px;
+  height: 9px;
+  max-width: none;
+}
+
+.carousel {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-16);
+  width: 100%;
+  height: 505px;
+  margin-top: var(--space-24);
+  padding-inline: var(--content-padding-inline);
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .page {
+    min-height: var(--desktop-mvp-frame-height);
+  }
+
+  .intro {
+    box-sizing: border-box;
+    width: 438px;
+    height: 44px;
+    margin: 24px 0 0 80px;
+  }
+
+  .heading {
+    width: 438px;
+    font-size: var(--font-dt-h2-size);
+    line-height: var(--font-dt-h2-line);
+  }
+
+  .mobileHeading {
+    display: none;
+  }
+
+  .desktopHeading {
+    display: inline;
+  }
+
+  .backLink {
+    display: none;
+  }
+
+  .carousel {
+    display: grid;
+    grid-template-columns: 357px 358px 357px;
+    gap: 24px;
+    width: 1120px;
+    height: var(--desktop-mvp-card-height);
+    margin: 34px 0 0 80px;
+    padding: 0;
+    overflow: visible;
+  }
+}

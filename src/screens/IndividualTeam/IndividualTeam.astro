@@ -1,0 +1,342 @@
+---
+/** Buffalo Bills team detail — Figma frame 162:1586, device status bar omitted. */
+import AppNav from '../../components/AppNav/AppNav.astro'
+import Button from '../../components/Button/Button.astro'
+import { ASSETS } from '../../assets/assets'
+import {
+  ACCORDION_SECTIONS,
+  ODDS,
+  OVERVIEW_PARAGRAPHS,
+  PREDICTION_COPY,
+  DESKTOP_SCHEDULE,
+  SCHEDULE,
+  STAFF,
+} from './content'
+import styles from './IndividualTeam.module.css'
+---
+
+<div
+  class={styles.page}
+  data-node-id="162:1586"
+  data-desktop-node-id="390:1337"
+  data-team-detail-page
+>
+  <header class={styles.header} data-node-id="181:1321" data-desktop-node-id="390:1741">
+    <div class={styles.brand} data-node-id="181:1322">
+      <p class={styles.brandByline} data-node-id="181:1323">Cody Brown’s</p>
+      <p class={styles.brandTitle} data-node-id="181:1324">NFL BETTING GUIDE</p>
+    </div>
+
+    <div class={styles.headerControls} data-node-id="474:1379">
+      <form class={styles.search} role="search" data-node-id="181:1325">
+        <img class={styles.searchIcon} src={ASSETS.teamsIconSearch} alt="" aria-hidden="true" />
+        <label class={styles.visuallyHidden} for="team-detail-search">Search teams</label>
+        <input
+          id="team-detail-search"
+          class={styles.searchInput}
+          type="search"
+          placeholder="Search your favorite team..."
+        />
+        <button class={styles.searchClear} type="reset" aria-label="Clear search">
+          <img class={styles.searchClearRing} src={ASSETS.teamsClearRing} alt="" />
+          <img class={styles.searchClearCross} src={ASSETS.teamsClearCross} alt="" />
+        </button>
+      </form>
+
+      <Button
+        variant="secondary"
+        label="Back to all teams"
+        href="/teams"
+        nodeId="474:1373"
+        assetSet="teams-page"
+        class={styles.backButton}
+      />
+    </div>
+  </header>
+
+  <main class={styles.content}>
+    <section
+      class={styles.hero}
+      data-node-id="162:2215"
+      data-desktop-node-id="390:1744"
+      aria-labelledby="team-name"
+    >
+      <picture class={styles.heroPicture}>
+        <source media="(min-width: 768px)" srcset={ASSETS.teamBuffaloHeroDesktop} />
+        <img class={styles.heroImage} src={ASSETS.teamBuffaloHero} alt="Buffalo Bills player in helmet" />
+      </picture>
+      <div class={styles.heroScrim} aria-hidden="true"></div>
+      <div class={styles.heroCopy}>
+        <span class={styles.teamLogo} data-node-id="181:1340">
+          <img class={styles.teamLogoLeaf} src={ASSETS.teamsLogoBuffalo} alt="" aria-hidden="true" />
+        </span>
+        <h1 id="team-name" class={styles.teamName} data-node-id="162:1590">BUFFALO BILLS</h1>
+      </div>
+    </section>
+
+    <section
+      class={styles.overview}
+      data-node-id="162:2236"
+      data-desktop-node-id="397:1940"
+      aria-labelledby="overview-title"
+    >
+      <h2 id="overview-title" class={styles.sectionTitle} data-node-id="162:1593">OVERVIEW</h2>
+      <div class={styles.overviewCopy} data-node-id="162:1594">
+        {OVERVIEW_PARAGRAPHS.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+      <div class={styles.staffList} data-node-id="162:1595">
+        {
+          STAFF.map((member) => (
+            <article class={styles.staffCard} data-node-id={member.nodeId}>
+              <p class={styles.staffRole}>{member.role}</p>
+              <p class={styles.staffName}>{member.name}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section
+      class={styles.accordions}
+      data-node-id="162:1668"
+      data-desktop-node-id="397:2129"
+      aria-label="Team analysis"
+    >
+      {
+        ACCORDION_SECTIONS.map((section, index) => (
+          <details class={styles.accordion} data-node-id={section.nodeId} open={index === 0}>
+            <summary class={styles.accordionSummary}>
+              <span>{section.title}</span>
+              <span class={styles.accordionIcon} aria-hidden="true">
+                <img class={styles.downIcon} src={ASSETS.teamAccordionDown} alt="" />
+                <img class={styles.upIcon} src={ASSETS.teamAccordionUp} alt="" />
+              </span>
+            </summary>
+            {
+              section.paragraphs.length > 0 && (
+                <p class={styles.accordionCopy}>{section.paragraphs.join('\n\n')}</p>
+              )
+            }
+          </details>
+        ))
+      }
+    </section>
+
+    <section
+      class={styles.prediction}
+      data-node-id="162:1674"
+      data-desktop-node-id="397:2201"
+      aria-labelledby="prediction-title"
+    >
+      <div class={styles.predictionBackdrop} aria-hidden="true"></div>
+      <span class={styles.predictionPill} id="prediction-title" data-node-id="162:1676">PREDICTIONS</span>
+      <div class={styles.predictionScore} data-node-id="162:1678">
+        <p class={styles.predictionScoreLine}>14-3</p>
+      </div>
+      <p class={styles.predictionCopy} data-node-id="162:2212">{PREDICTION_COPY}</p>
+      <span class={styles.predictionImageBox} aria-hidden="true">
+        <img class={styles.predictionImage} src={ASSETS.teamBuffaloPrediction} alt="" />
+      </span>
+    </section>
+
+    <section
+      class={styles.favorite}
+      data-node-id="188:2513"
+      data-desktop-node-id="397:2207"
+      aria-labelledby="favorite-title"
+    >
+      <picture class={styles.favoritePicture}>
+        <source media="(min-width: 768px)" srcset={ASSETS.teamBuffaloFutureDesktop} />
+        <img class={styles.favoriteImage} src={ASSETS.teamBuffaloFuture} alt="Josh Allen in a Buffalo Bills uniform" />
+      </picture>
+      <div class={styles.favoriteScrim} aria-hidden="true"></div>
+      <div class={styles.favoriteCopy} data-node-id="188:2514">
+        <h2 id="favorite-title" class={styles.favoriteTitle} data-node-id="188:2515">FAVORITE FUTURE</h2>
+        <p class={styles.favoriteBet} data-node-id="188:2516">
+          <span>JOSH ALLEN</span>
+          <span>10+ RUSHING TOUCHDOWNS</span>
+        </p>
+        <Button
+          variant="fanduel"
+          state="active"
+          label="PLACE BET"
+          nodeId="181:1832"
+          assetSet="teams-page"
+        />
+      </div>
+    </section>
+
+    <section
+      class={styles.odds}
+      data-node-id="162:2237"
+      data-desktop-node-id="397:2265"
+      aria-labelledby="odds-title"
+    >
+      <h2 id="odds-title" class={styles.oddsTitle} data-node-id="162:1661">
+        <span class={styles.fanduelLogoBox} aria-hidden="true">
+          <img src={ASSETS.fanduelMark} alt="" />
+        </span>
+        <span>Fanduel Lines</span>
+      </h2>
+
+      <div class={styles.oddsList} data-node-id="162:1605">
+        {
+          ODDS.map((odd) => (
+            <article class={styles.oddCard} data-node-id={odd.nodeId}>
+              <div class={styles.oddIdentity}>
+                <span class={styles.oddImageBox} aria-hidden="true">
+                  <span class:list={[styles.oddImageViewport, styles[odd.crop]]}>
+                    <img src={odd.image} alt="" />
+                  </span>
+                </span>
+                <span class={styles.oddLabel}>{odd.label}</span>
+              </div>
+              <span class={styles.oddValue}>{odd.value}</span>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section
+      class={styles.schedule}
+      data-node-id="738:4484"
+      data-desktop-node-id="791:2688"
+      aria-labelledby="schedule-title"
+    >
+      <h2 id="schedule-title" class={styles.scheduleTitle} data-node-id="730:3039" data-desktop-node-id="791:2110">
+        SCHEDULE
+      </h2>
+
+      <div class:list={[styles.scheduleGrid, styles.mobileSchedule]} data-node-id="730:3141">
+        {
+          SCHEDULE.map((game) => (
+            <article class={styles.scheduleCard} data-node-id={game.nodeId}>
+              <div class={styles.scheduleInfo} data-schedule-info>
+                <p class:list={[styles.scheduleOpponent, game.location === null && styles.scheduleBye]}>{game.opponent}</p>
+                <p class:list={[styles.scheduleMeta, game.location === null && styles.scheduleBye]} data-schedule-meta>
+                  <span>WK {game.week}</span>
+                  {
+                    game.location !== null && (
+                      <Fragment>
+                        <span class={styles.scheduleGameDot} aria-hidden="true"></span>
+                        <span>{game.location}</span>
+                      </Fragment>
+                    )
+                  }
+                </p>
+              </div>
+              {
+                game.difficulty !== null && (
+                    <span class:list={[styles.scheduleTag, styles[`scheduleTag${game.difficulty}`]]} data-schedule-tag>
+                      <span class={styles.scheduleTagDot} aria-hidden="true"></span>
+                    {game.difficulty === 'easy' ? 'Easy' : game.difficulty === 'moderate' ? 'Moderate' : 'Difficult'}
+                  </span>
+                )
+              }
+            </article>
+          ))
+        }
+      </div>
+
+      <div class:list={[styles.scheduleGrid, styles.desktopSchedule]} data-desktop-node-id="791:2520">
+        {
+          DESKTOP_SCHEDULE.map((game) => (
+            <article class={styles.scheduleCard} data-desktop-node-id={game.nodeId}>
+              <div class={styles.scheduleInfo}>
+                <p class={styles.scheduleOpponent}>{game.opponent}</p>
+                <p class={styles.scheduleMeta}>
+                  <span>WK {game.week}</span>
+                  <span class={styles.scheduleGameDot} aria-hidden="true"></span>
+                  <span>Away</span>
+                </p>
+              </div>
+              <span class:list={[styles.scheduleTag, styles.scheduleTageasy]}>
+                <span class={styles.scheduleTagDot} aria-hidden="true"></span>
+                Easy
+              </span>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section
+      class={styles.explore}
+      data-node-id="181:1446"
+      data-desktop-node-id="397:2318"
+      aria-labelledby="explore-title"
+    >
+      <div class={styles.exploreHeader} data-node-id="162:1713">
+        <h2 id="explore-title" class={styles.sectionTitle} data-node-id="162:1714">EXPLORE ALL TEAMS</h2>
+        <Button
+          variant="button"
+          label="Explore all teams"
+          ariaLabel="Explore all teams"
+          href="/teams"
+          hideLabel
+          nodeId="183:1858"
+          assetSet="teams-page"
+        />
+      </div>
+
+      <div class={styles.exploreCarousel} data-node-id="181:1431">
+        {
+          ['181:1405', '181:1418', '181:1432', '397:2369', '397:2383'].map((nodeId) => (
+            <article class={styles.exploreCard} data-node-id={nodeId}>
+              <img class={styles.exploreImage} src={ASSETS.teamExploreCard} alt="Buffalo Bills player portrait" />
+              <div class={styles.exploreScrim} aria-hidden="true"></div>
+              <span class={styles.conference}>AFC</span>
+              <div class={styles.exploreDetails}>
+                <span class={styles.teamLogo}>
+                  <img class={styles.teamLogoLeaf} src={ASSETS.teamsLogoBuffalo} alt="" aria-hidden="true" />
+                </span>
+                <h3 class={styles.exploreTeamName}>BUFFALO BILLS</h3>
+                <Button
+                  variant="button"
+                  label="Team Preview"
+                  href="/teams/buffalo-bills"
+                  assetSet="teams-page"
+                />
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+
+  <AppNav />
+</div>
+
+<script>
+  import { navigate } from 'astro:transitions/client'
+
+  function startTeamDetailController() {
+    const page = document.querySelector<HTMLElement>('[data-team-detail-page]')
+
+    // The router keeps this listener for the session, so other routes are a no-op.
+    if (page === null) return
+
+    const search = page.querySelector<HTMLFormElement>('[role="search"]')
+    const input = page.querySelector<HTMLInputElement>('#team-detail-search')
+    if (search === null || input === null) {
+      throw new Error('Individual Team page is missing its search controls')
+    }
+
+    search.addEventListener('submit', (event) => {
+      event.preventDefault()
+      const query = input.value.trim().toLocaleLowerCase()
+      if (query.includes('buffalo') || query.includes('bills')) return
+      // Routed, not assigned, so leaving for All Teams cross-fades like a tab does.
+      void navigate(`/teams?search=${encodeURIComponent(input.value.trim())}`)
+    })
+  }
+
+  /*
+   * Bundled scripts run once per document, so client-side navigation would leave
+   * the search wired to a screen the router has already discarded.
+   * astro:page-load fires on the first render and after every swap.
+   */
+  document.addEventListener('astro:page-load', startTeamDetailController)
+</script>

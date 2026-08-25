@@ -67,7 +67,13 @@
 
 .hero {
   position: relative;
-  height: var(--hero-height);
+  /*
+   * The source frame is 648px tall in a 932px viewport. Preserve that ratio
+   * when mobile browser chrome leaves less vertical room, but never enlarge
+   * the hero beyond the source design. This keeps the introduction visible
+   * above the docked navigation on shorter screens.
+   */
+  height: min(var(--hero-height), 69.527897svh);
   z-index: var(--layer-hero-image);
 }
 
@@ -99,8 +105,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: var(--hero-scrim-top);
-  height: var(--hero-scrim-height);
+  top: min(var(--hero-scrim-top), 26.287554svh);
+  height: min(var(--hero-scrim-height), 43.240343svh);
   background: var(--gradient-hero);
   z-index: var(--layer-hero-scrim);
   pointer-events: none;
@@ -114,20 +120,21 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: var(--hero-title-top);
-  height: var(--hero-title-height);
+  top: min(var(--hero-title-top), 51.072961svh);
+  height: min(var(--hero-title-height), 15.236052svh);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--space-32) var(--content-padding-inline) var(--space-56);
+  padding: min(var(--space-32), 3.433476svh) var(--content-padding-inline)
+    min(var(--space-56), 6.008584svh);
   z-index: var(--layer-hero-title);
 }
 
 .yearMark {
   position: relative;
-  width: 301px;
+  width: min(301px, 32.296137svh);
   max-width: 100%;
-  height: 54px;
+  height: min(54px, 5.793991svh);
   overflow: hidden;
   flex-shrink: 0;
 }

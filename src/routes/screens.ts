@@ -61,4 +61,39 @@ export const SCREENS: readonly ScreenMeta[] = [
     /* Nav scrim 162:1822 ends at the 932px device viewport edge. */
     viewportHeight: 932,
   },
+  {
+    path: '/teams/buffalo-bills',
+    frameName: 'Individual Team Page',
+    nodeId: '162:1586',
+    width: 430,
+    height: 4748,
+    /* App Nav instance 162:1720 uses the same 932px mobile viewport. */
+    viewportHeight: 932,
+  },
+  {
+    path: '/all-bets',
+    frameName: 'Bets Page',
+    nodeId: '251:2889',
+    width: 430,
+    height: 4861,
+    /* Nav instance 251:2934 uses the same 932px mobile viewport. */
+    viewportHeight: 932,
+  },
+  {
+    path: '/awards',
+    frameName: 'All Awards',
+    nodeId: '188:2037',
+    width: 430,
+    height: 1507,
+    /* Nav instance 188:2061 uses the same 932px mobile viewport. */
+    viewportHeight: 932,
+  },
+  {
+    path: '/fanduel',
+    frameName: 'FanDuel Page',
+    nodeId: '803:5180',
+    width: 1280,
+    height: 1215,
+    viewportHeight: 782,
+  },
 ]

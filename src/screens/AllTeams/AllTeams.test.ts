@@ -36,8 +36,9 @@ describe('All Teams', () => {
 
   it('exposes search and filter controls', () => {
     expect(screen.getByRole('searchbox', { name: 'Search teams' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'AFC' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByRole('button', { name: 'AFC' })).toHaveAttribute('aria-pressed', 'false')
     expect(screen.getByRole('button', { name: 'NFC' })).toHaveAttribute('aria-pressed', 'false')
+    expect(screen.queryByRole('button', { name: 'All', exact: true })).not.toBeInTheDocument()
   })
 
   it('uses meaningful text for player imagery', () => {
@@ -45,6 +46,13 @@ describe('All Teams', () => {
 
     expect(images).toHaveLength(8)
     for (const image of images) expect(image.getAttribute('alt')).toBeTruthy()
+  })
+
+  it('links the Buffalo card to its individual team page', () => {
+    expect(screen.getByRole('link', { name: 'Preview Buffalo Bills' })).toHaveAttribute(
+      'href',
+      '/teams/buffalo-bills',
+    )
   })
 
   it('ships the client-side filter controller', () => {

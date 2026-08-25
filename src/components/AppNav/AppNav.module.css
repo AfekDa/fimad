@@ -28,12 +28,56 @@
   background: var(--surface-nav);
   backdrop-filter: blur(var(--nav-backdrop-blur));
   -webkit-backdrop-filter: blur(var(--nav-backdrop-blur));
-  box-shadow: inset 0 0 0 var(--nav-stroke-width) var(--nav-stroke);
   z-index: var(--layer-nav);
   pointer-events: auto;
   user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  border: var(--nav-stroke-width) solid transparent;
+  border-radius: inherit;
+  /*
+   * Alphas sampled around the pill outline in the 2x Homepage export: the
+   * stroke runs the whole way round at ~0.52 across the top and ~0.37 across
+   * the bottom, spikes white on the top-right and bottom-left shoulders, and
+   * disappears in two narrow troughs just past the right and left tips.
+   * Angles are conic (0deg = top, clockwise); because the pill is wide and
+   * short, 0-75deg covers the entire top run and 105-250deg the bottom run.
+   */
+  background: conic-gradient(
+      rgba(255, 255, 255, 0.52) 0deg,
+      rgba(255, 255, 255, 0.52) 74deg,
+      rgba(255, 255, 255, 0.8) 80deg,
+      rgba(255, 255, 255, 0.8) 85deg,
+      rgba(255, 255, 255, 0.5) 90deg,
+      rgba(255, 255, 255, 0) 96deg,
+      rgba(255, 255, 255, 0) 103deg,
+      rgba(255, 255, 255, 0.37) 110deg,
+      rgba(255, 255, 255, 0.37) 249deg,
+      rgba(255, 255, 255, 0.58) 257deg,
+      rgba(255, 255, 255, 0.48) 265deg,
+      rgba(255, 255, 255, 0.44) 270deg,
+      rgba(255, 255, 255, 0) 277deg,
+      rgba(255, 255, 255, 0.11) 282deg,
+      rgba(255, 255, 255, 0.52) 288deg,
+      rgba(255, 255, 255, 0.52) 360deg
+    )
+    border-box;
+  -webkit-mask:
+    linear-gradient(var(--color-white) 0 0) padding-box,
+    linear-gradient(var(--color-white) 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(var(--color-white) 0 0) padding-box,
+    linear-gradient(var(--color-white) 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .items {
@@ -59,6 +103,15 @@
   color: var(--color-white);
   cursor: pointer;
   transition: opacity 120ms ease-out;
+}
+
+.itemIcon {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.item[data-nav-id='teams'] .itemIcon {
+  width: 35px !important;
 }
 
 .item[aria-current='page'] {
@@ -105,9 +158,9 @@
 
 @media (min-width: 768px) {
   .dock {
-    position: absolute;
-    top: var(--desktop-nav-top);
-    bottom: auto;
+    position: fixed;
+    top: auto;
+    bottom: var(--desktop-nav-bottom-offset);
     width: min(700px, calc(100% - 48px));
     max-width: 700px;
     min-width: 0;
@@ -139,12 +192,12 @@
     border-bottom-width: 2px;
   }
 
-  .item > span:first-child {
+  .itemIcon {
     width: 16px !important;
     height: 16px !important;
   }
 
-  .item[data-nav-id='teams'] > span:first-child {
+  .item[data-nav-id='teams'] .itemIcon {
     width: 20px !important;
   }
 

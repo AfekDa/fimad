@@ -24,8 +24,13 @@ export interface Props {
   readonly nodeId?: string | undefined
   readonly ariaLabel?: string | undefined
   readonly assetSet?: 'default' | 'teams-page'
+  readonly href?: string | undefined
+  /** Keep the accessible name while rendering the icon-only Figma variant. */
+  readonly hideLabel?: boolean
   /** Optional client-side filter identifier for filter buttons. */
   readonly filterValue?: string | undefined
+  /** Exact Figma width when an instance differs from its component default. */
+  readonly width?: number | undefined
 }
 
 const NODE_IDS: Record<ButtonType, Record<ButtonState, string>> = {
@@ -44,10 +49,14 @@ const {
   nodeId,
   ariaLabel,
   assetSet = 'default',
+  href,
+  hideLabel = false,
   filterValue,
+  width,
 } = Astro.props
 
 const active = state === 'active'
+const Element = href === undefined ? 'button' : 'a'
 
 const variantClass =
   variant === 'secondary'
@@ -59,12 +68,15 @@ const variantClass =
         : [styles.fanduel, active ? styles.fanduelActive : styles.fanduelDefault]
 ---
 
-<button
-  type="button"
+<Element
+  type={href === undefined ? 'button' : undefined}
+  href={href}
   class:list={[styles.base, variantClass, className]}
   data-node-id={nodeId ?? NODE_IDS[variant][state]}
   data-state={state}
+  data-asset-set={assetSet}
   data-filter-value={filterValue}
+  style={width === undefined ? undefined : `width: ${width}px`}
   aria-label={ariaLabel}
   aria-pressed={variant === 'filter' ? (active ? 'true' : 'false') : undefined}
 >
@@ -89,7 +101,7 @@ const variantClass =
   {
     variant === 'button' && (
       <Fragment>
-        <span class={styles.buttonLabel}>{label}</span>
+        {!hideLabel && <span class={styles.buttonLabel}>{label}</span>}
         {showIcon && (
           <span class={styles.arrow}>
             <img
@@ -141,7 +153,13 @@ const variantClass =
           <span class={styles.fanduelMark}>
             <img
               class={styles.fanduelMarkLeaf}
-              src={ASSETS.fanduelMark}
+              src={
+                active
+                  ? ASSETS.fanduelMark
+                  : assetSet === 'teams-page'
+                    ? ASSETS.teamsFanduelMask
+                    : ASSETS.fanduelMark
+              }
               alt=""
               aria-hidden="true"
             />
@@ -151,4 +169,4 @@ const variantClass =
       </Fragment>
     )
   }
-</button>
+</Element>

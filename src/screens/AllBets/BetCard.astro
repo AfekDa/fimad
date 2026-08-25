@@ -1,0 +1,25 @@
+---
+import Button from '../../components/Button/Button.astro'
+import type { BetContent } from './content'
+import styles from './BetCard.module.css'
+
+export interface Props {
+  readonly bet: BetContent
+}
+
+const { bet } = Astro.props
+---
+
+<article class={styles.card} data-node-id={bet.cardNodeId} data-bet-card data-player={bet.name}>
+  <p class={styles.pick} data-node-id={bet.textNodeId}>
+    <span>{bet.name}</span>
+    <span class={styles.odds}>{bet.odds}</span>
+  </p>
+  <Button
+    variant="fanduel"
+    label="PLACE BET"
+    nodeId="181:1821"
+    assetSet="teams-page"
+    ariaLabel={`Place bet on ${bet.name} at ${bet.odds}`}
+  />
+</article>

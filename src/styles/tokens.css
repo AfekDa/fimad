@@ -21,6 +21,13 @@
   --color-navy: #011556;
   --color-white: #ffffff;
   --color-black: #000000;
+  --color-dark-grey: #222222;
+  --schedule-easy-light: #dfff78;
+  --schedule-easy-dark: #425600;
+  --schedule-moderate-light: #ffee8e;
+  --schedule-moderate-dark: #e08e00;
+  --schedule-difficult-light: #ffd7da;
+  --schedule-difficult-dark: #e20013;
 
   /* Feature card fill (1:100, 1:103, 1:106, 1:109) */
   --surface-card: rgba(255, 255, 255, 0.1);
@@ -29,8 +36,7 @@
 
   /* Nav glass treatment measured from the Homepage 2x frame export. */
   --nav-backdrop-blur: 3px;
-  --nav-stroke: rgba(255, 255, 255, 0.5);
-  --nav-stroke-width: 0.5px;
+  --nav-stroke-width: 1px;
 
   /* Hero scrim (1:92): transparent blue -> solid blue, from 55.093% */
   --gradient-hero: linear-gradient(
@@ -164,12 +170,34 @@
   /* Search field 162:1776. */
   --surface-search: #000b2e;
 
+  /* All Bets card fill, frame 251:3114. */
+  --surface-bet-card: #000d36;
+  /* Bets Page 251:2889 minus the 54px iPhone status bar. */
+  --bets-header-height: 139px;
+  --bets-frame-height: 4861px;
+
+  /* All Awards 188:2037 after omitting the 54px iPhone status bar. */
+  --awards-frame-height: 1453px;
+  --awards-card-height: 300px;
+  --awards-card-gap: 22px;
+  --gradient-award-card: linear-gradient(
+    to bottom,
+    rgba(0, 120, 255, 0) 53.846%,
+    rgba(0, 120, 255, 0.7) 100%
+  );
+
   /* Frame and content geometry after removing the 54px device status bar. */
   --teams-frame-height: 2877px;
   --teams-content-top: var(--space-24);
   --teams-content-tail: 137px;
   --teams-card-height: 295px;
   --teams-card-gap: 16px;
+
+  /* Individual Team 162:1586 after omitting its 54px iPhone status bar. */
+  --individual-team-frame-height: 5469px;
+
+  /* Individual Team desktop 390:1337 after omitting 118px of browser chrome. */
+  --desktop-individual-team-frame-height: 4761px;
 
   /* Card component 181:1360. */
   --gradient-team-card: linear-gradient(
@@ -195,13 +223,39 @@
   --desktop-frame-width: 1280px;
   --desktop-frame-height: 1771px;
   --desktop-hero-height: min(58.75vw, 752px);
-  --desktop-nav-top: min(47.8125vw, 612px);
+  /* Desktop capture viewport: nav bottom 794, viewport bottom 900. */
+  --desktop-nav-bottom-offset: 106px;
   /* Preserve the 1120px Figma content grid while allowing the page itself to
    * span the viewport beyond the 1280px source frame. */
   --desktop-content-inline: max(
     clamp(32px, 6.25vw, 80px),
     calc((100vw - 1120px) / 2)
   );
+
+  /* Teams desktop frame 377:185 after omitting its 118px browser chrome. */
+  --desktop-teams-frame-height: 1623px;
+  --desktop-teams-header-top: 40px;
+  --desktop-teams-filters-top: 147px;
+  --desktop-teams-filters-height: 86px;
+  --desktop-teams-grid-top-gap: 40px;
+  --desktop-teams-column-gap: 24px;
+  --desktop-teams-row-gap: 24px;
+
+  /* Desktop Awards and Bets frames in the current Prototype (Desktop) file;
+   * browser chrome (118px) is omitted from the product coordinates. */
+  --desktop-awards-frame-height: 971px;
+  --desktop-awards-header-height: 147px;
+  --desktop-awards-card-width: 358px;
+  --desktop-awards-card-height: 300px;
+  --desktop-mvp-frame-height: 971px;
+  --desktop-mvp-card-height: 576px;
+  --desktop-bets-frame-height: 2094px;
+  --desktop-bets-header-height: 147px;
+  --desktop-bets-card-width: 357px;
+  --desktop-bets-card-height: 75px;
+  /* FanDuel Page 803:5180 after omitting 118px browser chrome. */
+  --desktop-fanduel-frame-height: 1097px;
+  --desktop-fanduel-card-gap: 24px;
 
   /* Dt/H2, Dt/H4, Dt/BC1 and Dt/BC2 from the desktop design context. */
   --font-dt-h2-size: 64px;

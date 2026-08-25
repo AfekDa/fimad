@@ -19,6 +19,7 @@ export interface TeamCardContent {
   readonly crop: TeamCardCrop
   readonly team: string
   readonly conference: 'AFC' | 'NFC'
+  readonly href?: string
 }
 
 /**
@@ -36,6 +37,7 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     crop: 'buffalo',
     team: 'Buffalo Bills',
     conference: 'AFC',
+    href: '/teams/buffalo-bills',
   },
   {
     nodeId: '474:1382',

@@ -213,12 +213,16 @@
 .fanduelMarkLeaf {
   position: absolute;
   left: 0;
-  width: 100%;
+  width: 20px;
+  height: 20px;
   top: 50%;
   transform: translateY(-50%);
-  aspect-ratio: 112 / 113;
   max-width: none;
-  object-fit: cover;
+  object-fit: contain;
+}
+
+.fanduelDefault[data-asset-set='teams-page'] .fanduelMarkLeaf {
+  filter: brightness(0);
 }
 
 /* Clear control on Filter/Active (1:36): 25x25 ring with an 8.33px cross. */
@@ -251,5 +255,21 @@
 @media (prefers-reduced-motion: reduce) {
   .base {
     transition: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .fanduel {
+    width: 141px;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .filterLabel {
+    text-transform: uppercase;
+  }
+
+  .filter[data-filter-value='all'] {
+    min-width: 78px;
   }
 }

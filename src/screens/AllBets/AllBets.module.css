@@ -1,220 +1,408 @@
 .page {
   position: relative;
   width: 100%;
-  min-height: 1340px;
-  padding: var(--space-24) var(--content-padding-inline) 150px;
-  background:
-    radial-gradient(circle at 100% 8%, rgba(0, 120, 255, 0.28), transparent 33%),
-    var(--color-navy);
-  color: var(--color-white);
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-24);
+  min-height: var(--bets-frame-height);
+  background: var(--color-navy);
 }
 
 .header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  row-gap: var(--space-4);
-  padding-bottom: var(--space-24);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  width: 100%;
+  height: var(--bets-header-height);
+  padding: var(--space-24);
+  background: var(--color-navy);
 }
 
-.byline,
-.brand,
-.season,
-.eyebrow,
-.heading,
-.description,
-.matchup,
-.pick,
-.detail {
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  color: var(--color-white);
+}
+
+.brandByline,
+.brandTitle,
+.sectionTitle {
+  margin: 0;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
 
-.byline {
-  grid-column: 1;
+.brandByline {
+  width: 193px;
+  font-family: var(--font-family-base);
   font-size: var(--font-bc3-r-size);
   line-height: var(--font-bc3-r-line);
-  color: rgba(255, 255, 255, 0.72);
+  font-weight: var(--font-bc3-r-weight);
 }
 
-.brand {
-  grid-column: 1;
+.brandTitle {
   font-family: var(--font-family-display);
   font-size: var(--font-h2-size);
   line-height: var(--font-h2-line);
   font-weight: var(--font-h2-weight);
   letter-spacing: var(--font-display-letter-spacing);
+  white-space: nowrap;
 }
 
-.season {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  align-self: center;
-  color: var(--fanduel-blue);
-  font-size: 10px;
-  line-height: 14px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-}
-
-.intro {
+.search {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: var(--space-8);
-  padding-top: var(--space-16);
+  width: 100%;
+  height: 36px;
+  margin: 0;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-card);
+  background: var(--surface-search);
+  opacity: 0.8;
 }
 
-.eyebrow {
-  color: var(--fanduel-blue);
+.searchIcon {
+  position: relative;
+  width: 11.993px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.searchIcon img {
+  position: absolute;
+  inset: 0;
+  width: 12px;
+  height: 12px;
+  max-width: none;
+}
+
+.searchInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-white);
+  font-family: var(--font-family-base);
   font-size: var(--font-bc3-r-size);
   line-height: var(--font-bc3-r-line);
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-weight: var(--font-bc3-r-weight);
 }
 
-.heading {
-  font-family: var(--font-family-display);
-  font-size: var(--font-h1-size);
-  line-height: var(--font-h1-line);
-  font-weight: var(--font-h1-weight);
-  letter-spacing: var(--font-display-letter-spacing);
+.searchInput::placeholder {
+  color: var(--color-white);
+  opacity: 1;
 }
 
-.description {
-  max-width: 35ch;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: var(--font-bc2-r-size);
-  line-height: var(--font-bc2-r-line);
+.searchInput::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* iOS Safari magnifies focused form controls whose computed text size is below 16px. */
+@supports (-webkit-touch-callout: none) {
+  @media (hover: none) and (pointer: coarse) {
+    .searchInput:focus {
+      font-size: 16px;
+    }
+  }
+}
+
+.searchClear {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.searchClearRing,
+.searchClearCross {
+  position: absolute;
+  display: block;
+}
+
+.searchClearRing {
+  inset: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.searchClearCross {
+  left: 33.47%;
+  top: 33.33%;
+  width: 33.35%;
+  height: 33.34%;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  width: calc(100% - 2 * var(--content-padding-inline));
+  margin-inline: var(--content-padding-inline);
 }
 
 .filterRow {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-8);
-  padding-top: var(--space-8);
+  align-items: center;
+  gap: var(--space-16);
+  width: 100%;
+  min-height: 33px;
 }
 
-.rule {
+.sections {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-32);
+  width: calc(100% - 2 * var(--content-padding-inline));
+  margin: var(--space-24) var(--content-padding-inline) 0;
+}
+
+.divider {
+  position: relative;
+  width: 100%;
+  height: 0;
+  flex-shrink: 0;
+}
+
+.divider img {
+  position: absolute;
+  inset: -0.5px 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, var(--fanduel-blue), rgba(255, 255, 255, 0.22));
 }
 
-.status,
-.emptyState {
-  margin: -12px 0 0;
-  color: var(--grey);
-  font-size: var(--font-bc3-r-size);
-  line-height: var(--font-bc3-r-line);
+.betSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  width: 100%;
 }
 
-.status {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
+.sectionTitle {
+  width: 100%;
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc1-sb-size);
+  line-height: var(--font-bc1-sb-line);
+  font-weight: var(--font-bc1-sb-weight);
+  overflow-wrap: break-word;
 }
 
 .betList {
   display: flex;
   flex-direction: column;
-  gap: var(--space-12);
-}
-
-.betCard {
-  display: flex;
-  flex-direction: column;
+  align-items: flex-start;
   gap: var(--space-8);
-  padding: var(--space-16);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: var(--radius-card);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
-}
-
-.cardTopline {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.category,
-.odds {
-  font-size: var(--font-bc3-r-size);
-  line-height: var(--font-bc3-r-line);
-  font-weight: 600;
-}
-
-.category {
-  color: var(--fanduel-blue);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.odds {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.matchup {
-  color: rgba(255, 255, 255, 0.72);
-  font-size: var(--font-bc3-r-size);
-  line-height: var(--font-bc3-r-line);
-}
-
-.pick {
-  font-size: var(--font-bc1-sb-size);
-  line-height: var(--font-bc1-sb-line);
-  font-weight: var(--font-bc1-sb-weight);
-}
-
-.detail {
-  min-height: 40px;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: var(--font-bc3-r-size);
-  line-height: var(--font-bc3-r-line);
-}
-
-.betAction {
-  display: flex;
-  align-items: center;
-  gap: var(--space-8);
-  align-self: flex-start;
-  padding-top: var(--space-8);
-  color: var(--color-white);
-  font-size: var(--font-bc3-r-size);
-  line-height: var(--font-bc3-r-line);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-}
-
-.actionArrow {
-  color: var(--fanduel-blue);
-  font-size: 20px;
-  line-height: 14px;
+  width: 100%;
 }
 
 .emptyState {
-  padding: var(--space-24) 0;
+  width: calc(100% - 2 * var(--content-padding-inline));
+  margin: var(--space-32) var(--content-padding-inline) 0;
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc2-m-size);
+  line-height: var(--font-bc2-m-line);
   text-align: center;
 }
 
-@media (min-width: 420px) {
-  .betList {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.desktopExtraCard {
+  display: none;
+}
+
+@media (max-width: 389px) {
+  .filterRow {
+    flex-wrap: wrap;
+    gap: var(--space-8);
+  }
+}
+
+/* Desktop frame 791:3391. The source frame includes 118px of browser chrome,
+ * so the first product divider is y=277 and each section follows the repeated
+ * 196px Figma rhythm. */
+@media (min-width: 768px) {
+  .page {
+    min-height: var(--desktop-bets-frame-height);
   }
 
-  .betCard {
-    min-height: 270px;
+  .header {
+    position: relative;
+    box-sizing: border-box;
+    height: var(--desktop-bets-header-height);
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .brand {
+    position: absolute;
+    top: var(--desktop-teams-header-top);
+    left: 50%;
+    align-items: center;
+    gap: var(--space-12);
+    transform: translateX(-50%);
+  }
+
+  .brandByline {
+    width: 150px;
+    font-size: var(--font-dt-bc1-size);
+    line-height: 29px;
+    text-align: center;
+  }
+
+  .brandTitle {
+    width: 342px;
+    font-size: var(--font-dt-h2-size);
+    line-height: var(--font-dt-h2-line);
+    text-align: center;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .filters {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    column-gap: 16px;
+    row-gap: 16px;
+    width: 1120px;
+    height: 106px;
+    margin: 0 80px;
+    padding-top: 24px;
+  }
+
+  .filterRow {
+    display: contents;
+  }
+
+  .sections {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 1120px;
+    margin: 24px 80px 0;
+  }
+
+  .divider {
+    height: 0;
+  }
+
+  .betSection {
+    gap: 16px;
+    margin-top: 47.765625px;
+    margin-bottom: 31.234375px;
+  }
+
+  .sectionTitle {
+    font-size: var(--font-dt-bc1-size);
+    line-height: var(--font-dt-bc1-line);
+  }
+
+  /* Desktop Figma presents the updated betting categories in a different
+   * visual order than the mobile filter/content model. Keep the semantic
+   * mobile headings intact and replace only their desktop presentation. */
+  .betSection[data-bet-section='offensive-poty'] .sectionTitle,
+  .betSection[data-bet-section='defensive-poty'] .sectionTitle,
+  .betSection[data-bet-section='offensive-roty'] .sectionTitle,
+  .betSection[data-bet-section='favourite-futures'] .sectionTitle,
+  .betSection[data-bet-section='exclusive'] .sectionTitle {
+    font-size: 0;
+    height: 26px;
+  }
+
+  .betSection[data-bet-section='offensive-poty'] .sectionTitle::after,
+  .betSection[data-bet-section='defensive-poty'] .sectionTitle::after,
+  .betSection[data-bet-section='offensive-roty'] .sectionTitle::after,
+  .betSection[data-bet-section='favourite-futures'] .sectionTitle::after,
+  .betSection[data-bet-section='exclusive'] .sectionTitle::after {
+    display: block;
+    color: var(--color-white);
+    font-family: var(--font-family-base);
+    font-size: var(--font-dt-bc1-size);
+    line-height: var(--font-dt-bc1-line);
+    font-weight: var(--font-bc1-sb-weight);
+    height: 26px;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+  }
+
+  .betSection[data-bet-section='offensive-poty'] .sectionTitle::after {
+    content: 'MOST VALUABLE PLAYER PICKS';
+  }
+
+  .betSection[data-bet-section='defensive-poty'] .sectionTitle::after {
+    content: 'OFFENSIVE PLAYER OF THE YEAR PLAYER PICKS';
+  }
+
+  .betSection[data-bet-section='offensive-roty'] .sectionTitle::after {
+    content: 'DEFENSIVE PLAYER OF THE YEAR PICKS';
+  }
+
+  .betSection[data-bet-section='favourite-futures'] .sectionTitle::after {
+    content: 'OFFENSIVE ROOKIE OF THE YEAR PICKS';
+  }
+
+  .betSection[data-bet-section='exclusive'] .sectionTitle::after {
+    content: 'FAVOURITE FUTURES';
+  }
+
+  .betList {
+    display: grid;
+    grid-template-columns: repeat(3, var(--desktop-bets-card-width));
+    gap: 16px 25px;
+  }
+
+  .betSection[data-bet-section='favourite-futures'] .betList > [data-bet-card]:nth-child(n + 4),
+  .betSection[data-bet-section='exclusive'] .betList > [data-bet-card] {
+    display: none;
+  }
+
+  .desktopExtraCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--desktop-bets-card-width);
+    height: var(--desktop-bets-card-height);
+    padding: var(--space-16);
+    border-radius: var(--radius-card);
+    background: var(--surface-bet-card);
+  }
+
+  .desktopExtraPick {
+    display: flex;
+    gap: 0;
+    margin: 0;
+    color: var(--color-white);
+    font-family: var(--font-family-base);
+    font-size: var(--font-dt-bc1-size);
+    line-height: var(--font-dt-bc1-line);
+    font-weight: var(--font-bc1-sb-weight);
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+  }
+
+  .desktopExtraOdds {
+    color: var(--fanduel-blue);
   }
 }

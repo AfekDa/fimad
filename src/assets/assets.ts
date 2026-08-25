@@ -66,6 +66,32 @@ import teamsCardJets from './teams-card-jets.png?url'
 import teamsCardHouston from './teams-card-houston.png?url'
 import teamsCardJacksonville from './teams-card-jacksonville.png?url'
 
+/* Individual Team — Figma frame 162:1586 */
+import teamBuffaloHero from './team-buffalo-hero.png?url'
+import teamBuffaloHeroDesktop from './team-buffalo-hero-desktop.png?url'
+import teamBuffaloPrediction from './team-buffalo-prediction.png?url'
+import teamBuffaloFuture from './team-buffalo-future.png?url'
+import teamBuffaloFutureDesktop from './team-buffalo-future-desktop.png?url'
+import teamOddsWinTotal from './team-odds-win-total.png?url'
+import teamOddsMakePlayoffs from './team-odds-make-playoffs.png?url'
+import teamOddsMissPlayoffs from './team-odds-miss-playoffs.png?url'
+import teamOddsSuperbowl from './team-odds-superbowl.png?url'
+import teamOddsConference from './team-odds-conference.png?url'
+import teamOddsDivision from './team-odds-division.png?url'
+import teamAccordionDown from './team-accordion-down.svg?url'
+import teamAccordionUp from './team-accordion-up.svg?url'
+import teamExploreCard from './team-explore-card.png?url'
+
+/* All Awards — Figma frame 188:2037 */
+import awardCardMvp from './award-card-mvp.png?url'
+import mvpCardLamar from './mvp-card-lamar.png?url'
+
+/* FanDuel Page — desktop Figma frame 803:5180. */
+import fanduelRewardsClub from './fanduel-rewards-club-card.png?url'
+import fanduelOffer from './fanduel-offer.png?url'
+import fanduelLockIcon from './fanduel-icon-lock.svg?url'
+import fanduelMedalIcon from './fanduel-icon-medal.svg?url'
+
 export const ASSETS = {
   heroPoster,
   yearMark,
@@ -110,6 +136,26 @@ export const ASSETS = {
   teamsCardJets,
   teamsCardHouston,
   teamsCardJacksonville,
+  teamBuffaloHero,
+  teamBuffaloHeroDesktop,
+  teamBuffaloPrediction,
+  teamBuffaloFuture,
+  teamBuffaloFutureDesktop,
+  teamOddsWinTotal,
+  teamOddsMakePlayoffs,
+  teamOddsMissPlayoffs,
+  teamOddsSuperbowl,
+  teamOddsConference,
+  teamOddsDivision,
+  teamAccordionDown,
+  teamAccordionUp,
+  teamExploreCard,
+  awardCardMvp,
+  mvpCardLamar,
+  fanduelRewardsClub,
+  fanduelOffer,
+  fanduelLockIcon,
+  fanduelMedalIcon,
 } as const
 
 export type AssetName = keyof typeof ASSETS

@@ -1,0 +1,232 @@
+.page {
+  position: relative;
+  width: 100%;
+  min-height: var(--awards-frame-height);
+  background: var(--color-navy);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  width: 100%;
+  height: var(--bets-header-height);
+  padding: var(--space-24);
+  background: var(--color-navy);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  color: var(--color-white);
+}
+
+.brandByline,
+.brandTitle {
+  margin: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.brandByline {
+  width: 193px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: var(--font-bc3-r-weight);
+}
+
+.brandTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-h2-size);
+  line-height: var(--font-h2-line);
+  font-weight: var(--font-h2-weight);
+  letter-spacing: var(--font-display-letter-spacing);
+  white-space: nowrap;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  height: 36px;
+  margin: 0;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-card);
+  background: var(--surface-search);
+  opacity: 0.8;
+}
+
+.searchIcon {
+  position: relative;
+  width: 11.993px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.searchIcon img {
+  position: absolute;
+  inset: 0;
+  width: 12px;
+  height: 12px;
+  max-width: none;
+}
+
+.searchInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: var(--font-bc3-r-weight);
+}
+
+.searchInput::placeholder {
+  color: var(--color-white);
+  opacity: 1;
+}
+
+.searchInput::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* iOS Safari magnifies focused form controls whose computed text size is below 16px. */
+@supports (-webkit-touch-callout: none) {
+  @media (hover: none) and (pointer: coarse) {
+    .searchInput:focus {
+      font-size: 16px;
+    }
+  }
+}
+
+.searchClear {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.searchClearRing,
+.searchClearCross {
+  position: absolute;
+  display: block;
+}
+
+.searchClearRing {
+  inset: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.searchClearCross {
+  left: 33.47%;
+  top: 33.33%;
+  width: 33.35%;
+  height: 33.34%;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--awards-card-gap);
+  width: 100%;
+  padding: 0 var(--content-padding-inline) var(--space-24);
+}
+
+.emptyState {
+  width: calc(100% - 2 * var(--content-padding-inline));
+  margin: var(--space-32) var(--content-padding-inline) 0;
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc2-m-size);
+  line-height: var(--font-bc2-m-line);
+  text-align: center;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Desktop frame 741:4777. The source frame includes 118px of browser chrome,
+ * so the product header begins at y=0 and the card grid begins at y=187. */
+@media (min-width: 768px) {
+  .page {
+    min-height: var(--desktop-awards-frame-height);
+  }
+
+  .header {
+    position: relative;
+    box-sizing: border-box;
+    height: var(--desktop-awards-header-height);
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .brand {
+    position: absolute;
+    top: var(--desktop-teams-header-top);
+    left: 50%;
+    align-items: center;
+    gap: var(--space-12);
+    transform: translateX(-50%);
+  }
+
+  .brandByline {
+    width: 150px;
+    font-size: var(--font-dt-bc1-size);
+    line-height: 29px;
+    text-align: center;
+  }
+
+  .brandTitle {
+    width: 342px;
+    font-size: var(--font-dt-h2-size);
+    line-height: var(--font-dt-h2-line);
+    text-align: center;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, var(--desktop-awards-card-width));
+    grid-auto-rows: var(--desktop-awards-card-height);
+    gap: 24px;
+    width: 1121px;
+    padding: 40px 0 24px;
+    margin-left: 79px;
+  }
+
+  .card {
+    width: var(--desktop-awards-card-width);
+    height: var(--desktop-awards-card-height);
+  }
+
+  .title {
+    font-size: var(--font-dt-h2-size);
+    line-height: var(--font-dt-h2-line);
+  }
+}

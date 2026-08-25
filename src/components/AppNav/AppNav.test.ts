@@ -55,6 +55,9 @@ describe('AppNav', () => {
 
     expect(body.querySelector('[data-nav-id="home"]')).toHaveAttribute('href', '/')
     expect(body.querySelector('[data-nav-id="teams"]')).toHaveAttribute('href', '/teams')
+    expect(body.querySelector('[data-nav-id="awards"]')).toHaveAttribute('href', '/awards')
+    expect(body.querySelector('[data-nav-id="all-bets"]')).toHaveAttribute('href', '/all-bets')
+    expect(body.querySelector('[data-nav-id="fanduel"]')).toHaveAttribute('href', '/fanduel')
   })
 
   it('prefetches implemented destinations when the navigation enters the viewport', async () => {
@@ -65,15 +68,10 @@ describe('AppNav', () => {
     }
   })
 
-  it('renders unfinished destinations as inert items', async () => {
+  it('renders every navigation destination as a link', async () => {
     const body = await renderAppNav()
 
-    for (const id of ['awards', 'fanduel']) {
-      const item = body.querySelector(`[data-nav-id="${id}"]`)
-      expect(item?.tagName).toBe('SPAN')
-      expect(item).toHaveAttribute('aria-disabled', 'true')
-    }
-    expect(body.querySelectorAll('a')).toHaveLength(3)
+    expect(body.querySelectorAll('a')).toHaveLength(5)
   })
 
   it('exposes the primary navigation landmark', async () => {

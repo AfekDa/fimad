@@ -8,6 +8,23 @@
  * No Figma-derived values appear here; those belong in tokens.css.
  */
 
+/*
+ * Section-to-section motion. Figma carries no motion spec, so these are product
+ * values rather than tokens: long enough to read as a transition, short enough
+ * that a tab still feels immediate.
+ */
+:root {
+  --motion-duration-page: 320ms;
+  --motion-ease-page: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Matches the reset's reduced-motion treatment: keep the swap, drop the motion. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-duration-page: 0.01ms;
+  }
+}
+
 .appShell {
   width: 100%;
   max-width: var(--app-max-width);
@@ -16,11 +33,27 @@
   position: relative;
 }
 
-/* The Homepage has a dedicated 1280px desktop frame. Other routes remain on
- * their mobile-only shell until their desktop designs are implemented. */
+/* Routes with dedicated 1280px desktop frames leave the mobile shell at the
+ * desktop breakpoint. */
 @media (min-width: 768px) {
-  .appShellHomepage {
+  .appShellHomepage,
+  .appShellTeams,
+  .appShellIndividualTeam,
+  .appShellAwards,
+  .appShellMvp,
+  .appShellAllBets,
+  .appShellFanduel {
+    width: var(--desktop-frame-width);
     max-width: none;
+    min-width: var(--desktop-frame-width);
+    margin-inline: 0;
+    zoom: calc(100vw / var(--desktop-frame-width));
+
+    /* Desktop frames are authored on a 1280px canvas. Viewport units inside a
+     * zoomed shell still resolve against the physical viewport, so keep the
+     * design grid and hero in their source coordinate system. */
+    --desktop-content-inline: 80px;
+    --desktop-hero-height: 752px;
   }
 }
 

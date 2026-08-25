@@ -1,0 +1,37 @@
+---
+import { ASSETS } from '../../assets/assets'
+import Button from '../../components/Button/Button.astro'
+import type { MvpPickContent } from './content'
+import styles from './MvpPickCard.module.css'
+
+export interface Props {
+  readonly pick: MvpPickContent
+}
+
+const { pick } = Astro.props
+---
+
+<article class={styles.card} data-node-id={pick.nodeId} data-mvp-card>
+  <img
+    class={styles.image}
+    src={ASSETS.mvpCardLamar}
+    alt="Lamar Jackson in a Baltimore Ravens uniform"
+  />
+  <span class={styles.scrim} aria-hidden="true"></span>
+
+  <span class={styles.rank} aria-label={`Pick ${pick.rank}`}>
+    <span data-node-id={pick.rankNodeId}>{pick.rank}</span>
+  </span>
+
+  <div class={styles.details}>
+    <div class={styles.copy}>
+      <h2 class={styles.name} data-node-id={pick.nameNodeId}>{pick.name}</h2>
+      <p class={styles.description} data-node-id={pick.descriptionNodeId}>{pick.description}</p>
+    </div>
+
+    <div class={styles.bet}>
+      <p class={styles.odds} data-node-id={pick.oddsNodeId}>{pick.odds}</p>
+      <Button variant="fanduel" label="PLACE BET" assetSet="teams-page" />
+    </div>
+  </div>
+</article>
