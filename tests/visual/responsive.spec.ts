@@ -1009,7 +1009,7 @@ test.describe('responsive integrity', () => {
     // Frame 251:2889 is 4861 tall, but its last 1098 are blank navy; the page
     // ends at its own content plus one --nav-clearance instead. See screens.ts.
     const betsPage = await page.locator('[data-node-id="251:2889"]').boundingBox()
-    expect(betsPage?.height).toBeCloseTo(3884, 0)
+    expect(betsPage?.height).toBeCloseTo(3908, 0)
     expect(await page.locator('[data-node-id="251:2892"]').boundingBox()).toMatchObject({
       x: 0,
       y: 0,

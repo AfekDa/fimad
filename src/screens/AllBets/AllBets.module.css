@@ -12,8 +12,9 @@
    * page (app.css), so nothing has to be padded out to hold the colour.
    */
   /* The list ends flush with the page, so without this the last bet card sits
-   * under the docked nav once the page is scrolled to the end. */
-  padding-bottom: var(--nav-clearance);
+   * under the docked nav once the page is scrolled to the end. The --space-24
+   * past the clearance is just breathing room. */
+  padding-bottom: calc(var(--nav-clearance) + var(--space-24));
   background: var(--color-navy);
 }
 

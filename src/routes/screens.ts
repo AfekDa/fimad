@@ -99,10 +99,10 @@ export const SCREENS: readonly ScreenMeta[] = [
      * Frame 251:2889 is 4861 tall, but its own content stops at 3763 and the
      * 1098 below that is flat #011556 — empty navy the design draws nothing on.
      * The app ends at 3884 instead (content plus one --nav-clearance, so the
-     * last bet card clears the docked nav), and the band that is compared stops
-     * there with it. Nothing is dropped from the comparison but blank fill.
+     * last bet card clears the docked nav plus a 24 tail), and the band that is
+     * compared stops there with it. Nothing is dropped but blank fill.
      */
-    height: 3884,
+    height: 3908,
     /* Nav instance 251:2934 uses the same 932px mobile viewport. */
     viewportHeight: 932,
   },

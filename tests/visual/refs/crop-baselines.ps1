@@ -60,8 +60,8 @@ $frames = @(
         Scale          = 2
         Width          = 430
         # The frame is 4861 tall; its last 1098 are flat #011556 with nothing
-        # drawn on them, and the app stops at 3884 instead. See screens.ts.
-        Height         = 3884
+        # drawn on them, and the app stops at 3908 instead. See screens.ts.
+        Height         = 3908
         ChromeHeight   = 54
         ViewportHeight = 932
     },

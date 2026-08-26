@@ -12,7 +12,7 @@
    * the content measures 2878 there on its own.
    */
   padding: var(--teams-content-top) var(--content-padding-inline)
-    var(--teams-content-tail);
+    calc(var(--teams-content-tail) + var(--space-24));
   background: var(--color-navy);
 }
 
@@ -293,7 +293,7 @@
      * the floor keeps the last card row out from under it.
      */
     padding: var(--desktop-teams-filters-top) var(--desktop-content-inline)
-      max(94px, var(--desktop-nav-clearance));
+      calc(max(94px, var(--desktop-nav-clearance)) + var(--space-24));
   }
 
   .content {
