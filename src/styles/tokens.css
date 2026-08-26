@@ -186,7 +186,6 @@
   --surface-bet-card: #000d36;
   /* Bets Page 251:2889 minus the 54px iPhone status bar. */
   --bets-header-height: 139px;
-  --bets-frame-height: 4861px;
 
   /* All Awards 188:2037 after omitting the 54px iPhone status bar. */
   --awards-frame-height: 1453px;
@@ -199,7 +198,6 @@
   );
 
   /* Frame and content geometry after removing the 54px device status bar. */
-  --teams-frame-height: 2877px;
   --teams-content-top: var(--space-24);
   --teams-content-tail: 137px;
   --teams-card-height: 295px;
@@ -251,7 +249,6 @@
   );
 
   /* Teams desktop frame 377:185 after omitting its 118px browser chrome. */
-  --desktop-teams-frame-height: 1623px;
   --desktop-teams-header-top: 40px;
   --desktop-teams-filters-top: 147px;
   --desktop-teams-filters-height: 86px;

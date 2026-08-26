@@ -59,7 +59,9 @@ $frames = @(
         Id             = '251-2889'
         Scale          = 2
         Width          = 430
-        Height         = 4861
+        # The frame is 4861 tall; its last 1098 are flat #011556 with nothing
+        # drawn on them, and the app stops at 3884 instead. See screens.ts.
+        Height         = 3884
         ChromeHeight   = 54
         ViewportHeight = 932
     },
@@ -115,9 +117,12 @@ foreach ($frame in $frames) {
     # The export still carries the device chrome the app does not render, so the
     # file is that much taller than the band being compared.
     $chromeH = $frame.ChromeHeight * $s
-    if ($image.Width -ne $expectedW -or $image.Height -ne ($expectedH + $chromeH)) {
+    # Height may be shorter than the export when the frame ends in a band of
+    # blank fill the app does not reproduce (Bets 251:2889), so the file only has
+    # to be wide enough and at least tall enough to cut the compared band from.
+    if ($image.Width -ne $expectedW -or $image.Height -lt ($expectedH + $chromeH)) {
         $image.Dispose()
-        throw "$($frame.Source) is $($image.Width)x$($image.Height); expected ${expectedW}x$($expectedH + $chromeH)."
+        throw "$($frame.Source) is $($image.Width)x$($image.Height); expected ${expectedW}x$($expectedH + $chromeH) or taller."
     }
 
     $foldY = $frame.ViewportHeight * $s

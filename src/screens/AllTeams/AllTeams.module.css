@@ -3,7 +3,14 @@
 .page {
   position: relative;
   width: 100%;
-  min-height: var(--teams-frame-height);
+  /*
+   * No min-height. --teams-frame-height (2877) matches the content only at
+   * exactly 430; at every other width it padded the page out with dead navy
+   * below the last card -- 383 at 390, 323 at 1280, 485 at 1920. The grid is
+   * fluid, so the document has to be too, and the body carries the navy past
+   * the end of a short page (app.css). The 430 fidelity capture is unaffected:
+   * the content measures 2878 there on its own.
+   */
   padding: var(--teams-content-top) var(--content-padding-inline)
     var(--teams-content-tail);
   background: var(--color-navy);
@@ -280,8 +287,13 @@
  * product UI, so every vertical coordinate below is adjusted by that amount. */
 @media (min-width: 768px) {
   .page {
-    min-height: var(--desktop-teams-frame-height);
-    padding: var(--desktop-teams-filters-top) var(--desktop-content-inline) 94px;
+    /*
+     * Fluid for the same reason as the mobile rule. The frame's own 94px tail is
+     * shorter than the docked nav, which the removed min-height used to hide;
+     * the floor keeps the last card row out from under it.
+     */
+    padding: var(--desktop-teams-filters-top) var(--desktop-content-inline)
+      max(94px, var(--desktop-nav-clearance));
   }
 
   .content {

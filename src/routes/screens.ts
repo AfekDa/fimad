@@ -74,7 +74,8 @@ export const SCREENS: readonly ScreenMeta[] = [
     nodeId: '162:1760',
     width: 430,
     /* Frame 162:1760 is 2931 tall, but its top 54px are the device status bar,
-     * which the app does not render (--teams-frame-height, AllTeams.test.ts). */
+     * which the app does not render (AllTeams.test.ts). The grid reaches 2878
+     * on its own at 430, so nothing pads the page out to reach this. */
     height: 2877,
     /* Nav scrim 162:1822 ends at the 932px device viewport edge. */
     viewportHeight: 932,
@@ -94,7 +95,14 @@ export const SCREENS: readonly ScreenMeta[] = [
     frameName: 'Bets Page',
     nodeId: '251:2889',
     width: 430,
-    height: 4861,
+    /*
+     * Frame 251:2889 is 4861 tall, but its own content stops at 3763 and the
+     * 1098 below that is flat #011556 — empty navy the design draws nothing on.
+     * The app ends at 3884 instead (content plus one --nav-clearance, so the
+     * last bet card clears the docked nav), and the band that is compared stops
+     * there with it. Nothing is dropped from the comparison but blank fill.
+     */
+    height: 3884,
     /* Nav instance 251:2934 uses the same 932px mobile viewport. */
     viewportHeight: 932,
   },

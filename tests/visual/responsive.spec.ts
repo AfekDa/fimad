@@ -313,7 +313,11 @@ test.describe('responsive integrity', () => {
       )
     })
 
-    await expect(page.locator('[data-node-id="162:1760"]')).toHaveCSS('min-height', '2877px')
+    // The page is no longer padded out to the frame height, so this asserts what
+    // the grid actually measures: 2877 of frame plus the 1px the browser's text
+    // trimming rounds on, rather than a min-height that was hiding the number.
+    const teamsPage = await page.locator('[data-node-id="162:1760"]').boundingBox()
+    expect(teamsPage?.height).toBeCloseTo(2878, 0)
     expect(await page.locator('[data-node-id="162:1773"]').boundingBox()).toMatchObject({ y: 24 })
 
     const cards = page.locator('[data-node-id="181:325"] article')
@@ -1002,7 +1006,10 @@ test.describe('responsive integrity', () => {
     await page.goto('/all-bets')
     await page.evaluate(() => document.fonts.ready)
 
-    await expect(page.locator('[data-node-id="251:2889"]')).toHaveCSS('min-height', '4861px')
+    // Frame 251:2889 is 4861 tall, but its last 1098 are blank navy; the page
+    // ends at its own content plus one --nav-clearance instead. See screens.ts.
+    const betsPage = await page.locator('[data-node-id="251:2889"]').boundingBox()
+    expect(betsPage?.height).toBeCloseTo(3884, 0)
     expect(await page.locator('[data-node-id="251:2892"]').boundingBox()).toMatchObject({
       x: 0,
       y: 0,

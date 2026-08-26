@@ -1,7 +1,19 @@
 .page {
   position: relative;
   width: 100%;
-  min-height: var(--bets-frame-height);
+  /*
+   * No min-height. Frame 251:2889 is 4861 tall but its own content stops at
+   * 3763 — the band below that is flat #011556 in the Figma export, verified
+   * row by row — so --bets-frame-height was padding the page out with 1098px
+   * of empty navy that nothing is drawn on.
+   *
+   * The manifest height and the fidelity crop come down to match; see
+   * src/routes/screens.ts. The body carries the navy past the end of a short
+   * page (app.css), so nothing has to be padded out to hold the colour.
+   */
+  /* The list ends flush with the page, so without this the last bet card sits
+   * under the docked nav once the page is scrolled to the end. */
+  padding-bottom: var(--nav-clearance);
   background: var(--color-navy);
 }
 
@@ -241,7 +253,10 @@
  * 196px Figma rhythm. */
 @media (min-width: 768px) {
   .page {
+    /* Desktop keeps the frame height: 2094 is the composition asserted against
+     * the desktop Figma frame, and its tail is only 135. */
     min-height: var(--desktop-bets-frame-height);
+    padding-bottom: 0;
   }
 
   .header {

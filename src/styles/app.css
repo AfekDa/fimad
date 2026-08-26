@@ -25,6 +25,16 @@
   }
 }
 
+/*
+ * The screens paint their own navy, but each one is only as tall as its content
+ * and the shell is zoomed on desktop, so at widths where a page ends above the
+ * fold the canvas showed through white below it. Painting the body means no
+ * screen has to pad itself out to the viewport to stay navy to the edge.
+ */
+body {
+  background: var(--color-navy);
+}
+
 .appShell {
   width: 100%;
   max-width: var(--app-max-width);
