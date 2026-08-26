@@ -18,8 +18,12 @@
    * Mobile only: the desktop frame 803:5180 is 1097 tall against a 782 viewport,
    * so its last button already clears the 64px Desktop Nav, and the block below
    * restores the frame's own 24px tail.
+   *
+   * The extra 120 past --nav-clearance is breathing room rather than a
+   * requirement: the clearance alone already lifts the button out of the dock.
+   * It is added here, not to the token, so the Awards tail stays as it is.
    */
-  padding-bottom: var(--nav-clearance);
+  padding-bottom: calc(var(--nav-clearance) + 120px);
 }
 
 .offer {
