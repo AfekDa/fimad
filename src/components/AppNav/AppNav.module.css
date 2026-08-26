@@ -164,13 +164,13 @@
     width: min(700px, calc(100% - 48px));
     max-width: 700px;
     min-width: 0;
-    height: 64px;
+    height: var(--desktop-nav-height);
     background: none;
   }
 
   .nav {
     inset: 0;
-    height: 64px;
+    height: var(--desktop-nav-height);
     padding: 0 16px 0 32px;
     border-radius: 80px;
   }

@@ -150,12 +150,16 @@
    * the end — inside the nav pill at 811-892, which takes pointer events. The
    * frame draws that overlap, so the tail is added past the frame rather than
    * inside it: the fidelity crop stops at 1453 and never sees it, while the
-   * page gains enough scroll to lift the link clear of the whole dock.
+   * page gains enough scroll to lift the link clear of the nav.
+   *
+   * Replaces the frame's own 24px tail rather than adding to it: the card's own
+   * bottom padding is what leaves the link 24px clear of the pill, so a second
+   * 24 here would only scroll further for nothing.
    *
    * Mobile only. The desktop grid ends at 716 above a dock at 730, and the
    * block below restores frame 741:4777's own 24px tail.
    */
-  padding-bottom: calc(var(--space-24) + var(--app-nav-scrim-height));
+  padding-bottom: var(--nav-clearance);
 }
 
 .emptyState {

@@ -146,6 +146,18 @@
   /* Nav bottom edge 811 + 81 = 892; 932 - 892 = 40 above the viewport edge. */
   --nav-bottom-offset: 40px;
 
+  /*
+   * Height of the viewport the docked nav pill covers: 40 + 81 = 121 up from the
+   * bottom edge. A page whose last control would otherwise sit under the pill
+   * scrolls this much further to lift it out.
+   *
+   * The pill only, deliberately — not the 185px scrim, which is a fade that
+   * content stays legible under, and not a built-in gap, because the cards and
+   * offers that use this already end in 24px of their own padding. Padding a
+   * page past what it has to show is what makes a screen feel like it overruns.
+   */
+  --nav-clearance: calc(var(--nav-bottom-offset) + var(--nav-height));
+
   /* Frame height 1697 minus content end (648 + 982 = 1630). */
   --frame-tail-height: 67px;
 
@@ -225,6 +237,12 @@
   --desktop-hero-height: min(58.75vw, 752px);
   /* Desktop capture viewport: nav bottom 794, viewport bottom 900. */
   --desktop-nav-bottom-offset: 106px;
+  /* Desktop Nav 803:5318, the component the desktop frames instance. */
+  --desktop-nav-height: 64px;
+  /* Desktop counterpart of --nav-clearance: 106 + 64 = 170. */
+  --desktop-nav-clearance: calc(
+    var(--desktop-nav-bottom-offset) + var(--desktop-nav-height)
+  );
   /* Preserve the 1120px Figma content grid while allowing the page itself to
    * span the viewport beyond the 1280px source frame. */
   --desktop-content-inline: max(

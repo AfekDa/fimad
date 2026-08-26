@@ -5,6 +5,22 @@
   width: 100%;
   min-height: var(--individual-team-frame-height);
   overflow: hidden;
+  /*
+   * The explore carousel is the last thing on the page and its Team Preview
+   * links (1:26) stop 80px short of the document end — 56 from .explore's
+   * padding-block and 24 from .exploreCard's own padding. The nav pill covers
+   * 121, so at the end of the scroll the whole bottom row sat underneath it:
+   * fully covered on mobile, clipped along its bottom edge on desktop, and no
+   * scroll left to move it.
+   *
+   * Only .explore's 56 is deducted, leaving the card's own 24 to stand as the
+   * gap above the pill, as it does on the offers and awards lists. The tail is
+   * the shortfall and no more, so the page never scrolls past what it can show.
+   *
+   * Added past the frame, not inside it: 162:1586 is 5469 tall and the fidelity
+   * crop stops there, so this sits below what is compared.
+   */
+  padding-bottom: calc(var(--nav-clearance) - 56px);
   background: var(--color-navy);
   color: var(--color-white);
   font-family: var(--font-family-base);
@@ -1276,6 +1292,11 @@
 
   .explore {
     padding: 56px var(--desktop-content-inline);
+  }
+
+  /* Desktop Nav is shorter but sits higher: 106 + 64 = 170 to clear. */
+  .page {
+    padding-bottom: calc(var(--desktop-nav-clearance) - 56px);
   }
 
   .exploreHeader {
