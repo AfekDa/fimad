@@ -6,7 +6,7 @@ export interface BetContent {
   readonly name: string
   readonly odds: string
   /** Where "PLACE BET" goes; undefined leaves the design's inert button. */
-  readonly betUrl?: string
+  readonly betUrl?: string | undefined
 }
 
 export interface BetSectionContent {

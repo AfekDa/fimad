@@ -14,14 +14,14 @@ export interface Props {
    */
   readonly picks?: readonly MvpPickContent[]
   /** Award title from the CMS; the design's own MVP wording when absent. */
-  readonly title?: string
+  readonly title?: string | undefined
   /**
    * The shorter desktop wording (188:2286 drops the word "PICKS").
    *
    * The CMS publishes it as the award's subtitle; without one the desktop
    * heading falls back to the title it is a variation of.
    */
-  readonly subtitle?: string
+  readonly subtitle?: string | undefined
 }
 
 const {

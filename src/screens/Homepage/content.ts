@@ -24,7 +24,7 @@ export interface SocialLink {
   readonly label: string
   readonly src: string
   /** Destination published in the CMS; undefined leaves the icon unlinked. */
-  readonly href?: string
+  readonly href?: string | undefined
 }
 
 export interface HomepageContent {

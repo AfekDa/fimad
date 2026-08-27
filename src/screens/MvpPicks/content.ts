@@ -22,7 +22,7 @@ export interface MvpPickContent {
    */
   readonly imageAlt: string
   /** Where "PLACE BET" goes; undefined leaves the design's inert button. */
-  readonly betUrl?: string
+  readonly betUrl?: string | undefined
 }
 
 const DESCRIPTION =
