@@ -4,6 +4,10 @@
   position: relative;
   width: 100%;
   min-height: var(--individual-team-frame-height);
+  /* The page ended flush with the last Explore card, so the docked nav sat on
+   * top of it once scrolled to the end (27 Aug feedback). Same clearance the
+   * other scrolling screens use. */
+  padding-bottom: calc(var(--nav-clearance) + var(--space-24));
   /* `clip`, not `hidden`: both crop the same box, but `hidden` makes this a
    * scroll container, which would anchor the sticky header to a box that never
    * scrolls instead of to the viewport. */
@@ -314,13 +318,26 @@
   overflow-wrap: break-word;
 }
 
+/*
+ * Content-driven heights from here down (27 Aug feedback).
+ *
+ * Every section on this page carried the pixel height its Figma frame drew for
+ * the placeholder copy. Now that the CMS publishes real team writing those
+ * heights are wrong in both directions: short copy leaves dead space above the
+ * rule that closes a section, and long copy paints straight through the box
+ * beneath it. The design was re-flowed for the same reason -- frame 908:1853
+ * ("Correct Content") sizes each accordion to its own text (352, 444, 513, 582,
+ * 375) instead of to one shared number.
+ *
+ * So a fixed height becomes a minimum where the frame's composition still
+ * matters, and goes away where the content is the composition.
+ */
 .overview {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-24);
   width: 100%;
-  height: 825px;
   padding: 32px var(--space-24) 56px;
   flex-shrink: 0;
   background: linear-gradient(to bottom, var(--color-navy) 38.09%, var(--fanduel-blue));
@@ -374,20 +391,20 @@
 
 .accordions {
   width: 100%;
-  height: 932px;
   padding: var(--space-24) var(--space-24) 56px;
   flex-shrink: 0;
   background: var(--color-navy);
 }
 
 .accordion {
-  height: 102px;
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
 }
 
+/* 32px between the copy and the rule that closes the panel: accordion
+ * 908:1875 is 352 tall over a 102 summary and 218 of text. Desktop already
+ * used --space-32 here. */
 .accordion[open] {
-  height: 448px;
-  padding-bottom: 36px;
+  padding-bottom: var(--space-32);
 }
 
 .accordionSummary {
@@ -433,7 +450,6 @@
 }
 
 .accordionCopy {
-  height: 310px;
   font-size: var(--font-bc2-r-size);
   line-height: var(--font-bc2-r-line);
   white-space: pre-wrap;
@@ -447,7 +463,7 @@
   justify-content: flex-start;
   gap: var(--space-24);
   width: 100%;
-  height: 638px;
+  min-height: 638px;
   padding: 56px 16px 250px;
   flex-shrink: 0;
   overflow: hidden;
@@ -500,7 +516,6 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 126px;
   flex-shrink: 0;
   font-size: var(--font-bc2-r-size);
   line-height: var(--font-bc2-r-line);
@@ -533,7 +548,7 @@
 .favorite {
   position: relative;
   width: 100%;
-  height: 881px;
+  min-height: 881px;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -593,7 +608,6 @@
  */
 .favoriteBetCopy {
   width: 100%;
-  height: 126px;
   flex-shrink: 0;
   font-size: var(--font-bc2-r-size);
   line-height: var(--font-bc2-r-line);
@@ -602,7 +616,7 @@
 
 .odds {
   width: 100%;
-  height: 712.546px;
+  min-height: 712.546px;
   padding: 56px var(--space-24);
   flex-shrink: 0;
   background: linear-gradient(156.3926deg, #fff 0.51%, #c8c8c8 90.846%);
@@ -713,7 +727,7 @@
 .schedule {
   display: flex;
   width: 100%;
-  height: 717px;
+  min-height: 717px;
   padding: 56px var(--space-16) 0;
   flex-direction: column;
   align-items: center;
@@ -1007,6 +1021,9 @@
 @media (min-width: 768px) {
   .page {
     min-height: var(--desktop-individual-team-frame-height);
+    /* The desktop nav overlapping the page tail is its own review item; this
+     * clearance is the mobile one and does not belong to that frame. */
+    padding-bottom: 0;
   }
 
   /* The desktop frame scrolls its header away with the page. */
@@ -1139,10 +1156,14 @@
     line-height: var(--font-dt-bc2-line);
   }
 
+  /* `min-height: 0` on the sections below: the mobile rules state their frame
+   * height as a minimum so real copy can push past it, and a minimum outranks
+   * the `height` this frame sets unless it is released here. */
   .prediction {
     align-items: flex-start;
     justify-content: center;
     gap: var(--space-32);
+    min-height: 0;
     height: 531px;
     padding: 56px var(--desktop-content-inline);
     text-align: left;
@@ -1184,6 +1205,7 @@
   }
 
   .favorite {
+    min-height: 0;
     height: 637px;
     margin-top: -16px;
   }
@@ -1225,6 +1247,7 @@
   }
 
   .odds {
+    min-height: 0;
     height: 358px;
     padding: 56px var(--desktop-content-inline);
   }
@@ -1264,6 +1287,7 @@
   }
 
   .schedule {
+    min-height: 0;
     height: 677px;
     padding: 56px var(--desktop-content-inline) 0;
     gap: var(--space-32);

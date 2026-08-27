@@ -697,6 +697,69 @@ test.describe('responsive integrity', () => {
     }
   })
 
+  test('Individual Team closes each accordion 32px under its copy', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/teams/team-1')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+    })
+
+    /*
+     * Accordion 908:1875 is 352 tall over a 102 summary and 218 of text, so the
+     * rule that closes a panel sits 32 under the last line however long the CMS
+     * copy runs. Every panel is opened because the fixed height this replaced
+     * only ever showed on the one that starts open.
+     */
+    const panels = await page.evaluate(() => {
+      const found = [...document.querySelectorAll('details')]
+      for (const panel of found) panel.setAttribute('open', '')
+      return found.map((panel) => {
+        const copy = panel.querySelector('p')
+        if (copy === null) return null
+        const border = Number.parseFloat(getComputedStyle(panel).borderBottomWidth)
+        return {
+          padding: getComputedStyle(panel).paddingBottom,
+          // Distance from the last line to the rule, which is the bottom border.
+          gap: panel.getBoundingClientRect().bottom - border - copy.getBoundingClientRect().bottom,
+          // A panel that still pinned a height would stop tracking its copy.
+          // (scrollHeight is not usable here: text-box-trim deliberately makes
+          // the copy's box shorter than the line boxes inside it.)
+          slack:
+            panel.getBoundingClientRect().height -
+            border -
+            (panel.querySelector('summary')?.getBoundingClientRect().height ?? 0) -
+            copy.getBoundingClientRect().height,
+        }
+      })
+    })
+
+    expect(panels.length).toBeGreaterThan(1)
+    for (const panel of panels) {
+      expect(panel?.padding).toBe('32px')
+      expect(Math.abs((panel?.slack ?? 0) - 32)).toBeLessThan(1)
+      // Sub-pixel line metrics move the last line's box by a fraction.
+      expect(Math.abs((panel?.gap ?? 0) - 32)).toBeLessThan(1)
+    }
+  })
+
+  test('Individual Team ends clear of the docked nav', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/teams/team-1')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(Array.from(document.images).map((image) => image.decode().catch(() => undefined)))
+    })
+    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight))
+
+    // The page used to end flush with the last Explore card, so the nav covered it.
+    const lastCard = await page.locator('[aria-labelledby="explore-title"] article').last().boundingBox()
+    const nav = await page.getByRole('navigation', { name: 'Primary' }).boundingBox()
+
+    expect(lastCard, 'Explore carousel rendered no cards').not.toBeNull()
+    expect(nav, 'Nav was not rendered').not.toBeNull()
+    expect((nav?.y ?? 0) - (lastCard?.y ?? 0) - (lastCard?.height ?? 0)).toBeGreaterThan(24)
+  })
+
   test('Individual Team preserves its status-bar-adjusted Figma geometry and assets', async ({ page }) => {
     await page.setViewportSize({ width: 430, height: 932 })
     await page.goto('/teams/buffalo-bills')
@@ -718,40 +781,56 @@ test.describe('responsive integrity', () => {
       width: 430,
       height: 319,
     })
-    expect(await page.locator('[data-node-id="162:2236"]').boundingBox()).toMatchObject({
-      y: 494,
-      height: 825,
-    })
-    expect(await page.locator('[data-node-id="162:1668"]').boundingBox()).toMatchObject({
-      y: 1319,
-      height: 932,
-    })
-    expect(await page.locator('[data-node-id="162:1674"]').boundingBox()).toMatchObject({
-      y: 2251,
-      height: 638,
-    })
+    /*
+     * Sections are content-driven since the 27 Aug review, so every number below
+     * is the frame's, reached by wrapping the design's own Buffalo copy rather
+     * than by a height the stylesheet pins. Two things follow:
+     *
+     *  - the layout lands within a few px of the frame rather than exactly on
+     *    it, because Figma wraps a paragraph a fraction differently than a
+     *    browser does, and
+     *  - Chromium and WebKit disagree with each other by ~3px over the page for
+     *    the same reason, which a pinned height used to hide.
+     *
+     * DRIFT is that budget. It is far tighter than any real layout regression —
+     * a section losing its padding or a card its aspect ratio moves tens of px —
+     * so this still fails on one. Heights the design does pin (881, 717, 605,
+     * 474, 712.546) stay exact; only what text drives is given the budget.
+     */
+    const DRIFT = 6
+    const near = (actual: number | undefined, expected: number, tolerance = DRIFT) =>
+      expect(Math.abs((actual ?? Number.NaN) - expected)).toBeLessThanOrEqual(tolerance)
+
+    const overviewBox = await page.locator('[data-node-id="162:2236"]').boundingBox()
+    near(overviewBox?.y, 494, 1)
+    near(overviewBox?.height, 825)
+    const accordionsBox = await page.locator('[data-node-id="162:1668"]').boundingBox()
+    near(accordionsBox?.y, 1319, 1)
+    near(accordionsBox?.height, 932, 8)
+    const predictionBox = await page.locator('[data-node-id="162:1674"]').boundingBox()
+    near(predictionBox?.y, 2257)
+    near(predictionBox?.height, 638, 1)
     // Frame 1311 is 881 tall in Figma: a 340px copy block over a 541px photo.
-    expect(await page.locator('[data-node-id="188:2513"]').boundingBox()).toMatchObject({
-      y: 2889,
-      height: 881,
-    })
+    const favouriteBox = await page.locator('[data-node-id="188:2513"]').boundingBox()
+    near(favouriteBox?.y, 2895)
+    near(favouriteBox?.height, 881, 1)
     // 823:5900 sits under the bet lines on mobile only, and every section below
     // Frame 1311 rides on its height — dropping it pulled them all up by 340px.
     const favouriteCopy = await page.locator('[data-node-id="823:5900"]').boundingBox()
-    expect(favouriteCopy?.height).toBeCloseTo(126, 0)
-    expect(favouriteCopy?.y).toBeCloseTo(3051, 0)
+    near(favouriteCopy?.height, 126, 1)
+    near(favouriteCopy?.y, 3058)
     const oddsBox = await page.locator('[data-node-id="162:2237"]').boundingBox()
-    expect(oddsBox?.y).toBeCloseTo(3770, 0)
-    expect(oddsBox?.height).toBeCloseTo(712.546, 1)
+    near(oddsBox?.y, 3776)
+    near(oddsBox?.height, 712.546, 1)
     const scheduleBox = await page.locator('[data-node-id="738:4484"]').boundingBox()
     expect(scheduleBox).toMatchObject({ x: 0, width: 430, height: 717 })
-    expect(scheduleBox?.y).toBeCloseTo(4482.546, 1)
+    near(scheduleBox?.y, 4489)
     const scheduleGridBox = await page.locator('[data-node-id="730:3141"]').boundingBox()
     expect(scheduleGridBox).toMatchObject({ x: 24, width: 382, height: 605 })
-    expect(scheduleGridBox?.y).toBeCloseTo(4594.546, 1)
+    near(scheduleGridBox?.y, 4601)
     const exploreBox = await page.locator('[data-node-id="181:1446"]').boundingBox()
-    expect(exploreBox?.y).toBeCloseTo(5199.546, 1)
-    expect(exploreBox?.height).toBeCloseTo(474, 0)
+    near(exploreBox?.y, 5206)
+    near(exploreBox?.height, 474, 1)
 
     const heroImage = page.locator('[data-node-id="162:2215"] > picture img')
     expect(await heroImage.boundingBox()).toMatchObject({
@@ -765,39 +844,32 @@ test.describe('responsive integrity', () => {
     expect(predictionImage?.height).toBeCloseTo(282.72, 1)
     // Cover-cropped and pushed 82px down the section, per the Figma fill.
     const favouriteImage = page.locator('[data-node-id="188:2513"] picture img')
-    expect(await favouriteImage.boundingBox()).toMatchObject({
-      y: 2971,
-      width: 430,
-      height: 881,
-    })
+    const favouriteImageBox = await favouriteImage.boundingBox()
+    near(favouriteImageBox?.y, 2977)
+    near(favouriteImageBox?.width, 430, 1)
+    near(favouriteImageBox?.height, 881, 1)
     await expect(favouriteImage).toHaveCSS('object-fit', 'cover')
 
-    expect(await page.locator('[data-node-id="162:1676"]').boundingBox()).toMatchObject({
-      x: 131,
-      y: 2307,
-      width: 168,
-      height: 43,
-    })
-    expect(await page.locator('[data-node-id="162:1678"]').boundingBox()).toMatchObject({
-      x: 16,
-      y: 2374,
-      width: 398,
-      height: 115,
-    })
+    const predictionPillBox = await page.locator('[data-node-id="162:1676"]').boundingBox()
+    expect(predictionPillBox).toMatchObject({ x: 131, width: 168, height: 43 })
+    near(predictionPillBox?.y, 2313)
+    const predictionScoreBox = await page.locator('[data-node-id="162:1678"]').boundingBox()
+    expect(predictionScoreBox).toMatchObject({ x: 16, width: 398, height: 115 })
+    near(predictionScoreBox?.y, 2380)
     const predictionScoreLine = page.locator('[data-node-id="162:1678"] > p')
     await expect(predictionScoreLine).toHaveCSS('line-height', '44px')
     await expect(predictionScoreLine).toHaveCSS('text-box-trim', 'trim-both')
     await expect(predictionScoreLine).toHaveCSS('white-space', 'nowrap')
-    expect(await page.locator('[data-node-id="162:2212"]').boundingBox()).toMatchObject({
-      x: 16,
-      y: 2513,
-      width: 398,
-      height: 126,
-    })
+    const predictionCopyBox = await page.locator('[data-node-id="162:2212"]').boundingBox()
+    expect(predictionCopyBox).toMatchObject({ x: 16, width: 398 })
+    near(predictionCopyBox?.y, 2519)
+    // The frame draws 126; the copy now measures its own five lines to it.
+    near(predictionCopyBox?.height, 126, 1)
 
     const expandedAccordionCopy = page.locator('[data-node-id="162:1669"] > p')
     const accordionCopyBox = await expandedAccordionCopy.boundingBox()
-    expect(accordionCopyBox?.height).toBeCloseTo(310, 0)
+    // The frame's 310 is what the design's own copy measures, not a pinned height.
+    near(accordionCopyBox?.height, 310, 3)
     await expect(expandedAccordionCopy).toHaveCSS('text-box-trim', 'trim-both')
     await expect(expandedAccordionCopy).toHaveCSS('text-box-edge', 'cap alphabetic')
     await expect(expandedAccordionCopy).toHaveCSS('white-space', 'pre-wrap')
@@ -808,7 +880,9 @@ test.describe('responsive integrity', () => {
       (expandedAccordionBox?.y ?? 0) +
       (expandedAccordionBox?.height ?? 0) -
       ((accordionCopyBox?.y ?? 0) + (accordionCopyBox?.height ?? 0))
-    expect(accordionBottomGap).toBeCloseTo(36, 0)
+    // 32 of padding to the rule (27 Aug feedback), measured here to the outside
+    // of the 0.5 rule and through the copy's trimmed text box.
+    near(accordionBottomGap, 33, 1)
 
     await expect(page.locator('[data-node-id="162:1605"] article')).toHaveCount(6)
     await expect(page.locator('[data-nav-id="teams"]')).toHaveAttribute('aria-current', 'page')

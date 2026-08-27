@@ -102,6 +102,8 @@ export const SCREENS: readonly ScreenMeta[] = [
     /* App Nav 162:1720 sits at y=811, i.e. 757 once the status bar is dropped:
      * the same 878 band as the Homepage. */
     viewportHeight: 878,
+    divergesFromFigma:
+      'Superseded by frame 908:1853 ("Correct Content"), which re-flowed this page for the real team writing the CMS now publishes: it sizes each accordion to its own text (352, 444, 513, 582, 375) where 162:1586 drew one shared 448, and it runs 7522 tall against that frame’s 5523. The app follows the newer frame, so every section below the accordions sits at a different offset than this export draws it. The 27 Aug review also asked for a page tail that clears the docked nav, which no frame draws at all. Section geometry is still asserted in responsive.spec.ts, and the nav-docking assertion below still runs.',
   },
   {
     path: '/all-bets',
