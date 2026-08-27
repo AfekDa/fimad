@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T13:32:02.181Z",
+  "generated_at": "2026-08-27T13:39:41.377Z",
   "generated_by": "elad.beraru@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
@@ -169,12 +169,12 @@
         }
       ],
       "quarterbacks": "TEAM 23 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.",
-      "name": "Ravens",
+      "name": "BALTIMORE RAVENS",
       "offseason_changes": "TEAM 1 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
       "prediction_text": "Placeholder prediction for TEAM 1. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
       "id": "6a9022875b73b6b687d4f143",
       "created_date": "2026-08-27T11:41:59.899000",
-      "updated_date": "2026-08-27T13:28:44.355000",
+      "updated_date": "2026-08-27T13:37:05.342000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -321,12 +321,12 @@
         }
       ],
       "quarterbacks": null,
-      "name": "TEAM 2",
+      "name": "CINCINNATI BENGALS",
       "offseason_changes": "TEAM 2 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
       "prediction_text": "Placeholder prediction for TEAM 2. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
       "id": "6a9022875b73b6b687d4f144",
       "created_date": "2026-08-27T11:41:59.899000",
-      "updated_date": "2026-08-27T12:58:33.141000",
+      "updated_date": "2026-08-27T13:37:26.948000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -473,12 +473,12 @@
         }
       ],
       "quarterbacks": null,
-      "name": "TEAM 3",
+      "name": "CLEVELAND BROWNS",
       "offseason_changes": "TEAM 3 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
       "prediction_text": "Placeholder prediction for TEAM 3. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
       "id": "6a9022875b73b6b687d4f145",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T12:58:35.705000",
+      "updated_date": "2026-08-27T13:38:07.419000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -625,12 +625,12 @@
         }
       ],
       "quarterbacks": null,
-      "name": "TEAM 4",
+      "name": "PITTSBURGH STEELERS",
       "offseason_changes": "TEAM 4 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
       "prediction_text": "Placeholder prediction for TEAM 4. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
       "id": "6a9022875b73b6b687d4f146",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T12:58:38.032000",
+      "updated_date": "2026-08-27T13:38:27.715000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -777,12 +777,12 @@
         }
       ],
       "quarterbacks": null,
-      "name": "TEAM 5",
+      "name": "BUFFALO BILLS",
       "offseason_changes": "TEAM 5 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
       "prediction_text": "Placeholder prediction for TEAM 5. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
       "id": "6a9022875b73b6b687d4f147",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T12:58:40.209000",
+      "updated_date": "2026-08-27T13:38:47.799000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -929,12 +929,12 @@
         }
       ],
       "quarterbacks": null,
-      "name": "TEAM 6",
+      "name": "MIAMI DOLPHINS",
       "offseason_changes": "TEAM 6 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
       "prediction_text": "Placeholder prediction for TEAM 6. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
       "id": "6a9022875b73b6b687d4f148",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T12:58:42.895000",
+      "updated_date": "2026-08-27T13:39:02.624000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1081,12 +1081,12 @@
         }
       ],
       "quarterbacks": null,
-      "name": "TEAM 7",
+      "name": "NEW ENGLAND PATRIOTS",
       "offseason_changes": "TEAM 7 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
       "prediction_text": "Placeholder prediction for TEAM 7. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
       "id": "6a9022875b73b6b687d4f149",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T12:58:45.171000",
+      "updated_date": "2026-08-27T13:39:18.481000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1233,12 +1233,12 @@
         }
       ],
       "quarterbacks": null,
-      "name": "TEAM 8",
+      "name": "NEW YORK JETS",
       "offseason_changes": "TEAM 8 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
       "prediction_text": "Placeholder prediction for TEAM 8. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
       "id": "6a9022875b73b6b687d4f14a",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T12:58:47.336000",
+      "updated_date": "2026-08-27T13:39:39.190000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
