@@ -1,6 +1,7 @@
 import { ASSETS } from '../../assets/assets'
 import { imagesForTeam } from '../../assets/teamImages'
 import { TEAMS, TEAM_COUNT, teamByNumber } from '../../data/teams'
+import { withCmsContent } from './cmsContent'
 import type { Conference, Team } from '../../data/teams'
 
 /**
@@ -266,7 +267,7 @@ function placeholderOpponent(teamNumber: number, week: number): string {
  * Names stay short on purpose: the staff cards are a fixed 64px tall, so a name
  * long enough to wrap would overflow them on a narrow phone.
  */
-export function createPlaceholderTeam(team: Team): TeamPageContent {
+function createBaseTeam(team: Team): TeamPageContent {
   const { name, number } = team
   const images = imagesForTeam(number)
 
@@ -335,6 +336,14 @@ export function createPlaceholderTeam(team: Team): TeamPageContent {
       }
     }),
   }
+}
+
+/**
+ * One team's page: the placeholder layout with whatever the CMS has published
+ * for that team laid over it.
+ */
+export function createPlaceholderTeam(team: Team): TeamPageContent {
+  return withCmsContent(team.number, createBaseTeam(team))
 }
 
 /** One page's content per roster team, in roster order. */

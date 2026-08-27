@@ -1,16 +1,16 @@
 /**
  * The 32-team roster — pure data, no component or asset imports.
  *
- * The Figma design names eight real AFC teams on the All Teams frame and one
- * real team (Buffalo) on the detail frame. The app ships 32 numbered
- * placeholders instead, so this module is the single source of truth for what a
- * team is called, where its page lives, and which conference it filters under.
- * Both the All Teams grid and the individual team pages read it, which is what
+ * Names, slugs and conferences come from the CMS (src/data/cms-content.json)
+ * when published, and fall back to the design's numbered placeholders. Both the
+ * All Teams grid and the individual team pages read this module, which is what
  * keeps a card's label and its destination from drifting apart.
  *
  * `/teams/buffalo-bills` is deliberately not in here: it stays as the untouched
  * Figma reference route the pixel-fidelity specs compare against.
  */
+import { cmsTeam, text } from './cms'
+
 export type Conference = 'AFC' | 'NFC'
 
 export interface Team {
@@ -25,16 +25,24 @@ export interface Team {
 
 export const TEAM_COUNT = 32
 
-/** The first half of the roster files under the AFC, the second under the NFC. */
+function conferenceFor(published: string | undefined, number: number): Conference {
+  if (published === 'AFC' || published === 'NFC') return published
+
+  /** The first half of the roster files under the AFC, the second under the NFC. */
+  return number <= TEAM_COUNT / 2 ? 'AFC' : 'NFC'
+}
+
 export const TEAMS: readonly Team[] = Array.from({ length: TEAM_COUNT }, (_, index) => {
   const number = index + 1
+  const published = cmsTeam(number)
+  const slug = text(published?.slug, `team-${number}`)
 
   return {
     number,
-    name: `TEAM ${number}`,
-    slug: `team-${number}`,
-    href: `/teams/team-${number}`,
-    conference: number <= TEAM_COUNT / 2 ? 'AFC' : 'NFC',
+    name: text(published?.name, `TEAM ${number}`).toUpperCase(),
+    slug,
+    href: `/teams/${slug}`,
+    conference: conferenceFor(published?.conference, number),
   }
 })
 
