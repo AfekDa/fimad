@@ -77,8 +77,9 @@ export const SCREENS: readonly ScreenMeta[] = [
      * which the app does not render (AllTeams.test.ts). The grid reaches 2878
      * on its own at 430, so nothing pads the page out to reach this. */
     height: 2877,
-    /* Nav scrim 162:1822 ends at the 932px device viewport edge. */
-    viewportHeight: 932,
+    /* App Nav 162:1823 sits at y=811 in the frame, so at 811 - 54 = 757 in the
+     * document; 757 + 81 + 40 puts the viewport edge at 878. */
+    viewportHeight: 878,
   },
   {
     path: '/teams/buffalo-bills',
@@ -87,8 +88,9 @@ export const SCREENS: readonly ScreenMeta[] = [
     width: 430,
     /* Frame 162:1586 is 5523 tall less its 54px device status bar. */
     height: 5469,
-    /* App Nav instance 162:1720 uses the same 932px mobile viewport. */
-    viewportHeight: 932,
+    /* App Nav 162:1720 sits at y=811, i.e. 757 once the status bar is dropped:
+     * the same 878 band as the Homepage. */
+    viewportHeight: 878,
   },
   {
     path: '/all-bets',
@@ -103,8 +105,9 @@ export const SCREENS: readonly ScreenMeta[] = [
      * compared stops there with it. Nothing is dropped but blank fill.
      */
     height: 3908,
-    /* Nav instance 251:2934 uses the same 932px mobile viewport. */
-    viewportHeight: 932,
+    /* App Nav 251:2934 sits at y=811, i.e. 757 once the status bar is dropped:
+     * the same 878 band as the Homepage. */
+    viewportHeight: 878,
   },
   {
     path: '/awards',
@@ -113,8 +116,9 @@ export const SCREENS: readonly ScreenMeta[] = [
     width: 430,
     /* Frame 188:2037 is 1507 tall less its 54px device status bar. */
     height: 1453,
-    /* Nav instance 188:2061 uses the same 932px mobile viewport. */
-    viewportHeight: 932,
+    /* App Nav 188:2061 sits at y=811, i.e. 757 once the status bar is dropped:
+     * the same 878 band as the Homepage. */
+    viewportHeight: 878,
   },
   {
     path: '/fanduel',

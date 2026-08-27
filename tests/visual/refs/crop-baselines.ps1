@@ -43,7 +43,7 @@ $frames = @(
         Width          = 430
         Height         = 2877
         ChromeHeight   = 54
-        ViewportHeight = 932
+        ViewportHeight = 878
     },
     @{
         Source         = 'individual-team-162-1586.png'
@@ -52,7 +52,7 @@ $frames = @(
         Width          = 430
         Height         = 5469
         ChromeHeight   = 54
-        ViewportHeight = 932
+        ViewportHeight = 878
     },
     @{
         Source         = 'bets-251-2889.png'
@@ -63,7 +63,7 @@ $frames = @(
         # drawn on them, and the app stops at 3908 instead. See screens.ts.
         Height         = 3908
         ChromeHeight   = 54
-        ViewportHeight = 932
+        ViewportHeight = 878
     },
     @{
         Source         = 'awards-188-2037.png'
@@ -72,7 +72,7 @@ $frames = @(
         Width          = 430
         Height         = 1453
         ChromeHeight   = 54
-        ViewportHeight = 932
+        ViewportHeight = 878
     },
     @{
         Source         = 'fanduel-803-5180.png'

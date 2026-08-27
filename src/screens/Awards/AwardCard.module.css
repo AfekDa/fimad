@@ -21,6 +21,9 @@
   border-radius: inherit;
 }
 
+/* award-card-mvp.png is exported at the card's own 382:300 aspect, cropped to
+ * the window the Figma fill shows, so `cover` scales it without cropping again
+ * at 430. The wider desktop card (358:300) trims the sides, as the frame does. */
 .image {
   display: block;
   max-width: none;
