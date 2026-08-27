@@ -1147,13 +1147,20 @@
     line-height: var(--font-dt-bc1-line);
   }
 
+  /*
+   * Content-driven for the same reason the mobile rules are (27 Aug feedback:
+   * "reduce the spacing/padding between the text and the line"). The frame's
+   * 356 is the panel it drew for its own copy; the CMS ships shorter write-ups
+   * for most of the roster, and pinning the height left up to 136px of dead
+   * navy between the last line and the rule that closes the panel -- measured
+   * across all 32 teams, only one of them filled the box. The panel now ends
+   * --space-32 under its own copy, which is exactly the gap the frame draws.
+   */
   .accordions {
-    height: 844px;
     padding: var(--space-24) var(--desktop-content-inline) 56px;
   }
 
   .accordion[open] {
-    height: 356px;
     padding-bottom: var(--space-32);
   }
 

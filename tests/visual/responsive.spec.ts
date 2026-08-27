@@ -851,6 +851,64 @@ test.describe('responsive integrity', () => {
     }
   })
 
+  /*
+   * 27 Aug feedback, desktop: "reduce the spacing/padding between the text and
+   * the line". The desktop block pinned the open panel at the frame's 356, so
+   * on every team whose CMS write-up is shorter than the copy the frame drew,
+   * the closing rule sat well below the last line -- 136px adrift on the worst
+   * of the roster. It now ends --space-32 under its own copy, as mobile does.
+   */
+  test('Individual Team closes each desktop accordion 32px under its copy', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 782 })
+
+    /*
+     * team-1 carries the shortest off-season write-up and buffalo-bills the
+     * longest, so between them they cover both sides of the frame's 356. How
+     * many panels each yields differs because the CMS has only filled the
+     * off-season section for Buffalo -- its other four have no copy to measure.
+     */
+    for (const { path, panelCount } of [
+      { path: '/teams/team-1', panelCount: 5 },
+      { path: '/teams/buffalo-bills', panelCount: 1 },
+    ]) {
+      await page.goto(path)
+      await page.evaluate(() => document.fonts.ready)
+
+      const panels = await page.evaluate(() => {
+        const found = [...document.querySelectorAll('details')]
+        for (const panel of found) panel.setAttribute('open', '')
+
+        return found.flatMap((panel) => {
+          const copy = panel.querySelector('p')
+          const summary = panel.querySelector('summary')
+          if (copy === null || summary === null) return []
+
+          const border = Number.parseFloat(getComputedStyle(panel).borderBottomWidth)
+          const box = panel.getBoundingClientRect()
+
+          return [
+            {
+              // Distance from the last line to the rule, which is the bottom border.
+              gap: box.bottom - border - copy.getBoundingClientRect().bottom,
+              // A panel still pinning a height would stop tracking its copy.
+              slack:
+                box.height -
+                border -
+                summary.getBoundingClientRect().height -
+                copy.getBoundingClientRect().height,
+            },
+          ]
+        })
+      })
+
+      expect(panels).toHaveLength(panelCount)
+      for (const panel of panels) {
+        expect(Math.abs(panel.slack - 32)).toBeLessThan(1)
+        expect(Math.abs(panel.gap - 32)).toBeLessThan(1)
+      }
+    }
+  })
+
   test('Individual Team ends clear of the docked nav', async ({ page }) => {
     await page.setViewportSize({ width: 430, height: 932 })
     await page.goto('/teams/team-1')
@@ -1131,27 +1189,47 @@ test.describe('responsive integrity', () => {
       )
     })
 
-    expect(await page.locator('[data-desktop-node-id="390:1337"]').boundingBox()).toMatchObject({
-      x: 0,
-      y: 0,
-      width: 1280,
-      height: 4761,
-    })
+    /*
+     * The accordions (397:2129) are content-driven since the 27 Aug review asked
+     * for each panel to end --space-32 under its own copy rather than at the
+     * frame's pinned 356 — pinning it left up to 136px of dead navy between the
+     * last line and the closing rule, depending on the team. Buffalo's own
+     * write-up runs a few px past what the frame drew, so that section is a
+     * little over its 844 and every section under it rides the difference.
+     *
+     * DRIFT is that budget, and it applies only from the accordions down. It is
+     * far tighter than any real layout regression — a section losing its padding
+     * or an image its aspect ratio moves tens of px — so this still fails on one.
+     */
+    const DRIFT = 8
+    const near = (actual: number | undefined, expected: number, tolerance = DRIFT) =>
+      expect(Math.abs((actual ?? Number.NaN) - expected)).toBeLessThanOrEqual(tolerance)
+
+    const pageBox = await page.locator('[data-desktop-node-id="390:1337"]').boundingBox()
+    expect(pageBox).toMatchObject({ x: 0, y: 0, width: 1280 })
+    near(pageBox?.height, 4761)
 
     for (const section of [
-      { id: '390:1741', y: 0, height: 147 },
-      { id: '390:1744', y: 147, height: 487 },
-      { id: '397:1940', y: 634, height: 622 },
-      { id: '397:2129', y: 1256, height: 844 },
-      { id: '397:2201', y: 2100, height: 531 },
-      { id: '397:2207', y: 2615, height: 637 },
-      { id: '397:2265', y: 3252, height: 358 },
-      { id: '791:2688', y: 3610, height: 677 },
-      { id: '397:2318', y: 4287, height: 474 },
+      { id: '390:1741', y: 0, height: 147, contentDriven: false },
+      { id: '390:1744', y: 147, height: 487, contentDriven: false },
+      { id: '397:1940', y: 634, height: 622, contentDriven: false },
+      { id: '397:2129', y: 1256, height: 844, contentDriven: true },
+      { id: '397:2201', y: 2100, height: 531, contentDriven: true },
+      { id: '397:2207', y: 2615, height: 637, contentDriven: true },
+      { id: '397:2265', y: 3252, height: 358, contentDriven: true },
+      { id: '791:2688', y: 3610, height: 677, contentDriven: true },
+      { id: '397:2318', y: 4287, height: 474, contentDriven: true },
     ]) {
-      expect(
-        await page.locator(`[data-desktop-node-id="${section.id}"]`).boundingBox(),
-      ).toMatchObject({ x: 0, y: section.y, width: 1280, height: section.height })
+      const box = await page.locator(`[data-desktop-node-id="${section.id}"]`).boundingBox()
+
+      if (section.contentDriven) {
+        expect(box).toMatchObject({ x: 0, width: 1280 })
+        near(box?.y, section.y)
+        // Only the accordions themselves change height; the rest just move.
+        near(box?.height, section.height, section.id === '397:2129' ? DRIFT : 1)
+      } else {
+        expect(box).toMatchObject({ x: 0, y: section.y, width: 1280, height: section.height })
+      }
     }
 
     expect(await page.locator('[data-node-id="181:1323"]').boundingBox()).toMatchObject({
@@ -1170,12 +1248,9 @@ test.describe('responsive integrity', () => {
       width: 739,
       height: 326,
     })
-    expect(await page.locator('[data-node-id="162:1605"]').boundingBox()).toMatchObject({
-      x: 80,
-      y: 3386,
-      width: 1120,
-      height: 168,
-    })
+    const staffBox = await page.locator('[data-node-id="162:1605"]').boundingBox()
+    expect(staffBox).toMatchObject({ x: 80, width: 1120, height: 168 })
+    near(staffBox?.y, 3386)
     await expect(page.locator('[data-node-id="181:1431"] article')).toHaveCount(5)
 
     /*
