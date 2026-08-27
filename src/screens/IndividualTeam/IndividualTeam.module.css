@@ -205,6 +205,19 @@
   height: 100%;
 }
 
+/*
+ * Prediction, Explore and the team lockup are one picture reframed by a
+ * different box above 768px rather than a second export — the design has no
+ * desktop counterpart for any of the three. Their <picture> therefore has to
+ * disappear from layout entirely so the img keeps the measured box it already
+ * sits in: display: contents leaves every existing rule resolving against the
+ * same containing block. The hero and Favorite Future pictures below are the
+ * other case, where the box itself is the picture.
+ */
+.reframedPicture {
+  display: contents;
+}
+
 .heroPicture,
 .favoritePicture {
   position: absolute;

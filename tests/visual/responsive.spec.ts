@@ -647,7 +647,7 @@ test.describe('responsive integrity', () => {
     expect(exploreBox?.y).toBeCloseTo(5199.546, 1)
     expect(exploreBox?.height).toBeCloseTo(474, 0)
 
-    const heroImage = page.locator('[data-node-id="162:2215"] picture img')
+    const heroImage = page.locator('[data-node-id="162:2215"] > picture img')
     expect(await heroImage.boundingBox()).toMatchObject({
       width: 430,
       height: 319,
@@ -844,7 +844,7 @@ test.describe('responsive integrity', () => {
      * behaviour without pinning a file name.
      */
     for (const nodeId of ['390:1744', '397:2207']) {
-      const picture = page.locator(`[data-desktop-node-id="${nodeId}"] picture`)
+      const picture = page.locator(`[data-desktop-node-id="${nodeId}"] > picture`)
       const mobileSrc = await picture.locator('img').getAttribute('src')
       const desktopSrcSet = await picture.locator('source').getAttribute('srcset')
       expect(desktopSrcSet, `${nodeId} serves one image to both breakpoints`).not.toBe(mobileSrc)

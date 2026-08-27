@@ -28,6 +28,7 @@ export interface TeamCardContent {
   readonly imageAlt: string
   readonly crop: TeamCardCrop
   readonly logo: string
+  readonly logoDesktop: string
   readonly team: string
   readonly conference: Conference
   readonly href: string
@@ -127,6 +128,7 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = TEAMS.map((team, inde
     image: images.card ?? visual.image,
     crop: visual.crop,
     logo: images.logo,
+    logoDesktop: images.logoDesktop,
     imageAlt: `${team.name} player portrait`,
     team: team.name,
     conference: team.conference,

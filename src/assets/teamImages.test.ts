@@ -8,10 +8,13 @@ const SLOTS = [
   'hero',
   'heroDesktop',
   'prediction',
+  'predictionDesktop',
   'favorite',
   'favoriteDesktop',
   'explore',
+  'exploreDesktop',
   'logo',
+  'logoDesktop',
 ] as const
 
 describe('team images', () => {
@@ -49,10 +52,13 @@ describe('team images', () => {
       hero: ASSETS.teamBuffaloHero,
       heroDesktop: ASSETS.teamBuffaloHeroDesktop,
       prediction: ASSETS.teamBuffaloPrediction,
+      predictionDesktop: ASSETS.teamBuffaloPrediction,
       favorite: ASSETS.teamBuffaloFuture,
       favoriteDesktop: ASSETS.teamBuffaloFutureDesktop,
       explore: ASSETS.teamExploreCard,
+      exploreDesktop: ASSETS.teamExploreCard,
       logo: ASSETS.teamsLogoBuffalo,
+      logoDesktop: ASSETS.teamsLogoBuffalo,
     })
   })
 

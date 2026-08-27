@@ -18,11 +18,14 @@
  *   hero.png              1024 x  701    full-bleed photo behind the team name
  *   hero-desktop.png      1155 x  885    the same, above 768px
  *   prediction.png         992 x  682    photo under the PREDICTIONS block
+ *   prediction-desktop.png 992 x  682    the same, above 768px
  *   favorite.png          1108 x 1763    photo behind FAVORITE FUTURE
  *   favorite-desktop.png   814 x 1024    the same, above 768px
  *   explore.png           1024 x  701    this team in other teams' Explore All
  *                                        Teams carousel
+ *   explore-desktop.png   1024 x  701    the same, above 768px
  *   logo.png              1920 x 1920    team lockup above the team name
+ *   logo-desktop.png      1920 x 1920    the same, above 768px
  *
  * The All 32 Teams file spells its own team out so it stays recognisable away
  * from the folder — `all-32-teams.png` fills the same slot if you would rather
@@ -53,10 +56,13 @@ export interface TeamImages {
   readonly hero: string
   readonly heroDesktop: string
   readonly prediction: string
+  readonly predictionDesktop: string
   readonly favorite: string
   readonly favoriteDesktop: string
   readonly explore: string
+  readonly exploreDesktop: string
   readonly logo: string
+  readonly logoDesktop: string
 }
 
 /** What a team shows until it is given pictures of its own. */
@@ -65,10 +71,18 @@ const DESIGN_IMAGES: TeamImages = {
   hero: ASSETS.teamBuffaloHero,
   heroDesktop: ASSETS.teamBuffaloHeroDesktop,
   prediction: ASSETS.teamBuffaloPrediction,
+  /*
+   * The design has no second export for these three: it reframes one picture
+   * with a different box above 768px. So the desktop default is the same file,
+   * and the slot exists to let a team supply a wider crop of its own.
+   */
+  predictionDesktop: ASSETS.teamBuffaloPrediction,
   favorite: ASSETS.teamBuffaloFuture,
   favoriteDesktop: ASSETS.teamBuffaloFutureDesktop,
   explore: ASSETS.teamExploreCard,
+  exploreDesktop: ASSETS.teamExploreCard,
   logo: ASSETS.teamsLogoBuffalo,
+  logoDesktop: ASSETS.teamsLogoBuffalo,
 }
 
 /** The file name a team's folder uses for each slot, without its extension. */
@@ -77,10 +91,13 @@ const SLOT_BY_FILE_NAME: Readonly<Record<string, keyof TeamImages>> = {
   hero: 'hero',
   'hero-desktop': 'heroDesktop',
   prediction: 'prediction',
+  'prediction-desktop': 'predictionDesktop',
   favorite: 'favorite',
   'favorite-desktop': 'favoriteDesktop',
   explore: 'explore',
+  'explore-desktop': 'exploreDesktop',
   logo: 'logo',
+  'logo-desktop': 'logoDesktop',
 }
 
 /**

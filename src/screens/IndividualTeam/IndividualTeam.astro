@@ -73,7 +73,10 @@ const { team = BUFFALO_BILLS } = Astro.props
       <div class={styles.heroScrim} aria-hidden="true"></div>
       <div class={styles.heroCopy}>
         <span class={styles.teamLogo} data-node-id="181:1340">
-          <img class={styles.teamLogoLeaf} src={team.logo} alt="" aria-hidden="true" />
+          <picture class={styles.reframedPicture}>
+            <source media="(min-width: 768px)" srcset={team.logoDesktop} />
+            <img class={styles.teamLogoLeaf} src={team.logo} alt="" aria-hidden="true" />
+          </picture>
         </span>
         <h1 id="team-name" class={styles.teamName} data-node-id="162:1590">{team.name}</h1>
       </div>
@@ -140,7 +143,10 @@ const { team = BUFFALO_BILLS } = Astro.props
       </div>
       <p class={styles.predictionCopy} data-node-id="162:2212">{team.predictionCopy}</p>
       <span class={styles.predictionImageBox} aria-hidden="true">
-        <img class={styles.predictionImage} src={team.predictionImage} alt="" />
+        <picture class={styles.reframedPicture}>
+          <source media="(min-width: 768px)" srcset={team.predictionImageDesktop} />
+          <img class={styles.predictionImage} src={team.predictionImage} alt="" />
+        </picture>
       </span>
     </section>
 
@@ -290,12 +296,18 @@ const { team = BUFFALO_BILLS } = Astro.props
         {
           team.exploreCards.map((card) => (
             <article class={styles.exploreCard} data-node-id={card.nodeId}>
-              <img class={styles.exploreImage} src={card.image} alt={`${card.name} player portrait`} />
+              <picture class={styles.reframedPicture}>
+                <source media="(min-width: 768px)" srcset={card.imageDesktop} />
+                <img class={styles.exploreImage} src={card.image} alt={`${card.name} player portrait`} />
+              </picture>
               <div class={styles.exploreScrim} aria-hidden="true"></div>
               <span class={styles.conference}>{card.conference}</span>
               <div class={styles.exploreDetails}>
                 <span class={styles.teamLogo}>
-                  <img class={styles.teamLogoLeaf} src={card.logo} alt="" aria-hidden="true" />
+                  <picture class={styles.reframedPicture}>
+                    <source media="(min-width: 768px)" srcset={card.logoDesktop} />
+                    <img class={styles.teamLogoLeaf} src={card.logo} alt="" aria-hidden="true" />
+                  </picture>
                 </span>
                 <h3 class={styles.exploreTeamName}>{card.name}</h3>
                 <Button

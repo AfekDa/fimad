@@ -30,12 +30,10 @@ const { card } = Astro.props
 
   <div class={styles.details}>
     <span class={styles.teamLogo} data-node-id="181:1340">
-      <img
-        class={styles.teamLogoLeaf}
-        src={card.logo}
-        alt=""
-        aria-hidden="true"
-      />
+      <picture class={styles.reframedPicture}>
+        <source media="(min-width: 768px)" srcset={card.logoDesktop} />
+        <img class={styles.teamLogoLeaf} src={card.logo} alt="" aria-hidden="true" />
+      </picture>
     </span>
     <h2 class={styles.teamName}>{card.team}</h2>
     <Button

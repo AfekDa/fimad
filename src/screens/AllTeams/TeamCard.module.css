@@ -128,6 +128,15 @@
   overflow: hidden;
 }
 
+/*
+ * The lockup is one picture reframed above 768px rather than a second export,
+ * so its <picture> must not become a box of its own: display: contents keeps
+ * .teamLogoLeaf resolving against .teamLogo, the measured crop it sits in.
+ */
+.reframedPicture {
+  display: contents;
+}
+
 .teamLogoLeaf {
   position: absolute;
   left: -9.61%;

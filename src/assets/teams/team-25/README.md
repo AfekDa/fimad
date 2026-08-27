@@ -1,6 +1,6 @@
 # TEAM 25 images
 
-These eight files are what TEAM 25 shows. To change one, replace the file and
+These eleven files are what TEAM 25 shows. To change one, replace the file and
 keep the name. That is the whole procedure: nothing to import, no table to edit.
 
 | File                       | Size        | Where it shows                                       |
@@ -9,10 +9,20 @@ keep the name. That is the whole procedure: nothing to import, no table to edit.
 | `hero.png`                 | 1024 x 701  | full-bleed photo behind the team name                |
 | `hero-desktop.png`         | 1155 x 885  | the same, above 768px                                |
 | `prediction.png`           | 992 x 682   | photo under the PREDICTIONS block                    |
+| `prediction-desktop.png`   | 992 x 682   | the same, above 768px                                |
 | `favorite.png`             | 1108 x 1763 | photo behind FAVORITE FUTURE                         |
 | `favorite-desktop.png`     | 814 x 1024  | the same, above 768px                                |
 | `explore.png`              | 1024 x 701  | this team in other teams’ Explore All Teams carousel |
-| `logo.png`                 | 1920 x 1920 | team lockup above the team name                      |
+| `explore-desktop.png`      | 1024 x 701  | the same, above 768px                                |
+| `logo.png`                 | 1920 x 1920 | team lockup, on both this page and the grid card     |
+| `logo-desktop.png`         | 1920 x 1920 | the same, above 768px                                |
+
+Each `-desktop` file is served above 768px through a `<picture>`; the plain one
+below it. Three of the pairs — prediction, explore and logo — start out
+identical, because the design reframes one picture with a different box at that
+breakpoint rather than shipping a second export. Replace
+only the `-desktop` half to give the wider layout a crop of its own; leave them
+the same to keep today’s behaviour.
 
 The All 32 Teams file spells this team out so it stays recognisable away from the
 folder — in a downloads pile, or in `dist/`, where the built asset takes its name
