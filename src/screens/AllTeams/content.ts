@@ -1,5 +1,6 @@
 import { ASSETS } from '../../assets/assets'
 import { imagesForTeam } from '../../assets/teamImages'
+import { cmsTeam, image as cmsImage } from '../../data/cms'
 import { TEAMS } from '../../data/teams'
 import type { Conference } from '../../data/teams'
 
@@ -118,6 +119,7 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = TEAMS.map((team, inde
 
   const isDrawnInFigma = index < CARD_VISUALS.length
   const images = imagesForTeam(team.number)
+  const published = cmsTeam(team.number)
 
   return {
     nodeId: isDrawnInFigma ? visual.nodeId : undefined,
@@ -125,10 +127,10 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = TEAMS.map((team, inde
     buttonNodeId: isDrawnInFigma ? visual.buttonNodeId : undefined,
     /* The crop stays the design's either way: a replacement photo is the same
      * size as the one it stands in for, so the measured box frames it too. */
-    image: images.card ?? visual.image,
+    image: cmsImage(published?.card_image, images.card ?? visual.image),
     crop: visual.crop,
-    logo: images.logo,
-    logoDesktop: images.logoDesktop,
+    logo: cmsImage(published?.logo_image, images.logo),
+    logoDesktop: cmsImage(published?.logo_image, images.logoDesktop),
     imageAlt: `${team.name} player portrait`,
     team: team.name,
     conference: team.conference,

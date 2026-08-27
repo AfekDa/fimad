@@ -11,6 +11,7 @@
  * Figma and re-read.
  */
 import { ASSETS } from '../../assets/assets'
+import { CMS_HOME, image, paragraphs, text } from '../../data/cms'
 
 export interface Feature {
   readonly nodeId: string
@@ -49,6 +50,22 @@ export interface HomepageContent {
   readonly social: readonly SocialLink[]
 }
 
+/**
+ * The published feature bullets, one per card, falling back to the design's own
+ * when the CMS has none. The node ids stay the design's: the cards are measured
+ * by them, so a published bullet fills the card it lands on.
+ */
+function featuresFromCms(fallback: readonly Feature[]): readonly Feature[] {
+  const published = (CMS_HOME?.features ?? []).filter((line) => line.trim() !== '')
+
+  if (published.length === 0) return fallback
+
+  return published.map((line, index) => ({
+    nodeId: fallback[index]?.nodeId ?? '',
+    lines: [line],
+  }))
+}
+
 export const HOMEPAGE_CONTENT: HomepageContent = {
   brand: {
     byline: 'Cody Brown’s',
@@ -57,38 +74,40 @@ export const HOMEPAGE_CONTENT: HomepageContent = {
 
   /* 1:91 hero image (desktop 488:1504), 1:95 year mark */
   hero: {
-    poster: ASSETS.heroPoster,
-    posterDesktop: ASSETS.heroPosterDesktop,
+    poster: image(CMS_HOME?.hero_image, ASSETS.heroPoster),
+    posterDesktop: image(CMS_HOME?.hero_image, ASSETS.heroPosterDesktop),
     yearMark: ASSETS.yearMark,
     yearMarkAlt: 'Year 2026-27, sponsored by FanDuel',
   },
 
   /* 1:97 */
-  headline: 'WELCOME TO MY NFL BETTING GUIDE 2026',
+  headline: text(CMS_HOME?.title, 'WELCOME TO MY NFL BETTING GUIDE 2026'),
 
   /* 1:98 */
-  intro: [
+  intro: paragraphs(CMS_HOME?.intro_text, [
     'This is the third straight season I’ve written my guide and this version is by far the best yet. I’ve spent countless hours studying every team so I can give us the best chance of making money this season.',
     'If you’re just discovering me, the main thing you need to know is that absolutely everything I post is free. Here’s a glimpse at what I’ll be sharing with you throughout the NFL season…',
-  ],
+  ]),
 
   /* 1:99 — card 1 (1:100) carries a designed line break. */
-  features: [
+  features: featuresFromCms([
     { nodeId: '1:100', lines: ['Parlays, Flyers and', 'Best Bets for every game week'] },
     { nodeId: '1:103', lines: ['Data Sheets to help you pick your own winners'] },
     { nodeId: '1:106', lines: ['Algorithms to identify the best matchups'] },
     { nodeId: '1:109', lines: ['Giveaways and competitions'] },
-  ],
+  ]),
 
   /* 1:112 — "2025" is what the design says. */
-  outro:
+  outro: text(
+    CMS_HOME?.closing_text,
     'Whether you’re a bettor, a fantasy football player or simply an NFL fan, this guide will give you more knowledge than all your buddies going into the 2025 season. Hope you enjoy it.',
+  ),
 
   /* 1:115 */
   author: {
-    name: 'Cody Brown',
-    avatar: ASSETS.authorAvatar,
-    signature: ASSETS.authorSignature,
+    name: text(CMS_HOME?.author_name, 'Cody Brown'),
+    avatar: image(CMS_HOME?.author_avatar, ASSETS.authorAvatar),
+    signature: image(CMS_HOME?.author_signature, ASSETS.authorSignature),
   },
 
   /* 1:118 — the design defines no destinations for these. */
