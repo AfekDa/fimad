@@ -157,22 +157,37 @@
 }
 
 @media (min-width: 768px) {
+  /*
+   * 27 Aug feedback: "place it behind the nav similar to the mobile version".
+   * Desktop used to drop the scrim entirely and shrink the dock down to the nav
+   * pill, which left the nav floating over fully lit page content -- the reason
+   * the review also reads the copy behind it as competing with it. The dock
+   * goes back to what it is on mobile: a full-width band at the viewport floor
+   * carrying the navy gradient, with the pill positioned inside it.
+   */
   .dock {
     position: fixed;
     top: auto;
-    bottom: var(--desktop-nav-bottom-offset);
-    width: min(700px, calc(100% - 48px));
-    max-width: 700px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: none;
     min-width: 0;
-    height: var(--desktop-nav-height);
-    background: none;
+    height: var(--desktop-nav-scrim-height);
+    transform: none;
+    background: var(--gradient-app-nav-scrim);
   }
 
   .nav {
-    inset: 0;
+    top: auto;
+    left: 50%;
+    right: auto;
+    bottom: var(--desktop-nav-bottom-offset);
+    width: min(700px, calc(100% - 48px));
     height: var(--desktop-nav-height);
     padding: 0 16px 0 32px;
     border-radius: 80px;
+    transform: translateX(-50%);
   }
 
   .items {

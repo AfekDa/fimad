@@ -422,14 +422,11 @@ test.describe('responsive integrity', () => {
       height: 752,
     })
     /*
-     * Rectangle 430 is drawn 36px short of the hero's bottom edge, which
-     * leaves a band of the hero's flat #0078FF overlay showing between the
-     * fade and the navy content. It is run to the edge instead, so its bottom
-     * has to stay pinned to the hero's (see Homepage.module.css).
+     * Rectangle 430 (366:238) used to fade the hero into the navy content. The
+     * 27 Aug review moved that gradient behind the nav, so the hero now ends on
+     * the flat #0078FF its own overlay reaches and nothing is drawn over it.
      */
-    const transitionBox = await page.locator('[data-node-id="366:238"]').boundingBox()
-    expect(transitionBox).not.toBeNull()
-    expect((transitionBox?.y ?? 0) + (transitionBox?.height ?? 0)).toBeCloseTo(752, 0)
+    await expect(page.locator('[data-node-id="366:238"]')).toHaveCount(0)
 
     const heroImage = page.locator('[data-node-id="1:91"] picture img')
     expect(await heroImage.getAttribute('src')).toContain('hero-poster')
@@ -438,7 +435,7 @@ test.describe('responsive integrity', () => {
     )
     expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
       x: 290,
-      y: 612,
+      y: 678,
       width: 700,
       height: 64,
     })
@@ -469,6 +466,49 @@ test.describe('responsive integrity', () => {
 
     const documentWidth = await page.evaluate(() => document.documentElement.scrollWidth)
     expect(documentWidth).toBe(1280)
+  })
+
+  /*
+   * 27 Aug feedback, desktop: "remove the dark blue gradient from the Hero image
+   * and place it behind the nav similar to the mobile version", and put the nav
+   * "closer to the bottom end ... same as mobile". Desktop used to shrink the
+   * dock down to the nav pill and drop the scrim, leaving the pill floating over
+   * fully lit copy two thirds of a nav height off the floor.
+   */
+  test('desktop navigation docks against the viewport floor behind the mobile scrim', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1280, height: 782 })
+
+    for (const path of ['/', '/teams', '/all-bets']) {
+      await page.goto(path)
+      await page.evaluate(() => document.fonts.ready)
+
+      const chrome = await page.locator('[data-app-nav-dock]').evaluate((dock) => {
+        const nav = dock.querySelector<HTMLElement>('[data-app-nav]')
+        if (nav === null) throw new Error('AppNav rendered without its navigation bar')
+
+        const dockBox = dock.getBoundingClientRect()
+        const navBox = nav.getBoundingClientRect()
+
+        return {
+          dock: { x: dockBox.x, width: dockBox.width, bottom: dockBox.bottom, height: dockBox.height },
+          navBottomOffset: window.innerHeight - navBox.bottom,
+          navX: navBox.x,
+          navWidth: navBox.width,
+          scrim: getComputedStyle(dock).backgroundImage,
+        }
+      })
+
+      // The scrim spans the viewport and ends on its floor, as it does on mobile.
+      expect(chrome.dock).toMatchObject({ x: 0, width: 1280, bottom: 782, height: 160 })
+      expect(chrome.scrim).toContain('linear-gradient')
+      expect(chrome.scrim).toContain('rgba(1, 21, 86, 0)')
+      // The mobile --nav-bottom-offset, which is what the review asked for.
+      expect(chrome.navBottomOffset).toBeCloseTo(40, 0)
+      expect(chrome.navX).toBeCloseTo(290, 0)
+      expect(chrome.navWidth).toBeCloseTo(700, 0)
+    }
   })
 
   test('Homepage background and hero cover viewports wider than the Figma frame', async ({ page }) => {
@@ -1090,7 +1130,7 @@ test.describe('responsive integrity', () => {
     }
     expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
       x: 290,
-      y: 612,
+      y: 678,
       width: 700,
       height: 64,
     })
@@ -1200,7 +1240,7 @@ test.describe('responsive integrity', () => {
     expect(headingBox?.y).toBeCloseTo(171, 0)
     expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
       x: 290,
-      y: 612,
+      y: 678,
       width: 700,
       height: 64,
     })
@@ -1235,7 +1275,7 @@ test.describe('responsive integrity', () => {
 
       const nav = page.locator('[data-app-nav]')
       const atTop = await nav.boundingBox()
-      expect(atTop).toMatchObject({ x: 290, y: 612, width: 700, height: 64 })
+      expect(atTop).toMatchObject({ x: 290, y: 678, width: 700, height: 64 })
       await expect(page.locator(`[data-nav-id="${route.current}"]`)).toHaveAttribute(
         'aria-current',
         'page',
@@ -1265,7 +1305,7 @@ test.describe('responsive integrity', () => {
       const nav = await page.locator('[data-app-nav]').boundingBox()
       expect(nav).not.toBeNull()
       expect(nav?.x).toBeCloseTo(290 * scale, 0)
-      expect(nav?.y).toBeCloseTo(viewport.height - (106 + 64) * scale, 0)
+      expect(nav?.y).toBeCloseTo(viewport.height - (40 + 64) * scale, 0)
       expect(nav?.width).toBeCloseTo(700 * scale, 0)
       expect(nav?.height).toBeCloseTo(64 * scale, 0)
     }
@@ -1409,7 +1449,7 @@ test.describe('responsive integrity', () => {
     expect(await awardCards.nth(3).boundingBox()).toMatchObject({ x: 79, y: 511, width: 358, height: 300 })
     expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
       x: 290,
-      y: 612,
+      y: 678,
       width: 700,
       height: 64,
     })
@@ -1499,7 +1539,7 @@ test.describe('responsive integrity', () => {
     })
     expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
       x: 290,
-      y: 612,
+      y: 678,
       width: 700,
       height: 64,
     })
@@ -1551,7 +1591,7 @@ test.describe('responsive integrity', () => {
     })
     expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
       x: 290,
-      y: 612,
+      y: 678,
       width: 700,
       height: 64,
     })

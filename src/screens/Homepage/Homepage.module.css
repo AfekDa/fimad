@@ -132,10 +132,6 @@
   pointer-events: none;
 }
 
-.desktopHeroTransition {
-  display: none;
-}
-
 .heroTitle {
   position: absolute;
   left: 0;
@@ -443,40 +439,14 @@
   }
 
   /*
-   * Rectangle 430 fades the hero into the navy content block. The frame draws
-   * it 218 tall at y 616, so it stops at 834 — 36px short of the hero's own
-   * bottom edge at 870. The hero's overlay (488:1504) is a gradient that
-   * reaches solid #0078FF at 100%, so those 36px are left as a hard band of
-   * flat FanDuel blue between the fade and the content: a stray stripe rather
-   * than a transition. The export shows it too, so it is the frame's own gap,
-   * not a mistranslation.
-   *
-   * The element is run to the hero's bottom edge instead. Its stops are
-   * rescaled so the fade itself still lands exactly where the frame draws it —
-   * the taller box only extends the navy it already ends on, which then meets
-   * .content's navy with no seam.
-   *
-   * Rescaling: stops are fractions of the gradient line, whose length is
-   * |1280·sin A| + |H·cos A| at A = 178.643deg — 248.26 at H 218, 284.25 at
-   * H 254 — and the line is centred on the box, which the extra 36px moves
-   * down by 18. 7.4283% and 95.217% of 248.26 are 18.44 and 236.38; holding
-   * both at the same page position gives 6.48% and 83.15% of 284.25.
+   * Rectangle 430 (366:238) used to be drawn here, fading the hero into the
+   * navy content block. The 27 Aug review asked for it to come off the hero and
+   * go behind the nav instead, which is where the mobile composition puts its
+   * only navy gradient -- see --gradient-app-nav-scrim in AppNav.module.css.
+   * The hero now ends on the flat #0078FF its own overlay (488:1504) reaches at
+   * 100%, meeting .content's navy on a clean edge, which is what the review's
+   * reference capture shows.
    */
-  .desktopHeroTransition {
-    position: absolute;
-    top: 66.223%;
-    bottom: 0;
-    left: 0;
-    z-index: var(--layer-hero-title);
-    display: block;
-    width: 100%;
-    background: linear-gradient(
-      178.64284797333963deg,
-      rgba(1, 21, 86, 0) 6.48%,
-      var(--color-navy) 83.15%
-    );
-    pointer-events: none;
-  }
 
   .heroTitle {
     top: 68.75%;

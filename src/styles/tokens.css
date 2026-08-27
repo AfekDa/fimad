@@ -233,14 +233,30 @@
   --desktop-frame-width: 1280px;
   --desktop-frame-height: 1771px;
   --desktop-hero-height: min(58.75vw, 752px);
-  /* Desktop capture viewport: nav bottom 794, viewport bottom 900. */
-  --desktop-nav-bottom-offset: 106px;
+  /*
+   * 27 Aug feedback: "place the nav bar closer to the bottom end ... same as
+   * mobile". The 106 this replaces read the desktop capture as a 900px
+   * viewport; the frames actually dock the nav flush with the bottom of their
+   * 794px browser mockup (Group 1988 is 794 tall and Desktop Nav sits at
+   * 730 + 64), so the old value floated it two thirds of a nav height too high.
+   * The mobile offset is what the review points at, and it is what the frames
+   * round to.
+   */
+  --desktop-nav-bottom-offset: var(--nav-bottom-offset);
   /* Desktop Nav 803:5318, the component the desktop frames instance. */
   --desktop-nav-height: 64px;
-  /* Desktop counterpart of --nav-clearance: 106 + 64 = 170. */
+  /* Desktop counterpart of --nav-clearance: 40 + 64 = 104. */
   --desktop-nav-clearance: calc(
     var(--desktop-nav-bottom-offset) + var(--desktop-nav-height)
   );
+  /*
+   * Desktop counterpart of --app-nav-scrim-height, which the same review asked
+   * for ("with the dark blue gradient same as mobile"). Mobile's 185 stands
+   * 1.529x its own 121 clearance; holding that proportion over the desktop's
+   * 104 gives 159, so the scrim rises the same share of the nav above the
+   * viewport floor on both.
+   */
+  --desktop-nav-scrim-height: 160px;
   /* Preserve the 1120px Figma content grid while allowing the page itself to
    * span the viewport beyond the 1280px source frame. */
   --desktop-content-inline: max(

@@ -146,10 +146,15 @@ export const SCREENS: readonly ScreenMeta[] = [
      * the 54px status bar the mobile frames draw.
      */
     height: 1097,
-    /* Places the docked nav at 612 = the frame's 730 less the 118px chrome. */
     viewportHeight: 782,
-    /* Desktop Nav 803:5318 is 64 tall at y=730, so 782 - (612 + 64) = 106. */
+    /* Desktop Nav 803:5318 is 64 tall. */
     navHeight: 64,
-    navBottomOffset: 106,
+    /*
+     * The frame docks it at y=730 inside a browser mockup whose own bottom edge
+     * is 794, i.e. flush with the floor. The 27 Aug review asked for the nav to
+     * sit "closer to the bottom end ... same as mobile", so the app draws it at
+     * the mobile 40 instead -- see --desktop-nav-bottom-offset.
+     */
+    navBottomOffset: 40,
   },
 ]
