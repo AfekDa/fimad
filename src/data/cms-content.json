@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-27T14:04:47.824Z",
-  "generated_by": "dhana.pimputkar@verified-global.com",
+  "generated_at": "2026-08-27T14:08:04.661Z",
+  "generated_by": "lobogedtwitchtv@gmail.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
     "intro_text": "This is the third straight season I've written my guide and this version is by far the best yet. I've spent countless hours studying every team so I can give us the best chance of making money this season.\n\nIf you're just discovering me, the main thing you need to know is that absolutely everything I post is free. Here's a glimpse at what I'll be sharing with you throughout the NFL season…",
@@ -55,7 +55,7 @@
       "head_coach": "HEAD COACH TEAM 1",
       "offensive_coordinator": "OFF COORD TEAM 1",
       "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/3240b3a7d_prediction.png",
-      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d6f398fd5_logo.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/a0892bb4e_BaltimoreRavens_Steel.png",
       "running_backs": "TEAM 23 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.",
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cf2f281d9_favorite.png",
       "schedule": [
@@ -174,7 +174,7 @@
       "prediction_text": "Placeholder prediction for TEAM 1. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
       "id": "6a9022875b73b6b687d4f143",
       "created_date": "2026-08-27T11:41:59.899000",
-      "updated_date": "2026-08-27T14:04:39.118000",
+      "updated_date": "2026-08-27T14:07:18.617000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -5035,14 +5035,14 @@
   ],
   "bets": [
     {
-      "bet_url": "",
+      "bet_url": "https://x.com/CodyBrownBets",
       "player_name": "Lamar Jackson",
       "category": "mvp",
       "odds": "+430",
       "order": 1,
       "id": "6a90227d4361d3edaa3fd2f4",
       "created_date": "2026-08-27T11:41:49.792000",
-      "updated_date": "2026-08-27T11:41:49.792000",
+      "updated_date": "2026-08-27T14:08:01.103000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
