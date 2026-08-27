@@ -72,7 +72,7 @@ const { team = BUFFALO_BILLS } = Astro.props
       </picture>
       <div class={styles.heroScrim} aria-hidden="true"></div>
       <div class={styles.heroCopy}>
-        <span class={styles.teamLogo} data-node-id="181:1340">
+        <span class:list={[styles.teamLogo, team.logoIsCms && styles.cmsLogo]} data-node-id="181:1340">
           <picture class={styles.reframedPicture}>
             <source media="(min-width: 768px)" srcset={team.logoDesktop} />
             <img class={styles.teamLogoLeaf} src={team.logo} alt="" aria-hidden="true" />
