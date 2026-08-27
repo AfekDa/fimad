@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-27T15:22:44.023Z",
-  "generated_by": "dhana.pimputkar@verified-global.com",
+  "generated_at": "2026-08-27T15:32:21.714Z",
+  "generated_by": "elad.beraru@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
     "intro_text": "This is the third straight season I've written my guide and this version is by far the best yet. I've spent countless hours studying every team so I can give us the best chance of making money this season.\n\nIf you're just discovering me, the main thing you need to know is that absolutely everything I post is free. Here's a glimpse at what I'll be sharing with you throughout the NFL season…",
@@ -41,12 +41,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/dcd5e086c_Mb_BaltimoreRavens_BlackSteel.png",
       "future_market": "OVER 1000.5 RECEIVING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+1200",
+        "win_total": "11.5",
+        "win_division": "-105",
+        "miss_playoffs": "+240",
+        "win_conference": "+550",
+        "make_playoffs": "-295"
       },
       "defensive_coordinator": "ANTHONY WEAVER",
       "slug": "team-1",
@@ -174,7 +174,7 @@
       "prediction_text": "I have the Ravens narrowly winning the AFC North over the Bengals. I think the Steelers will be slightly less competitive but the Ravens should return to the top of the division with better health and a revamped defense.  ",
       "id": "6a9022875b73b6b687d4f143",
       "created_date": "2026-08-27T11:41:59.899000",
-      "updated_date": "2026-08-27T15:22:36.933000",
+      "updated_date": "2026-08-27T15:30:55.483000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -193,12 +193,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2390bd29f_prediction.png",
       "future_market": "OVER 32.5 PASSING TDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+1800",
+        "win_total": "10.5",
+        "win_division": "+170",
+        "miss_playoffs": "+162",
+        "win_conference": "+900",
+        "make_playoffs": "-194"
       },
       "defensive_coordinator": "DEF COORD TEAM 2",
       "slug": "team-2",
@@ -326,7 +326,7 @@
       "prediction_text": "I have the Bengals making the playoffs but narrowly missing out on the AFC North title to the Ravens. It’s really all on their defense this year, if they can make some good improvements then this team will win more games. Who knows how long they’ll be able to keep this offense together?",
       "id": "6a9022875b73b6b687d4f144",
       "created_date": "2026-08-27T11:41:59.899000",
-      "updated_date": "2026-08-27T15:06:38.745000",
+      "updated_date": "2026-08-27T15:30:55.708000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -345,12 +345,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c059af25f_prediction.png",
       "future_market": "OVER 600.5 RECEIVING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+25000",
+        "win_total": "5.5",
+        "win_division": "+2200",
+        "miss_playoffs": "-950",
+        "win_conference": "+12500",
+        "make_playoffs": "+640"
       },
       "defensive_coordinator": "DEF COORD TEAM 3",
       "slug": "team-3",
@@ -478,7 +478,7 @@
       "prediction_text": "Another tough year ahead for the Browns in my opinion. This will be Deshaun Watson’s final year of his contract but I wouldn’t be surprised to see at least three different starting QBs throughout the year. Their defense is not as good without Garrett and they’ll struggle to win too many games.",
       "id": "6a9022875b73b6b687d4f145",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:08:48.051000",
+      "updated_date": "2026-08-27T15:30:56.283000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -497,12 +497,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cac9e8a94_prediction.png",
       "future_market": "UNDER 20.5 PASSING TDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+6500",
+        "win_total": "7.5",
+        "win_division": "+550",
+        "miss_playoffs": "-200",
+        "win_conference": "+2700",
+        "make_playoffs": "+166"
       },
       "defensive_coordinator": "DEF COORD TEAM 4",
       "slug": "team-4",
@@ -630,7 +630,7 @@
       "prediction_text": "I think it’ll be a year of slight regression for the Steelers. They have a decent roster and their defense is always scary, but Mike Tomlin is gone and it’s a period of change. I don’t think Aaron Rodgers has the ability to win them games with his own arm anymore.",
       "id": "6a9022875b73b6b687d4f146",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:08:52.137000",
+      "updated_date": "2026-08-27T15:30:56.534000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -649,12 +649,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/acb27a499_prediction.png",
       "future_market": "10+ RUSHING TDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+700",
+        "win_total": "10.5",
+        "win_division": "-290",
+        "miss_playoffs": "+260",
+        "win_conference": "+340",
+        "make_playoffs": "-320"
       },
       "defensive_coordinator": "DEF COORD TEAM 5",
       "slug": "team-5",
@@ -782,7 +782,7 @@
       "prediction_text": "I have the Bills marginally winning the AFC East. Josh Allen can win games on his own talent and they’ve added a few nice pieces for him to improve. If their run defense tightens up and DJ Moore performs, they should be a challenger for the Super Bowl.",
       "id": "6a9022875b73b6b687d4f147",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:09:47.152000",
+      "updated_date": "2026-08-27T15:30:56.783000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -801,12 +801,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c6ac29905_prediction.png",
       "future_market": "OVER 975.5 RUSHING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+10000",
+        "win_total": "4.5",
+        "win_division": "+750",
+        "miss_playoffs": "-4000",
+        "win_conference": "+4100",
+        "make_playoffs": "+1500"
       },
       "defensive_coordinator": "DEF COORD TEAM 6",
       "slug": "team-6",
@@ -934,7 +934,7 @@
       "prediction_text": "This could get ugly. The Dolphins just don’t have enough talent to compete and they also have a completely new system. It’s going to be a steep learning curve. Having the Patriots and Bills in the Division doesn’t help either.",
       "id": "6a9022875b73b6b687d4f148",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:09:47.354000",
+      "updated_date": "2026-08-27T15:30:57.126000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -953,12 +953,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/63c4c8228_prediction.png",
       "future_market": "OVER 700.5 RUSHING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+1700",
+        "win_total": "9.5",
+        "win_division": "+130",
+        "miss_playoffs": "+176",
+        "win_conference": "+800",
+        "make_playoffs": "-210"
       },
       "defensive_coordinator": "DEF COORD TEAM 7",
       "slug": "team-7",
@@ -1086,7 +1086,7 @@
       "prediction_text": "I think there will be some regression from last year’s 14-3 record and Super Bowl appearance. They have a much harder schedule than last year. I am still a big fan of this team though and they’ve arguably gotten better in the off-season with the addition of AJ Brown and Drake Maye going into his third year.",
       "id": "6a9022875b73b6b687d4f149",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:10:48.359000",
+      "updated_date": "2026-08-27T15:30:57.383000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1105,12 +1105,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/8fee0df83_prediction.png",
       "future_market": "OVER 975.5 RECEIVING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+25000",
+        "win_total": "5.5",
+        "win_division": "+1900",
+        "miss_playoffs": "-1200",
+        "win_conference": "+12000",
+        "make_playoffs": "+750"
       },
       "defensive_coordinator": "DEF COORD TEAM 8",
       "slug": "team-8",
@@ -1238,7 +1238,7 @@
       "prediction_text": "Look away Jets fans. Whilst this is the equal worst record I have predicted for any team this season, I think there will be some positives. They’ve drafted some nice talent and this is clearly a bridge year before hopefully drafting a good quarterback at the end of the season.",
       "id": "6a9022875b73b6b687d4f14a",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:10:49.228000",
+      "updated_date": "2026-08-27T15:30:57.604000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1257,12 +1257,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f1ae95c13_prediction.png",
       "future_market": "OVER 7.5 RUSHING TDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+1600",
+        "win_total": "9.5",
+        "win_division": "+110",
+        "miss_playoffs": "+160",
+        "win_conference": "+1200",
+        "make_playoffs": "-190"
       },
       "defensive_coordinator": "DEF COORD TEAM 9",
       "slug": "team-9",
@@ -1390,7 +1390,7 @@
       "prediction_text": "I have the Texans as a playoff team, mostly based off their defense. It’s an elite unit that is hard to score against. This record could definitely improve if CJ Stroud recaptures his rookie season form. It’s not an easy division with the Jags, Colts and Titans all capable of beating eachother.",
       "id": "6a9022875b73b6b687d4f14b",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:14:35.815000",
+      "updated_date": "2026-08-27T15:30:57.816000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1409,12 +1409,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e011c18d8_prediction.png",
       "future_market": "OVER 3750.5 PASSING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+3000",
+        "win_total": "8.5",
+        "win_division": "+220",
+        "miss_playoffs": "-112",
+        "win_conference": "+1400",
+        "make_playoffs": "-104"
       },
       "defensive_coordinator": "DEF COORD TEAM 10",
       "slug": "team-10",
@@ -1542,7 +1542,7 @@
       "prediction_text": "I have the Jags winning the AFC South as much as that pains me to say. They have an elite passing attack and if Trevor Lawrence can maintain his play from the back end of last season, they’ll be in a great spot. Should be a good playoff team once again.",
       "id": "6a9022875b73b6b687d4f14c",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:14:36.073000",
+      "updated_date": "2026-08-27T15:30:58.281000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1561,12 +1561,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ce2244436_prediction.png",
       "future_market": "OVER 3250.5 PASSING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+17000",
+        "win_total": "5.5",
+        "win_division": "+650",
+        "miss_playoffs": "-520",
+        "win_conference": "+8000",
+        "make_playoffs": "+390"
       },
       "defensive_coordinator": "DEF COORD TEAM 11",
       "slug": "team-11",
@@ -1694,7 +1694,7 @@
       "prediction_text": "Some significant improvement from their 3-14 season in 2025, but still a fairly tough year. There will be improvements from Ward and lots of promising signs throughout the year, but this team is not ready to contend yet.",
       "id": "6a9022875b73b6b687d4f14d",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:14:36.253000",
+      "updated_date": "2026-08-27T15:30:58.560000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1713,12 +1713,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5b62aa05f_prediction.png",
       "future_market": "OVER 750.5 RECEIVING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+5000",
+        "win_total": "7.5",
+        "win_division": "+360",
+        "miss_playoffs": "-185",
+        "win_conference": "+2500",
+        "make_playoffs": "+156"
       },
       "defensive_coordinator": "DEF COORD TEAM 12",
       "slug": "team-12",
@@ -1846,7 +1846,7 @@
       "prediction_text": "I wanted to give them a few more wins but this is a tough division with the Jags and Texans looking dangerous. I still think it will be a winning season, but there is just a lot of unknown with Daniel Jones returning from his torn achilles and the receiver room looking pretty thin with Alec Pierce still not cleared.",
       "id": "6a9022875b73b6b687d4f14e",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:14:36.598000",
+      "updated_date": "2026-08-27T15:30:58.788000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1865,12 +1865,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d4ae60ed1_prediction.png",
       "future_market": "1000+ RECEIVING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+2000",
+        "win_total": "9.5",
+        "win_division": "+210",
+        "miss_playoffs": "+122",
+        "win_conference": "+950",
+        "make_playoffs": "-144"
       },
       "defensive_coordinator": "DEF COORD TEAM 13",
       "slug": "team-13",
@@ -1998,7 +1998,7 @@
       "prediction_text": "The Broncos went an amazing 14-3 last season but it feels like they were never really rated as a true Super Bowl threat. Bo Nix is back healthy and he could go to another level in his third season. I have them winning the AFC West again and it’s not bad odds at +210.",
       "id": "6a9022875b73b6b687d4f14f",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:14:36.840000",
+      "updated_date": "2026-08-27T15:30:59.163000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2017,12 +2017,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/55d8163a9_prediction.png",
       "future_market": "1000+ RUSHING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+1600",
+        "win_total": "10.5",
+        "win_division": "+175",
+        "miss_playoffs": "+158",
+        "win_conference": "+750",
+        "make_playoffs": "-188"
       },
       "defensive_coordinator": "DEF COORD TEAM 14",
       "slug": "team-14",
@@ -2150,7 +2150,7 @@
       "prediction_text": "I have the Chiefs returning to a winning record after a horror 6-11 2025 season. Mahomes is back and they have got a really solid RB1 in Kenneth Walker to lean the run game on. Its not an easy division but I think this team is too talented to not have a winning record this season. The receiver room is a slight worry though.",
       "id": "6a9022875b73b6b687d4f150",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:14:37.186000",
+      "updated_date": "2026-08-27T15:30:59.537000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2169,12 +2169,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/238e0f3d7_prediction.png",
       "future_market": "",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+15000",
+        "win_total": "5.5",
+        "win_division": "+1500",
+        "miss_playoffs": "-720",
+        "win_conference": "+7000",
+        "make_playoffs": "+520"
       },
       "defensive_coordinator": "DEF COORD TEAM 15",
       "slug": "team-15",
@@ -2302,7 +2302,7 @@
       "prediction_text": "Prediction",
       "id": "6a9022875b73b6b687d4f151",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:14:39.543000",
+      "updated_date": "2026-08-27T15:30:59.824000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2321,12 +2321,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/86ebe6ff0_prediction.png",
       "future_market": "OVER 875.5 RECEIVING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+1700",
+        "win_total": "10.5",
+        "win_division": "+190",
+        "miss_playoffs": "+138",
+        "win_conference": "+850",
+        "make_playoffs": "-166"
       },
       "defensive_coordinator": "DEF COORD TEAM 16",
       "slug": "team-16",
@@ -2454,7 +2454,7 @@
       "prediction_text": "I have the Chargers finishing second behind the Broncos in the AFC West. If they can stay healthy, especially with the offensive line, then this team has a really high ceiling. There aren’t too many weaknesses across the board and they are well coached as well. Exciting times for the Chargers.",
       "id": "6a9022875b73b6b687d4f152",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:14:39.895000",
+      "updated_date": "2026-08-27T15:31:00.154000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2473,12 +2473,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e30f7df09_prediction.png",
       "future_market": "10+ RECEIVING TOUCHDOWNS (-110)",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+1800",
+        "win_total": "10.5",
+        "win_division": "+150",
+        "miss_playoffs": "+176",
+        "win_conference": "+900",
+        "make_playoffs": "-210"
       },
       "defensive_coordinator": "DEF COORD TEAM 17",
       "slug": "team-17",
@@ -2606,7 +2606,7 @@
       "prediction_text": "The Lions have one of the easier schedules in the NFL, despite having a tough division. Their offense is extremely powerful and Jahmyr Gibbs could produce a massive season. If their defense holds up, they should return to the playoffs.",
       "id": "6a9022875b73b6b687d4f153",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:14:40.089000",
+      "updated_date": "2026-08-27T15:27:52.270000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2625,12 +2625,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/12a8a31f8_prediction.png",
       "future_market": "4TH IN THE NFC NORTH (+165)",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+4000",
+        "win_total": "8.5",
+        "win_division": "+470",
+        "miss_playoffs": "-178",
+        "win_conference": "+2200",
+        "make_playoffs": "+150"
       },
       "defensive_coordinator": "DEF COORD TEAM 18",
       "slug": "team-18",
@@ -2758,7 +2758,7 @@
       "prediction_text": "The Vikings will improve with Kyler Murray at quarterback, but they will struggle to have a winning record in this division. They’ve got a nice defense and some great offensive pieces, but the teams around them are just better at this stage.",
       "id": "6a9022875b73b6b687d4f154",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:14:40.266000",
+      "updated_date": "2026-08-27T15:27:52.453000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2777,12 +2777,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/07119cdca_prediction.png",
       "future_market": "OVER 750.5 RECEIVING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+2200",
+        "win_total": "9.5",
+        "win_division": "+260",
+        "miss_playoffs": "-104",
+        "win_conference": "+1100",
+        "make_playoffs": "-116"
       },
       "defensive_coordinator": "DEF COORD TEAM 19",
       "slug": "team-19",
@@ -2910,7 +2910,7 @@
       "prediction_text": "As mentioned earlier, their divisional games will be absolutely crucial. I think the Packers will be a playoff team once again and they’ll get a nice boost defensively when Micah Parsons returns from injury.",
       "id": "6a9022875b73b6b687d4f155",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:14:40.422000",
+      "updated_date": "2026-08-27T15:27:52.647000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2929,12 +2929,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/392045049_prediction.png",
       "future_market": "OVER RECEIVING",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+2700",
+        "win_total": "9.5",
+        "win_division": "+320",
+        "miss_playoffs": "-126",
+        "win_conference": "+1300",
+        "make_playoffs": "+108"
       },
       "defensive_coordinator": "DEF COORD TEAM 20",
       "slug": "team-20",
@@ -3062,7 +3062,7 @@
       "prediction_text": "I think the Bears are a big chance of winning the NFC North (currently third favorite at +320). Ben Johnson enters his second year and this offense is shaping up nicely with Caleb Williams. If they can get more stops, they’ll be a good team.",
       "id": "6a9022875b73b6b687d4f156",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:14:40.652000",
+      "updated_date": "2026-08-27T15:31:52.254000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -3081,12 +3081,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5fc217932_prediction.png",
       "future_market": "7-9-1 RECORD FROM LAST SEASON",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+2200",
+        "win_total": "9.5",
+        "win_division": "+195",
+        "miss_playoffs": "-108",
+        "win_conference": "+1200",
+        "make_playoffs": "-108"
       },
       "defensive_coordinator": "DEF COORD TEAM 21",
       "slug": "team-21",
@@ -3214,7 +3214,7 @@
       "prediction_text": "Prediction",
       "id": "6a9022875b73b6b687d4f157",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:15:04.075000",
+      "updated_date": "2026-08-27T15:27:53.398000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -3233,12 +3233,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c4a2a0a1e_prediction.png",
       "future_market": "O5.5 RUSHING TOUCHDOWNS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+6000",
+        "win_total": "7.5",
+        "win_division": "+550",
+        "miss_playoffs": "-320",
+        "win_conference": "+3300",
+        "make_playoffs": "+260"
       },
       "defensive_coordinator": "DEF COORD TEAM 22",
       "slug": "team-22",
@@ -3366,7 +3366,7 @@
       "prediction_text": "There’s plenty of reason for optimism for the Giants but I don’t think it will all come together immediately. The Harbaugh era is exciting and Jaxson Dart could take another leap, although he needs to look after himself a little more in my opinion.",
       "id": "6a9022875b73b6b687d4f158",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:15:04.302000",
+      "updated_date": "2026-08-27T15:27:53.601000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -3385,12 +3385,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/74a422142_prediction.png",
       "future_market": "OVER 1025.5 RECEIVING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+1700",
+        "win_total": "10.5",
+        "win_division": "+115",
+        "miss_playoffs": "+146",
+        "win_conference": "+850",
+        "make_playoffs": "-174"
       },
       "defensive_coordinator": "DEF COORD TEAM 23",
       "slug": "team-23",
@@ -3518,7 +3518,7 @@
       "prediction_text": "The Eagles are just a well rounded team that are hard to bet against. Jalen Hurts is a good game manager but he can also put up big numbers when required. I think the loss of AJ Brown isn’t going to hurt them that much as this team loves to run the ball. DeVonta Smith could be set for a big year too. They should win the NFC East.",
       "id": "6a9022875b73b6b687d4f159",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:15:05.226000",
+      "updated_date": "2026-08-27T15:27:53.805000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -3537,12 +3537,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/da58949f8_prediction.png",
       "future_market": "WINS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+8000",
+        "win_total": "7.5",
+        "win_division": "+650",
+        "miss_playoffs": "-360",
+        "win_conference": "+3500",
+        "make_playoffs": "+290"
       },
       "defensive_coordinator": "DEF COORD TEAM 24",
       "slug": "team-24",
@@ -3670,7 +3670,7 @@
       "prediction_text": "This might feel a little low but I don’t rate many offensive players on this Commanders team. Jayden Daniels has a lot of potential but they haven’t surrounded him with enough talent at this stage. Their defense is fine, but I think they lose most divisional games and will struggle overall. No playoffs again in my opinion.",
       "id": "6a9022875b73b6b687d4f15a",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:15:05.428000",
+      "updated_date": "2026-08-27T15:27:54.030000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -3689,12 +3689,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9c94d3ce1_prediction.png",
       "future_market": "10+ RUSHING TDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+8000",
+        "win_total": "6.5",
+        "win_division": "+310",
+        "miss_playoffs": "-270",
+        "win_conference": "+3500",
+        "make_playoffs": "+220"
       },
       "defensive_coordinator": "DEF COORD TEAM 25",
       "slug": "team-25",
@@ -3822,7 +3822,7 @@
       "prediction_text": "The Falcons finished 8-9 last year and I think they’ll be around a similar mark. They definitely have good offensive weapons but I’m not sure if Kevin Stefanski will be able to make them a real threat. The division is very even and while I don’t think any of the four teams in the NFC South are that good, I probably have Atlanta close to the bottom.",
       "id": "6a9022875b73b6b687d4f15b",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:15:05.599000",
+      "updated_date": "2026-08-27T15:27:54.355000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -3841,12 +3841,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/fa911a25c_prediction.png",
       "future_market": "OVER 950.5 RECEIVING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+8000",
+        "win_total": "6.5",
+        "win_division": "+320",
+        "miss_playoffs": "-290",
+        "win_conference": "+4000",
+        "make_playoffs": "+235"
       },
       "defensive_coordinator": "DEF COORD TEAM 26",
       "slug": "team-26",
@@ -3974,7 +3974,7 @@
       "prediction_text": "I think the Panthers will compete well again and are definitely a chance to go back to back winning this division. They showed some great fight in their playoff loss to the Rams last season and that will give them great confidence heading into this year. A lot rests on Bryce Young improving again but they do have some nice offensive weapons around him now.",
       "id": "6a9022875b73b6b687d4f15c",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:15:05.767000",
+      "updated_date": "2026-08-27T15:27:54.552000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -3993,12 +3993,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/7a7982aa4_prediction.png",
       "future_market": "OVER 750.5 RECEIVING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+8000",
+        "win_total": "7.5",
+        "win_division": "+250",
+        "miss_playoffs": "-215",
+        "win_conference": "+3500",
+        "make_playoffs": "+180"
       },
       "defensive_coordinator": "DEF COORD TEAM 27",
       "slug": "team-27",
@@ -4126,7 +4126,7 @@
       "prediction_text": "I have the Saints winning the NFC South at 9-8. It’s a division where I have all four teams within two wins of eachother, I think it’s really close. If Shough can build on his strong rookie season then they are a big chance to win more games again. Tyson is an exciting rookie and Travis Etienne should be a good addition at running back too.",
       "id": "6a9022875b73b6b687d4f15d",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:15:05.942000",
+      "updated_date": "2026-08-27T15:27:54.747000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -4145,12 +4145,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f9890b5c2_prediction.png",
       "future_market": "OVER 900.5 RECEIVING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+5000",
+        "win_total": "7.5",
+        "win_division": "+200",
+        "miss_playoffs": "-172",
+        "win_conference": "+2500",
+        "make_playoffs": "+144"
       },
       "defensive_coordinator": "DEF COORD TEAM 28",
       "slug": "team-28",
@@ -4278,7 +4278,7 @@
       "prediction_text": "There is a lot of change at the Bucs and I’m worried about their defense this season. They could leak some big scores and while their offense is solid, they’re probably only a couple of injuries away from struggling. Mike Evans is a big loss although I expect Emeka Egbuka to have a big year. Anyone in this division could win it really.",
       "id": "6a9022875b73b6b687d4f15e",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:15:06.104000",
+      "updated_date": "2026-08-27T15:27:54.912000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -4297,12 +4297,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/82e1c275f_prediction.png",
       "future_market": "YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+100000",
+        "win_total": "3.5",
+        "win_division": "+1300",
+        "miss_playoffs": "-4500",
+        "win_conference": "+15000",
+        "make_playoffs": "+1600"
       },
       "defensive_coordinator": "DEF COORD TEAM 29",
       "slug": "team-29",
@@ -4430,7 +4430,7 @@
       "prediction_text": "I honestly don’t see where the Cardinals get a win in their first 13 games. They have one of the hardest schedules in football and this team is not ready to compete now. They might put up some decent offensive numbers but I can’t see them winning more than 3-4 games.",
       "id": "6a9022875b73b6b687d4f15f",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:15:06.382000",
+      "updated_date": "2026-08-27T15:27:55.058000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -4449,12 +4449,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/55fac3c44_prediction.png",
       "future_market": "THE NFC WEST. AS MENTIONED, THIS TEAM JUST DOESN’T HAVE ANY WEAKNESSES. IF THEY STAY HEALTHY IT’S HARD TO SEE MANY TEAMS COMING CLOSE. THEY FACE THE REINING CHAMPION SEAHAWKS TWICE IN THIS DIVISION AS WELL AS THE NINERS BUT I THINK THEY’LL WIN MOST OF THEIR OTHER GAMES AND SHOULD CLAIM THE NFC WEST",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+500",
+        "win_total": "11.5",
+        "win_division": "-115",
+        "miss_playoffs": "+410",
+        "win_conference": "+280",
+        "make_playoffs": "-550"
       },
       "defensive_coordinator": "DEF COORD TEAM 30",
       "slug": "team-30",
@@ -4582,7 +4582,7 @@
       "prediction_text": "This team is stacked all around and it gets even scarier if  Aaron Donald decides to come out of retirement. They are just a well rounded team and they have plenty of experience, plus are well coached. I think they win the NFC West and are rightfully favorites for the Super Bowl.",
       "id": "6a9022875b73b6b687d4f160",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:15:06.847000",
+      "updated_date": "2026-08-27T15:27:55.219000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -4601,12 +4601,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b09750df2_prediction.png",
       "future_market": "OVER 6.5 RECEIVING TDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+1800",
+        "win_total": "9.5",
+        "win_division": "+340",
+        "miss_playoffs": "+116",
+        "win_conference": "+900",
+        "make_playoffs": "-136"
       },
       "defensive_coordinator": "DEF COORD TEAM 31",
       "slug": "team-31",
@@ -4734,7 +4734,7 @@
       "prediction_text": "If healthy, this team is a real playoff contender. Unfortunately there is just too much unknown for me to give them a better record. Christian McCaffrey, Brock Purdy, Mike Evans and co give them a great offensive core but all of them have injury history. This division is incredibly tough as well with the Rams and Seahawks to play twice.",
       "id": "6a9022875b73b6b687d4f161",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:15:07.067000",
+      "updated_date": "2026-08-27T15:27:55.432000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -4753,12 +4753,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e85f0d093_prediction.png",
       "future_market": "OVER 475.5 RECEIVING YARDS",
       "lines": {
-        "win_superbowl": "+750",
-        "win_total": "12.5",
-        "win_division": "-270",
-        "miss_playoffs": "+540",
-        "win_conference": "+360",
-        "make_playoffs": "-850"
+        "win_superbowl": "+1100",
+        "win_total": "10.5",
+        "win_division": "+220",
+        "miss_playoffs": "+180",
+        "win_conference": "+600",
+        "make_playoffs": "-215"
       },
       "defensive_coordinator": "DEF COORD TEAM 32",
       "slug": "team-32",
@@ -4886,7 +4886,7 @@
       "prediction_text": "I have the Seahawks challenging again for the Super Bowl and NFC West. This team has an incredible defense, most of which they kept since last year. I do think JSN will be clamped up a little more and the loss of Klint Kubiak will hurt their offense too. It’s a well rounded team that should challenge, but I don’t think they will go back to back.",
       "id": "6a9022875b73b6b687d4f162",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:15:07.324000",
+      "updated_date": "2026-08-27T15:27:55.695000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     }
