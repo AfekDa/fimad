@@ -277,6 +277,16 @@
   max-width: none;
 }
 
+/* A CMS mark is not the design's lockup export, so it is not reframed. */
+.cmsLogo .teamLogoLeaf {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
 .teamName,
 .exploreTeamName {
   font-family: var(--font-family-display);
