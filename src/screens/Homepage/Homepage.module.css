@@ -468,7 +468,16 @@
 
   .content {
     display: block;
-    padding: 56px var(--desktop-content-inline) 91px;
+    /*
+     * 27 Aug feedback: "make the links section end before the nav, avoid the
+     * overlap". The frame's own tail is 91, which is shorter than the docked
+     * nav's 104 clearance, so at the end of the scroll the pill landed on the
+     * footer row -- between the signature and the social links. The floor keeps
+     * the frame's tail if the clearance ever drops below it, and the --space-32
+     * past it is the gap the review's reference capture shows between the two.
+     */
+    padding: 56px var(--desktop-content-inline)
+      calc(max(91px, var(--desktop-nav-clearance)) + var(--space-32));
   }
 
   .title {

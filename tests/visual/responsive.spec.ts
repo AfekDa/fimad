@@ -469,6 +469,43 @@ test.describe('responsive integrity', () => {
   })
 
   /*
+   * 27 Aug feedback, desktop: "make the links section end before the nav,
+   * avoid the overlap". The frame's own 91px tail is shorter than the nav's
+   * clearance, so at the end of the scroll the pill landed inside the footer
+   * row, between the signature and the social links.
+   */
+  test('Homepage ends its footer clear of the docked nav on desktop', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 782 })
+    await page.goto('/')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+      await Promise.all(
+        Array.from(document.images).map((image) => image.decode().catch(() => undefined)),
+      )
+    })
+    await page.evaluate(() => {
+      window.scrollTo(0, document.documentElement.scrollHeight)
+    })
+
+    const tail = await page.evaluate(() => {
+      const footer = document.querySelector('[data-node-id="1:114"]')
+      const nav = document.querySelector('[data-app-nav]')
+      if (footer === null || nav === null) throw new Error('Homepage is missing its footer or nav')
+
+      const footerBox = footer.getBoundingClientRect()
+
+      return {
+        gapToNav: nav.getBoundingClientRect().top - footerBox.bottom,
+        fromPageEnd: window.innerHeight - footerBox.bottom,
+      }
+    })
+
+    // --desktop-nav-clearance (104) plus the --space-32 the reference shows.
+    expect(tail.fromPageEnd).toBeCloseTo(136, 0)
+    expect(tail.gapToNav).toBeGreaterThan(24)
+  })
+
+  /*
    * 27 Aug feedback, desktop: "remove the dark blue gradient from the Hero image
    * and place it behind the nav similar to the mobile version", and put the nav
    * "closer to the bottom end ... same as mobile". Desktop used to shrink the
