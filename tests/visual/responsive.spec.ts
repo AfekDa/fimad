@@ -957,6 +957,38 @@ test.describe('responsive integrity', () => {
     }
   })
 
+  /*
+   * 27 Aug feedback, desktop: "make the cards end before the Nav so that there
+   * is no overlap". Frame 390:1337 ends flush with the last Explore card, so at
+   * the end of the scroll the docked pill sat on the carousel.
+   */
+  test('Individual Team ends its Explore cards clear of the desktop nav', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 782 })
+    await page.goto('/teams/buffalo-bills')
+    await page.evaluate(() => document.fonts.ready)
+    await page.evaluate(() => {
+      window.scrollTo(0, document.documentElement.scrollHeight)
+    })
+
+    const tail = await page.evaluate(() => {
+      const nav = document.querySelector('[data-app-nav]')
+      const cards = [...document.querySelectorAll('[data-node-id="181:1446"] article')]
+      if (nav === null || cards.length === 0) {
+        throw new Error('Individual Team is missing its nav or Explore cards')
+      }
+
+      return {
+        cardCount: cards.length,
+        gapToNav:
+          nav.getBoundingClientRect().top -
+          Math.max(...cards.map((card) => card.getBoundingClientRect().bottom)),
+      }
+    })
+
+    expect(tail.cardCount).toBeGreaterThan(1)
+    expect(tail.gapToNav).toBeGreaterThan(24)
+  })
+
   test('Individual Team ends clear of the docked nav', async ({ page }) => {
     await page.setViewportSize({ width: 430, height: 932 })
     await page.goto('/teams/team-1')
@@ -1255,7 +1287,9 @@ test.describe('responsive integrity', () => {
 
     const pageBox = await page.locator('[data-desktop-node-id="390:1337"]').boundingBox()
     expect(pageBox).toMatchObject({ x: 0, y: 0, width: 1280 })
-    near(pageBox?.height, 4761)
+    // The frame's 4761 plus the nav-clearing tail (104 + 32) the 27 Aug
+    // review asked for -- frame 390:1337 ends flush with the Explore cards.
+    near(pageBox?.height, 4897)
 
     for (const section of [
       { id: '390:1741', y: 0, height: 147, contentDriven: false },

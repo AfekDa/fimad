@@ -1034,9 +1034,14 @@
 @media (min-width: 768px) {
   .page {
     min-height: var(--desktop-individual-team-frame-height);
-    /* The desktop nav overlapping the page tail is its own review item; this
-     * clearance is the mobile one and does not belong to that frame. */
-    padding-bottom: 0;
+    /*
+     * 27 Aug feedback: "make the cards end before the Nav so that there is no
+     * overlap". Frame 390:1337 ends flush with the last Explore card (4761 is
+     * the explore section's own bottom edge), so at the end of the scroll the
+     * docked pill sat on the carousel. Same tail the desktop Homepage takes:
+     * the nav's clearance plus 32 of air between it and the cards.
+     */
+    padding-bottom: calc(var(--desktop-nav-clearance) + var(--space-32));
   }
 
   /* The desktop frame scrolls its header away with the page. */
