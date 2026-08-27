@@ -242,19 +242,39 @@
     filter: brightness(0);
   }
 
-  .searchLabel {
+  .searchInput {
+    flex: 1 1 auto;
+    min-width: 0;
     width: 120px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: inherit;
     font-family: var(--font-family-base);
     font-size: 10px;
     line-height: 15px;
     font-weight: 400;
   }
 
+  .searchInput::placeholder {
+    color: inherit;
+    opacity: 1;
+  }
+
+  .searchInput::-webkit-search-cancel-button {
+    display: none;
+  }
+
   .searchClear {
     position: relative;
     width: 20px;
     height: 20px;
+    padding: 0;
+    border: 0;
+    background: none;
     flex-shrink: 0;
+    cursor: pointer;
   }
 
   .searchClearRing,

@@ -69,13 +69,56 @@ function isCurrent(href: string): boolean {
       }
     </div>
 
-    <span class={styles.desktopSearch} aria-hidden="true" data-desktop-nav-search>
+    <form class={styles.desktopSearch} role="search" data-desktop-nav-search>
       <img class={styles.searchIcon} src={ASSETS.teamsIconSearch} alt="" aria-hidden="true" />
-      <span class={styles.searchLabel}>Search...</span>
-      <span class={styles.searchClear}>
+      <input
+        class={styles.searchInput}
+        type="search"
+        placeholder="Search team"
+        aria-label="Search team"
+        autocomplete="off"
+        data-nav-team-search
+      />
+      <button class={styles.searchClear} type="reset" aria-label="Clear team search">
         <img class={styles.searchClearRing} src={ASSETS.teamsClearRing} alt="" aria-hidden="true" />
         <img class={styles.searchClearCross} src={ASSETS.teamsClearCross} alt="" aria-hidden="true" />
-      </span>
-    </span>
+      </button>
+    </form>
   </nav>
 </div>
+
+<script>
+  import { TEAMS } from '../../data/teams'
+
+  /*
+   * The nav search takes the user to a team page on an EXACT name match only
+   * (27 Aug feedback: desktop search did not work at all). Anything short of a
+   * full team name changes nothing -- the field is a navigator, not a filter,
+   * because the nav is global and has no card list of its own to narrow.
+   */
+  function startNavTeamSearch() {
+    const search = document.querySelector<HTMLInputElement>('[data-nav-team-search]')
+
+    // The nav is on every route, but astro:page-load re-runs this per swap, so
+    // the listener must only ever bind to the document currently on screen.
+    if (search === null || search.dataset.wired === 'true') return
+    search.dataset.wired = 'true'
+
+    function navigateOnExactMatch() {
+      if (search === null) return
+      const query = search.value.trim().toLocaleLowerCase()
+      if (query.length === 0) return
+
+      const team = TEAMS.find((candidate) => candidate.name.toLocaleLowerCase() === query)
+      if (team !== undefined) window.location.assign(team.href)
+    }
+
+    search.addEventListener('input', navigateOnExactMatch)
+    search.form?.addEventListener('submit', (event) => {
+      event.preventDefault()
+      navigateOnExactMatch()
+    })
+  }
+
+  document.addEventListener('astro:page-load', startNavTeamSearch)
+</script>

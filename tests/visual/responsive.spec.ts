@@ -1818,25 +1818,25 @@ test.describe('responsive integrity', () => {
     expect(pickBox?.width).toBeCloseTo(168, 0)
     // Two 26px lines against the frame's 43 trimmed box.
     expect(pickBox?.height ?? 0).toBeLessThan(60)
-    const firstBetButton = firstBet.getByRole('button', {
-      name: 'Place bet on Lamar Jackson at +430',
+    // The CTA is an <a> when the CMS publishes a bet URL and a <button> when it
+    // does not, so it is located by its accessible name rather than its role.
+    const firstBetButton = firstBet.getByLabel('Place bet on Lamar Jackson at +430', {
       exact: true,
     })
     await expect(firstBetButton).toBeVisible()
-    expect(await firstBetButton.boundingBox()).toMatchObject({
-      x: 280,
-      y: 377.5,
-      width: 141,
-      height: 36,
-    })
+    // WebKit lays the card out 1/64px shy of Chromium, so no exact matches here.
+    const firstBetButtonBox = await firstBetButton.boundingBox()
+    expect(firstBetButtonBox?.x).toBeCloseTo(280, 0)
+    expect(firstBetButtonBox?.y).toBeCloseTo(377.5, 0)
+    expect(firstBetButtonBox?.width).toBeCloseTo(141, 0)
+    expect(firstBetButtonBox?.height).toBeCloseTo(36, 0)
     const desktopFutureCards = page.locator('[data-desktop-bet-card]')
     await expect(desktopFutureCards).toHaveCount(21)
-    expect(await desktopFutureCards.first().boundingBox()).toMatchObject({
-      x: 80,
-      y: 1338,
-      width: 357,
-      height: 75,
-    })
+    const firstFutureBox = await desktopFutureCards.first().boundingBox()
+    expect(firstFutureBox?.x).toBeCloseTo(80, 0)
+    expect(firstFutureBox?.y).toBeCloseTo(1338, 0)
+    expect(firstFutureBox?.width).toBeCloseTo(357, 0)
+    expect(firstFutureBox?.height).toBeCloseTo(75, 0)
     expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
       x: 290,
       y: 678,
