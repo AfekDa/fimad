@@ -24,12 +24,30 @@
   width: 100%;
 }
 
+/*
+ * The search field stays put while the page scrolls (27 Aug feedback). The
+ * sticky band is the whole header rather than the field alone because sticky is
+ * bounded by its containing block, and the field's containing block is this
+ * header -- pinning the field itself would release it the moment the header
+ * scrolled past.
+ *
+ * The block padding reproduces the page's own top inset inside the band, so
+ * cards pass behind navy instead of sliding up to the field, and the matching
+ * negative margins hand that space straight back to the flow: at rest the brand
+ * still starts at y=24 and the document still measures 10366 (responsive.spec.ts).
+ */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: var(--layer-content);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-16);
   width: 100%;
+  margin-block: calc(-1 * var(--teams-content-top)) calc(-1 * var(--space-16));
+  padding-block: var(--teams-content-top) var(--space-16);
+  background: var(--color-navy);
 }
 
 .brand {
@@ -196,6 +214,12 @@
   text-box-edge: cap alphabetic;
 }
 
+/* Hidden whenever nothing is filtered; `display: flex` above outranks the UA
+ * rule for [hidden], so the attribute needs its own declaration here. */
+.clearAll[hidden] {
+  display: none;
+}
+
 .clearAllIcon {
   position: relative;
   width: 11.993px;
@@ -300,12 +324,18 @@
     display: block;
   }
 
+  /* The desktop frame floats the header over the hero band instead of docking
+   * it, so the mobile sticky band and its offsets are all unwound here. */
   .header {
     position: absolute;
     top: var(--desktop-teams-header-top);
     left: 0;
+    z-index: auto;
     align-items: center;
     width: 100%;
+    margin-block: 0;
+    padding-block: 0;
+    background: none;
   }
 
   .brand {

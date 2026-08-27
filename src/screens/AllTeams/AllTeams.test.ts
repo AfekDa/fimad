@@ -43,6 +43,14 @@ describe('All Teams', () => {
     expect(screen.queryByRole('button', { name: 'All', exact: true })).not.toBeInTheDocument()
   })
 
+  it('renders without a Clear All button until something is filtered', () => {
+    const clearAll = body.querySelector('[data-clear-filters]')
+
+    expect(clearAll).toBeInTheDocument()
+    expect(clearAll).toHaveAttribute('hidden')
+    expect(screen.queryByRole('button', { name: 'Clear All' })).not.toBeInTheDocument()
+  })
+
   it('uses meaningful text for player imagery', () => {
     const images = [...body.querySelectorAll('article > div:first-child img')]
 

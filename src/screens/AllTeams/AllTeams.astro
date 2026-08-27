@@ -69,7 +69,13 @@ import styles from './AllTeams.module.css'
           />
         </div>
 
-        <button class={styles.clearAll} type="button" data-node-id="188:2356" data-clear-filters>
+        <button
+          class={styles.clearAll}
+          type="button"
+          data-node-id="188:2356"
+          data-clear-filters
+          hidden
+        >
           <span class={styles.clearAllIcon} aria-hidden="true">
             <img class={styles.clearAllRing} src={ASSETS.teamsClearRing} alt="" />
             <img class={styles.clearAllCross} src={ASSETS.teamsClearAllCross} alt="" />
@@ -122,6 +128,7 @@ import styles from './AllTeams.module.css'
     }
 
     const requiredSearchInput = searchInput
+    const requiredClearAllButton = clearAllButton
     const requiredEmptyState = emptyState
     const requiredResultsStatus = resultsStatus
 
@@ -166,6 +173,13 @@ import styles from './AllTeams.module.css'
         if (isVisible) visibleCount += 1
       }
 
+      /*
+       * "Clear All" is an escape hatch, not a permanent control: with nothing
+       * filtered there is nothing for it to clear, so the row renders without
+       * it (27 Aug feedback) and it appears the moment a conference chip goes
+       * active or the search field has a query -- the two things it resets.
+       */
+      requiredClearAllButton.hidden = selectedConference === undefined && query.length === 0
       requiredEmptyState.hidden = visibleCount !== 0
       requiredResultsStatus.textContent = `${visibleCount} ${visibleCount === 1 ? 'team' : 'teams'} shown`
     }

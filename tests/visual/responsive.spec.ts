@@ -503,26 +503,33 @@ test.describe('responsive integrity', () => {
     const afc = page.getByRole('button', { name: 'AFC' })
     const nfc = page.getByRole('button', { name: 'NFC' })
     const search = page.getByRole('searchbox', { name: 'Search teams' })
+    const clearAll = page.getByRole('button', { name: 'Clear All' })
 
     await expect(visibleCards).toHaveCount(32)
     await expect(afc).toHaveAttribute('aria-pressed', 'false')
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
     await expect(page.getByRole('button', { name: 'All', exact: true })).toHaveCount(0)
+    // Nothing is filtered, so the control that clears filters has nothing to do.
+    await expect(clearAll).toHaveCount(0)
 
     await nfc.click()
     await expect(nfc).toHaveAttribute('aria-pressed', 'true')
     await expect(afc).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleCards).toHaveCount(16)
     await expect(visibleCards.first()).toHaveAttribute('data-team', 'TEAM 17')
+    await expect(clearAll).toBeVisible()
 
     await nfc.click()
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleCards).toHaveCount(32)
+    await expect(clearAll).toHaveCount(0)
 
     // "team 5" is not a substring of any other team's name, so it isolates one card.
     await search.fill('team 5')
     await expect(visibleCards).toHaveCount(1)
     await expect(visibleCards.first()).toHaveAttribute('data-team', 'TEAM 5')
+    // A query is a filter too -- Clear All resets it, so it has to be reachable.
+    await expect(clearAll).toBeVisible()
 
     // A conference the matching team is not in leaves the grid empty.
     await nfc.click()
@@ -537,14 +544,39 @@ test.describe('responsive integrity', () => {
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleCards).toHaveCount(1)
 
-    await page.getByRole('button', { name: 'Clear All' }).click()
+    await clearAll.click()
     await expect(search).toHaveValue('')
     await expect(afc).toHaveAttribute('aria-pressed', 'false')
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleCards).toHaveCount(32)
+    await expect(clearAll).toHaveCount(0)
 
     await page.getByRole('button', { name: 'Filter teams by name' }).click()
     await expect(search).toBeFocused()
+  })
+
+  test('All Teams keeps the search field frozen while the page scrolls', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/teams')
+
+    const searchField = page.locator('[data-node-id="162:1776"]')
+    const band = page.locator('[data-node-id="181:1243"]')
+    const atTop = await searchField.boundingBox()
+    expect(atTop, 'Search field was not rendered').not.toBeNull()
+
+    await page.evaluate(() => {
+      window.scrollTo(0, 2000)
+    })
+
+    // Same viewport position as at rest: the field does not travel with the page.
+    const scrolled = await searchField.boundingBox()
+    expect(scrolled?.y).toBeCloseTo(atTop?.y ?? 0, 0)
+    expect(scrolled?.height).toBeCloseTo(atTop?.height ?? 0, 0)
+
+    // The band that carries it reaches the viewport edge, so cards pass behind
+    // navy rather than up against the field.
+    const bandBox = await band.boundingBox()
+    expect(bandBox?.y).toBeCloseTo(0, 0)
   })
 
   test('All Teams keeps mobile cards proportional and reveals the second card', async ({ page }) => {
