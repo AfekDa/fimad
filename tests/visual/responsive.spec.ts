@@ -417,6 +417,11 @@ test.describe('responsive integrity', () => {
       width: 1280,
       height: 752,
     })
+    const heroImage = page.locator('[data-node-id="1:91"] picture img')
+    expect(await heroImage.getAttribute('src')).toContain('hero-poster')
+    expect(await heroImage.evaluate((image: HTMLImageElement) => image.currentSrc)).toContain(
+      'hero-poster-desktop',
+    )
     expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
       x: 290,
       y: 612,

@@ -17,6 +17,7 @@
 
 /* Homepage — Figma frame 1:90 */
 import heroPoster from './hero-poster.png?url'
+import heroPosterDesktop from './hero-poster-desktop.png?url'
 import yearMark from './year-2026.png?url'
 import featureBadge from './feature-badge.png?url'
 import divider from './divider.svg?url'
@@ -94,6 +95,7 @@ import fanduelMedalIcon from './fanduel-icon-medal.svg?url'
 
 export const ASSETS = {
   heroPoster,
+  heroPosterDesktop,
   yearMark,
   featureBadge,
   divider,

@@ -31,6 +31,8 @@ export interface HomepageContent {
   }
   readonly hero: {
     readonly poster: string
+    /** Wide crop the desktop frame swaps in at ≥768px. */
+    readonly posterDesktop: string
     readonly yearMark: string
     readonly yearMarkAlt: string
   }
@@ -53,9 +55,10 @@ export const HOMEPAGE_CONTENT: HomepageContent = {
     title: 'NFL BETTING GUIDE',
   },
 
-  /* 1:91 hero image, 1:95 year mark */
+  /* 1:91 hero image (desktop 488:1504), 1:95 year mark */
   hero: {
     poster: ASSETS.heroPoster,
+    posterDesktop: ASSETS.heroPosterDesktop,
     yearMark: ASSETS.yearMark,
     yearMarkAlt: 'Year 2026-27, sponsored by FanDuel',
   },

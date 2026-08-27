@@ -406,11 +406,13 @@
     height: var(--desktop-hero-height);
   }
 
+  /* The desktop source (488:1504) shares the frame's aspect ratio, so the
+   * fill is a plain centred cover — no crop offsets like the mobile leaf. */
   .heroImageLeaf {
-    top: -56.59%;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 240.83%;
+    height: 100%;
     aspect-ratio: auto;
     object-fit: cover;
     transform: none;
