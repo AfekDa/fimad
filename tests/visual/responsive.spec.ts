@@ -1310,6 +1310,80 @@ test.describe('responsive integrity', () => {
     await expect(page.getByText('No bets match your filters.')).toBeVisible()
   })
 
+  /*
+   * 791:3532 puts "Clear All" flush with the right edge of the 382 filter block,
+   * on the row that carries "Offensive ROTY Picks" (27 Aug feedback). Unlike All
+   * Teams this screen always has a category selected, so "nothing to clear" is
+   * the default "All" with an empty search rather than no selection at all.
+   */
+  test('All Bets reveals Clear All once a category or a search narrows the list', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/all-bets')
+    await page.evaluate(() => document.fonts.ready)
+
+    const clearAll = page.getByRole('button', { name: 'Clear All' })
+    const search = page.getByRole('searchbox', { name: 'Search bets' })
+    const allCategory = page.getByRole('button', { name: 'All', exact: true })
+
+    await expect(clearAll).toBeHidden()
+
+    await search.fill('lamar')
+    await expect(clearAll).toBeVisible()
+
+    await clearAll.click()
+    await expect(clearAll).toBeHidden()
+    await expect(search).toHaveValue('')
+
+    await page.getByRole('button', { name: 'Exclusive' }).click()
+    await expect(clearAll).toBeVisible()
+
+    // Frame 1376 sits at x=24 and is 382 wide, and the control ends on its edge.
+    const clearAllBox = await clearAll.boundingBox()
+    expect(clearAllBox?.x).toBeCloseTo(337, 0)
+    const roty = await page.getByRole('button', { name: 'Offensive ROTY Picks' }).boundingBox()
+    // The frame draws it beside the last chip rather than on a row of its own.
+    expect((clearAllBox?.y ?? 0) + (clearAllBox?.height ?? 0) / 2).toBeCloseTo(
+      (roty?.y ?? 0) + (roty?.height ?? 0) / 2,
+      0,
+    )
+
+    await clearAll.click()
+    await expect(clearAll).toBeHidden()
+    await expect(allCategory).toHaveAttribute('aria-pressed', 'true')
+    await expect(page.locator('[data-bet-section]:not([hidden])')).toHaveCount(6)
+  })
+
+  /*
+   * Mobile centres both REDEEM OFFER buttons under the card they belong to
+   * (27 Aug feedback). The desktop frame does not — 803:5566 sits at x=0 of its
+   * 580 column — which the desktop test below still pins at x=588.
+   */
+  test('FanDuel centres each Redeem Offer button on mobile', async ({ page }) => {
+    for (const width of [320, 390, 430]) {
+      await page.setViewportSize({ width, height: 932 })
+      await page.goto('/fanduel')
+      await page.evaluate(() => document.fonts.ready)
+
+      const offsets = await page
+        .locator('[data-node-id="803:5566"], [data-node-id="803:5573"]')
+        .evaluateAll((buttons) =>
+          buttons.map((button) => {
+            const box = button.getBoundingClientRect()
+            const column = button.parentElement?.getBoundingClientRect()
+            if (column === undefined) throw new Error('Redeem Offer button has no content column')
+
+            return { start: box.left - column.left, end: column.right - box.right }
+          }),
+        )
+
+      expect(offsets).toHaveLength(2)
+      for (const offset of offsets) {
+        expect(offset.start).toBeGreaterThan(0)
+        expect(Math.abs(offset.start - offset.end)).toBeLessThan(1)
+      }
+    }
+  })
+
   test('desktop Awards matches the current 1280px Figma composition', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 782 })
     await page.goto('/awards')

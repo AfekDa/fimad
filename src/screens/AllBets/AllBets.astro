@@ -89,6 +89,14 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
         assetSet="teams-page"
         filterValue={BET_FILTERS[6].id}
       />
+
+      <button class={styles.clearAll} type="button" data-node-id="791:3532" data-clear-filters hidden>
+        <span class={styles.clearAllIcon} aria-hidden="true">
+          <img class={styles.clearAllRing} src={ASSETS.teamsClearRing} alt="" />
+          <img class={styles.clearAllCross} src={ASSETS.teamsClearAllCross} alt="" />
+        </span>
+        <span>Clear All</span>
+      </button>
     </div>
   </section>
 
@@ -151,13 +159,21 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
     const filterButtons = [...page.querySelectorAll<HTMLButtonElement>('[data-filter-value]')]
     const sections = [...page.querySelectorAll<HTMLElement>('[data-bet-section]')]
     const emptyState = page.querySelector<HTMLElement>('[data-empty-bets]')
+    const clearAllButton = page.querySelector<HTMLButtonElement>('[data-clear-filters]')
 
-    if (search === null || filterButtons.length !== 7 || sections.length !== 6 || emptyState === null) {
+    if (
+      search === null ||
+      filterButtons.length !== 7 ||
+      sections.length !== 6 ||
+      emptyState === null ||
+      clearAllButton === null
+    ) {
       throw new Error('All Bets controller is missing required filters, sections, or search controls')
     }
 
     const requiredSearch = search
     const requiredEmptyState = emptyState
+    const requiredClearAllButton = clearAllButton
 
     function selectFilter(selected: HTMLButtonElement) {
       for (const button of filterButtons) {
@@ -196,6 +212,14 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
       }
 
       requiredEmptyState.hidden = visibleCards !== 0
+
+      /*
+       * "Clear All" is an escape hatch, not a permanent control. This screen
+       * always has a category selected, so "nothing to clear" means the default
+       * "All" category with an empty search rather than no selection at all
+       * (27 Aug feedback).
+       */
+      requiredClearAllButton.hidden = category === 'all' && query.length === 0
     }
 
     for (const button of filterButtons) {
@@ -204,6 +228,15 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
         applyFilters()
       })
     }
+
+    clearAllButton.addEventListener('click', () => {
+      const allFilter = filterButtons.find((button) => button.dataset.filterValue === 'all')
+      if (allFilter === undefined) throw new Error('All Bets is missing its "All" category filter')
+
+      requiredSearch.value = ''
+      selectFilter(allFilter)
+      applyFilters()
+    })
 
     search.addEventListener('input', applyFilters)
     search.form?.addEventListener('submit', (event) => event.preventDefault())

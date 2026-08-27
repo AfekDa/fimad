@@ -62,6 +62,15 @@
   gap: 32px;
 }
 
+/*
+ * Mobile centres REDEEM OFFER under the card it belongs to (27 Aug feedback).
+ * The desktop frame does not — 803:5566 sits at x=0 of its 580 column — so the
+ * block below puts it back on the start edge there.
+ */
+.offerAction {
+  align-self: center;
+}
+
 .pointRows {
   display: flex;
   flex-direction: column;
@@ -171,6 +180,10 @@
   .standardContent {
     width: 580px;
     flex: 0 0 580px;
+  }
+
+  .offerAction {
+    align-self: flex-start;
   }
 
   .pointRows {
