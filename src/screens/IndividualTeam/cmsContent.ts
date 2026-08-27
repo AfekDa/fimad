@@ -85,6 +85,7 @@ export function withCmsContent(number: number, base: TeamPageContent): TeamPageC
     heroImageDesktop: image(published.hero_image, base.heroImageDesktop),
     logo: image(published.logo_image, base.logo),
     logoDesktop: image(published.logo_image, base.logoDesktop),
+    logoIsCms: Boolean(published.logo_image),
     overviewParagraphs: paragraphs(published.overview, base.overviewParagraphs),
     staff: base.staff.map((member, index) => ({
       ...member,
