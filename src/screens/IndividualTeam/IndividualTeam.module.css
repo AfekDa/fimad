@@ -727,7 +727,6 @@
 .schedule {
   display: flex;
   width: 100%;
-  min-height: 717px;
   padding: 56px var(--space-16) 0;
   flex-direction: column;
   align-items: center;
@@ -764,13 +763,37 @@
   display: none;
 }
 
+/*
+ * Card 908:1948 is a 183x53 composition: 16 of padding, the abbreviation over
+ * the week line, and a 70x21 difficulty tag beside them. Two columns of it stop
+ * fitting a phone well before 320, and the fallback that used to cover that --
+ * drop the tag onto a second line under 404 -- put every 390px phone, the
+ * commonest width there is, on a card the design never drew.
+ *
+ * So the card scales instead of re-laying-out, the same way TeamCard does: it
+ * is its own container, every inner measure is that measure's share of 183
+ * (16px -> 8.7432cqw), and `min()` caps each one at the design value so nothing
+ * grows past the frame in the 430-480 range. The card now looks like 908:1948
+ * at every width the shell supports, just smaller -- and because the tag scales
+ * with the text beside it, the two can never collide whatever the CMS ships.
+ */
 .scheduleCard {
   position: relative;
+  container-type: inline-size;
   display: flex;
-  height: 53px;
+  aspect-ratio: 183 / 53;
+  height: auto;
+  max-height: 53px;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-16);
+  /*
+   * No padding, deliberately. Both children are absolutely positioned, so the
+   * frame's 16 is carried by their own offsets rather than by the box -- and a
+   * container's query units resolve against its content box, so padding here
+   * would shrink the 183 every cqw below is a share of. Desktop lays the card
+   * out in flow and puts its padding back.
+   */
+  padding: 0;
   border-radius: var(--radius-card);
   background: var(--color-white);
   color: var(--color-dark-grey);
@@ -784,10 +807,10 @@
    * 20px line boxes rather than Figma's trimmed text boxes, and half-leading
    * carries the ink down by that much (27 Aug feedback).
    */
-  top: 11px;
-  left: var(--space-16);
-  width: calc(100% - 32px);
-  height: 21px;
+  top: min(11px, 6.0109cqw);
+  left: min(var(--space-16), 8.7432cqw);
+  width: calc(100% - 2 * min(var(--space-16), 8.7432cqw));
+  height: min(21px, 11.4754cqw);
   display: block;
   min-width: 0;
 }
@@ -804,24 +827,24 @@
   position: absolute;
   top: 0;
   left: 0;
-  font-size: var(--font-bc3-r-size);
+  font-size: min(var(--font-bc3-r-size), 7.6503cqw);
   font-weight: var(--font-bc1-sb-weight);
-  line-height: var(--font-bc3-r-line);
+  line-height: min(var(--font-bc3-r-line), 10.929cqw);
 }
 
 .scheduleMeta {
   position: absolute;
-  top: 12px;
+  top: min(12px, 6.5574cqw);
   left: 0;
-  gap: 3px;
-  font-size: 10px;
+  gap: min(3px, 1.6393cqw);
+  font-size: min(10px, 5.4645cqw);
   font-weight: var(--font-bc3-r-weight);
-  line-height: var(--font-bc3-r-line);
+  line-height: min(var(--font-bc3-r-line), 10.929cqw);
 }
 
 .scheduleGameDot {
-  width: 2px;
-  height: 2px;
+  width: min(2px, 1.0929cqw);
+  height: min(2px, 1.0929cqw);
   flex-shrink: 0;
   border-radius: 50%;
   background: currentColor;
@@ -833,25 +856,25 @@
 
 .scheduleTag {
   position: absolute;
-  top: var(--space-16);
-  right: var(--space-16);
+  top: min(var(--space-16), 8.7432cqw);
+  right: min(var(--space-16), 8.7432cqw);
   display: inline-flex;
-  width: 70px;
-  height: 21px;
+  width: min(70px, 38.2514cqw);
+  height: min(21px, 11.4754cqw);
   align-items: center;
   justify-content: center;
-  gap: var(--space-4);
+  gap: min(var(--space-4), 2.1858cqw);
   flex-shrink: 0;
-  border-radius: 4px;
-  font-size: 10px;
+  border-radius: min(4px, 2.1858cqw);
+  font-size: min(10px, 5.4645cqw);
   font-weight: var(--font-bc2-m-weight);
-  line-height: 20px;
+  line-height: min(20px, 10.929cqw);
   text-transform: capitalize;
 }
 
 .scheduleTagDot {
-  width: 4px;
-  height: 4px;
+  width: min(4px, 2.1858cqw);
+  height: min(4px, 2.1858cqw);
   flex-shrink: 0;
   border-radius: 50%;
   background: currentColor;
@@ -870,45 +893,6 @@
 .scheduleTagdifficult {
   background: var(--schedule-difficult-light);
   color: var(--schedule-difficult-dark);
-}
-
-/*
- * Figma's two-column cards are 183px wide and set the tag beside the metadata.
- * Below 430 the grid is fluid, so the card runs out of room for that eventually
- * -- but not nearly as early as this used to assume. Trimming the card's own
- * padding from the frame's 16 to 12 keeps the design's single line down to
- * 390px with 7px still between the week line and the tag, which matters because
- * 390 is the commonest phone width there is; the frame's padding is untouched
- * at the 430 it was drawn for.
- */
-@media (max-width: 429px) {
-  .scheduleCard {
-    padding: var(--space-12);
-  }
-
-  .scheduleInfo {
-    left: var(--space-12);
-  }
-
-  .scheduleTag {
-    right: var(--space-12);
-  }
-}
-
-/* Narrower than that the tag genuinely does not fit beside the metadata, so it
- * reserves a second line. Same 389 the sections above fall back at. */
-@media (max-width: 389px) {
-  .schedule {
-    min-height: 888px;
-  }
-
-  .scheduleCard {
-    height: 72px;
-  }
-
-  .scheduleTag {
-    top: 48px;
-  }
 }
 
 .explore {
@@ -1339,6 +1323,9 @@
   }
 
   .scheduleCard {
+    container-type: normal;
+    aspect-ratio: auto;
+    max-height: none;
     height: 77px;
     padding: var(--space-24) var(--space-16);
   }
@@ -1374,8 +1361,12 @@
 
   .scheduleTag {
     position: static;
+    width: 70px;
     height: 27px;
+    gap: var(--space-4);
+    border-radius: 4px;
     font-size: 16px;
+    line-height: 20px;
   }
 
   .explore {

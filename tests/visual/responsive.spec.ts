@@ -917,100 +917,99 @@ test.describe('responsive integrity', () => {
   })
 
   /*
-   * The frame sets the difficulty tag beside the week and venue metadata in a
-   * 53px card. That survives the fluid grid down to 390 — the commonest phone
-   * width — once the card trims its own padding, and only below that does the
-   * tag need a second line. Both regimes are asserted: the tag has to stay
-   * clear of the metadata either way, horizontally above the fallback and
-   * vertically below it.
+   * Card 908:1948 is a 183x53 composition with the difficulty tag beside the
+   * week and venue metadata. Two columns of it are narrower than 183 on every
+   * phone below 430, so the card scales rather than re-laying-out (the fallback
+   * this replaced dropped the tag onto a second line under 404, which caught
+   * every 390px phone). What is asserted is therefore the frame's proportions,
+   * not its pixels: the same box ratio and the same share of the card between
+   * the metadata and the tag, at every width the shell supports.
    */
-  test('Individual Team keeps the frame Schedule card down to 390px', async ({ page }) => {
-    for (const { width, gridWidth } of [
-      { width: 430, gridWidth: 382 },
-      { width: 403, gridWidth: 355 },
-      { width: 390, gridWidth: 342 },
-    ]) {
+  test('Individual Team holds the frame Schedule card at every phone width', async ({ page }) => {
+    // 19 of the frame's 183 sit between the widest metadata and the tag.
+    const FRAME_GAP_SHARE = 19 / 183
+    const FRAME_ASPECT = 183 / 53
+
+    for (const width of [320, 360, 375, 390, 402, 414, 430]) {
       await page.setViewportSize({ width, height: 932 })
-      await page.goto('/teams/buffalo-bills')
+      // Baltimore ships "WK 18 - Home", the widest metadata in the roster.
+      await page.goto('/teams/team-3')
       await page.evaluate(async () => {
         await document.fonts.ready
       })
 
-      const schedule = page.locator('[data-node-id="738:4484"]')
-      const grid = page.locator('[data-node-id="730:3141"]')
-      const cards = grid.locator('article')
-
-      expect(await schedule.boundingBox()).toMatchObject({ width, height: 717 })
-      expect(await grid.boundingBox()).toMatchObject({ x: 24, width: gridWidth, height: 605 })
+      const cards = page.locator('[data-node-id="730:3141"] article')
       await expect(cards).toHaveCount(18)
 
-      const gaps = await cards.evaluateAll((scheduleCards) =>
+      const measured = await cards.evaluateAll((scheduleCards) =>
         scheduleCards.flatMap((card) => {
-          const metadata = card.querySelector<HTMLElement>('[data-schedule-meta]')
-          const tag = card.querySelector<HTMLElement>('[data-schedule-tag]')
+          const metadata = card.querySelector('[data-schedule-meta]')
+          const tag = card.querySelector('[data-schedule-tag]')
+          const opponent = card.querySelector('p')
 
           if (tag === null) return []
-          if (metadata === null) {
+          if (metadata === null || opponent === null) {
             throw new Error('Expected a tagged Schedule card to contain metadata.')
           }
 
+          const box = card.getBoundingClientRect()
+          const textEnd = Math.max(
+            metadata.getBoundingClientRect().right,
+            opponent.getBoundingClientRect().right,
+          )
+
           return [
             {
-              inline: tag.getBoundingClientRect().left - metadata.getBoundingClientRect().right,
-              cardHeight: card.getBoundingClientRect().height,
+              aspect: box.width / box.height,
+              gapShare: (tag.getBoundingClientRect().left - textEnd) / box.width,
             },
           ]
         }),
       )
 
-      expect(gaps).toHaveLength(17)
-      for (const gap of gaps) {
-        expect(gap.cardHeight).toBeCloseTo(53, 0)
-        expect(gap.inline).toBeGreaterThanOrEqual(3)
+      expect(measured).toHaveLength(17)
+      for (const card of measured) {
+        expect(Math.abs(card.aspect - FRAME_ASPECT)).toBeLessThan(0.05)
+        // Shorter weeks leave more room; none may leave less than the frame does.
+        expect(card.gapShare).toBeGreaterThan(FRAME_GAP_SHARE - 0.01)
       }
+
+      /*
+       * The tightest card is the one carrying the widest metadata, and it has
+       * to land on the frame's own share rather than merely clearing it — that
+       * is what says the card scaled instead of just having room to spare.
+       */
+      const tightest = Math.min(...measured.map((card) => card.gapShare))
+      expect(Math.abs(tightest - FRAME_GAP_SHARE)).toBeLessThan(0.01)
     }
   })
 
-  test('Individual Team drops the Schedule tag to a second line below 390px', async ({ page }) => {
-    for (const { width, gridWidth } of [
-      { width: 320, gridWidth: 272 },
-      { width: 360, gridWidth: 312 },
-      { width: 389, gridWidth: 341 },
-    ]) {
-      await page.setViewportSize({ width, height: 932 })
-      await page.goto('/teams/buffalo-bills')
-      await page.evaluate(async () => {
-        await document.fonts.ready
-      })
+  test('Individual Team renders the Schedule at frame size on the 430 it was drawn for', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/teams/buffalo-bills')
+    await page.evaluate(async () => {
+      await document.fonts.ready
+    })
 
-      const schedule = page.locator('[data-node-id="738:4484"]')
-      const grid = page.locator('[data-node-id="730:3141"]')
-      const cards = grid.locator('article')
+    expect(await page.locator('[data-node-id="738:4484"]').boundingBox()).toMatchObject({
+      width: 430,
+      height: 717,
+    })
+    expect(await page.locator('[data-node-id="730:3141"]').boundingBox()).toMatchObject({
+      x: 24,
+      width: 382,
+      height: 605,
+    })
 
-      expect(await schedule.boundingBox()).toMatchObject({ width, height: 888 })
-      expect(await grid.boundingBox()).toMatchObject({ x: 24, width: gridWidth, height: 776 })
-      await expect(cards).toHaveCount(18)
-
-      const tagClearances = await cards.evaluateAll((scheduleCards) =>
-        scheduleCards.flatMap((card) => {
-          const metadata = card.querySelector<HTMLElement>('[data-schedule-meta]')
-          const tag = card.querySelector<HTMLElement>('[data-schedule-tag]')
-
-          if (tag === null) {
-            return []
-          }
-
-          if (metadata === null) {
-            throw new Error('Expected a tagged Schedule card to contain metadata.')
-          }
-
-          return [tag.getBoundingClientRect().top - metadata.getBoundingClientRect().bottom]
-        }),
-      )
-
-      expect(tagClearances).toHaveLength(17)
-      expect(tagClearances.every((clearance) => clearance >= 3)).toBe(true)
-    }
+    const card = page.locator('[data-node-id="730:3141"] article').first()
+    expect(await card.boundingBox()).toMatchObject({ width: 183, height: 53 })
+    // Frame 1410 and the Button/Filter instance inside 908:1948.
+    await expect(card.locator('p').first()).toHaveCSS('font-size', '14px')
+    const tagBox = await card.locator('[data-schedule-tag]').boundingBox()
+    expect(tagBox?.width).toBeCloseTo(70, 0)
+    expect(tagBox?.height).toBeCloseTo(21, 0)
   })
 
   test('Individual Team matches the browser-chrome-adjusted desktop Figma geometry', async ({ page }) => {
