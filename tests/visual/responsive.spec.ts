@@ -909,6 +909,54 @@ test.describe('responsive integrity', () => {
     }
   })
 
+  /*
+   * Opening a panel must push everything after it down the page, never run its
+   * copy under the next section. The deployed build pinned the open panel and
+   * the accordions block at frame heights, so a long write-up (Baltimore's
+   * defence) overflowed onto the black prediction section instead of moving it.
+   */
+  test('Individual Team pushes the sections below down when accordions open', async ({ page }) => {
+    for (const viewport of [
+      { width: 430, height: 932 },
+      { width: 1280, height: 782 },
+    ]) {
+      await page.setViewportSize(viewport)
+      // Baltimore ships the longest defence write-up in the roster.
+      await page.goto('/teams/team-3')
+      await page.evaluate(() => document.fonts.ready)
+
+      const flow = await page.evaluate(() => {
+        const prediction = document.querySelector('[data-node-id="162:1674"]')
+        if (prediction === null) throw new Error('Individual Team is missing its prediction section')
+
+        const predictionTopBefore = prediction.getBoundingClientRect().top + window.scrollY
+        const panels = [...document.querySelectorAll('details')]
+        for (const panel of panels) panel.setAttribute('open', '')
+
+        const predictionTop = prediction.getBoundingClientRect().top + window.scrollY
+
+        return {
+          panelCount: panels.length,
+          predictionMoved: predictionTop - predictionTopBefore,
+          // The deepest copy bottom must stay above the next section.
+          clearance:
+            prediction.getBoundingClientRect().top -
+            Math.max(
+              ...panels.map(
+                (panel) => panel.querySelector('p')?.getBoundingClientRect().bottom ?? -Infinity,
+              ),
+            ),
+        }
+      })
+
+      expect(flow.panelCount).toBeGreaterThan(1)
+      // Four panels opened, so the page below them has to have moved down.
+      expect(flow.predictionMoved).toBeGreaterThan(0)
+      // 32 under the last line, plus the block's own 56 tail.
+      expect(flow.clearance).toBeGreaterThanOrEqual(32)
+    }
+  })
+
   test('Individual Team ends clear of the docked nav', async ({ page }) => {
     await page.setViewportSize({ width: 430, height: 932 })
     await page.goto('/teams/team-1')
