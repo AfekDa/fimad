@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T14:01:10.950Z",
+  "generated_at": "2026-08-27T14:03:24.446Z",
   "generated_by": "dhana.pimputkar@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
@@ -36,7 +36,7 @@
       "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2be923883_hero-desktop.png",
       "future_bet_url": null,
       "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/4c14a4960_favorite-desktop.png",
-      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b8a987ba9_hero.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c5ff35e7e_Mb_BaltimoreRavens-LamarJackson.png",
       "receivers": "TEAM 23 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.",
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/3240b3a7d_prediction.png",
       "future_market": "10+ RUSHING TOUCHDOWNS",
@@ -174,7 +174,7 @@
       "prediction_text": "Placeholder prediction for TEAM 1. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
       "id": "6a9022875b73b6b687d4f143",
       "created_date": "2026-08-27T11:41:59.899000",
-      "updated_date": "2026-08-27T13:37:05.342000",
+      "updated_date": "2026-08-27T14:03:16.567000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
