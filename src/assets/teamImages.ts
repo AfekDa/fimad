@@ -13,7 +13,8 @@
  *   own page and its card in other teams' Explore carousels all follow.
  *
  * ─── The slots, and the size each one expects ──────────────────────────────
- *   card.png              1024 x  683    All Teams grid card
+ *   all-32-teams-team-<n>.png
+ *                         1024 x  683    this team on the All 32 Teams page
  *   hero.png              1024 x  701    full-bleed photo behind the team name
  *   hero-desktop.png      1155 x  885    the same, above 768px
  *   prediction.png         992 x  682    photo under the PREDICTIONS block
@@ -22,6 +23,10 @@
  *   explore.png           1024 x  701    this team in other teams' Explore All
  *                                        Teams carousel
  *   logo.png              1920 x 1920    team lockup above the team name
+ *
+ * The All 32 Teams file spells its own team out so it stays recognisable away
+ * from the folder — `all-32-teams.png` fills the same slot if you would rather
+ * not repeat it, but the number in a spelled-out name has to be the folder's.
  *
  * `.jpg`, `.jpeg`, `.webp` and `.avif` are read as well. Keep the pixel size:
  * these boxes are measured from the design rather than fitted, so a different
@@ -68,7 +73,7 @@ const DESIGN_IMAGES: TeamImages = {
 
 /** The file name a team's folder uses for each slot, without its extension. */
 const SLOT_BY_FILE_NAME: Readonly<Record<string, keyof TeamImages>> = {
-  card: 'card',
+  'all-32-teams': 'card',
   hero: 'hero',
   'hero-desktop': 'heroDesktop',
   prediction: 'prediction',

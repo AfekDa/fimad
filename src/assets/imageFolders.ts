@@ -27,6 +27,13 @@ export interface ImageFolders<Slot extends string> {
  * What each numbered folder holds, keyed by its number. A folder with no
  * pictures in it has no entry.
  *
+ * A file may repeat its own folder's name as a suffix — in `team-5`, both
+ * `all-32-teams.png` and `all-32-teams-team-5.png` fill the `all-32-teams`
+ * slot. Spelling it out makes a file recognisable once it is away from its
+ * folder, in a downloads pile or in `dist/`, where the emitted asset takes its
+ * name from the source file. The number has to be the folder's own: a
+ * `-team-6` file in `team-5` names no slot, and so stops the build.
+ *
  * A file that does not name a slot, a folder numbered off the end, and two
  * files claiming one slot are all thrown on rather than ignored: this runs
  * while the module initialises, so they stop the build the way a missing
@@ -36,7 +43,7 @@ export function readImageFolders<Slot extends string>(
   folders: ImageFolders<Slot>,
 ): Readonly<Record<number, Partial<Record<Slot, string>>>> {
   const { files, root, prefix, count, slots } = folders
-  const filePath = new RegExp(`^\\./${root}/${prefix}-(\\d+)/(.+)\\.[^.]+$`)
+  const filePath = new RegExp(`^[.]/${root}/${prefix}-([0-9]+)/(.+)[.][^.]+$`)
   const table: Record<number, Partial<Record<Slot, string>>> = {}
 
   for (const [path, url] of Object.entries(files)) {
@@ -50,7 +57,13 @@ export function readImageFolders<Slot extends string>(
       throw new Error(`${path} is off the end: src/assets/${root} holds ${prefix} 1-${count}`)
     }
 
-    const slot = slots[match[2] ?? '']
+    const fileName = match[2] ?? ''
+    const ownSuffix = `-${prefix}-${number}`
+    const slotName = fileName.endsWith(ownSuffix)
+      ? fileName.slice(0, -ownSuffix.length)
+      : fileName
+
+    const slot = slots[slotName]
     if (slot === undefined) {
       throw new Error(`${path} is not one of the picture slots: ${Object.keys(slots).join(', ')}`)
     }
