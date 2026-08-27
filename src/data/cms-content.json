@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-27T13:21:09.980Z",
-  "generated_by": "elad.beraru@verified-global.com",
+  "generated_at": "2026-08-27T13:28:51.472Z",
+  "generated_by": "bjadhav@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
     "intro_text": "This is the third straight season I've written my guide and this version is by far the best yet. I've spent countless hours studying every team so I can give us the best chance of making money this season.\n\nIf you're just discovering me, the main thing you need to know is that absolutely everything I post is free. Here's a glimpse at what I'll be sharing with you throughout the NFL season…",
@@ -169,12 +169,12 @@
         }
       ],
       "quarterbacks": "TEAM 23 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.",
-      "name": "TEST!",
+      "name": "Ravens",
       "offseason_changes": "TEAM 1 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
       "prediction_text": "Placeholder prediction for TEAM 1. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
       "id": "6a9022875b73b6b687d4f143",
       "created_date": "2026-08-27T11:41:59.899000",
-      "updated_date": "2026-08-27T13:21:04.989000",
+      "updated_date": "2026-08-27T13:28:44.355000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
