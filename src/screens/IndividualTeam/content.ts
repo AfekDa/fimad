@@ -1,4 +1,5 @@
 import { ASSETS } from '../../assets/assets'
+import { imagesForTeam } from '../../assets/teamImages'
 import { TEAMS, TEAM_COUNT, teamByNumber } from '../../data/teams'
 import type { Conference, Team } from '../../data/teams'
 
@@ -67,6 +68,8 @@ export interface TeamExploreCard {
   readonly name: string
   readonly conference: Conference
   readonly href: string
+  readonly image: string
+  readonly logo: string
 }
 
 export interface TeamPageContent {
@@ -75,6 +78,7 @@ export interface TeamPageContent {
   readonly heroImage: string
   readonly heroImageDesktop: string
   readonly heroAlt: string
+  readonly logo: string
   readonly overviewParagraphs: readonly string[]
   readonly staff: readonly TeamStaffMember[]
   readonly accordionSections: readonly TeamAccordionSection[]
@@ -187,6 +191,7 @@ export const BUFFALO_BILLS: TeamPageContent = {
   heroImage: ASSETS.teamBuffaloHero,
   heroImageDesktop: ASSETS.teamBuffaloHeroDesktop,
   heroAlt: 'Buffalo Bills player in helmet',
+  logo: ASSETS.teamsLogoBuffalo,
   overviewParagraphs: [
     'The Buffalo Bills just fell short of the Super Bowl once again, but there is plenty to be optimistic about as they search for that elusive ring. Josh Allen claimed MVP ahead of Lamar Jackson and they won every single game at home, including a playoff win againstthe Ravens.',
     'However, they fell short once again to their AFC nemesis the Kansas City Chiefs at Arrowhead. The 32-29 scoreline suggests they’re just a few small improvements from joining the big dance for the first time since 1994. They are a well-rounded team, scoring the 2nd most points in the NFL and conceding the 11th-fewest.',
@@ -231,6 +236,8 @@ export const BUFFALO_BILLS: TeamPageContent = {
     name: 'BUFFALO BILLS',
     conference: 'AFC',
     href: '/teams/buffalo-bills',
+    image: ASSETS.teamExploreCard,
+    logo: ASSETS.teamsLogoBuffalo,
   })),
 }
 
@@ -253,13 +260,15 @@ function placeholderOpponent(teamNumber: number, week: number): string {
  */
 export function createPlaceholderTeam(team: Team): TeamPageContent {
   const { name, number } = team
+  const images = imagesForTeam(number)
 
   return {
     name,
     conference: team.conference,
-    heroImage: ASSETS.teamBuffaloHero,
-    heroImageDesktop: ASSETS.teamBuffaloHeroDesktop,
+    heroImage: images.hero,
+    heroImageDesktop: images.heroDesktop,
     heroAlt: `${name} player in helmet`,
+    logo: images.logo,
     overviewParagraphs: [
       `${name} is a placeholder franchise. Every word on this page stands in for editorial copy that has not been written yet, and it runs to roughly the length the finished article will so the layout can be reviewed at full height rather than against three short lines.`,
       `The season preview for ${name} will cover the roster, the coaching changes and the numbers behind last season's finish. Until that copy arrives this paragraph holds its place, and nothing below it will shift when the real words replace it.`,
@@ -284,11 +293,11 @@ export function createPlaceholderTeam(team: Team): TeamPageContent {
       { title: 'RECEIVERS', nodeId: '162:1672', paragraphs: [] },
       { title: 'DEFENCE', nodeId: '162:1673', paragraphs: [] },
     ],
-    predictionImage: ASSETS.teamBuffaloPrediction,
+    predictionImage: images.prediction,
     predictionRecord: '14-3',
     predictionCopy: `Placeholder prediction for ${name}. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.`,
-    favoriteImage: ASSETS.teamBuffaloFuture,
-    favoriteImageDesktop: ASSETS.teamBuffaloFutureDesktop,
+    favoriteImage: images.favorite,
+    favoriteImageDesktop: images.favoriteDesktop,
     favoriteAlt: `${name} star player in uniform`,
     favoritePlayer: `STAR PLAYER ${name}`,
     favoriteBet: '10+ RUSHING TOUCHDOWNS',
@@ -302,12 +311,15 @@ export function createPlaceholderTeam(team: Team): TeamPageContent {
     /* The five cards after this one in the roster, wrapping at the end. */
     exploreCards: EXPLORE_NODE_IDS.map((nodeId, index) => {
       const neighbour = teamByNumber(((number + index) % TEAM_COUNT) + 1)
+      const neighbourImages = imagesForTeam(neighbour.number)
 
       return {
         nodeId,
         name: neighbour.name,
         conference: neighbour.conference,
         href: neighbour.href,
+        image: neighbourImages.explore,
+        logo: neighbourImages.logo,
       }
     }),
   }

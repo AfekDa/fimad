@@ -1,6 +1,5 @@
 ---
 import Button from '../../components/Button/Button.astro'
-import { ASSETS } from '../../assets/assets'
 import type { TeamCardContent } from './content'
 import styles from './TeamCard.module.css'
 
@@ -33,7 +32,7 @@ const { card } = Astro.props
     <span class={styles.teamLogo} data-node-id="181:1340">
       <img
         class={styles.teamLogoLeaf}
-        src={ASSETS.teamsLogoBuffalo}
+        src={card.logo}
         alt=""
         aria-hidden="true"
       />

@@ -73,7 +73,7 @@ const { team = BUFFALO_BILLS } = Astro.props
       <div class={styles.heroScrim} aria-hidden="true"></div>
       <div class={styles.heroCopy}>
         <span class={styles.teamLogo} data-node-id="181:1340">
-          <img class={styles.teamLogoLeaf} src={ASSETS.teamsLogoBuffalo} alt="" aria-hidden="true" />
+          <img class={styles.teamLogoLeaf} src={team.logo} alt="" aria-hidden="true" />
         </span>
         <h1 id="team-name" class={styles.teamName} data-node-id="162:1590">{team.name}</h1>
       </div>
@@ -290,12 +290,12 @@ const { team = BUFFALO_BILLS } = Astro.props
         {
           team.exploreCards.map((card) => (
             <article class={styles.exploreCard} data-node-id={card.nodeId}>
-              <img class={styles.exploreImage} src={ASSETS.teamExploreCard} alt={`${card.name} player portrait`} />
+              <img class={styles.exploreImage} src={card.image} alt={`${card.name} player portrait`} />
               <div class={styles.exploreScrim} aria-hidden="true"></div>
               <span class={styles.conference}>{card.conference}</span>
               <div class={styles.exploreDetails}>
                 <span class={styles.teamLogo}>
-                  <img class={styles.teamLogoLeaf} src={ASSETS.teamsLogoBuffalo} alt="" aria-hidden="true" />
+                  <img class={styles.teamLogoLeaf} src={card.logo} alt="" aria-hidden="true" />
                 </span>
                 <h3 class={styles.exploreTeamName}>{card.name}</h3>
                 <Button

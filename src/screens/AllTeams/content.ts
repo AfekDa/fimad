@@ -1,4 +1,5 @@
 import { ASSETS } from '../../assets/assets'
+import { imagesForTeam } from '../../assets/teamImages'
 import { TEAMS } from '../../data/teams'
 import type { Conference } from '../../data/teams'
 
@@ -26,6 +27,7 @@ export interface TeamCardContent {
   readonly image: string
   readonly imageAlt: string
   readonly crop: TeamCardCrop
+  readonly logo: string
   readonly team: string
   readonly conference: Conference
   readonly href: string
@@ -114,13 +116,17 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = TEAMS.map((team, inde
   }
 
   const isDrawnInFigma = index < CARD_VISUALS.length
+  const images = imagesForTeam(team.number)
 
   return {
     nodeId: isDrawnInFigma ? visual.nodeId : undefined,
     imageNodeId: isDrawnInFigma ? visual.imageNodeId : undefined,
     buttonNodeId: isDrawnInFigma ? visual.buttonNodeId : undefined,
-    image: visual.image,
+    /* The crop stays the design's either way: a replacement photo is the same
+     * size as the one it stands in for, so the measured box frames it too. */
+    image: images.card ?? visual.image,
     crop: visual.crop,
+    logo: images.logo,
     imageAlt: `${team.name} player portrait`,
     team: team.name,
     conference: team.conference,
