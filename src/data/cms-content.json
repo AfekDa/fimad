@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-27T16:03:57.906Z",
-  "generated_by": "dhana.pimputkar@verified-global.com",
+  "generated_at": "2026-08-27T16:46:48.195Z",
+  "generated_by": "elad.beraru@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
     "intro_text": "This is the third straight season I've written my guide and this version is by far the best yet. I've spent countless hours studying every team so I can give us the best chance of making money this season.\n\nIf you're just discovering me, the main thing you need to know is that absolutely everything I post is free. Here's a glimpse at what I'll be sharing with you throughout the NFL season…",
@@ -135,7 +135,7 @@
           "difficulty": "",
           "location": "None",
           "week": 13,
-          "opponent": "N/G"
+          "opponent": "BYE"
         },
         {
           "difficulty": "Moderate",
@@ -174,7 +174,7 @@
       "prediction_text": "I have the Ravens narrowly winning the AFC North over the Bengals. I think the Steelers will be slightly less competitive but the Ravens should return to the top of the division with better health and a revamped defense.  ",
       "id": "6a9022875b73b6b687d4f143",
       "created_date": "2026-08-27T11:41:59.899000",
-      "updated_date": "2026-08-27T16:03:42.472000",
+      "updated_date": "2026-08-27T16:29:28.582000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -212,112 +212,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/4bfb972a1_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 1,
-          "opponent": "T3"
+          "opponent": "TB"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 2,
-          "opponent": "T4"
+          "opponent": "HOU"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 3,
-          "opponent": "T5"
+          "opponent": "PIT"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 4,
-          "opponent": "T6"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T7"
+          "opponent": "JAX"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 6,
-          "opponent": "T8"
+          "week": 5,
+          "opponent": "MIA"
         },
         {
           "difficulty": "",
           "location": "None",
+          "week": 6,
+          "opponent": "BYE"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 7,
-          "opponent": ""
+          "opponent": "BAL"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 8,
-          "opponent": "T10"
+          "opponent": "TEN"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 9,
-          "opponent": "T11"
+          "opponent": "ATL"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Home",
           "week": 10,
-          "opponent": "T12"
+          "opponent": "PIT"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 11,
+          "opponent": "WAS"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 11,
-          "opponent": "T13"
+          "week": 12,
+          "opponent": "NO"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 12,
-          "opponent": "T14"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
           "week": 13,
-          "opponent": "T15"
+          "opponent": "CLE"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
           "week": 14,
-          "opponent": "T16"
+          "opponent": "KC"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
           "location": "Away",
           "week": 15,
-          "opponent": "T17"
+          "opponent": "CAR"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 16,
-          "opponent": "T18"
+          "opponent": "IND"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 17,
+          "opponent": "BAL"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T19"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
           "week": 18,
-          "opponent": "T20"
+          "opponent": "CLE"
         }
       ],
       "quarterbacks": "When Burrow is healthy, he is a top QB in the NFL. In four of his past five seasons, more than 6% of his total pass attempts have been touchdowns. Most other QBs are in the 4-4.5% range. Burrow is currently the fourth favorite for MVP and it’s hard to argue against him having a great season. The Bengals’ defense could barely get a stop last year which often meant Burrow was forced to play from behind or not be on the field for long periods. That should change this year and will allow Burrow to cook. He is fully healthy and stacked with talent around him. I wouldn’t be surprised if he returns to the heights of 2024 where he had 43 TD passes and nearly 5000 passing yards. He’s in his prime at 29 years old and the Bengals are going all-in. Joe Flacco returns as arguably the best backup in the NFL. Despite his age he can still sling it. The Bengals will be hoping he won’t be required though…",
@@ -326,7 +326,7 @@
       "prediction_text": "I have the Bengals making the playoffs but narrowly missing out on the AFC North title to the Ravens. It’s really all on their defense this year, if they can make some good improvements then this team will win more games. Who knows how long they’ll be able to keep this offense together?",
       "id": "6a9022875b73b6b687d4f144",
       "created_date": "2026-08-27T11:41:59.899000",
-      "updated_date": "2026-08-27T15:30:55.708000",
+      "updated_date": "2026-08-27T16:29:29.798000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -364,112 +364,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cd5ea5747_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 1,
-          "opponent": "T4"
+          "opponent": "JAX"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 2,
-          "opponent": "T5"
+          "opponent": "TB"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 3,
-          "opponent": "T6"
+          "opponent": "CAR"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 4,
-          "opponent": "T7"
+          "opponent": "PIT"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 5,
+          "opponent": "NYJ"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 6,
+          "opponent": "BAL"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 7,
+          "opponent": "TEN"
         },
         {
           "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T8"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 6,
-          "opponent": "T9"
-        },
-        {
-          "difficulty": "",
-          "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
           "location": "Away",
           "week": 8,
-          "opponent": "T11"
+          "opponent": "PIT"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 9,
-          "opponent": "T12"
+          "opponent": "NO"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Home",
           "week": 10,
-          "opponent": "T13"
+          "opponent": "HOU"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 11,
+          "opponent": "BYE"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 11,
-          "opponent": "T14"
+          "week": 12,
+          "opponent": "LV"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 13,
+          "opponent": "CIN"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
-          "week": 12,
-          "opponent": "T15"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T16"
-        },
-        {
-          "difficulty": "Difficult",
           "location": "Home",
           "week": 14,
-          "opponent": "T17"
+          "opponent": "ATL"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
           "location": "Away",
           "week": 15,
-          "opponent": "T18"
+          "opponent": "NYG"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 16,
-          "opponent": "T19"
+          "opponent": "BAL"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 17,
-          "opponent": "T20"
+          "opponent": "IND"
         },
         {
           "difficulty": "Moderate",
-          "location": "Home",
+          "location": "Away",
           "week": 18,
-          "opponent": "T21"
+          "opponent": "CIN"
         }
       ],
       "quarterbacks": "The Browns had the second-fewest passing yards per game last season and the big question here is who will start Week 1. Head coach Todd Monken hasn’t given much away so far but it’s likely to be either Deshaun Watson or Shedeur Sanders to take the reins. Watson has recovered from his achilles tear that wiped out his whole 2025 season and it’s his last chance to prove himself in the last year of his contract. He restructured his deal which freed up $36 million in cap space for the Browns. Shedeur Sanders is a fan favorite and led the Browns to a few wins last year, but his 7-10 TD to interception ratio wasn’t overly convincing. Dillon Gabriel started six games in his rookie season but it seems he’s third in the pecking order going into 2026.",
@@ -478,7 +478,7 @@
       "prediction_text": "Another tough year ahead for the Browns in my opinion. This will be Deshaun Watson’s final year of his contract but I wouldn’t be surprised to see at least three different starting QBs throughout the year. Their defense is not as good without Garrett and they’ll struggle to win too many games.",
       "id": "6a9022875b73b6b687d4f145",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:30:56.283000",
+      "updated_date": "2026-08-27T16:29:29.988000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -517,111 +517,111 @@
       "schedule": [
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 1,
-          "opponent": "T5"
+          "opponent": "ATL"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 2,
-          "opponent": "T6"
+          "opponent": "NE"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 3,
+          "opponent": "CIN"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 3,
-          "opponent": "T7"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
           "week": 4,
-          "opponent": "T8"
+          "opponent": "CLE"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
           "location": "Home",
           "week": 5,
-          "opponent": "T9"
+          "opponent": "IND"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 6,
-          "opponent": "T10"
+          "opponent": "TB"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 7,
+          "opponent": "NO"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 8,
+          "opponent": "CLE"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 8,
-          "opponent": "T12"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
           "week": 9,
-          "opponent": "T13"
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "Moderate",
+          "location": "Away",
           "week": 10,
-          "opponent": "T14"
+          "opponent": "CIN"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 11,
-          "opponent": "T15"
+          "opponent": "PHI"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 12,
-          "opponent": "T16"
+          "opponent": "DEN"
         },
         {
-          "difficulty": "Difficult",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 13,
-          "opponent": "T17"
+          "opponent": "HOU"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 14,
+          "opponent": "JAX"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
-          "week": 14,
-          "opponent": "T18"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
           "week": 15,
-          "opponent": "T19"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T20"
+          "opponent": "BAL"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T21"
+          "week": 16,
+          "opponent": "CAR"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 17,
+          "opponent": "TEN"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 18,
-          "opponent": "T22"
+          "opponent": "BAL"
         }
       ],
       "quarterbacks": "Aaron Rodgers returns for his final NFL season on a one-year deal worth up to $25 million. The Steelers placed an unrestricted free-agent tender on him to keep the door closed to other teams. Rodgers still has a decent arm and recorded 3,322 passing yards last season to go with 24 touchdowns and 7 interceptions. The worrying stat for Rodgers and the Steelers is that 76% of his attempts travelled under 10 yards last season – the highest rate in the league. It’ll be interesting to see if Mike McCarthy trusts him to air it out more this season. He does have two really solid receivers in Metcalf and Pittman at his disposal. Rodgers wants to win one more Super Bowl but I really don’t see that happening this year. Mason Rudolph returns as the backup QB and whilst he’s been serviceable, he’s not going to set the world on fire if he gets starting reps.",
@@ -630,7 +630,7 @@
       "prediction_text": "I think it’ll be a year of slight regression for the Steelers. They have a decent roster and their defense is always scary, but Mike Tomlin is gone and it’s a period of change. I don’t think Aaron Rodgers has the ability to win them games with his own arm anymore.",
       "id": "6a9022875b73b6b687d4f146",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:30:56.534000",
+      "updated_date": "2026-08-27T16:29:33.814000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -668,112 +668,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/508a7f4e4_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 1,
-          "opponent": "T6"
-        },
-        {
           "difficulty": "Moderate",
           "location": "Away",
-          "week": 2,
-          "opponent": "T7"
+          "week": 1,
+          "opponent": "HOU"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 2,
+          "opponent": "DET"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 3,
-          "opponent": "T8"
+          "opponent": "LAC"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 4,
-          "opponent": "T9"
+          "opponent": "NE"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 5,
-          "opponent": "T10"
+          "opponent": "LAR"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 6,
-          "opponent": "T11"
+          "opponent": "LV"
         },
         {
           "difficulty": "",
           "location": "None",
           "week": 7,
-          "opponent": ""
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 8,
-          "opponent": "T13"
+          "opponent": "BAL"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 9,
-          "opponent": "T14"
+          "opponent": "MIN"
         },
         {
           "difficulty": "Easy",
-          "location": "Home",
+          "location": "Away",
           "week": 10,
-          "opponent": "T15"
+          "opponent": "NYJ"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 11,
-          "opponent": "T16"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 12,
-          "opponent": "T17"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T18"
+          "opponent": "MIA"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
-          "week": 14,
-          "opponent": "T19"
+          "week": 12,
+          "opponent": "KC"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
+          "week": 13,
+          "opponent": "NE"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 14,
+          "opponent": "GB"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 15,
-          "opponent": "T20"
+          "opponent": "CHI"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 16,
-          "opponent": "T21"
+          "opponent": "DEN"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 17,
+          "opponent": "MIA"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T22"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
           "week": 18,
-          "opponent": "T23"
+          "opponent": "NYJ"
         }
       ],
       "quarterbacks": "Josh Allen is arguably the best quarterback in the NFL and is still just 30 years old. He’s been top-5 in MVP voting for five straight seasons and I can’t see that changing this year. He’s coming off a 25 touchdown, 10 interception season but the Bills were really lacking in top receivers last year. Finally they’ve given him a WR1 in DJ Moore who had a decent season in Chicago but still has plenty left in the tank. Allen is a true dual-threat QB, adding 14 rushing touchdowns and 579 rushing yards last year too. The Bills will probably want to rely less on his rushing ability this season and let him throw the ball more. He’s had two straight seasons throwing for less than 400 yards after passing for 4000+ in the previous four seasons. His passing line is set at 3600.5 this year and if he stays healthy he should be surpassing that.",
@@ -782,7 +782,7 @@
       "prediction_text": "I have the Bills marginally winning the AFC East. Josh Allen can win games on his own talent and they’ve added a few nice pieces for him to improve. If their run defense tightens up and DJ Moore performs, they should be a challenger for the Super Bowl.",
       "id": "6a9022875b73b6b687d4f147",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:30:56.783000",
+      "updated_date": "2026-08-27T16:29:28.797000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -823,109 +823,109 @@
           "difficulty": "Easy",
           "location": "Away",
           "week": 1,
-          "opponent": "T7"
+          "opponent": "LV"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 2,
-          "opponent": "T8"
+          "opponent": "SF"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 3,
-          "opponent": "T9"
+          "opponent": "KC"
         },
         {
           "difficulty": "Moderate",
-          "location": "Home",
+          "location": "Away",
           "week": 4,
-          "opponent": "T10"
+          "opponent": "MIN"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 5,
-          "opponent": "T11"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 6,
-          "opponent": "T12"
+          "opponent": "CIN"
         },
         {
           "difficulty": "",
           "location": "None",
+          "week": 6,
+          "opponent": "BYE"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
           "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 8,
-          "opponent": "T14"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T15"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 10,
-          "opponent": "T16"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 11,
-          "opponent": "T17"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 12,
-          "opponent": "T18"
+          "opponent": "NYJ"
         },
         {
           "difficulty": "Difficult",
+          "location": "Home",
+          "week": 8,
+          "opponent": "NE"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 9,
+          "opponent": "DET"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 10,
+          "opponent": "IND"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 11,
+          "opponent": "BUF"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 12,
+          "opponent": "NYJ"
+        },
+        {
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 13,
-          "opponent": "T19"
+          "opponent": "DEN"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 14,
+          "opponent": "CHI"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 15,
+          "opponent": "GB"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
-          "week": 14,
-          "opponent": "T20"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 15,
-          "opponent": "T21"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
           "week": 16,
-          "opponent": "T22"
+          "opponent": "LAC"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 17,
-          "opponent": "T23"
+          "opponent": "BUF"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 18,
-          "opponent": "T24"
+          "opponent": "NE"
         }
       ],
       "quarterbacks": "Malik Willis is a bit of a gamble on a $67.5 million deal, but he did show some very promising signs when starting for the Packers. Willis is a powerful athlete who can use his legs and has a bit of a cannon arm too. He had a very impressive start for the Packers against the Ravens last season with 288 passing yards, 1 TD as well as 60 rushing yards and 2 rushing TDs. That showed his potential and he’s a nice fit for this Dolphins team who don’t really have any top receivers left to throw to. Quinn Ewers is Willis’ backup but he’s just not very good, with 3 TDs and 3 interceptions in his four appearances last season.",
@@ -934,7 +934,7 @@
       "prediction_text": "This could get ugly. The Dolphins just don’t have enough talent to compete and they also have a completely new system. It’s going to be a steep learning curve. Having the Patriots and Bills in the Division doesn’t help either.",
       "id": "6a9022875b73b6b687d4f148",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:30:57.126000",
+      "updated_date": "2026-08-27T16:29:32.596000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -972,112 +972,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2a7cfa216_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 1,
-          "opponent": "T8"
+          "opponent": "SEA"
         },
         {
           "difficulty": "Moderate",
-          "location": "Away",
+          "location": "Home",
           "week": 2,
-          "opponent": "T9"
+          "opponent": "PIT"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 3,
-          "opponent": "T10"
+          "opponent": "JAX"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 4,
-          "opponent": "T11"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T12"
+          "opponent": "BUF"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
-          "week": 6,
-          "opponent": "T13"
+          "location": "Home",
+          "week": 5,
+          "opponent": "LV"
         },
         {
-          "difficulty": "",
-          "location": "None",
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 6,
+          "opponent": "NYJ"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
           "week": 7,
-          "opponent": ""
+          "opponent": "CHI"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 8,
-          "opponent": "T15"
+          "opponent": "MIA"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 9,
-          "opponent": "T16"
+          "opponent": "GB"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 10,
-          "opponent": "T17"
+          "opponent": "DET"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "",
+          "location": "None",
           "week": 11,
-          "opponent": "T18"
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 12,
-          "opponent": "T19"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T20"
+          "opponent": "LAC"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
-          "week": 14,
-          "opponent": "T21"
+          "week": 13,
+          "opponent": "BUF"
         },
         {
           "difficulty": "Moderate",
+          "location": "Home",
+          "week": 14,
+          "opponent": "MIN"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 15,
-          "opponent": "T22"
+          "opponent": "KC"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
           "location": "Away",
           "week": 16,
-          "opponent": "T23"
+          "opponent": "NYJ"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 17,
+          "opponent": "DEN"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T24"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
           "week": 18,
-          "opponent": "T25"
+          "opponent": "MIA"
         }
       ],
       "quarterbacks": "Drake Maye had a remarkable season in just his second year in the NFL, finishing second in MVP voting behind Matthew Stafford. The Patriots had the second-most passing yards per game in the NFL despite having just one receiver with 1000+ yards (Stefon Diggs). Maye put up serious numbers: 4394 passing yards, 31 touchdowns, 450 rushing yards and just 8 interceptions. Maye is a serious threat with his legs too and if he can improve again this season, he will cement himself as one of the best players in the league. It will be great to see how he goes with AJ Brown, who will undoubtedly expect a lot of targets. One of the Patriots’ strengths last season was their ability to spread the ball out between receivers. I’m looking forward to seeing Maye improve again this year.",
@@ -1086,7 +1086,7 @@
       "prediction_text": "I think there will be some regression from last year’s 14-3 record and Super Bowl appearance. They have a much harder schedule than last year. I am still a big fan of this team though and they’ve arguably gotten better in the off-season with the addition of AJ Brown and Drake Maye going into his third year.",
       "id": "6a9022875b73b6b687d4f149",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:30:57.383000",
+      "updated_date": "2026-08-27T16:29:32.933000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1127,109 +1127,109 @@
           "difficulty": "Easy",
           "location": "Away",
           "week": 1,
-          "opponent": "T9"
+          "opponent": "TEN"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 2,
-          "opponent": "T10"
+          "opponent": "GB"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 3,
-          "opponent": "T11"
+          "opponent": "DET"
         },
         {
           "difficulty": "Moderate",
-          "location": "Home",
+          "location": "Away",
           "week": 4,
-          "opponent": "T12"
+          "opponent": "CHI"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
           "location": "Home",
           "week": 5,
-          "opponent": "T13"
+          "opponent": "CLE"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 6,
-          "opponent": "T14"
+          "opponent": "NE"
         },
         {
-          "difficulty": "",
-          "location": "None",
+          "difficulty": "Easy",
+          "location": "Home",
           "week": 7,
-          "opponent": ""
+          "opponent": "MIA"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 8,
-          "opponent": "T16"
+          "opponent": "LV"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 9,
-          "opponent": "T17"
+          "opponent": "KC"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 10,
-          "opponent": "T18"
+          "opponent": "BUF"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 11,
-          "opponent": "T19"
+          "opponent": "LAC"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 12,
-          "opponent": "T20"
+          "opponent": "MIA"
         },
         {
-          "difficulty": "Difficult",
-          "location": "Away",
+          "difficulty": "",
+          "location": "None",
           "week": 13,
-          "opponent": "T21"
+          "opponent": "BYE"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
           "week": 14,
-          "opponent": "T22"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 15,
-          "opponent": "T23"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T24"
+          "opponent": "DEN"
         },
         {
           "difficulty": "Easy",
+          "location": "Away",
+          "week": 15,
+          "opponent": "ARI"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Home",
-          "week": 17,
-          "opponent": "T25"
+          "week": 16,
+          "opponent": "NE"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
+          "week": 17,
+          "opponent": "MIN"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 18,
-          "opponent": "T26"
+          "opponent": "BUF"
         }
       ],
       "quarterbacks": "It was a very ugly season at QB for the Jets, who started three different guys across the season. They put up just 140 passing yards per game, easily the lowest mark in the NFL. Geno Smith should improve those numbers but he’s not the future for this team. It’s a decent addition for the Jets who really just need a bridge QB before hopefully finding a player in the draft. They did select QB Cade Klubnik with pick 110 and actually traded up 18 spots to take him there. He wasn’t expected to go until the later rounds so the Jets clearly see some potential in him. He’ll almost definitely start as the backup to Smith to start the season but we could see him get reps later, likely once the Jets start tanking.",
@@ -1238,7 +1238,7 @@
       "prediction_text": "Look away Jets fans. Whilst this is the equal worst record I have predicted for any team this season, I think there will be some positives. They’ve drafted some nice talent and this is clearly a bridge year before hopefully drafting a good quarterback at the end of the season.",
       "id": "6a9022875b73b6b687d4f14a",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:30:57.604000",
+      "updated_date": "2026-08-27T16:29:33.464000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1276,112 +1276,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/af1a6538d_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 1,
-          "opponent": "T10"
+          "opponent": "BUF"
         },
         {
           "difficulty": "Moderate",
-          "location": "Away",
+          "location": "Home",
           "week": 2,
-          "opponent": "T11"
+          "opponent": "CIN"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 3,
-          "opponent": "T12"
+          "opponent": "IND"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 4,
-          "opponent": "T13"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T14"
+          "opponent": "DAL"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
+          "week": 5,
+          "opponent": "TEN"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
           "week": 6,
-          "opponent": "T15"
+          "opponent": "JAX"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 7,
+          "opponent": "NYG"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
           "week": 8,
-          "opponent": "T17"
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 9,
-          "opponent": "T18"
+          "opponent": "LAC"
         },
         {
           "difficulty": "Easy",
-          "location": "Home",
+          "location": "Away",
           "week": 10,
-          "opponent": "T19"
+          "opponent": "CLE"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 11,
-          "opponent": "T20"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 12,
-          "opponent": "T21"
+          "opponent": "IND"
         },
         {
           "difficulty": "Difficult",
+          "location": "Home",
+          "week": 12,
+          "opponent": "BAL"
+        },
+        {
+          "difficulty": "Easy",
           "location": "Away",
           "week": 13,
-          "opponent": "T22"
+          "opponent": "PIT"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 14,
+          "opponent": "WAS"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 15,
+          "opponent": "JAX"
         },
         {
           "difficulty": "Difficult",
-          "location": "Home",
-          "week": 14,
-          "opponent": "T23"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 15,
-          "opponent": "T24"
-        },
-        {
-          "difficulty": "Moderate",
           "location": "Away",
           "week": 16,
-          "opponent": "T25"
+          "opponent": "PHI"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 17,
+          "opponent": "GB"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T26"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
           "week": 18,
-          "opponent": "T27"
+          "opponent": "TEN"
         }
       ],
       "quarterbacks": "The Texans are doing everything they can to help CJ Stroud recapture his rookie form. The offensive line has been a big problem for the last couple of years, with Stroud taking 38, 52 and 23 sacks in his first three seasons. The 23 sacks he took last season were actually the equal fewest in the league, but we could see Stroud was just trying to get the ball out as quick as possible. We saw Stroud’s issues come to a head in the postseason, where he threw five interceptions and lost five fumbles in just two games. The Texans have bolstered the offensive line and added a really good veteran RB in David Montgomery to help Stroud get his confidence back. Davis Mills will continue to be the backup and he’s entering his sixth season with the team. He’s a serviceable option but doesn’t have the ceiling that we know Stroud has.",
@@ -1390,7 +1390,7 @@
       "prediction_text": "I have the Texans as a playoff team, mostly based off their defense. It’s an elite unit that is hard to score against. This record could definitely improve if CJ Stroud recaptures his rookie season form. It’s not an easy division with the Jags, Colts and Titans all capable of beating eachother.",
       "id": "6a9022875b73b6b687d4f14b",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:30:57.816000",
+      "updated_date": "2026-08-27T16:29:31.005000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1429,111 +1429,111 @@
       "schedule": [
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 1,
-          "opponent": "T11"
+          "opponent": "CLE"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 2,
-          "opponent": "T12"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 3,
-          "opponent": "T13"
+          "opponent": "DEN"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
-          "week": 4,
-          "opponent": "T14"
+          "week": 3,
+          "opponent": "NE"
         },
         {
           "difficulty": "Moderate",
+          "location": "Away",
+          "week": 4,
+          "opponent": "CIN"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 5,
-          "opponent": "T15"
+          "opponent": "PHI"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 6,
-          "opponent": "T16"
+          "opponent": "HOU"
         },
         {
           "difficulty": "",
           "location": "None",
           "week": 7,
-          "opponent": ""
+          "opponent": "BYE"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 8,
-          "opponent": "T18"
+          "opponent": "IND"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 9,
-          "opponent": "T19"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 10,
-          "opponent": "T20"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 11,
-          "opponent": "T21"
+          "opponent": "BAL"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 12,
-          "opponent": "T22"
+          "week": 10,
+          "opponent": "TEN"
         },
         {
-          "difficulty": "Difficult",
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 11,
+          "opponent": "NYG"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 12,
+          "opponent": "TEN"
+        },
+        {
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 13,
-          "opponent": "T23"
+          "opponent": "CHI"
         },
         {
-          "difficulty": "Difficult",
+          "difficulty": "Easy",
           "location": "Home",
           "week": 14,
-          "opponent": "T24"
+          "opponent": "PIT"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 15,
-          "opponent": "T25"
+          "opponent": "HOU"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 16,
-          "opponent": "T26"
+          "opponent": "DAL"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 17,
-          "opponent": "T27"
+          "opponent": "WAS"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Easy",
+          "location": "Away",
           "week": 18,
-          "opponent": "T28"
+          "opponent": "IND"
         }
       ],
       "quarterbacks": "Trevor Lawrence finished fifth in NFL MVP voting after a career year: 60.9% completion, 4,007 yards, a career-high 29 touchdowns, plus 359 rushing yards and nine rushing touchdowns, both career highs. Over Jacksonville's final eight games, the team outscored opponents by an average of 33.6-14.5 with Lawrence playing the best football of his career. They’ll be hoping he can go to new heights this year with an offense that remains largely the same. His passing yards line for the season is just 3750.5, a number that he has easily cleared in three of his five NFL seasons. If he stays healthy, I don’t see any reason why he doesn’t go over that number again. There might be some value on his rushing touchdowns too – he had nine last season and his line is just 4.5 this year, plus Travis Etienne is gone.",
@@ -1542,7 +1542,7 @@
       "prediction_text": "I have the Jags winning the AFC South as much as that pains me to say. They have an elite passing attack and if Trevor Lawrence can maintain his play from the back end of last season, they’ll be in a great spot. Should be a good playoff team once again.",
       "id": "6a9022875b73b6b687d4f14c",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:30:58.281000",
+      "updated_date": "2026-08-27T16:29:31.413000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1581,111 +1581,111 @@
       "schedule": [
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 1,
-          "opponent": "T12"
+          "opponent": "NYJ"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 2,
-          "opponent": "T13"
+          "opponent": "PHI"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 3,
-          "opponent": "T14"
+          "opponent": "NYG"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 4,
-          "opponent": "T15"
+          "opponent": "BAL"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 5,
-          "opponent": "T16"
+          "opponent": "HOU"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 6,
-          "opponent": "T17"
+          "opponent": "IND"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 7,
+          "opponent": "CLE"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 8,
+          "opponent": "CIN"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 8,
-          "opponent": "T19"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
           "week": 9,
-          "opponent": "T20"
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Home",
           "week": 10,
-          "opponent": "T21"
+          "opponent": "JAX"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "Moderate",
+          "location": "Away",
           "week": 11,
-          "opponent": "T22"
+          "opponent": "DAL"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 12,
-          "opponent": "T23"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T24"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Home",
-          "week": 14,
-          "opponent": "T25"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 15,
-          "opponent": "T26"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T27"
+          "opponent": "JAX"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T28"
+          "week": 13,
+          "opponent": "WAS"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 14,
+          "opponent": "DET"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 15,
+          "opponent": "IND"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 16,
+          "opponent": "LV"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
+          "week": 17,
+          "opponent": "PIT"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
           "week": 18,
-          "opponent": "T29"
+          "opponent": "HOU"
         }
       ],
       "quarterbacks": "Cam Ward's rookie season was rough on paper: 3,169 yards, 15 touchdowns, seven interceptions, sacked a league-high 55 times. He also finished 35th of 35 qualifying quarterbacks in EPA per dropback. However, he notably improved once Brian Callahan was fired and stopped calling plays. Ward flashed real toughness, starting every game despite the punishment he took. New offensive coordinator Brian Daboll is credited with developing Josh Allen into a superstar in Buffalo. Ward clearly has the talent and potential to be great, but we’ll see if last year did any lasting damage to him. Mitch Trubisky and Will Levis are both at Tennessee and both have had their fair share of starts across their careers. Ward is the future here though and he’ll be given every opportunity to start unless there’s an injury.",
@@ -1694,7 +1694,7 @@
       "prediction_text": "Some significant improvement from their 3-14 season in 2025, but still a fairly tough year. There will be improvements from Ward and lots of promising signs throughout the year, but this team is not ready to contend yet.",
       "id": "6a9022875b73b6b687d4f14d",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:30:58.560000",
+      "updated_date": "2026-08-27T16:29:34.700000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1732,112 +1732,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c753e6dbb_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 1,
-          "opponent": "T13"
+          "opponent": "BAL"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 2,
-          "opponent": "T14"
+          "opponent": "KC"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 3,
-          "opponent": "T15"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 4,
-          "opponent": "T16"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T17"
+          "opponent": "HOU"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 6,
-          "opponent": "T18"
+          "week": 4,
+          "opponent": "WAS"
         },
         {
-          "difficulty": "",
-          "location": "None",
-          "week": 7,
-          "opponent": ""
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 5,
+          "opponent": "PIT"
         },
         {
           "difficulty": "Easy",
+          "location": "Home",
+          "week": 6,
+          "opponent": "TEN"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 7,
+          "opponent": "MIN"
+        },
+        {
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 8,
-          "opponent": "T20"
+          "opponent": "JAX"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 9,
-          "opponent": "T21"
+          "opponent": "DAL"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 10,
-          "opponent": "T22"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 11,
-          "opponent": "T23"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 12,
-          "opponent": "T24"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T25"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Home",
-          "week": 14,
-          "opponent": "T26"
+          "opponent": "MIA"
         },
         {
           "difficulty": "Moderate",
+          "location": "Away",
+          "week": 11,
+          "opponent": "HOU"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 12,
+          "opponent": "NYG"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 13,
+          "opponent": "BYE"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 14,
+          "opponent": "PHI"
+        },
+        {
+          "difficulty": "Easy",
           "location": "Away",
           "week": 15,
-          "opponent": "T27"
+          "opponent": "TEN"
         },
         {
           "difficulty": "Moderate",
-          "location": "Away",
+          "location": "Home",
           "week": 16,
-          "opponent": "T28"
+          "opponent": "CIN"
         },
         {
           "difficulty": "Easy",
-          "location": "Home",
+          "location": "Away",
           "week": 17,
-          "opponent": "T29"
+          "opponent": "CLE"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 18,
-          "opponent": "T30"
+          "opponent": "JAX"
         }
       ],
       "quarterbacks": "Daniel Jones returns on a two-year, $88 million deal and he’s recovered from the achilles tear he suffered in Week 14. He’s been a full participant in camp and will start Week 1 barring anything going wrong between now and then. Jones was one of the stories of the season last year, leading the Colts to an 8-2 record after 10 games. Before the injury, he ranked third in the NFL in yards per attempt (8.1), fourth in completion percentage (68%) and sixth in passer rating (100.2). It was his best season in the NFL and if Jones can recapture that form this season (big if) then the Colts should be really good again. They had a league-leading 3.17 points per drive through Week 10, so he had this offense humming. Anthony Richardson hasn’t taken his opportunities and remains backup behind Jones this season.",
@@ -1846,7 +1846,7 @@
       "prediction_text": "I wanted to give them a few more wins but this is a tough division with the Jags and Texans looking dangerous. I still think it will be a winning season, but there is just a lot of unknown with Daniel Jones returning from his torn achilles and the receiver room looking pretty thin with Alec Pierce still not cleared.",
       "id": "6a9022875b73b6b687d4f14e",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:30:58.788000",
+      "updated_date": "2026-08-27T16:29:31.166000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -1884,112 +1884,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/0d22a0d7d_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 1,
-          "opponent": "T14"
+          "opponent": "KC"
         },
         {
           "difficulty": "Moderate",
-          "location": "Away",
+          "location": "Home",
           "week": 2,
-          "opponent": "T15"
+          "opponent": "JAX"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 3,
-          "opponent": "T16"
+          "opponent": "LAR"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 4,
-          "opponent": "T17"
+          "opponent": "SF"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 5,
-          "opponent": "T18"
+          "opponent": "LAC"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 6,
-          "opponent": "T19"
-        },
-        {
-          "difficulty": "",
-          "location": "None",
-          "week": 7,
-          "opponent": ""
+          "opponent": "SEA"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
+          "week": 7,
+          "opponent": "ARI"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 8,
-          "opponent": "T21"
+          "opponent": "KC"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 9,
-          "opponent": "T22"
+          "opponent": "CAR"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "",
+          "location": "None",
           "week": 10,
-          "opponent": "T23"
+          "opponent": "BYE"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 11,
-          "opponent": "T24"
+          "opponent": "LV"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 12,
-          "opponent": "T25"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T26"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Home",
-          "week": 14,
-          "opponent": "T27"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 15,
-          "opponent": "T28"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T29"
+          "opponent": "PIT"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T30"
+          "week": 13,
+          "opponent": "MIA"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 14,
+          "opponent": "NYJ"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 15,
+          "opponent": "LV"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 16,
+          "opponent": "BUF"
         },
         {
           "difficulty": "Moderate",
+          "location": "Away",
+          "week": 17,
+          "opponent": "NE"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 18,
-          "opponent": "T31"
+          "opponent": "LAC"
         }
       ],
       "quarterbacks": "Bo Nix owns the most wins by any quarterback in his first two NFL seasons (24), and the belief internally is that Denver would have reached the Super Bowl had he not broken his ankle in the divisional round. Nix finished with 3931 passing yards, 25 touchdowns and 11 interceptions but also added 356 rushing yards and 5 rushing touchdowns. Honestly, I still haven’t been fully convinced on Nix, but I might have to change my opinion now. He wins games and has learned to manage game situations really well. If he can improve again this year and the Broncos challenge again, he will likely be in contention for MVP. He’s currently the 18th favorite at +3500 which seems a little crazy to me… Especially seeing as I have the Broncos winning this division. Value play for you there.",
@@ -1998,7 +1998,7 @@
       "prediction_text": "The Broncos went an amazing 14-3 last season but it feels like they were never really rated as a true Super Bowl threat. Bo Nix is back healthy and he could go to another level in his third season. I have them winning the AFC West again and it’s not bad odds at +210.",
       "id": "6a9022875b73b6b687d4f14f",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:30:59.163000",
+      "updated_date": "2026-08-27T16:31:47.212000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2036,112 +2036,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/bfa20c35f_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 1,
-          "opponent": "T15"
+          "opponent": "DEN"
         },
         {
           "difficulty": "Moderate",
-          "location": "Away",
+          "location": "Home",
           "week": 2,
-          "opponent": "T16"
+          "opponent": "IND"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 3,
-          "opponent": "T17"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 4,
-          "opponent": "T18"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T19"
+          "opponent": "MIA"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 6,
-          "opponent": "T20"
+          "week": 4,
+          "opponent": "LV"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
+          "week": 5,
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 6,
+          "opponent": "LAC"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 7,
+          "opponent": "SEA"
+        },
+        {
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 8,
-          "opponent": "T22"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T23"
+          "opponent": "DEN"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
+          "week": 9,
+          "opponent": "NYJ"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
           "week": 10,
-          "opponent": "T24"
+          "opponent": "ATL"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 11,
-          "opponent": "T25"
+          "opponent": "ARI"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 12,
-          "opponent": "T26"
+          "opponent": "BUF"
         },
         {
           "difficulty": "Difficult",
           "location": "Away",
           "week": 13,
-          "opponent": "T27"
+          "opponent": "LAR"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 14,
+          "opponent": "CIN"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 15,
+          "opponent": "NE"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
-          "week": 14,
-          "opponent": "T28"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 15,
-          "opponent": "T29"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
           "week": 16,
-          "opponent": "T30"
+          "opponent": "SF"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 17,
+          "opponent": "LAC"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T31"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
           "week": 18,
-          "opponent": "T32"
+          "opponent": "LV"
         }
       ],
       "quarterbacks": "2025 was Patrick Mahomes’ worst season as a pro. He finished with lows in passing yards (3587), completion percentage (62.7%), touchdowns (22) and touchdown rate (4.4%). Obviously these numbers aren’t terrible, but it was a tough season for Mahomes prior to his injury. The reports from training camp are that he’s going to be fully ready for Week 1, but he’s going to look after himself more this season. Mahomes said he ran the ball too much in 2025 and we can expect him to pass or hand the ball off much more in 2026. Another consideration is that Justin Fields is now in KC to back up Mahomes. He won’t be used to pass much, but I can bet you that Andy Reid will get him involved in the offense. Fields is too good of an athlete to not try and get it to work.",
@@ -2150,7 +2150,7 @@
       "prediction_text": "I have the Chiefs returning to a winning record after a horror 6-11 2025 season. Mahomes is back and they have got a really solid RB1 in Kenneth Walker to lean the run game on. Its not an easy division but I think this team is too talented to not have a winning record this season. The receiver room is a slight worry though.",
       "id": "6a9022875b73b6b687d4f150",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:30:59.537000",
+      "updated_date": "2026-08-27T16:29:31.593000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2189,111 +2189,111 @@
       "schedule": [
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 1,
-          "opponent": "T16"
+          "opponent": "MIA"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 2,
-          "opponent": "T17"
+          "opponent": "LAC"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 3,
-          "opponent": "T18"
+          "opponent": "NO"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 4,
-          "opponent": "T19"
+          "opponent": "KC"
         },
         {
           "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T20"
-        },
-        {
-          "difficulty": "Easy",
           "location": "Away",
-          "week": 6,
-          "opponent": "T21"
+          "week": 5,
+          "opponent": "NE"
         },
         {
-          "difficulty": "",
-          "location": "None",
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 6,
+          "opponent": "BUF"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 7,
-          "opponent": ""
+          "opponent": "LAR"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 8,
-          "opponent": "T23"
+          "opponent": "NYJ"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 9,
-          "opponent": "T24"
+          "opponent": "SF"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 10,
-          "opponent": "T25"
+          "opponent": "SEA"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "Moderate",
+          "location": "Away",
           "week": 11,
-          "opponent": "T26"
+          "opponent": "DEN"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 12,
-          "opponent": "T27"
+          "opponent": "CLE"
         },
         {
-          "difficulty": "Difficult",
-          "location": "Away",
+          "difficulty": "",
+          "location": "None",
           "week": 13,
-          "opponent": "T28"
+          "opponent": "BYE"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
           "week": 14,
-          "opponent": "T29"
+          "opponent": "LAC"
         },
         {
           "difficulty": "Moderate",
-          "location": "Away",
+          "location": "Home",
           "week": 15,
-          "opponent": "T30"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T31"
+          "opponent": "DEN"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T32"
+          "week": 16,
+          "opponent": "TEN"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 17,
+          "opponent": "ARI"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 18,
-          "opponent": "T1"
+          "opponent": "KC"
         }
       ],
       "quarterbacks": "Kirk Cousins is very likely to start the season ahead of Mendoza and I think that’s the right decision at this point. They’re probably not in a position to challenge for playoffs yet, so let Mendoza develop without much pressure early on and then assimilate him into the offense as the season goes on. Cousins is well past his prime but has great experience and he will be a good mentor for Mendoza. Mendoza won the Heisman trophy last year in Indiana’s undefeated season and National Title. His current passing yards line for this season is 2350.5 which is quite tempting to take the under… I think Cousins will start more than half the games this season.",
@@ -2302,7 +2302,7 @@
       "prediction_text": "Prediction",
       "id": "6a9022875b73b6b687d4f151",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:30:59.824000",
+      "updated_date": "2026-08-27T16:29:32.421000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2341,111 +2341,111 @@
       "schedule": [
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 1,
-          "opponent": "T17"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 2,
-          "opponent": "T18"
+          "opponent": "ARI"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
-          "week": 3,
-          "opponent": "T19"
+          "location": "Home",
+          "week": 2,
+          "opponent": "LV"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 3,
+          "opponent": "BUF"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 4,
-          "opponent": "T20"
+          "opponent": "SEA"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 5,
-          "opponent": "T21"
+          "opponent": "DEN"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 6,
-          "opponent": "T22"
+          "opponent": "KC"
         },
         {
           "difficulty": "",
           "location": "None",
           "week": 7,
-          "opponent": ""
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 8,
-          "opponent": "T24"
+          "opponent": "LAR"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T25"
-        },
-        {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Home",
+          "week": 9,
+          "opponent": "HOU"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 10,
-          "opponent": "T26"
+          "opponent": "BAL"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 11,
-          "opponent": "T27"
+          "opponent": "NYJ"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 12,
-          "opponent": "T28"
+          "opponent": "NE"
         },
         {
-          "difficulty": "Difficult",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 13,
-          "opponent": "T29"
+          "opponent": "TB"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 14,
+          "opponent": "LV"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
-          "week": 14,
-          "opponent": "T30"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
           "week": 15,
-          "opponent": "T31"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T32"
+          "opponent": "SF"
         },
         {
           "difficulty": "Easy",
+          "location": "Away",
+          "week": 16,
+          "opponent": "MIA"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 17,
-          "opponent": "T1"
+          "opponent": "KC"
         },
         {
           "difficulty": "Moderate",
-          "location": "Home",
+          "location": "Away",
           "week": 18,
-          "opponent": "T2"
+          "opponent": "DEN"
         }
       ],
       "quarterbacks": "There is no doubt Justin Herbert is one of the most talented quarterbacks in the league. He’s put up 20+ passing TDs in every season as a pro and hasn’t had a completion percentage below 65%. That’s despite being one of the most pressured quarterbacks in the league – last season the Chargers allowed a league-worst 42.5% pressure rate. Both starting tackles, Joe Alt and Rashawn Slater, are expected back healthy after injury-shortened 2025 seasons. That should make a big difference for Herbert, along with new OC Mike McDaniel who is one of the most creative, offensive-minded coaches in the league. Herbert is recently engaged and looks locked in for the season, I think he could be a real MVP candidate if the Chargers deliver on their expectations.",
@@ -2454,7 +2454,7 @@
       "prediction_text": "I have the Chargers finishing second behind the Broncos in the AFC West. If they can stay healthy, especially with the offensive line, then this team has a really high ceiling. There aren’t too many weaknesses across the board and they are well coached as well. Exciting times for the Chargers.",
       "id": "6a9022875b73b6b687d4f152",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:31:00.154000",
+      "updated_date": "2026-08-27T16:29:32.018000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2492,112 +2492,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/048b20e82_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 1,
-          "opponent": "T18"
+          "opponent": "NO"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 2,
-          "opponent": "T19"
+          "opponent": "BUF"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 3,
-          "opponent": "T20"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 4,
-          "opponent": "T21"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T22"
+          "opponent": "NYJ"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 6,
-          "opponent": "T23"
+          "week": 4,
+          "opponent": "CAR"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 5,
+          "opponent": "ARI"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
+          "week": 6,
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 7,
+          "opponent": "GB"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 8,
-          "opponent": "T25"
+          "opponent": "MIN"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 9,
-          "opponent": "T26"
+          "opponent": "MIA"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 10,
-          "opponent": "T27"
+          "opponent": "NE"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Home",
           "week": 11,
-          "opponent": "T28"
+          "opponent": "TB"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 12,
+          "opponent": "CHI"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 12,
-          "opponent": "T29"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
           "week": 13,
-          "opponent": "T30"
+          "opponent": "ATL"
         },
         {
-          "difficulty": "Difficult",
+          "difficulty": "Easy",
           "location": "Home",
           "week": 14,
-          "opponent": "T31"
+          "opponent": "TEN"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 15,
-          "opponent": "T32"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T1"
+          "opponent": "MIN"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T2"
+          "week": 16,
+          "opponent": "NYG"
         },
         {
           "difficulty": "Moderate",
-          "location": "Home",
+          "location": "Away",
+          "week": 17,
+          "opponent": "CHI"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 18,
-          "opponent": "T3"
+          "opponent": "GB"
         }
       ],
       "quarterbacks": "Jared Goff finished second in the NFL in passing yards (4,564) and touchdowns (34), third in passer rating (105.5), and earned his fifth Pro Bowl nod despite the coordinator turnover — a testament to how much talent still surrounds him. He’s been a very good quarterback for years now and has three straight seasons with 30+ passing touchdowns. His passing TDs line for this season is set at 29.5, a number he should go over again if he’s healthy all season. His passing yards line is set at 4050.5, also a number he has cleared in four straight seasons. Backing up Goff is veteran Teddy Bridgewater but he won’t be called upon unless Goff gets injured or sits out in games that are finished.",
@@ -2606,7 +2606,7 @@
       "prediction_text": "The Lions have one of the easier schedules in the NFL, despite having a tough division. Their offense is extremely powerful and Jahmyr Gibbs could produce a massive season. If their defense holds up, they should return to the playoffs.",
       "id": "6a9022875b73b6b687d4f153",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:52.270000",
+      "updated_date": "2026-08-27T16:29:30.648000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2644,112 +2644,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/1d1b68a53_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 1,
-          "opponent": "T19"
+          "opponent": "GB"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 2,
-          "opponent": "T20"
+          "opponent": "CHI"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 3,
-          "opponent": "T21"
+          "opponent": "TB"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
           "location": "Home",
           "week": 4,
-          "opponent": "T22"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T23"
+          "opponent": "MIA"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 6,
-          "opponent": "T24"
+          "week": 5,
+          "opponent": "NO"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
+          "week": 6,
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 7,
+          "opponent": "IND"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 8,
-          "opponent": "T26"
+          "opponent": "DET"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 9,
-          "opponent": "T27"
+          "opponent": "BUF"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 10,
-          "opponent": "T28"
+          "opponent": "GB"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 11,
-          "opponent": "T29"
+          "opponent": "SF"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 12,
-          "opponent": "T30"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T31"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Home",
-          "week": 14,
-          "opponent": "T32"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 15,
-          "opponent": "T1"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T2"
+          "opponent": "ATL"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
+          "week": 13,
+          "opponent": "CAR"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 14,
+          "opponent": "NE"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 15,
+          "opponent": "DET"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 16,
+          "opponent": "WAS"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
           "week": 17,
-          "opponent": "T3"
+          "opponent": "NYJ"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 18,
-          "opponent": "T4"
+          "opponent": "CHI"
         }
       ],
       "quarterbacks": "JJ McCarthy, Carson Wentz, and Max Brosmer ranked 45th, 30th, and 57th in EPA per play among 57 quarterbacks with 50-plus dropbacks last year — even a down Murray year in Arizona ranked 25th from that same group. If Murray starts, which I expect him to do, he should be a clear upgrade on all three guys from last season. We know Kevin O’Connell has great success with his quarterbacks and I wouldn’t be surprised to see Kyler thrive with a change of scenery. Kyler is currently -2500 to be the starting QB and he’s +600 for comeback player of the year which could be worth a nibble. I’m looking forward to seeing him use his legs more now that he’s another year removed from the ACL injury he suffered in 2022.",
@@ -2758,7 +2758,7 @@
       "prediction_text": "The Vikings will improve with Kyler Murray at quarterback, but they will struggle to have a winning record in this division. They’ve got a nice defense and some great offensive pieces, but the teams around them are just better at this stage.",
       "id": "6a9022875b73b6b687d4f154",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:52.453000",
+      "updated_date": "2026-08-27T16:29:32.761000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2796,112 +2796,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/11d126b0f_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 1,
-          "opponent": "T20"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 2,
-          "opponent": "T21"
+          "opponent": "MIN"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
+          "week": 2,
+          "opponent": "NYJ"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
           "week": 3,
-          "opponent": "T22"
+          "opponent": "ATL"
         },
         {
           "difficulty": "Moderate",
-          "location": "Home",
+          "location": "Away",
           "week": 4,
-          "opponent": "T23"
+          "opponent": "TB"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 5,
-          "opponent": "T24"
+          "opponent": "CHI"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 6,
-          "opponent": "T25"
-        },
-        {
-          "difficulty": "",
-          "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 8,
-          "opponent": "T27"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T28"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 10,
-          "opponent": "T29"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 11,
-          "opponent": "T30"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 12,
-          "opponent": "T31"
+          "opponent": "DAL"
         },
         {
           "difficulty": "Difficult",
           "location": "Away",
+          "week": 7,
+          "opponent": "DET"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 8,
+          "opponent": "CAR"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 9,
+          "opponent": "NE"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 10,
+          "opponent": "MIN"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 11,
+          "opponent": "BYE"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 12,
+          "opponent": "LAR"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
           "week": 13,
-          "opponent": "T32"
+          "opponent": "NO"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
           "week": 14,
-          "opponent": "T1"
+          "opponent": "BUF"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Away",
+          "difficulty": "Easy",
+          "location": "Home",
           "week": 15,
-          "opponent": "T2"
+          "opponent": "MIA"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 16,
-          "opponent": "T3"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 17,
-          "opponent": "T4"
+          "opponent": "CHI"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
+          "week": 17,
+          "opponent": "HOU"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 18,
-          "opponent": "T5"
+          "opponent": "DET"
         }
       ],
       "quarterbacks": "Jordan Love was already second in EPA per play among qualified quarterbacks last season without one of his top two pass-catchers on the field for all but two total games. Love is entering year four of his $220 million extension after a career-efficient season: per Sharp, second in EPA per play among qualified quarterbacks, all without Christian Watson or Tucker Kraft healthy for all but two games together. It looks like there will be better player health to start the season with all of Watson, Jayden Reed, Tucker Kraft and Matthew Golden being involved in training camp. Micah Parsons publicly defended Love after a modest No. 72 ranking on the NFL's Top 100 list.",
@@ -2910,7 +2910,7 @@
       "prediction_text": "As mentioned earlier, their divisional games will be absolutely crucial. I think the Packers will be a playoff team once again and they’ll get a nice boost defensively when Micah Parsons returns from injury.",
       "id": "6a9022875b73b6b687d4f155",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:52.647000",
+      "updated_date": "2026-08-27T16:33:09.829000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -2951,109 +2951,109 @@
           "difficulty": "Easy",
           "location": "Away",
           "week": 1,
-          "opponent": "T21"
+          "opponent": "CAR"
         },
         {
           "difficulty": "Moderate",
-          "location": "Away",
+          "location": "Home",
           "week": 2,
-          "opponent": "T22"
+          "opponent": "MIN"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 3,
+          "opponent": "PHI"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
-          "week": 3,
-          "opponent": "T23"
-        },
-        {
-          "difficulty": "Moderate",
           "location": "Home",
           "week": 4,
-          "opponent": "T24"
+          "opponent": "NYJ"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 5,
-          "opponent": "T25"
+          "opponent": "GB"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 6,
-          "opponent": "T26"
+          "opponent": "ATL"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 7,
+          "opponent": "NE"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 8,
+          "opponent": "SEA"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 9,
+          "opponent": "TB"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 8,
-          "opponent": "T28"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T29"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
           "week": 10,
-          "opponent": "T30"
+          "opponent": "BYE"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 11,
-          "opponent": "T31"
+          "opponent": "NO"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 12,
-          "opponent": "T32"
+          "opponent": "DET"
         },
         {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T1"
-        },
-        {
-          "difficulty": "Difficult",
+          "difficulty": "Moderate",
           "location": "Home",
-          "week": 14,
-          "opponent": "T2"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 15,
-          "opponent": "T3"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T4"
+          "week": 13,
+          "opponent": "JAX"
         },
         {
           "difficulty": "Easy",
+          "location": "Away",
+          "week": 14,
+          "opponent": "MIA"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 15,
+          "opponent": "BUF"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 16,
+          "opponent": "GB"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 17,
-          "opponent": "T5"
+          "opponent": "DET"
         },
         {
           "difficulty": "Moderate",
-          "location": "Home",
+          "location": "Away",
           "week": 18,
-          "opponent": "T6"
+          "opponent": "MIN"
         }
       ],
       "quarterbacks": "Caleb Williams took a real step forward in year one under Ben Johnson, cutting his pressure-to-sack rate from 27% to 10% while learning to operate a run-heavy attack that ranked top-two in rushing success rate. Williams surged from 32nd in EPA per play as a rookie to 15th last season among qualified quarterbacks, with his sack rate improving from 35th to fourth over that same span. If everything clicks this season, he’s a genuine chance to be an MVP candidate. His current passing line is set for 3575.5 yards – a mark he easily cleared last year. I’d expect him to clear that comfortably once again if healthy.",
@@ -3062,7 +3062,7 @@
       "prediction_text": "I think the Bears are a big chance of winning the NFC North (currently third favorite at +320). Ben Johnson enters his second year and this offense is shaping up nicely with Caleb Williams. If they can get more stops, they’ll be a good team.",
       "id": "6a9022875b73b6b687d4f156",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:31:52.254000",
+      "updated_date": "2026-08-27T16:29:29.600000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -3103,109 +3103,109 @@
           "difficulty": "Easy",
           "location": "Away",
           "week": 1,
-          "opponent": "T22"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 2,
-          "opponent": "T23"
+          "opponent": "NYG"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
+          "week": 2,
+          "opponent": "WAS"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 3,
-          "opponent": "T24"
+          "opponent": "BAL"
         },
         {
           "difficulty": "Moderate",
-          "location": "Home",
+          "location": "Away",
           "week": 4,
-          "opponent": "T25"
+          "opponent": "HOU"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 5,
-          "opponent": "T26"
+          "opponent": "TB"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 6,
-          "opponent": "T27"
+          "opponent": "GB"
         },
         {
-          "difficulty": "",
-          "location": "None",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 8,
-          "opponent": "T29"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T30"
+          "opponent": "PHI"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
+          "week": 8,
+          "opponent": "ARI"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 9,
+          "opponent": "IND"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 10,
-          "opponent": "T31"
+          "opponent": "SF"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 11,
-          "opponent": "T32"
+          "opponent": "TEN"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 12,
-          "opponent": "T1"
+          "opponent": "PHI"
         },
         {
           "difficulty": "Difficult",
           "location": "Away",
           "week": 13,
-          "opponent": "T2"
+          "opponent": "SEA"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 14,
+          "opponent": "BYE"
         },
         {
           "difficulty": "Difficult",
-          "location": "Home",
-          "week": 14,
-          "opponent": "T3"
-        },
-        {
-          "difficulty": "Moderate",
           "location": "Away",
           "week": 15,
-          "opponent": "T4"
+          "opponent": "LAR"
         },
         {
           "difficulty": "Moderate",
-          "location": "Away",
+          "location": "Home",
           "week": 16,
-          "opponent": "T5"
+          "opponent": "JAX"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 17,
-          "opponent": "T6"
+          "opponent": "NYG"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Easy",
+          "location": "Away",
           "week": 18,
-          "opponent": "T7"
+          "opponent": "WAS"
         }
       ],
       "quarterbacks": "QB room (Dak Prescott #4; Joe Milton III #10)",
@@ -3214,7 +3214,7 @@
       "prediction_text": "Prediction",
       "id": "6a9022875b73b6b687d4f157",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:53.398000",
+      "updated_date": "2026-08-27T16:29:30.247000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -3252,112 +3252,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/a2bc76f60_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 1,
-          "opponent": "T23"
+          "opponent": "DAL"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 2,
-          "opponent": "T24"
+          "opponent": "LAR"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 3,
-          "opponent": "T25"
+          "opponent": "TEN"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
           "location": "Home",
           "week": 4,
-          "opponent": "T26"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T27"
+          "opponent": "ARI"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
+          "week": 5,
+          "opponent": "WAS"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
           "week": 6,
-          "opponent": "T28"
+          "opponent": "NO"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 7,
+          "opponent": "HOU"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
           "week": 8,
-          "opponent": "T30"
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 9,
-          "opponent": "T31"
+          "opponent": "PHI"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 10,
-          "opponent": "T32"
+          "opponent": "WAS"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Home",
           "week": 11,
-          "opponent": "T1"
+          "opponent": "JAX"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 12,
-          "opponent": "T2"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T3"
+          "opponent": "IND"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
+          "week": 13,
+          "opponent": "SF"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 14,
-          "opponent": "T4"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 15,
-          "opponent": "T5"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T6"
+          "opponent": "SEA"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T7"
+          "week": 15,
+          "opponent": "CLE"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 16,
+          "opponent": "DET"
         },
         {
           "difficulty": "Moderate",
+          "location": "Away",
+          "week": 17,
+          "opponent": "DAL"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 18,
-          "opponent": "T8"
+          "opponent": "PHI"
         }
       ],
       "quarterbacks": "The Giants found what looks to be their franchise QB in Jaxson Dart. He took over from Russell Wilson in Week 4 after an 0-3 start and never gave the job back, completing 63.7% of his passes for 2,272 yards with a 15-to-5 touchdown-to-interception ratio. He also set the franchise's single-season quarterback rushing touchdown record with nine. Impressive numbers in a team that finished with a 4-13 record. He made the Giants competitive again and I’m looking forward to seeing the improvement under John Harbaugh this season. I expect the Giants to ask Dart to run the ball less frequently this year to look after him a bit more. Having said that, I do like his rushing touchdowns line of 5.5 for the season at –108 on FanDuel.",
@@ -3366,7 +3366,7 @@
       "prediction_text": "There’s plenty of reason for optimism for the Giants but I don’t think it will all come together immediately. The Harbaugh era is exciting and Jaxson Dart could take another leap, although he needs to look after himself a little more in my opinion.",
       "id": "6a9022875b73b6b687d4f158",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:53.601000",
+      "updated_date": "2026-08-27T16:29:33.320000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -3405,111 +3405,111 @@
       "schedule": [
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 1,
-          "opponent": "T24"
+          "opponent": "WAS"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
           "location": "Away",
           "week": 2,
-          "opponent": "T25"
+          "opponent": "TEN"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 3,
-          "opponent": "T26"
+          "opponent": "CHI"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 4,
-          "opponent": "T27"
+          "opponent": "LAR"
         },
         {
           "difficulty": "Moderate",
-          "location": "Home",
+          "location": "Away",
           "week": 5,
-          "opponent": "T28"
+          "opponent": "JAX"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 6,
-          "opponent": "T29"
+          "opponent": "CAR"
         },
         {
-          "difficulty": "",
-          "location": "None",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 7,
-          "opponent": ""
+          "opponent": "DAL"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 8,
-          "opponent": "T31"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T32"
+          "opponent": "WAS"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 10,
-          "opponent": "T1"
+          "week": 9,
+          "opponent": "NYG"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "",
+          "location": "None",
+          "week": 10,
+          "opponent": "BYE"
+        },
+        {
+          "difficulty": "Moderate",
           "location": "Home",
           "week": 11,
-          "opponent": "T2"
+          "opponent": "PIT"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 12,
-          "opponent": "T3"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T4"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Home",
-          "week": 14,
-          "opponent": "T5"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 15,
-          "opponent": "T6"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T7"
+          "opponent": "DAL"
         },
         {
           "difficulty": "Easy",
-          "location": "Home",
-          "week": 17,
-          "opponent": "T8"
+          "location": "Away",
+          "week": 13,
+          "opponent": "ARI"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
+          "week": 14,
+          "opponent": "IND"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 15,
+          "opponent": "SEA"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 16,
+          "opponent": "HOU"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 17,
+          "opponent": "SF"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
           "week": 18,
-          "opponent": "T9"
+          "opponent": "NYG"
         }
       ],
       "quarterbacks": "Jalen Hurts threw 25 touchdown passes in 2025 but posted his least productive rushing season since becoming a full-time starter, and now must learn his fifth offensive coordinator in five seasons in Sean Mannion, who is installing a real different look from what Philadelphia ran under Nick Sirianni. The Eagles have heavily run the ball in the last few seasons which means they haven’t asked too much of Jalen Hurts’ passing. That could change this year though especially with Saquon Barkley getting older. Hurts has led the Eagles to the playoffs in five consecutive seasons and I expect him to do so again this year.",
@@ -3518,7 +3518,7 @@
       "prediction_text": "The Eagles are just a well rounded team that are hard to bet against. Jalen Hurts is a good game manager but he can also put up big numbers when required. I think the loss of AJ Brown isn’t going to hurt them that much as this team loves to run the ball. DeVonta Smith could be set for a big year too. They should win the NFC East.",
       "id": "6a9022875b73b6b687d4f159",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:53.805000",
+      "updated_date": "2026-08-27T16:29:33.624000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -3556,112 +3556,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/bb1f10f50_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 1,
-          "opponent": "T25"
+          "opponent": "PHI"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 2,
-          "opponent": "T26"
+          "opponent": "DAL"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 3,
-          "opponent": "T27"
+          "opponent": "SEA"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 4,
-          "opponent": "T28"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T29"
+          "opponent": "IND"
         },
         {
           "difficulty": "Easy",
+          "location": "Home",
+          "week": 5,
+          "opponent": "NYG"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 6,
-          "opponent": "T30"
+          "opponent": "SF"
         },
         {
           "difficulty": "",
           "location": "None",
           "week": 7,
-          "opponent": ""
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 8,
-          "opponent": "T32"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T1"
-        },
-        {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Home",
-          "week": 10,
-          "opponent": "T2"
+          "week": 8,
+          "opponent": "PHI"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 9,
+          "opponent": "LAR"
         },
         {
           "difficulty": "Easy",
+          "location": "Away",
+          "week": 10,
+          "opponent": "NYG"
+        },
+        {
+          "difficulty": "Moderate",
           "location": "Home",
           "week": 11,
-          "opponent": "T3"
+          "opponent": "CIN"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 12,
-          "opponent": "T4"
+          "opponent": "ARI"
         },
         {
-          "difficulty": "Difficult",
+          "difficulty": "Easy",
           "location": "Away",
           "week": 13,
-          "opponent": "T5"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Home",
-          "week": 14,
-          "opponent": "T6"
+          "opponent": "TEN"
         },
         {
           "difficulty": "Moderate",
-          "location": "Away",
+          "location": "Home",
+          "week": 14,
+          "opponent": "HOU"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
           "week": 15,
-          "opponent": "T7"
+          "opponent": "ATL"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 16,
-          "opponent": "T8"
+          "opponent": "MIN"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "Moderate",
+          "location": "Away",
           "week": 17,
-          "opponent": "T9"
+          "opponent": "JAX"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 18,
-          "opponent": "T10"
+          "opponent": "DAL"
         }
       ],
       "quarterbacks": "It was chalk and cheese when talking about Daniels’ rookie season compared to last year. He topped 3500 yards and 25 touchdowns with 891 rushing yards as a rookie, before a completely different, injury-shortened 2025 in which he played just seven games. The talent is undoubtedly there and the Commanders will be hoping he can recapture that rookie form with another pre-season under his belt and a clean bill of health. New OC David Blough plans to get Daniels under center far more often, a real schematic shift from a league-high 92.9% shotgun rate through his first two seasons.",
@@ -3670,7 +3670,7 @@
       "prediction_text": "This might feel a little low but I don’t rate many offensive players on this Commanders team. Jayden Daniels has a lot of potential but they haven’t surrounded him with enough talent at this stage. Their defense is fine, but I think they lose most divisional games and will struggle overall. No playoffs again in my opinion.",
       "id": "6a9022875b73b6b687d4f15a",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:54.030000",
+      "updated_date": "2026-08-27T16:29:34.885000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -3711,109 +3711,109 @@
           "difficulty": "Easy",
           "location": "Away",
           "week": 1,
-          "opponent": "T26"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 2,
-          "opponent": "T27"
+          "opponent": "PIT"
         },
         {
           "difficulty": "Easy",
+          "location": "Home",
+          "week": 2,
+          "opponent": "CAR"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 3,
-          "opponent": "T28"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 4,
-          "opponent": "T29"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T30"
+          "opponent": "GB"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 6,
-          "opponent": "T31"
+          "week": 4,
+          "opponent": "NO"
         },
         {
-          "difficulty": "",
-          "location": "None",
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 5,
+          "opponent": "BAL"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 6,
+          "opponent": "CHI"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 7,
-          "opponent": ""
+          "opponent": "SF"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 8,
-          "opponent": "T1"
+          "opponent": "TB"
         },
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 9,
-          "opponent": "T2"
+          "opponent": "CIN"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 10,
-          "opponent": "T3"
+          "opponent": "KC"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "",
+          "location": "None",
           "week": 11,
-          "opponent": "T4"
+          "opponent": "BYE"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 12,
-          "opponent": "T5"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T6"
+          "opponent": "MIN"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
-          "week": 14,
-          "opponent": "T7"
+          "week": 13,
+          "opponent": "DET"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 14,
+          "opponent": "CLE"
+        },
+        {
+          "difficulty": "Easy",
           "location": "Away",
           "week": 15,
-          "opponent": "T8"
+          "opponent": "WAS"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Away",
+          "difficulty": "Easy",
+          "location": "Home",
           "week": 16,
-          "opponent": "T9"
+          "opponent": "TB"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 17,
-          "opponent": "T10"
+          "opponent": "NO"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Easy",
+          "location": "Away",
           "week": 18,
-          "opponent": "T11"
+          "opponent": "CAR"
         }
       ],
       "quarterbacks": "Michael Penix Jr. is working back from a season-ending ACL tear and hasn't been cleared for full-contact drills, while Tua Tagovailoa, who was 27th in EPA per play in his final Miami season, arrives to push him for the job. I think Tua will be the starter for the beginning of the season and he should improve the passing game slightly. Even in a poor Dolphins outfit last year, Tua averaged more passing yards than Penix and Cousins when they were playing for the Falcons. That should improve the output for guys like Drake London and Bijan Robinson in the passing game.",
@@ -3822,7 +3822,7 @@
       "prediction_text": "The Falcons finished 8-9 last year and I think they’ll be around a similar mark. They definitely have good offensive weapons but I’m not sure if Kevin Stefanski will be able to make them a real threat. The division is very even and while I don’t think any of the four teams in the NFC South are that good, I probably have Atlanta close to the bottom.",
       "id": "6a9022875b73b6b687d4f15b",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:54.355000",
+      "updated_date": "2026-08-27T16:29:28.411000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -3860,112 +3860,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/4f64857be_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 1,
-          "opponent": "T27"
+          "opponent": "CHI"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
           "location": "Away",
           "week": 2,
-          "opponent": "T28"
+          "opponent": "ATL"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 3,
-          "opponent": "T29"
+          "opponent": "CLE"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 4,
-          "opponent": "T30"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T31"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 6,
-          "opponent": "T32"
+          "opponent": "DET"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
+          "week": 5,
+          "opponent": "BYE"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 6,
+          "opponent": "PHI"
         },
         {
           "difficulty": "Easy",
+          "location": "Home",
+          "week": 7,
+          "opponent": "TB"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 8,
-          "opponent": "T2"
+          "opponent": "GB"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 9,
+          "opponent": "DEN"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 9,
-          "opponent": "T3"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
           "week": 10,
-          "opponent": "T4"
+          "opponent": "NO"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 11,
-          "opponent": "T5"
+          "opponent": "BAL"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 12,
-          "opponent": "T6"
+          "opponent": "TB"
         },
         {
-          "difficulty": "Difficult",
+          "difficulty": "Easy",
           "location": "Away",
           "week": 13,
-          "opponent": "T7"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Home",
-          "week": 14,
-          "opponent": "T8"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 15,
-          "opponent": "T9"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T10"
+          "opponent": "MIN"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T11"
+          "week": 14,
+          "opponent": "NO"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
+          "week": 15,
+          "opponent": "CIN"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 16,
+          "opponent": "PIT"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 17,
+          "opponent": "SEA"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
           "week": 18,
-          "opponent": "T12"
+          "opponent": "ATL"
         }
       ],
       "quarterbacks": "Bryce Young was 28th among 33 qualified quarterbacks in EPA per play last season, his third straight season in the bottom half at the position since entering the league in 2023. The jury remains out on the former No. 1 pick but he did show flashes of his ability at times last year. The 448-yard, 3 TD performance against Atlanta mid-season was impressive. The addition of first round pick Monroe Freeling at OT should give Bryce Young some more time to throw, which can only help. If he can take another leap this year with an improved receiving corps, the Panthers should be competitive again. The AFC South looks like one of the weaker divisions this year so they are definitely a chance for playoffs again.",
@@ -3974,7 +3974,7 @@
       "prediction_text": "I think the Panthers will compete well again and are definitely a chance to go back to back winning this division. They showed some great fight in their playoff loss to the Rams last season and that will give them great confidence heading into this year. A lot rests on Bryce Young improving again but they do have some nice offensive weapons around him now.",
       "id": "6a9022875b73b6b687d4f15c",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:54.552000",
+      "updated_date": "2026-08-27T16:29:29.132000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -4012,112 +4012,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/a1aa43bee_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 1,
-          "opponent": "T28"
+          "opponent": "DET"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 2,
-          "opponent": "T29"
+          "opponent": "BAL"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 3,
-          "opponent": "T30"
+          "opponent": "LV"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
           "location": "Home",
           "week": 4,
-          "opponent": "T31"
+          "opponent": "ATL"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 5,
-          "opponent": "T32"
+          "opponent": "MIN"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 6,
-          "opponent": "T1"
+          "opponent": "NYG"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 7,
+          "opponent": "PIT"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
           "week": 8,
-          "opponent": "T3"
+          "opponent": "BYE"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 9,
-          "opponent": "T4"
+          "opponent": "CLE"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 10,
-          "opponent": "T5"
+          "opponent": "CAR"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "Moderate",
+          "location": "Away",
           "week": 11,
-          "opponent": "T6"
+          "opponent": "CHI"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 12,
-          "opponent": "T7"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T8"
+          "opponent": "CIN"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
+          "week": 13,
+          "opponent": "GB"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
           "week": 14,
-          "opponent": "T9"
+          "opponent": "CAR"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
           "week": 15,
-          "opponent": "T10"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T11"
+          "opponent": "TB"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
+          "week": 16,
+          "opponent": "ARI"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
           "week": 17,
-          "opponent": "T12"
+          "opponent": "ATL"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 18,
-          "opponent": "T13"
+          "opponent": "TB"
         }
       ],
       "quarterbacks": "The Saints look to have found a really solid QB in Tyler Shough. In the last five games of 2025 he led the Saints to a 4-1 record and threw 5 touchdowns and just 2 interceptions. That was all with very limited receiving options, something the Saints have tried to fix over the off-season. Shough’s rookie year ranked 23rd of 33 qualified quarterbacks in EPA per play and 20th in success rate, but again that was with a very weak receiving corps minus Chris Olave. He’s got rookie Jordyn Tyson to pair with Olave now and I’m quite bullish on how the Saints will go this year, especially in a weak division.",
@@ -4126,7 +4126,7 @@
       "prediction_text": "I have the Saints winning the NFC South at 9-8. It’s a division where I have all four teams within two wins of eachother, I think it’s really close. If Shough can build on his strong rookie season then they are a big chance to win more games again. Tyson is an exciting rookie and Travis Etienne should be a good addition at running back too.",
       "id": "6a9022875b73b6b687d4f15d",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:54.747000",
+      "updated_date": "2026-08-27T16:29:33.087000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -4164,112 +4164,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/dcceb2389_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "location": "Away",
           "week": 1,
-          "opponent": "T29"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 2,
-          "opponent": "T30"
+          "opponent": "CIN"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
-          "week": 3,
-          "opponent": "T31"
+          "location": "Home",
+          "week": 2,
+          "opponent": "CLE"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 3,
+          "opponent": "MIN"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 4,
-          "opponent": "T32"
+          "opponent": "GB"
         },
         {
           "difficulty": "Moderate",
-          "location": "Home",
+          "location": "Away",
           "week": 5,
-          "opponent": "T1"
+          "opponent": "DAL"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 6,
+          "opponent": "PIT"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 6,
-          "opponent": "T2"
+          "week": 7,
+          "opponent": "CAR"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 8,
+          "opponent": "ATL"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 9,
+          "opponent": "CHI"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 8,
-          "opponent": "T4"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T5"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
           "week": 10,
-          "opponent": "T6"
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Easy",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 11,
-          "opponent": "T7"
+          "opponent": "DET"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
           "week": 12,
-          "opponent": "T8"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T9"
+          "opponent": "CAR"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
-          "week": 14,
-          "opponent": "T10"
+          "week": 13,
+          "opponent": "LAC"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Away",
-          "week": 15,
-          "opponent": "T11"
+          "week": 14,
+          "opponent": "BAL"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 15,
+          "opponent": "NO"
+        },
+        {
+          "difficulty": "Easy",
           "location": "Away",
           "week": 16,
-          "opponent": "T12"
+          "opponent": "ATL"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 17,
+          "opponent": "LAR"
         },
         {
           "difficulty": "Easy",
-          "location": "Home",
-          "week": 17,
-          "opponent": "T13"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "location": "Away",
           "week": 18,
-          "opponent": "T14"
+          "opponent": "NO"
         }
       ],
       "quarterbacks": "Baker Mayfield was an early MVP frontrunner before injuries limited him late in 2025, and he enters the final year of his contract with the front office hoping to sign him long-term. Baker was seriously banged up last year and tried to put the team on his shoulders multiple times. He’s very popular with the fanbase and he’s proven himself to be worthy of a big contract. His passing yards line for this season is set at 3500.5 - a mark he has covered in all three seasons with the Bucs despite some injuries. Although Mike Evans has left, he was injured a lot of last season too. I think Baker goes over this line again.",
@@ -4278,7 +4278,7 @@
       "prediction_text": "There is a lot of change at the Bucs and I’m worried about their defense this season. They could leak some big scores and while their offense is solid, they’re probably only a couple of injuries away from struggling. Mike Evans is a big loss although I expect Emeka Egbuka to have a big year. Anyone in this division could win it really.",
       "id": "6a9022875b73b6b687d4f15e",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:54.912000",
+      "updated_date": "2026-08-27T16:29:34.440000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -4316,112 +4316,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cca02b311_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 1,
-          "opponent": "T30"
+          "opponent": "LAC"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 2,
-          "opponent": "T31"
+          "opponent": "SEA"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 3,
-          "opponent": "T32"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 4,
-          "opponent": "T1"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T2"
+          "opponent": "SF"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
+          "week": 4,
+          "opponent": "NYG"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 5,
+          "opponent": "DET"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 6,
-          "opponent": "T3"
+          "opponent": "LAR"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 7,
+          "opponent": "DEN"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 8,
+          "opponent": "DAL"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 9,
+          "opponent": "SEA"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 10,
+          "opponent": "LAR"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 11,
+          "opponent": "KC"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 12,
+          "opponent": "WAS"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 13,
+          "opponent": "PHI"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 8,
-          "opponent": "T5"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T6"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 10,
-          "opponent": "T7"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 11,
-          "opponent": "T8"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 12,
-          "opponent": "T9"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T10"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Home",
           "week": 14,
-          "opponent": "T11"
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Away",
+          "difficulty": "Easy",
+          "location": "Home",
           "week": 15,
-          "opponent": "T12"
+          "opponent": "NYJ"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
           "location": "Away",
           "week": 16,
-          "opponent": "T13"
+          "opponent": "NO"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
           "week": 17,
-          "opponent": "T14"
+          "opponent": "LV"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 18,
-          "opponent": "T15"
+          "opponent": "SF"
         }
       ],
       "quarterbacks": "It looks like Jacoby Brissett will start the season at quarterback and I think that’s the right decision. The Cardinals also have veteran Gardner Minshew and third-round draftee Carson Beck, but Brissett is the right man to start the season at least. They just reached agreement on a reworked contract that will pay him $15.5 million guaranteed this season with the chance to make $21 million with incentives. That shows they’re committed to him for the season I believe. Brissett can sling the ball and had some very impressive performances last season including a 452-yard game against the 49ers (although they lost comfortably). Brissett was 22nd among qualified quarterbacks in EPA per play last season filling in for an injured Murray. He probably remains around that mark this season, if not a little higher with some genuinely good offensive weapons around him.",
@@ -4430,7 +4430,7 @@
       "prediction_text": "I honestly don’t see where the Cardinals get a win in their first 13 games. They have one of the hardest schedules in football and this team is not ready to compete now. They might put up some decent offensive numbers but I can’t see them winning more than 3-4 games.",
       "id": "6a9022875b73b6b687d4f15f",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:55.058000",
+      "updated_date": "2026-08-27T16:46:45.018000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -4468,112 +4468,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d6c7770e6_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Difficult",
+          "location": "Home",
           "week": 1,
-          "opponent": "T31"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 2,
-          "opponent": "T32"
+          "opponent": "SF"
         },
         {
           "difficulty": "Easy",
+          "location": "Home",
+          "week": 2,
+          "opponent": "NYG"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 3,
-          "opponent": "T1"
+          "opponent": "DEN"
         },
         {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 4,
-          "opponent": "T2"
+          "opponent": "PHI"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 5,
-          "opponent": "T3"
+          "opponent": "BUF"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 6,
+          "opponent": "ARI"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 6,
-          "opponent": "T4"
+          "week": 7,
+          "opponent": "LV"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 8,
+          "opponent": "LAC"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 9,
+          "opponent": "WAS"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 10,
+          "opponent": "ARI"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 8,
-          "opponent": "T6"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T7"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 10,
-          "opponent": "T8"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
           "week": 11,
-          "opponent": "T9"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 12,
-          "opponent": "T10"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T11"
+          "opponent": "BYE"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
-          "week": 14,
-          "opponent": "T12"
+          "week": 12,
+          "opponent": "GB"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 13,
+          "opponent": "KC"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Away",
-          "week": 15,
-          "opponent": "T13"
+          "week": 14,
+          "opponent": "SF"
         },
         {
           "difficulty": "Moderate",
+          "location": "Home",
+          "week": 15,
+          "opponent": "DAL"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 16,
-          "opponent": "T14"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 17,
-          "opponent": "T15"
+          "opponent": "SEA"
         },
         {
           "difficulty": "Moderate",
+          "location": "Away",
+          "week": 17,
+          "opponent": "TB"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 18,
-          "opponent": "T16"
+          "opponent": "SEA"
         }
       ],
       "quarterbacks": "Matthew Stafford is coming off his first career MVP campaign, leading an offense that was first in the NFL in yards per play, success rate, EPA per play, points per drive, and points per game, an across-the-board statistical takeover at age 37. Stafford threw an insane 46 touchdown passes last season with just 8 interceptions. His line for this season is 29.5 touchdowns which is incredibly low in comparison. He signed a new one year deal to return and it’s clear he really wants another Super Bowl before retiring. He’s got all the weapons around him to do that with Puka Nacua and Davante Adams his key targets to throw to. Add Colby Parkinson at tight end and two really good running backs and this roster clearly has the talent to go all the way. Stafford still has an absolute arm on him and he should be competing for MVP once again if this team performs as well as expected.",
@@ -4582,7 +4582,7 @@
       "prediction_text": "This team is stacked all around and it gets even scarier if  Aaron Donald decides to come out of retirement. They are just a well rounded team and they have plenty of experience, plus are well coached. I think they win the NFC West and are rightfully favorites for the Super Bowl.",
       "id": "6a9022875b73b6b687d4f160",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:55.219000",
+      "updated_date": "2026-08-27T16:29:32.232000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -4620,112 +4620,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5f846e53b_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 1,
-          "opponent": "T32"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 2,
-          "opponent": "T1"
+          "opponent": "LAR"
         },
         {
           "difficulty": "Easy",
-          "location": "Away",
+          "location": "Home",
+          "week": 2,
+          "opponent": "MIA"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
           "week": 3,
-          "opponent": "T2"
+          "opponent": "ARI"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
           "week": 4,
-          "opponent": "T3"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 5,
-          "opponent": "T4"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 6,
-          "opponent": "T5"
-        },
-        {
-          "difficulty": "",
-          "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 8,
-          "opponent": "T7"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T8"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 10,
-          "opponent": "T9"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 11,
-          "opponent": "T10"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 12,
-          "opponent": "T11"
+          "opponent": "DEN"
         },
         {
           "difficulty": "Difficult",
           "location": "Away",
+          "week": 5,
+          "opponent": "SEA"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 6,
+          "opponent": "WAS"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 7,
+          "opponent": "ATL"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 8,
+          "opponent": "BYE"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 9,
+          "opponent": "LV"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 10,
+          "opponent": "DAL"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 11,
+          "opponent": "MIN"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 12,
+          "opponent": "SEA"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
           "week": 13,
-          "opponent": "T12"
+          "opponent": "NYG"
         },
         {
           "difficulty": "Difficult",
           "location": "Home",
           "week": 14,
-          "opponent": "T13"
+          "opponent": "LAR"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 15,
-          "opponent": "T14"
+          "opponent": "LAC"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 16,
-          "opponent": "T15"
+          "opponent": "KC"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 17,
+          "opponent": "PHI"
         },
         {
           "difficulty": "Easy",
-          "location": "Home",
-          "week": 17,
-          "opponent": "T16"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
+          "location": "Away",
           "week": 18,
-          "opponent": "T17"
+          "opponent": "ARI"
         }
       ],
       "quarterbacks": "Brock Purdy ranks second in the NFL in passer rating among quarterbacks with 1,000-plus attempts since 2022 and when healthy in 2025 he completed 70.6% of his passes for a 7.6% touchdown rate, both elite marks even in a season limited to nine total games. He has his doubters but is definitely one of the more reliable quarterbacks in the league when healthy. Mike Evans is going to give him a really nice end zone option to complement Christian McCaffrey on the ground. Purdy’s passing touchdowns line is set for 27.5 this season which I think looks a little high. Yes, he has Evans and Deebo Samuel back, but he’s only gone above that number once in his four NFL seasons.",
@@ -4734,7 +4734,7 @@
       "prediction_text": "If healthy, this team is a real playoff contender. Unfortunately there is just too much unknown for me to give them a better record. Christian McCaffrey, Brock Purdy, Mike Evans and co give them a great offensive core but all of them have injury history. This division is incredibly tough as well with the Rams and Seahawks to play twice.",
       "id": "6a9022875b73b6b687d4f161",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:55.432000",
+      "updated_date": "2026-08-27T16:29:34.205000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -4772,112 +4772,112 @@
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ae336adc7_favorite.png",
       "schedule": [
         {
-          "difficulty": "Easy",
-          "location": "Away",
+          "difficulty": "Moderate",
+          "location": "Home",
           "week": 1,
-          "opponent": "T1"
+          "opponent": "NE"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
           "location": "Away",
           "week": 2,
-          "opponent": "T2"
+          "opponent": "ARI"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 3,
-          "opponent": "T3"
+          "opponent": "WAS"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "location": "Home",
           "week": 4,
-          "opponent": "T4"
+          "opponent": "LAC"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 5,
+          "opponent": "SF"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 6,
+          "opponent": "DEN"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 7,
+          "opponent": "KC"
         },
         {
           "difficulty": "Moderate",
           "location": "Home",
-          "week": 5,
-          "opponent": "T5"
+          "week": 8,
+          "opponent": "CHI"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 9,
+          "opponent": "ARI"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 6,
-          "opponent": "T6"
+          "week": 10,
+          "opponent": "LV"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 8,
-          "opponent": "T8"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T9"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 10,
-          "opponent": "T10"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
           "week": 11,
-          "opponent": "T11"
+          "opponent": "BYE"
         },
         {
-          "difficulty": "Easy",
+          "difficulty": "Difficult",
           "location": "Away",
           "week": 12,
-          "opponent": "T12"
+          "opponent": "SF"
         },
         {
-          "difficulty": "Difficult",
-          "location": "Away",
-          "week": 13,
-          "opponent": "T13"
-        },
-        {
-          "difficulty": "Difficult",
+          "difficulty": "Moderate",
           "location": "Home",
-          "week": 14,
-          "opponent": "T14"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 15,
-          "opponent": "T15"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T16"
+          "week": 13,
+          "opponent": "DAL"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T17"
+          "week": 14,
+          "opponent": "NYG"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 15,
+          "opponent": "PHI"
+        },
+        {
+          "difficulty": "Difficult",
           "location": "Home",
+          "week": 16,
+          "opponent": "LAR"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 17,
+          "opponent": "CAR"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
           "week": 18,
-          "opponent": "T18"
+          "opponent": "LAR"
         }
       ],
       "quarterbacks": "Sam Darnold completed one of the most remarkable career turnarounds in recent NFL history leading the Seahawks to a Super Bowl victory against the Patriots last season. He formed an unbelievable partnership with Jaxon Smith-Njigba last year who won Offensive Player of the Year. Seattle was third in scoring offense (28.4 points per game) last season, though only ninth in offensive success rate and 18th in EPA per play, a genuinely big-play-dependent formula. Darnold can’t be doubted anymore after winning the Super Bowl, but he’s still not considered in the top quarterbacks in the league in terms of pure talent. He averaged 238 passing yards per game last season and most of those went to JSN. It’ll be interesting to see if he spreads the ball more this season.",
@@ -4886,7 +4886,7 @@
       "prediction_text": "I have the Seahawks challenging again for the Super Bowl and NFC West. This team has an incredible defense, most of which they kept since last year. I do think JSN will be clamped up a little more and the loss of Klint Kubiak will hurt their offense too. It’s a well rounded team that should challenge, but I don’t think they will go back to back.",
       "id": "6a9022875b73b6b687d4f162",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T15:27:55.695000",
+      "updated_date": "2026-08-27T16:29:34.010000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     }
@@ -5133,7 +5133,7 @@
   ],
   "fanduel": {
     "rewards_label_2": "UNLOCK LEVELS",
-    "offer_text": "Lorem ipsum dolor sit amet consectetur. Sit fermentum aliquet vestibulum et vitae. Lorem id lobortis vitae duis ac morbi eu malesuada. Nisl pellentesque aliquet aliquet aliquam enim mauris. Neque vestibulum sit quam vitae. Cursus amet morbi lectus arcu tellus mattis. A neque nisi praesent vel tempor nascetur lobortis. Aliquet ipsum sed tortor tempus.",
+    "offer_text": "Lorem ipsum dolor sit amet consectetur. Sit fermentum aliquet vestibulum et vitae. Lorem id lobortis vitae duis ac morbi eu malesuada. Nisl pellentesque aliquet aliquet aliquam enim mauris. Neque vestibulum sit quam vitae. Cursus amet morbi lectus arcu tellus mattis. A neque nisi praesent vel tempor nascetur lobortis. Aliquet ipsum sed tortor tempus.YYYY",
     "rewards_label_3": "SCORE REWARDS",
     "rewards_button_url": "",
     "rewards_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ebe15cd76_fanduel-rewards-club-card.png",
@@ -5145,7 +5145,7 @@
     "redeem_label": "REDEEM OFFER",
     "id": "6a90227d4361d3edaa3fd2f2",
     "created_date": "2026-08-27T11:41:49.766000",
-    "updated_date": "2026-08-27T12:57:32.488000",
+    "updated_date": "2026-08-27T16:44:48.491000",
     "created_by_id": "6a901fa52706494618a8cf7c",
     "is_sample": false
   }
