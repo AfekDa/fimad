@@ -1,4 +1,6 @@
 import { ASSETS } from '../../assets/assets'
+import { TEAMS } from '../../data/teams'
+import type { Conference } from '../../data/teams'
 
 export type TeamCardCrop =
   | 'buffalo'
@@ -11,15 +13,22 @@ export type TeamCardCrop =
   | 'jacksonville'
 
 export interface TeamCardContent {
-  readonly nodeId: string
-  readonly imageNodeId: string
-  readonly buttonNodeId: string
+  /**
+   * Figma node ids, and so only present on the eight cards the design draws.
+   *
+   * The roster is 32 long, so the cards past the eighth have no node behind
+   * them; leaving the attribute off keeps a node id pointing at exactly one
+   * element, which is what the fidelity specs locate by.
+   */
+  readonly nodeId: string | undefined
+  readonly imageNodeId: string | undefined
+  readonly buttonNodeId: string | undefined
   readonly image: string
   readonly imageAlt: string
   readonly crop: TeamCardCrop
   readonly team: string
-  readonly conference: 'AFC' | 'NFC'
-  readonly href?: string
+  readonly conference: Conference
+  readonly href: string
 }
 
 interface TeamCardVisual {
@@ -27,13 +36,15 @@ interface TeamCardVisual {
   readonly imageNodeId: string
   readonly buttonNodeId: string
   readonly image: string
-  readonly imageAlt: string
   readonly crop: TeamCardCrop
 }
 
 /**
- * Visible card visuals from All Teams frame 162:1760. The design only ships
- * eight card treatments, so the 32 generic teams cycle through them.
+ * The card treatments drawn on All Teams frame 162:1760 — Figma node ids, card
+ * photography and the per-card crop each photo needs.
+ *
+ * The design only ships eight, so the 32 roster teams cycle through them. The
+ * photographs are the design's; the names on the cards come from the roster.
  */
 const CARD_VISUALS: readonly TeamCardVisual[] = [
   {
@@ -41,7 +52,6 @@ const CARD_VISUALS: readonly TeamCardVisual[] = [
     imageNodeId: 'I181:1360;162:2225',
     buttonNodeId: 'I181:1360;181:283',
     image: ASSETS.teamsCardBuffalo,
-    imageAlt: 'Buffalo Bills player portrait',
     crop: 'buffalo',
   },
   {
@@ -49,7 +59,6 @@ const CARD_VISUALS: readonly TeamCardVisual[] = [
     imageNodeId: '474:1383',
     buttonNodeId: '474:1388',
     image: ASSETS.teamsCardCincinnati,
-    imageAlt: "Cincinnati Bengals wide receiver Ja'Marr Chase",
     crop: 'cincinnati',
   },
   {
@@ -57,7 +66,6 @@ const CARD_VISUALS: readonly TeamCardVisual[] = [
     imageNodeId: '474:1390',
     buttonNodeId: '474:1395',
     image: ASSETS.teamsCardCleveland,
-    imageAlt: 'Cleveland Browns quarterback Shedeur Sanders',
     crop: 'cleveland',
   },
   {
@@ -65,7 +73,6 @@ const CARD_VISUALS: readonly TeamCardVisual[] = [
     imageNodeId: '474:1397',
     buttonNodeId: '474:1402',
     image: ASSETS.teamsCardPittsburgh,
-    imageAlt: 'Pittsburgh Steelers quarterback Aaron Rodgers',
     crop: 'pittsburgh',
   },
   {
@@ -73,7 +80,6 @@ const CARD_VISUALS: readonly TeamCardVisual[] = [
     imageNodeId: '474:1428',
     buttonNodeId: '474:1433',
     image: ASSETS.teamsCardMiami,
-    imageAlt: "Miami Dolphins running back De'Von Achane",
     crop: 'miami',
   },
   {
@@ -81,7 +87,6 @@ const CARD_VISUALS: readonly TeamCardVisual[] = [
     imageNodeId: '474:1435',
     buttonNodeId: '474:1440',
     image: ASSETS.teamsCardJets,
-    imageAlt: 'New York Jets running back Breece Hall',
     crop: 'jets',
   },
   {
@@ -89,7 +94,6 @@ const CARD_VISUALS: readonly TeamCardVisual[] = [
     imageNodeId: '474:1442',
     buttonNodeId: '474:1447',
     image: ASSETS.teamsCardHouston,
-    imageAlt: 'Houston Texans wide receiver Nico Collins',
     crop: 'houston',
   },
   {
@@ -97,22 +101,29 @@ const CARD_VISUALS: readonly TeamCardVisual[] = [
     imageNodeId: '474:1449',
     buttonNodeId: '474:1454',
     image: ASSETS.teamsCardJacksonville,
-    imageAlt: 'Jacksonville Jaguars quarterback Trevor Lawrence',
     crop: 'jacksonville',
   },
-] as const
+]
 
-/** TEAM 1 – TEAM 32; the first 16 file under AFC, the rest under NFC. */
-export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = Array.from(
-  { length: 32 },
-  (_, index) => {
-    const visual = CARD_VISUALS[index % CARD_VISUALS.length]
+/** One card per roster team, each linking to that team's own page. */
+export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = TEAMS.map((team, index) => {
+  const visual = CARD_VISUALS[index % CARD_VISUALS.length]
 
-    return {
-      ...visual,
-      team: `TEAM ${index + 1}`,
-      conference: index < 16 ? 'AFC' : 'NFC',
-      ...(index === 0 ? { href: '/teams/buffalo-bills' } : {}),
-    }
-  },
-)
+  if (visual === undefined) {
+    throw new Error('CARD_VISUALS is empty, so no team card can be built')
+  }
+
+  const isDrawnInFigma = index < CARD_VISUALS.length
+
+  return {
+    nodeId: isDrawnInFigma ? visual.nodeId : undefined,
+    imageNodeId: isDrawnInFigma ? visual.imageNodeId : undefined,
+    buttonNodeId: isDrawnInFigma ? visual.buttonNodeId : undefined,
+    image: visual.image,
+    crop: visual.crop,
+    imageAlt: `${team.name} player portrait`,
+    team: team.name,
+    conference: team.conference,
+    href: team.href,
+  }
+})

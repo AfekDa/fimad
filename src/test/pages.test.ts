@@ -1,6 +1,9 @@
 import { within } from '@testing-library/dom'
 import { beforeAll, describe, expect, it } from 'vitest'
 import Index from '../pages/index.astro'
+import TeamPage from '../pages/teams/[team].astro'
+import { TEAMS } from '../data/teams'
+import { createPlaceholderTeam } from '../screens/IndividualTeam/content'
 import { renderToDom } from './render'
 
 /*
@@ -38,5 +41,22 @@ describe('index page', () => {
 
   it('ships no client-side script', () => {
     expect(body.querySelectorAll('script')).toHaveLength(0)
+  })
+})
+
+describe('team detail route', () => {
+  it('renders the screen its path was built for', async () => {
+    const team = TEAMS[4]
+    if (team === undefined) throw new Error('The roster is too short to test against')
+
+    const page = within(
+      await renderToDom(TeamPage, { content: createPlaceholderTeam(team) }),
+    )
+
+    expect(page.getByRole('heading', { level: 1 })).toHaveTextContent('TEAM 5')
+    expect(page.getByRole('link', { name: /skip to team overview/i })).toHaveAttribute(
+      'href',
+      '#team-name',
+    )
   })
 })

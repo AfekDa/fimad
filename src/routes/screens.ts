@@ -47,6 +47,15 @@ export interface ScreenMeta {
    * viewport).
    */
   readonly navBottomOffset?: number
+  /**
+   * Why this screen's content deliberately differs from its Figma export.
+   *
+   * Set only when the app is meant to render something the frame does not draw,
+   * which makes a pixel comparison against the export meaningless rather than
+   * failing. The geometry and nav-docking assertions still run; only the two
+   * screenshot comparisons are skipped, with this string as the reason.
+   */
+  readonly divergesFromFigma?: string
 }
 
 /**
@@ -73,13 +82,15 @@ export const SCREENS: readonly ScreenMeta[] = [
     frameName: 'All Teams Page',
     nodeId: '162:1760',
     width: 430,
-    /* Frame 162:1760 is 2931 tall, but its top 54px are the device status bar,
-     * which the app does not render (AllTeams.test.ts). The grid reaches 2878
-     * on its own at 430, so nothing pads the page out to reach this. */
-    height: 2877,
+    /* Measured at 430 with the full 32-card roster. The frame itself is 2931
+     * tall (2877 once its 54px device status bar, which the app does not render,
+     * comes off) because the design only draws eight of the cards. */
+    height: 10366,
     /* App Nav 162:1823 sits at y=811 in the frame, so at 811 - 54 = 757 in the
      * document; 757 + 81 + 40 puts the viewport edge at 878. */
     viewportHeight: 878,
+    divergesFromFigma:
+      'The frame draws eight cards labelled with real AFC teams. The app ships the 32-team placeholder roster instead (src/data/teams.ts), so the card labels and the page height are both intentionally different from the export. Card geometry is unchanged and is still asserted in responsive.spec.ts.',
   },
   {
     path: '/teams/buffalo-bills',

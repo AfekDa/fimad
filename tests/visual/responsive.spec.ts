@@ -181,7 +181,7 @@ test.describe('responsive integrity', () => {
 
     await teamsTab.click()
     await expect(page).toHaveURL(/\/teams\/?$/)
-    await expect(status).toHaveText('8 teams shown')
+    await expect(status).toHaveText('32 teams shown')
 
     /*
      * Leaving and returning is the case that breaks: the screen's script is
@@ -191,11 +191,12 @@ test.describe('responsive integrity', () => {
     await page.locator('[data-nav-id="home"]').click()
     await expect(page).toHaveURL(/\/$/)
     await teamsTab.click()
-    await expect(status).toHaveText('8 teams shown')
+    await expect(status).toHaveText('32 teams shown')
 
-    await page.getByRole('searchbox', { name: 'Search teams' }).fill('miami')
+    // "team 5" is not a substring of any other team's name, so it isolates one card.
+    await page.getByRole('searchbox', { name: 'Search teams' }).fill('team 5')
     await expect(visibleCards).toHaveCount(1)
-    await expect(visibleCards.first()).toHaveAttribute('data-team', 'Miami Dolphins')
+    await expect(visibleCards.first()).toHaveAttribute('data-team', 'TEAM 5')
   })
 
   test('application navigation has the same visual contract on every route', async ({ page }) => {
@@ -313,15 +314,18 @@ test.describe('responsive integrity', () => {
       )
     })
 
-    // The page is no longer padded out to the frame height, so this asserts what
-    // the grid actually measures: 2877 of frame plus the 1px the browser's text
-    // trimming rounds on, rather than a min-height that was hiding the number.
+    /*
+     * The page is not padded out to any frame height, so this is what the grid
+     * actually measures with the full 32-team roster. The Figma frame stops at
+     * 2878 because the design only draws the first eight cards; each of the 24
+     * after them adds the same card box and gap.
+     */
     const teamsPage = await page.locator('[data-node-id="162:1760"]').boundingBox()
-    expect(teamsPage?.height).toBeCloseTo(2878, 0)
+    expect(teamsPage?.height).toBeCloseTo(10366, 0)
     expect(await page.locator('[data-node-id="162:1773"]').boundingBox()).toMatchObject({ y: 24 })
 
     const cards = page.locator('[data-node-id="181:325"] article')
-    await expect(cards).toHaveCount(8)
+    await expect(cards).toHaveCount(32)
 
     const firstCard = cards.first()
     expect(await firstCard.boundingBox()).toMatchObject({ width: 382, height: 295 })
@@ -490,7 +494,7 @@ test.describe('responsive integrity', () => {
     const nfc = page.getByRole('button', { name: 'NFC' })
     const search = page.getByRole('searchbox', { name: 'Search teams' })
 
-    await expect(visibleCards).toHaveCount(8)
+    await expect(visibleCards).toHaveCount(32)
     await expect(afc).toHaveAttribute('aria-pressed', 'false')
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
     await expect(page.getByRole('button', { name: 'All', exact: true })).toHaveCount(0)
@@ -498,20 +502,27 @@ test.describe('responsive integrity', () => {
     await nfc.click()
     await expect(nfc).toHaveAttribute('aria-pressed', 'true')
     await expect(afc).toHaveAttribute('aria-pressed', 'false')
-    await expect(visibleCards).toHaveCount(0)
-    await expect(page.getByText('No teams match your filters.')).toBeVisible()
+    await expect(visibleCards).toHaveCount(16)
+    await expect(visibleCards.first()).toHaveAttribute('data-team', 'TEAM 17')
 
     await nfc.click()
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
-    await expect(visibleCards).toHaveCount(8)
+    await expect(visibleCards).toHaveCount(32)
 
-    await search.fill('miami')
+    // "team 5" is not a substring of any other team's name, so it isolates one card.
+    await search.fill('team 5')
     await expect(visibleCards).toHaveCount(1)
-    await expect(visibleCards.first()).toHaveAttribute('data-team', 'Miami Dolphins')
+    await expect(visibleCards.first()).toHaveAttribute('data-team', 'TEAM 5')
+
+    // A conference the matching team is not in leaves the grid empty.
+    await nfc.click()
+    await expect(visibleCards).toHaveCount(0)
+    await expect(page.getByText('No teams match your filters.')).toBeVisible()
+    await nfc.click()
 
     // Enter must not submit the search form and reload away the active filters.
     await search.press('Enter')
-    await expect(search).toHaveValue('miami')
+    await expect(search).toHaveValue('team 5')
     await expect(afc).toHaveAttribute('aria-pressed', 'false')
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleCards).toHaveCount(1)
@@ -520,7 +531,7 @@ test.describe('responsive integrity', () => {
     await expect(search).toHaveValue('')
     await expect(afc).toHaveAttribute('aria-pressed', 'false')
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
-    await expect(visibleCards).toHaveCount(8)
+    await expect(visibleCards).toHaveCount(32)
 
     await page.getByRole('button', { name: 'Filter teams by name' }).click()
     await expect(search).toBeFocused()
@@ -941,7 +952,7 @@ test.describe('responsive integrity', () => {
     })
 
     const cards = page.locator('[data-team-card]')
-    await expect(cards).toHaveCount(8)
+    await expect(cards).toHaveCount(32)
     const firstCardBox = await cards.first().boundingBox()
     expect(firstCardBox?.x).toBeCloseTo(80, 0)
     expect(firstCardBox?.y).toBeCloseTo(273, 0)

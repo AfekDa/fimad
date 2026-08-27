@@ -1,0 +1,29 @@
+---
+/**
+ * One detail route per roster team — /teams/team-1 through /teams/team-32.
+ *
+ * They reuse the Individual Team screen (Figma frame 162:1586) with placeholder
+ * content, which is what the Team Preview button on every All Teams card opens.
+ * The design's own copy still lives at the sibling /teams/buffalo-bills route.
+ */
+import type { GetStaticPaths } from 'astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import IndividualTeam from '../../screens/IndividualTeam/IndividualTeam.astro'
+import { createPlaceholderTeam } from '../../screens/IndividualTeam/content'
+import { TEAMS } from '../../data/teams'
+
+export const getStaticPaths = (() =>
+  TEAMS.map((team) => ({
+    params: { team: team.slug },
+    props: { content: createPlaceholderTeam(team) },
+  }))) satisfies GetStaticPaths
+
+const { content } = Astro.props
+---
+
+<BaseLayout title={`${content.name} | Cody Brown’s NFL Betting Guide`}>
+  <div class="appShell appShellIndividualTeam">
+    <a class="skipLink" href="#team-name">Skip to team overview</a>
+    <IndividualTeam team={content} />
+  </div>
+</BaseLayout>

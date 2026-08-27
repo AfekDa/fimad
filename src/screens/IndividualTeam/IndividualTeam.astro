@@ -1,19 +1,22 @@
 ---
-/** Buffalo Bills team detail — Figma frame 162:1586, device status bar omitted. */
+/**
+ * Team detail — Figma frame 162:1586, device status bar omitted.
+ *
+ * The frame is drawn for the Buffalo Bills, which is what this renders with no
+ * props; every roster team passes its own placeholder content instead.
+ */
 import AppNav from '../../components/AppNav/AppNav.astro'
 import Button from '../../components/Button/Button.astro'
 import { ASSETS } from '../../assets/assets'
-import {
-  ACCORDION_SECTIONS,
-  FAVORITE_COPY,
-  ODDS,
-  OVERVIEW_PARAGRAPHS,
-  PREDICTION_COPY,
-  DESKTOP_SCHEDULE,
-  SCHEDULE,
-  STAFF,
-} from './content'
+import { BUFFALO_BILLS } from './content'
+import type { TeamPageContent } from './content'
 import styles from './IndividualTeam.module.css'
+
+export interface Props {
+  readonly team?: TeamPageContent
+}
+
+const { team = BUFFALO_BILLS } = Astro.props
 ---
 
 <div
@@ -21,6 +24,7 @@ import styles from './IndividualTeam.module.css'
   data-node-id="162:1586"
   data-desktop-node-id="390:1337"
   data-team-detail-page
+  data-team-name={team.name}
 >
   <header class={styles.header} data-node-id="181:1321" data-desktop-node-id="390:1741">
     <div class={styles.brand} data-node-id="181:1322">
@@ -63,15 +67,15 @@ import styles from './IndividualTeam.module.css'
       aria-labelledby="team-name"
     >
       <picture class={styles.heroPicture}>
-        <source media="(min-width: 768px)" srcset={ASSETS.teamBuffaloHeroDesktop} />
-        <img class={styles.heroImage} src={ASSETS.teamBuffaloHero} alt="Buffalo Bills player in helmet" />
+        <source media="(min-width: 768px)" srcset={team.heroImageDesktop} />
+        <img class={styles.heroImage} src={team.heroImage} alt={team.heroAlt} />
       </picture>
       <div class={styles.heroScrim} aria-hidden="true"></div>
       <div class={styles.heroCopy}>
         <span class={styles.teamLogo} data-node-id="181:1340">
           <img class={styles.teamLogoLeaf} src={ASSETS.teamsLogoBuffalo} alt="" aria-hidden="true" />
         </span>
-        <h1 id="team-name" class={styles.teamName} data-node-id="162:1590">BUFFALO BILLS</h1>
+        <h1 id="team-name" class={styles.teamName} data-node-id="162:1590">{team.name}</h1>
       </div>
     </section>
 
@@ -83,11 +87,11 @@ import styles from './IndividualTeam.module.css'
     >
       <h2 id="overview-title" class={styles.sectionTitle} data-node-id="162:1593">OVERVIEW</h2>
       <div class={styles.overviewCopy} data-node-id="162:1594">
-        {OVERVIEW_PARAGRAPHS.map((paragraph) => <p>{paragraph}</p>)}
+        {team.overviewParagraphs.map((paragraph) => <p>{paragraph}</p>)}
       </div>
       <div class={styles.staffList} data-node-id="162:1595">
         {
-          STAFF.map((member) => (
+          team.staff.map((member) => (
             <article class={styles.staffCard} data-node-id={member.nodeId}>
               <p class={styles.staffRole}>{member.role}</p>
               <p class={styles.staffName}>{member.name}</p>
@@ -104,7 +108,7 @@ import styles from './IndividualTeam.module.css'
       aria-label="Team analysis"
     >
       {
-        ACCORDION_SECTIONS.map((section, index) => (
+        team.accordionSections.map((section, index) => (
           <details class={styles.accordion} data-node-id={section.nodeId} open={index === 0}>
             <summary class={styles.accordionSummary}>
               <span>{section.title}</span>
@@ -132,11 +136,11 @@ import styles from './IndividualTeam.module.css'
       <div class={styles.predictionBackdrop} aria-hidden="true"></div>
       <span class={styles.predictionPill} id="prediction-title" data-node-id="162:1676">PREDICTIONS</span>
       <div class={styles.predictionScore} data-node-id="162:1678">
-        <p class={styles.predictionScoreLine}>14-3</p>
+        <p class={styles.predictionScoreLine}>{team.predictionRecord}</p>
       </div>
-      <p class={styles.predictionCopy} data-node-id="162:2212">{PREDICTION_COPY}</p>
+      <p class={styles.predictionCopy} data-node-id="162:2212">{team.predictionCopy}</p>
       <span class={styles.predictionImageBox} aria-hidden="true">
-        <img class={styles.predictionImage} src={ASSETS.teamBuffaloPrediction} alt="" />
+        <img class={styles.predictionImage} src={team.predictionImage} alt="" />
       </span>
     </section>
 
@@ -147,16 +151,16 @@ import styles from './IndividualTeam.module.css'
       aria-labelledby="favorite-title"
     >
       <picture class={styles.favoritePicture}>
-        <source media="(min-width: 768px)" srcset={ASSETS.teamBuffaloFutureDesktop} />
-        <img class={styles.favoriteImage} src={ASSETS.teamBuffaloFuture} alt="Josh Allen in a Buffalo Bills uniform" />
+        <source media="(min-width: 768px)" srcset={team.favoriteImageDesktop} />
+        <img class={styles.favoriteImage} src={team.favoriteImage} alt={team.favoriteAlt} />
       </picture>
       <div class={styles.favoriteScrim} aria-hidden="true"></div>
       <div class={styles.favoriteCopy} data-node-id="188:2514">
         <h2 id="favorite-title" class={styles.favoriteTitle} data-node-id="188:2515">FAVORITE FUTURE</h2>
         <div class={styles.favoriteBet} data-node-id="188:2516">
-          <span>JOSH ALLEN</span>
-          <span>10+ RUSHING TOUCHDOWNS</span>
-          <p class={styles.favoriteBetCopy} data-node-id="823:5900">{FAVORITE_COPY}</p>
+          <span>{team.favoritePlayer}</span>
+          <span>{team.favoriteBet}</span>
+          <p class={styles.favoriteBetCopy} data-node-id="823:5900">{team.favoriteCopy}</p>
         </div>
         <Button
           variant="fanduel"
@@ -183,7 +187,7 @@ import styles from './IndividualTeam.module.css'
 
       <div class={styles.oddsList} data-node-id="162:1605">
         {
-          ODDS.map((odd) => (
+          team.odds.map((odd) => (
             <article class={styles.oddCard} data-node-id={odd.nodeId}>
               <div class={styles.oddIdentity}>
                 <span class={styles.oddImageBox} aria-hidden="true">
@@ -212,7 +216,7 @@ import styles from './IndividualTeam.module.css'
 
       <div class:list={[styles.scheduleGrid, styles.mobileSchedule]} data-node-id="730:3141">
         {
-          SCHEDULE.map((game) => (
+          team.schedule.map((game) => (
             <article class={styles.scheduleCard} data-node-id={game.nodeId}>
               <div class={styles.scheduleInfo} data-schedule-info>
                 <p class:list={[styles.scheduleOpponent, game.location === null && styles.scheduleBye]}>{game.opponent}</p>
@@ -243,7 +247,7 @@ import styles from './IndividualTeam.module.css'
 
       <div class:list={[styles.scheduleGrid, styles.desktopSchedule]} data-desktop-node-id="791:2520">
         {
-          DESKTOP_SCHEDULE.map((game) => (
+          team.desktopSchedule.map((game) => (
             <article class={styles.scheduleCard} data-desktop-node-id={game.nodeId}>
               <div class={styles.scheduleInfo}>
                 <p class={styles.scheduleOpponent}>{game.opponent}</p>
@@ -284,20 +288,21 @@ import styles from './IndividualTeam.module.css'
 
       <div class={styles.exploreCarousel} data-node-id="181:1431">
         {
-          ['181:1405', '181:1418', '181:1432', '397:2369', '397:2383'].map((nodeId) => (
-            <article class={styles.exploreCard} data-node-id={nodeId}>
-              <img class={styles.exploreImage} src={ASSETS.teamExploreCard} alt="Buffalo Bills player portrait" />
+          team.exploreCards.map((card) => (
+            <article class={styles.exploreCard} data-node-id={card.nodeId}>
+              <img class={styles.exploreImage} src={ASSETS.teamExploreCard} alt={`${card.name} player portrait`} />
               <div class={styles.exploreScrim} aria-hidden="true"></div>
-              <span class={styles.conference}>AFC</span>
+              <span class={styles.conference}>{card.conference}</span>
               <div class={styles.exploreDetails}>
                 <span class={styles.teamLogo}>
                   <img class={styles.teamLogoLeaf} src={ASSETS.teamsLogoBuffalo} alt="" aria-hidden="true" />
                 </span>
-                <h3 class={styles.exploreTeamName}>BUFFALO BILLS</h3>
+                <h3 class={styles.exploreTeamName}>{card.name}</h3>
                 <Button
                   variant="button"
                   label="Team Preview"
-                  href="/teams/buffalo-bills"
+                  ariaLabel={`Preview ${card.name}`}
+                  href={card.href}
                   assetSet="teams-page"
                 />
               </div>
@@ -322,14 +327,18 @@ import styles from './IndividualTeam.module.css'
 
     const search = page.querySelector<HTMLFormElement>('[role="search"]')
     const input = page.querySelector<HTMLInputElement>('#team-detail-search')
-    if (search === null || input === null) {
+    const teamName = page.dataset.teamName?.toLocaleLowerCase()
+    if (search === null || input === null || teamName === undefined) {
       throw new Error('Individual Team page is missing its search controls')
     }
+
+    const currentTeam = teamName
 
     search.addEventListener('submit', (event) => {
       event.preventDefault()
       const query = input.value.trim().toLocaleLowerCase()
-      if (query.includes('buffalo') || query.includes('bills')) return
+      // Searching for the team already on screen has nowhere to go.
+      if (query.length > 0 && currentTeam.includes(query)) return
       // Routed, not assigned, so leaving for All Teams cross-fades like a tab does.
       void navigate(`/teams?search=${encodeURIComponent(input.value.trim())}`)
     })

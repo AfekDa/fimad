@@ -1,7 +1,9 @@
 import { within } from '@testing-library/dom'
 import { beforeAll, describe, expect, it } from 'vitest'
 import { renderToDom } from '../../test/render'
+import { TEAMS, teamByNumber } from '../../data/teams'
 import IndividualTeam from './IndividualTeam.astro'
+import { TEAM_PAGES, createPlaceholderTeam } from './content'
 
 let body: HTMLElement
 let screen: ReturnType<typeof within>
@@ -54,5 +56,72 @@ describe('Individual Team', () => {
 
   it('ships the fail-fast search controller', () => {
     expect(body.querySelectorAll('script')).toHaveLength(1)
+  })
+})
+
+describe('Individual Team placeholders', () => {
+  let placeholder: HTMLElement
+  let placeholderScreen: ReturnType<typeof within>
+
+  beforeAll(async () => {
+    placeholder = await renderToDom(IndividualTeam, { team: createPlaceholderTeam(teamByNumber(2)) })
+    placeholderScreen = within(placeholder)
+  })
+
+  it('covers every roster team', () => {
+    expect(TEAM_PAGES).toHaveLength(TEAMS.length)
+    expect(TEAM_PAGES.map((page) => page.name)).toEqual(TEAMS.map((team) => team.name))
+  })
+
+  it('names the requested team rather than the design default', () => {
+    expect(placeholderScreen.getByRole('heading', { level: 1 })).toHaveTextContent('TEAM 2')
+    expect(placeholder.querySelector('[data-team-detail-page]')).toHaveAttribute(
+      'data-team-name',
+      'TEAM 2',
+    )
+    expect(placeholderScreen.queryByText('BUFFALO BILLS')).not.toBeInTheDocument()
+  })
+
+  it('labels the staff cards after the team', () => {
+    const staff = [...placeholder.querySelectorAll('[data-node-id="162:1595"] article')]
+
+    expect(
+      staff.map((card) => [...card.querySelectorAll('p')].map((line) => line.textContent)),
+    ).toEqual([
+      ['Head Coach', 'HEAD COACH TEAM 2'],
+      ['Offensive Coordinator', 'OFF COORD TEAM 2'],
+      ['Defensive Coordinator', 'DEF COORD TEAM 2'],
+    ])
+  })
+
+  it('keeps the designed section structure', () => {
+    expect(placeholder.querySelectorAll('details')).toHaveLength(5)
+    expect(placeholder.querySelectorAll('[data-node-id="162:1605"] article')).toHaveLength(6)
+    expect(placeholder.querySelectorAll('[data-node-id="730:3141"] article')).toHaveLength(18)
+    expect(within(placeholder.querySelector('[data-node-id="730:3141"]') as HTMLElement).getByText('NO GAME')).toBeInTheDocument()
+  })
+
+  it('points the explore carousel at other teams', () => {
+    const links = [...placeholder.querySelectorAll('[data-node-id="181:1431"] a')]
+
+    expect(links.map((link) => link.getAttribute('href'))).toEqual([
+      '/teams/team-3',
+      '/teams/team-4',
+      '/teams/team-5',
+      '/teams/team-6',
+      '/teams/team-7',
+    ])
+  })
+
+  it('never schedules a team against itself', () => {
+    for (const team of TEAMS) {
+      const content = createPlaceholderTeam(team)
+      const opponents = content.schedule
+        .filter((game) => game.location !== null)
+        .map((game) => game.opponent)
+
+      expect(opponents).not.toContain(`T${team.number}`)
+      expect(opponents).toHaveLength(17)
+    }
   })
 })

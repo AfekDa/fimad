@@ -50,11 +50,26 @@ describe('All Teams', () => {
     for (const image of images) expect(image.getAttribute('alt')).toBeTruthy()
   })
 
-  it('links the first card to its individual team page', () => {
+  it('gives every card its own team page', () => {
+    const links = [...body.querySelectorAll('article a')]
+
+    expect(links).toHaveLength(32)
+    expect(links.map((link) => link.getAttribute('href'))).toEqual(
+      Array.from({ length: 32 }, (_, index) => `/teams/team-${index + 1}`),
+    )
     expect(screen.getByRole('link', { name: 'Preview TEAM 1' })).toHaveAttribute(
       'href',
-      '/teams/buffalo-bills',
+      '/teams/team-1',
     )
+    expect(screen.getByRole('link', { name: 'Preview TEAM 32' })).toHaveAttribute(
+      'href',
+      '/teams/team-32',
+    )
+  })
+
+  it('splits the roster across both conferences', () => {
+    expect(body.querySelectorAll('[data-conference="AFC"]')).toHaveLength(16)
+    expect(body.querySelectorAll('[data-conference="NFC"]')).toHaveLength(16)
   })
 
   it('ships the client-side filter controller', () => {

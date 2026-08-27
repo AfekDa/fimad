@@ -8,6 +8,11 @@
  * app to itself and make this test meaningless. The uncropped exports live in
  * `tests/visual/refs/`; `refs/crop-baselines.ps1` regenerates the crops.
  *
+ * A screen whose manifest entry carries `divergesFromFigma` skips both
+ * comparisons: the app deliberately renders content the frame does not draw, so
+ * a pixel diff there would report an intended difference as a regression. Its
+ * nav-docking assertion below still runs.
+ *
  * The frame is compared in two bands because it is taller than the viewport it
  * is drawn for:
  *
@@ -54,6 +59,7 @@ test.describe('frame fidelity', () => {
     test(`${route.frameName} (${route.nodeId}) matches its Figma export in the first viewport`, async ({
       page,
     }) => {
+      test.skip(route.divergesFromFigma !== undefined, route.divergesFromFigma)
       await page.setViewportSize({ width: route.width, height: route.viewportHeight })
       await page.goto(route.path)
       await waitForPaintableAssets(page)
@@ -66,6 +72,7 @@ test.describe('frame fidelity', () => {
     test(`${route.frameName} (${route.nodeId}) matches its Figma export below the fold`, async ({
       page,
     }) => {
+      test.skip(route.divergesFromFigma !== undefined, route.divergesFromFigma)
       await page.setViewportSize({ width: route.width, height: route.viewportHeight })
       await page.goto(route.path)
       await waitForPaintableAssets(page)
