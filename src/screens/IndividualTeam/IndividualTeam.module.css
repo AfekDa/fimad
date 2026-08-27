@@ -1371,10 +1371,22 @@
     height: 4px;
   }
 
+  /*
+   * The tag is a pill that never crushes its label. The desktop frame only
+   * ever drew "Easy", as a 70x27 instance with the label centred (791:2466:
+   * 8px padding, 4px gap, 16/20 Medium) -- and the mobile source shows what
+   * the component does with longer labels: its hidden "Moderate" tag
+   * (908:2051) hugs to exactly the same 70 that "Easy" gets padded out to.
+   * So: hug the label, floor at the frame's 70. "Easy" stays pixel-equal to
+   * the frame; "Moderate" and "Difficult" grow past it instead of clipping,
+   * which the frame's mock cards never had to show.
+   */
   .scheduleTag {
     position: static;
-    width: 70px;
+    width: auto;
+    min-width: 70px;
     height: 27px;
+    padding: 0 8px;
     gap: var(--space-4);
     border-radius: 4px;
     font-size: 16px;
