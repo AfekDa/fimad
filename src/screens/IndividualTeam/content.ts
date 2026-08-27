@@ -61,6 +61,9 @@ export interface TeamScheduleGame {
 export interface TeamDesktopScheduleGame {
   readonly opponent: string
   readonly week: number
+  /** `null` on the bye week, which the design draws without a location or tag. */
+  readonly location: ScheduleLocation | null
+  readonly difficulty: ScheduleDifficulty | null
   readonly nodeId: string
 }
 
@@ -180,18 +183,38 @@ const DESKTOP_SCHEDULE_NODE_IDS = ['791:2111', '791:2470', '791:2480', '791:2523
 /** Node ids of the five cards in the Explore All Teams carousel (181:1431). */
 const EXPLORE_NODE_IDS = ['181:1405', '181:1418', '181:1432', '397:2369', '397:2383'] as const
 
-function buildDesktopSchedule(
-  opponentFor: (week: number) => string,
+/**
+ * The desktop grid (791:2520) is the SAME season as the mobile one, read in a
+ * different order: three columns of six, weeks 1/7/13 down the first column.
+ * It is derived from the mobile schedule rather than built from its own data,
+ * so an edit — CMS or otherwise — can never reach one grid and miss the other.
+ * (The frame's own cards are all "IND · Away · Easy"; that was mock filler,
+ * not a design intent, and used to be transcribed literally here.)
+ */
+export function buildDesktopSchedule(
+  schedule: readonly TeamScheduleGame[],
 ): readonly TeamDesktopScheduleGame[] {
-  return DESKTOP_SCHEDULE_WEEKS.map((week, index) => ({
-    opponent: opponentFor(week),
-    week,
-    nodeId: DESKTOP_SCHEDULE_NODE_IDS[index] ?? '',
-  }))
+  return DESKTOP_SCHEDULE_WEEKS.map((week, index) => {
+    const game = schedule.find((candidate) => candidate.week === week)
+    if (game === undefined) throw new Error(`The mobile schedule is missing week ${week}`)
+
+    return {
+      opponent: game.opponent,
+      week,
+      location: game.location,
+      difficulty: game.difficulty,
+      nodeId: DESKTOP_SCHEDULE_NODE_IDS[index] ?? '',
+    }
+  })
 }
 
 const BUFFALO_PREDICTION_COPY =
   'The Bills’ biggest transaction was extending QB Josh Allen for the next six years. Aside from that it was a solid, without being an exceptional offseason in Buffalo. I’m unconvinced on the signing of former Chargers’ WR Josh Palmer who went under 2 yards per route run with the elite arm of Justin Herbert.'
+
+const BUFFALO_SCHEDULE: readonly TeamScheduleGame[] = SCHEDULE_LAYOUT.map((game, index) => ({
+  ...game,
+  opponent: BUFFALO_OPPONENTS[index] ?? '',
+}))
 
 /** The design's own copy, rendered by the `/teams/buffalo-bills` reference route. */
 export const BUFFALO_BILLS: TeamPageContent = {
@@ -238,11 +261,8 @@ export const BUFFALO_BILLS: TeamPageContent = {
   favoriteBet: '10+ RUSHING TOUCHDOWNS',
   favoriteCopy: BUFFALO_PREDICTION_COPY,
   odds: ODDS,
-  schedule: SCHEDULE_LAYOUT.map((game, index) => ({
-    ...game,
-    opponent: BUFFALO_OPPONENTS[index] ?? '',
-  })),
-  desktopSchedule: buildDesktopSchedule(() => 'IND'),
+  schedule: BUFFALO_SCHEDULE,
+  desktopSchedule: buildDesktopSchedule(BUFFALO_SCHEDULE),
   exploreCards: EXPLORE_NODE_IDS.map((nodeId) => ({
     nodeId,
     name: 'BUFFALO BILLS',
@@ -275,6 +295,11 @@ function placeholderOpponent(teamNumber: number, week: number): string {
 function createBaseTeam(team: Team): TeamPageContent {
   const { name, number } = team
   const images = imagesForTeam(number)
+
+  const schedule: readonly TeamScheduleGame[] = SCHEDULE_LAYOUT.map((game) => ({
+    ...game,
+    opponent: game.location === null ? 'NO GAME' : placeholderOpponent(number, game.week),
+  }))
 
   return {
     name,
@@ -320,11 +345,8 @@ function createBaseTeam(team: Team): TeamPageContent {
     favoriteBet: '10+ RUSHING TOUCHDOWNS',
     favoriteCopy: `Placeholder favourite future for ${name}. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.`,
     odds: ODDS,
-    schedule: SCHEDULE_LAYOUT.map((game) => ({
-      ...game,
-      opponent: game.location === null ? 'NO GAME' : placeholderOpponent(number, game.week),
-    })),
-    desktopSchedule: buildDesktopSchedule((week) => placeholderOpponent(number, week)),
+    schedule,
+    desktopSchedule: buildDesktopSchedule(schedule),
     /* The five cards after this one in the roster, wrapping at the end. */
     exploreCards: EXPLORE_NODE_IDS.map((nodeId, index) => {
       const neighbour = teamByNumber(((number + index) % TEAM_COUNT) + 1)

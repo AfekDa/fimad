@@ -11,6 +11,7 @@ import type {
   ScheduleLocation,
   TeamPageContent,
 } from './content'
+import { buildDesktopSchedule } from './content'
 import { cmsTeam, image, paragraphs, text, url } from '../../data/cms'
 import type { CmsTeamGame, CmsTeamLines } from '../../data/cms'
 
@@ -78,6 +79,20 @@ export function withCmsContent(number: number, base: TeamPageContent): TeamPageC
     published.defensive_coordinator,
   ]
 
+  const schedule = base.schedule.map((game) => {
+    const location = locationFrom(games.get(game.week)?.location, game.location)
+
+    return {
+      ...game,
+      opponent: location === null ? 'NO GAME' : opponentFor(game.week, game.opponent),
+      location,
+      difficulty:
+        location === null
+          ? null
+          : difficultyFrom(games.get(game.week)?.difficulty, game.difficulty),
+    }
+  })
+
   return {
     ...base,
     name: text(published.name, base.name).toUpperCase(),
@@ -123,22 +138,10 @@ export function withCmsContent(number: number, base: TeamPageContent): TeamPageC
         value: text(key === undefined ? undefined : published.lines?.[key], odd.value),
       }
     }),
-    schedule: base.schedule.map((game) => {
-      const location = locationFrom(games.get(game.week)?.location, game.location)
-
-      return {
-        ...game,
-        opponent: location === null ? 'NO GAME' : opponentFor(game.week, game.opponent),
-        location,
-        difficulty:
-          location === null
-            ? null
-            : difficultyFrom(games.get(game.week)?.difficulty, game.difficulty),
-      }
-    }),
-    desktopSchedule: base.desktopSchedule.map((game) => ({
-      ...game,
-      opponent: opponentFor(game.week, game.opponent),
-    })),
+    schedule,
+    /* Derived from the CMS-mapped mobile schedule, so the two grids always
+     * show the same season. Desktop used to take only the opponent and keep
+     * the frame's mock "Away"/"Easy" on every card. */
+    desktopSchedule: buildDesktopSchedule(schedule),
   }
 }

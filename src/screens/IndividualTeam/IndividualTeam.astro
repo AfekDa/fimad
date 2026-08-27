@@ -254,20 +254,33 @@ const { team = BUFFALO_BILLS } = Astro.props
 
       <div class:list={[styles.scheduleGrid, styles.desktopSchedule]} data-desktop-node-id="791:2520">
         {
+          /* Same season as the mobile grid above, in the frame's column order —
+             see buildDesktopSchedule. The frame's cards were mock filler
+             ("Away"/"Easy" on all 18), which used to be hard-coded here. */
           team.desktopSchedule.map((game) => (
             <article class={styles.scheduleCard} data-desktop-node-id={game.nodeId}>
               <div class={styles.scheduleInfo}>
-                <p class={styles.scheduleOpponent}>{game.opponent}</p>
-                <p class={styles.scheduleMeta}>
+                <p class:list={[styles.scheduleOpponent, game.location === null && styles.scheduleBye]}>{game.opponent}</p>
+                <p class:list={[styles.scheduleMeta, game.location === null && styles.scheduleBye]}>
                   <span>WK {game.week}</span>
-                  <span class={styles.scheduleGameDot} aria-hidden="true"></span>
-                  <span>Away</span>
+                  {
+                    game.location !== null && (
+                      <Fragment>
+                        <span class={styles.scheduleGameDot} aria-hidden="true"></span>
+                        <span>{game.location}</span>
+                      </Fragment>
+                    )
+                  }
                 </p>
               </div>
-              <span class:list={[styles.scheduleTag, styles.scheduleTageasy]}>
-                <span class={styles.scheduleTagDot} aria-hidden="true"></span>
-                Easy
-              </span>
+              {
+                game.difficulty !== null && (
+                  <span class:list={[styles.scheduleTag, styles[`scheduleTag${game.difficulty}`]]}>
+                    <span class={styles.scheduleTagDot} aria-hidden="true"></span>
+                    {game.difficulty === 'easy' ? 'Easy' : game.difficulty === 'moderate' ? 'Moderate' : 'Difficult'}
+                  </span>
+                )
+              }
             </article>
           ))
         }
