@@ -46,10 +46,19 @@
     height: var(--desktop-bets-card-height);
   }
 
+  /*
+   * Frame 1378 sets "Lamar Jackson +430" as ONE inline paragraph in a 168px
+   * column -- Dt/BC1_SB at 24/26 -- so the odds continue on the name's line
+   * when they fit and wrap under it when they don't (27 Aug feedback). The
+   * row-flex this replaces gave the odds their own narrow column, where
+   * `anywhere` split "+430" into "+43 / 0"; `break-word` keeps long CMS names
+   * breakable without ever splitting inside a word.
+   */
   .pick {
-    flex-direction: row;
-    max-width: none;
+    display: block;
+    max-width: 168px;
     font-size: var(--font-dt-bc1-size);
-    line-height: var(--font-dt-bc1-line);
+    line-height: 26px;
+    overflow-wrap: break-word;
   }
 }

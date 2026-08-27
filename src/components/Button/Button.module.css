@@ -265,10 +265,6 @@
     flex-shrink: 0;
   }
 
-  .filterLabel {
-    text-transform: uppercase;
-  }
-
   .filter[data-filter-value='all'] {
     min-width: 78px;
   }

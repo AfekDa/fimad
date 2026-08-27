@@ -360,14 +360,24 @@
     display: none;
   }
 
+  /*
+   * 27 Aug feedback: "cross-check the spacing between the filters". The frame
+   * flows the chips left to right in two rows with 16px gaps -- five on the
+   * first row, two on the second (791:3501..3546). The mobile column direction
+   * used to leak in here and fill 106px columns top-to-bottom instead, which
+   * scattered the chips into pairs with 100px+ of navy between the pairs.
+   */
   .filters {
     position: relative;
     box-sizing: border-box;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
     column-gap: 16px;
-    row-gap: 16px;
+    /* 8, not 16: the break element below adds a zero-height flex line between
+     * the two chip rows, so the frame's 16 arrives as two 8s. */
+    row-gap: 8px;
     width: 1120px;
     height: 106px;
     margin: 0 80px;
@@ -376,6 +386,14 @@
 
   .filterRow {
     display: contents;
+  }
+
+  /* All seven chips fit 1120 on one line, so the frame's break before
+   * "Defensive POTY Picks" -- the third source row -- has to be forced. */
+  .filterRow:nth-of-type(3)::before {
+    content: '';
+    flex-basis: 100%;
+    height: 0;
   }
 
   /*
@@ -486,15 +504,17 @@
     background: var(--surface-bet-card);
   }
 
+  /* Same inline paragraph as BetCard's .pick: frame 1378 is 24/26 in 168. */
   .desktopExtraPick {
-    display: flex;
-    gap: 0;
+    display: block;
+    max-width: 168px;
     margin: 0;
     color: var(--color-white);
     font-family: var(--font-family-base);
     font-size: var(--font-dt-bc1-size);
-    line-height: var(--font-dt-bc1-line);
+    line-height: 26px;
     font-weight: var(--font-bc1-sb-weight);
+    overflow-wrap: break-word;
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
   }

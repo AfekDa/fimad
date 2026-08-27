@@ -1713,6 +1713,39 @@ test.describe('responsive integrity', () => {
     expect(await mvpCards.nth(2).boundingBox()).toMatchObject({ x: 843, y: 249, width: 357, height: 576 })
   })
 
+  /*
+   * 27 Aug feedback, desktop: "make the cards end before the Nav so that there
+   * is no overlap" — the MVP Picks instance of it. The nav's old 106px offset
+   * put its top at 612, across the cards' odds row; at the mobile 40 the cards
+   * clear it. This pins that at the end of the scroll.
+   */
+  test('desktop Most Valuable Player Picks ends its cards clear of the nav', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 782 })
+    await page.goto('/awards/mvp')
+    await page.evaluate(() => document.fonts.ready)
+    await page.evaluate(() => {
+      window.scrollTo(0, document.documentElement.scrollHeight)
+    })
+
+    const clearance = await page.evaluate(() => {
+      const nav = document.querySelector('[data-app-nav]')
+      const cards = [...document.querySelectorAll('[data-mvp-card]')]
+      if (nav === null || cards.length === 0) {
+        throw new Error('MVP Picks is missing its nav or cards')
+      }
+
+      return {
+        cardCount: cards.length,
+        gapToNav:
+          nav.getBoundingClientRect().top -
+          Math.max(...cards.map((card) => card.getBoundingClientRect().bottom)),
+      }
+    })
+
+    expect(clearance.cardCount).toBe(3)
+    expect(clearance.gapToNav).toBeGreaterThan(24)
+  })
+
   test('desktop All Bets matches the current 1280px Figma composition', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 782 })
     await page.goto('/all-bets')
@@ -1737,13 +1770,54 @@ test.describe('responsive integrity', () => {
       width: 78,
       height: 33,
     })
+
+    /*
+     * 27 Aug feedback: "cross-check the spacing between the filters". Frame
+     * 791:3391 flows the chips left to right with 16px gaps — five on the
+     * first row, two on the second, mixed case. The mobile column direction
+     * used to fill 106px columns top-to-bottom here instead.
+     */
+    const chipRows = await page
+      .locator('[data-filter-value]')
+      .evaluateAll((chips) =>
+        chips.map((chip) => {
+          const box = chip.getBoundingClientRect()
+          return { label: chip.textContent?.trim(), x: box.x, y: box.y, right: box.right }
+        }),
+      )
+    expect(chipRows.filter((chip) => Math.abs(chip.y - 171) < 1)).toHaveLength(5)
+    const secondRow = chipRows.filter((chip) => Math.abs(chip.y - 220) < 1)
+    expect(secondRow.map((chip) => chip.label)).toEqual([
+      'Defensive POTY Picks',
+      'Offensive ROTY Picks',
+    ])
+    for (let i = 1; i < chipRows.length; i += 1) {
+      const chip = chipRows[i]!
+      const previous = chipRows[i - 1]!
+      if (Math.abs(chip.y - previous.y) < 1) {
+        expect(chip.x - previous.right).toBeCloseTo(16, 0)
+      }
+    }
+
     const firstBet = page.locator('[data-bet-section="mvp"] [data-bet-card]').first()
-    expect(await firstBet.boundingBox()).toMatchObject({
-      x: 80,
-      y: 358,
-      width: 357,
-      height: 75,
-    })
+    const firstBetBox = await firstBet.boundingBox()
+    expect(firstBetBox).toMatchObject({ x: 80, width: 357 })
+    expect(firstBetBox?.y).toBeCloseTo(358, 0)
+    expect(firstBetBox?.height).toBeCloseTo(75, 0)
+
+    /*
+     * 27 Aug feedback: "cross-check the text layout ... the line height". Frame
+     * 1378 sets "Lamar Jackson +430" as one inline paragraph in a 168px column
+     * at 24/26, so the odds flow after the name instead of living in their own
+     * column, where they used to split into "+43 / 0".
+     */
+    const pick = firstBet.locator('p')
+    await expect(pick).toHaveCSS('font-size', '24px')
+    await expect(pick).toHaveCSS('line-height', '26px')
+    const pickBox = await pick.boundingBox()
+    expect(pickBox?.width).toBeCloseTo(168, 0)
+    // Two 26px lines against the frame's 43 trimmed box.
+    expect(pickBox?.height ?? 0).toBeLessThan(60)
     const firstBetButton = firstBet.getByRole('button', {
       name: 'Place bet on Lamar Jackson at +430',
       exact: true,
