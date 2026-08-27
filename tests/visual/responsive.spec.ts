@@ -835,15 +835,25 @@ test.describe('responsive integrity', () => {
     })
     await expect(page.locator('[data-node-id="181:1431"] article')).toHaveCount(5)
 
-    const heroImage = page.locator('[data-desktop-node-id="390:1744"] picture img')
-    const futureImage = page.locator('[data-desktop-node-id="397:2207"] picture img')
-    expect(await heroImage.getAttribute('src')).toContain('team-buffalo-hero')
-    expect(await heroImage.evaluate((image: HTMLImageElement) => image.currentSrc)).toContain(
-      'team-buffalo-hero-desktop',
-    )
-    expect(await futureImage.evaluate((image: HTMLImageElement) => image.currentSrc)).toContain(
-      'team-buffalo-future-desktop',
-    )
+    /*
+     * Asserted as "the desktop <source> won", not by file name. Emitted assets
+     * are named by content hash, so two identical files collapse to one name
+     * and which name a picture resolves to depends on what else the build
+     * contains — the placeholders in src/assets/teams are copies of these very
+     * images. Comparing against the srcset the page itself declares pins the
+     * behaviour without pinning a file name.
+     */
+    for (const nodeId of ['390:1744', '397:2207']) {
+      const picture = page.locator(`[data-desktop-node-id="${nodeId}"] picture`)
+      const mobileSrc = await picture.locator('img').getAttribute('src')
+      const desktopSrcSet = await picture.locator('source').getAttribute('srcset')
+      expect(desktopSrcSet, `${nodeId} serves one image to both breakpoints`).not.toBe(mobileSrc)
+
+      const chosen = await picture
+        .locator('img')
+        .evaluate((image: HTMLImageElement) => image.currentSrc)
+      expect(chosen).toBe(new URL(desktopSrcSet ?? '', page.url()).href)
+    }
     expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
       x: 290,
       y: 612,

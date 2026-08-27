@@ -1,30 +1,50 @@
 import { describe, expect, it } from 'vitest'
 import { ASSETS } from './assets'
 import { TEAM_IMAGES, imagesForTeam } from './teamImages'
-import { TEAMS } from '../data/teams'
+import { TEAM_COUNT, TEAMS } from '../data/teams'
+
+const SLOTS = [
+  'card',
+  'hero',
+  'heroDesktop',
+  'prediction',
+  'favorite',
+  'favoriteDesktop',
+  'explore',
+  'logo',
+] as const
 
 describe('team images', () => {
   it('resolves a picture for every team', () => {
     for (const team of TEAMS) {
       const images = imagesForTeam(team.number)
 
-      /*
-       * `card` is the one field allowed to be absent: it falls back to the
-       * design's eight card photographs, which the All Teams grid cycles.
-       */
-      const { card, ...required } = images
-      expect(card === undefined || card.length > 0).toBe(true)
-      for (const [name, source] of Object.entries(required)) {
-        expect(source, `${team.name} has no ${name} image`).toBeTruthy()
+      for (const slot of SLOTS) {
+        expect(images[slot], `${team.name} has no ${slot} image`).toBeTruthy()
       }
     }
   })
 
-  it('falls back to the design pictures for a team with no row', () => {
-    const unlisted = TEAMS.find((team) => TEAM_IMAGES[team.number] === undefined)
-    if (unlisted === undefined) throw new Error('Every team has an override; nothing to test')
+  it('gives every team all eight pictures out of its own folder', () => {
+    for (const team of TEAMS) {
+      const folder = TEAM_IMAGES[team.number]
+      expect(folder, `src/assets/teams/team-${team.number} is empty`).toBeDefined()
 
-    expect(imagesForTeam(unlisted.number)).toEqual({
+      for (const slot of SLOTS) {
+        expect(folder?.[slot], `team-${team.number} is missing its ${slot} file`).toBeTruthy()
+      }
+    }
+  })
+
+  /*
+   * The folders ship filled, so this is the safety net rather than the norm:
+   * a slot whose file is deleted keeps rendering the design's own picture.
+   * Team 0 is off the roster and so has no folder, which stands in for one.
+   */
+  it('falls back to the design pictures for a slot with no file', () => {
+    expect(imagesForTeam(0)).toEqual({
+      /* `card` alone has no single default: with no file the All Teams grid
+       * goes back to cycling the design's eight card photographs. */
       card: undefined,
       hero: ASSETS.teamBuffaloHero,
       heroDesktop: ASSETS.teamBuffaloHeroDesktop,
@@ -36,16 +56,18 @@ describe('team images', () => {
     })
   })
 
-  it('keeps the design pictures a row does not name', () => {
-    for (const [number, override] of Object.entries(TEAM_IMAGES)) {
-      const resolved = imagesForTeam(Number(number))
-      const untouched = Object.keys(resolved).filter((key) => !(key in override))
+  /*
+   * The folders are read by a build-time glob, so a stray file is caught while
+   * the module initialises rather than here. What this can still check is that
+   * nothing which did get through describes a team or a slot the app has.
+   */
+  it('reads only roster teams and known slots out of src/assets/teams', () => {
+    for (const [number, folder] of Object.entries(TEAM_IMAGES)) {
+      expect(Number(number)).toBeGreaterThanOrEqual(1)
+      expect(Number(number)).toBeLessThanOrEqual(TEAM_COUNT)
 
-      for (const key of untouched) {
-        expect(
-          resolved[key as keyof typeof resolved],
-          `Team ${number} lost its default ${key} image`,
-        ).toBe(imagesForTeam(0)[key as keyof typeof resolved])
+      for (const slot of Object.keys(folder)) {
+        expect(SLOTS, `team ${number} has an unknown ${slot} picture`).toContain(slot)
       }
     }
   })
