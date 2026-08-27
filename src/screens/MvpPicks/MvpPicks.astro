@@ -4,7 +4,18 @@ import AppNav from '../../components/AppNav/AppNav.astro'
 import AwardsHeader from '../Awards/AwardsHeader.astro'
 import MvpPickCard from './MvpPickCard.astro'
 import { MVP_PICKS } from './content'
+import type { MvpPickContent } from './content'
 import styles from './MvpPicks.module.css'
+
+export interface Props {
+  /**
+   * Defaults to the design’s own three cards, so /awards/mvp — the frame the
+   * Playwright suite measures against — renders exactly as it always has.
+   */
+  readonly picks?: readonly MvpPickContent[]
+}
+
+const { picks = MVP_PICKS } = Astro.props
 ---
 
 <div class={styles.page} data-node-id="188:2186" data-mvp-picks-page>
@@ -29,7 +40,7 @@ import styles from './MvpPicks.module.css'
   </div>
 
   <section class={styles.carousel} aria-label="Most valuable player picks" data-node-id="188:2195">
-    {MVP_PICKS.map((pick) => <MvpPickCard pick={pick} />)}
+    {picks.map((pick) => <MvpPickCard pick={pick} />)}
   </section>
 
   <AppNav />

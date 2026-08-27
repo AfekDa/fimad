@@ -54,7 +54,12 @@ describe('Awards', () => {
     expect(screen.getByRole('searchbox', { name: 'Search awards' })).toBeInTheDocument()
     const actions = screen.getAllByRole('link', { name: 'Learn More' })
     expect(actions).toHaveLength(4)
-    expect(actions[0]).toHaveAttribute('href', '/awards/mvp')
+    expect(actions.map((action: HTMLElement) => action.getAttribute('href'))).toEqual([
+      '/awards/award-1',
+      '/awards/award-2',
+      '/awards/award-3',
+      '/awards/award-4',
+    ])
     expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument()
   })
 

@@ -80,3 +80,75 @@ export function readImageFolders<Slot extends string>(
 
   return table
 }
+
+export interface NestedImageFolders {
+  /** What `import.meta.glob` returned: `./awards/award-2/cards/…` -> url. */
+  readonly files: Readonly<Record<string, string>>
+  /** The folder under `src/assets` that was globbed, e.g. `awards`. */
+  readonly root: string
+  /** The outer folder-name prefix, e.g. `award` for `award-2`. */
+  readonly prefix: string
+  /** How many outer folders there are. */
+  readonly count: number
+  /** The folder inside each one, e.g. `cards`. */
+  readonly subfolder: string
+  /** The file-name prefix inside it, e.g. `card` for `card-3.png`. */
+  readonly itemPrefix: string
+  /** How many items each outer folder holds. */
+  readonly itemCount: number
+}
+
+/**
+ * The same idea one level down: a folder inside each numbered folder, holding
+ * one picture per card on that item’s own page. Returns
+ * `award -> card -> url`, with no entry for an award whose folder is empty.
+ *
+ * As above, a file may spell its owner out: in `award-2/cards`, both
+ * `card-3.png` and `award-2-card-3.png` are card 3. The number in a
+ * spelled-out name has to be the folder’s own, so an `award-1-card-3.png`
+ * filed under `award-2` stops the build rather than being quietly misread.
+ */
+export function readNestedImageFolders(
+  folders: NestedImageFolders,
+): Readonly<Record<number, Readonly<Record<number, string>>>> {
+  const { files, root, prefix, count, subfolder, itemPrefix, itemCount } = folders
+  const filePath = new RegExp(
+    `^[.]/${root}/${prefix}-([0-9]+)/${subfolder}/(.+)[.][^.]+$`,
+  )
+  const table: Record<number, Record<number, string>> = {}
+
+  for (const [path, url] of Object.entries(files)) {
+    const match = filePath.exec(path)
+    /* The glob only yields paths of this shape; this narrows the captures. */
+    if (match === null) throw new Error(`${path} is not a src/assets/${root} file`)
+
+    const owner = Number(match[1])
+    if (owner < 1 || owner > count) {
+      throw new Error(`${path} is off the end: src/assets/${root} holds ${prefix} 1-${count}`)
+    }
+
+    const fileName = match[2] ?? ''
+    const ownPrefix = `${prefix}-${owner}-`
+    const itemName = fileName.startsWith(ownPrefix)
+      ? fileName.slice(ownPrefix.length)
+      : fileName
+
+    const item = Number(new RegExp(`^${itemPrefix}-([0-9]+)$`).exec(itemName)?.[1] ?? NaN)
+    if (!Number.isInteger(item) || item < 1 || item > itemCount) {
+      throw new Error(
+        `${path} does not name one of the ${itemCount} ${itemPrefix} pictures: ` +
+          `${itemPrefix}-1 through ${itemPrefix}-${itemCount}, optionally written out ` +
+          `as ${prefix}-${owner}-${itemPrefix}-1`,
+      )
+    }
+
+    const owned: Record<number, string> = table[owner] ?? {}
+    if (owned[item] !== undefined) {
+      throw new Error(`${prefix} ${owner} has more than one ${itemPrefix} ${item} picture`)
+    }
+    owned[item] = url
+    table[owner] = owned
+  }
+
+  return table
+}

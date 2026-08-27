@@ -1,5 +1,4 @@
 ---
-import { ASSETS } from '../../assets/assets'
 import Button from '../../components/Button/Button.astro'
 import type { MvpPickContent } from './content'
 import styles from './MvpPickCard.module.css'
@@ -12,11 +11,7 @@ const { pick } = Astro.props
 ---
 
 <article class={styles.card} data-node-id={pick.nodeId} data-mvp-card>
-  <img
-    class={styles.image}
-    src={ASSETS.mvpCardLamar}
-    alt="Lamar Jackson in a Baltimore Ravens uniform"
-  />
+  <img class={styles.image} src={pick.image} alt={pick.imageAlt} />
   <span class={styles.scrim} aria-hidden="true"></span>
 
   <span class={styles.rank} aria-label={`Pick ${pick.rank}`}>
