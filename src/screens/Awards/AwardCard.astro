@@ -1,5 +1,4 @@
 ---
-import { ASSETS } from '../../assets/assets'
 import Button from '../../components/Button/Button.astro'
 import type { AwardCardContent } from './content'
 import styles from './AwardCard.module.css'
@@ -12,12 +11,8 @@ const { card } = Astro.props
 ---
 
 <article class={styles.card} data-node-id={card.nodeId} data-award-card data-award-title={card.title}>
-  <img
-    class={styles.image}
-    src={ASSETS.awardCardMvp}
-    alt="Lamar Jackson in a Baltimore Ravens uniform"
-  />
+  <img class={styles.image} src={card.image} alt={card.imageAlt} />
   <span class={styles.scrim} aria-hidden="true"></span>
   <h2 class={styles.title} data-node-id={card.headingNodeId}>MOST VALUABLE<br />PLAYER PICKS</h2>
-  <Button variant="button" label="Learn More" nodeId={card.buttonNodeId} href="/awards/mvp" />
+  <Button variant="button" label="Learn More" nodeId={card.buttonNodeId} href={card.href} />
 </article>

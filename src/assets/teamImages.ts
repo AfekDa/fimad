@@ -33,6 +33,7 @@
  * rather than breaking. See src/assets/teams/README.md.
  */
 import { ASSETS } from './assets'
+import { readImageFolders } from './imageFolders'
 import { TEAM_COUNT } from '../data/teams'
 
 export interface TeamImages {
@@ -78,64 +79,26 @@ const SLOT_BY_FILE_NAME: Readonly<Record<string, keyof TeamImages>> = {
 }
 
 /**
- * Every picture in every team folder, as `./teams/team-2/hero.png` -> url.
- *
- * `?url` for the same reason as the imports in assets.ts: the file is emitted
- * and hashed by the build rather than resolved at runtime. Vite expands this
- * at build time, which is what lets a team be given a picture by dropping a
- * file in a folder instead of editing this module.
- */
-const TEAM_FILES = import.meta.glob<string>('./teams/team-*/*.{png,jpg,jpeg,webp,avif}', {
-  eager: true,
-  query: '?url',
-  import: 'default',
-})
-
-/** `Partial<TeamImages>` without the `readonly`, so the scan can fill it in. */
-type TeamImageDraft = { -readonly [Slot in keyof TeamImages]?: TeamImages[Slot] }
-
-const TEAM_FILE_PATH = /^\.\/teams\/team-(\d+)\/(.+)\.[^.]+$/
-
-function readTeamFolders(): Readonly<Record<number, TeamImageDraft>> {
-  const table: Record<number, TeamImageDraft> = {}
-
-  for (const [path, url] of Object.entries(TEAM_FILES)) {
-    const match = TEAM_FILE_PATH.exec(path)
-    /* The glob only yields paths of this shape, so this is unreachable; it is
-     * here to narrow the two capture groups rather than to catch anything. */
-    if (match === null) throw new Error(`${path} is not a src/assets/teams file`)
-
-    const number = Number(match[1])
-    if (number < 1 || number > TEAM_COUNT) {
-      throw new Error(`${path} is off the roster, which holds teams 1-${TEAM_COUNT}`)
-    }
-
-    const slot = SLOT_BY_FILE_NAME[match[2] ?? '']
-    if (slot === undefined) {
-      throw new Error(
-        `${path} is not one of the team picture slots: ${Object.keys(SLOT_BY_FILE_NAME).join(', ')}`,
-      )
-    }
-
-    const team = table[number] ?? {}
-    if (team[slot] !== undefined) {
-      throw new Error(`Team ${number} has more than one ${slot} picture; keep one file per slot`)
-    }
-    team[slot] = url
-    table[number] = team
-  }
-
-  return table
-}
-
-/**
  * What each team's folder holds, keyed by team number. A team with an empty
  * folder has no entry.
  *
- * This is derived, not authored: to give a team a picture, add the file to
- * `src/assets/teams/team-<n>/` rather than editing anything here.
+ * This is derived, not authored: to change a team's picture, replace the file
+ * in `src/assets/teams/team-<n>/` rather than editing anything here.
+ *
+ * `?url` for the same reason as the imports in assets.ts: the file is emitted
+ * and hashed by the build rather than resolved at runtime.
  */
-export const TEAM_IMAGES: Readonly<Record<number, Partial<TeamImages>>> = readTeamFolders()
+export const TEAM_IMAGES: Readonly<Record<number, Partial<TeamImages>>> = readImageFolders({
+  files: import.meta.glob<string>('./teams/team-*/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  }),
+  root: 'teams',
+  prefix: 'team',
+  count: TEAM_COUNT,
+  slots: SLOT_BY_FILE_NAME,
+})
 
 /** Every picture team `number` uses, with the design's own filling any gaps. */
 export function imagesForTeam(number: number): TeamImages {
