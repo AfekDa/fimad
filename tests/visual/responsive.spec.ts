@@ -421,6 +421,16 @@ test.describe('responsive integrity', () => {
       width: 1280,
       height: 752,
     })
+    /*
+     * Rectangle 430 is drawn 36px short of the hero's bottom edge, which
+     * leaves a band of the hero's flat #0078FF overlay showing between the
+     * fade and the navy content. It is run to the edge instead, so its bottom
+     * has to stay pinned to the hero's (see Homepage.module.css).
+     */
+    const transitionBox = await page.locator('[data-node-id="366:238"]').boundingBox()
+    expect(transitionBox).not.toBeNull()
+    expect((transitionBox?.y ?? 0) + (transitionBox?.height ?? 0)).toBeCloseTo(752, 0)
+
     const heroImage = page.locator('[data-node-id="1:91"] picture img')
     expect(await heroImage.getAttribute('src')).toContain('hero-poster')
     expect(await heroImage.evaluate((image: HTMLImageElement) => image.currentSrc)).toContain(
