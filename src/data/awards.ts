@@ -11,6 +11,8 @@
  * its own page different cards by replacing the pictures in
  * `src/assets/awards/award-<n>/cards/`.
  */
+import { cmsAward, text } from './cms'
+
 export interface Award {
   /** 1-based, and the number of the folder its pictures live in. */
   readonly number: number
@@ -19,12 +21,17 @@ export interface Award {
   readonly href: string
 }
 
-export const AWARDS: readonly Award[] = [
-  { number: 1, title: 'MOST VALUABLE PLAYER PICKS', href: '/awards/award-1' },
-  { number: 2, title: 'MOST VALUABLE PLAYER PICKS', href: '/awards/award-2' },
-  { number: 3, title: 'MOST VALUABLE PLAYER PICKS', href: '/awards/award-3' },
-  { number: 4, title: 'MOST VALUABLE PLAYER PICKS', href: '/awards/award-4' },
-]
+/**
+ * The four awards, titled by the CMS.
+ *
+ * The routes stay `/awards/award-<n>`: the picture folders are numbered, so the
+ * number is what ties a page to its assets even after an editor retitles it.
+ */
+export const AWARDS: readonly Award[] = [1, 2, 3, 4].map((number) => ({
+  number,
+  title: text(cmsAward(number)?.title, 'MOST VALUABLE PLAYER PICKS').toUpperCase(),
+  href: `/awards/award-${number}`,
+}))
 
 export const AWARD_COUNT = AWARDS.length
 

@@ -1,3 +1,5 @@
+import { withCmsBets } from './cmsBets'
+
 export interface BetContent {
   readonly cardNodeId: string
   readonly textNodeId: string
@@ -29,7 +31,7 @@ const standardPicks = (
   bet(ids[2][0], ids[2][1], 'Jared Goff', '+430'),
 ]
 
-export const BET_SECTIONS: readonly BetSectionContent[] = [
+const BASE_SECTIONS: readonly BetSectionContent[] = [
   {
     id: 'mvp',
     title: 'MOST VALUABLE PLAYER PICKS',
@@ -116,6 +118,9 @@ export const BET_SECTIONS: readonly BetSectionContent[] = [
     ],
   },
 ]
+
+/** The design's sections with the CMS's players and odds in them. */
+export const BET_SECTIONS: readonly BetSectionContent[] = withCmsBets(BASE_SECTIONS)
 
 export const BET_FILTERS = [
   { id: 'all', label: 'All' },

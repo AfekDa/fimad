@@ -6,6 +6,7 @@
  * ./content.ts; images resolve through the registry in src/assets/assets.ts.
  */
 import AppNav from '../../components/AppNav/AppNav.astro'
+import SocialLink from './SocialLink.astro'
 import { ASSETS } from '../../assets/assets'
 import { HOMEPAGE_CONTENT as content } from './content'
 import styles from './Homepage.module.css'
@@ -88,16 +89,7 @@ import styles from './Homepage.module.css'
 
       <div class={styles.social} data-node-id="1:118" data-desktop-node-id="366:269">
         {
-          content.social.map((link) => (
-            <button
-              type="button"
-              class={styles.socialLink}
-              data-node-id={link.nodeId}
-              aria-label={link.label}
-            >
-              <img class={styles.socialIcon} src={link.src} alt="" aria-hidden="true" />
-            </button>
-          ))
+          content.social.map((link) => <SocialLink link={link} />)
         }
       </div>
     </div>

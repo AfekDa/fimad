@@ -69,10 +69,52 @@ export interface CmsTeam {
   readonly schedule?: readonly CmsTeamGame[]
 }
 
+export interface CmsAwardPick {
+  readonly player_name?: string
+  readonly image?: string
+  readonly description?: string
+  readonly odds?: string
+  readonly bet_url?: string
+}
+
+export interface CmsAward {
+  readonly title?: string
+  readonly subtitle?: string
+  readonly slug?: string
+  readonly card_image?: string
+  readonly order?: number
+  readonly picks?: readonly CmsAwardPick[]
+}
+
+export interface CmsBet {
+  readonly category?: string
+  readonly player_name?: string
+  readonly odds?: string
+  readonly bet_url?: string
+  readonly order?: number
+}
+
+export interface CmsFanduel {
+  readonly rewards_image?: string
+  readonly rewards_label_1?: string
+  readonly rewards_label_2?: string
+  readonly rewards_label_3?: string
+  readonly rewards_button_label?: string
+  readonly rewards_button_url?: string
+  readonly offer_image?: string
+  readonly offer_title?: string
+  readonly offer_text?: string
+  readonly redeem_label?: string
+  readonly redeem_url?: string
+}
+
 interface CmsPayload {
   readonly generated_at?: string
   readonly home?: CmsHome | null
   readonly teams?: readonly CmsTeam[]
+  readonly awards?: readonly CmsAward[]
+  readonly bets?: readonly CmsBet[]
+  readonly fanduel?: CmsFanduel | null
 }
 
 const content = payload as unknown as CmsPayload
@@ -87,6 +129,30 @@ export const CMS_TEAMS: readonly CmsTeam[] = [...(content.teams ?? [])].sort(
 /** The CMS record behind a 1-based roster number, or undefined when unpublished. */
 export function cmsTeam(number: number): CmsTeam | undefined {
   return CMS_TEAMS[number - 1]
+}
+
+/** Awards in CMS order, which is the order the site numbers them. */
+export const CMS_AWARDS: readonly CmsAward[] = [...(content.awards ?? [])].sort(
+  (a, b) => (a.order ?? 0) - (b.order ?? 0),
+)
+
+/** The CMS record behind a 1-based award number, or undefined when unpublished. */
+export function cmsAward(number: number): CmsAward | undefined {
+  return CMS_AWARDS[number - 1]
+}
+
+export const CMS_FANDUEL: CmsFanduel | undefined = content.fanduel ?? undefined
+
+/** Published bets of one category, in CMS order. */
+export function cmsBetsByCategory(category: string): readonly CmsBet[] {
+  return [...(content.bets ?? [])]
+    .filter((entry) => entry.category === category)
+    .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+}
+
+/** A published url, or undefined when the CMS field is blank. */
+export function url(value: string | undefined): string | undefined {
+  return typeof value === 'string' && value.trim() !== '' ? value.trim() : undefined
 }
 
 /** The published string, or the design's own when the CMS field is blank. */

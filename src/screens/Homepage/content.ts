@@ -11,7 +11,7 @@
  * Figma and re-read.
  */
 import { ASSETS } from '../../assets/assets'
-import { CMS_HOME, image, paragraphs, text } from '../../data/cms'
+import { CMS_HOME, image, paragraphs, text, url } from '../../data/cms'
 
 export interface Feature {
   readonly nodeId: string
@@ -23,6 +23,8 @@ export interface SocialLink {
   readonly nodeId: string
   readonly label: string
   readonly src: string
+  /** Destination published in the CMS; undefined leaves the icon unlinked. */
+  readonly href?: string
 }
 
 export interface HomepageContent {
@@ -110,10 +112,20 @@ export const HOMEPAGE_CONTENT: HomepageContent = {
     signature: image(CMS_HOME?.author_signature, ASSETS.authorSignature),
   },
 
-  /* 1:118 — the design defines no destinations for these. */
+  /* 1:118 — the design defines no destinations, so the CMS supplies them. */
   social: [
-    { nodeId: '1:119', label: 'X', src: ASSETS.socialX },
-    { nodeId: '1:122', label: 'Facebook', src: ASSETS.socialFacebook },
-    { nodeId: '1:123', label: 'Instagram', src: ASSETS.socialInstagram },
+    { nodeId: '1:119', label: 'X', src: ASSETS.socialX, href: url(CMS_HOME?.social_x_url) },
+    {
+      nodeId: '1:122',
+      label: 'Facebook',
+      src: ASSETS.socialFacebook,
+      href: url(CMS_HOME?.social_facebook_url),
+    },
+    {
+      nodeId: '1:123',
+      label: 'Instagram',
+      src: ASSETS.socialInstagram,
+      href: url(CMS_HOME?.social_instagram_url),
+    },
   ],
 }

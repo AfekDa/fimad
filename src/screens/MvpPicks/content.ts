@@ -1,5 +1,6 @@
 import { imageForAwardCard } from '../../assets/awardImages'
 import { ASSETS } from '../../assets/assets'
+import { cmsAward, image, text } from '../../data/cms'
 import type { Award } from '../../data/awards'
 
 export interface MvpPickContent {
@@ -73,16 +74,23 @@ export const MVP_PICKS: readonly MvpPickContent[] = CARD_NODE_IDS.map((nodes, in
  * that award’s `cards` folder, so replacing one file changes one card.
  */
 export function createAwardPicks(award: Award): readonly MvpPickContent[] {
+  const published = cmsAward(award.number)?.picks ?? []
+
   return CARD_NODE_IDS.map((nodes, index) => {
     const rank = index + 1
+    const pick = published[index]
+
     return {
       ...nodes,
       rank,
-      name: `AWARD ${award.number} PICK ${rank}`,
-      description: `Placeholder write-up for pick ${rank} of award ${award.number}. ${DESCRIPTION}`,
-      odds: '+430',
-      image: imageForAwardCard(award.number, rank),
-      imageAlt: `Award ${award.number} pick ${rank} photograph`,
+      name: text(pick?.player_name, `AWARD ${award.number} PICK ${rank}`).toUpperCase(),
+      description: text(
+        pick?.description,
+        `Placeholder write-up for pick ${rank} of award ${award.number}. ${DESCRIPTION}`,
+      ),
+      odds: text(pick?.odds, '+430'),
+      image: image(pick?.image, imageForAwardCard(award.number, rank)),
+      imageAlt: text(pick?.player_name, `Award ${award.number} pick ${rank} photograph`),
     }
   })
 }

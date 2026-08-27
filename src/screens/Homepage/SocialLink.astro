@@ -1,0 +1,29 @@
+---
+/**
+ * One social icon from the homepage row (1:118).
+ *
+ * The design draws these as buttons with no destination, so an icon stays a
+ * button until the CMS publishes a url for it, at which point it becomes a link.
+ */
+import styles from './Homepage.module.css'
+import type { SocialLink } from './content'
+
+export interface Props {
+  readonly link: SocialLink
+}
+
+const { link } = Astro.props
+const Element = link.href === undefined ? 'button' : 'a'
+---
+
+<Element
+  type={link.href === undefined ? 'button' : undefined}
+  href={link.href}
+  target={link.href === undefined ? undefined : '_blank'}
+  rel={link.href === undefined ? undefined : 'noopener noreferrer'}
+  class={styles.socialLink}
+  data-node-id={link.nodeId}
+  aria-label={link.label}
+>
+  <img class={styles.socialIcon} src={link.src} alt="" aria-hidden="true" />
+</Element>

@@ -1,4 +1,5 @@
 import { imagesForAward } from '../../assets/awardImages'
+import { cmsAward, image } from '../../data/cms'
 import { AWARDS } from '../../data/awards'
 
 export interface AwardCardContent {
@@ -37,7 +38,7 @@ export const AWARD_CARDS: readonly AwardCardContent[] = AWARDS.map((award, index
     ...nodes,
     title: award.title,
     href: award.href,
-    image: imagesForAward(award.number).card,
+    image: image(cmsAward(award.number)?.card_image, imagesForAward(award.number).card),
     imageAlt: `Award ${award.number} cover photograph`,
   }
 })
