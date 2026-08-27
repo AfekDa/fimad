@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-27T15:32:21.714Z",
-  "generated_by": "elad.beraru@verified-global.com",
+  "generated_at": "2026-08-27T16:03:57.906Z",
+  "generated_by": "dhana.pimputkar@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
     "intro_text": "This is the third straight season I've written my guide and this version is by far the best yet. I've spent countless hours studying every team so I can give us the best chance of making money this season.\n\nIf you're just discovering me, the main thing you need to know is that absolutely everything I post is free. Here's a glimpse at what I'll be sharing with you throughout the NFL season…",
@@ -41,12 +41,12 @@
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/dcd5e086c_Mb_BaltimoreRavens_BlackSteel.png",
       "future_market": "OVER 1000.5 RECEIVING YARDS",
       "lines": {
-        "win_superbowl": "+1200",
-        "win_total": "11.5",
-        "win_division": "-105",
-        "miss_playoffs": "+240",
-        "win_conference": "+550",
-        "make_playoffs": "-295"
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
       },
       "defensive_coordinator": "ANTHONY WEAVER",
       "slug": "team-1",
@@ -63,109 +63,109 @@
           "difficulty": "Easy",
           "location": "Away",
           "week": 1,
-          "opponent": "T2"
+          "opponent": "IND"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 2,
+          "opponent": "NO"
         },
         {
           "difficulty": "Moderate",
           "location": "Away",
-          "week": 2,
-          "opponent": "T3"
+          "week": 3,
+          "opponent": "DAL"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 4,
+          "opponent": "TEN"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
-          "week": 3,
-          "opponent": "T4"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
-          "week": 4,
-          "opponent": "T5"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Home",
           "week": 5,
-          "opponent": "T6"
+          "opponent": "ATL"
         },
         {
           "difficulty": "Easy",
           "location": "Away",
           "week": 6,
-          "opponent": "T7"
+          "opponent": "CLE"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 7,
+          "opponent": "CIN"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 8,
+          "opponent": "BUF"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 9,
+          "opponent": "JAX"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 10,
+          "opponent": "LAC"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 11,
+          "opponent": "CAR"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 12,
+          "opponent": "HOU"
         },
         {
           "difficulty": "",
           "location": "None",
-          "week": 7,
-          "opponent": ""
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 8,
-          "opponent": "T9"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 9,
-          "opponent": "T10"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 10,
-          "opponent": "T11"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Home",
-          "week": 11,
-          "opponent": "T12"
-        },
-        {
-          "difficulty": "Easy",
-          "location": "Away",
-          "week": 12,
-          "opponent": "T13"
-        },
-        {
-          "difficulty": "Difficult",
-          "location": "Away",
           "week": 13,
-          "opponent": "T14"
+          "opponent": "N/G"
         },
         {
-          "difficulty": "Difficult",
+          "difficulty": "Moderate",
           "location": "Home",
           "week": 14,
-          "opponent": "T15"
+          "opponent": "TB"
         },
         {
-          "difficulty": "Moderate",
+          "difficulty": "Easy",
           "location": "Away",
           "week": 15,
-          "opponent": "T16"
-        },
-        {
-          "difficulty": "Moderate",
-          "location": "Away",
-          "week": 16,
-          "opponent": "T17"
+          "opponent": "PIT"
         },
         {
           "difficulty": "Easy",
           "location": "Home",
-          "week": 17,
-          "opponent": "T18"
+          "week": 16,
+          "opponent": "CLE"
         },
         {
           "difficulty": "Moderate",
+          "location": "Away",
+          "week": 17,
+          "opponent": "CIN"
+        },
+        {
+          "difficulty": "Easy",
           "location": "Home",
           "week": 18,
-          "opponent": "T19"
+          "opponent": "PIT"
         }
       ],
       "quarterbacks": "Lamar Jackson is still the heartbeat of this team and Baltimore will be hoping he can get back to his best after an injury-riddled 2025 campaign. Lamar started 13 games last season but was clearly not at full health, ending the year with 21 passing TDs and just 2 rushing TDs. They were clearly protecting him at points last season, with Derrick Henry taking most of the goal line carries and far less frequent designed run plays for Lamar. Lamar is still just 29 years old and in his prime, so I expect him to return to the MVP conversation if he stays healthy. Tyler Huntley signed a two year deal and will remain as the backup. He’s one of the better backups in the league in my opinion. ",
@@ -174,7 +174,7 @@
       "prediction_text": "I have the Ravens narrowly winning the AFC North over the Bengals. I think the Steelers will be slightly less competitive but the Ravens should return to the top of the division with better health and a revamped defense.  ",
       "id": "6a9022875b73b6b687d4f143",
       "created_date": "2026-08-27T11:41:59.899000",
-      "updated_date": "2026-08-27T15:30:55.483000",
+      "updated_date": "2026-08-27T16:03:42.472000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
