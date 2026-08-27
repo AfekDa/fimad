@@ -1,6 +1,6 @@
 import { imageForAwardCard } from '../../assets/awardImages'
 import { ASSETS } from '../../assets/assets'
-import { cmsAward, image, text } from '../../data/cms'
+import { cmsAward, image, text, url } from '../../data/cms'
 import type { Award } from '../../data/awards'
 
 export interface MvpPickContent {
@@ -21,6 +21,8 @@ export interface MvpPickContent {
    * should mean rewriting this — it is the sentence that describes it.
    */
   readonly imageAlt: string
+  /** Where "PLACE BET" goes; undefined leaves the design's inert button. */
+  readonly betUrl?: string
 }
 
 const DESCRIPTION =
@@ -90,6 +92,7 @@ export function createAwardPicks(award: Award): readonly MvpPickContent[] {
       ),
       odds: text(pick?.odds, '+430'),
       image: image(pick?.image, imageForAwardCard(award.number, rank)),
+      betUrl: url(pick?.bet_url),
       imageAlt: text(pick?.player_name, `Award ${award.number} pick ${rank} photograph`),
     }
   })

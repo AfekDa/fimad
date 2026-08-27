@@ -18,6 +18,7 @@ const { bet } = Astro.props
   <Button
     variant="fanduel"
     label="PLACE BET"
+    href={bet.betUrl}
     nodeId="181:1821"
     assetSet="teams-page"
     ariaLabel={`Place bet on ${bet.name} at ${bet.odds}`}

@@ -4,21 +4,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 import MvpPicks from '../../screens/MvpPicks/MvpPicks.astro'
 import { createAwardPicks } from '../../screens/MvpPicks/content'
 import { AWARDS } from '../../data/awards'
+import { cmsAward } from '../../data/cms'
 
 export const getStaticPaths = (() =>
   AWARDS.map((award) => ({
     params: { award: `award-${award.number}` },
-    props: { award, picks: createAwardPicks(award) },
+    props: {
+      award,
+      picks: createAwardPicks(award),
+      subtitle: cmsAward(award.number)?.subtitle,
+    },
   }))) satisfies GetStaticPaths
 
-const { award, picks } = Astro.props
+const { award, picks, subtitle } = Astro.props
 ---
 
 <BaseLayout title={`${award.title} | Cody Brown’s NFL Betting Guide`}>
   <div class="appShell appShellMvp">
     <a class="skipLink" href="#main">Skip to content</a>
     <main id="main" tabindex="-1">
-      <MvpPicks picks={picks} />
+      <MvpPicks picks={picks} title={award.title} subtitle={subtitle} />
     </main>
   </div>
 </BaseLayout>

@@ -6,7 +6,7 @@
  * and leaving any card it has no bet for showing the design's placeholder.
  */
 import type { BetSectionContent } from './content'
-import { cmsBetsByCategory, text } from '../../data/cms'
+import { cmsBetsByCategory, text, url } from '../../data/cms'
 
 /** Section ids on frame 251:3133 against the categories the CMS files bets under. */
 const CATEGORY_BY_SECTION: Readonly<Record<string, string>> = {
@@ -38,6 +38,7 @@ export function withCmsBets(
           ...card,
           name: text(bet.player_name, card.name),
           odds: text(bet.odds, card.odds),
+          betUrl: url(bet.bet_url),
         }
       }),
     }

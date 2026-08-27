@@ -11,7 +11,7 @@ import type {
   ScheduleLocation,
   TeamPageContent,
 } from './content'
-import { cmsTeam, image, paragraphs, text } from '../../data/cms'
+import { cmsTeam, image, paragraphs, text, url } from '../../data/cms'
 import type { CmsTeamGame, CmsTeamLines } from '../../data/cms'
 
 /** Odds cards in the order frame 162:1605 draws them, against their CMS keys. */
@@ -113,6 +113,7 @@ export function withCmsContent(number: number, base: TeamPageContent): TeamPageC
     favoritePlayer: text(published.future_player, base.favoritePlayer).toUpperCase(),
     favoriteBet: text(published.future_market, base.favoriteBet).toUpperCase(),
     favoriteCopy: text(published.future_text, base.favoriteCopy),
+    favoriteBetUrl: url(published.future_bet_url) ?? base.favoriteBetUrl,
     odds: base.odds.map((odd, index) => {
       const key = LINE_KEYS[index]
 

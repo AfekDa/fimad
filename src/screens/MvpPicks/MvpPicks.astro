@@ -13,9 +13,22 @@ export interface Props {
    * Playwright suite measures against — renders exactly as it always has.
    */
   readonly picks?: readonly MvpPickContent[]
+  /** Award title from the CMS; the design's own MVP wording when absent. */
+  readonly title?: string
+  /**
+   * The shorter desktop wording (188:2286 drops the word "PICKS").
+   *
+   * The CMS publishes it as the award's subtitle; without one the desktop
+   * heading falls back to the title it is a variation of.
+   */
+  readonly subtitle?: string
 }
 
-const { picks = MVP_PICKS } = Astro.props
+const {
+  picks = MVP_PICKS,
+  title = 'MOST VALUABLE PLAYER PICKS',
+  subtitle,
+} = Astro.props
 ---
 
 <div class={styles.page} data-node-id="188:2186" data-mvp-picks-page>
@@ -28,8 +41,8 @@ const { picks = MVP_PICKS } = Astro.props
 
   <div class={styles.intro} data-node-id="188:2480">
     <h1 class={styles.heading} data-node-id="188:2286">
-      <span class={styles.mobileHeading}>MOST VALUABLE PLAYER PICKS</span>
-      <span class={styles.desktopHeading}>MOST VALUABLE PLAYER</span>
+      <span class={styles.mobileHeading}>{title}</span>
+      <span class={styles.desktopHeading}>{subtitle ?? title}</span>
     </h1>
     <a class={styles.backLink} href="/awards" data-node-id="188:2319">
       <span class={styles.backIcon} aria-hidden="true">

@@ -105,6 +105,8 @@ export interface TeamPageContent {
    * supporting copy.
    */
   readonly favoriteCopy: string
+  /** Where the favorite future's "PLACE BET" goes, when the CMS publishes one. */
+  readonly favoriteBetUrl?: string
   readonly odds: readonly TeamOdd[]
   readonly schedule: readonly TeamScheduleGame[]
   readonly desktopSchedule: readonly TeamDesktopScheduleGame[]

@@ -26,7 +26,7 @@ const { pick } = Astro.props
 
     <div class={styles.bet}>
       <p class={styles.odds} data-node-id={pick.oddsNodeId}>{pick.odds}</p>
-      <Button variant="fanduel" label="PLACE BET" assetSet="teams-page" />
+      <Button variant="fanduel" label="PLACE BET" href={pick.betUrl} assetSet="teams-page" />
     </div>
   </div>
 </article>
