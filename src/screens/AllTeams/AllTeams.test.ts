@@ -17,12 +17,14 @@ describe('All Teams', () => {
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('ALL 32 TEAMS')
   })
 
-  it('renders the eight visible Figma cards in order', () => {
+  it('renders the 32 generic team cards in order', () => {
     const cards = body.querySelectorAll('article')
 
-    expect(cards).toHaveLength(8)
+    expect(cards).toHaveLength(32)
     expect(cards[0]).toHaveAttribute('data-node-id', '181:1360')
     expect(cards[7]).toHaveAttribute('data-node-id', '474:1448')
+    expect(cards[0]).toHaveAttribute('data-team', 'TEAM 1')
+    expect(cards[31]).toHaveAttribute('data-team', 'TEAM 32')
   })
 
   it('uses the canonical application navigation', () => {
@@ -44,12 +46,12 @@ describe('All Teams', () => {
   it('uses meaningful text for player imagery', () => {
     const images = [...body.querySelectorAll('article > div:first-child img')]
 
-    expect(images).toHaveLength(8)
+    expect(images).toHaveLength(32)
     for (const image of images) expect(image.getAttribute('alt')).toBeTruthy()
   })
 
-  it('links the Buffalo card to its individual team page', () => {
-    expect(screen.getByRole('link', { name: 'Preview Buffalo Bills' })).toHaveAttribute(
+  it('links the first card to its individual team page', () => {
+    expect(screen.getByRole('link', { name: 'Preview TEAM 1' })).toHaveAttribute(
       'href',
       '/teams/buffalo-bills',
     )

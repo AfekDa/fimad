@@ -22,12 +22,20 @@ export interface TeamCardContent {
   readonly href?: string
 }
 
+interface TeamCardVisual {
+  readonly nodeId: string
+  readonly imageNodeId: string
+  readonly buttonNodeId: string
+  readonly image: string
+  readonly imageAlt: string
+  readonly crop: TeamCardCrop
+}
+
 /**
- * Visible card sequence from All Teams frame 162:1760.
- * The design intentionally repeats the Buffalo Bills logo and label while its
- * card imagery names the eight AFC teams/players below.
+ * Visible card visuals from All Teams frame 162:1760. The design only ships
+ * eight card treatments, so the 32 generic teams cycle through them.
  */
-export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
+const CARD_VISUALS: readonly TeamCardVisual[] = [
   {
     nodeId: '181:1360',
     imageNodeId: 'I181:1360;162:2225',
@@ -35,9 +43,6 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardBuffalo,
     imageAlt: 'Buffalo Bills player portrait',
     crop: 'buffalo',
-    team: 'Buffalo Bills',
-    conference: 'AFC',
-    href: '/teams/buffalo-bills',
   },
   {
     nodeId: '474:1382',
@@ -46,8 +51,6 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardCincinnati,
     imageAlt: "Cincinnati Bengals wide receiver Ja'Marr Chase",
     crop: 'cincinnati',
-    team: 'Cincinnati Bengals',
-    conference: 'AFC',
   },
   {
     nodeId: '474:1389',
@@ -56,8 +59,6 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardCleveland,
     imageAlt: 'Cleveland Browns quarterback Shedeur Sanders',
     crop: 'cleveland',
-    team: 'Cleveland Browns',
-    conference: 'AFC',
   },
   {
     nodeId: '474:1396',
@@ -66,8 +67,6 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardPittsburgh,
     imageAlt: 'Pittsburgh Steelers quarterback Aaron Rodgers',
     crop: 'pittsburgh',
-    team: 'Pittsburgh Steelers',
-    conference: 'AFC',
   },
   {
     nodeId: '474:1427',
@@ -76,8 +75,6 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardMiami,
     imageAlt: "Miami Dolphins running back De'Von Achane",
     crop: 'miami',
-    team: 'Miami Dolphins',
-    conference: 'AFC',
   },
   {
     nodeId: '474:1434',
@@ -86,8 +83,6 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardJets,
     imageAlt: 'New York Jets running back Breece Hall',
     crop: 'jets',
-    team: 'New York Jets',
-    conference: 'AFC',
   },
   {
     nodeId: '474:1441',
@@ -96,8 +91,6 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardHouston,
     imageAlt: 'Houston Texans wide receiver Nico Collins',
     crop: 'houston',
-    team: 'Houston Texans',
-    conference: 'AFC',
   },
   {
     nodeId: '474:1448',
@@ -106,7 +99,20 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = [
     image: ASSETS.teamsCardJacksonville,
     imageAlt: 'Jacksonville Jaguars quarterback Trevor Lawrence',
     crop: 'jacksonville',
-    team: 'Jacksonville Jaguars',
-    conference: 'AFC',
   },
 ] as const
+
+/** TEAM 1 – TEAM 32; the first 16 file under AFC, the rest under NFC. */
+export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = Array.from(
+  { length: 32 },
+  (_, index) => {
+    const visual = CARD_VISUALS[index % CARD_VISUALS.length]
+
+    return {
+      ...visual,
+      team: `TEAM ${index + 1}`,
+      conference: index < 16 ? 'AFC' : 'NFC',
+      ...(index === 0 ? { href: '/teams/buffalo-bills' } : {}),
+    }
+  },
+)

@@ -27,7 +27,7 @@ const { card } = Astro.props
 
   {card.crop === 'buffalo' && <div class={styles.scrim} aria-hidden="true"></div>}
 
-  <span class={styles.conference}>AFC</span>
+  <span class={styles.conference}>{card.conference}</span>
 
   <div class={styles.details}>
     <span class={styles.teamLogo} data-node-id="181:1340">
@@ -38,12 +38,12 @@ const { card } = Astro.props
         aria-hidden="true"
       />
     </span>
-    <h2 class={styles.teamName}>BALTIMORE RAVENS</h2>
+    <h2 class={styles.teamName}>{card.team}</h2>
     <Button
       variant="button"
       label="Team Preview"
       nodeId={card.buttonNodeId}
-      ariaLabel="Preview Buffalo Bills"
+      ariaLabel={`Preview ${card.team}`}
       assetSet="teams-page"
       href={card.href}
       class={styles.preview}
