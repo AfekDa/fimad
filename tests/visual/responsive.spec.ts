@@ -469,6 +469,38 @@ test.describe('responsive integrity', () => {
   })
 
   /*
+   * 27 Aug feedback, desktop: "'Clear all' button will appear only when a
+   * filter is selected". The gating lives in the shared All Teams controller,
+   * so the mobile fix carried here, but nothing pinned it at desktop width --
+   * and the desktop chip row is the one the review actually captured. The page
+   * search field is laid out but zero-width up here (the review's own closing
+   * note is that desktop search does not work yet), so the conference chips are
+   * the only thing that can raise the control.
+   */
+  test('All Teams gates Clear All behind a selected conference on desktop', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 782 })
+    await page.goto('/teams')
+    await page.evaluate(() => document.fonts.ready)
+
+    const clearAll = page.getByRole('button', { name: 'Clear All' })
+    const afc = page.getByRole('button', { name: 'AFC', exact: true })
+
+    await expect(clearAll).toBeHidden()
+
+    await afc.click()
+    await expect(afc).toHaveAttribute('aria-pressed', 'true')
+    await expect(clearAll).toBeVisible()
+    // The frame ends it on the 1120 content grid, with the chips.
+    const clearAllBox = await clearAll.boundingBox()
+    expect((clearAllBox?.x ?? 0) + (clearAllBox?.width ?? 0)).toBeCloseTo(1200, 0)
+
+    await clearAll.click()
+    await expect(afc).toHaveAttribute('aria-pressed', 'false')
+    await expect(clearAll).toBeHidden()
+    await expect(page.locator('[data-team-card]:not([hidden])')).toHaveCount(32)
+  })
+
+  /*
    * 27 Aug feedback, desktop: "make the links section end before the nav,
    * avoid the overlap". The frame's own 91px tail is shorter than the nav's
    * clearance, so at the end of the scroll the pill landed inside the footer
