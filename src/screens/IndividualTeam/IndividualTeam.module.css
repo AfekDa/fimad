@@ -309,6 +309,9 @@
   font-weight: var(--font-h1-weight);
   letter-spacing: var(--font-display-letter-spacing);
   text-transform: uppercase;
+  /* Last resort for a single word wider than its box; the caps below keep real
+   * club names wrapping between words instead of reaching it. */
+  overflow-wrap: break-word;
 }
 
 .overview {
@@ -942,6 +945,14 @@
 
 .exploreTeamName {
   width: 100%;
+  /*
+   * The lockup is 201px wide inside the fixed 249px card, and at the design's
+   * 54px the longest published club words overrun it on their own -- no wrap
+   * point exists inside "PHILADELPHIA" (217px) or "COMMANDERS" (223px), so they
+   * painted straight through the card's clip. 48px is the largest size that
+   * fits both, and the design's own shorter names are unaffected by the cap.
+   */
+  font-size: min(var(--font-h1-size), 48px);
 }
 
 .visuallyHidden {

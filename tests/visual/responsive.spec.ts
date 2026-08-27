@@ -595,6 +595,64 @@ test.describe('responsive integrity', () => {
     })
   }
 
+  /*
+   * The frames are drawn with the design's own short placeholders ("TEAM 1"),
+   * but the roster the CMS publishes is real club names, and every card clips
+   * its own overflow -- so a name that does not fit is invisible rather than
+   * loud. These walk the published data and fail on either way a lockup can
+   * leave its card: glyphs wider than the text box, or a box outside the card.
+   */
+  const CARD_LOCKUPS = [
+    { path: '/teams', card: '[data-team-card]' },
+    { path: '/teams/team-21', card: '[class*="exploreCard"]' },
+    { path: '/awards/mvp', card: '[class*="MvpPickCard-module__card"]' },
+  ] as const
+
+  for (const [label, width] of [
+    ['mobile', 430],
+    ['desktop', 1280],
+  ] as const) {
+    for (const route of CARD_LOCKUPS) {
+      test(`${label} ${route.path} keeps every card lockup inside its card`, async ({ page }) => {
+        await page.setViewportSize({ width, height: 900 })
+        await page.goto(route.path)
+        // Fonts only: what a lockup measures is glyph advance, and decoding the
+        // card art as well would make this fail on an image asset it never reads.
+        await page.evaluate(() => document.fonts.ready)
+
+        const cards = page.locator(route.card)
+        expect(await cards.count(), 'No cards matched, so nothing was checked').toBeGreaterThan(0)
+
+        const escapes = await cards.evaluateAll((elements) =>
+          elements.flatMap((card) => {
+            const box = card.getBoundingClientRect()
+
+            return [...card.querySelectorAll<HTMLElement>('h2, h3, a, button')].flatMap((part) => {
+              const partBox = part.getBoundingClientRect()
+              const text = (part.textContent ?? '').trim().slice(0, 30)
+              const spill = Math.round(
+                Math.max(
+                  partBox.right - box.right,
+                  box.left - partBox.left,
+                  partBox.bottom - box.bottom,
+                  box.top - partBox.top,
+                ),
+              )
+              const clipped = Math.round(part.scrollWidth - part.clientWidth)
+
+              return [
+                ...(spill > 1 ? [`${text}: box escapes its card by ${spill}px`] : []),
+                ...(clipped > 1 ? [`${text}: text is ${clipped}px wider than its box`] : []),
+              ]
+            })
+          }),
+        )
+
+        expect(escapes).toEqual([])
+      })
+    }
+  }
+
   test('All Teams keeps mobile cards proportional and reveals the second card', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto('/teams')

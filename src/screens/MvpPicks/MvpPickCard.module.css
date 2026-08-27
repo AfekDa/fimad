@@ -88,7 +88,9 @@
   line-height: var(--font-h1-line);
   font-weight: var(--font-h1-weight);
   letter-spacing: var(--font-display-letter-spacing);
-  white-space: nowrap;
+  /* Was nowrap, which clipped any player whose name is longer than the one the
+   * frame is drawn with -- at the desktop 80px even "LAMAR JACKSON" overran. */
+  overflow-wrap: break-word;
 }
 
 @media (min-width: 768px) {

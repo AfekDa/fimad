@@ -118,11 +118,19 @@
   text-box-edge: cap alphabetic;
 }
 
+/*
+ * Anchored to the bottom, not the top. The design's names are one word ("TEAM
+ * 1"); the published roster's are two ("PITTSBURGH STEELERS"), and a second
+ * line costs 42px against the 24 of slack a top-anchored lockup leaves, which
+ * pushed the button through the bottom of the card. Growing upward puts the
+ * extra line over the image instead, and 6.2827cqw is the same 24px inset the
+ * sides already use, so a one-line card renders exactly where it did.
+ */
 .details {
   position: absolute;
   left: 6.2827cqw;
   right: 6.2827cqw;
-  top: 38.4817cqw;
+  bottom: 6.2827cqw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -193,7 +201,9 @@
   .details {
     left: var(--space-24);
     right: var(--space-24);
-    top: 147px;
+    /* The frame's own tail below the button, from the 295px card: 295 - (147
+     * lockup top + 40 logo + 8 + 38 name + 8 + 36 button). */
+    bottom: 18px;
     gap: var(--space-8);
   }
 
@@ -205,6 +215,5 @@
   .teamName {
     font-size: clamp(40px, 5vw, var(--font-dt-h2-size));
     line-height: var(--font-dt-h2-line);
-    white-space: nowrap;
   }
 }
