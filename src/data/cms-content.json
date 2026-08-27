@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T16:31:49.340Z",
+  "generated_at": "2026-08-27T16:44:50.700Z",
   "generated_by": "elad.beraru@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
@@ -2910,7 +2910,7 @@
       "prediction_text": "As mentioned earlier, their divisional games will be absolutely crucial. I think the Packers will be a playoff team once again and they’ll get a nice boost defensively when Micah Parsons returns from injury.",
       "id": "6a9022875b73b6b687d4f155",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T16:29:30.799000",
+      "updated_date": "2026-08-27T16:33:09.829000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -5133,7 +5133,7 @@
   ],
   "fanduel": {
     "rewards_label_2": "UNLOCK LEVELS",
-    "offer_text": "Lorem ipsum dolor sit amet consectetur. Sit fermentum aliquet vestibulum et vitae. Lorem id lobortis vitae duis ac morbi eu malesuada. Nisl pellentesque aliquet aliquet aliquam enim mauris. Neque vestibulum sit quam vitae. Cursus amet morbi lectus arcu tellus mattis. A neque nisi praesent vel tempor nascetur lobortis. Aliquet ipsum sed tortor tempus.",
+    "offer_text": "Lorem ipsum dolor sit amet consectetur. Sit fermentum aliquet vestibulum et vitae. Lorem id lobortis vitae duis ac morbi eu malesuada. Nisl pellentesque aliquet aliquet aliquam enim mauris. Neque vestibulum sit quam vitae. Cursus amet morbi lectus arcu tellus mattis. A neque nisi praesent vel tempor nascetur lobortis. Aliquet ipsum sed tortor tempus.YYYY",
     "rewards_label_3": "SCORE REWARDS",
     "rewards_button_url": "",
     "rewards_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ebe15cd76_fanduel-rewards-club-card.png",
@@ -5145,7 +5145,7 @@
     "redeem_label": "REDEEM OFFER",
     "id": "6a90227d4361d3edaa3fd2f2",
     "created_date": "2026-08-27T11:41:49.766000",
-    "updated_date": "2026-08-27T12:57:32.488000",
+    "updated_date": "2026-08-27T16:44:48.491000",
     "created_by_id": "6a901fa52706494618a8cf7c",
     "is_sample": false
   }
