@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T14:03:24.446Z",
+  "generated_at": "2026-08-27T14:04:47.824Z",
   "generated_by": "dhana.pimputkar@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
@@ -31,7 +31,7 @@
       "defence": "TEAM 23 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.",
       "future_text": "Placeholder favourite future for TEAM 1. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
       "future_player": "STAR PLAYER TEAM 1",
-      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/8574434d5_magnific_img2-is-the-reference-and_7993LbUJAL.png",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/40f1de6cb_Mb_BaltimoreRavens-LamarJackson.png",
       "prediction_record": "14-3",
       "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2be923883_hero-desktop.png",
       "future_bet_url": null,
@@ -174,7 +174,7 @@
       "prediction_text": "Placeholder prediction for TEAM 1. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
       "id": "6a9022875b73b6b687d4f143",
       "created_date": "2026-08-27T11:41:59.899000",
-      "updated_date": "2026-08-27T14:03:16.567000",
+      "updated_date": "2026-08-27T14:04:39.118000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
