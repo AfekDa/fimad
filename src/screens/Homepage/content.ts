@@ -36,6 +36,8 @@ export interface HomepageContent {
     readonly poster: string
     /** Wide crop the desktop frame swaps in at ≥768px. */
     readonly posterDesktop: string
+    /** True when the mobile poster is a CMS upload, so it is not reframed. */
+    readonly posterIsCms: boolean
     readonly yearMark: string
     readonly yearMarkAlt: string
   }
@@ -76,8 +78,14 @@ export const HOMEPAGE_CONTENT: HomepageContent = {
 
   /* 1:91 hero image (desktop 488:1504), 1:95 year mark */
   hero: {
-    poster: image(CMS_HOME?.hero_image, ASSETS.heroPoster),
+    /*
+     * Mobile takes the CMS's portrait crop only. `hero_image` is the wide
+     * desktop poster: dropping it into the mobile frame distorts the design's
+     * crop, so without a published mobile image the design's own is kept.
+     */
+    poster: image(CMS_HOME?.hero_image_mobile, ASSETS.heroPoster),
     posterDesktop: image(CMS_HOME?.hero_image, ASSETS.heroPosterDesktop),
+    posterIsCms: Boolean(CMS_HOME?.hero_image_mobile),
     yearMark: ASSETS.yearMark,
     yearMarkAlt: 'Year 2026-27, sponsored by FanDuel',
   },

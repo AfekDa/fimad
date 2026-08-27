@@ -107,6 +107,20 @@
   transform: translateX(calc(-50% + 0.25px));
 }
 
+/* A CMS upload is not the design's export, so it is not reframed — it fills
+ * the hero box on its own centre instead of the design's measured crop. */
+.cmsPosterLeaf {
+  inset: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center;
+  left: 0;
+  transform: none;
+}
+
 .heroScrim {
   position: absolute;
   left: 0;

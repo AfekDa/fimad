@@ -555,29 +555,45 @@ test.describe('responsive integrity', () => {
     await expect(search).toBeFocused()
   })
 
-  test('All Teams keeps the search field frozen while the page scrolls', async ({ page }) => {
-    await page.setViewportSize({ width: 430, height: 932 })
-    await page.goto('/teams')
+  /*
+   * Every screen that offers a search field freezes it (27 Aug feedback), so
+   * this is asserted per route rather than on All Teams alone. The band is the
+   * sticky header the field rides in; it has to reach the viewport edge, or
+   * content would scroll into the gap above the field instead of behind it.
+   */
+  const FROZEN_SEARCH = [
+    { path: '/teams', band: '181:1243', field: '162:1776' },
+    { path: '/all-bets', band: '251:2892', field: '251:2896' },
+    { path: '/awards', band: '188:2038', field: '188:2042' },
+    { path: '/teams/buffalo-bills', band: '181:1321', field: '181:1325' },
+  ] as const
 
-    const searchField = page.locator('[data-node-id="162:1776"]')
-    const band = page.locator('[data-node-id="181:1243"]')
-    const atTop = await searchField.boundingBox()
-    expect(atTop, 'Search field was not rendered').not.toBeNull()
+  for (const route of FROZEN_SEARCH) {
+    test(`${route.path} keeps the search field frozen while the page scrolls`, async ({ page }) => {
+      await page.setViewportSize({ width: 430, height: 932 })
+      await page.goto(route.path)
 
-    await page.evaluate(() => {
-      window.scrollTo(0, 2000)
+      const searchField = page.locator(`[data-node-id="${route.field}"]`)
+      const band = page.locator(`[data-node-id="${route.band}"]`)
+      const atTop = await searchField.boundingBox()
+      expect(atTop, 'Search field was not rendered').not.toBeNull()
+
+      const scrolled = await page.evaluate(() => {
+        window.scrollTo(0, document.documentElement.scrollHeight)
+        return window.scrollY
+      })
+      // A page that cannot scroll would pass the assertions below for free.
+      expect(scrolled, 'Route is not scrollable, so freezing proves nothing').toBeGreaterThan(0)
+
+      // Same viewport position as at rest: the field does not travel with the page.
+      const afterScroll = await searchField.boundingBox()
+      expect(afterScroll?.y).toBeCloseTo(atTop?.y ?? 0, 0)
+      expect(afterScroll?.height).toBeCloseTo(atTop?.height ?? 0, 0)
+
+      const bandBox = await band.boundingBox()
+      expect(bandBox?.y).toBeCloseTo(0, 0)
     })
-
-    // Same viewport position as at rest: the field does not travel with the page.
-    const scrolled = await searchField.boundingBox()
-    expect(scrolled?.y).toBeCloseTo(atTop?.y ?? 0, 0)
-    expect(scrolled?.height).toBeCloseTo(atTop?.height ?? 0, 0)
-
-    // The band that carries it reaches the viewport edge, so cards pass behind
-    // navy rather than up against the field.
-    const bandBox = await band.boundingBox()
-    expect(bandBox?.y).toBeCloseTo(0, 0)
-  })
+  }
 
   test('All Teams keeps mobile cards proportional and reveals the second card', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })

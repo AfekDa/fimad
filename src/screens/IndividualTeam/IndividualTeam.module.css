@@ -4,13 +4,27 @@
   position: relative;
   width: 100%;
   min-height: var(--individual-team-frame-height);
-  overflow: hidden;
+  /* `clip`, not `hidden`: both crop the same box, but `hidden` makes this a
+   * scroll container, which would anchor the sticky header to a box that never
+   * scrolls instead of to the viewport. */
+  overflow: clip;
   background: var(--color-navy);
   color: var(--color-white);
   font-family: var(--font-family-base);
 }
 
+/*
+ * The search field stays put while the page scrolls (27 Aug feedback). The
+ * sticky band is the whole header rather than the field alone because sticky is
+ * bounded by its containing block, and the field's containing block is this
+ * header -- pinning the field itself would release it the moment the header
+ * scrolled past. The header already draws its own navy and inset, so content
+ * passes behind it rather than up against the field.
+ */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: var(--layer-content);
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
@@ -984,7 +998,10 @@
     min-height: var(--desktop-individual-team-frame-height);
   }
 
+  /* The desktop frame scrolls its header away with the page. */
   .header {
+    position: static;
+    z-index: auto;
     align-items: center;
     height: 147px;
     padding: 40px 0 0;

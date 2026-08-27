@@ -22,7 +22,12 @@ import styles from './Homepage.module.css'
     <div class={styles.heroImage} data-node-id="1:91" data-desktop-node-id="488:1504">
       <picture>
         <source media="(min-width: 768px)" srcset={content.hero.posterDesktop} />
-        <img class={styles.heroImageLeaf} src={content.hero.poster} alt="" aria-hidden="true" />
+        <img
+          class:list={[styles.heroImageLeaf, content.hero.posterIsCms && styles.cmsPosterLeaf]}
+          src={content.hero.poster}
+          alt=""
+          aria-hidden="true"
+        />
       </picture>
     </div>
     <div class={styles.heroScrim} data-node-id="1:92"></div>

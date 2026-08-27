@@ -2,7 +2,10 @@
   position: relative;
   width: 100%;
   min-height: 932px;
-  overflow: hidden;
+  /* `clip`, not `hidden`: both crop the same box, but `hidden` makes this a
+   * scroll container, which would anchor the sticky header to a box that never
+   * scrolls instead of to the viewport. */
+  overflow: clip;
   background: var(--color-navy);
 }
 

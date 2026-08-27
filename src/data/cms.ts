@@ -9,6 +9,8 @@ import payload from './cms-content.json'
 
 export interface CmsHome {
   readonly hero_image?: string
+  /** Portrait crop for the mobile hero; the wide `hero_image` is desktop-only. */
+  readonly hero_image_mobile?: string
   readonly title?: string
   readonly intro_text?: string
   readonly features?: readonly string[]

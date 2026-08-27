@@ -5,7 +5,18 @@
   background: var(--color-navy);
 }
 
+/*
+ * The search field stays put while the page scrolls (27 Aug feedback). The
+ * sticky band is the whole header rather than the field alone because sticky is
+ * bounded by its containing block, and the field's containing block is this
+ * header -- pinning the field itself would release it the moment the header
+ * scrolled past. The header already draws its own navy and inset, so content
+ * passes behind it rather than up against the field.
+ */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: var(--layer-content);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -191,8 +202,11 @@
     min-height: var(--desktop-awards-frame-height);
   }
 
+  /* The desktop frame has no search field to hold, so the band goes back to
+   * being an ordinary header. */
   .header {
     position: relative;
+    z-index: auto;
     box-sizing: border-box;
     height: var(--desktop-awards-header-height);
     padding: 0;
