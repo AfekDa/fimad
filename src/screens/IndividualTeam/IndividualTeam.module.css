@@ -778,7 +778,13 @@
 
 .scheduleInfo {
   position: absolute;
-  top: 12px;
+  /*
+   * Card 908:1948 draws the abbreviation's cap box at y=16 and the week line's
+   * at y=30. These offsets are 5 and 4 short of those because the two lines are
+   * 20px line boxes rather than Figma's trimmed text boxes, and half-leading
+   * carries the ink down by that much (27 Aug feedback).
+   */
+  top: 11px;
   left: var(--space-16);
   width: calc(100% - 32px);
   height: 21px;
@@ -805,7 +811,7 @@
 
 .scheduleMeta {
   position: absolute;
-  top: 13px;
+  top: 12px;
   left: 0;
   gap: 3px;
   font-size: 10px;
@@ -866,11 +872,34 @@
   color: var(--schedule-difficult-dark);
 }
 
-/* Figma's two-column cards are 183px wide. On narrower phones, keep the
- * tag clear of the week and venue metadata by reserving a second line. */
-@media (max-width: 403px) {
+/*
+ * Figma's two-column cards are 183px wide and set the tag beside the metadata.
+ * Below 430 the grid is fluid, so the card runs out of room for that eventually
+ * -- but not nearly as early as this used to assume. Trimming the card's own
+ * padding from the frame's 16 to 12 keeps the design's single line down to
+ * 390px with 7px still between the week line and the tag, which matters because
+ * 390 is the commonest phone width there is; the frame's padding is untouched
+ * at the 430 it was drawn for.
+ */
+@media (max-width: 429px) {
+  .scheduleCard {
+    padding: var(--space-12);
+  }
+
+  .scheduleInfo {
+    left: var(--space-12);
+  }
+
+  .scheduleTag {
+    right: var(--space-12);
+  }
+}
+
+/* Narrower than that the tag genuinely does not fit beside the metadata, so it
+ * reserves a second line. Same 389 the sections above fall back at. */
+@media (max-width: 389px) {
   .schedule {
-    height: 888px;
+    min-height: 888px;
   }
 
   .scheduleCard {

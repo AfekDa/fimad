@@ -916,11 +916,66 @@ test.describe('responsive integrity', () => {
     expect((scoreBox?.y ?? 0) + (scoreBox?.height ?? 0)).toBeLessThanOrEqual((copyBox?.y ?? 0) - 24)
   })
 
-  test('Individual Team keeps Schedule metadata clear of its tags on narrow phones', async ({ page }) => {
+  /*
+   * The frame sets the difficulty tag beside the week and venue metadata in a
+   * 53px card. That survives the fluid grid down to 390 — the commonest phone
+   * width — once the card trims its own padding, and only below that does the
+   * tag need a second line. Both regimes are asserted: the tag has to stay
+   * clear of the metadata either way, horizontally above the fallback and
+   * vertically below it.
+   */
+  test('Individual Team keeps the frame Schedule card down to 390px', async ({ page }) => {
+    for (const { width, gridWidth } of [
+      { width: 430, gridWidth: 382 },
+      { width: 403, gridWidth: 355 },
+      { width: 390, gridWidth: 342 },
+    ]) {
+      await page.setViewportSize({ width, height: 932 })
+      await page.goto('/teams/buffalo-bills')
+      await page.evaluate(async () => {
+        await document.fonts.ready
+      })
+
+      const schedule = page.locator('[data-node-id="738:4484"]')
+      const grid = page.locator('[data-node-id="730:3141"]')
+      const cards = grid.locator('article')
+
+      expect(await schedule.boundingBox()).toMatchObject({ width, height: 717 })
+      expect(await grid.boundingBox()).toMatchObject({ x: 24, width: gridWidth, height: 605 })
+      await expect(cards).toHaveCount(18)
+
+      const gaps = await cards.evaluateAll((scheduleCards) =>
+        scheduleCards.flatMap((card) => {
+          const metadata = card.querySelector<HTMLElement>('[data-schedule-meta]')
+          const tag = card.querySelector<HTMLElement>('[data-schedule-tag]')
+
+          if (tag === null) return []
+          if (metadata === null) {
+            throw new Error('Expected a tagged Schedule card to contain metadata.')
+          }
+
+          return [
+            {
+              inline: tag.getBoundingClientRect().left - metadata.getBoundingClientRect().right,
+              cardHeight: card.getBoundingClientRect().height,
+            },
+          ]
+        }),
+      )
+
+      expect(gaps).toHaveLength(17)
+      for (const gap of gaps) {
+        expect(gap.cardHeight).toBeCloseTo(53, 0)
+        expect(gap.inline).toBeGreaterThanOrEqual(3)
+      }
+    }
+  })
+
+  test('Individual Team drops the Schedule tag to a second line below 390px', async ({ page }) => {
     for (const { width, gridWidth } of [
       { width: 320, gridWidth: 272 },
       { width: 360, gridWidth: 312 },
-      { width: 403, gridWidth: 355 },
+      { width: 389, gridWidth: 341 },
     ]) {
       await page.setViewportSize({ width, height: 932 })
       await page.goto('/teams/buffalo-bills')
