@@ -5,6 +5,8 @@ import { TEAMS } from '../../data/teams'
 import type { Conference } from '../../data/teams'
 
 export type TeamCardCrop =
+  /** A CMS upload is framed full-bleed, since no measured box was cut for it. */
+  | 'cms'
   | 'buffalo'
   | 'cincinnati'
   | 'cleveland'
@@ -28,6 +30,8 @@ export interface TeamCardContent {
   readonly image: string
   readonly imageAlt: string
   readonly crop: TeamCardCrop
+  /** A CMS logo is a plain mark, so it is shown whole instead of reframed. */
+  readonly logoIsCms: boolean
   readonly logo: string
   readonly logoDesktop: string
   readonly team: string
@@ -125,10 +129,11 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = TEAMS.map((team, inde
     nodeId: isDrawnInFigma ? visual.nodeId : undefined,
     imageNodeId: isDrawnInFigma ? visual.imageNodeId : undefined,
     buttonNodeId: isDrawnInFigma ? visual.buttonNodeId : undefined,
-    /* The crop stays the design's either way: a replacement photo is the same
-     * size as the one it stands in for, so the measured box frames it too. */
     image: cmsImage(published?.card_image, images.card ?? visual.image),
-    crop: visual.crop,
+    /* The measured boxes were cut around the design's own exports, so a CMS
+     * upload of any other size would be zoomed and clipped by them. */
+    crop: published?.card_image ? 'cms' : visual.crop,
+    logoIsCms: Boolean(published?.logo_image),
     logo: cmsImage(published?.logo_image, images.logo),
     logoDesktop: cmsImage(published?.logo_image, images.logoDesktop),
     imageAlt: `${team.name} player portrait`,
