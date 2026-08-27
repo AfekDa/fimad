@@ -1,0 +1,5152 @@
+{
+  "generated_at": "2026-08-27T13:09:21.676Z",
+  "generated_by": "elad.beraru@verified-global.com",
+  "home": {
+    "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
+    "intro_text": "This is the third straight season I've written my guide and this version is by far the best yet. I've spent countless hours studying every team so I can give us the best chance of making money this season.\n\nIf you're just discovering me, the main thing you need to know is that absolutely everything I post is free. Here's a glimpse at what I'll be sharing with you throughout the NFL season…",
+    "author_name": "Cody Brown",
+    "social_x_url": "https://x.com/CodyBrownBets",
+    "features": [
+      "Parlays, Flyers and Best Bets for every game week",
+      "Data Sheets to help you pick your own winners",
+      "Algorithms to identify the best matchups",
+      "Giveaways and competitions"
+    ],
+    "social_facebook_url": "https://www.facebook.com/p/Cody-Brown-Picks-61558499532247",
+    "social_instagram_url": "https://www.instagram.com/codybrownpicks",
+    "closing_text": "Whether you're a bettor, a fantasy football player or simply an NFL fan, this guide will give you more knowledge than all your buddies going into the 2025 season. Hope you enjoy it.",
+    "author_signature": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d9d5a84cb_signature.png",
+    "title": "WELCOME TO MY NFL BETTING GUIDE 2026",
+    "author_avatar": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/00c816f7c_avatar-cody.png",
+    "year_badge_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/1441b345e_feature-badge.png",
+    "id": "6a90227d4361d3edaa3fd2f3",
+    "created_date": "2026-08-27T11:41:49.772000",
+    "updated_date": "2026-08-27T13:01:44.586000",
+    "created_by_id": "6a901fa52706494618a8cf7c",
+    "is_sample": false
+  },
+  "teams": [
+    {
+      "conference": "AFC",
+      "defence": "TEAM 23 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.",
+      "future_text": "Placeholder favourite future for TEAM 1. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 1",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e8ccbb952_all-32-teams-team-1.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2be923883_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/4c14a4960_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b8a987ba9_hero.png",
+      "receivers": "TEAM 23 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.",
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/3240b3a7d_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 1",
+      "slug": "team-1",
+      "order": 1,
+      "overview": "TEAM 1 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 1",
+      "offensive_coordinator": "OFF COORD TEAM 1",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/3240b3a7d_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d6f398fd5_logo.png",
+      "running_backs": "TEAM 23 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.",
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cf2f281d9_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T19"
+        }
+      ],
+      "quarterbacks": "TEAM 23 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.",
+      "name": "TEST ",
+      "offseason_changes": "TEAM 1 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 1. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f143",
+      "created_date": "2026-08-27T11:41:59.899000",
+      "updated_date": "2026-08-27T13:07:55.536000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 2. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 2",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c151ef3a5_all-32-teams-team-2.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/914a36e90_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/1289ae5b9_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/28bf75e52_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2390bd29f_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 2",
+      "slug": "team-2",
+      "order": 2,
+      "overview": "TEAM 2 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 2",
+      "offensive_coordinator": "OFF COORD TEAM 2",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2390bd29f_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/12b76142f_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/4bfb972a1_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T20"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 2",
+      "offseason_changes": "TEAM 2 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 2. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f144",
+      "created_date": "2026-08-27T11:41:59.899000",
+      "updated_date": "2026-08-27T12:58:33.141000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 3. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 3",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/18d4baede_all-32-teams-team-3.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f5c25190b_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/a9eb5dd4f_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/053852195_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c059af25f_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 3",
+      "slug": "team-3",
+      "order": 3,
+      "overview": "TEAM 3 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 3",
+      "offensive_coordinator": "OFF COORD TEAM 3",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c059af25f_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f42a97666_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cd5ea5747_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T21"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 3",
+      "offseason_changes": "TEAM 3 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 3. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f145",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:58:35.705000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 4. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 4",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/22ddd26d1_all-32-teams-team-4.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c57fd1a85_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/eeafd8af8_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/675441ac7_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cac9e8a94_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 4",
+      "slug": "team-4",
+      "order": 4,
+      "overview": "TEAM 4 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 4",
+      "offensive_coordinator": "OFF COORD TEAM 4",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cac9e8a94_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/bfd9301fc_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/8c983f211_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T22"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 4",
+      "offseason_changes": "TEAM 4 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 4. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f146",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:58:38.032000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 5. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 5",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d642b5fb2_all-32-teams-team-5.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9007d3d97_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9f4e4d328_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e20a2c59e_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/acb27a499_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 5",
+      "slug": "team-5",
+      "order": 5,
+      "overview": "TEAM 5 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 5",
+      "offensive_coordinator": "OFF COORD TEAM 5",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/acb27a499_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e2021f8e2_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/508a7f4e4_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T23"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 5",
+      "offseason_changes": "TEAM 5 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 5. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f147",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:58:40.209000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 6. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 6",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5c260a0b6_all-32-teams-team-6.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d06f35b02_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b668f41da_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ec617a32d_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c6ac29905_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 6",
+      "slug": "team-6",
+      "order": 6,
+      "overview": "TEAM 6 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 6",
+      "offensive_coordinator": "OFF COORD TEAM 6",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c6ac29905_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/82c70692a_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cb43f632d_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T24"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 6",
+      "offseason_changes": "TEAM 6 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 6. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f148",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:58:42.895000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 7. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 7",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/1957b9325_all-32-teams-team-7.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/762637cec_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/094e72a00_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/060b3a979_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/63c4c8228_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 7",
+      "slug": "team-7",
+      "order": 7,
+      "overview": "TEAM 7 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 7",
+      "offensive_coordinator": "OFF COORD TEAM 7",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/63c4c8228_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e4fcd5992_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2a7cfa216_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T25"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 7",
+      "offseason_changes": "TEAM 7 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 7. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f149",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:58:45.171000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 8. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 8",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/04b9240eb_all-32-teams-team-8.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/199fc18d2_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ed7edbf28_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/3a1c5317b_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/8fee0df83_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 8",
+      "slug": "team-8",
+      "order": 8,
+      "overview": "TEAM 8 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 8",
+      "offensive_coordinator": "OFF COORD TEAM 8",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/8fee0df83_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/6177a80f9_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/32d60800a_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T26"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 8",
+      "offseason_changes": "TEAM 8 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 8. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f14a",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:58:47.336000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 9. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 9",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/658bdc7bf_all-32-teams-team-9.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/7158c96a2_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/60dec7a0a_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/933e1cb51_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f1ae95c13_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 9",
+      "slug": "team-9",
+      "order": 9,
+      "overview": "TEAM 9 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 9",
+      "offensive_coordinator": "OFF COORD TEAM 9",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f1ae95c13_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c77984d53_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/af1a6538d_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T27"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 9",
+      "offseason_changes": "TEAM 9 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 9. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f14b",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:59:05.219000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 10. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 10",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e32d5b2d5_all-32-teams-team-10.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5fdd30f94_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e1f4a16e4_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/23c73cfa6_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e011c18d8_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 10",
+      "slug": "team-10",
+      "order": 10,
+      "overview": "TEAM 10 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 10",
+      "offensive_coordinator": "OFF COORD TEAM 10",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e011c18d8_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/6c37cf824_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/1f2434e2e_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T28"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 10",
+      "offseason_changes": "TEAM 10 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 10. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f14c",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:59:07.456000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 11. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 11",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/7dc6cebb1_all-32-teams-team-11.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f5932939f_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/dd8d8ddbb_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/7cee21b81_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ce2244436_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 11",
+      "slug": "team-11",
+      "order": 11,
+      "overview": "TEAM 11 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 11",
+      "offensive_coordinator": "OFF COORD TEAM 11",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ce2244436_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e7a5f5ded_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/6da2704d4_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T29"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 11",
+      "offseason_changes": "TEAM 11 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 11. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f14d",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:59:09.788000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 12. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 12",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5346e10e1_all-32-teams-team-12.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/60f06b407_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/91828fc78_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/88a193759_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5b62aa05f_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 12",
+      "slug": "team-12",
+      "order": 12,
+      "overview": "TEAM 12 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 12",
+      "offensive_coordinator": "OFF COORD TEAM 12",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5b62aa05f_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/554bb48f4_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c753e6dbb_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T30"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 12",
+      "offseason_changes": "TEAM 12 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 12. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f14e",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:59:14.370000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 13. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 13",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c257d6f17_all-32-teams-team-13.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c66c4136b_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b67baff42_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/aea71dd10_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d4ae60ed1_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 13",
+      "slug": "team-13",
+      "order": 13,
+      "overview": "TEAM 13 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 13",
+      "offensive_coordinator": "OFF COORD TEAM 13",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d4ae60ed1_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2069186f8_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/0d22a0d7d_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T31"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 13",
+      "offseason_changes": "TEAM 13 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 13. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f14f",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:59:17.137000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 14. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 14",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/bfcedb7da_all-32-teams-team-14.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/35e35a63f_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/04747c1d7_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/1901bb932_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/55d8163a9_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 14",
+      "slug": "team-14",
+      "order": 14,
+      "overview": "TEAM 14 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 14",
+      "offensive_coordinator": "OFF COORD TEAM 14",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/55d8163a9_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5c727caa8_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/bfa20c35f_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T32"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 14",
+      "offseason_changes": "TEAM 14 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 14. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f150",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:59:19.846000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 15. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 15",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/6bd315efb_all-32-teams-team-15.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d29bfc775_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5f1e71047_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/51f4fa70f_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/238e0f3d7_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 15",
+      "slug": "team-15",
+      "order": 15,
+      "overview": "TEAM 15 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 15",
+      "offensive_coordinator": "OFF COORD TEAM 15",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/238e0f3d7_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ba71d12e6_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/36003d2a4_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T1"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 15",
+      "offseason_changes": "TEAM 15 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 15. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f151",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:59:22.281000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "AFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 16. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 16",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/fac5ad445_all-32-teams-team-16.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/227521105_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/1c170075c_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/0bb792be8_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/86ebe6ff0_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 16",
+      "slug": "team-16",
+      "order": 16,
+      "overview": "TEAM 16 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 16",
+      "offensive_coordinator": "OFF COORD TEAM 16",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/86ebe6ff0_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f8988fbae_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/93457f58a_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T2"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 16",
+      "offseason_changes": "TEAM 16 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 16. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f152",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:59:24.214000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 17. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 17",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/074f37767_all-32-teams-team-17.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/909d59ad9_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/4ef9d23ab_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/033698159_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e30f7df09_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 17",
+      "slug": "team-17",
+      "order": 17,
+      "overview": "TEAM 17 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 17",
+      "offensive_coordinator": "OFF COORD TEAM 17",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e30f7df09_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/32cb15606_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/048b20e82_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T18"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T3"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 17",
+      "offseason_changes": "TEAM 17 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 17. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f153",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:59:55.511000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 18. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 18",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/a9b971ee1_all-32-teams-team-18.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cce81ef13_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9cf0ae2e7_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c59ddac5d_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/12a8a31f8_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 18",
+      "slug": "team-18",
+      "order": 18,
+      "overview": "TEAM 18 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 18",
+      "offensive_coordinator": "OFF COORD TEAM 18",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/12a8a31f8_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c02ca255b_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/1d1b68a53_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T19"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T4"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 18",
+      "offseason_changes": "TEAM 18 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 18. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f154",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T12:59:59.293000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 19. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 19",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/4c6703127_all-32-teams-team-19.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e608f9e6e_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/fe1c29ad2_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5f4514c13_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/07119cdca_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 19",
+      "slug": "team-19",
+      "order": 19,
+      "overview": "TEAM 19 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 19",
+      "offensive_coordinator": "OFF COORD TEAM 19",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/07119cdca_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cd002ab21_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/11d126b0f_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T20"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T5"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 19",
+      "offseason_changes": "TEAM 19 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 19. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f155",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:00:01.377000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 20. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 20",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b800a12f1_all-32-teams-team-20.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cab0018b0_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/45dec3513_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/40879e291_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/392045049_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 20",
+      "slug": "team-20",
+      "order": 20,
+      "overview": "TEAM 20 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 20",
+      "offensive_coordinator": "OFF COORD TEAM 20",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/392045049_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/465ca1122_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5c59d9dbd_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T21"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T6"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 20",
+      "offseason_changes": "TEAM 20 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 20. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f156",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:00:05.393000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 21. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 21",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c185909c0_all-32-teams-team-21.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b234a3e26_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/8de9272af_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c068903c1_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5fc217932_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 21",
+      "slug": "team-21",
+      "order": 21,
+      "overview": "TEAM 21 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 21",
+      "offensive_coordinator": "OFF COORD TEAM 21",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5fc217932_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/aa9b65a08_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b8ea932f9_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T22"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T7"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 21",
+      "offseason_changes": "TEAM 21 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 21. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f157",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:00:08.150000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 22. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 22",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e02c81ded_all-32-teams-team-22.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/22035c7ed_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/217f48c50_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/3c2835bc5_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c4a2a0a1e_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 22",
+      "slug": "team-22",
+      "order": 22,
+      "overview": "TEAM 22 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 22",
+      "offensive_coordinator": "OFF COORD TEAM 22",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c4a2a0a1e_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/3e3d9361c_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/a2bc76f60_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T23"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T8"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 22",
+      "offseason_changes": "TEAM 22 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 22. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f158",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:00:12.602000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": "",
+      "future_text": "Placeholder favourite future for TEAM 23. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 23",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/978209e66_all-32-teams-team-23.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/18e0abd57_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c4ed228fe_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/dab45d285_hero.png",
+      "receivers": "",
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/74a422142_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 23",
+      "slug": "team-23",
+      "order": 23,
+      "overview": "TEAM 23 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 23",
+      "offensive_coordinator": "OFF COORD TEAM 23",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/74a422142_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d2488ceff_logo.png",
+      "running_backs": "",
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/235691462_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T24"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T9"
+        }
+      ],
+      "quarterbacks": "TEAM 23 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "name": "TEAM 23",
+      "offseason_changes": "TEAM 23 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 23. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f159",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:07:46.794000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 24. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 24",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/1c3429c7b_all-32-teams-team-24.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5edc1bbec_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/52f6b0d89_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/3bc1dbd73_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/da58949f8_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 24",
+      "slug": "team-24",
+      "order": 24,
+      "overview": "TEAM 24 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 24",
+      "offensive_coordinator": "OFF COORD TEAM 24",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/da58949f8_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2c274314e_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/bb1f10f50_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T25"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T10"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 24",
+      "offseason_changes": "TEAM 24 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 24. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f15a",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:00:17.546000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 25. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 25",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5170eec20_all-32-teams-team-25.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/8f83b3f48_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f34ac34aa_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/fffe1d6a7_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9c94d3ce1_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 25",
+      "slug": "team-25",
+      "order": 25,
+      "overview": "TEAM 25 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 25",
+      "offensive_coordinator": "OFF COORD TEAM 25",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9c94d3ce1_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/89326bcbc_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/97f2a3e13_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T26"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T11"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 25",
+      "offseason_changes": "TEAM 25 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 25. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f15b",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:00:46.239000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 26. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 26",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2189f3b94_all-32-teams-team-26.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/7475b7956_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/dc144593f_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/fc1c8a570_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/fa911a25c_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 26",
+      "slug": "team-26",
+      "order": 26,
+      "overview": "TEAM 26 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 26",
+      "offensive_coordinator": "OFF COORD TEAM 26",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/fa911a25c_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/6ddce31e6_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/4f64857be_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T27"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T12"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 26",
+      "offseason_changes": "TEAM 26 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 26. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f15c",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:00:54.127000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 27. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 27",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/0771f4f19_all-32-teams-team-27.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/fd228f5c0_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2bfdb08e5_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f34b8af36_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/7a7982aa4_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 27",
+      "slug": "team-27",
+      "order": 27,
+      "overview": "TEAM 27 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 27",
+      "offensive_coordinator": "OFF COORD TEAM 27",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/7a7982aa4_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f2c40c1d9_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/a1aa43bee_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T28"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T13"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 27",
+      "offseason_changes": "TEAM 27 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 27. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f15d",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:00:58.950000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 28. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 28",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/92824bf5b_all-32-teams-team-28.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/35b2eeee5_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cf8ddfd96_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/a59e1ffe8_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f9890b5c2_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 28",
+      "slug": "team-28",
+      "order": 28,
+      "overview": "TEAM 28 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 28",
+      "offensive_coordinator": "OFF COORD TEAM 28",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f9890b5c2_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c67ea8f53_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/dcceb2389_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T29"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T14"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 28",
+      "offseason_changes": "TEAM 28 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 28. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f15e",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:01:05.627000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 29. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 29",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9b2d38560_all-32-teams-team-29.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/332fb8564_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c3c5ae319_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f3cda4a00_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/82e1c275f_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 29",
+      "slug": "team-29",
+      "order": 29,
+      "overview": "TEAM 29 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 29",
+      "offensive_coordinator": "OFF COORD TEAM 29",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/82e1c275f_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/44454e1c5_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cca02b311_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T30"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T15"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 29",
+      "offseason_changes": "TEAM 29 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 29. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f15f",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:01:15.183000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 30. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 30",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b816a92a9_all-32-teams-team-30.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/99a090829_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b9050cb31_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/795cee2d9_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/55fac3c44_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 30",
+      "slug": "team-30",
+      "order": 30,
+      "overview": "TEAM 30 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 30",
+      "offensive_coordinator": "OFF COORD TEAM 30",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/55fac3c44_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e84f458a2_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d6c7770e6_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T31"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T16"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 30",
+      "offseason_changes": "TEAM 30 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 30. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f160",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:01:30.877000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 31. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 31",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/abd97e334_all-32-teams-team-31.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/78010ab26_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d44eb3f04_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/1afae36d3_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b09750df2_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 31",
+      "slug": "team-31",
+      "order": 31,
+      "overview": "TEAM 31 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 31",
+      "offensive_coordinator": "OFF COORD TEAM 31",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b09750df2_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/1d7c81edf_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5f846e53b_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T32"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T7"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T17"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 31",
+      "offseason_changes": "TEAM 31 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 31. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f161",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:01:42.109000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "conference": "NFC",
+      "defence": null,
+      "future_text": "Placeholder favourite future for TEAM 32. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.",
+      "future_player": "STAR PLAYER TEAM 32",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/693eb4eab_all-32-teams-team-32.png",
+      "prediction_record": "14-3",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2f94a61c4_hero-desktop.png",
+      "future_bet_url": null,
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/8932afdf3_favorite-desktop.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/7c71b2c4c_hero.png",
+      "receivers": null,
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e85f0d093_prediction.png",
+      "future_market": "10+ RUSHING TOUCHDOWNS",
+      "lines": {
+        "win_superbowl": "+750",
+        "win_total": "12.5",
+        "win_division": "-270",
+        "miss_playoffs": "+540",
+        "win_conference": "+360",
+        "make_playoffs": "-850"
+      },
+      "defensive_coordinator": "DEF COORD TEAM 32",
+      "slug": "team-32",
+      "order": 32,
+      "overview": "TEAM 32 is a placeholder franchise. The season preview will cover the roster, the coaching changes and the numbers behind last season's finish.",
+      "head_coach": "HEAD COACH TEAM 32",
+      "offensive_coordinator": "OFF COORD TEAM 32",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e85f0d093_prediction.png",
+      "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f0c563636_logo.png",
+      "running_backs": null,
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ae336adc7_favorite.png",
+      "schedule": [
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 1,
+          "opponent": "T1"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 2,
+          "opponent": "T2"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 3,
+          "opponent": "T3"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 4,
+          "opponent": "T4"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 5,
+          "opponent": "T5"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 6,
+          "opponent": "T6"
+        },
+        {
+          "difficulty": "",
+          "location": "None",
+          "week": 7,
+          "opponent": ""
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 8,
+          "opponent": "T8"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 9,
+          "opponent": "T9"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 10,
+          "opponent": "T10"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 11,
+          "opponent": "T11"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Away",
+          "week": 12,
+          "opponent": "T12"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Away",
+          "week": 13,
+          "opponent": "T13"
+        },
+        {
+          "difficulty": "Difficult",
+          "location": "Home",
+          "week": 14,
+          "opponent": "T14"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 15,
+          "opponent": "T15"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Away",
+          "week": 16,
+          "opponent": "T16"
+        },
+        {
+          "difficulty": "Easy",
+          "location": "Home",
+          "week": 17,
+          "opponent": "T17"
+        },
+        {
+          "difficulty": "Moderate",
+          "location": "Home",
+          "week": 18,
+          "opponent": "T18"
+        }
+      ],
+      "quarterbacks": null,
+      "name": "TEAM 32",
+      "offseason_changes": "TEAM 32 has no off-season write-up yet. This block is placeholder prose sized to match the one the design ships, so the expanded accordion keeps the height the Figma frame draws for it instead of collapsing to a single line.\n\nSignings, draft picks and departures will be listed here once the real content lands. Until then the second paragraph exists only to hold the spacing between the copy and the bottom of the panel.",
+      "prediction_text": "Placeholder prediction for TEAM 32. The projected record above and the reasoning here are filler, kept to about the length of the design's own paragraph so the section holds the height the Figma frame gives it.",
+      "id": "6a9022875b73b6b687d4f162",
+      "created_date": "2026-08-27T11:41:59.900000",
+      "updated_date": "2026-08-27T13:01:50.864000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    }
+  ],
+  "awards": [
+    {
+      "picks": [
+        {
+          "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c8aeb4d51_award-1-card-1.png",
+          "description": "Despite throwing 41 touchdowns and over 4,100 yards last season, Lamar couldn't retain his MVP title. It was the first time he surpassed 4,000 passing yards and he only threw 4 interceptions as well. I suspect there was some voter fatigue but that shouldn't be an issue for him this season. The Baltimore offense remains one of the best in the NFL and the addition of DeAndre Hopkins gives Lamar another weapon.",
+          "bet_url": "",
+          "player_name": "LAMAR JACKSON",
+          "odds": "+430"
+        },
+        {
+          "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/edf92dd5d_award-1-card-2.png",
+          "description": "",
+          "bet_url": "",
+          "player_name": "",
+          "odds": ""
+        },
+        {
+          "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/428319cea_award-1-card-3.png",
+          "description": "",
+          "bet_url": "",
+          "player_name": "",
+          "odds": ""
+        }
+      ],
+      "title": "MOST VALUABLE PLAYER PICKS",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/0cf84fdc3_all-awards-award-1.png",
+      "slug": "mvp",
+      "subtitle": "MOST VALUABLE PLAYER",
+      "order": 1,
+      "id": "6a90227d4361d3edaa3fd2fd",
+      "created_date": "2026-08-27T11:41:49.799000",
+      "updated_date": "2026-08-27T12:57:40.506000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "picks": [
+        {
+          "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d88dcc7fe_award-2-card-1.png",
+          "description": "",
+          "bet_url": "",
+          "player_name": "",
+          "odds": ""
+        },
+        {
+          "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/6ce5c9ff8_award-2-card-2.png",
+          "description": "",
+          "bet_url": "",
+          "player_name": "",
+          "odds": ""
+        },
+        {
+          "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/4fc902675_award-2-card-3.png",
+          "description": "",
+          "bet_url": "",
+          "player_name": "",
+          "odds": ""
+        }
+      ],
+      "title": "OFFENSIVE PLAYER OF THE YEAR PICKS",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/263e02607_all-awards-award-2.png",
+      "slug": "offensive-poty",
+      "subtitle": "OFFENSIVE PLAYER OF THE YEAR",
+      "order": 2,
+      "id": "6a902556de26c3f177028233",
+      "created_date": "2026-08-27T11:53:58.812000",
+      "updated_date": "2026-08-27T12:57:49.889000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "picks": [
+        {
+          "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d80fa4a14_award-3-card-1.png",
+          "description": "",
+          "bet_url": "",
+          "player_name": "",
+          "odds": ""
+        },
+        {
+          "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f12492ce5_award-3-card-2.png",
+          "description": "",
+          "bet_url": "",
+          "player_name": "",
+          "odds": ""
+        },
+        {
+          "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9b0c15953_award-3-card-3.png",
+          "description": "",
+          "bet_url": "",
+          "player_name": "",
+          "odds": ""
+        }
+      ],
+      "title": "DEFENSIVE PLAYER OF THE YEAR PICKS",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d5b2dd909_all-awards-award-3.png",
+      "slug": "defensive-poty",
+      "subtitle": "DEFENSIVE PLAYER OF THE YEAR",
+      "order": 3,
+      "id": "6a902556de26c3f177028234",
+      "created_date": "2026-08-27T11:53:58.812000",
+      "updated_date": "2026-08-27T12:57:56.124000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "picks": [
+        {
+          "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/989ac2730_award-4-card-1.png",
+          "description": "",
+          "bet_url": "",
+          "player_name": "",
+          "odds": ""
+        },
+        {
+          "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/35efbb72c_award-4-card-2.png",
+          "description": "",
+          "bet_url": "",
+          "player_name": "",
+          "odds": ""
+        },
+        {
+          "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d5c3b25b0_award-4-card-3.png",
+          "description": "",
+          "bet_url": "",
+          "player_name": "",
+          "odds": ""
+        }
+      ],
+      "title": "OFFENSIVE ROOKIE OF THE YEAR PICKS",
+      "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f84f6e1f4_all-awards-award-4.png",
+      "slug": "offensive-roty",
+      "subtitle": "OFFENSIVE ROOKIE OF THE YEAR",
+      "order": 4,
+      "id": "6a902556de26c3f177028235",
+      "created_date": "2026-08-27T11:53:58.812000",
+      "updated_date": "2026-08-27T12:58:02.237000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    }
+  ],
+  "bets": [
+    {
+      "bet_url": "",
+      "player_name": "Lamar Jackson",
+      "category": "mvp",
+      "odds": "+430",
+      "order": 1,
+      "id": "6a90227d4361d3edaa3fd2f4",
+      "created_date": "2026-08-27T11:41:49.792000",
+      "updated_date": "2026-08-27T11:41:49.792000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "bet_url": "",
+      "player_name": "Joe Burrow",
+      "category": "mvp",
+      "odds": "+600",
+      "order": 2,
+      "id": "6a90227d4361d3edaa3fd2f5",
+      "created_date": "2026-08-27T11:41:49.792000",
+      "updated_date": "2026-08-27T11:41:49.792000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "bet_url": "",
+      "player_name": "Jared Goff",
+      "category": "mvp",
+      "odds": "+430",
+      "order": 3,
+      "id": "6a90227d4361d3edaa3fd2f6",
+      "created_date": "2026-08-27T11:41:49.792000",
+      "updated_date": "2026-08-27T11:41:49.792000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "bet_url": "",
+      "player_name": "Lamar Jackson",
+      "category": "offensive_poty",
+      "odds": "+430",
+      "order": 4,
+      "id": "6a90227d4361d3edaa3fd2f7",
+      "created_date": "2026-08-27T11:41:49.792000",
+      "updated_date": "2026-08-27T11:41:49.792000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "bet_url": "",
+      "player_name": "Lamar Jackson",
+      "category": "defensive_poty",
+      "odds": "+430",
+      "order": 5,
+      "id": "6a90227d4361d3edaa3fd2f8",
+      "created_date": "2026-08-27T11:41:49.792000",
+      "updated_date": "2026-08-27T11:41:49.792000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "bet_url": "",
+      "player_name": "Lamar Jackson",
+      "category": "offensive_roty",
+      "odds": "+430",
+      "order": 6,
+      "id": "6a90227d4361d3edaa3fd2f9",
+      "created_date": "2026-08-27T11:41:49.792000",
+      "updated_date": "2026-08-27T11:41:49.792000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "bet_url": "",
+      "player_name": "Lamar Jackson",
+      "category": "favorite_future",
+      "odds": "+430",
+      "order": 7,
+      "id": "6a90227d4361d3edaa3fd2fa",
+      "created_date": "2026-08-27T11:41:49.792000",
+      "updated_date": "2026-08-27T11:41:49.792000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    },
+    {
+      "bet_url": "",
+      "player_name": "Jared Goff",
+      "category": "exclusive",
+      "odds": "+430",
+      "order": 8,
+      "id": "6a90227d4361d3edaa3fd2fb",
+      "created_date": "2026-08-27T11:41:49.792000",
+      "updated_date": "2026-08-27T11:41:49.792000",
+      "created_by_id": "6a901fa52706494618a8cf7c",
+      "is_sample": false
+    }
+  ],
+  "fanduel": {
+    "rewards_label_2": "UNLOCK LEVELS",
+    "offer_text": "Lorem ipsum dolor sit amet consectetur. Sit fermentum aliquet vestibulum et vitae. Lorem id lobortis vitae duis ac morbi eu malesuada. Nisl pellentesque aliquet aliquet aliquam enim mauris. Neque vestibulum sit quam vitae. Cursus amet morbi lectus arcu tellus mattis. A neque nisi praesent vel tempor nascetur lobortis. Aliquet ipsum sed tortor tempus.",
+    "rewards_label_3": "SCORE REWARDS",
+    "rewards_button_url": "",
+    "rewards_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ebe15cd76_fanduel-rewards-club-card.png",
+    "rewards_label_1": "COLLECT POINTS",
+    "redeem_url": "",
+    "offer_title": "TITLE OF THE OFFER",
+    "rewards_button_label": "REDEEM OFFER",
+    "offer_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/0d4d37cdc_fanduel-offer.png",
+    "redeem_label": "REDEEM OFFER",
+    "id": "6a90227d4361d3edaa3fd2f2",
+    "created_date": "2026-08-27T11:41:49.766000",
+    "updated_date": "2026-08-27T12:57:32.488000",
+    "created_by_id": "6a901fa52706494618a8cf7c",
+    "is_sample": false
+  }
+}
