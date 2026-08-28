@@ -175,7 +175,9 @@
     min-width: 0;
     height: var(--desktop-nav-scrim-height);
     transform: none;
-    background: var(--gradient-app-nav-scrim);
+    /* 28 Aug feedback: the mobile gradient's tilt gave the full-width band a
+     * sharp top edge -- see --gradient-desktop-nav-scrim in tokens.css. */
+    background: var(--gradient-desktop-nav-scrim);
   }
 
   .nav {

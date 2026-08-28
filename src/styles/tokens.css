@@ -257,6 +257,24 @@
    * viewport floor on both.
    */
   --desktop-nav-scrim-height: 160px;
+  /*
+   * 28 Aug feedback: "a transparent blue box which has a sharp edge ... make
+   * it blend in the background". The mobile scrim gradient is tilted 3.4deg
+   * off vertical, which is invisible on a 430px-wide box but on the desktop's
+   * full-width band puts up to ~28% navy alpha on the top edge itself, drawing
+   * the dock's top boundary as a hard line across the hero. Desktop gets a
+   * vertical gradient that starts at true zero alpha and eases in, so the band
+   * has no visible edge.
+   */
+  --gradient-desktop-nav-scrim: linear-gradient(
+    to bottom,
+    rgba(1, 21, 86, 0) 0%,
+    rgba(1, 21, 86, 0.08) 20%,
+    rgba(1, 21, 86, 0.28) 40%,
+    rgba(1, 21, 86, 0.58) 60%,
+    rgba(1, 21, 86, 0.85) 80%,
+    rgb(1, 21, 86) 95%
+  );
   /* Preserve the 1120px Figma content grid while allowing the page itself to
    * span the viewport beyond the 1280px source frame. */
   --desktop-content-inline: max(
