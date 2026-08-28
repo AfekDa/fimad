@@ -40,7 +40,11 @@ describe('All Teams', () => {
     expect(screen.getByRole('searchbox', { name: 'Search teams' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'AFC' })).toHaveAttribute('aria-pressed', 'false')
     expect(screen.getByRole('button', { name: 'NFC' })).toHaveAttribute('aria-pressed', 'false')
-    expect(screen.queryByRole('button', { name: 'All', exact: true })).not.toBeInTheDocument()
+    // "All" is the default state, so it server-renders pressed (28 Aug feedback).
+    expect(screen.getByRole('button', { name: 'All', exact: true })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    )
   })
 
   it('renders without a Clear All button until something is filtered', () => {

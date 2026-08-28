@@ -611,44 +611,63 @@ test.describe('responsive integrity', () => {
     const visibleCards = page.locator('[data-team-card]:not([hidden])')
     const afc = page.getByRole('button', { name: 'AFC' })
     const nfc = page.getByRole('button', { name: 'NFC' })
+    const all = page.getByRole('button', { name: 'All', exact: true })
     const search = page.getByRole('searchbox', { name: 'Search teams' })
     const clearAll = page.getByRole('button', { name: 'Clear All' })
 
     await expect(visibleCards).toHaveCount(32)
     await expect(afc).toHaveAttribute('aria-pressed', 'false')
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
-    await expect(page.getByRole('button', { name: 'All', exact: true })).toHaveCount(0)
+    // "All" is the default state, so it is pressed on arrival (28 Aug feedback).
+    await expect(all).toHaveAttribute('aria-pressed', 'true')
     // Nothing is filtered, so the control that clears filters has nothing to do.
     await expect(clearAll).toHaveCount(0)
 
     await nfc.click()
     await expect(nfc).toHaveAttribute('aria-pressed', 'true')
     await expect(afc).toHaveAttribute('aria-pressed', 'false')
+    await expect(all).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleCards).toHaveCount(16)
-    await expect(visibleCards.first()).toHaveAttribute('data-team', 'TEAM 17')
+    // Content-agnostic: card names come from the CMS, so assert the conference
+    // attribute rather than a specific roster name.
+    await expect(visibleCards.first()).toHaveAttribute('data-conference', 'NFC')
     await expect(clearAll).toBeVisible()
 
     await nfc.click()
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
+    await expect(all).toHaveAttribute('aria-pressed', 'true')
     await expect(visibleCards).toHaveCount(32)
     await expect(clearAll).toHaveCount(0)
 
-    // "team 5" is not a substring of any other team's name, so it isolates one card.
-    await search.fill('team 5')
+    // Clicking "All" while a conference is active resets to the full grid.
+    await afc.click()
+    await expect(visibleCards).toHaveCount(16)
+    await all.click()
+    await expect(afc).toHaveAttribute('aria-pressed', 'false')
+    await expect(all).toHaveAttribute('aria-pressed', 'true')
+    await expect(visibleCards).toHaveCount(32)
+
+    // Pick a real card's name so the query survives CMS roster changes; the
+    // full name is unique, so it isolates that one card.
+    const targetTeam = await visibleCards.first().getAttribute('data-team')
+    const targetConference = await visibleCards.first().getAttribute('data-conference')
+    expect(targetTeam).toBeTruthy()
+    await search.fill(targetTeam ?? '')
     await expect(visibleCards).toHaveCount(1)
-    await expect(visibleCards.first()).toHaveAttribute('data-team', 'TEAM 5')
+    await expect(visibleCards.first()).toHaveAttribute('data-team', targetTeam ?? '')
     // A query is a filter too -- Clear All resets it, so it has to be reachable.
     await expect(clearAll).toBeVisible()
 
     // A conference the matching team is not in leaves the grid empty.
-    await nfc.click()
+    const otherConference = targetConference === 'AFC' ? nfc : afc
+    await otherConference.click()
     await expect(visibleCards).toHaveCount(0)
     await expect(page.getByText('No teams match your filters.')).toBeVisible()
-    await nfc.click()
+    await otherConference.click()
 
     // Enter must not submit the search form and reload away the active filters.
     await search.press('Enter')
-    await expect(search).toHaveValue('team 5')
+    await expect(search).toHaveValue(targetTeam ?? '')
     await expect(afc).toHaveAttribute('aria-pressed', 'false')
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleCards).toHaveCount(1)
@@ -657,11 +676,9 @@ test.describe('responsive integrity', () => {
     await expect(search).toHaveValue('')
     await expect(afc).toHaveAttribute('aria-pressed', 'false')
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
+    await expect(all).toHaveAttribute('aria-pressed', 'true')
     await expect(visibleCards).toHaveCount(32)
     await expect(clearAll).toHaveCount(0)
-
-    await page.getByRole('button', { name: 'Filter teams by name' }).click()
-    await expect(search).toBeFocused()
   })
 
   /*

@@ -59,13 +59,20 @@ import styles from './AllTeams.module.css'
             assetSet="teams-page"
             filterValue="NFC"
           />
+          {/*
+            * 28 Aug feedback: "keep the 3rd filter 'All' and always active on
+            * default state". The design's third chip was "Filter" (a search
+            * shortcut); it is now the "All" filter, pressed whenever no
+            * conference narrows the grid — the state the page server-renders —
+            * matching the All Bets category row's "All" chip.
+            */}
           <Button
             variant="filter"
-            label="Filter"
-            showIcon={false}
+            label="All"
+            state="active"
             nodeId="181:305"
             assetSet="teams-page"
-            ariaLabel="Filter teams by name"
+            filterValue="all"
           />
         </div>
 
@@ -109,23 +116,28 @@ import styles from './AllTeams.module.css'
 
     const searchInput = teamsPage.querySelector<HTMLInputElement>('#team-search')
     const cards = [...teamsPage.querySelectorAll<HTMLElement>('[data-team-card]')]
-    const filterButtons = [
+    const allFilterChips = [
       ...teamsPage.querySelectorAll<HTMLButtonElement>('[data-filter-value]'),
     ]
-    const filterButton = teamsPage.querySelector<HTMLButtonElement>('[aria-label="Filter teams by name"]')
+    // "All" is the default state, not a conference: it stays pressed while no
+    // conference narrows the grid (28 Aug feedback).
+    const allButton = allFilterChips.find((button) => button.dataset.filterValue === 'all')
+    const filterButtons = allFilterChips.filter((button) => button !== allButton)
     const clearAllButton = teamsPage.querySelector<HTMLButtonElement>('[data-clear-filters]')
     const emptyState = teamsPage.querySelector<HTMLElement>('[data-empty-results]')
     const resultsStatus = teamsPage.querySelector<HTMLElement>('[data-results-status]')
 
     if (
       searchInput === null ||
-      filterButton === null ||
+      allButton === undefined ||
       clearAllButton === null ||
       emptyState === null ||
       resultsStatus === null
     ) {
       throw new Error('All Teams filter controller is missing a required control')
     }
+
+    const requiredAllButton = allButton
 
     const requiredSearchInput = searchInput
     const requiredClearAllButton = clearAllButton
@@ -161,6 +173,16 @@ import styles from './AllTeams.module.css'
       }
 
       const selectedConference = activeFilters[0]?.dataset.filterValue
+
+      // "All" reflects the conference state rather than holding its own: it is
+      // pressed exactly when no conference chip is.
+      const allActive = selectedConference === undefined
+      requiredAllButton.setAttribute('aria-pressed', String(allActive))
+      requiredAllButton.dataset.state = allActive ? 'active' : 'default'
+      const allClearIcon = requiredAllButton.querySelector<HTMLElement>('[data-filter-clear]')
+      if (allClearIcon === null) throw new Error('The "All" filter is missing its active-state icon')
+      allClearIcon.hidden = !allActive
+
       const query = requiredSearchInput.value.trim().toLocaleLowerCase()
       let visibleCount = 0
 
@@ -196,7 +218,12 @@ import styles from './AllTeams.module.css'
       })
     }
 
-    filterButton.addEventListener('click', () => searchInput.focus())
+    // Clicking "All" is a reset to the default view; clicking it while already
+    // there is a no-op rather than a deselection.
+    requiredAllButton.addEventListener('click', () => {
+      for (const button of filterButtons) setFilter(button, false)
+      applyFilters()
+    })
     searchInput.addEventListener('input', applyFilters)
     // Filtering is client-only; block native submit (Enter) so a reload cannot wipe state.
     searchInput.form?.addEventListener('submit', (event) => event.preventDefault())
