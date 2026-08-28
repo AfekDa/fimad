@@ -107,9 +107,11 @@
   }
 
   .name {
-    font-size: 80px;
-    line-height: 58px;
-    letter-spacing: -0.8px;
+    /* H2 (64/44) instead of H1 so long names like "TREY HENDRICKSON" fit
+     * without breaking mid-word. */
+    font-size: var(--font-dt-h2-size);
+    line-height: var(--font-dt-h2-line);
+    letter-spacing: var(--font-display-letter-spacing);
   }
 
   .description {
