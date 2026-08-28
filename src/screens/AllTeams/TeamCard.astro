@@ -31,7 +31,11 @@ const { card } = Astro.props
   <span class={styles.conference}>{card.conference}</span>
 
   <div class={styles.details}>
-    <span class:list={[styles.teamLogo, card.logoIsCms && styles.cmsLogo]} data-node-id="181:1340">
+    <span
+      class:list={[styles.teamLogo, card.logoIsCms && styles.cmsLogo]}
+      style={`--team-logo-scale: ${card.logoScale}`}
+      data-node-id="181:1340"
+    >
       <picture class={styles.reframedPicture}>
         <source media="(min-width: 768px)" srcset={card.logoDesktop} />
         <img class={styles.teamLogoLeaf} src={card.logo} alt="" aria-hidden="true" />

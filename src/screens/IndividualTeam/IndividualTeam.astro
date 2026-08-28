@@ -74,6 +74,7 @@ const { team = BUFFALO_BILLS } = Astro.props
       <div class={styles.heroCopy}>
         <span
           class:list={[styles.teamLogo, team.logoIsCms && styles.cmsLogo]}
+          style={`--team-logo-scale: ${team.logoScale}`}
           data-node-id="181:1340"
           data-desktop-node-id="927:6428"
         >

@@ -32,6 +32,7 @@ export interface TeamCardContent {
   readonly crop: TeamCardCrop
   /** A CMS logo is a plain mark, so it is shown whole instead of reframed. */
   readonly logoIsCms: boolean
+  readonly logoScale: 1 | 1.15
   readonly logo: string
   readonly logoDesktop: string
   readonly team: string
@@ -134,6 +135,7 @@ export const ALL_TEAMS_CARDS: readonly TeamCardContent[] = TEAMS.map((team, inde
      * upload of any other size would be zoomed and clipped by them. */
     crop: published?.card_image ? 'cms' : visual.crop,
     logoIsCms: Boolean(published?.logo_image),
+    logoScale: team.logoScale,
     logo: cmsImage(published?.logo_image, images.logo),
     logoDesktop: cmsImage(published?.logo_image, images.logoDesktop),
     imageAlt: `${team.name} player portrait`,
