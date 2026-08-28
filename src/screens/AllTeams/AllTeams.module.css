@@ -1,6 +1,8 @@
 /* All Teams — Figma frame 162:1760, 430 × 2931. */
 
 .page {
+  --teams-safe-top: calc(var(--teams-content-top) + env(safe-area-inset-top));
+
   position: relative;
   width: 100%;
   /*
@@ -11,9 +13,26 @@
    * the end of a short page (app.css). The 430 fidelity capture is unaffected:
    * the content measures 2878 there on its own.
    */
-  padding: var(--teams-content-top) var(--content-padding-inline)
+  padding: var(--teams-safe-top) var(--content-padding-inline)
     calc(var(--teams-content-tail) + var(--space-24));
   background: var(--color-navy);
+}
+
+/*
+ * iPhone Safari draws its compact toolbar over the page. Keep the unsafe top
+ * inset opaque so content scrolling behind the sticky header cannot be sampled
+ * into Safari's translucent toolbar treatment.
+ */
+.page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: calc(var(--layer-content) + 1);
+  height: env(safe-area-inset-top);
+  background: var(--color-navy);
+  pointer-events: none;
 }
 
 .content {
@@ -45,8 +64,8 @@
   align-items: flex-start;
   gap: var(--space-16);
   width: 100%;
-  margin-block: calc(-1 * var(--teams-content-top)) calc(-1 * var(--space-16));
-  padding-block: var(--teams-content-top) var(--space-16);
+  margin-block: calc(-1 * var(--teams-safe-top)) calc(-1 * var(--space-16));
+  padding-block: var(--teams-safe-top) var(--space-16);
   background: var(--color-navy);
 }
 
@@ -310,6 +329,10 @@
 /* Desktop frame 377:185. Its first 118px are Chrome capture rather than
  * product UI, so every vertical coordinate below is adjusted by that amount. */
 @media (min-width: 768px) {
+  .page::before {
+    display: none;
+  }
+
   .page {
     /*
      * Fluid for the same reason as the mobile rule. The frame's own 94px tail is
