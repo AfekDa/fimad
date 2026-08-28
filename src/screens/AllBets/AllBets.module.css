@@ -260,6 +260,13 @@
   width: 100%;
 }
 
+/* Filtering uses the native hidden attribute; the flex declaration above must
+ * not override it. A hidden section also takes its trailing divider with it. */
+.betSection[hidden],
+.betSection[hidden] + .divider {
+  display: none;
+}
+
 .sectionTitle {
   width: 100%;
   color: var(--color-white);
