@@ -60,7 +60,7 @@ const {
   </div>
 
   <section class={styles.carousel} aria-label="Most valuable player picks" data-node-id="188:2195">
-    {picks.map((pick) => <MvpPickCard pick={pick} />)}
+    {picks.map((pick, index) => <MvpPickCard pick={pick} eager={index < 3} />)}
   </section>
 
   <AppNav />

@@ -100,7 +100,7 @@ import styles from './AllTeams.module.css'
     <p class={styles.emptyState} data-empty-results hidden>No teams match your filters.</p>
 
     <div class={styles.cards} data-node-id="181:325">
-      {ALL_TEAMS_CARDS.map((card) => <TeamCard card={card} />)}
+      {ALL_TEAMS_CARDS.map((card, index) => <TeamCard card={card} eager={index < 3} />)}
     </div>
   </div>
 

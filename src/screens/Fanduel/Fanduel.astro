@@ -45,7 +45,7 @@ const OFFER_TEXT_PLACEHOLDER =
 
   <section class={styles.offers} aria-label="FanDuel offers">
     <article class:list={[styles.offer, styles.rewards]} data-node-id="803:5554" data-fanduel-offer>
-      <img class={styles.rewardsImage} src={image(fanduel?.rewards_image, ASSETS.fanduelRewardsClub)} alt="FanDuel Rewards Club" loading="lazy" decoding="async" data-reveal data-node-id="803:5555" />
+      <img class={styles.rewardsImage} src={image(fanduel?.rewards_image, ASSETS.fanduelRewardsClub)} alt="FanDuel Rewards Club" fetchpriority="high" decoding="async" data-reveal data-node-id="803:5555" />
       <div class={styles.rewardsContent}>
         <div class={styles.pointRows} aria-label="Rewards Club features">
           <div class={styles.pointRow} data-node-id="803:5557"><span>{text(fanduel?.rewards_label_1, 'COLLECT POINTS')}</span><span class={styles.pointValue}>+1</span></div>

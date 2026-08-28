@@ -5,13 +5,15 @@ import styles from './MvpPickCard.module.css'
 
 export interface Props {
   readonly pick: MvpPickContent
+  /** First-row cards are above the fold and must not wait for lazy loading. */
+  readonly eager?: boolean
 }
 
-const { pick } = Astro.props
+const { pick, eager = false } = Astro.props
 ---
 
 <article class={styles.card} data-node-id={pick.nodeId} data-mvp-card>
-  <img class={styles.image} src={pick.image} alt={pick.imageAlt} loading="lazy" decoding="async" data-reveal />
+  <img class={styles.image} src={pick.image} alt={pick.imageAlt} loading={eager ? undefined : 'lazy'} decoding="async" data-reveal />
   <span class={styles.scrim} aria-hidden="true"></span>
 
   <span class={styles.rank} aria-label={`Pick ${pick.rank}`}>

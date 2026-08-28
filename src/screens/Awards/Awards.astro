@@ -16,7 +16,7 @@ import styles from './Awards.module.css'
   />
 
   <section class={styles.cards} aria-label="Awards" data-node-id="188:2046">
-    {AWARD_CARDS.map((card) => <AwardCard card={card} />)}
+    {AWARD_CARDS.map((card, index) => <AwardCard card={card} eager={index < 3} />)}
   </section>
 
   <p class={styles.emptyState} data-empty-awards hidden>No awards match your search.</p>
