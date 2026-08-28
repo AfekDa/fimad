@@ -178,8 +178,13 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
     const allFilter = filterButtons.find((button) => button.dataset.filterValue === 'all')
     if (allFilter === undefined) throw new Error('All Bets is missing its "All" category filter')
 
-    // "All" is the unfiltered default, not a category, so it never combines
-    // with one (28 Aug feedback: multi-select every filter except "All").
+    /*
+     * "All" is an explicit choice, not a derived fallback: it shows everything
+     * and never combines with a category. Deselecting the last category is
+     * therefore an empty selection, which shows nothing rather than silently
+     * snapping back to "All" (28 Aug feedback: "nothing is selected and I
+     * still see things").
+     */
     const categoryButtons = filterButtons.filter((button) => button !== allFilter)
     const requiredAllFilter = allFilter
 
@@ -208,9 +213,7 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
 
     function applyFilters() {
       const categories = selectedCategories()
-      // Categories are additive; with none chosen the screen falls back to the
-      // "All" default rather than showing an empty list.
-      setFilter(requiredAllFilter, categories.length === 0)
+      const showEverything = requiredAllFilter.getAttribute('aria-pressed') === 'true'
 
       const query = requiredSearch.value.trim().toLocaleLowerCase()
       let visibleCards = 0
@@ -218,7 +221,9 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
       for (const section of sections) {
         const sectionId = section.dataset.betSection
         if (sectionId === undefined) throw new Error('An All Bets section has no category value')
-        const categoryMatches = categories.length === 0 || categories.includes(sectionId)
+        // Categories are additive. With neither "All" nor a category chosen
+        // nothing qualifies, so the screen empties out.
+        const categoryMatches = showEverything || categories.includes(sectionId)
         let sectionMatches = 0
 
         for (const card of section.querySelectorAll<HTMLElement>('[data-bet-card]')) {
@@ -236,15 +241,19 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
 
       /*
        * "Clear All" is an escape hatch, not a permanent control, so "nothing to
-       * clear" means no category chosen -- the "All" default -- with an empty
-       * search (27 Aug feedback).
+       * clear" is the unfiltered "All" view with an empty search (27 Aug
+       * feedback). An empty selection is something to clear: it is the state
+       * the escape hatch exists to get out of.
        */
-      requiredClearAllButton.hidden = categories.length === 0 && query.length === 0
+      requiredClearAllButton.hidden = showEverything && query.length === 0
     }
 
     for (const button of categoryButtons) {
       button.addEventListener('click', () => {
         setFilter(button, button.getAttribute('aria-pressed') !== 'true')
+        // Touching a category always leaves "All", whether that lands on a
+        // narrower list or on an empty selection.
+        setFilter(requiredAllFilter, false)
         applyFilters()
       })
     }

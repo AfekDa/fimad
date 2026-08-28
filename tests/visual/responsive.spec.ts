@@ -1637,10 +1637,20 @@ test.describe('responsive integrity', () => {
     await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleSections).toHaveCount(2)
 
-    // Clearing the last category falls back to the unfiltered "All" default.
+    /*
+     * 28 Aug feedback: "nothing is selected and I still see things". Clearing
+     * the last category is an empty selection, not a silent fallback to "All",
+     * so the screen empties out and says so.
+     */
     await exclusive.click()
     await expect(visibleSections).toHaveCount(1)
     await mvp.click()
+    await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleSections).toHaveCount(0)
+    await expect(page.getByText('No bets match your filters.')).toBeVisible()
+
+    // "All" is the way back to everything, and it is an explicit click.
+    await allBetsFilter.click()
     await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'true')
     await expect(visibleSections).toHaveCount(6)
 
