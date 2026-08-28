@@ -28,9 +28,9 @@ const OUT_DIR = path.join(root, 'public', 'cms')
 /** Base44 file urls only — social links and other absolute urls stay remote. */
 const URL_PATTERN = /https:\/\/base44\.app\/api\/apps\/[^"]+?\/files\/[^"]+/g
 
-/** Display never exceeds the 1280px desktop canvas at 2x. */
-const MAX_WIDTH = 2560
-const WEBP_QUALITY = 90
+/** Largest on-screen box is ~940 CSS px; 1600 keeps retina sharpness at far lower weight. */
+const MAX_WIDTH = 1600
+const WEBP_QUALITY = 78
 const CONCURRENCY = 8
 
 const raw = await readFile(CONTENT, 'utf8')
