@@ -486,6 +486,9 @@
     display: grid;
     grid-template-columns: repeat(3, var(--desktop-bets-card-width));
     gap: 16px 25px;
+    /* Overrides the mobile column's flex-start so a grid track levels: without
+     * it a wrapped name grows its own card and leaves its two neighbours short. */
+    align-items: stretch;
   }
 
   .betSection[data-bet-section='favourite-futures'] .betList > [data-bet-card]:nth-child(n + 4),
@@ -498,7 +501,9 @@
     align-items: center;
     justify-content: space-between;
     width: var(--desktop-bets-card-width);
-    height: var(--desktop-bets-card-height);
+    /* A minimum, for the same reason BetCard's is: see BetCard.module.css. */
+    min-height: var(--desktop-bets-card-height);
+    height: auto;
     padding: var(--space-16);
     border-radius: var(--radius-card);
     background: var(--surface-bet-card);
