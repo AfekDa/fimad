@@ -52,6 +52,21 @@ const crossFade = {
   </head>
   <body>
     <slot />
+    <script>
+      // Pairs with img[data-reveal] in app.css: images still downloading are
+      // hidden, then faded in once decoded, so remote CMS bitmaps never paint
+      // in half-loaded. astro:page-load fires on the initial load and after
+      // every ClientRouter swap, so swapped-in screens get wired too.
+      document.addEventListener("astro:page-load", () => {
+        for (const img of document.querySelectorAll<HTMLImageElement>("img[data-reveal]")) {
+          if (img.complete && img.naturalWidth > 0) continue
+          img.classList.add("is-pending")
+          const done = () => img.classList.remove("is-pending")
+          img.addEventListener("load", done, { once: true })
+          img.addEventListener("error", done, { once: true })
+        }
+      })
+    </script>
   </body>
 </html>
 

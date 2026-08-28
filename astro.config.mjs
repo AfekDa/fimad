@@ -12,7 +12,7 @@ export default defineConfig({
   output: 'static',
 
   prefetch: {
-    prefetchAll: false,
+    prefetchAll: true,
     defaultStrategy: 'viewport',
   },
 

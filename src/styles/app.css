@@ -119,3 +119,15 @@ body {
 .skipLink:focus {
   transform: translateY(0);
 }
+
+/* Progressive image reveal. Content imagery (the CMS-hosted bitmaps) fades in
+ * once fully decoded instead of painting in top-to-bottom mid-download. The
+ * pending class is only ever added by the reveal script in BaseLayout, so
+ * without JavaScript images render exactly as before. */
+img[data-reveal] {
+  transition: opacity 240ms ease-out;
+}
+
+img[data-reveal].is-pending {
+  opacity: 0;
+}

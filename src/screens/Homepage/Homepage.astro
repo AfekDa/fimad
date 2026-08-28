@@ -25,6 +25,8 @@ import styles from './Homepage.module.css'
         <img
           class:list={[styles.heroImageLeaf, content.hero.posterIsCms && styles.cmsPosterLeaf]}
           src={content.hero.poster}
+          fetchpriority="high"
+          data-reveal
           alt=""
           aria-hidden="true"
         />
@@ -86,9 +88,9 @@ import styles from './Homepage.module.css'
     <div class={styles.footer} data-node-id="1:114" data-desktop-node-id="366:263">
       <div class={styles.identity} data-node-id="1:115" data-desktop-node-id="366:264">
         <span class={styles.avatar} data-node-id="1:116" data-desktop-node-id="366:265">
-          <img class={styles.avatarLeaf} src={content.author.avatar} alt="" aria-hidden="true" />
+          <img class={styles.avatarLeaf} src={content.author.avatar} alt="" aria-hidden="true" loading="lazy" decoding="async" data-reveal />
         </span>
-        <img class={styles.signature} src={content.author.signature} alt={content.author.name} />
+        <img class={styles.signature} src={content.author.signature} alt={content.author.name} loading="lazy" decoding="async" data-reveal />
       </div>
 
       <div class={styles.social} data-node-id="1:118" data-desktop-node-id="366:269">

@@ -45,7 +45,7 @@ const OFFER_TEXT_PLACEHOLDER =
 
   <section class={styles.offers} aria-label="FanDuel offers">
     <article class:list={[styles.offer, styles.rewards]} data-node-id="803:5554" data-fanduel-offer>
-      <img class={styles.rewardsImage} src={image(fanduel?.rewards_image, ASSETS.fanduelRewardsClub)} alt="FanDuel Rewards Club" data-node-id="803:5555" />
+      <img class={styles.rewardsImage} src={image(fanduel?.rewards_image, ASSETS.fanduelRewardsClub)} alt="FanDuel Rewards Club" loading="lazy" decoding="async" data-reveal data-node-id="803:5555" />
       <div class={styles.rewardsContent}>
         <div class={styles.pointRows} aria-label="Rewards Club features">
           <div class={styles.pointRow} data-node-id="803:5557"><span>{text(fanduel?.rewards_label_1, 'COLLECT POINTS')}</span><span class={styles.pointValue}>+1</span></div>
@@ -68,7 +68,7 @@ const OFFER_TEXT_PLACEHOLDER =
     {
       STANDARD_OFFERS.map((offer) => (
         <article class:list={[styles.offer, styles.standardOffer]} data-node-id={offer.nodeIds.card} data-fanduel-offer>
-          <img class={styles.offerImage} src={image(fanduel?.offer_image, ASSETS.fanduelOffer)} alt="Your most rewarding season ever" data-node-id={offer.nodeIds.image} />
+          <img class={styles.offerImage} src={image(fanduel?.offer_image, ASSETS.fanduelOffer)} alt="Your most rewarding season ever" loading="lazy" decoding="async" data-reveal data-node-id={offer.nodeIds.image} />
           <div class={styles.standardContent}>
             <div class={styles.copy} data-node-id={offer.nodeIds.copy}>
               <h1 data-node-id={offer.nodeIds.title}>{text(fanduel?.offer_title, 'TITLE OF THE OFFER')}</h1>

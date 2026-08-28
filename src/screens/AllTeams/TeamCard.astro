@@ -21,7 +21,7 @@ const { card } = Astro.props
     class:list={[styles.imageBox, styles[card.crop]]}
     data-node-id={card.imageNodeId}
   >
-    <img class={styles.imageLeaf} src={card.image} alt={card.imageAlt} />
+    <img class={styles.imageLeaf} src={card.image} alt={card.imageAlt} loading="lazy" decoding="async" data-reveal />
   </div>
 
   {(card.crop === 'buffalo' || card.crop === 'cms') && (
@@ -38,7 +38,7 @@ const { card } = Astro.props
     >
       <picture class={styles.reframedPicture}>
         <source media="(min-width: 768px)" srcset={card.logoDesktop} />
-        <img class={styles.teamLogoLeaf} src={card.logo} alt="" aria-hidden="true" />
+        <img class={styles.teamLogoLeaf} src={card.logo} alt="" aria-hidden="true" loading="lazy" decoding="async" data-reveal />
       </picture>
     </span>
     <h2 class={styles.teamName}>{card.team}</h2>

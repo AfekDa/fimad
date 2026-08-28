@@ -11,7 +11,7 @@ const { pick } = Astro.props
 ---
 
 <article class={styles.card} data-node-id={pick.nodeId} data-mvp-card>
-  <img class={styles.image} src={pick.image} alt={pick.imageAlt} />
+  <img class={styles.image} src={pick.image} alt={pick.imageAlt} loading="lazy" decoding="async" data-reveal />
   <span class={styles.scrim} aria-hidden="true"></span>
 
   <span class={styles.rank} aria-label={`Pick ${pick.rank}`}>
