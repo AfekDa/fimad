@@ -507,9 +507,19 @@
   font-weight: 700;
 }
 
+/*
+ * 28 Aug feedback: the record and the copy under it overlapped. The 44px
+ * line-height this replaces gave the 160px digits -58px of half-leading, so
+ * the glyphs painted ~58px below the score's 115px box and into the paragraph.
+ * Trimming to the cap/baseline makes the rendered text exactly the glyph
+ * height (~112px for 160px digits), which is what the design's 115px text box
+ * holds, so the section's 24px flex gaps are real space again.
+ */
 .predictionScoreLine {
-  line-height: 44px;
+  line-height: 1;
   white-space: nowrap;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
 }
 
 .predictionCopy {
