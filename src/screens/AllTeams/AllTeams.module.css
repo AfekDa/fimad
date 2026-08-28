@@ -1,7 +1,8 @@
 /* All Teams — Figma frame 162:1760, 430 × 2931. */
 
 .page {
-  --teams-safe-top: calc(var(--teams-content-top) + env(safe-area-inset-top));
+  --teams-browser-shield: env(safe-area-inset-top);
+  --teams-safe-top: calc(var(--teams-content-top) + var(--teams-browser-shield));
 
   position: relative;
   width: 100%;
@@ -30,9 +31,20 @@
   right: 0;
   left: 0;
   z-index: calc(var(--layer-content) + 1);
-  height: env(safe-area-inset-top);
+  height: var(--teams-browser-shield);
   background: var(--color-navy);
   pointer-events: none;
+}
+
+/*
+ * Safari 26 can report no useful top inset while its floating controls still
+ * sample roughly 50px of page content. Reserve a little more than that region
+ * on iOS so the browser can only sample the solid navy shield.
+ */
+@supports (-webkit-touch-callout: none) {
+  .page {
+    --teams-browser-shield: max(env(safe-area-inset-top), 64px);
+  }
 }
 
 .content {
