@@ -1421,15 +1421,17 @@ test.describe('responsive integrity', () => {
       await Promise.all(Array.from(document.images).map((image) => image.decode()))
     })
 
-    expect(await page.locator('[data-node-id="188:2187"]').boundingBox()).toMatchObject({
+    // Updated frame 938:6081 (28 Aug): the band grew to 175 to hold the back link.
+    expect(await page.locator('[data-node-id="938:6081"]').boundingBox()).toMatchObject({
       x: 0,
       y: 0,
       width: 430,
-      height: 139,
+      height: 175,
     })
+    const backLink = page.getByRole('link', { name: 'Back to all Awards' })
     expect(await page.getByRole('heading', { level: 1 }).boundingBox()).toMatchObject({
       x: 24,
-      y: 139,
+      y: 175,
       width: 315,
     })
     const cards = page.locator('[data-mvp-card]')
@@ -1437,15 +1439,30 @@ test.describe('responsive integrity', () => {
     const firstMvpCard = await cards.first().boundingBox()
     expect(firstMvpCard).not.toBeNull()
     expect(firstMvpCard?.x).toBeCloseTo(24, 0)
-    expect(firstMvpCard?.y).toBeCloseTo(220, 0)
+    expect(firstMvpCard?.y).toBeCloseTo(228, 0)
     expect(firstMvpCard?.width).toBeCloseTo(316, 0)
     expect(firstMvpCard?.height).toBeCloseTo(505, 0)
     const secondMvpCard = await cards.nth(1).boundingBox()
     expect(secondMvpCard).not.toBeNull()
     expect(secondMvpCard?.x).toBeCloseTo(356, 0)
-    expect(secondMvpCard?.y).toBeCloseTo(220, 0)
+    expect(secondMvpCard?.y).toBeCloseTo(228, 0)
     expect(secondMvpCard?.width).toBeCloseTo(316, 0)
     await expect(page.locator('[data-nav-id="awards"]')).toHaveAttribute('aria-current', 'page')
+
+    // 28 Aug feedback: the back link freezes with the band; the title scrolls.
+    // The 932 frame viewport holds the whole page, so a phone-height viewport
+    // stands in to make the document actually scrollable.
+    await page.setViewportSize({ width: 430, height: 600 })
+    const linkAtRest = await backLink.boundingBox()
+    expect(linkAtRest).not.toBeNull()
+    const scrolled = await page.evaluate(() => {
+      window.scrollTo(0, 200)
+      return window.scrollY
+    })
+    expect(scrolled, 'Route is not scrollable, so freezing proves nothing').toBeGreaterThan(0)
+    expect((await backLink.boundingBox())?.y).toBeCloseTo(linkAtRest?.y ?? 0, 0)
+    const scrolledHeading = await page.getByRole('heading', { level: 1 }).boundingBox()
+    expect(scrolledHeading?.y).toBeCloseTo(175 - scrolled, 0)
   })
 
   test('All Teams matches the browser-chrome-adjusted desktop Figma geometry', async ({ page }) => {

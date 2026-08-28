@@ -31,10 +31,10 @@ describe('Most Valuable Player Picks', () => {
   })
 
   it('provides the back link, bet actions, search, and canonical navigation', () => {
-    expect(screen.getByRole('link', { name: 'Back to all awards' })).toHaveAttribute(
-      'href',
-      '/awards',
-    )
+    const backLink = screen.getByRole('link', { name: 'Back to all Awards' })
+    expect(backLink).toHaveAttribute('href', '/awards')
+    // 28 Aug feedback: the back link rides in the frozen band, not the scrolling intro.
+    expect(backLink.closest('[data-node-id="938:6081"]')).toBeInTheDocument()
     expect(screen.getAllByRole('button', { name: 'PLACE BET' })).toHaveLength(3)
     expect(screen.getByRole('searchbox', { name: 'Search awards' })).toBeInTheDocument()
     expect(screen.getByRole('navigation', { name: 'Primary' })).toBeInTheDocument()

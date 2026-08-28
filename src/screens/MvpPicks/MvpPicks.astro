@@ -32,24 +32,31 @@ const {
 ---
 
 <div class={styles.page} data-node-id="188:2186" data-mvp-picks-page>
+  {/*
+    * 28 Aug feedback (updated frame 938:6081): "Back to all Awards" rides in
+    * the frozen search band like the Individual Team page's back control, and
+    * the award title scrolls with the cards instead.
+    */}
   <AwardsHeader
     searchId="mvp-search"
     searchLabel="Search awards"
     clearLabel="Clear search"
-    nodeIds={{ header: '188:2187', brand: '188:2188', byline: '188:2189', title: '188:2190', search: '188:2191', searchIcon: '188:2192' }}
-  />
+    class={styles.headerBand}
+    nodeIds={{ header: '938:6081', brand: '938:6082', byline: '938:6083', title: '938:6084', search: '938:6086', searchIcon: '938:6087' }}
+  >
+    <a class={styles.backLink} href="/awards" data-node-id="938:6090">
+      <span class={styles.backIcon} aria-hidden="true">
+        <img src={ASSETS.arrowGrey} alt="" />
+      </span>
+      <span>Back to all Awards</span>
+    </a>
+  </AwardsHeader>
 
   <div class={styles.intro} data-node-id="188:2480">
     <h1 class={styles.heading} data-node-id="188:2286">
       <span class={styles.mobileHeading}>{title}</span>
       <span class={styles.desktopHeading}>{subtitle ?? title}</span>
     </h1>
-    <a class={styles.backLink} href="/awards" data-node-id="188:2319">
-      <span class={styles.backIcon} aria-hidden="true">
-        <img src={ASSETS.arrowGrey} alt="" />
-      </span>
-      <span>Back to all awards</span>
-    </a>
   </div>
 
   <section class={styles.carousel} aria-label="Most valuable player picks" data-node-id="188:2195">
