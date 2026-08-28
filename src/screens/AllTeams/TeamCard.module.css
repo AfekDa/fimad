@@ -164,12 +164,18 @@
 }
 
 /* A CMS mark is not the design's lockup export, so it is not reframed. */
+.cmsLogo {
+  overflow: visible;
+}
+
 .cmsLogo .teamLogoLeaf {
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: left center;
+  transform: scale(var(--team-logo-scale));
+  transform-origin: left center;
 }
 
 .teamLogoLeaf {

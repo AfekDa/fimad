@@ -21,9 +21,19 @@ export interface Team {
   readonly slug: string
   readonly href: string
   readonly conference: Conference
+  readonly logoScale: 1 | 1.15
 }
 
 export const TEAM_COUNT = 32
+
+/** Marks called out as visually smaller than the rest of the published set. */
+const ENLARGED_LOGO_TEAM_NUMBERS = new Set([
+  6, // Miami Dolphins
+  17, // Detroit Lions
+  18, // Minnesota Vikings
+  21, // Dallas Cowboys
+  27, // New Orleans Saints
+])
 
 function conferenceFor(published: string | undefined, number: number): Conference {
   if (published === 'AFC' || published === 'NFC') return published
@@ -43,6 +53,7 @@ export const TEAMS: readonly Team[] = Array.from({ length: TEAM_COUNT }, (_, ind
     slug,
     href: `/teams/${slug}`,
     conference: conferenceFor(published?.conference, number),
+    logoScale: ENLARGED_LOGO_TEAM_NUMBERS.has(number) ? 1.15 : 1,
   }
 })
 
