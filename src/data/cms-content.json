@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T11:08:32.534Z",
+  "generated_at": "2026-08-28T11:12:39.905Z",
   "generated_by": "dhana.pimputkar@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
@@ -641,12 +641,12 @@
       "future_player": "JAMES COOK",
       "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/82e6d3fee_Mb_BuffaloBills-JoshAllen.png",
       "prediction_record": "11-6",
-      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9007d3d97_hero-desktop.png",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/45f6f0bcb_Dt_BuffaloBills-JoshAllen.png",
       "future_bet_url": null,
-      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9f4e4d328_favorite-desktop.png",
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/595dce197_Dt_FF_BuffaloBills_JamesCook.png",
       "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b647d6a02_Mb_BuffaloBills-JoshAllen.png",
       "receivers": "The Bills have a solid three-man wide receiver rotation for the first time in years after adding DJ Moore. Khalil Shakir had a solid season in 2025 with 719 receiving yards but he’s not really a first option receiver. Keon Coleman is a former second-round pick but just hasn’t delivered on his potential so far. He had 112 yards and a touchdown in Week 1 last year, but then never had a game with more than 49 yards after that point. He was also a healthy scratch for a couple of games as the Bills lost trust in him. DJ Moore is going to be crucial for Allen but it remains to be seen if he’s a complete fix to their passing game problems. Dalton Kincaid and Dawson Knox are great options at tight end, I’m a big fan of Kincaid especially who looks to be healthier coming into this season. He dealt with a PCL injury over the past year or so.",
-      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/acb27a499_prediction.png",
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/fc7867d2c_Mb_BuffaloBills_BlackSteel.png",
       "future_market": "10+ RUSHING TDS",
       "lines": {
         "win_superbowl": "+700",
@@ -662,10 +662,10 @@
       "overview": "The Bills enter a new era with Joe Brady replacing Sean McDermott as head coach and Jim Leonhard taking over as defensive coordinator. Buffalo's biggest move was trading for receiver DJ Moore, finally giving Josh Allen a true WR1, while also bolstering their defense with edge rusher Bradley Chubb and several secondary additions. Last season, the Bills had the NFL's best rushing attack, led by James Cook's league-leading 1,621 yards, but their run defense ranked among the league's worst despite an elite pass defense. Allen remains an MVP-caliber dual-threat quarterback, though his passing numbers have dipped over the past two seasons. With Moore now in the mix alongside Khalil Shakir and Dalton Kincaid, and defensive upgrades aimed at fixing their run-stopping issues, Buffalo looks poised to compete.",
       "head_coach": "HEAD COACH TEAM 5",
       "offensive_coordinator": "OFF COORD TEAM 5",
-      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/acb27a499_prediction.png",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/10d311fa4_Dt_BuffaloBills_BlackSteel.png",
       "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/1172215d3_BuffaloBills_Steel.png",
       "running_backs": "The Bills boasted the best rushing attack in the NFL in 2025, with nearly 160 yards per game. James Cook had an amazing season, leading the NFL in rushing yards with 1621. He had nine games of 100+ rushing yards and added 12 rushing TDs. It’s a seriously potent rushing attack with Josh Allen always a threat with his legs, complemented by the speed and agility of Cook. Cook got paid last year and remains the workhorse RB1 ahead of Ray Davis and Ty Johnson. There has been quite a lot of chat from training camp that Cook will be more involved in the passing game this season, which is exciting news for fantasy coaches. If he can retain that elite rushing output and also add more pass catching he will elevate himself to one of the top running backs in the NFL.",
-      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/508a7f4e4_favorite.png",
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/1dbaa8077_Mb_FF_BuffaloBills_JamesCook.png",
       "schedule": [
         {
           "difficulty": "Moderate",
@@ -782,7 +782,7 @@
       "prediction_text": "I have the Bills marginally winning the AFC East. Josh Allen can win games on his own talent and they’ve added a few nice pieces for him to improve. If their run defense tightens up and DJ Moore performs, they should be a challenger for the Super Bowl.",
       "id": "6a9022875b73b6b687d4f147",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-27T16:29:28.797000",
+      "updated_date": "2026-08-28T11:10:20.741000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -793,12 +793,12 @@
       "future_player": "DE’VON ACHANE",
       "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/aefc251d2_Mb_MiamiDolphins-DeVonAchane.png",
       "prediction_record": "3-14",
-      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/d06f35b02_hero-desktop.png",
+      "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f28c6ebde_Mb_MiamiDolphins-DeVonAchane.png",
       "future_bet_url": null,
-      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b668f41da_favorite-desktop.png",
+      "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/104f8b8ba_Dt_FF_MiamiDolphins_DevonAchane.png",
       "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/963b22775_Mb_MiamiDolphins-DeVonAchane.png",
       "receivers": "With both Tyreek Hill and Jaylen Waddle no longer in Miami, there’s no hiding that this is probably the worst receiving corps in the NFL. Malik Washington, Jalen Tolbert and Tutu Atwell are all decent players, but none of them would be close to WR1 or maybe even WR2 on many other teams. They did take three different receivers in the draft, but none of those were taken before the third round. They’ll be hoping they can hit on one or two of those guys and there will be plenty of opportunities for them this season as the Dolphins look to the future. We can expect to see plenty of variation in this receiving corps each week and I wouldn’t be relying on any of them for consistent production. There are rumors tight end Greg Dulcich could be the main option. Wait and see what happens in pre-season here before making any major judgements. I would be avoiding betting on most of these players this season.",
-      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c6ac29905_prediction.png",
+      "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/7449cf3db_Mb_MiamiDolphins_BlackSteel.png",
       "future_market": "OVER 975.5 RUSHING YARDS",
       "lines": {
         "win_superbowl": "+10000",
@@ -814,10 +814,10 @@
       "overview": "Miami blew everything up this offseason, firing Mike McDaniel, hiring Jeff Hafley, bringing in a new GM, and shockingly releasing Tua Tagovailoa. Gone too are Tyreek Hill, Bradley Chubb, and Minkah Fitzpatrick, replaced by a league-high 13 draft picks and a $67.5 million gamble on former Packers backup Malik Willis at quarterback. It's a full rebuild with plenty of unknowns. The lone bright spot is De'Von Achane, one of the NFL's most explosive players, coming off a season with 1,350 rushing yards after a strong 2025 campaign despite Miami's struggles. Unfortunately, the receiving corps led by Malik Washington and Jalen Tolbert is arguably the league's worst, with little proven talent to support Willis. The defense is similarly thin, leaning heavily on rookies like cornerback Chris Johnson to rebuild from scratch.",
       "head_coach": "HEAD COACH TEAM 6",
       "offensive_coordinator": "OFF COORD TEAM 6",
-      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c6ac29905_prediction.png",
+      "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ce307339d_Dt_MiamiDolphins_BlackSteel.png",
       "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/577ca863e_MiamiDolphins_Steel2.png",
       "running_backs": "De’Von Achane is the Dolphins’ best offensive player and I am a really big fan of his. He is one of the quickest players in the NFL and can break off massive plays both on the ground and in the air. He’s coming off a season with 1350 rushing yards and 488 receiving yards, which are amazing numbers playing for a bad team. He’s a great option for the Dolphins but his ceiling will be limited again due to their lack of general offense. The backups are Jaylen Wright, also an explosive runner, and Ollie Gordon II who was used as the short-yardage and goal-line back at some points last season. The RB room is probably their biggest offensive strength and we can expect some solid numbers from Achane again this year as the Dolphins will likely lean on the run.",
-      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/cb43f632d_favorite.png",
+      "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/7a04abe09_Mb_FF_MiamiDolphins_DevonAchane.png",
       "schedule": [
         {
           "difficulty": "Easy",
@@ -934,7 +934,7 @@
       "prediction_text": "This could get ugly. The Dolphins just don’t have enough talent to compete and they also have a completely new system. It’s going to be a steep learning curve. Having the Patriots and Bills in the Division doesn’t help either.",
       "id": "6a9022875b73b6b687d4f148",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-28T09:18:11.540000",
+      "updated_date": "2026-08-28T11:12:31.009000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
