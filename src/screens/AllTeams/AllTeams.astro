@@ -164,19 +164,19 @@ import styles from './AllTeams.module.css'
     }
 
     function applyFilters() {
-      const activeFilters = filterButtons.filter(
-        (button) => button.getAttribute('aria-pressed') === 'true',
-      )
-
-      if (activeFilters.length > 1) {
-        throw new Error('All Teams filter controller supports at most one active conference')
-      }
-
-      const selectedConference = activeFilters[0]?.dataset.filterValue
+      // Conferences are additive (28 Aug feedback: multi-select every filter
+      // except "All"), so this is a set rather than a single choice.
+      const selectedConferences = filterButtons
+        .filter((button) => button.getAttribute('aria-pressed') === 'true')
+        .map((button) => {
+          const value = button.dataset.filterValue
+          if (value === undefined) throw new Error('An All Teams filter has no conference value')
+          return value
+        })
 
       // "All" reflects the conference state rather than holding its own: it is
       // pressed exactly when no conference chip is.
-      const allActive = selectedConference === undefined
+      const allActive = selectedConferences.length === 0
       requiredAllButton.setAttribute('aria-pressed', String(allActive))
       requiredAllButton.dataset.state = allActive ? 'active' : 'default'
       const allClearIcon = requiredAllButton.querySelector<HTMLElement>('[data-filter-clear]')
@@ -187,8 +187,9 @@ import styles from './AllTeams.module.css'
       let visibleCount = 0
 
       for (const card of cards) {
+        const conference = card.dataset.conference
         const matchesConference =
-          selectedConference === undefined || card.dataset.conference === selectedConference
+          allActive || (conference !== undefined && selectedConferences.includes(conference))
         const matchesSearch = card.dataset.team?.toLocaleLowerCase().includes(query) ?? false
         const isVisible = matchesConference && matchesSearch
         card.hidden = !isVisible
@@ -201,19 +202,14 @@ import styles from './AllTeams.module.css'
        * it (27 Aug feedback) and it appears the moment a conference chip goes
        * active or the search field has a query -- the two things it resets.
        */
-      requiredClearAllButton.hidden = selectedConference === undefined && query.length === 0
+      requiredClearAllButton.hidden = allActive && query.length === 0
       requiredEmptyState.hidden = visibleCount !== 0
       requiredResultsStatus.textContent = `${visibleCount} ${visibleCount === 1 ? 'team' : 'teams'} shown`
     }
 
     for (const button of filterButtons) {
       button.addEventListener('click', () => {
-        const isActive = button.getAttribute('aria-pressed') === 'true'
-
-        for (const candidate of filterButtons) {
-          setFilter(candidate, candidate === button && !isActive)
-        }
-
+        setFilter(button, button.getAttribute('aria-pressed') !== 'true')
         applyFilters()
       })
     }

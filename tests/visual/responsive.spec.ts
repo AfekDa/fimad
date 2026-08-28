@@ -633,13 +633,27 @@ test.describe('responsive integrity', () => {
     await expect(visibleCards.first()).toHaveAttribute('data-conference', 'NFC')
     await expect(clearAll).toBeVisible()
 
+    // 28 Aug feedback: conferences combine. Adding AFC keeps NFC pressed and
+    // unions the two rosters instead of replacing the selection.
+    await afc.click()
+    await expect(afc).toHaveAttribute('aria-pressed', 'true')
+    await expect(nfc).toHaveAttribute('aria-pressed', 'true')
+    await expect(all).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleCards).toHaveCount(32)
+    await expect(clearAll).toBeVisible()
+
+    await afc.click()
+    await expect(afc).toHaveAttribute('aria-pressed', 'false')
+    await expect(nfc).toHaveAttribute('aria-pressed', 'true')
+    await expect(visibleCards).toHaveCount(16)
+
     await nfc.click()
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
     await expect(all).toHaveAttribute('aria-pressed', 'true')
     await expect(visibleCards).toHaveCount(32)
     await expect(clearAll).toHaveCount(0)
 
-    // Clicking "All" while a conference is active resets to the full grid.
+    // "All" is the one filter that does not combine: it clears the conferences.
     await afc.click()
     await expect(visibleCards).toHaveCount(16)
     await all.click()
@@ -1602,19 +1616,87 @@ test.describe('responsive integrity', () => {
     await expect(cards).toHaveCount(37)
     expect(await cards.first().boundingBox()).toMatchObject({ width: 382, height: 70 })
 
-    await page.getByRole('button', { name: 'Exclusive' }).click()
-    await expect(page.locator('[data-bet-section]:not([hidden])')).toHaveCount(1)
+    const allBetsFilter = page.getByRole('button', { name: 'All', exact: true })
+    const exclusive = page.getByRole('button', { name: 'Exclusive' })
+    const mvp = page.getByRole('button', { name: 'MVP Picks' })
+    const visibleSections = page.locator('[data-bet-section]:not([hidden])')
+
+    await exclusive.click()
+    await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleSections).toHaveCount(1)
     await expect(page.locator('[data-bet-card]:not([hidden])')).toHaveCount(2)
+
+    /*
+     * 28 Aug feedback: categories combine. Adding MVP Picks widens the list
+     * rather than replacing Exclusive, and "All" stays unpressed while any
+     * category is.
+     */
+    await mvp.click()
+    await expect(exclusive).toHaveAttribute('aria-pressed', 'true')
+    await expect(mvp).toHaveAttribute('aria-pressed', 'true')
+    await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleSections).toHaveCount(2)
+
+    // Clearing the last category falls back to the unfiltered "All" default.
+    await exclusive.click()
+    await expect(visibleSections).toHaveCount(1)
+    await mvp.click()
+    await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'true')
+    await expect(visibleSections).toHaveCount(6)
+
+    // "All" is the one filter that does not combine: it clears the categories.
+    await exclusive.click()
+    await expect(visibleSections).toHaveCount(1)
+    await allBetsFilter.click()
+    await expect(exclusive).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleSections).toHaveCount(6)
 
     await page.getByRole('searchbox', { name: 'Search bets' }).fill('not a player')
     await expect(page.getByText('No bets match your filters.')).toBeVisible()
   })
 
   /*
+   * 28 Aug feedback: "cross-check the padding on the Selected filter". Figma
+   * 251:3002 is 69 x 33 with the label at x=12 and the 25px clear icon ending
+   * 4px short of the right edge -- 12 / 8 / 4 horizontally and 4 vertically.
+   */
+  test('All Bets pads the selected filter to its Figma box', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/all-bets')
+    await page.evaluate(() => document.fonts.ready)
+
+    const padding = await page.locator('[data-filter-value="all"]').evaluate((chip) => {
+      const style = getComputedStyle(chip)
+      return {
+        top: style.paddingTop,
+        right: style.paddingRight,
+        bottom: style.paddingBottom,
+        left: style.paddingLeft,
+      }
+    })
+    expect(padding).toMatchObject({
+      top: '4px',
+      right: '4px',
+      bottom: '4px',
+      left: '12px',
+    })
+
+    // The 25px icon has to fit inside the 33px chip, not overflow its padding box.
+    const chip = await page.locator('[data-filter-value="all"]').boundingBox()
+    const icon = await page.locator('[data-filter-value="all"] [data-filter-clear]').boundingBox()
+    expect(chip?.height).toBeCloseTo(33, 0)
+    expect(icon?.height).toBeCloseTo(25, 0)
+    expect((icon?.y ?? 0) - (chip?.y ?? 0)).toBeCloseTo(4, 0)
+    expect((chip?.x ?? 0) + (chip?.width ?? 0) - ((icon?.x ?? 0) + (icon?.width ?? 0))).toBeCloseTo(
+      4,
+      0,
+    )
+  })
+
+  /*
    * 791:3532 puts "Clear All" flush with the right edge of the 382 filter block,
-   * on the row that carries "Offensive ROTY Picks" (27 Aug feedback). Unlike All
-   * Teams this screen always has a category selected, so "nothing to clear" is
-   * the default "All" with an empty search rather than no selection at all.
+   * on the row that carries "Offensive ROTY Picks" (27 Aug feedback). "Nothing
+   * to clear" is no category chosen -- the "All" default -- with an empty search.
    */
   test('All Bets reveals Clear All once a category or a search narrows the list', async ({ page }) => {
     await page.setViewportSize({ width: 430, height: 932 })
