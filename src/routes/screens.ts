@@ -145,7 +145,7 @@ export const SCREENS: readonly ScreenMeta[] = [
      * not app UI, so the document itself is 1097 — the desktop counterpart of
      * the 54px status bar the mobile frames draw.
      */
-    height: 1097,
+    height: 1443,
     viewportHeight: 782,
     /* Desktop Nav 803:5318 is 64 tall. */
     navHeight: 64,
@@ -156,5 +156,7 @@ export const SCREENS: readonly ScreenMeta[] = [
      * the mobile 40 instead -- see --desktop-nav-bottom-offset.
      */
     navBottomOffset: 40,
+    divergesFromFigma:
+      'The 28 Aug review asked for the standard offer card to be duplicated, so the page renders it twice where frame 803:5180 draws it once. That adds the card and its 24px gap below the fold, taking the document from the frame’s 1097 to 1443. Offer geometry is still asserted in responsive.spec.ts, and the nav-docking assertion below still runs.',
   },
 ]

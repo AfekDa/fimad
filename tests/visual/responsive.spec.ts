@@ -1756,8 +1756,10 @@ test.describe('responsive integrity', () => {
       await page.goto('/fanduel')
       await page.evaluate(() => document.fonts.ready)
 
+      // Selected by role rather than by Figma node ID: the duplicated offer card
+      // is the app's own and carries no node ID (28 Aug feedback).
       const offsets = await page
-        .locator('[data-node-id="803:5566"], [data-node-id="803:5573"]')
+        .locator('[data-fanduel-offer] [aria-label^="Redeem"]')
         .evaluateAll((buttons) =>
           buttons.map((button) => {
             const box = button.getBoundingClientRect()
@@ -1768,7 +1770,7 @@ test.describe('responsive integrity', () => {
           }),
         )
 
-      expect(offsets).toHaveLength(2)
+      expect(offsets).toHaveLength(3)
       for (const offset of offsets) {
         expect(offset.start).toBeGreaterThan(0)
         expect(Math.abs(offset.start - offset.end)).toBeLessThan(1)
@@ -1983,7 +1985,7 @@ test.describe('responsive integrity', () => {
       x: 0,
       y: 0,
       width: 1280,
-      height: 1097,
+      height: 1443,
     })
     expect(await page.locator('[data-node-id="803:5181"]').boundingBox()).toMatchObject({
       x: 0,
@@ -1992,17 +1994,26 @@ test.describe('responsive integrity', () => {
       height: 147,
     })
 
+    /*
+     * Three cards, not the frame's two: the 28 Aug review asked for the standard
+     * offer to be duplicated, so it repeats on the frame's own 24px gap and the
+     * copy matches its source card box for box.
+     */
     const offers = page.locator('[data-fanduel-offer]')
-    await expect(offers).toHaveCount(2)
+    await expect(offers).toHaveCount(3)
     expect(await offers.nth(0).boundingBox()).toMatchObject({ x: 80, y: 187, width: 1120, height: 380 })
     expect(await offers.nth(1).boundingBox()).toMatchObject({ x: 80, y: 591, width: 1120, height: 322 })
+    expect(await offers.nth(2).boundingBox()).toMatchObject({ x: 80, y: 937, width: 1120, height: 322 })
 
     const rewardsCta = page.getByRole('button', { name: 'Redeem Rewards Club offer', exact: true })
     const offerCta = page.getByRole('button', { name: 'Redeem offer', exact: true })
+    const duplicateCta = page.getByRole('button', { name: 'Redeem second offer', exact: true })
     await expect(rewardsCta).toBeVisible()
     await expect(offerCta).toBeVisible()
+    await expect(duplicateCta).toBeVisible()
     expect(await rewardsCta.boundingBox()).toMatchObject({ x: 588, y: 499, width: 175, height: 36 })
     expect(await offerCta.boundingBox()).toMatchObject({ x: 588, y: 832, width: 175, height: 36 })
+    expect(await duplicateCta.boundingBox()).toMatchObject({ x: 588, y: 1178, width: 175, height: 36 })
     expect(await page.locator('[data-node-id="803:5562"]').boundingBox()).toMatchObject({
       x: 1132,
       y: 327,

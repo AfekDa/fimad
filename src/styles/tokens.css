@@ -302,8 +302,9 @@
   --desktop-bets-header-height: 147px;
   --desktop-bets-card-width: 357px;
   --desktop-bets-card-height: 75px;
-  /* FanDuel Page 803:5180 after omitting 118px browser chrome. */
-  --desktop-fanduel-frame-height: 1097px;
+  /* FanDuel Page 803:5180 after omitting 118px browser chrome, plus the second
+   * standard offer card the 28 Aug review asked for: 1097 + 24 gap + 322. */
+  --desktop-fanduel-frame-height: 1443px;
   --desktop-fanduel-card-gap: 24px;
 
   /* Dt/H2, Dt/H4, Dt/BC1 and Dt/BC2 from the desktop design context. */
