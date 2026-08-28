@@ -233,7 +233,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-32);
+  gap: 0;
   width: calc(100% - 2 * var(--content-padding-inline));
   margin: var(--space-24) var(--content-padding-inline) 0;
 }
@@ -256,8 +256,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-16);
+  gap: var(--space-24);
   width: 100%;
+  margin-block: var(--space-40);
 }
 
 /* Filtering uses the native hidden attribute; the flex declaration above must
@@ -428,12 +429,6 @@
 
   .divider {
     height: 0;
-  }
-
-  .betSection {
-    gap: 16px;
-    margin-top: 47.765625px;
-    margin-bottom: 31.234375px;
   }
 
   .sectionTitle {
