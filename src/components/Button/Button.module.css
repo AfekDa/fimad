@@ -102,10 +102,18 @@
   padding: var(--space-8) var(--space-16);
 }
 
+/*
+ * 28 Aug feedback: "cross-check the padding on the Selected filter". Figma
+ * 251:3002 (69 x 33) places the label at x=12 and the 25px clear icon at
+ * x=40..65, i.e. 12 left / 8 gap / 4 right -- those were already right. The
+ * vertical was not: the icon sits at y=4..29, so the chip pads 4px top and
+ * bottom, not 8. At 8px the 25px icon needed 41px and overflowed the 33px
+ * chip's padding box.
+ */
 .filterActive {
   background: var(--fanduel-blue);
   gap: var(--space-8);
-  padding: var(--space-8) var(--space-4) var(--space-8) var(--space-12);
+  padding: var(--space-4) var(--space-4) var(--space-4) var(--space-12);
 }
 
 .filterLabel {
@@ -137,7 +145,7 @@
 .filter[data-state='active'] {
   background: var(--fanduel-blue);
   gap: var(--space-8);
-  padding: var(--space-8) var(--space-4) var(--space-8) var(--space-12);
+  padding: var(--space-4) var(--space-4) var(--space-4) var(--space-12);
 }
 
 .filter[data-state='default'] .filterLabel {

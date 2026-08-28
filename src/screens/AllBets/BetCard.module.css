@@ -41,9 +41,20 @@
 }
 
 @media (min-width: 768px) {
+  /*
+   * 28 Aug feedback: "when the text is too large we should make the boxes of
+   * that row slightly bigger". 75 is the height of a card whose name fits one
+   * line; a CMS name long enough to wrap three lines needs more, and a grid
+   * item's automatic minimum size was already growing it past 75 -- with the
+   * frame's 16px padding squeezed out, so "De'zhaun Stribling +2500" sat flush
+   * against the card's rounded bottom edge. Stating the 75 as a minimum keeps
+   * the frame's height for every card that fits it and lets the rest grow with
+   * their padding intact.
+   */
   .card {
     width: var(--desktop-bets-card-width);
-    height: var(--desktop-bets-card-height);
+    height: auto;
+    min-height: var(--desktop-bets-card-height);
   }
 
   /*

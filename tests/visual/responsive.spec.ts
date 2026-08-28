@@ -633,13 +633,27 @@ test.describe('responsive integrity', () => {
     await expect(visibleCards.first()).toHaveAttribute('data-conference', 'NFC')
     await expect(clearAll).toBeVisible()
 
+    // 28 Aug feedback: conferences combine. Adding AFC keeps NFC pressed and
+    // unions the two rosters instead of replacing the selection.
+    await afc.click()
+    await expect(afc).toHaveAttribute('aria-pressed', 'true')
+    await expect(nfc).toHaveAttribute('aria-pressed', 'true')
+    await expect(all).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleCards).toHaveCount(32)
+    await expect(clearAll).toBeVisible()
+
+    await afc.click()
+    await expect(afc).toHaveAttribute('aria-pressed', 'false')
+    await expect(nfc).toHaveAttribute('aria-pressed', 'true')
+    await expect(visibleCards).toHaveCount(16)
+
     await nfc.click()
     await expect(nfc).toHaveAttribute('aria-pressed', 'false')
     await expect(all).toHaveAttribute('aria-pressed', 'true')
     await expect(visibleCards).toHaveCount(32)
     await expect(clearAll).toHaveCount(0)
 
-    // Clicking "All" while a conference is active resets to the full grid.
+    // "All" is the one filter that does not combine: it clears the conferences.
     await afc.click()
     await expect(visibleCards).toHaveCount(16)
     await all.click()
@@ -1421,15 +1435,17 @@ test.describe('responsive integrity', () => {
       await Promise.all(Array.from(document.images).map((image) => image.decode()))
     })
 
-    expect(await page.locator('[data-node-id="188:2187"]').boundingBox()).toMatchObject({
+    // Updated frame 938:6081 (28 Aug): the band grew to 175 to hold the back link.
+    expect(await page.locator('[data-node-id="938:6081"]').boundingBox()).toMatchObject({
       x: 0,
       y: 0,
       width: 430,
-      height: 139,
+      height: 175,
     })
+    const backLink = page.getByRole('link', { name: 'Back to all Awards' })
     expect(await page.getByRole('heading', { level: 1 }).boundingBox()).toMatchObject({
       x: 24,
-      y: 139,
+      y: 175,
       width: 315,
     })
     const cards = page.locator('[data-mvp-card]')
@@ -1437,15 +1453,30 @@ test.describe('responsive integrity', () => {
     const firstMvpCard = await cards.first().boundingBox()
     expect(firstMvpCard).not.toBeNull()
     expect(firstMvpCard?.x).toBeCloseTo(24, 0)
-    expect(firstMvpCard?.y).toBeCloseTo(220, 0)
+    expect(firstMvpCard?.y).toBeCloseTo(228, 0)
     expect(firstMvpCard?.width).toBeCloseTo(316, 0)
     expect(firstMvpCard?.height).toBeCloseTo(505, 0)
     const secondMvpCard = await cards.nth(1).boundingBox()
     expect(secondMvpCard).not.toBeNull()
     expect(secondMvpCard?.x).toBeCloseTo(356, 0)
-    expect(secondMvpCard?.y).toBeCloseTo(220, 0)
+    expect(secondMvpCard?.y).toBeCloseTo(228, 0)
     expect(secondMvpCard?.width).toBeCloseTo(316, 0)
     await expect(page.locator('[data-nav-id="awards"]')).toHaveAttribute('aria-current', 'page')
+
+    // 28 Aug feedback: the back link freezes with the band; the title scrolls.
+    // The 932 frame viewport holds the whole page, so a phone-height viewport
+    // stands in to make the document actually scrollable.
+    await page.setViewportSize({ width: 430, height: 600 })
+    const linkAtRest = await backLink.boundingBox()
+    expect(linkAtRest).not.toBeNull()
+    const scrolled = await page.evaluate(() => {
+      window.scrollTo(0, 200)
+      return window.scrollY
+    })
+    expect(scrolled, 'Route is not scrollable, so freezing proves nothing').toBeGreaterThan(0)
+    expect((await backLink.boundingBox())?.y).toBeCloseTo(linkAtRest?.y ?? 0, 0)
+    const scrolledHeading = await page.getByRole('heading', { level: 1 }).boundingBox()
+    expect(scrolledHeading?.y).toBeCloseTo(175 - scrolled, 0)
   })
 
   test('All Teams matches the browser-chrome-adjusted desktop Figma geometry', async ({ page }) => {
@@ -1585,19 +1616,97 @@ test.describe('responsive integrity', () => {
     await expect(cards).toHaveCount(37)
     expect(await cards.first().boundingBox()).toMatchObject({ width: 382, height: 70 })
 
-    await page.getByRole('button', { name: 'Exclusive' }).click()
-    await expect(page.locator('[data-bet-section]:not([hidden])')).toHaveCount(1)
+    const allBetsFilter = page.getByRole('button', { name: 'All', exact: true })
+    const exclusive = page.getByRole('button', { name: 'Exclusive' })
+    const mvp = page.getByRole('button', { name: 'MVP Picks' })
+    const visibleSections = page.locator('[data-bet-section]:not([hidden])')
+
+    await exclusive.click()
+    await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleSections).toHaveCount(1)
     await expect(page.locator('[data-bet-card]:not([hidden])')).toHaveCount(2)
+
+    /*
+     * 28 Aug feedback: categories combine. Adding MVP Picks widens the list
+     * rather than replacing Exclusive, and "All" stays unpressed while any
+     * category is.
+     */
+    await mvp.click()
+    await expect(exclusive).toHaveAttribute('aria-pressed', 'true')
+    await expect(mvp).toHaveAttribute('aria-pressed', 'true')
+    await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleSections).toHaveCount(2)
+
+    /*
+     * 28 Aug feedback: "nothing is selected and I still see things". Clearing
+     * the last category is an empty selection, not a silent fallback to "All",
+     * so the screen empties out and says so.
+     */
+    await exclusive.click()
+    await expect(visibleSections).toHaveCount(1)
+    await mvp.click()
+    await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleSections).toHaveCount(0)
+    await expect(page.getByText('No bets match your filters.')).toBeVisible()
+
+    // "All" is the way back to everything, and it is an explicit click.
+    await allBetsFilter.click()
+    await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'true')
+    await expect(visibleSections).toHaveCount(6)
+
+    // "All" is the one filter that does not combine: it clears the categories.
+    await exclusive.click()
+    await expect(visibleSections).toHaveCount(1)
+    await allBetsFilter.click()
+    await expect(exclusive).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleSections).toHaveCount(6)
 
     await page.getByRole('searchbox', { name: 'Search bets' }).fill('not a player')
     await expect(page.getByText('No bets match your filters.')).toBeVisible()
   })
 
   /*
+   * 28 Aug feedback: "cross-check the padding on the Selected filter". Figma
+   * 251:3002 is 69 x 33 with the label at x=12 and the 25px clear icon ending
+   * 4px short of the right edge -- 12 / 8 / 4 horizontally and 4 vertically.
+   */
+  test('All Bets pads the selected filter to its Figma box', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/all-bets')
+    await page.evaluate(() => document.fonts.ready)
+
+    const padding = await page.locator('[data-filter-value="all"]').evaluate((chip) => {
+      const style = getComputedStyle(chip)
+      return {
+        top: style.paddingTop,
+        right: style.paddingRight,
+        bottom: style.paddingBottom,
+        left: style.paddingLeft,
+      }
+    })
+    expect(padding).toMatchObject({
+      top: '4px',
+      right: '4px',
+      bottom: '4px',
+      left: '12px',
+    })
+
+    // The 25px icon has to fit inside the 33px chip, not overflow its padding box.
+    const chip = await page.locator('[data-filter-value="all"]').boundingBox()
+    const icon = await page.locator('[data-filter-value="all"] [data-filter-clear]').boundingBox()
+    expect(chip?.height).toBeCloseTo(33, 0)
+    expect(icon?.height).toBeCloseTo(25, 0)
+    expect((icon?.y ?? 0) - (chip?.y ?? 0)).toBeCloseTo(4, 0)
+    expect((chip?.x ?? 0) + (chip?.width ?? 0) - ((icon?.x ?? 0) + (icon?.width ?? 0))).toBeCloseTo(
+      4,
+      0,
+    )
+  })
+
+  /*
    * 791:3532 puts "Clear All" flush with the right edge of the 382 filter block,
-   * on the row that carries "Offensive ROTY Picks" (27 Aug feedback). Unlike All
-   * Teams this screen always has a category selected, so "nothing to clear" is
-   * the default "All" with an empty search rather than no selection at all.
+   * on the row that carries "Offensive ROTY Picks" (27 Aug feedback). "Nothing
+   * to clear" is no category chosen -- the "All" default -- with an empty search.
    */
   test('All Bets reveals Clear All once a category or a search narrows the list', async ({ page }) => {
     await page.setViewportSize({ width: 430, height: 932 })
@@ -1647,8 +1756,10 @@ test.describe('responsive integrity', () => {
       await page.goto('/fanduel')
       await page.evaluate(() => document.fonts.ready)
 
+      // Selected by role rather than by Figma node ID: the duplicated offer card
+      // is the app's own and carries no node ID (28 Aug feedback).
       const offsets = await page
-        .locator('[data-node-id="803:5566"], [data-node-id="803:5573"]')
+        .locator('[data-fanduel-offer] [aria-label^="Redeem"]')
         .evaluateAll((buttons) =>
           buttons.map((button) => {
             const box = button.getBoundingClientRect()
@@ -1659,7 +1770,7 @@ test.describe('responsive integrity', () => {
           }),
         )
 
-      expect(offsets).toHaveLength(2)
+      expect(offsets).toHaveLength(3)
       for (const offset of offsets) {
         expect(offset.start).toBeGreaterThan(0)
         expect(Math.abs(offset.start - offset.end)).toBeLessThan(1)
@@ -1874,7 +1985,7 @@ test.describe('responsive integrity', () => {
       x: 0,
       y: 0,
       width: 1280,
-      height: 1097,
+      height: 1443,
     })
     expect(await page.locator('[data-node-id="803:5181"]').boundingBox()).toMatchObject({
       x: 0,
@@ -1883,17 +1994,26 @@ test.describe('responsive integrity', () => {
       height: 147,
     })
 
+    /*
+     * Three cards, not the frame's two: the 28 Aug review asked for the standard
+     * offer to be duplicated, so it repeats on the frame's own 24px gap and the
+     * copy matches its source card box for box.
+     */
     const offers = page.locator('[data-fanduel-offer]')
-    await expect(offers).toHaveCount(2)
+    await expect(offers).toHaveCount(3)
     expect(await offers.nth(0).boundingBox()).toMatchObject({ x: 80, y: 187, width: 1120, height: 380 })
     expect(await offers.nth(1).boundingBox()).toMatchObject({ x: 80, y: 591, width: 1120, height: 322 })
+    expect(await offers.nth(2).boundingBox()).toMatchObject({ x: 80, y: 937, width: 1120, height: 322 })
 
     const rewardsCta = page.getByRole('button', { name: 'Redeem Rewards Club offer', exact: true })
     const offerCta = page.getByRole('button', { name: 'Redeem offer', exact: true })
+    const duplicateCta = page.getByRole('button', { name: 'Redeem second offer', exact: true })
     await expect(rewardsCta).toBeVisible()
     await expect(offerCta).toBeVisible()
+    await expect(duplicateCta).toBeVisible()
     expect(await rewardsCta.boundingBox()).toMatchObject({ x: 588, y: 499, width: 175, height: 36 })
     expect(await offerCta.boundingBox()).toMatchObject({ x: 588, y: 832, width: 175, height: 36 })
+    expect(await duplicateCta.boundingBox()).toMatchObject({ x: 588, y: 1178, width: 175, height: 36 })
     expect(await page.locator('[data-node-id="803:5562"]').boundingBox()).toMatchObject({
       x: 1132,
       y: 327,

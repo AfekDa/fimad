@@ -175,29 +175,55 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
     const requiredEmptyState = emptyState
     const requiredClearAllButton = clearAllButton
 
-    function selectFilter(selected: HTMLButtonElement) {
-      for (const button of filterButtons) {
-        const active = button === selected
-        button.dataset.state = active ? 'active' : 'default'
-        button.setAttribute('aria-pressed', String(active))
-        const clear = button.querySelector<HTMLElement>('[data-filter-clear]')
-        if (clear === null) throw new Error('All Bets filter is missing its clear-state icon')
-        clear.hidden = !active
-      }
+    const allFilter = filterButtons.find((button) => button.dataset.filterValue === 'all')
+    if (allFilter === undefined) throw new Error('All Bets is missing its "All" category filter')
+
+    /*
+     * "All" is an explicit choice, not a derived fallback: it shows everything
+     * and never combines with a category. Deselecting the last category is
+     * therefore an empty selection, which shows nothing rather than silently
+     * snapping back to "All" (28 Aug feedback: "nothing is selected and I
+     * still see things").
+     */
+    const categoryButtons = filterButtons.filter((button) => button !== allFilter)
+    const requiredAllFilter = allFilter
+
+    function setFilter(button: HTMLButtonElement, active: boolean) {
+      button.dataset.state = active ? 'active' : 'default'
+      button.setAttribute('aria-pressed', String(active))
+      const clear = button.querySelector<HTMLElement>('[data-filter-clear]')
+      if (clear === null) throw new Error('All Bets filter is missing its clear-state icon')
+      clear.hidden = !active
+    }
+
+    function selectedCategories() {
+      return categoryButtons
+        .filter((button) => button.getAttribute('aria-pressed') === 'true')
+        .map((button) => {
+          const value = button.dataset.filterValue
+          if (value === undefined) throw new Error('Selected All Bets filter has no category value')
+          return value
+        })
+    }
+
+    function resetToAll() {
+      for (const button of categoryButtons) setFilter(button, false)
+      setFilter(requiredAllFilter, true)
     }
 
     function applyFilters() {
-      const selected = filterButtons.find((button) => button.getAttribute('aria-pressed') === 'true')
-      if (selected === undefined) throw new Error('All Bets requires one selected category')
-
-      const category = selected.dataset.filterValue
-      if (category === undefined) throw new Error('Selected All Bets filter has no category value')
+      const categories = selectedCategories()
+      const showEverything = requiredAllFilter.getAttribute('aria-pressed') === 'true'
 
       const query = requiredSearch.value.trim().toLocaleLowerCase()
       let visibleCards = 0
 
       for (const section of sections) {
-        const categoryMatches = category === 'all' || section.dataset.betSection === category
+        const sectionId = section.dataset.betSection
+        if (sectionId === undefined) throw new Error('An All Bets section has no category value')
+        // Categories are additive. With neither "All" nor a category chosen
+        // nothing qualifies, so the screen empties out.
+        const categoryMatches = showEverything || categories.includes(sectionId)
         let sectionMatches = 0
 
         for (const card of section.querySelectorAll<HTMLElement>('[data-bet-card]')) {
@@ -214,27 +240,34 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
       requiredEmptyState.hidden = visibleCards !== 0
 
       /*
-       * "Clear All" is an escape hatch, not a permanent control. This screen
-       * always has a category selected, so "nothing to clear" means the default
-       * "All" category with an empty search rather than no selection at all
-       * (27 Aug feedback).
+       * "Clear All" is an escape hatch, not a permanent control, so "nothing to
+       * clear" is the unfiltered "All" view with an empty search (27 Aug
+       * feedback). An empty selection is something to clear: it is the state
+       * the escape hatch exists to get out of.
        */
-      requiredClearAllButton.hidden = category === 'all' && query.length === 0
+      requiredClearAllButton.hidden = showEverything && query.length === 0
     }
 
-    for (const button of filterButtons) {
+    for (const button of categoryButtons) {
       button.addEventListener('click', () => {
-        selectFilter(button)
+        setFilter(button, button.getAttribute('aria-pressed') !== 'true')
+        // Touching a category always leaves "All", whether that lands on a
+        // narrower list or on an empty selection.
+        setFilter(requiredAllFilter, false)
         applyFilters()
       })
     }
 
-    clearAllButton.addEventListener('click', () => {
-      const allFilter = filterButtons.find((button) => button.dataset.filterValue === 'all')
-      if (allFilter === undefined) throw new Error('All Bets is missing its "All" category filter')
+    // Clicking "All" is a reset to the unfiltered view; clicking it while
+    // already there is a no-op rather than a deselection.
+    allFilter.addEventListener('click', () => {
+      resetToAll()
+      applyFilters()
+    })
 
+    clearAllButton.addEventListener('click', () => {
       requiredSearch.value = ''
-      selectFilter(allFilter)
+      resetToAll()
       applyFilters()
     })
 

@@ -8,6 +8,31 @@ import styles from './Fanduel.module.css'
 import { CMS_FANDUEL, image, text, url } from '../../data/cms'
 
 const fanduel = CMS_FANDUEL
+
+/*
+ * 28 Aug feedback: "duplicate the 2nd FanDuel offer card". Frame 803:5180 draws
+ * the standard offer once; the page now renders it twice, so the list rather
+ * than the markup carries the repeat.
+ *
+ * Only the first entry is in the export, so only it carries Figma node IDs --
+ * the duplicate is the app's own, and reusing 803:5568 would make the node a
+ * design landmark no longer points at a single element. Both entries read the
+ * same CMS fields, so the copy is a true duplicate until the content hub grows
+ * a second set of offer keys.
+ */
+const STANDARD_OFFERS = [
+  {
+    ariaLabel: 'Redeem offer',
+    nodeIds: { card: '803:5568', image: '803:5569', copy: '803:5570', title: '803:5571', text: '803:5572', button: '803:5573' },
+  },
+  {
+    ariaLabel: 'Redeem second offer',
+    nodeIds: { card: undefined, image: undefined, copy: undefined, title: undefined, text: undefined, button: undefined },
+  },
+] as const
+
+const OFFER_TEXT_PLACEHOLDER =
+  'Lorem ipsum dolor sit amet consectetur. Sit fermentum aliquet vestibulum et vitae. Lorem id lobortis vitae duis ac morbi eu malesuada. Nisl pellentesque aliquet aliquet aliquam enim mauris. Neque vestibulum sit quam vitae. Cursus amet morbi lectus arcu tellus mattis. A neque nisi praesent vel tempor nascetur lobortis. Aliquet ipsum sed tortor tempus.'
 ---
 
 <div class={styles.page} data-node-id="803:5180" data-fanduel-page>
@@ -40,25 +65,29 @@ const fanduel = CMS_FANDUEL
       </div>
     </article>
 
-    <article class:list={[styles.offer, styles.standardOffer]} data-node-id="803:5568" data-fanduel-offer>
-      <img class={styles.offerImage} src={image(fanduel?.offer_image, ASSETS.fanduelOffer)} alt="Your most rewarding season ever" data-node-id="803:5569" />
-      <div class={styles.standardContent}>
-        <div class={styles.copy} data-node-id="803:5570">
-          <h1 data-node-id="803:5571">{text(fanduel?.offer_title, 'TITLE OF THE OFFER')}</h1>
-          <p data-node-id="803:5572">{text(fanduel?.offer_text, 'Lorem ipsum dolor sit amet consectetur. Sit fermentum aliquet vestibulum et vitae. Lorem id lobortis vitae duis ac morbi eu malesuada. Nisl pellentesque aliquet aliquet aliquam enim mauris. Neque vestibulum sit quam vitae. Cursus amet morbi lectus arcu tellus mattis. A neque nisi praesent vel tempor nascetur lobortis. Aliquet ipsum sed tortor tempus.')}</p>
-        </div>
-        <Button
-          variant="fanduel"
-          state="active"
-          label={text(fanduel?.redeem_label, 'REDEEM OFFER')}
-          href={url(fanduel?.redeem_url)}
-          nodeId="803:5573"
-          ariaLabel="Redeem offer"
-          width={175}
-          class={styles.offerAction}
-        />
-      </div>
-    </article>
+    {
+      STANDARD_OFFERS.map((offer) => (
+        <article class:list={[styles.offer, styles.standardOffer]} data-node-id={offer.nodeIds.card} data-fanduel-offer>
+          <img class={styles.offerImage} src={image(fanduel?.offer_image, ASSETS.fanduelOffer)} alt="Your most rewarding season ever" data-node-id={offer.nodeIds.image} />
+          <div class={styles.standardContent}>
+            <div class={styles.copy} data-node-id={offer.nodeIds.copy}>
+              <h1 data-node-id={offer.nodeIds.title}>{text(fanduel?.offer_title, 'TITLE OF THE OFFER')}</h1>
+              <p data-node-id={offer.nodeIds.text}>{text(fanduel?.offer_text, OFFER_TEXT_PLACEHOLDER)}</p>
+            </div>
+            <Button
+              variant="fanduel"
+              state="active"
+              label={text(fanduel?.redeem_label, 'REDEEM OFFER')}
+              href={url(fanduel?.redeem_url)}
+              nodeId={offer.nodeIds.button}
+              ariaLabel={offer.ariaLabel}
+              width={175}
+              class={styles.offerAction}
+            />
+          </div>
+        </article>
+      ))
+    }
   </section>
 
   <AppNav />

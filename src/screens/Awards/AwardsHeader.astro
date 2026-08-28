@@ -6,6 +6,8 @@ export interface Props {
   readonly searchId: string
   readonly searchLabel: string
   readonly clearLabel: string
+  /** Extra class for the band, for pages whose band holds more than the search. */
+  readonly class?: string | undefined
   readonly nodeIds: {
     readonly header: string
     readonly brand: string
@@ -16,10 +18,10 @@ export interface Props {
   }
 }
 
-const { searchId, searchLabel, clearLabel, nodeIds } = Astro.props
+const { searchId, searchLabel, clearLabel, nodeIds, class: className } = Astro.props
 ---
 
-<header class={styles.header} data-node-id={nodeIds.header}>
+<header class:list={[styles.header, className]} data-node-id={nodeIds.header}>
   <div class={styles.brand} data-node-id={nodeIds.brand}>
     <p class={styles.brandByline} data-node-id={nodeIds.byline}>Cody Brown’s</p>
     <p class={styles.brandTitle} data-node-id={nodeIds.title}>NFL BETTING GUIDE</p>
@@ -42,4 +44,6 @@ const { searchId, searchLabel, clearLabel, nodeIds } = Astro.props
       <img class={styles.searchClearCross} src={ASSETS.teamsClearCross} alt="" />
     </button>
   </form>
+
+  <slot />
 </header>
