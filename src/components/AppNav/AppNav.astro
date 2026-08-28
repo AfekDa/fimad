@@ -89,12 +89,15 @@ function isCurrent(href: string): boolean {
 
 <script>
   import { TEAMS } from '../../data/teams'
+  import { TEAM_SEARCH_ALIASES, normalizeTeamQuery } from '../../data/teamSearchAliases'
 
   /*
-   * The nav search takes the user to a team page on an EXACT name match only
-   * (27 Aug feedback: desktop search did not work at all). Anything short of a
-   * full team name changes nothing -- the field is a navigator, not a filter,
-   * because the nav is global and has no card list of its own to narrow.
+   * The nav search is a navigator, not a filter -- the nav is global and has no
+   * card list of its own to narrow. Each keystroke navigates only on the full
+   * team name (27 Aug feedback: desktop search did not work at all), because
+   * short aliases like "ne" would fire mid-way through typing "new york jets".
+   * Submitting also resolves nicknames, abbreviations, former names, slang and
+   * misspellings through the alias table.
    */
   function startNavTeamSearch() {
     const search = document.querySelector<HTMLInputElement>('[data-nav-team-search]')
@@ -104,19 +107,27 @@ function isCurrent(href: string): boolean {
     if (search === null || search.dataset.wired === 'true') return
     search.dataset.wired = 'true'
 
-    function navigateOnExactMatch() {
-      if (search === null) return
-      const query = search.value.trim().toLocaleLowerCase()
-      if (query.length === 0) return
+    function teamForQuery(aliasesAllowed: boolean) {
+      if (search === null) return undefined
+      const query = normalizeTeamQuery(search.value)
+      if (query.length === 0) return undefined
 
-      const team = TEAMS.find((candidate) => candidate.name.toLocaleLowerCase() === query)
-      if (team !== undefined) window.location.assign(team.href)
+      const byName = TEAMS.find((candidate) => normalizeTeamQuery(candidate.name) === query)
+      if (byName !== undefined || !aliasesAllowed) return byName
+
+      const nickname = TEAM_SEARCH_ALIASES[query]
+      if (nickname === undefined) return undefined
+      return TEAMS.find((candidate) => normalizeTeamQuery(candidate.name).includes(nickname))
     }
 
-    search.addEventListener('input', navigateOnExactMatch)
+    search.addEventListener('input', () => {
+      const team = teamForQuery(false)
+      if (team !== undefined) window.location.assign(team.href)
+    })
     search.form?.addEventListener('submit', (event) => {
       event.preventDefault()
-      navigateOnExactMatch()
+      const team = teamForQuery(true)
+      if (team !== undefined) window.location.assign(team.href)
     })
   }
 
