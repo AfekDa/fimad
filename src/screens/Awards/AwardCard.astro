@@ -13,6 +13,6 @@ const { card } = Astro.props
 <article class={styles.card} data-node-id={card.nodeId} data-award-card data-award-title={card.title}>
   <img class={styles.image} src={card.image} alt={card.imageAlt} loading="lazy" decoding="async" data-reveal />
   <span class={styles.scrim} aria-hidden="true"></span>
-  <h2 class={styles.title} data-node-id={card.headingNodeId}>MOST VALUABLE<br />PLAYER PICKS</h2>
+  <h2 class={styles.title} data-node-id={card.headingNodeId}>{card.title}</h2>
   <Button variant="button" label="Learn More" nodeId={card.buttonNodeId} href={card.href} />
 </article>
