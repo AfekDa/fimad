@@ -6,6 +6,7 @@
  * design's own placeholders for anything the CMS has not filled in yet.
  */
 import payload from './cms-content.json'
+import localImages from './cms-images.json'
 
 export interface CmsHome {
   readonly hero_image?: string
@@ -162,9 +163,17 @@ export function text(value: string | undefined, fallback: string): string {
   return typeof value === 'string' && value.trim() !== '' ? value.trim() : fallback
 }
 
-/** Same, for an image url. */
+/*
+ * scripts/sync-cms-images.mjs snapshots every Base44 file url into public/cms/
+ * and records the mapping here. Urls the sync has not (or could not) snapshot
+ * are absent and stay remote.
+ */
+const LOCAL_IMAGES: Record<string, string> = localImages
+
+/** Same, for an image url — served from the build's local snapshot when synced. */
 export function image(value: string | undefined, fallback: string): string {
-  return typeof value === 'string' && value.trim() !== '' ? value : fallback
+  const src = typeof value === 'string' && value.trim() !== '' ? value : fallback
+  return LOCAL_IMAGES[src] ?? src
 }
 
 /** A CMS textarea split into paragraphs on blank lines, or the fallback prose. */
