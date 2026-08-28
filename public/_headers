@@ -1,0 +1,11 @@
+# Netlify serves everything with `max-age=0, must-revalidate` unless told
+# otherwise, which makes every image re-check the network on each navigation.
+# Both asset families below carry a hash in their filename — Astro hashes
+# /_astro/* by content, and sync-cms-images.mjs names /cms/* by source url —
+# so a changed picture always arrives under a new path and long caching is safe.
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/cms/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=604800

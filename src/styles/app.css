@@ -11,14 +11,14 @@
 /*
  * Section-to-section motion. Figma carries no motion spec, so these are product
  * values rather than tokens: long enough to read as a transition, short enough
- * that a tab still feels immediate. The 27 Aug review asked for the overall
- * load to feel soft and slightly slower, so the swap runs longer on an
- * ease-out that lands gently, and hard loads fade the document in below.
+ * that a tab still feels immediate. The 28 Aug review found the 480ms swap
+ * reads as lag rather than softness, so tabs now cross-fade quickly while the
+ * one-time hard load keeps a gentler fade on the same ease-out.
  */
 :root {
-  --motion-duration-page: 480ms;
+  --motion-duration-page: 200ms;
   --motion-ease-page: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --motion-duration-load: 700ms;
+  --motion-duration-load: 400ms;
 }
 
 /* Matches the reset's reduced-motion treatment: keep the swap, drop the motion. */
