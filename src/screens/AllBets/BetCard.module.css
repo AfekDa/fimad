@@ -9,6 +9,11 @@
   background: var(--surface-bet-card);
 }
 
+/* Search filtering toggles this attribute directly in the client controller. */
+.card[hidden] {
+  display: none;
+}
+
 .pick {
   display: flex;
   flex: 1 1 auto;
