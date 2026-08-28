@@ -55,7 +55,8 @@ describe('Individual Team', () => {
   })
 
   it('ships the fail-fast search controller', () => {
-    expect(body.querySelectorAll('script')).toHaveLength(1)
+    // The page's own controller plus the AppNav team search it always docks.
+    expect(body.querySelectorAll('script')).toHaveLength(2)
   })
 })
 

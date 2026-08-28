@@ -279,7 +279,7 @@
 .teamLogo {
   position: relative;
   display: block;
-  width: 60px;
+  width: 100px;
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;
@@ -287,11 +287,11 @@
 
 .teamLogoLeaf {
   position: absolute;
-  top: -15.78px;
-  left: -5.77px;
+  top: -13px;
+  left: -3.64px;
   display: block;
-  width: 71.5px;
-  height: 71.1px;
+  width: 66px;
+  height: 66px;
   max-width: none;
 }
 
@@ -1090,6 +1090,19 @@
     left: var(--desktop-content-inline);
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  /* Team Card 927:6415: Team Icon 927:6428 is 168x68 with the leaf reframed. */
+  .teamLogo {
+    width: 168px;
+    height: 68px;
+  }
+
+  .teamLogoLeaf {
+    top: -20.45px;
+    left: -5.93px;
+    width: 107.4px;
+    height: 108.9px;
   }
 
   .teamName {

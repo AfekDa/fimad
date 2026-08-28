@@ -63,7 +63,7 @@ const { team = BUFFALO_BILLS } = Astro.props
     <section
       class={styles.hero}
       data-node-id="162:2215"
-      data-desktop-node-id="390:1744"
+      data-desktop-node-id="927:6415"
       aria-labelledby="team-name"
     >
       <picture class={styles.heroPicture}>
@@ -72,7 +72,11 @@ const { team = BUFFALO_BILLS } = Astro.props
       </picture>
       <div class={styles.heroScrim} aria-hidden="true"></div>
       <div class={styles.heroCopy}>
-        <span class:list={[styles.teamLogo, team.logoIsCms && styles.cmsLogo]} data-node-id="181:1340">
+        <span
+          class:list={[styles.teamLogo, team.logoIsCms && styles.cmsLogo]}
+          data-node-id="181:1340"
+          data-desktop-node-id="927:6428"
+        >
           <picture class={styles.reframedPicture}>
             <source media="(min-width: 768px)" srcset={team.logoDesktop} />
             <img class={styles.teamLogoLeaf} src={team.logo} alt="" aria-hidden="true" />
