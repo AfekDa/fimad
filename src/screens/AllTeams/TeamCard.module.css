@@ -9,7 +9,15 @@
   flex-shrink: 0;
   overflow: hidden;
   border-radius: var(--radius-card);
-  background: var(--color-white);
+  /*
+   * 28 Aug feedback: the 49ers card showed a white border on top on mobile and
+   * desktop. The shell behind the cover photo was white, and subpixel rounding
+   * along the card's rounded top edge let it peek through as a hairline on
+   * every team card. The Figma card (181:1360) is a full-bleed photo with no
+   * white anywhere, so the shell matches the page navy instead — any rounding
+   * gap now blends into the background, and the loading placeholder does too.
+   */
+  background: var(--color-navy);
 }
 
 .imageBox {
