@@ -11,18 +11,43 @@
 /*
  * Section-to-section motion. Figma carries no motion spec, so these are product
  * values rather than tokens: long enough to read as a transition, short enough
- * that a tab still feels immediate.
+ * that a tab still feels immediate. The 27 Aug review asked for the overall
+ * load to feel soft and slightly slower, so the swap runs longer on an
+ * ease-out that lands gently, and hard loads fade the document in below.
  */
 :root {
-  --motion-duration-page: 320ms;
-  --motion-ease-page: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-duration-page: 480ms;
+  --motion-ease-page: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --motion-duration-load: 700ms;
 }
 
 /* Matches the reset's reduced-motion treatment: keep the swap, drop the motion. */
 @media (prefers-reduced-motion: reduce) {
   :root {
     --motion-duration-page: 0.01ms;
+    --motion-duration-load: 0.01ms;
   }
+}
+
+/*
+ * Soft first paint. Animating html rather than body matters: ClientRouter
+ * replaces the body element on every tab swap, which would restart this fade on
+ * top of the cross-fade, while the root element lives for the whole session so
+ * the fade runs exactly once per hard load. The canvas stays navy throughout
+ * because the propagated html background is not part of the element's opacity.
+ */
+@keyframes appLoadFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+html {
+  animation: appLoadFadeIn var(--motion-duration-load) var(--motion-ease-page) both;
 }
 
 /*
@@ -30,7 +55,13 @@
  * and the shell is zoomed on desktop, so at widths where a page ends above the
  * fold the canvas showed through white below it. Painting the body means no
  * screen has to pad itself out to the viewport to stay navy to the edge.
+ * The html backstop keeps the ground navy while the load fade holds the body
+ * transparent, so the first frames never flash the white canvas.
  */
+html {
+  background: var(--color-navy);
+}
+
 body {
   background: var(--color-navy);
 }
