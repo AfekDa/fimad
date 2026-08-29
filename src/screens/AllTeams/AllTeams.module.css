@@ -1,8 +1,13 @@
 /* All Teams — Figma frame 162:1760, 430 × 2931. */
 
 .page {
-  --teams-browser-shield: env(safe-area-inset-top);
-  --teams-safe-top: calc(var(--teams-content-top) + var(--teams-browser-shield));
+  /*
+   * The viewport is laid out inside the safe area (see BaseLayout), so this is
+   * the frame's own 24px inset and the inset stays zero on every device. It is
+   * still a named value because the sticky header below reproduces it inside
+   * its own band and hands the same amount back to the flow.
+   */
+  --teams-safe-top: calc(var(--teams-content-top) + env(safe-area-inset-top));
 
   position: relative;
   width: 100%;
@@ -17,34 +22,6 @@
   padding: var(--teams-safe-top) var(--content-padding-inline)
     calc(var(--teams-content-tail) + var(--space-24));
   background: var(--color-navy);
-}
-
-/*
- * iPhone Safari draws its compact toolbar over the page. Keep the unsafe top
- * inset opaque so content scrolling behind the sticky header cannot be sampled
- * into Safari's translucent toolbar treatment.
- */
-.page::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: calc(var(--layer-content) + 1);
-  height: var(--teams-browser-shield);
-  background: var(--color-navy);
-  pointer-events: none;
-}
-
-/*
- * Safari 26 can report no useful top inset while its floating controls still
- * sample roughly 50px of page content. Reserve a little more than that region
- * on iOS so the browser can only sample the solid navy shield.
- */
-@supports (-webkit-touch-callout: none) {
-  .page {
-    --teams-browser-shield: max(env(safe-area-inset-top), 64px);
-  }
 }
 
 .content {
@@ -341,10 +318,6 @@
 /* Desktop frame 377:185. Its first 118px are Chrome capture rather than
  * product UI, so every vertical coordinate below is adjusted by that amount. */
 @media (min-width: 768px) {
-  .page::before {
-    display: none;
-  }
-
   .page {
     /*
      * Fluid for the same reason as the mobile rule. The frame's own 94px tail is
