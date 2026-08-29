@@ -88,7 +88,7 @@ export interface TeamPageContent {
   readonly logoDesktop: string
   /** A CMS logo is a plain mark, so it is shown whole instead of reframed. */
   readonly logoIsCms: boolean
-  readonly logoScale: 1 | 1.15
+  readonly logoScale: 1 | 1.15 | 1.3
   readonly overviewParagraphs: readonly string[]
   readonly staff: readonly TeamStaffMember[]
   readonly accordionSections: readonly TeamAccordionSection[]
