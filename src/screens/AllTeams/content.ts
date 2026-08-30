@@ -32,7 +32,7 @@ export interface TeamCardContent {
   readonly crop: TeamCardCrop
   /** A CMS logo is a plain mark, so it is shown whole instead of reframed. */
   readonly logoIsCms: boolean
-  readonly logoScale: 1 | 1.15
+  readonly logoScale: 1 | 1.15 | 1.3
   readonly logo: string
   readonly logoDesktop: string
   readonly team: string

@@ -21,18 +21,24 @@ export interface Team {
   readonly slug: string
   readonly href: string
   readonly conference: Conference
-  readonly logoScale: 1 | 1.15
+  readonly logoScale: 1 | 1.15 | 1.3
 }
 
 export const TEAM_COUNT = 32
 
-/** Marks called out as visually smaller than the rest of the published set. */
-const ENLARGED_LOGO_TEAM_NUMBERS = new Set([
-  6, // Miami Dolphins
-  17, // Detroit Lions
-  18, // Minnesota Vikings
-  21, // Dallas Cowboys
-  27, // New Orleans Saints
+/**
+ * Marks called out as visually smaller than the rest of the published set.
+ *
+ * 29 Aug feedback: the Dolphins and Vikings marks still read small next to the
+ * rest of the row at 1.15, so those two take a further step up; the others sit
+ * right where they were.
+ */
+const ENLARGED_LOGO_SCALES = new Map<number, 1.15 | 1.3>([
+  [6, 1.3], // Miami Dolphins
+  [17, 1.15], // Detroit Lions
+  [18, 1.3], // Minnesota Vikings
+  [21, 1.15], // Dallas Cowboys
+  [27, 1.15], // New Orleans Saints
 ])
 
 function conferenceFor(published: string | undefined, number: number): Conference {
@@ -53,7 +59,7 @@ export const TEAMS: readonly Team[] = Array.from({ length: TEAM_COUNT }, (_, ind
     slug,
     href: `/teams/${slug}`,
     conference: conferenceFor(published?.conference, number),
-    logoScale: ENLARGED_LOGO_TEAM_NUMBERS.has(number) ? 1.15 : 1,
+    logoScale: ENLARGED_LOGO_SCALES.get(number) ?? 1,
   }
 })
 
