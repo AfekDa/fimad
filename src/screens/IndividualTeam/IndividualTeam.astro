@@ -349,7 +349,10 @@ const { team = BUFFALO_BILLS } = Astro.props
                       <div class={styles.exploreScrim} aria-hidden="true"></div>
                       <span class={styles.conference}>{card.conference}</span>
                       <div class={styles.exploreDetails}>
-                        <span class={styles.teamLogo}>
+                        <span
+                          class:list={[styles.teamLogo, card.logoIsCms && styles.cmsLogo]}
+                          style={`--team-logo-scale: ${card.logoScale}`}
+                        >
                           <picture class={styles.reframedPicture}>
                             <source media="(min-width: 768px)" srcset={card.logoDesktop} />
                             <img class={styles.teamLogoLeaf} src={card.logo} alt="" aria-hidden="true" loading="lazy" decoding="async" data-reveal />

@@ -1,5 +1,6 @@
 import { ASSETS } from '../../assets/assets'
 import { imagesForTeam } from '../../assets/teamImages'
+import { cmsTeam, image as cmsImage } from '../../data/cms'
 import { DIVISIONS, TEAMS, TEAM_COUNT } from '../../data/teams'
 import { withCmsContent } from './cmsContent'
 import type { Conference, Division, Team } from '../../data/teams'
@@ -86,6 +87,9 @@ export interface TeamExploreCard {
   readonly imageDesktop: string
   readonly logo: string
   readonly logoDesktop: string
+  /** A CMS logo is a plain mark, so it is shown whole instead of reframed. */
+  readonly logoIsCms: boolean
+  readonly logoScale: 1 | 1.15 | 1.3
 }
 
 export interface TeamExploreGroup {
@@ -337,6 +341,8 @@ export const BUFFALO_BILLS: TeamPageContent = {
         imageDesktop: ASSETS.teamExploreCard,
         logo: ASSETS.teamsLogoBuffalo,
         logoDesktop: ASSETS.teamsLogoBuffalo,
+        logoIsCms: false,
+        logoScale: 1,
       })),
     },
   ],
@@ -440,6 +446,14 @@ function buildExploreGroups(team: Team): readonly TeamExploreGroup[] {
       title: division,
       cards: TEAMS.filter((rival) => rival.division === division).map((rival) => {
         const rivalImages = imagesForTeam(rival.number)
+        /*
+         * The card wears what the rival's own page wears: its published hero
+         * photo and mark, falling back to the folder placeholders. The local
+         * explore slots are the design's Bills photography dealt to every
+         * folder, so without this overlay all 32 cards showed the same player
+         * (1 Sep report).
+         */
+        const published = cmsTeam(rival.number)
 
         return {
           /* Only the reference route's five cards have a node behind them. */
@@ -447,10 +461,15 @@ function buildExploreGroups(team: Team): readonly TeamExploreGroup[] {
           name: rival.name,
           conference: rival.conference,
           href: rival.href,
-          image: rivalImages.explore,
-          imageDesktop: rivalImages.exploreDesktop,
-          logo: rivalImages.logo,
-          logoDesktop: rivalImages.logoDesktop,
+          image: cmsImage(
+            published?.hero_image_mobile ?? published?.hero_image,
+            rivalImages.explore,
+          ),
+          imageDesktop: cmsImage(published?.hero_image, rivalImages.exploreDesktop),
+          logo: cmsImage(published?.logo_image, rivalImages.logo),
+          logoDesktop: cmsImage(published?.logo_image, rivalImages.logoDesktop),
+          logoIsCms: Boolean(published?.logo_image),
+          logoScale: rival.logoScale,
         }
       }),
     }
