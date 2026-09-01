@@ -103,6 +103,23 @@
   display: none;
 }
 
+/* Emptied by the search; `display: flex` above outranks the UA rule for
+ * [hidden], so the attribute needs its own declaration here. */
+.carousel[hidden] {
+  display: none;
+}
+
+/* Takes the hidden carousel's place, so the message lands where the cards were. */
+.emptyState {
+  width: calc(100% - 2 * var(--content-padding-inline));
+  margin: var(--space-32) var(--content-padding-inline) 0;
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc2-m-size);
+  line-height: var(--font-bc2-m-line);
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .page {
     min-height: var(--desktop-mvp-frame-height);

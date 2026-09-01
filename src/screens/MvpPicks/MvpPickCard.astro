@@ -12,7 +12,7 @@ export interface Props {
 const { pick, eager = false } = Astro.props
 ---
 
-<article class={styles.card} data-node-id={pick.nodeId} data-mvp-card>
+<article class={styles.card} data-node-id={pick.nodeId} data-mvp-card data-mvp-name={pick.name}>
   <img class={styles.image} src={pick.image} alt={pick.imageAlt} loading={eager ? undefined : 'lazy'} decoding="async" data-reveal />
   <span class={styles.scrim} aria-hidden="true"></span>
 

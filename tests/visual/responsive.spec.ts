@@ -1458,8 +1458,39 @@ test.describe('responsive integrity', () => {
 
     await expect(page.locator('[data-nav-id="awards"]')).toHaveAttribute('aria-current', 'page')
     await page.getByRole('searchbox', { name: 'Search awards' }).fill('not an award')
-    await expect(page.locator('[data-award-card]:not([hidden])')).toHaveCount(0)
+    // `hidden` alone proved nothing: the card's own `display: flex` outranked
+    // the UA rule for the attribute, so every card stayed on screen under the
+    // empty-state message. Only visibility catches that.
+    await expect(cards.first()).toBeHidden()
+    await expect(page.locator('[data-award-card]:visible')).toHaveCount(0)
     await expect(page.getByText('No awards match your search.')).toBeVisible()
+  })
+
+  test('An award page filters its picks by player', async ({ page }) => {
+    await page.setViewportSize({ width: 430, height: 932 })
+    await page.goto('/awards/award-1')
+
+    const cards = page.locator('[data-mvp-card]')
+    const search = page.getByRole('searchbox', { name: 'Search picks' })
+    await expect(cards).toHaveCount(3)
+
+    await search.fill('burrow')
+    await expect(page.locator('[data-mvp-card]:visible')).toHaveCount(1)
+    await expect(cards.first()).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'JOE BURROW' })).toBeVisible()
+
+    // Case folds, and the carousel goes with the cards so the message takes its
+    // place instead of stranding below an empty 505px band.
+    await search.fill('NOT A PLAYER')
+    await expect(page.locator('[data-mvp-card]:visible')).toHaveCount(0)
+    await expect(page.locator('[data-picks-carousel]')).toBeHidden()
+    const emptyState = page.getByText('No picks match your search.')
+    await expect(emptyState).toBeVisible()
+    expect((await emptyState.boundingBox())?.y).toBeCloseTo(228, 0)
+
+    await page.getByRole('button', { name: 'Clear pick search' }).click()
+    await expect(page.locator('[data-mvp-card]:visible')).toHaveCount(3)
+    await expect(emptyState).toBeHidden()
   })
 
   test('Most Valuable Player Picks preserves its mobile carousel geometry', async ({ page }) => {

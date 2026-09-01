@@ -39,8 +39,8 @@ const {
     */}
   <AwardsHeader
     searchId="mvp-search"
-    searchLabel="Search awards"
-    clearLabel="Clear search"
+    searchLabel="Search picks"
+    clearLabel="Clear pick search"
     class={styles.headerBand}
     nodeIds={{ header: '938:6081', brand: '938:6082', byline: '938:6083', title: '938:6084', search: '938:6086', searchIcon: '938:6087' }}
   >
@@ -66,10 +66,68 @@ const {
     </h1>
   </div>
 
-  <section class={styles.carousel} aria-label="Most valuable player picks" data-node-id="188:2195">
+  <section class={styles.carousel} aria-label="Most valuable player picks" data-node-id="188:2195" data-picks-carousel>
     {picks.map((pick, index) => <MvpPickCard pick={pick} eager={index < 3} />)}
   </section>
+
+  <p class={styles.emptyState} data-empty-picks hidden>No picks match your search.</p>
   </div>
 
   <AppNav />
 </div>
+
+<script>
+  function startPicksController() {
+    const page = document.querySelector<HTMLElement>('[data-mvp-picks-page]')
+
+    // The router keeps this listener for the session, so other routes are a no-op.
+    if (page === null) return
+
+    const search = page.querySelector<HTMLInputElement>('[data-award-search]')
+    const carousel = page.querySelector<HTMLElement>('[data-picks-carousel]')
+    const cards = [...page.querySelectorAll<HTMLElement>('[data-mvp-card]')]
+    const emptyState = page.querySelector<HTMLElement>('[data-empty-picks]')
+
+    if (search === null || carousel === null || cards.length === 0 || emptyState === null) {
+      throw new Error('Picks controller is missing its search, carousel, cards, or empty state')
+    }
+
+    const requiredSearch = search
+    const requiredCarousel = carousel
+    const requiredEmptyState = emptyState
+
+    /*
+     * The cards on this page are one award's picks, so the search matches the
+     * player each card names — the same way /awards matches an award's title.
+     */
+    function applySearch() {
+      const query = requiredSearch.value.trim().toLocaleLowerCase()
+      let visibleCount = 0
+
+      for (const card of cards) {
+        const visible = card.dataset.mvpName?.toLocaleLowerCase().includes(query) ?? false
+        card.hidden = !visible
+        if (visible) visibleCount += 1
+      }
+
+      /*
+       * The carousel holds a fixed 505px row whether or not a card is left in
+       * it, so it has to go as well — otherwise the message strands below an
+       * empty band the height of the cards it used to hold.
+       */
+      requiredCarousel.hidden = visibleCount === 0
+      requiredEmptyState.hidden = visibleCount !== 0
+    }
+
+    search.addEventListener('input', applySearch)
+    search.form?.addEventListener('submit', (event) => event.preventDefault())
+    search.form?.addEventListener('reset', () => requestAnimationFrame(applySearch))
+  }
+
+  /*
+   * Bundled scripts run once per document, so client-side navigation would leave
+   * the search wired to a screen the router has already discarded. astro:page-load
+   * fires on the first render and after every swap.
+   */
+  document.addEventListener('astro:page-load', startPicksController)
+</script>
