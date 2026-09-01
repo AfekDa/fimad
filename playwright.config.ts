@@ -58,12 +58,12 @@ export default defineConfig({
     },
     {
       name: 'mobile-chrome',
-      testMatch: /responsive\.spec\.ts/,
+      testMatch: /(responsive|ios-chrome-strip)\.spec\.ts/,
       use: { ...devices['Pixel 7'] },
     },
     {
       name: 'mobile-safari',
-      testMatch: /responsive\.spec\.ts/,
+      testMatch: /(responsive|ios-chrome-strip)\.spec\.ts/,
       use: { ...devices['iPhone 14'] },
     },
   ],

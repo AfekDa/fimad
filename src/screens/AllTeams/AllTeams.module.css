@@ -24,6 +24,15 @@
   background: var(--color-navy);
 }
 
+/*
+ * Outside the touch scroll model below, the scroller is not a box at all: its
+ * children lay out as if they were direct children of .content, which keeps the
+ * document flow, the Figma fidelity captures and the desktop frame untouched.
+ */
+.scroller {
+  display: contents;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -312,6 +321,37 @@
 
   .clearAll {
     margin-left: auto;
+  }
+}
+
+/*
+ * Per-screen half of the touch scroll model (app.css owns the structure): the
+ * page's own insets move onto the two boxes that replace it, so the header
+ * still clears Safari's controls and the last card still clears the dock.
+ */
+@media (pointer: coarse) and (hover: none) and (max-width: 767px) {
+  .page {
+    padding: 0;
+  }
+
+  .content {
+    height: 100%;
+    gap: 0;
+  }
+
+  .header {
+    margin-block: 0;
+    padding: var(--teams-safe-top) var(--content-padding-inline) var(--space-24);
+  }
+
+  .scroller {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-24);
+    width: 100%;
+    padding: 0 var(--content-padding-inline)
+      calc(var(--teams-content-tail) + var(--space-24));
   }
 }
 

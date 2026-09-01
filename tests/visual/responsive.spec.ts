@@ -1,6 +1,29 @@
-import { expect, test } from '@playwright/test'
+import { expect, test, type Page } from '@playwright/test'
 import { SCREENS } from '../../src/routes/screens'
 import { APP_NAV_ITEMS } from '../../src/components/AppNav/navItems'
+
+/*
+ * Scrolls a screen to its end and reports how far it moved.
+ *
+ * On touch pointers the screens no longer scroll the document: they fill the
+ * viewport and scroll inside a box that starts below the header, so that no
+ * content can enter the strip iOS 26 Safari fills with a blurred sample of the
+ * scrolling layer (see app.css and ios-chrome-strip.spec.ts). Everything these
+ * tests assert about scrolling is unchanged -- only which box moves is.
+ */
+async function scrollScreenToEnd(page: Page): Promise<number> {
+  return page.evaluate(() => {
+    const area = document.querySelector('.appScrollArea')
+    if (area !== null) {
+      area.scrollTop = area.scrollHeight
+      return area.scrollTop
+    }
+    window.scrollTo(0, document.documentElement.scrollHeight)
+    return window.scrollY
+  })
+}
+
+
 
 /** Plan: "Test each route at 320, 375, 390, 430, and 480 px, plus the exact source width". */
 const BREAKPOINTS = [320, 375, 390, 430, 480] as const
@@ -718,10 +741,7 @@ test.describe('responsive integrity', () => {
       const atTop = await searchField.boundingBox()
       expect(atTop, 'Search field was not rendered').not.toBeNull()
 
-      const scrolled = await page.evaluate(() => {
-        window.scrollTo(0, document.documentElement.scrollHeight)
-        return window.scrollY
-      })
+      const scrolled = await scrollScreenToEnd(page)
       // A page that cannot scroll would pass the assertions below for free.
       expect(scrolled, 'Route is not scrollable, so freezing proves nothing').toBeGreaterThan(0)
 
@@ -1027,7 +1047,7 @@ test.describe('responsive integrity', () => {
       await document.fonts.ready
       await Promise.all(Array.from(document.images).map((image) => image.decode().catch(() => undefined)))
     })
-    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight))
+    await scrollScreenToEnd(page)
 
     // The page used to end flush with the last Explore card, so the nav covered it.
     const lastCard = await page.locator('[aria-labelledby="explore-title"] article').last().boundingBox()

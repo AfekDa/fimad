@@ -21,7 +21,7 @@ export interface Props {
 const { searchId, searchLabel, clearLabel, nodeIds, class: className } = Astro.props
 ---
 
-<header class:list={[styles.header, className]} data-node-id={nodeIds.header}>
+<header class:list={[styles.header, 'appScrollHeader', className]} data-node-id={nodeIds.header}>
   <div class={styles.brand} data-node-id={nodeIds.brand}>
     <p class={styles.brandByline} data-node-id={nodeIds.byline}>Cody Brown’s</p>
     <p class={styles.brandTitle} data-node-id={nodeIds.title}>NFL BETTING GUIDE</p>

@@ -1437,3 +1437,28 @@
     padding-inline: 0;
   }
 }
+
+/*
+ * Per-screen half of the touch scroll model (app.css owns the structure).
+ * The page's own insets move onto the two boxes that replace it: the header
+ * gains the env(safe-area-inset-top) padding that clears Safari's floating
+ * controls, and the scroller carries the dock clearance so the last card can
+ * still scroll clear of the nav.
+ */
+@media (pointer: coarse) and (hover: none) and (max-width: 767px) {
+  .page {
+    min-height: 0;
+    padding-bottom: 0;
+    /* The shell clips; `clip` here would fight the scroller for the overflow. */
+    overflow: hidden;
+  }
+
+  .header {
+    height: auto;
+    padding-top: calc(env(safe-area-inset-top) + var(--space-24));
+  }
+
+  .content {
+    padding-bottom: calc(var(--nav-clearance) + var(--space-24));
+  }
+}

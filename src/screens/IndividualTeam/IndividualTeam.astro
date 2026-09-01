@@ -20,13 +20,13 @@ const { team = BUFFALO_BILLS } = Astro.props
 ---
 
 <div
-  class={styles.page}
+  class:list={[styles.page, 'appScrollShell']}
   data-node-id="162:1586"
   data-desktop-node-id="390:1337"
   data-team-detail-page
   data-team-name={team.name}
 >
-  <header class={styles.header} data-node-id="181:1321" data-desktop-node-id="390:1741">
+  <header class:list={[styles.header, 'appScrollHeader']} data-node-id="181:1321" data-desktop-node-id="390:1741">
     <div class={styles.brand} data-node-id="181:1322">
       <p class={styles.brandByline} data-node-id="181:1323">Cody Brown’s</p>
       <p class={styles.brandTitle} data-node-id="181:1324">NFL BETTING GUIDE</p>
@@ -59,7 +59,14 @@ const { team = BUFFALO_BILLS } = Astro.props
     </div>
   </header>
 
-  <main class={styles.content}>
+  {/*
+      iOS 26 Safari fills the strip under its address pill with a blurred sample
+      of the scrolling layer and refuses to paint fixed or sticky content there,
+      so the sticky header could not hide what passed behind it. Everything below
+      the header scrolls inside this box, which starts under the header, so no
+      content ever reaches the strip. See app.css.
+    */}
+  <main class:list={[styles.content, 'appScrollArea']}>
     <section
       class={styles.hero}
       data-node-id="162:2215"

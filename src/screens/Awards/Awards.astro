@@ -7,7 +7,7 @@ import { AWARD_CARDS } from './content'
 import styles from './Awards.module.css'
 ---
 
-<div class={styles.page} data-node-id="188:2037" data-awards-page>
+<div class:list={[styles.page, 'appScrollShell']} data-node-id="188:2037" data-awards-page>
   <AwardsHeader
     searchId="award-search"
     searchLabel="Search awards"
@@ -15,11 +15,20 @@ import styles from './Awards.module.css'
     nodeIds={{ header: '188:2038', brand: '188:2039', byline: '188:2040', title: '188:2041', search: '188:2042', searchIcon: '188:2043' }}
   />
 
+  {/*
+      iOS 26 Safari fills the strip under its address pill with a blurred sample
+      of the scrolling layer and refuses to paint fixed or sticky content there,
+      so the sticky header could not hide what passed behind it. Everything below
+      the header scrolls inside this box, which starts under the header, so no
+      content ever reaches the strip. See app.css.
+    */}
+  <div class:list={[styles.scroller, 'appScrollArea']}>
   <section class={styles.cards} aria-label="Awards" data-node-id="188:2046">
     {AWARD_CARDS.map((card, index) => <AwardCard card={card} eager={index < 3} />)}
   </section>
 
   <p class={styles.emptyState} data-empty-awards hidden>No awards match your search.</p>
+  </div>
   <AppNav />
 </div>
 

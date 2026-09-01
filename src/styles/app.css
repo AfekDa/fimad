@@ -131,3 +131,51 @@ img[data-reveal] {
 img[data-reveal].is-pending {
   opacity: 0;
 }
+
+/*
+ * Touch scroll model -- the fix for the 28 Aug iPhone report.
+ *
+ * iOS 26 Safari will not paint position: fixed or position: sticky content in
+ * the strip its floating address pill occupies. It fills that strip with a
+ * blurred sample of the scrolling layer instead, so a sticky header hides what
+ * passes behind it on screen but not in Safari's chrome -- headings and cards
+ * ghosted through the pill while the header sat right below, looking solid.
+ * A fixed navy shield could not help for the same reason: being fixed, Safari
+ * declined to paint it there too.
+ *
+ * The one thing Safari does paint in that strip is ordinary scrolling-layer
+ * content, so these screens give the strip permanently to their header: the
+ * screen fills the viewport and never scrolls, the header is a static block at
+ * the top whose env(safe-area-inset-top) padding covers the whole control strip
+ * in solid navy, and everything below it scrolls inside a box that starts under
+ * the header. No card can reach the strip at any scroll offset, so Safari has
+ * nothing to sample there but navy.
+ *
+ * Gated on touch pointers rather than width: the Figma fidelity captures run
+ * desktop Chrome at the native frame widths and must keep document flow.
+ */
+@media (pointer: coarse) and (hover: none) and (max-width: 767px) {
+  .appScrollShell {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .appScrollHeader {
+    flex: 0 0 auto;
+    /* Static, not sticky: it no longer needs to float over anything, and a
+     * sticky box here would be the very thing Safari refuses to paint. */
+    position: static;
+  }
+
+  /* min-height:0 is load-bearing -- without it the flex item refuses to shrink,
+   * the box grows past the viewport, and the document takes over scrolling
+   * again, putting content straight back under the address pill. */
+  .appScrollArea {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}

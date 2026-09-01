@@ -18,8 +18,8 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
 })
 ---
 
-<div class={styles.page} data-node-id="251:2889" data-all-bets-page>
-  <header class={styles.header} data-node-id="251:2892">
+<div class:list={[styles.page, 'appScrollShell']} data-node-id="251:2889" data-all-bets-page>
+  <header class:list={[styles.header, 'appScrollHeader']} data-node-id="251:2892">
     <div class={styles.brand} data-node-id="251:2893">
       <p class={styles.brandByline} data-node-id="251:2894">Cody Brown’s</p>
       <p class={styles.brandTitle} data-node-id="251:2895">NFL BETTING GUIDE</p>
@@ -44,6 +44,14 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
     </form>
   </header>
 
+  {/*
+      iOS 26 Safari fills the strip under its address pill with a blurred sample
+      of the scrolling layer and refuses to paint fixed or sticky content there,
+      so the sticky header could not hide what passed behind it. Everything below
+      the header scrolls inside this box, which starts under the header, so no
+      content ever reaches the strip. See app.css.
+    */}
+  <div class:list={[styles.scroller, 'appScrollArea']}>
   <section class={styles.filters} aria-label="Bet categories" data-node-id="251:3065">
     <div class={styles.filterRow} data-node-id="251:3001">
       {
@@ -145,6 +153,7 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
   </div>
 
   <p class={styles.emptyState} data-empty-bets hidden>No bets match your filters.</p>
+  </div>
   <AppNav />
 </div>
 

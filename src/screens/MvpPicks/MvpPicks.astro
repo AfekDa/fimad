@@ -31,7 +31,7 @@ const {
 } = Astro.props
 ---
 
-<div class={styles.page} data-node-id="188:2186" data-mvp-picks-page>
+<div class:list={[styles.page, 'appScrollShell']} data-node-id="188:2186" data-mvp-picks-page>
   {/*
     * 28 Aug feedback (updated frame 938:6081): "Back to all Awards" rides in
     * the frozen search band like the Individual Team page's back control, and
@@ -52,6 +52,13 @@ const {
     </a>
   </AwardsHeader>
 
+  {/*
+    iOS 26 Safari fills the strip under its address pill with a blurred sample
+    of the scrolling layer and refuses to paint fixed or sticky content there.
+    Everything below the header scrolls inside this box, which starts under the
+    header, so no content ever reaches the strip. See app.css.
+  */}
+  <div class:list={[styles.scroller, 'appScrollArea']}>
   <div class={styles.intro} data-node-id="188:2480">
     <h1 class={styles.heading} data-node-id="188:2286">
       <span class={styles.mobileHeading}>{title}</span>
@@ -62,6 +69,7 @@ const {
   <section class={styles.carousel} aria-label="Most valuable player picks" data-node-id="188:2195">
     {picks.map((pick, index) => <MvpPickCard pick={pick} eager={index < 3} />)}
   </section>
+  </div>
 
   <AppNav />
 </div>

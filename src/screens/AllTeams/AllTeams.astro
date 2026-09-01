@@ -10,13 +10,13 @@ import styles from './AllTeams.module.css'
 ---
 
 <div
-  class={styles.page}
+  class:list={[styles.page, 'appScrollShell']}
   data-node-id="162:1760"
   data-desktop-node-id="377:185"
   data-teams-page
 >
   <div class={styles.content} data-node-id="181:1247">
-    <header class={styles.header} data-node-id="181:1243">
+    <header class:list={[styles.header, 'appScrollHeader']} data-node-id="181:1243">
       <div class={styles.brand} data-node-id="162:1773">
         <p class={styles.brandByline} data-node-id="162:1774">Cody Brown’s</p>
         <p class={styles.brandTitle} data-node-id="162:1775">NFL BETTING GUIDE</p>
@@ -40,6 +40,16 @@ import styles from './AllTeams.module.css'
       </form>
     </header>
 
+    {/*
+      Everything below the header scrolls inside this element rather than in the
+      document. iOS 26 Safari will not paint position: fixed or position: sticky
+      content in the strip its floating controls occupy -- it fills that strip
+      with a blurred sample of the scrolling layer instead -- so a sticky header
+      cannot hide what passes behind it there, and the cards ghosted through the
+      address pill (28 Aug report). Scrolling inside a box that starts below the
+      header means no card is ever in that strip to be sampled.
+    */}
+    <div class:list={[styles.scroller, 'appScrollArea']} data-teams-scroller>
     <section class={styles.filters} data-node-id="181:1244" aria-labelledby="teams-heading">
       <h1 id="teams-heading" class={styles.heading} data-node-id="162:1761">ALL 32 TEAMS</h1>
       <div class={styles.filterRow} data-node-id="162:1762">
@@ -101,6 +111,7 @@ import styles from './AllTeams.module.css'
 
     <div class={styles.cards} data-node-id="181:325">
       {ALL_TEAMS_CARDS.map((card, index) => <TeamCard card={card} eager={index < 3} />)}
+    </div>
     </div>
   </div>
 

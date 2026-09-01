@@ -47,18 +47,13 @@ const crossFade = {
   <head>
     <meta charset="UTF-8" />
     {/*
-      No `viewport-fit=cover`. That keyword opts the page into iOS 26 Safari's
-      edge-to-edge treatment: the layout viewport grows under the status bar and
-      the floating address pill, and Safari then paints those controls over a
-      blurred sample of the page. The sample is taken from the scrolling content
-      alone -- the sticky headers and the fixed navy shield that cover that strip
-      on screen are composited separately and are not in it -- so cards and
-      headings that are visually hidden behind a header still ghost through the
-      browser chrome (28 Aug report). Laying out inside the safe area instead
-      means no page content is ever under those controls, and it matches the
-      Figma frames, which are all authored with the status bar cropped off.
+      `viewport-fit=cover` is required, not optional, on iOS 26. It is what makes
+      Safari report its floating controls through env(safe-area-inset-top) --
+      about 86px on an iPhone 14 -- which is the only way the page can lay itself
+      out around them. Without it the inset reads 0 and the header rides up under
+      the address pill.
     */}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#011556" />
     <title>{title}</title>
     <ClientRouter />

@@ -273,7 +273,14 @@
     flex-shrink: 0;
   }
 
-  .filter[data-filter-value='all'] {
+  /*
+   * All Bets renders its "All" chip selected, and Figma 251:3002 draws that
+   * selected chip 78px wide -- a hair past what the label plus the 25px clear
+   * icon measure. The floor belongs to the selected state alone: All Teams
+   * lets "All" go unselected, and applying 78px there stretched a chip with no
+   * icon well past its "AFC"/"NFC" siblings.
+   */
+  .filter[data-filter-value='all'][data-state='active'] {
     min-width: 78px;
   }
 }
