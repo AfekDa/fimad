@@ -1138,7 +1138,7 @@
   .overview {
     display: grid;
     grid-template-columns: 357px minmax(0, 739px);
-    grid-template-rows: minmax(0, 326px) 152px;
+    grid-template-rows: min-content 152px;
     column-gap: var(--space-24);
     row-gap: var(--space-32);
     height: 622px;
