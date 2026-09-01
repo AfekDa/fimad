@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T13:47:42.295Z",
+  "generated_at": "2026-09-01T13:51:37.403Z",
   "generated_by": "darcy.cordell@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
@@ -2469,9 +2469,9 @@
       "future_bet_url": null,
       "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/de53084ec_Dt_FF_DetroitLions_Amon-raStBrown.png",
       "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/29c72e540_Mb_DetroitLions-JahmyrGibbs.png",
-      "receivers": "Amon-Ra St Brown is one of the safest floor receivers in the league, with three consecutive seasons of 115+ receptions and 1250+ yards. He’s also a beast in the end zone with 10+ receiving touchdowns in three straight campaigns. I don’t see that changing this year and you can get him at decent odds for 10+ touchdowns once again. Amon-Ra rarely misses games and he’s an incredibly reliable option for Jared Goff. Expect similar numbers once again in 2026. I like him to have 10+ receiving touchdowns at +100. Jameson Williams is a nice complement to Amon-Ra, he also had over 1000 yards last season to make it back to back 1000+ seasons. Williams loves to get behind defenses and is always a threat with the deep ball. Isaac TeSlaa showed some promising signs as a rookie and they will hope he improves again this season.",
+      "receivers": "Amon-Ra St Brown is one of the safest floor receivers in the league, with three consecutive seasons of 115+ receptions and 1250+ yards. He’s also a beast in the end zone with 10+ receiving touchdowns in three straight campaigns. I don’t see that changing this year and you can get him at decent odds for 10+ touchdowns once again. Amon-Ra rarely misses games and he’s an incredibly reliable option for Jared Goff. Expect similar numbers once again in 2026. I like him to have 10+ receiving touchdowns at +100. Jameson Williams is a nice complement to Amon-Ra, he also had over 1000 yards last season to make it back to back 1000+ seasons. Williams loves to get behind defenses and is always a threat with the deep ball. Sam LaPorta is also a great receiving option when healthy, so there's plenty of mouths to feed for Goff.",
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/05e5e7bab_Mb_DetroitLions_BlackSteel.png",
-      "future_market": "10+ RECEIVING TOUCHDOWNS (-110)",
+      "future_market": "10+ RECEIVING TOUCHDOWNS ",
       "lines": {
         "win_superbowl": "+1800",
         "win_total": "10.5",
@@ -2483,7 +2483,7 @@
       "defensive_coordinator": "KELVIN SHEPPARD",
       "slug": "team-17",
       "order": 17,
-      "overview": "The Lions are expected to bounce back after a difficult 2025 season where they missed the playoffs and dealt with a bad run of injuries. They have already been dealing with a few defensive injuries through pre-season but their offense is looking good, with tight end Sam LaPorta finally back to full fitness. RB Jahmyr Gibbs is one of the best players in the league and just signed an extension to make him the highest paid RB in history. Jared Goff has been a consistent performer for years and is still in his prime at 31 years old. The Lions have one of the easiest schedules in the league and should be a real force, I expect them to challenge for the NFC North title at least.",
+      "overview": "The Lions are expected to bounce back after a difficult 2025 season where they missed the playoffs and dealt with a bad run of injuries. They have already been dealing with a few defensive injuries through preseason but their offense is looking good, with tight end Sam LaPorta looking back to fitness. RB Jahmyr Gibbs is one of the best players in the league and just signed an extension to make him the highest paid RB in history. Jared Goff has been a consistent performer for years and is still in his prime at 31 years old. The Lions have one of the easiest schedules in the league and should be a real force, I expect them to challenge for the NFC North title at least.",
       "head_coach": "DAN CAMPBELL",
       "offensive_coordinator": "DREW PETZING",
       "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/df9495ff1_Dt_DetroitLions_BlackSteel.png",
@@ -2600,13 +2600,13 @@
           "opponent": "GB"
         }
       ],
-      "quarterbacks": "Jared Goff finished second in the NFL in passing yards (4,564) and touchdowns (34), third in passer rating (105.5), and earned his fifth Pro Bowl nod despite the coordinator turnover — a testament to how much talent still surrounds him. He’s been a very good quarterback for years now and has three straight seasons with 30+ passing touchdowns. His passing TDs line for this season is set at 29.5, a number he should go over again if he’s healthy all season. His passing yards line is set at 4050.5, also a number he has cleared in four straight seasons. Backing up Goff is veteran Teddy Bridgewater but he won’t be called upon unless Goff gets injured or sits out in games that are finished.",
+      "quarterbacks": "Jared Goff finished second in the NFL in passing yards (4,564) and touchdowns (34), third in passer rating (105.5), and earned his fifth Pro Bowl nod despite the coordinator turnover. He’s been a very good quarterback for years now and has three straight seasons with 30+ passing touchdowns. His passing TDs line for this season is set at 29.5, a number he should go over again if he’s healthy all season. His passing yards line is set at 4050.5, also a number he has cleared in four straight seasons.",
       "name": "DETROIT LIONS",
       "offseason_changes": "Detroit missed the playoffs after losing both coordinators, Ben Johnson (to Chicago as head coach) and Aaron Glenn (to the Jets as head coach), and the offense noticeably slipped without Johnson calling plays, even though it still finished fourth in points and fifth in yards. The front office responded with a full offensive line overhaul after center Frank Ragnow's abrupt retirement, parting ways with longtime left tackle Taylor Decker, and hiring Drew Petzing as the new offensive coordinator while promoting Kelvin Sheppard into his second year running the defense. They also lost RB David Montgomery and replaced him with former Chief Isiah Pacheco.",
       "prediction_text": "The Lions have one of the easier schedules in the NFL, despite having a tough division. Their offense is extremely powerful and Jahmyr Gibbs could produce a massive season. If their defense holds up, they should return to the playoffs.",
       "id": "6a9022875b73b6b687d4f153",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-28T13:08:18.732000",
+      "updated_date": "2026-09-01T13:51:33.852000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
