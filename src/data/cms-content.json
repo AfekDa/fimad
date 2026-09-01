@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T13:59:08.939Z",
+  "generated_at": "2026-09-01T14:04:34.017Z",
   "generated_by": "darcy.cordell@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
@@ -2916,7 +2916,7 @@
     },
     {
       "conference": "NFC",
-      "defence": "Chicago's defense forced a league-leading 33 turnovers last season, but still ranked 29th in yards allowed per play and 29th in pressure rate — a genuinely unsustainable formula relying on takeaways rather than fundamental stops. The unit also lost linebacker Tremaine Edmunds and multiple defensive backs in free agency. First-round rookie safety Dillon Thieneman should start immediately, but this group needs to actually get stops now.",
+      "defence": "Chicago's defense forced a league-leading 33 turnovers last season, but still ranked 29th in yards allowed per play and 29th in pressure rate — a genuinely unsustainable formula relying on takeaways rather than stops. The unit also lost linebacker Tremaine Edmunds and multiple defensive backs in free agency. First-round rookie safety Dillon Thieneman should start immediately, but this group needs to actually get stops now.",
       "future_text": "Burden ranked third in yards per route run and fourth in catch rate last season. Chicago’s rookie was behind only JSN and Puka in yards per route run last season. He was ahead of elite WRs in Amon-Ra, CeeDee Lamb, George Pickens and more… In games when he had 3+ targets, he averaged 63.3 yards. Apply that across a 17 game season and that’s 1076 yards, well over his total.",
       "future_player": "LUTHER BURDEN",
       "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/4195c2577_Mb_ChicagoBears-CalebWilliams.png",
@@ -2925,9 +2925,9 @@
       "future_bet_url": null,
       "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9f38bcbe6_Dt_FF_ChicagoBears_LutherBurden.png",
       "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/6b013e73a_Mb_ChicagoBears-CalebWilliams.png",
-      "receivers": "DJ Moore is gone and that leaves three main targets: Rome Odunze, Luther Burden and Colston Loveland. Rome Odunze battled a nagging foot injury and posted one of the league's lowest catchable-target rates as a sophomore, while Luther Burden III is the coaching staff's forecasted breakout piece; Johnson has publicly said the plan is to get Burden the ball as often as possible this season. Burden has suffered a groin injury during training camp but is expected to be fine for Week 1 at this stage. Colston Loveland gives Williams a legitimate receiving tight end, exploding for 12 catches and 193 yards across two playoff games as a rookie. This receiver corps continues developing into year two together under continuity at both quarterback and play-caller, a genuine rarity for Williams after a chaotic rookie season, and the internal expectation is that touches simply shift toward Burden and Loveland as both grow more comfortable within Johnson's larger offensive framework this fall.",
+      "receivers": "DJ Moore is gone and that leaves three main targets: Rome Odunze, Luther Burden and Colston Loveland. Rome Odunze battled a nagging foot injury and posted one of the league's lowest catchable-target rates as a sophomore, while Luther Burden III is the forecasted breakout piece; Johnson has publicly said the plan is to get Burden the ball as often as possible this season. Burden suffered a groin injury during training camp but is expected to be fine for Week 1 at this stage. Colston Loveland gives Williams a legitimate receiving tight end, exploding for 12 catches and 193 yards across two playoff games as a rookie.",
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/353045332_Mb_ChicagoBears_BlackSteel.png",
-      "future_market": "OVER RECEIVING",
+      "future_market": "OVER 850.5 RECEIVING YARDS",
       "lines": {
         "win_superbowl": "+2700",
         "win_total": "9.5",
@@ -2939,7 +2939,7 @@
       "defensive_coordinator": "DENNIS ALLEN",
       "slug": "team-20",
       "order": 20,
-      "overview": "Chicago won the NFC North and a Wild Card playoff game in Ben Johnson's first season as head coach. The Bears had a largely quiet offseason, trusting that continuity with Ben Johnson and Caleb Williams will keep the progress rolling, even after trading away veteran receiver DJ Moore. Williams took a major leap last season, dramatically cutting his sack rate and climbing from 32nd to 15th in EPA per play, while D'Andre Swift and Kyle Monangai powered one of the league's best rushing attacks. This year, Rome Odunze, Luther Burden III, and tight end Colston Loveland take over as the top targets, with Johnson reportedly planning to feature Burden heavily after his strong rookie flashes. The bigger concern is defense — Chicago forced a league-leading 33 turnovers last season but ranked 29th in both yards allowed per play and pressure rate, an unsustainable formula that wasn't fully addressed this offseason. Rookie safety Dillon Thieneman should help immediately.",
+      "overview": "Chicago won the NFC North and a Wild Card playoff game in Ben Johnson's first season as head coach. The Bears had a largely quiet offseason, trusting that continuity with Ben Johnson and Caleb Williams will keep the progress rolling, even after trading away veteran receiver DJ Moore. Williams took a major leap last season, dramatically cutting his sack rate and climbing from 32nd to 15th in EPA per play, while D'Andre Swift and Kyle Monangai powered one of the league's best rushing attacks. This year, Rome Odunze, Luther Burden III, and tight end Colston Loveland take over as the top targets, with Johnson reportedly planning to feature Burden heavily after his strong rookie flashes. The bigger concern is defense — Chicago forced a league-leading 33 turnovers last season but ranked 29th in both yards allowed per play and pressure rate, an unsustainable formula that wasn't fully addressed this offseason. ",
       "head_coach": "BEN JOHNSON",
       "offensive_coordinator": "PRESS TAYLOR",
       "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/159bc0ddd_Dt_ChicagoBears_BlackSteel.png",
@@ -3058,11 +3058,11 @@
       ],
       "quarterbacks": "Caleb Williams took a real step forward in year one under Ben Johnson, cutting his pressure-to-sack rate from 27% to 10% while learning to operate a run-heavy attack that ranked top-two in rushing success rate. Williams surged from 32nd in EPA per play as a rookie to 15th last season among qualified quarterbacks, with his sack rate improving from 35th to fourth over that same span. If everything clicks this season, he’s a genuine chance to be an MVP candidate. His current passing line is set for 3575.5 yards – a mark he easily cleared last year. I’d expect him to clear that comfortably once again if healthy.",
       "name": "CHICAGO BEARS",
-      "offseason_changes": "A largely unchanged off-season for the Bears who realize they’ve got something good going here with Ben Johnson and Caleb Williams. They did trade away veteran receiver DJ Moore but they have some nice depth in that area. Investing further in the pieces around a quarterback who just made a real leap makes sense, and Johnson's development track record is proven. Chicago was 29th in yards allowed per play and 29th in pressure rate defensively last year, real problems this offseason's draft-heavy, offense-first approach may not have fully addressed heading into a tougher schedule.",
+      "offseason_changes": "A largely unchanged offseason for the Bears who realize they’ve got something good going here with Ben Johnson and Caleb Williams. They did trade away veteran receiver DJ Moore but they have some nice depth in that area. Investing further in the pieces around a quarterback who just made a real leap makes sense, and Johnson's development track record is proven. Chicago was 29th in yards allowed per play and 29th in pressure rate defensively last year, real problems this offseason's draft-heavy, offense-first approach may not have fully addressed heading into a tougher schedule.",
       "prediction_text": "I think the Bears are a big chance of winning the NFC North (currently third favorite at +320). Ben Johnson enters his second year and this offense is shaping up nicely with Caleb Williams. If they can get more stops, they’ll be a good team.",
       "id": "6a9022875b73b6b687d4f156",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-28T13:10:41.994000",
+      "updated_date": "2026-09-01T14:04:29.794000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
