@@ -330,10 +330,16 @@
  * 196px Figma rhythm. */
 @media (min-width: 768px) {
   .page {
-    /* Desktop keeps the frame height: 2094 is the composition asserted against
-     * the desktop Figma frame, and its tail is only 135. */
-    min-height: var(--desktop-bets-frame-height);
-    padding-bottom: 0;
+    /*
+     * No min-height: the sections hold however many bets the CMS publishes, so
+     * the frame's fixed 2094 was drawing a band of empty navy under a filtered
+     * or short list (1 Sep feedback: "more blue at the end").
+     *
+     * The clearance keeps the last row of cards scrollable past the floating
+     * nav, the same tail every other desktop screen carries (1 Sep feedback:
+     * "a part that I can not scroll").
+     */
+    padding-bottom: calc(var(--desktop-nav-clearance) + var(--space-32));
   }
 
   /* The desktop frame has no search field to hold, so the band goes back to

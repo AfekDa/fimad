@@ -111,16 +111,18 @@ export const SCREENS: readonly ScreenMeta[] = [
     nodeId: '251:2889',
     width: 430,
     /*
-     * Frame 251:2889 is 4861 tall, but its own content stops at 3763 and the
-     * 1098 below that is flat #011556 — empty navy the design draws nothing on.
-     * The app ends at 3884 instead (content plus one --nav-clearance, so the
-     * last bet card clears the docked nav plus a 24 tail), and the band that is
-     * compared stops there with it. Nothing is dropped but blank fill.
+     * Measured at 430 with the currently published CMS bets (45 cards), plus
+     * one --nav-clearance so the last card clears the docked nav plus a 24
+     * tail. The frame's own 4861 is a 37-card placeholder composition over
+     * 1098px of blank navy, so it stopped describing the document once the
+     * sections started holding exactly what the CMS publishes.
      */
-    height: 3908,
+    height: 4708,
     /* App Nav 251:2934 sits at y=811, i.e. 757 once the status bar is dropped:
      * the same 878 band as the Homepage. */
     viewportHeight: 878,
+    divergesFromFigma:
+      'The frame draws a fixed 37-card placeholder composition (23 favourite futures, 2 exclusives, "Lamar Jackson +430" and friends). The app renders exactly the bets the CMS publishes — 45 cards today, with different players, odds, and per-section counts — so the card lists and the page height are intentionally different from the export. Card geometry is unchanged and is still asserted in responsive.spec.ts.',
   },
   {
     path: '/awards',

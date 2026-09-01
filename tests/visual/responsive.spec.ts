@@ -1,6 +1,16 @@
 import { expect, test, type Page } from '@playwright/test'
 import { SCREENS } from '../../src/routes/screens'
 import { APP_NAV_ITEMS } from '../../src/components/AppNav/navItems'
+import { BET_SECTIONS } from '../../src/screens/AllBets/content'
+
+/*
+ * All Bets renders one card per published CMS bet, so the counts drift with
+ * every CMS publish. Deriving them from the content module keeps these specs
+ * asserting the render, not last month's payload.
+ */
+const BET_CARD_COUNT = BET_SECTIONS.reduce((count, section) => count + section.bets.length, 0)
+const betCardCount = (id: string): number =>
+  BET_SECTIONS.find((section) => section.id === id)?.bets.length ?? 0
 
 /*
  * Scrolls a screen to its end and reports how far it moved.
@@ -1610,10 +1620,17 @@ test.describe('responsive integrity', () => {
     await page.goto('/all-bets')
     await page.evaluate(() => document.fonts.ready)
 
-    // Frame 251:2889 is 4861 tall, but its last 1098 are blank navy; the page
-    // ends at its own content plus one --nav-clearance instead. See screens.ts.
+    // The sections hold exactly the bets the CMS publishes, so the page has no
+    // fixed height: it ends at its own content plus one --nav-clearance (121)
+    // and a --space-24 tail. See screens.ts.
     const betsPage = await page.locator('[data-node-id="251:2889"]').boundingBox()
-    expect(betsPage?.height).toBeCloseTo(3908, 0)
+    const lastCard = await page.locator('[data-bet-card]').last().boundingBox()
+    expect(betsPage).not.toBeNull()
+    expect(lastCard).not.toBeNull()
+    expect((betsPage?.height ?? 0) - ((lastCard?.y ?? 0) + (lastCard?.height ?? 0))).toBeCloseTo(
+      145,
+      0,
+    )
     expect(await page.locator('[data-node-id="251:2892"]').boundingBox()).toMatchObject({
       x: 0,
       y: 0,
@@ -1632,8 +1649,9 @@ test.describe('responsive integrity', () => {
       width: 382,
     })
 
+    // One card per published CMS bet: 3 + 3 + 3 + 3 + 32 + 1 today.
     const cards = page.locator('[data-bet-card]')
-    await expect(cards).toHaveCount(37)
+    await expect(cards).toHaveCount(BET_CARD_COUNT)
     expect(await cards.first().boundingBox()).toMatchObject({ width: 382, height: 70 })
 
     const allBetsFilter = page.getByRole('button', { name: 'All', exact: true })
@@ -1644,7 +1662,9 @@ test.describe('responsive integrity', () => {
     await exclusive.click()
     await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleSections).toHaveCount(1)
-    await expect(page.locator('[data-bet-card]:not([hidden])')).toHaveCount(2)
+    await expect(page.locator('[data-bet-card]:not([hidden])')).toHaveCount(
+      betCardCount('exclusive'),
+    )
 
     /*
      * 28 Aug feedback: categories combine. Adding MVP Picks widens the list
@@ -1902,11 +1922,12 @@ test.describe('responsive integrity', () => {
       await Promise.all(Array.from(document.images).map((image) => image.decode()))
     })
 
+    // No height pin: the page ends at whatever the CMS published plus the
+    // desktop nav clearance, asserted at the end of this test.
     expect(await page.locator('[data-all-bets-page]').boundingBox()).toMatchObject({
       x: 0,
       y: 0,
       width: 1280,
-      height: 2094,
     })
     expect(await page.locator('[data-node-id="251:2892"]').boundingBox()).toMatchObject({
       width: 1280,
@@ -1951,7 +1972,9 @@ test.describe('responsive integrity', () => {
     const firstBetBox = await firstBet.boundingBox()
     expect(firstBetBox).toMatchObject({ x: 80, width: 357 })
     expect(firstBetBox?.y).toBeCloseTo(358, 0)
-    expect(firstBetBox?.height).toBeCloseTo(75, 0)
+    // 75 is the frame's card; a published name that wraps to three lines grows
+    // its whole grid row (align-items: stretch), so the height is a floor.
+    expect(firstBetBox?.height ?? 0).toBeGreaterThanOrEqual(75)
 
     /*
      * 27 Aug feedback: "cross-check the text layout ... the line height". Frame
@@ -1964,33 +1987,56 @@ test.describe('responsive integrity', () => {
     await expect(pick).toHaveCSS('line-height', '26px')
     const pickBox = await pick.boundingBox()
     expect(pickBox?.width).toBeCloseTo(168, 0)
-    // Two 26px lines against the frame's 43 trimmed box.
-    expect(pickBox?.height ?? 0).toBeLessThan(60)
     // The CTA is an <a> when the CMS publishes a bet URL and a <button> when it
     // does not, so it is located by its accessible name rather than its role.
-    const firstBetButton = firstBet.getByLabel('Place bet on Lamar Jackson at +430', {
-      exact: true,
-    })
+    const firstBetButton = firstBet.getByLabel(/^Place bet on /)
     await expect(firstBetButton).toBeVisible()
     // WebKit lays the card out 1/64px shy of Chromium, so no exact matches here.
     const firstBetButtonBox = await firstBetButton.boundingBox()
     expect(firstBetButtonBox?.x).toBeCloseTo(280, 0)
-    expect(firstBetButtonBox?.y).toBeCloseTo(377.5, 0)
     expect(firstBetButtonBox?.width).toBeCloseTo(141, 0)
     expect(firstBetButtonBox?.height).toBeCloseTo(36, 0)
-    const desktopFutureCards = page.locator('[data-desktop-bet-card]')
-    await expect(desktopFutureCards).toHaveCount(21)
-    const firstFutureBox = await desktopFutureCards.first().boundingBox()
-    expect(firstFutureBox?.x).toBeCloseTo(80, 0)
-    expect(firstFutureBox?.y).toBeCloseTo(1338, 0)
-    expect(firstFutureBox?.width).toBeCloseTo(357, 0)
-    expect(firstFutureBox?.height).toBeCloseTo(75, 0)
+
+    // Every published favourite future renders as a real card on the frame's
+    // three 357px columns (x = 80, 462, 844), instead of the 21 hardcoded
+    // desktop-only cards this section used to draw.
+    const futureCards = page.locator('[data-bet-section="favourite-futures"] [data-bet-card]')
+    await expect(futureCards).toHaveCount(betCardCount('favourite-futures'))
+    expect(await futureCards.nth(0).boundingBox()).toMatchObject({ x: 80, width: 357 })
+    expect(await futureCards.nth(1).boundingBox()).toMatchObject({ x: 462, width: 357 })
+    expect(await futureCards.nth(2).boundingBox()).toMatchObject({ x: 844, width: 357 })
+    await expect(
+      page.locator('[data-bet-section="exclusive"] [data-bet-card]'),
+    ).toHaveCount(betCardCount('exclusive'))
+
     expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
       x: 290,
       y: 678,
       width: 700,
       height: 64,
     })
+
+    /*
+     * 1 Sep feedback: "in the bottom a part that I can not scroll" — the page
+     * used to end flush with the last card, which the floating nav then
+     * covered. The desktop nav clearance keeps the end of the list readable.
+     */
+    await page.evaluate(() => {
+      window.scrollTo(0, document.documentElement.scrollHeight)
+    })
+    const clearance = await page.evaluate(() => {
+      const nav = document.querySelector('[data-app-nav]')
+      const cards = [...document.querySelectorAll('[data-bet-card]')]
+      if (nav === null || cards.length === 0) {
+        throw new Error('All Bets is missing its nav or cards')
+      }
+
+      return (
+        nav.getBoundingClientRect().top -
+        Math.max(...cards.map((card) => card.getBoundingClientRect().bottom))
+      )
+    })
+    expect(clearance).toBeGreaterThan(24)
   })
 
   test('desktop FanDuel renders both MCP-designed offer controls', async ({ page }) => {

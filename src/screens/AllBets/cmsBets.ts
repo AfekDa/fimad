@@ -1,9 +1,14 @@
 /**
  * The published bets, laid over the design's own bet cards.
  *
- * `content.ts` owns the sections — their node ids and how many cards each frame
- * draws. The CMS supplies the players and the odds, filling the cards in order
- * and leaving any card it has no bet for showing the design's placeholder.
+ * `content.ts` owns the sections and their node ids. Once the CMS publishes a
+ * category, its section shows exactly the published bets: one card per bet,
+ * however many that is. The design's own card list only decides how each card
+ * is tagged (bets past the design's count reuse its last node ids) and what a
+ * section shows before the CMS has published anything for it. Trimming to the
+ * published count is what keeps a design placeholder — a fake player with fake
+ * odds — from surviving next to real bets in a category the CMS only part
+ * fills (1 Sep feedback: "the bets are in the wrong section").
  */
 import type { BetSectionContent } from './content'
 import { cmsBetsByCategory, text, url } from '../../data/cms'
@@ -25,14 +30,13 @@ export function withCmsBets(
     const category = CATEGORY_BY_SECTION[section.id]
     const published = category === undefined ? [] : cmsBetsByCategory(category)
 
-    if (published.length === 0) return section
+    const lastCard = section.bets.at(-1)
+    if (published.length === 0 || lastCard === undefined) return section
 
     return {
       ...section,
-      bets: section.bets.map((card, index) => {
-        const bet = published[index]
-
-        if (bet === undefined) return card
+      bets: published.map((bet, index) => {
+        const card = section.bets[index] ?? lastCard
 
         return {
           ...card,
