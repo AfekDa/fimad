@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T13:54:02.520Z",
+  "generated_at": "2026-09-01T13:59:08.939Z",
   "generated_by": "darcy.cordell@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
@@ -2765,7 +2765,7 @@
     {
       "conference": "NFC",
       "defence": "Micah Parsons' looming return is the single biggest storyline for this defense, a completely different unit once he's back on the field after leading the team in sacks even in a partial season. Devonte Wyatt is back from injury, and free-agent addition Javon Hargrave adds interior depth. Until Parsons returns around Week 5 or 6, new coordinator Jonathan Gannon leans on a rotation that lacks his singular, game-wrecking ability up front.",
-      "future_text": "Watson quietly had a very good season last year, ranked top-10 across the league in three metrics: 4th in yards per route (2.67), 5th in average depth of target (18.0), 8th in yards per catch (17.5).",
+      "future_text": "Watson quietly had a very good season last year, ranked top-10 across the league in three metrics: 4th in yards per route (2.67), 5th in average depth of target (18.0), 8th in yards per catch (17.5). He should be WR1 and will get plenty of targets in a decent passing offense.",
       "future_player": "CHRISTIAN WATSON",
       "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/4a4b5d5fa_Mb_GreenBayPackers-MicahParsons.png",
       "prediction_record": "10-7",
@@ -2773,9 +2773,9 @@
       "future_bet_url": null,
       "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f1afd9c8d_Dt_FF_GreenBayPackers_ChristianWatson.png",
       "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/3e6106dba_Mb_GreenBayPackers-MicahParsons.png",
-      "receivers": "Matthew Golden flashed as a rookie, including a four-catch, 84-yard playoff performance against Chicago, and now competes with Christian Watson for the No. 1 role after Romeo Doubs' departure. Tucker Kraft was on pace for a huge season before a Week 9 torn ACL and could return for the opener. Green Bay's quality offensive marks last season, including fourth in EPA per play, came almost entirely without Watson and Kraft playing together, meaning a full healthy season from this pass-catching corps could push per-game scoring output considerably higher than last year's middling 16th-place finish. This group has real top-end talent but no fully proven, established star the way most of the NFC's elite offenses currently boast heading into the season.",
+      "receivers": "Matthew Golden flashed as a rookie, including a four-catch, 84-yard playoff performance against Chicago, but he was inconsistent overall. Now he competes with Christian Watson and Jayden Reed for the No. 1 role after Romeo Doubs' departure. Tucker Kraft was on pace for a huge season before a Week 9 torn ACL and could return for WEEK 1. Green Bay's quality offensive marks last season, including fourth in EPA per play, came almost entirely without Watson and Kraft playing together, meaning a full healthy season from this pass-catching corps could push them into the elite bracket. This group has talent but no fully proven, established star the way most of the NFC's elite offenses currently boast heading into the season.",
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/6b9744f9e_Mb_GreenBayPackers_BlackSteel.png",
-      "future_market": "OVER 750.5 RECEIVING YARDS",
+      "future_market": "OVER 825.5 RECEIVING YARDS",
       "lines": {
         "win_superbowl": "+2200",
         "win_total": "9.5",
@@ -2792,7 +2792,7 @@
       "offensive_coordinator": "ADAM STENAVICH",
       "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5ec04207f_Dt_GreenBayPackers_BlackSteel.png",
       "logo_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/c9cbe0f6f_GreenBayPackers_Steel.png",
-      "running_backs": "There is some uncertainty here as workhorse RB1 Josh Jacobs is dealing with some legal issues relating to a domestic violence allegation and the team is preparing for a potential suspension. At this stage he’s been able to complete training but it’s unclear whether he will face a trial. Jacobs is a three-down back and has been very productive for the Packers in his two seasons there, with 13 and 15 rushing touchdowns. He had injuries last year but is fully healthy coming into this season and I expect big numbers once again if he’s on the field. There isn’t a whole lot of depth behind Jacobs, with MarShawn Lloyd and Chris Brooks listed as the backups. If Jacobs does miss games, I expect the Packers to sign a veteran or free agent to give them some more options.",
+      "running_backs": "There is some uncertainty here as workhorse RB1 Josh Jacobs has been placed on the Commissioner's exempt list and will be suspended for an unknown period. Jacobs is a three-down back and has been very productive for the Packers in his two seasons there, with 13 and 15 rushing touchdowns. They'll need to replace him and the current favorite is MarShawn Lloyd. Chris Brooks is also available but I do expect the Packers to sign a veteran or free agent to give them some more options.",
       "future_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/11d126b0f_favorite.png",
       "schedule": [
         {
@@ -2904,13 +2904,13 @@
           "opponent": "DET"
         }
       ],
-      "quarterbacks": "Jordan Love was already second in EPA per play among qualified quarterbacks last season without one of his top two pass-catchers on the field for all but two total games. Love is entering year four of his $220 million extension after a career-efficient season: per Sharp, second in EPA per play among qualified quarterbacks, all without Christian Watson or Tucker Kraft healthy for all but two games together. It looks like there will be better player health to start the season with all of Watson, Jayden Reed, Tucker Kraft and Matthew Golden being involved in training camp. Micah Parsons publicly defended Love after a modest No. 72 ranking on the NFL's Top 100 list.",
+      "quarterbacks": "Jordan Love was already second in EPA per play among qualified quarterbacks last season without one of his top two pass-catchers on the field for all but two total games. Love is entering year four of his $220 million extension after a career-efficient season: second in EPA per play among qualified quarterbacks, all without Christian Watson or Tucker Kraft healthy for all but two games together. It looks like there will be better player health to start the season with all of Watson, Jayden Reed, Tucker Kraft and Matthew Golden being involved in training camp. Micah Parsons publicly defended Love after a modest No. 72 ranking on the NFL's Top 100 list.",
       "name": "GREEN BAY PACKERS",
       "offseason_changes": "Micah Parsons will likely be missing for the first month or so of the season and Green Bay needs some cover in the pass rush. GM Brian Gutekunst used limited draft capital, having no first-rounder after the Parsons trade, efficiently on cornerback Brandon Cisse and edge rusher Dani Dennis-Sutton. Green Bay was 29th in pressure rate allowed last year, real cause for concern along an offensive line replacing both starting tackle and center this off-season.",
       "prediction_text": "As mentioned earlier, their divisional games will be absolutely crucial. I think the Packers will be a playoff team once again and they’ll get a nice boost defensively when Micah Parsons returns from injury.",
       "id": "6a9022875b73b6b687d4f155",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-28T13:10:04.559000",
+      "updated_date": "2026-09-01T13:59:04.775000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
