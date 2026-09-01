@@ -163,7 +163,7 @@ const { team = BUFFALO_BILLS } = Astro.props
     </section>
 
     <section
-      class={styles.favorite}
+      class:list={[styles.favorite, team.favoriteOnLight && styles.favoriteLight]}
       data-node-id="188:2513"
       data-desktop-node-id="397:2207"
       aria-labelledby="favorite-title"

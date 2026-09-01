@@ -1335,6 +1335,19 @@
     display: none;
   }
 
+  /*
+   * Teams whose published photo is near-white behind the copy — the scrim ends
+   * at 35.387% (225px) and the copy starts at 230px, so on those the section's
+   * white lockup sits on bare photo. Desktop only: the mobile frame stacks the
+   * same copy inside the scrim's opaque black band on every team.
+   *
+   * The button keeps its own FanDuel blue-on-white, so it is left alone.
+   */
+  .favoriteLight .favoriteTitle,
+  .favoriteLight .favoriteBet {
+    color: var(--color-black);
+  }
+
   .odds {
     min-height: 0;
     height: 358px;

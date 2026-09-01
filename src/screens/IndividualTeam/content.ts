@@ -117,6 +117,11 @@ export interface TeamPageContent {
   readonly favoriteCopy: string
   /** Where the favorite future's "PLACE BET" goes, when the CMS publishes one. */
   readonly favoriteBetUrl?: string | undefined
+  /**
+   * Whether the desktop favourite future photo is light where the copy sits, so
+   * the section's white text has to flip to black. See `LIGHT_FAVORITE_TEAMS`.
+   */
+  readonly favoriteOnLight: boolean
   readonly odds: readonly TeamOdd[]
   readonly schedule: readonly TeamScheduleGame[]
   readonly desktopSchedule: readonly TeamDesktopScheduleGame[]
@@ -217,6 +222,31 @@ export function buildDesktopSchedule(
   })
 }
 
+/**
+ * Roster numbers whose published favourite future photo is near-white behind
+ * the copy on desktop.
+ *
+ * Frame 397:2207 scrims only the top 35% of the 637px section and the copy
+ * starts at 230px, so on these nine the white lockup lands on bare photo and
+ * all but disappears. Mobile is unaffected: frame 188:2513 stacks the copy
+ * inside the scrim's opaque black band, which stays dark on every team.
+ *
+ * Kept as a list rather than measured at build time because it is an editorial
+ * judgement about a specific photo — when the CMS publishes a new one for a
+ * team, this list is what needs revisiting.
+ */
+const LIGHT_FAVORITE_TEAMS = new Set([
+  3, // Cleveland Browns
+  6, // Miami Dolphins
+  7, // New England Patriots
+  18, // Minnesota Vikings
+  19, // Green Bay Packers
+  21, // Dallas Cowboys
+  23, // Philadelphia Eagles
+  26, // Carolina Panthers
+  27, // New Orleans Saints
+])
+
 const BUFFALO_PREDICTION_COPY =
   'The Bills’ biggest transaction was extending QB Josh Allen for the next six years. Aside from that it was a solid, without being an exceptional offseason in Buffalo. I’m unconvinced on the signing of former Chargers’ WR Josh Palmer who went under 2 yards per route run with the elite arm of Justin Herbert.'
 
@@ -270,6 +300,7 @@ export const BUFFALO_BILLS: TeamPageContent = {
   favoritePlayer: 'JOSH ALLEN',
   favoriteBet: '10+ RUSHING TOUCHDOWNS',
   favoriteCopy: BUFFALO_PREDICTION_COPY,
+  favoriteOnLight: false,
   odds: ODDS,
   schedule: BUFFALO_SCHEDULE,
   desktopSchedule: buildDesktopSchedule(BUFFALO_SCHEDULE),
@@ -355,6 +386,7 @@ function createBaseTeam(team: Team): TeamPageContent {
     favoritePlayer: `STAR PLAYER ${name}`,
     favoriteBet: '10+ RUSHING TOUCHDOWNS',
     favoriteCopy: `Placeholder favourite future for ${name}. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.`,
+    favoriteOnLight: LIGHT_FAVORITE_TEAMS.has(number),
     odds: ODDS,
     schedule,
     desktopSchedule: buildDesktopSchedule(schedule),
