@@ -23,10 +23,20 @@ const fanduel = CMS_FANDUEL
 const STANDARD_OFFERS = [
   {
     ariaLabel: 'Redeem offer',
+    image: fanduel?.offer_image,
+    title: fanduel?.offer_title,
+    text: fanduel?.offer_text,
+    buttonLabel: fanduel?.redeem_label,
+    buttonUrl: fanduel?.redeem_url,
     nodeIds: { card: '803:5568', image: '803:5569', copy: '803:5570', title: '803:5571', text: '803:5572', button: '803:5573' },
   },
   {
     ariaLabel: 'Redeem second offer',
+    image: fanduel?.offer2_image,
+    title: fanduel?.offer2_title,
+    text: fanduel?.offer2_text,
+    buttonLabel: fanduel?.redeem2_label,
+    buttonUrl: fanduel?.redeem2_url,
     nodeIds: { card: undefined, image: undefined, copy: undefined, title: undefined, text: undefined, button: undefined },
   },
 ] as const
@@ -68,17 +78,17 @@ const OFFER_TEXT_PLACEHOLDER =
     {
       STANDARD_OFFERS.map((offer) => (
         <article class:list={[styles.offer, styles.standardOffer]} data-node-id={offer.nodeIds.card} data-fanduel-offer>
-          <img class={styles.offerImage} src={image(fanduel?.offer_image, ASSETS.fanduelOffer)} alt="Your most rewarding season ever" loading="lazy" decoding="async" data-reveal data-node-id={offer.nodeIds.image} />
+          <img class={styles.offerImage} src={image(offer.image, ASSETS.fanduelOffer)} alt="Your most rewarding season ever" loading="lazy" decoding="async" data-reveal data-node-id={offer.nodeIds.image} />
           <div class={styles.standardContent}>
             <div class={styles.copy} data-node-id={offer.nodeIds.copy}>
-              <h1 data-node-id={offer.nodeIds.title}>{text(fanduel?.offer_title, 'TITLE OF THE OFFER')}</h1>
-              <p data-node-id={offer.nodeIds.text}>{text(fanduel?.offer_text, OFFER_TEXT_PLACEHOLDER)}</p>
+              <h1 data-node-id={offer.nodeIds.title}>{text(offer.title, 'TITLE OF THE OFFER')}</h1>
+              <p data-node-id={offer.nodeIds.text}>{text(offer.text, OFFER_TEXT_PLACEHOLDER)}</p>
             </div>
             <Button
               variant="fanduel"
               state="active"
-              label={text(fanduel?.redeem_label, 'REDEEM OFFER')}
-              href={url(fanduel?.redeem_url)}
+              label={text(offer.buttonLabel, 'REDEEM OFFER')}
+              href={url(offer.buttonUrl)}
               nodeId={offer.nodeIds.button}
               ariaLabel={offer.ariaLabel}
               width={175}
