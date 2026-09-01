@@ -3,7 +3,11 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 70px;
+  /*
+   * 70 is the frame's height for a one-line name; a wrapping name grows the
+   * card instead of overflowing it, keeping the 16px padding on every card.
+   */
+  min-height: 70px;
   padding: var(--space-16);
   border-radius: var(--radius-card);
   background: var(--surface-bet-card);
@@ -58,7 +62,6 @@
    */
   .card {
     width: var(--desktop-bets-card-width);
-    height: auto;
     min-height: var(--desktop-bets-card-height);
   }
 
