@@ -465,7 +465,14 @@ function buildExploreGroups(team: Team): readonly TeamExploreGroup[] {
             published?.hero_image_mobile ?? published?.hero_image,
             rivalImages.explore,
           ),
-          imageDesktop: cmsImage(published?.hero_image, rivalImages.exploreDesktop),
+          /*
+           * Also the portrait crop: the card keeps its 249x295 box above 768px,
+           * and the wide desktop hero cover-crops the player half out of it.
+           */
+          imageDesktop: cmsImage(
+            published?.hero_image_mobile ?? published?.hero_image,
+            rivalImages.exploreDesktop,
+          ),
           logo: cmsImage(published?.logo_image, rivalImages.logo),
           logoDesktop: cmsImage(published?.logo_image, rivalImages.logoDesktop),
           logoIsCms: Boolean(published?.logo_image),

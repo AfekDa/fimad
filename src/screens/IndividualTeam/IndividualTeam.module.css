@@ -1030,7 +1030,15 @@
 }
 
 .exploreImage {
-  object-fit: fill;
+  /*
+   * Cover, not the fill the frame's own export tolerated: the cards now wear
+   * each team's CMS hero photo, whose aspect ratio is nothing like the fixed
+   * 249x295 box, and fill stretched the player across it (1 Sep report). Top
+   * anchored because these are portraits — the player's head is in the upper
+   * half, and centring cropped it in favour of jersey.
+   */
+  object-fit: cover;
+  object-position: 50% 0%;
 }
 
 .exploreScrim {
