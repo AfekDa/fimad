@@ -1141,7 +1141,10 @@
     grid-template-rows: min-content 152px;
     column-gap: var(--space-24);
     row-gap: var(--space-32);
-    height: 622px;
+    /* No fixed height. The Figma frame is 622px, but the copy row is sized to
+     * per-team CMS text, so a fixed height parked the leftover slack under the
+     * staff cards -- a different bottom space on every team. Letting the grid
+     * size itself makes the 56px block padding the bottom space everywhere. */
     padding: 56px var(--desktop-content-inline);
     background: linear-gradient(
       to bottom,
