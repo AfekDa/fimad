@@ -556,16 +556,27 @@
   z-index: 1;
   display: block;
   overflow: hidden;
+  /* Fills whatever the picture leaves bare; every export's edges are black. */
+  background: #000;
 }
 
-/* Cover from the bottom, where the crest sits flush in the export. */
+/*
+ * Width-fit and bottom-anchored rather than `cover`: the crest spans nearly
+ * the whole 430px frame, so on a 360-414px phone cover (which fits the
+ * section's height) would slice its tips off both sides — the design scales
+ * the frame down, keeping the crest whole. What gives way is the top: black
+ * headroom on phones narrower than the frame (over the box's own black), a
+ * top crop on wider-than-frame sections, both invisible against the copy's
+ * black backdrop.
+ */
 .predictionImage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: none;
-  object-fit: cover;
-  object-position: bottom;
 }
 
 /*
@@ -1264,11 +1275,15 @@
 
   /*
    * The Dt asset is an export of the whole 1280x531 section frame at 1.25x
-   * (1600x664), the same way the Mb asset is the whole mobile section — the
-   * box is already the section; only the crest's flush edge moves, from the
-   * bottom of the portrait to the right of the letterbox.
+   * (1600x664), the same way the Mb asset is the whole mobile section. Its
+   * letterbox is wide enough that cover never cuts the crest the way it cuts
+   * the mobile portrait's, so here the picture simply fills the section,
+   * anchored to the right edge where the crest sits flush.
    */
   .predictionImage {
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
     object-position: right center;
   }
 
