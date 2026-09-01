@@ -109,6 +109,11 @@ export interface CmsFanduel {
   readonly offer_text?: string
   readonly redeem_label?: string
   readonly redeem_url?: string
+  readonly offer2_image?: string
+  readonly offer2_title?: string
+  readonly offer2_text?: string
+  readonly redeem2_label?: string
+  readonly redeem2_url?: string
 }
 
 interface CmsPayload {
