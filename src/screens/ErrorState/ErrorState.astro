@@ -1,0 +1,87 @@
+---
+/**
+ * Error State — Figma frames 946:7342 (mobile, 430 × 932) and 946:7202
+ * (desktop, 1280 × 834).
+ *
+ * Both frames are one screen tall and hold nothing that scrolls: the brand
+ * band the rest of the app already draws, the referee photograph filling
+ * everything under it, and the 404 copy laid over the photograph. So the
+ * screen reuses AwardsHeader and AppNav rather than restating them, and owns
+ * only the photograph and the copy.
+ */
+import { ASSETS } from '../../assets/assets'
+import AppNav from '../../components/AppNav/AppNav.astro'
+import AwardsHeader from '../Awards/AwardsHeader.astro'
+import styles from './ErrorState.module.css'
+---
+
+<div class={styles.page} data-node-id="946:7342" data-desktop-node-id="946:7202" data-error-page>
+  <AwardsHeader
+    searchId="error-search"
+    searchLabel="Search your favorite team"
+    clearLabel="Clear search"
+    class={styles.header}
+    nodeIds={{
+      header: '946:7373',
+      brand: '946:7374',
+      byline: '946:7375',
+      title: '946:7376',
+      search: '946:7377',
+      searchIcon: '946:7378',
+    }}
+  />
+
+  <div class={styles.stage}>
+    {/*
+      One photograph, two crops. 945:2814 is a tall crop that already carries
+      the flare in its top-left corner; 945:2817 is the wide crop, which does
+      not, so the desktop frame lays 945:2822 over it separately.
+    */}
+    <picture class={styles.photo}>
+      <source media="(min-width: 768px)" srcset={ASSETS.errorRefereeDesktop} />
+      <img
+        src={ASSETS.errorReferee}
+        alt=""
+        aria-hidden="true"
+        fetchpriority="high"
+        decoding="async"
+        data-node-id="945:2814"
+        data-desktop-node-id="945:2817"
+      />
+    </picture>
+
+    <img
+      class={styles.flame}
+      src={ASSETS.errorFlame}
+      alt=""
+      aria-hidden="true"
+      data-node-id="945:2822"
+    />
+
+    <div class={styles.copy} data-node-id="945:2813">
+      <h1 class={styles.headline} data-node-id="945:2802">
+        <span class={styles.code} data-node-id="949:7493">404</span>
+        {/*
+          The two frames disagree on the casing of this line — 949:7494 reads
+          "Page Not Found", 946:7331 reads "Page not found" — so each viewport
+          shows the words its own frame draws.
+        */}
+        <span class={styles.title}>
+          <span class={styles.titleMobile} data-node-id="949:7494">Page Not Found</span>
+          <span class={styles.titleDesktop} data-node-id="946:7331">Page not found</span>
+        </span>
+      </h1>
+
+      {/*
+        946:7335 reads "an other error occurred"; 949:7495 spells the same
+        sentence "another", which is the one carried here.
+      */}
+      <p class={styles.description} data-node-id="949:7495" data-desktop-node-id="946:7335">
+        The page you are looking for doesn’t exist or another error occurred. Go back, or head over
+        to <a class={styles.homeLink} href="/">Home</a>
+      </p>
+    </div>
+  </div>
+
+  <AppNav />
+</div>

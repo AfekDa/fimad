@@ -1,0 +1,216 @@
+/*
+ * Error State — Figma frames 946:7342 (mobile) and 946:7202 (desktop). The
+ * frame-derived numbers live in tokens.css; this file is the layout that
+ * arranges them.
+ */
+
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /*
+   * The frame is exactly one screen: 139 of header band over 739 of photograph
+   * fills the 878 a 430-wide iPhone frame leaves once its status bar is taken
+   * off. Nothing here scrolls, so the band takes its own height and the
+   * photograph takes the rest of the viewport rather than a fixed 739 that
+   * would leave navy under it on a taller phone.
+   */
+  min-height: 100dvh;
+  background: var(--color-navy);
+}
+
+.stage {
+  position: relative;
+  /*
+   * The frame draws 739 here, which is what this line resolves to on the 878
+   * the frame is cut for. It is a flex line rather than
+   * that number because a phone shorter than the frame should crop the
+   * photograph, the way the fill itself crops, instead of pushing a screen
+   * whose whole point is a dead end into scrolling.
+   */
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /*
+   * Fill 945:2814 / 945:2817 is bottom-anchored. The referee stands on the
+   * bottom edge of the frame, so a viewport taller or narrower than the one
+   * the crop was cut for takes its extra off the sky rather than off him.
+   */
+  object-position: bottom center;
+}
+
+/* Mobile takes its flare from the photograph itself (see ErrorState.astro). */
+.flame {
+  display: none;
+}
+
+.copy {
+  position: absolute;
+  top: var(--error-copy-top);
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-24);
+  width: var(--error-copy-width);
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  margin: 0;
+}
+
+.code,
+.title,
+.description {
+  margin: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.code {
+  color: var(--fanduel-blue);
+  font-family: var(--font-family-display);
+  font-size: var(--font-dt-h1-size);
+  line-height: var(--font-dt-h1-line);
+  font-weight: var(--font-h1-weight);
+  letter-spacing: var(--font-display-letter-spacing);
+  text-transform: uppercase;
+}
+
+.title {
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc1-sb-size);
+  line-height: var(--font-bc1-sb-line);
+  font-weight: var(--font-bc1-sb-weight);
+}
+
+.titleDesktop {
+  display: none;
+}
+
+.description {
+  /* 949:7495 is white at 80%; its desktop counterpart 946:7335 is not. */
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-family-base);
+  font-size: var(--font-bc3-r-size);
+  line-height: var(--font-bc3-r-line);
+  font-weight: var(--font-bc3-r-weight);
+}
+
+.homeLink {
+  color: inherit;
+  font-weight: var(--font-bc1-sb-weight);
+  text-decoration: underline;
+  text-underline-position: from-font;
+}
+
+/*
+ * Desktop frame 946:7202. Its first 118px are browser capture rather than
+ * product UI, so every vertical coordinate is adjusted by that amount.
+ */
+@media (min-width: 768px) {
+  .page {
+    min-height: var(--desktop-error-frame-height);
+  }
+
+  /*
+   * The shared band draws its rule edge to edge; 946:7206 insets it to the
+   * 1120px content grid instead. Selected through .page so it outranks the
+   * band's own rule whichever order the two modules are bundled in.
+   */
+  .page .header {
+    /* Half the rule below falls outside the band, and the photograph is a
+     * later positioned box, so without a layer of its own it paints over it. */
+    z-index: var(--layer-content);
+    border-bottom: 0;
+  }
+
+  .page .header::after {
+    content: '';
+    position: absolute;
+    right: var(--desktop-content-inline);
+    /*
+     * 946:7206 is a stroke centred on the band's own edge, so half of it falls
+     * on the photograph below; sampling the frame export puts it at white 20%.
+     * The half-pixel is a transform rather than a negative `bottom` because
+     * Chromium snaps a positioned box to whole CSS pixels — 0.5 there rounds to
+     * a full pixel and lands the rule a device row low — while it rasterises a
+     * transform at device resolution, which is where the half-pixel lives.
+     */
+    bottom: 0;
+    transform: translateY(0.5px);
+    left: var(--desktop-content-inline);
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* The desktop frame ends with the photograph, so the band and the photograph
+   * together are the whole page rather than the whole viewport. */
+  .stage {
+    flex: 0 0 auto;
+    height: var(--desktop-error-photo-height);
+  }
+
+  .flame {
+    display: block;
+    position: absolute;
+    top: var(--desktop-error-flame-top);
+    left: var(--desktop-error-flame-left);
+    width: var(--desktop-error-flame-width);
+    height: var(--desktop-error-flame-height);
+  }
+
+  .copy {
+    top: var(--desktop-error-copy-top);
+    left: var(--desktop-error-copy-left);
+    align-items: flex-start;
+    gap: var(--desktop-error-copy-gap);
+    width: var(--desktop-error-copy-width);
+    transform: none;
+    text-align: left;
+  }
+
+  .headline {
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: var(--font-dt-bc1-size);
+    line-height: var(--font-dt-bc1-m-line);
+    font-weight: var(--font-bc2-m-weight);
+  }
+
+  .titleMobile {
+    display: none;
+  }
+
+  .titleDesktop {
+    display: inline;
+  }
+
+  .description {
+    color: var(--color-white);
+    font-size: var(--font-dt-bc3-size);
+    line-height: var(--font-dt-bc3-line);
+  }
+}

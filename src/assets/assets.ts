@@ -87,6 +87,11 @@ import teamExploreCard from './team-explore-card.webp?url'
 import awardCardMvp from './award-card-mvp.webp?url'
 import mvpCardLamar from './mvp-card-lamar.webp?url'
 
+/* Error State — Figma frames 946:7342 (mobile) and 946:7202 (desktop) */
+import errorReferee from './error-referee.webp?url'
+import errorRefereeDesktop from './error-referee-desktop.webp?url'
+import errorFlame from './error-flame.webp?url'
+
 /* FanDuel Page — desktop Figma frame 803:5180. */
 import fanduelRewardsClub from './fanduel-rewards-club-card.webp?url'
 import fanduelOffer from './fanduel-offer.webp?url'
@@ -158,6 +163,9 @@ export const ASSETS = {
   fanduelOffer,
   fanduelLockIcon,
   fanduelMedalIcon,
+  errorReferee,
+  errorRefereeDesktop,
+  errorFlame,
 } as const
 
 export type AssetName = keyof typeof ASSETS
