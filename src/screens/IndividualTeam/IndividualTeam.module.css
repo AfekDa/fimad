@@ -357,10 +357,11 @@
 
 .overviewCopy {
   width: 100%;
-  /* Figma block height, but the copy varies per team: min-height keeps the
-   * design's proportions without clipping longer overviews into the staff
-   * cards below (the .overview flex gap then holds the 24px separation). */
-  min-height: 448px;
+  /* No height floor. The Figma frame drew this block 448px tall, but overview
+   * copy is per-team CMS text: a floor padded short write-ups with dead space
+   * and pushed the staff cards as much as 184px down the page. Sizing to the
+   * content lets the .overview flex gap hold the same 24px on every team.
+   */
   font-size: var(--font-bc2-r-size);
   line-height: var(--font-bc2-r-line);
   font-weight: var(--font-bc2-r-weight);
@@ -1019,10 +1020,6 @@
     height: auto;
   }
 
-  .overviewCopy {
-    min-height: 0;
-  }
-
   .accordion[open] {
     height: auto;
   }
@@ -1153,7 +1150,6 @@
     grid-column: 2;
     grid-row: 1;
     width: 100%;
-    min-height: 326px;
     font-size: var(--font-dt-bc2-size);
     line-height: var(--font-dt-bc2-line);
   }

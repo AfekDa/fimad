@@ -285,5 +285,10 @@
    */
   .filter[data-filter-value='all'][data-state='active'] {
     min-width: 78px;
+    /* The floor above leaves ~10px of slack, and the centring on .filter split
+     * it evenly -- pushing the clear icon ~9px off the right edge. Bank the
+     * slack on the left instead so the icon keeps the 4px trailing padding the
+     * chip declares (1 Sep feedback). */
+    justify-content: flex-end;
   }
 }
