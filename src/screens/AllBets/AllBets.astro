@@ -1,27 +1,17 @@
 ---
-/** All Bets — Figma frame 251:2889, 430 × 4915 (54px device status bar omitted). */
+/** All Bets â Figma frame 251:2889, 430 Ã 4915 (54px device status bar omitted). */
 import AppNav from '../../components/AppNav/AppNav.astro'
 import Button from '../../components/Button/Button.astro'
 import { ASSETS } from '../../assets/assets'
 import BetCard from './BetCard.astro'
 import { BET_FILTERS, BET_SECTIONS } from './content'
 import styles from './AllBets.module.css'
-
-const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
-  const picks = [
-    { name: 'Lamar Jackson', odds: '+430' },
-    { name: 'Joe Burrow', odds: '+600' },
-    { name: 'Jared Goff', odds: '+430' },
-  ] as const
-
-  return picks[index % picks.length]!
-})
 ---
 
 <div class:list={[styles.page, 'appScrollShell']} data-node-id="251:2889" data-all-bets-page>
   <header class:list={[styles.header, 'appScrollHeader']} data-node-id="251:2892">
     <div class={styles.brand} data-node-id="251:2893">
-      <p class={styles.brandByline} data-node-id="251:2894">Cody Brown’s</p>
+      <p class={styles.brandByline} data-node-id="251:2894">Cody Brownâs</p>
       <p class={styles.brandTitle} data-node-id="251:2895">NFL BETTING GUIDE</p>
     </div>
 
@@ -126,20 +116,6 @@ const DESKTOP_FAVOURITE_FUTURES = Array.from({ length: 21 }, (_, index) => {
             </h1>
             <div class={styles.betList}>
               {section.bets.map((bet) => <BetCard bet={bet} />)}
-              {section.id === 'exclusive' && DESKTOP_FAVOURITE_FUTURES.map((bet) => (
-                <article class={styles.desktopExtraCard} data-desktop-bet-card aria-hidden="true">
-                  <p class={styles.desktopExtraPick}>
-                    <span>{bet.name}</span>
-                    <span class={styles.desktopExtraOdds}>{bet.odds}</span>
-                  </p>
-                  <Button
-                    variant="fanduel"
-                    label="PLACE BET"
-                    nodeId="181:1821"
-                    assetSet="teams-page"
-                  />
-                </article>
-              ))}
             </div>
           </section>
           {section !== BET_SECTIONS.at(-1) && (
