@@ -1,6 +1,6 @@
 import { ASSETS } from '../../assets/assets'
 import { imagesForTeam } from '../../assets/teamImages'
-import { TEAMS, TEAM_COUNT, teamByNumber } from '../../data/teams'
+import { TEAMS, TEAM_COUNT } from '../../data/teams'
 import { withCmsContent } from './cmsContent'
 import type { Conference, Team } from '../../data/teams'
 
@@ -70,7 +70,11 @@ export interface TeamDesktopScheduleGame {
 export interface TeamExploreCard {
   readonly nodeId: string
   readonly name: string
-  readonly conference: Conference
+  /**
+   * The pill's label — the card team's division. The Figma reference route
+   * keeps the frame's plain "AFC", which is why this is not typed `Division`.
+   */
+  readonly division: string
   readonly href: string
   readonly image: string
   readonly imageDesktop: string
@@ -181,7 +185,11 @@ const BUFFALO_OPPONENTS = [
 const DESKTOP_SCHEDULE_WEEKS = [1, 7, 13, 2, 8, 14, 3, 9, 15, 4, 10, 16, 5, 11, 17, 6, 12, 18] as const
 const DESKTOP_SCHEDULE_NODE_IDS = ['791:2111', '791:2470', '791:2480', '791:2523', '791:2534', '791:2545', '791:2556', '791:2567', '791:2578', '791:2589', '791:2600', '791:2611', '791:2622', '791:2633', '791:2644', '791:2655', '791:2666', '791:2677'] as const
 
-/** Node ids of the five cards in the Explore All Teams carousel (181:1431). */
+/**
+ * Node ids of the cards in the Explore All Teams carousel (181:1431). The frame
+ * draws five; a roster team shows only its three division rivals, so it uses
+ * the first three ids and the reference route still fills all five.
+ */
 const EXPLORE_NODE_IDS = ['181:1405', '181:1418', '181:1432', '397:2369', '397:2383'] as const
 
 /**
@@ -268,7 +276,7 @@ export const BUFFALO_BILLS: TeamPageContent = {
   exploreCards: EXPLORE_NODE_IDS.map((nodeId) => ({
     nodeId,
     name: 'BUFFALO BILLS',
-    conference: 'AFC',
+    division: 'AFC',
     href: '/teams/buffalo-bills',
     image: ASSETS.teamExploreCard,
     imageDesktop: ASSETS.teamExploreCard,
@@ -350,20 +358,21 @@ function createBaseTeam(team: Team): TeamPageContent {
     odds: ODDS,
     schedule,
     desktopSchedule: buildDesktopSchedule(schedule),
-    /* The five cards after this one in the roster, wrapping at the end. */
-    exploreCards: EXPLORE_NODE_IDS.map((nodeId, index) => {
-      const neighbour = teamByNumber(((number + index) % TEAM_COUNT) + 1)
-      const neighbourImages = imagesForTeam(neighbour.number)
+    /* The team's three division rivals, in roster order. */
+    exploreCards: TEAMS.filter(
+      (rival) => rival.division === team.division && rival.number !== number,
+    ).map((rival, index) => {
+      const rivalImages = imagesForTeam(rival.number)
 
       return {
-        nodeId,
-        name: neighbour.name,
-        conference: neighbour.conference,
-        href: neighbour.href,
-        image: neighbourImages.explore,
-        imageDesktop: neighbourImages.exploreDesktop,
-        logo: neighbourImages.logo,
-        logoDesktop: neighbourImages.logoDesktop,
+        nodeId: EXPLORE_NODE_IDS[index] ?? '',
+        name: rival.name,
+        division: rival.division,
+        href: rival.href,
+        image: rivalImages.explore,
+        imageDesktop: rivalImages.exploreDesktop,
+        logo: rivalImages.logo,
+        logoDesktop: rivalImages.logoDesktop,
       }
     }),
   }

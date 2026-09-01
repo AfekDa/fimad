@@ -13,6 +13,24 @@ import { cmsTeam, text } from './cms'
 
 export type Conference = 'AFC' | 'NFC'
 
+/**
+ * The eight NFL divisions, in the order the roster files them: the CMS sorts
+ * the league division by division, four teams each, so a team's division is a
+ * function of its roster number.
+ */
+const DIVISIONS = [
+  'AFC NORTH',
+  'AFC EAST',
+  'AFC SOUTH',
+  'AFC WEST',
+  'NFC NORTH',
+  'NFC EAST',
+  'NFC SOUTH',
+  'NFC WEST',
+] as const
+
+export type Division = (typeof DIVISIONS)[number]
+
 export interface Team {
   /** 1-based position in the roster; the number the placeholder is named for. */
   readonly number: number
@@ -21,10 +39,23 @@ export interface Team {
   readonly slug: string
   readonly href: string
   readonly conference: Conference
+  readonly division: Division
   readonly logoScale: 1 | 1.15 | 1.3
 }
 
 export const TEAM_COUNT = 32
+
+const TEAMS_PER_DIVISION = TEAM_COUNT / DIVISIONS.length
+
+function divisionFor(number: number): Division {
+  const division = DIVISIONS[Math.ceil(number / TEAMS_PER_DIVISION) - 1]
+
+  if (division === undefined) {
+    throw new Error(`No division for team ${number}; the roster holds 1-${TEAM_COUNT}`)
+  }
+
+  return division
+}
 
 /**
  * Marks called out as visually smaller than the rest of the published set.
@@ -59,6 +90,7 @@ export const TEAMS: readonly Team[] = Array.from({ length: TEAM_COUNT }, (_, ind
     slug,
     href: `/teams/${slug}`,
     conference: conferenceFor(published?.conference, number),
+    division: divisionFor(number),
     logoScale: ENLARGED_LOGO_SCALES.get(number) ?? 1,
   }
 })
