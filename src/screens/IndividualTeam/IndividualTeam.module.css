@@ -357,7 +357,10 @@
 
 .overviewCopy {
   width: 100%;
-  height: 448px;
+  /* Figma block height, but the copy varies per team: min-height keeps the
+   * design's proportions without clipping longer overviews into the staff
+   * cards below (the .overview flex gap then holds the 24px separation). */
+  min-height: 448px;
   font-size: var(--font-bc2-r-size);
   line-height: var(--font-bc2-r-line);
   font-weight: var(--font-bc2-r-weight);
@@ -1017,7 +1020,7 @@
   }
 
   .overviewCopy {
-    height: auto;
+    min-height: 0;
   }
 
   .accordion[open] {
@@ -1150,7 +1153,7 @@
     grid-column: 2;
     grid-row: 1;
     width: 100%;
-    height: 326px;
+    min-height: 326px;
     font-size: var(--font-dt-bc2-size);
     line-height: var(--font-dt-bc2-line);
   }
