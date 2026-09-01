@@ -1541,6 +1541,12 @@
     width: calc(100vw - var(--desktop-content-inline));
     margin-top: var(--space-24);
     padding-inline: 0;
+    /* The row drags with the mouse (no scrollbar to grab); say so. */
+    cursor: grab;
+  }
+
+  .exploreCarousel:active {
+    cursor: grabbing;
   }
 }
 

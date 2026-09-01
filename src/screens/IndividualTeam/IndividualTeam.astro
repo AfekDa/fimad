@@ -323,7 +323,7 @@ const { team = BUFFALO_BILLS } = Astro.props
         reader's own division leads, the other seven follow. The reference route
         keeps its single heading-less group, so its pinned height is unchanged.
       */}
-      <div class={styles.exploreCarousel} data-node-id="181:1431">
+      <div class={styles.exploreCarousel} data-node-id="181:1431" data-explore-carousel>
         {
           team.exploreGroups.map((group, groupIndex) => {
             const titleId = `explore-division-${groupIndex}`
@@ -406,6 +406,66 @@ const { team = BUFFALO_BILLS } = Astro.props
       if (query.length > 0 && currentTeam.includes(query)) return
       // Routed, not assigned, so leaving for All Teams cross-fades like a tab does.
       void navigate(`/teams?search=${encodeURIComponent(input.value.trim())}`)
+    })
+
+    /*
+     * The Explore carousel scrolls sideways with no scrollbar to grab, which a
+     * touch screen swipes and a trackpad pans -- but a mouse has neither, so on
+     * desktop the league past the fourth card was visible only as a clipped
+     * edge (1 Sep report). The wheel and a drag both scroll it instead.
+     */
+    const carousel = page.querySelector<HTMLElement>('[data-explore-carousel]')
+    if (carousel === null) throw new Error('Individual Team page is missing its Explore carousel')
+
+    carousel.addEventListener(
+      'wheel',
+      (event) => {
+        // A sideways wheel (trackpads, tilt wheels) already scrolls natively.
+        if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return
+        if (carousel.scrollWidth <= carousel.clientWidth) return
+        event.preventDefault()
+        carousel.scrollLeft += event.deltaY
+      },
+      { passive: false },
+    )
+
+    let dragFrom: { x: number; scrollLeft: number } | null = null
+    let dragged = false
+
+    carousel.addEventListener('pointerdown', (event) => {
+      // Touch pans natively; capturing it here would fight the swipe.
+      if (event.pointerType !== 'mouse' || event.button !== 0) return
+      dragFrom = { x: event.clientX, scrollLeft: carousel.scrollLeft }
+      dragged = false
+    })
+
+    carousel.addEventListener('pointermove', (event) => {
+      if (dragFrom === null) return
+      const travel = event.clientX - dragFrom.x
+      // A slack of a few px keeps a plain click from becoming a drag.
+      if (!dragged && Math.abs(travel) < 6) return
+      dragged = true
+      carousel.setPointerCapture(event.pointerId)
+      carousel.scrollLeft = dragFrom.scrollLeft - travel
+    })
+
+    // The browser's own image/link drag would cut the scroll short mid-pull.
+    carousel.addEventListener('dragstart', (event) => {
+      if (dragFrom !== null) event.preventDefault()
+    })
+
+    const endDrag = () => {
+      dragFrom = null
+    }
+    carousel.addEventListener('pointerup', endDrag)
+    carousel.addEventListener('pointercancel', endDrag)
+
+    // Releasing a drag on top of a card must not follow its link.
+    carousel.addEventListener('click', (event) => {
+      if (!dragged) return
+      dragged = false
+      event.preventDefault()
+      event.stopPropagation()
     })
   }
 
