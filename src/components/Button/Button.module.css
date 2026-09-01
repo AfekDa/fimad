@@ -43,9 +43,8 @@
   font-size: var(--font-bc3-r-size);
   line-height: var(--font-bc3-r-line);
   font-weight: var(--font-bc3-r-weight);
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  text-underline-position: from-font;
+  /* Drawn underlined in the frame; removed on 1 Sep feedback. */
+  text-decoration: none;
   white-space: nowrap;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;

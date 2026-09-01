@@ -943,12 +943,7 @@
 
 .explore {
   width: 100%;
-  /*
-   * The frame pins 474, which is exactly what the reference route's single
-   * heading-less row of cards measures. A roster page adds the division
-   * headings on top of that, so the section grows to fit rather than clipping.
-   */
-  min-height: 474px;
+  height: 474px;
   padding-block: 56px;
   flex-shrink: 0;
   background: var(--color-navy);
@@ -964,8 +959,8 @@
 }
 
 /*
- * The carousel holds all 32 teams in eight division groups, so it scrolls
- * horizontally instead of clipping what does not fit -- the row used to be
+ * The carousel holds the whole 32-team league, so it scrolls horizontally
+ * instead of clipping what does not fit -- the row used to be
  * `overflow: hidden`, which left every card past the first one and a half
  * unreachable on a phone (30 Aug report). Same scroll treatment as the MVP
  * Picks carousel: no visible bar, and the swipe stops at the ends rather than
@@ -973,10 +968,10 @@
  */
 .exploreCarousel {
   display: flex;
-  /* Groups line up on their cards, so a heading-less group still sits flush. */
-  align-items: flex-end;
-  gap: var(--space-32);
+  align-items: center;
+  gap: var(--space-16);
   width: 100%;
+  height: 295px;
   margin-top: var(--space-24);
   padding-inline: var(--space-24);
   overflow-x: auto;
@@ -987,36 +982,6 @@
 
 .exploreCarousel::-webkit-scrollbar {
   display: none;
-}
-
-.exploreGroup {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-12);
-  flex-shrink: 0;
-}
-
-/*
- * Pinned to the left of the scrollport while its own group is passing, so a
- * division four cards wide is still labelled once you have scrolled into it.
- */
-.exploreGroupTitle {
-  position: sticky;
-  inset-inline-start: 0;
-  align-self: flex-start;
-  color: var(--color-white);
-  font-family: var(--font-family-base);
-  font-size: var(--font-bc2-m-size);
-  line-height: var(--font-bc2-m-line);
-  font-weight: var(--font-bc2-m-weight);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.exploreGroupCards {
-  display: flex;
-  align-items: center;
-  gap: var(--space-16);
 }
 
 .exploreCard {

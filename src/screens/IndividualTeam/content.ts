@@ -3,7 +3,7 @@ import { imagesForTeam } from '../../assets/teamImages'
 import { cmsTeam, image as cmsImage } from '../../data/cms'
 import { DIVISIONS, TEAMS, TEAM_COUNT } from '../../data/teams'
 import { withCmsContent } from './cmsContent'
-import type { Conference, Division, Team } from '../../data/teams'
+import type { Conference, Team } from '../../data/teams'
 
 /**
  * Everything the Individual Team screen renders that differs from one team to
@@ -92,16 +92,6 @@ export interface TeamExploreCard {
   readonly logoScale: 1 | 1.15 | 1.3
 }
 
-export interface TeamExploreGroup {
-  /**
-   * The division heading over the group, or `null` on the ungrouped row the
-   * `/teams/buffalo-bills` reference route keeps — the Figma frame draws five
-   * cards with no heading, and that section's pinned height is measured.
-   */
-  readonly title: Division | null
-  readonly cards: readonly TeamExploreCard[]
-}
-
 export interface TeamPageContent {
   readonly name: string
   readonly conference: Conference
@@ -145,7 +135,7 @@ export interface TeamPageContent {
   readonly odds: readonly TeamOdd[]
   readonly schedule: readonly TeamScheduleGame[]
   readonly desktopSchedule: readonly TeamDesktopScheduleGame[]
-  readonly exploreGroups: readonly TeamExploreGroup[]
+  readonly exploreCards: readonly TeamExploreCard[]
 }
 
 /** Odds card node ids, images and crops, in the order frame 162:1605 draws them. */
@@ -324,28 +314,19 @@ export const BUFFALO_BILLS: TeamPageContent = {
   odds: ODDS,
   schedule: BUFFALO_SCHEDULE,
   desktopSchedule: buildDesktopSchedule(BUFFALO_SCHEDULE),
-  /*
-   * One heading-less group, so the reference route still draws exactly the five
-   * cards frame 181:1431 does. The division grouping below is roster content,
-   * not something the frame shows, and this section's height is pinned.
-   */
-  exploreGroups: [
-    {
-      title: null,
-      cards: EXPLORE_NODE_IDS.map((nodeId) => ({
-        nodeId,
-        name: 'BUFFALO BILLS',
-        conference: 'AFC',
-        href: '/teams/buffalo-bills',
-        image: ASSETS.teamExploreCard,
-        imageDesktop: ASSETS.teamExploreCard,
-        logo: ASSETS.teamsLogoBuffalo,
-        logoDesktop: ASSETS.teamsLogoBuffalo,
-        logoIsCms: false,
-        logoScale: 1,
-      })),
-    },
-  ],
+  /* The five cards frame 181:1431 draws, unchanged. */
+  exploreCards: EXPLORE_NODE_IDS.map((nodeId) => ({
+    nodeId,
+    name: 'BUFFALO BILLS',
+    conference: 'AFC',
+    href: '/teams/buffalo-bills',
+    image: ASSETS.teamExploreCard,
+    imageDesktop: ASSETS.teamExploreCard,
+    logo: ASSETS.teamsLogoBuffalo,
+    logoDesktop: ASSETS.teamsLogoBuffalo,
+    logoIsCms: false,
+    logoScale: 1,
+  })),
 }
 
 /**
@@ -422,64 +403,62 @@ function createBaseTeam(team: Team): TeamPageContent {
     odds: ODDS,
     schedule,
     desktopSchedule: buildDesktopSchedule(schedule),
-    exploreGroups: buildExploreGroups(team),
+    exploreCards: buildExploreCards(team),
   }
 }
 
 /**
- * The whole league for the Explore carousel, split into the eight divisions and
- * led by the one this page's team plays in.
+ * The whole league for the Explore carousel: one row of 32, walked division by
+ * division starting from the one this page's team plays in.
  *
- * The section is titled "Explore all teams" but used to hold three — the team's
- * division rivals — so the rest of the league was only reachable through the
- * All Teams page. Leading with the reader's own division keeps those rivals
- * where they were, first in the scroller, and puts the other 28 a swipe away.
+ * The section used to hold three cards — the team's division rivals — so the
+ * rest of the league was only reachable through the All Teams page. Leading
+ * with the reader's own division keeps those rivals where they were, first in
+ * the scroller, and puts the other 28 a swipe away. The ordering is the only
+ * trace of the divisions left: the row carries no headings (1 Sep feedback).
  */
-function buildExploreGroups(team: Team): readonly TeamExploreGroup[] {
+function buildExploreCards(team: Team): readonly TeamExploreCard[] {
   const start = DIVISIONS.indexOf(team.division)
 
-  return DIVISIONS.map((_, offset) => {
+  return DIVISIONS.flatMap((_, offset) => {
     const division = DIVISIONS[(start + offset) % DIVISIONS.length]
     if (division === undefined) throw new Error(`No division at offset ${offset}`)
 
-    return {
-      title: division,
-      cards: TEAMS.filter((rival) => rival.division === division).map((rival) => {
-        const rivalImages = imagesForTeam(rival.number)
-        /*
-         * The card wears what the rival's own page wears: its published hero
-         * photo and mark, falling back to the folder placeholders. The local
-         * explore slots are the design's Bills photography dealt to every
-         * folder, so without this overlay all 32 cards showed the same player
-         * (1 Sep report).
-         */
-        const published = cmsTeam(rival.number)
+    return TEAMS.filter((rival) => rival.division === division).map((rival) => {
+      const rivalImages = imagesForTeam(rival.number)
+      /*
+       * The card wears what the rival's own page wears: its published hero
+       * photo and mark, falling back to the folder placeholders. The local
+       * explore slots are the design's Bills photography dealt to every
+       * folder, so without this overlay all 32 cards showed the same player
+       * (1 Sep report).
+       */
+      const published = cmsTeam(rival.number)
 
-        return {
-          /* Only the reference route's five cards have a node behind them. */
-          nodeId: undefined,
-          name: rival.name,
-          conference: rival.conference,
-          href: rival.href,
-          image: cmsImage(
-            published?.hero_image_mobile ?? published?.hero_image,
-            rivalImages.explore,
-          ),
-          /*
-           * Also the portrait crop: the card keeps its 249x295 box above 768px,
-           * and the wide desktop hero cover-crops the player half out of it.
-           */
-          imageDesktop: cmsImage(
-            published?.hero_image_mobile ?? published?.hero_image,
-            rivalImages.exploreDesktop,
-          ),
-          logo: cmsImage(published?.logo_image, rivalImages.logo),
-          logoDesktop: cmsImage(published?.logo_image, rivalImages.logoDesktop),
-          logoIsCms: Boolean(published?.logo_image),
-          logoScale: rival.logoScale,
-        }
-      }),
-    }
+      return {
+        /* Only the reference route's five cards have a node behind them. */
+        nodeId: undefined,
+        name: rival.name,
+        conference: rival.conference,
+        href: rival.href,
+        image: cmsImage(
+          published?.hero_image_mobile ?? published?.hero_image,
+          rivalImages.explore,
+        ),
+        /*
+         * Also the portrait crop: the card keeps its 249x295 box above 768px,
+         * and the wide desktop hero cover-crops the player half out of it.
+         */
+        imageDesktop: cmsImage(
+          published?.hero_image_mobile ?? published?.hero_image,
+          rivalImages.exploreDesktop,
+        ),
+        logo: cmsImage(published?.logo_image, rivalImages.logo),
+        logoDesktop: cmsImage(published?.logo_image, rivalImages.logoDesktop),
+        logoIsCms: Boolean(published?.logo_image),
+        logoScale: rival.logoScale,
+      }
+    })
   })
 }
 
