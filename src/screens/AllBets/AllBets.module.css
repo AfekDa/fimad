@@ -12,8 +12,8 @@
   width: 100%;
   /*
    * No min-height. Frame 251:2889 is 4861 tall but its own content stops at
-   * 3763 Ã¢ÂÂ the band below that is flat #011556 in the Figma export, verified
-   * row by row Ã¢ÂÂ so --bets-frame-height was padding the page out with 1098px
+   * 3763 — the band below that is flat #011556 in the Figma export, verified
+   * row by row — so --bets-frame-height was padding the page out with 1098px
    * of empty navy that nothing is drawn on.
    *
    * The manifest height and the fidelity crop come down to match; see
@@ -188,7 +188,7 @@
 }
 
 /*
- * 791:3532 Ã¢ÂÂ the same 12px-tall control All Teams draws, sitting flush with the
+ * 791:3532 — the same 12px-tall control All Teams draws, sitting flush with the
  * right edge of the 382 filter block on the last row (27 Aug feedback). The
  * frame draws it beside "Offensive ROTY Picks", so it rides that row rather
  * than claiming one of its own.
@@ -411,7 +411,7 @@
   }
 
   /*
-   * 791:3504 Ã¢ÂÂ the desktop frame draws the same control flush with the right
+   * 791:3504 — the desktop frame draws the same control flush with the right
    * edge of the 1120 content, beside the first row of chips. It cannot ride the
    * flow to get there: .filters keeps the column direction it has on mobile and
    * wraps into two rows, so chips fill top-to-bottom and a flow item lands at
