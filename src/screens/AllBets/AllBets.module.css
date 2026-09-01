@@ -134,6 +134,20 @@
   display: none;
 }
 
+/*
+ * iOS Safari magnifies the whole page when a form control whose text size is
+ * below 16px receives focus, and it never zooms back out on blur. The size
+ * must already be 16px BEFORE the tap lands, so it is set unconditionally,
+ * scoped to iOS touch devices to keep the 14px design everywhere else.
+ */
+@supports (-webkit-touch-callout: none) {
+  @media (hover: none) and (pointer: coarse) {
+    .searchInput {
+      font-size: 16px;
+    }
+  }
+}
+
 /* iOS Safari magnifies focused form controls whose computed text size is below 16px. */
 @supports (-webkit-touch-callout: none) {
   @media (hover: none) and (pointer: coarse) {
