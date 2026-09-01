@@ -1147,9 +1147,12 @@ test.describe('responsive integrity', () => {
     })
     await expect(heroImage).toHaveCSS('object-fit', 'cover')
     await expect(heroImage).toHaveCSS('object-position', '50% 100%')
+    // The Mb crest asset is the whole 430x638 section frame exported at 3x, so
+    // its box is the section — a smaller band floated the crest with a bar of
+    // backdrop under it and painted the asset's edges on the backdrop.
     const predictionImage = await page.locator('[data-node-id="162:1674"] img').boundingBox()
     expect(predictionImage?.width).toBeCloseTo(430, 0)
-    expect(predictionImage?.height).toBeCloseTo(282.72, 1)
+    expect(predictionImage?.height).toBeCloseTo(638, 0)
     // Cover-cropped and pushed 82px down the section, per the Figma fill.
     const favouriteImage = page.locator('[data-node-id="188:2513"] picture img')
     const favouriteImageBox = await favouriteImage.boundingBox()

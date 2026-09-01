@@ -179,8 +179,9 @@ const LOCAL_IMAGES: Record<string, string> = localImages
  *
  * The wrong files live in the Base44 hub, which this repo cannot write to, so
  * each bad url is re-pointed here — at the team's own upload where one exists,
- * else at a stand-in built from the team's own imagery by
- * scripts/build-image-fixes.mjs. Keying on the exact published url means a fix
+ * else at the design's own frame for that slot, exported from the Figma file
+ * into public/cms-fixes/ (see scripts/build-image-fixes.mjs for the frame
+ * ids). Keying on the exact published url means a fix
  * retires itself the moment the CMS republishes that slot with a corrected
  * upload, which changes the url. Remote targets still resolve through
  * LOCAL_IMAGES below, exactly as if the CMS had published them.

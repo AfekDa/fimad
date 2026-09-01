@@ -541,24 +541,24 @@
   line-height: var(--font-bc2-r-line);
 }
 
+/*
+ * The Mb asset is an export of the whole 430x638 section frame at 3x
+ * (1290x1950, 12px of headroom): a black gradient with the crest flush
+ * against its bottom edge, exactly like the Dt asset is the whole desktop
+ * section. The 282.72px band this replaces was a mis-measured sub-box — it
+ * stopped 16px short of the section and floated the crest with a bar of
+ * backdrop under it, and its edges read as a grey rectangle on the backdrop's
+ * gradient.
+ */
 .predictionImageBox {
   position: absolute;
-  top: 339.48px;
-  left: 0;
+  inset: 0;
   z-index: 1;
   display: block;
-  width: 100%;
-  height: 282.72px;
   overflow: hidden;
 }
 
-/*
- * The mobile asset is a 1290x1950 portrait -- a black gradient with the crest
- * in its bottom third -- while this box is a 282.72px landscape band. Without
- * a fit the default `fill` stretched that portrait to the box, squeezing every
- * crest sideways. Cover from the bottom keeps the source proportions and lands
- * the crest in the band, the same crop .heroImage takes.
- */
+/* Cover from the bottom, where the crest sits flush in the export. */
 .predictionImage {
   display: block;
   width: 100%;
@@ -1264,21 +1264,11 @@
 
   /*
    * The Dt asset is an export of the whole 1280x531 section frame at 1.25x
-   * (1600x664): its black-steel gradient IS the section background, with the
-   * crest against the right edge and the copy overlaid on its dark left half.
-   * Boxing it smaller paints the asset's edges as a grey rectangle floating
-   * on the backdrop — the box has to be the section.
+   * (1600x664), the same way the Mb asset is the whole mobile section — the
+   * box is already the section; only the crest's flush edge moves, from the
+   * bottom of the portrait to the right of the letterbox.
    */
-  .predictionImageBox {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* Cover from the right, where the crest sits flush in the export. */
   .predictionImage {
-    object-fit: cover;
     object-position: right center;
   }
 
