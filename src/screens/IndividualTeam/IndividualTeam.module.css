@@ -552,11 +552,20 @@
   overflow: hidden;
 }
 
+/*
+ * The mobile asset is a 1290x1950 portrait -- a black gradient with the crest
+ * in its bottom third -- while this box is a 282.72px landscape band. Without
+ * a fit the default `fill` stretched that portrait to the box, squeezing every
+ * crest sideways. Cover from the bottom keeps the source proportions and lands
+ * the crest in the band, the same crop .heroImage takes.
+ */
 .predictionImage {
   display: block;
   width: 100%;
   height: 100%;
   max-width: none;
+  object-fit: cover;
+  object-position: bottom;
 }
 
 /*
@@ -1255,6 +1264,15 @@
     left: 37.91%;
     width: 59.35%;
     height: 101.42%;
+  }
+
+  /* The desktop asset is a 1600x664 letterbox in a 1.41 box, so the mobile
+   * `cover` crop would slice the beak off the right. Contain keeps the whole
+   * crest at its own proportions; the bars it leaves are pure black on a pure
+   * black section, so they never read as bars. */
+  .predictionImage {
+    object-fit: contain;
+    object-position: center;
   }
 
   .favorite {
