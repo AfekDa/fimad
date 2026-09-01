@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T12:33:00.711Z",
+  "generated_at": "2026-09-01T12:47:40.537Z",
   "generated_by": "darcy.cordell@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
@@ -645,7 +645,7 @@
       "future_bet_url": null,
       "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/595dce197_Dt_FF_BuffaloBills_JamesCook.png",
       "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b647d6a02_Mb_BuffaloBills-JoshAllen.png",
-      "receivers": "The Bills have a solid three-man wide receiver rotation for the first time in years after adding DJ Moore. Khalil Shakir had a solid season in 2025 with 719 receiving yards but he’s not really a first option receiver. Keon Coleman is a former second-round pick but just hasn’t delivered on his potential so far. He had 112 yards and a touchdown in Week 1 last year, but then never had a game with more than 49 yards after that point. He was also a healthy scratch for a couple of games as the Bills lost trust in him. DJ Moore is going to be crucial for Allen but it remains to be seen if he’s a complete fix to their passing game problems. Dalton Kincaid and Dawson Knox are great options at tight end, I’m a big fan of Kincaid especially who looks to be healthier coming into this season. He dealt with a PCL injury over the past year or so.",
+      "receivers": "The Bills have a decent three-man wide receiver rotation for the first time in years after adding DJ Moore. Khalil Shakir had a solid season in 2025 with 719 receiving yards but he’s not really a first option receiver. Keon Coleman is a former second-round pick but just hasn’t delivered on his potential so far. He had 112 yards and a touchdown in Week 1 last year, but then never had a game with more than 49 yards after that point. He was also a healthy scratch for a couple of games as the Bills lost trust in him. DJ Moore is going to be crucial for Allen but it remains to be seen if he’s a complete fix to their passing game problems. Dalton Kincaid and Dawson Knox are great options at tight end, I’m a big fan of Kincaid especially who looks to be healthier coming into this season. ",
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/fc7867d2c_Mb_BuffaloBills_BlackSteel.png",
       "future_market": "10+ RUSHING TDS",
       "lines": {
@@ -659,7 +659,7 @@
       "defensive_coordinator": "JIM LEONHARD",
       "slug": "team-5",
       "order": 5,
-      "overview": "The Bills enter a new era with Joe Brady replacing Sean McDermott as head coach and Jim Leonhard taking over as defensive coordinator. Buffalo's biggest move was trading for receiver DJ Moore, finally giving Josh Allen a true WR1, while also bolstering their defense with edge rusher Bradley Chubb and several secondary additions. Last season, the Bills had the NFL's best rushing attack, led by James Cook's league-leading 1,621 yards, but their run defense ranked among the league's worst despite an elite pass defense. Allen remains an MVP-caliber dual-threat quarterback, though his passing numbers have dipped over the past two seasons. With Moore now in the mix alongside Khalil Shakir and Dalton Kincaid, and defensive upgrades aimed at fixing their run-stopping issues, Buffalo looks poised to compete.",
+      "overview": "The Bills enter a new era with Joe Brady replacing Sean McDermott as head coach and Jim Leonhard taking over as defensive coordinator. Buffalo's biggest move was trading for receiver DJ Moore, giving Josh Allen a true WR1, while also bolstering their defense with edge rusher Bradley Chubb and several secondary additions. Last season, the Bills had the NFL's best rushing attack, led by James Cook's league-leading 1,621 yards, but their run defense ranked among the league's worst. Allen remains an MVP-caliber dual-threat quarterback, though his passing numbers have dipped over the past two seasons. With Moore now in the mix alongside Khalil Shakir and Dalton Kincaid, and defensive upgrades aimed at fixing their run-stopping issues, Buffalo looks poised to compete for Super Bowl glory.",
       "head_coach": "JOE BRADY",
       "offensive_coordinator": "PETE CARMICHAEL",
       "prediction_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/10d311fa4_Dt_BuffaloBills_BlackSteel.png",
@@ -776,13 +776,13 @@
           "opponent": "NYJ"
         }
       ],
-      "quarterbacks": "Josh Allen is arguably the best quarterback in the NFL and is still just 30 years old. He’s been top-5 in MVP voting for five straight seasons and I can’t see that changing this year. He’s coming off a 25 touchdown, 10 interception season but the Bills were really lacking in top receivers last year. Finally they’ve given him a WR1 in DJ Moore who had a decent season in Chicago but still has plenty left in the tank. Allen is a true dual-threat QB, adding 14 rushing touchdowns and 579 rushing yards last year too. The Bills will probably want to rely less on his rushing ability this season and let him throw the ball more. He’s had two straight seasons throwing for less than 400 yards after passing for 4000+ in the previous four seasons. His passing line is set at 3600.5 this year and if he stays healthy he should be surpassing that.",
+      "quarterbacks": "Josh Allen is arguably the best quarterback in the NFL and is still just 30 years old. He’s been top-5 in MVP voting for five straight seasons and I can’t see that changing this year. He’s coming off a 25 touchdown, 10 interception season but the Bills were really lacking in top receivers. Finally they’ve given him a WR1 in DJ Moore who had a decent season in Chicago but still has plenty left in the tank. Allen is a true dual-threat QB, adding 14 rushing touchdowns and 579 rushing yards last year too. The Bills will probably want to rely less on his rushing ability this season and let him throw the ball more. He’s had two straight seasons throwing for less than 4000 yards after passing for 4000+ in the previous four seasons. His passing line is set at 3600.5 this year and if he stays healthy he should be surpassing that.",
       "name": "BUFFALO BILLS",
       "offseason_changes": "It’s a new era in Buffalo after the Bills moved on from head coach Sean McDermott, replacing him with last year’s OC, Joe Brady. They also have a new defensive coordinator in Jim Leonhard (previously at Denver). The big player move was giving up a second-round pick for wide receiver DJ Moore. He’s the best receiver Josh Allen has had since Stefon Diggs left two seasons ago. Buffalo also made some defensive signings, adding edge rusher Bradley Chubb, cornerback Dee Alford and safeties C.J Gardner-Johnson and Geno Stone. Two of their top draft picks (T.J Parker and Davison Igbinosun) also bolster their defense.",
       "prediction_text": "I have the Bills marginally winning the AFC East. Josh Allen can win games on his own talent and they’ve added a few nice pieces for him to improve. If their run defense tightens up and DJ Moore performs, they should be a challenger for the Super Bowl.",
       "id": "6a9022875b73b6b687d4f147",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-08-28T12:49:57.176000",
+      "updated_date": "2026-09-01T12:47:36.579000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
