@@ -20,7 +20,6 @@ const CATEGORY_BY_SECTION: Readonly<Record<string, string>> = {
   'defensive-poty': 'defensive_poty',
   'offensive-roty': 'offensive_roty',
   'favourite-futures': 'favorite_future',
-  exclusive: 'exclusive',
 }
 
 export function withCmsBets(

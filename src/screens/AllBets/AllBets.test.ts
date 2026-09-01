@@ -22,11 +22,17 @@ describe('All Bets', () => {
   })
 
   it('renders every category with one card per published bet', () => {
-    expect(body.querySelectorAll('[data-bet-section]')).toHaveLength(6)
+    expect(body.querySelectorAll('[data-bet-section]')).toHaveLength(5)
     expect(body.querySelectorAll('[data-bet-card]')).toHaveLength(BET_CARD_COUNT)
     expect(screen.getByText('MOST VALUABLE PLAYER PICKS')).toBeInTheDocument()
     expect(screen.getByText('FAVOURITE FUTURES')).toBeInTheDocument()
-    expect(screen.getByText('EXCLUSIVE')).toBeInTheDocument()
+  })
+
+  it('no longer draws the Exclusive category or its filter', () => {
+    expect(body.querySelector('[data-bet-section="exclusive"]')).not.toBeInTheDocument()
+    expect(body.querySelector('[data-filter-value="exclusive"]')).not.toBeInTheDocument()
+    expect(screen.queryByText('EXCLUSIVE')).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Exclusive' })).not.toBeInTheDocument()
   })
 
   it('starts with the All filter selected', () => {

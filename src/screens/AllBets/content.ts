@@ -109,16 +109,6 @@ const BASE_SECTIONS: readonly BetSectionContent[] = [
       bet('251:3474', '251:3475', 'Jared Goff', '+430'),
     ],
   },
-  {
-    id: 'exclusive',
-    title: 'EXCLUSIVE',
-    frameNodeId: '251:3529',
-    headingNodeId: '251:3530',
-    bets: [
-      bet('251:3571', '251:3572', 'Jared Goff', '+430'),
-      bet('251:3574', '251:3575', 'Jared Goff', '+430'),
-    ],
-  },
 ]
 
 /** The design's sections with the CMS's players and odds in them. */
@@ -127,7 +117,6 @@ export const BET_SECTIONS: readonly BetSectionContent[] = withCmsBets(BASE_SECTI
 export const BET_FILTERS = [
   { id: 'all', label: 'All' },
   { id: 'mvp', label: 'MVP Picks' },
-  { id: 'exclusive', label: 'Exclusive' },
   { id: 'offensive-poty', label: 'Offensive POTY Picks' },
   { id: 'favourite-futures', label: 'Favorite Future' },
   { id: 'defensive-poty', label: 'Defensive POTY Picks' },

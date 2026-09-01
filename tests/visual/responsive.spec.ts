@@ -1654,30 +1654,34 @@ test.describe('responsive integrity', () => {
       width: 382,
     })
 
-    // One card per published CMS bet: 3 + 3 + 3 + 3 + 32 + 1 today.
+    // One card per published CMS bet, across the five remaining categories.
     const cards = page.locator('[data-bet-card]')
     await expect(cards).toHaveCount(BET_CARD_COUNT)
     expect(await cards.first().boundingBox()).toMatchObject({ width: 382, height: 70 })
 
     const allBetsFilter = page.getByRole('button', { name: 'All', exact: true })
-    const exclusive = page.getByRole('button', { name: 'Exclusive' })
+    const defensive = page.getByRole('button', { name: 'Defensive POTY Picks' })
     const mvp = page.getByRole('button', { name: 'MVP Picks' })
     const visibleSections = page.locator('[data-bet-section]:not([hidden])')
 
-    await exclusive.click()
+    // The Exclusive category and its chip are gone; five categories remain.
+    await expect(page.getByRole('button', { name: 'Exclusive' })).toHaveCount(0)
+    await expect(page.locator('[data-bet-section="exclusive"]')).toHaveCount(0)
+
+    await defensive.click()
     await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleSections).toHaveCount(1)
     await expect(page.locator('[data-bet-card]:not([hidden])')).toHaveCount(
-      betCardCount('exclusive'),
+      betCardCount('defensive-poty'),
     )
 
     /*
      * 28 Aug feedback: categories combine. Adding MVP Picks widens the list
-     * rather than replacing Exclusive, and "All" stays unpressed while any
-     * category is.
+     * rather than replacing Defensive POTY Picks, and "All" stays unpressed
+     * while any category is.
      */
     await mvp.click()
-    await expect(exclusive).toHaveAttribute('aria-pressed', 'true')
+    await expect(defensive).toHaveAttribute('aria-pressed', 'true')
     await expect(mvp).toHaveAttribute('aria-pressed', 'true')
     await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'false')
     await expect(visibleSections).toHaveCount(2)
@@ -1687,7 +1691,7 @@ test.describe('responsive integrity', () => {
      * the last category is an empty selection, not a silent fallback to "All",
      * so the screen empties out and says so.
      */
-    await exclusive.click()
+    await defensive.click()
     await expect(visibleSections).toHaveCount(1)
     await mvp.click()
     await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'false')
@@ -1697,14 +1701,14 @@ test.describe('responsive integrity', () => {
     // "All" is the way back to everything, and it is an explicit click.
     await allBetsFilter.click()
     await expect(allBetsFilter).toHaveAttribute('aria-pressed', 'true')
-    await expect(visibleSections).toHaveCount(6)
+    await expect(visibleSections).toHaveCount(5)
 
     // "All" is the one filter that does not combine: it clears the categories.
-    await exclusive.click()
+    await defensive.click()
     await expect(visibleSections).toHaveCount(1)
     await allBetsFilter.click()
-    await expect(exclusive).toHaveAttribute('aria-pressed', 'false')
-    await expect(visibleSections).toHaveCount(6)
+    await expect(defensive).toHaveAttribute('aria-pressed', 'false')
+    await expect(visibleSections).toHaveCount(5)
 
     await page.getByRole('searchbox', { name: 'Search bets' }).fill('not a player')
     await expect(page.getByText('No bets match your filters.')).toBeVisible()
@@ -1771,7 +1775,7 @@ test.describe('responsive integrity', () => {
     await expect(clearAll).toBeHidden()
     await expect(search).toHaveValue('')
 
-    await page.getByRole('button', { name: 'Exclusive' }).click()
+    await page.getByRole('button', { name: 'Defensive POTY Picks' }).click()
     await expect(clearAll).toBeVisible()
 
     // Frame 1376 sits at x=24 and is 382 wide, and the control ends on its edge.
@@ -1787,7 +1791,7 @@ test.describe('responsive integrity', () => {
     await clearAll.click()
     await expect(clearAll).toBeHidden()
     await expect(allCategory).toHaveAttribute('aria-pressed', 'true')
-    await expect(page.locator('[data-bet-section]:not([hidden])')).toHaveCount(6)
+    await expect(page.locator('[data-bet-section]:not([hidden])')).toHaveCount(5)
   })
 
   /*
@@ -1947,8 +1951,9 @@ test.describe('responsive integrity', () => {
 
     /*
      * 27 Aug feedback: "cross-check the spacing between the filters". Frame
-     * 791:3391 flows the chips left to right with 16px gaps — five on the
-     * first row, two on the second, mixed case. The mobile column direction
+     * 791:3391 flows the chips left to right with 16px gaps — four on the
+     * first row (the Exclusive chip having been dropped), two on the second,
+     * mixed case. The mobile column direction
      * used to fill 106px columns top-to-bottom here instead.
      */
     const chipRows = await page
@@ -1959,7 +1964,7 @@ test.describe('responsive integrity', () => {
           return { label: chip.textContent?.trim(), x: box.x, y: box.y, right: box.right }
         }),
       )
-    expect(chipRows.filter((chip) => Math.abs(chip.y - 171) < 1)).toHaveLength(5)
+    expect(chipRows.filter((chip) => Math.abs(chip.y - 171) < 1)).toHaveLength(4)
     const secondRow = chipRows.filter((chip) => Math.abs(chip.y - 220) < 1)
     expect(secondRow.map((chip) => chip.label)).toEqual([
       'Defensive POTY Picks',
@@ -2010,10 +2015,6 @@ test.describe('responsive integrity', () => {
     expect(await futureCards.nth(0).boundingBox()).toMatchObject({ x: 80, width: 357 })
     expect(await futureCards.nth(1).boundingBox()).toMatchObject({ x: 462, width: 357 })
     expect(await futureCards.nth(2).boundingBox()).toMatchObject({ x: 844, width: 357 })
-    await expect(
-      page.locator('[data-bet-section="exclusive"] [data-bet-card]'),
-    ).toHaveCount(betCardCount('exclusive'))
-
     expect(await page.locator('[data-app-nav]').boundingBox()).toMatchObject({
       x: 290,
       y: 678,

@@ -122,7 +122,7 @@ export const SCREENS: readonly ScreenMeta[] = [
      * the same 878 band as the Homepage. */
     viewportHeight: 878,
     divergesFromFigma:
-      'The frame draws a fixed 37-card placeholder composition (23 favourite futures, 2 exclusives, "Lamar Jackson +430" and friends). The app renders exactly the bets the CMS publishes — 45 cards today, with different players, odds, and per-section counts — so the card lists and the page height are intentionally different from the export. Card geometry is unchanged and is still asserted in responsive.spec.ts.',
+      'The frame draws a fixed 37-card placeholder composition (23 favourite futures, 2 exclusives, "Lamar Jackson +430" and friends) and an Exclusive category the app no longer has: the section and its filter chip were dropped, so the app draws five categories against the frame’s six. The app also renders exactly the bets the CMS publishes — with different players, odds, and per-section counts — so the card lists and the page height are intentionally different from the export. Card geometry is unchanged and is still asserted in responsive.spec.ts.',
   },
   {
     path: '/awards',

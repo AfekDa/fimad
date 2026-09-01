@@ -45,12 +45,12 @@ import styles from './AllBets.module.css'
   <section class={styles.filters} aria-label="Bet categories" data-node-id="251:3065">
     <div class={styles.filterRow} data-node-id="251:3001">
       {
-        BET_FILTERS.slice(0, 3).map((filter) => (
+        BET_FILTERS.slice(0, 2).map((filter) => (
           <Button
             variant="filter"
             state={filter.id === 'all' ? 'active' : 'default'}
             label={filter.label}
-            nodeId={filter.id === 'all' ? '251:3002' : filter.id === 'mvp' ? '251:3003' : '251:3050'}
+            nodeId={filter.id === 'all' ? '251:3002' : '251:3003'}
             assetSet="teams-page"
             filterValue={filter.id}
           />
@@ -59,7 +59,7 @@ import styles from './AllBets.module.css'
     </div>
     <div class={styles.filterRow} data-node-id="251:3021">
       {
-        BET_FILTERS.slice(3, 5).map((filter, index) => (
+        BET_FILTERS.slice(2, 4).map((filter, index) => (
           <Button
             variant="filter"
             label={filter.label}
@@ -73,19 +73,19 @@ import styles from './AllBets.module.css'
     <div class={styles.filterRow} data-node-id="251:3034">
       <Button
         variant="filter"
-        label={BET_FILTERS[5].label}
+        label={BET_FILTERS[4].label}
         nodeId="251:3035"
         assetSet="teams-page"
-        filterValue={BET_FILTERS[5].id}
+        filterValue={BET_FILTERS[4].id}
       />
     </div>
     <div class={styles.filterRow} data-node-id="251:3039">
       <Button
         variant="filter"
-        label={BET_FILTERS[6].label}
+        label={BET_FILTERS[5].label}
         nodeId="251:3040"
         assetSet="teams-page"
-        filterValue={BET_FILTERS[6].id}
+        filterValue={BET_FILTERS[5].id}
       />
 
       <button class={styles.clearAll} type="button" data-node-id="791:3532" data-clear-filters hidden>
@@ -148,8 +148,8 @@ import styles from './AllBets.module.css'
 
     if (
       search === null ||
-      filterButtons.length !== 7 ||
-      sections.length !== 6 ||
+      filterButtons.length !== 6 ||
+      sections.length !== 5 ||
       emptyState === null ||
       clearAllButton === null
     ) {

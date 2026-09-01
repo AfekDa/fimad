@@ -396,7 +396,7 @@
 
   /*
    * 27 Aug feedback: "cross-check the spacing between the filters". The frame
-   * flows the chips left to right in two rows with 16px gaps -- five on the
+   * flows the chips left to right in two rows with 16px gaps -- four on the
    * first row, two on the second (791:3501..3546). The mobile column direction
    * used to leak in here and fill 106px columns top-to-bottom instead, which
    * scattered the chips into pairs with 100px+ of navy between the pairs.
@@ -422,7 +422,7 @@
     display: contents;
   }
 
-  /* All seven chips fit 1120 on one line, so the frame's break before
+  /* All six chips fit 1120 on one line, so the frame's break before
    * "Defensive POTY Picks" -- the third source row -- has to be forced. */
   .filterRow:nth-of-type(3)::before {
     content: '';
@@ -468,8 +468,7 @@
   .betSection[data-bet-section='offensive-poty'] .sectionTitle,
   .betSection[data-bet-section='defensive-poty'] .sectionTitle,
   .betSection[data-bet-section='offensive-roty'] .sectionTitle,
-  .betSection[data-bet-section='favourite-futures'] .sectionTitle,
-  .betSection[data-bet-section='exclusive'] .sectionTitle {
+  .betSection[data-bet-section='favourite-futures'] .sectionTitle {
     font-size: 0;
     height: 26px;
   }
@@ -477,8 +476,7 @@
   .betSection[data-bet-section='offensive-poty'] .sectionTitle::after,
   .betSection[data-bet-section='defensive-poty'] .sectionTitle::after,
   .betSection[data-bet-section='offensive-roty'] .sectionTitle::after,
-  .betSection[data-bet-section='favourite-futures'] .sectionTitle::after,
-  .betSection[data-bet-section='exclusive'] .sectionTitle::after {
+  .betSection[data-bet-section='favourite-futures'] .sectionTitle::after {
     display: block;
     color: var(--color-white);
     font-family: var(--font-family-base);
@@ -504,10 +502,6 @@
 
   .betSection[data-bet-section='favourite-futures'] .sectionTitle::after {
     content: 'FAVOURITE FUTURES';
-  }
-
-  .betSection[data-bet-section='exclusive'] .sectionTitle::after {
-    content: 'EXCLUSIVE';
   }
 
   .betList {
