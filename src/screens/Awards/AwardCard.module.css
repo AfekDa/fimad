@@ -12,6 +12,12 @@
   border-radius: var(--radius-card);
 }
 
+/* Hidden whenever the search filters it out; `display: flex` above outranks the
+ * UA rule for [hidden], so the attribute needs its own declaration here. */
+.card[hidden] {
+  display: none;
+}
+
 .image,
 .scrim {
   position: absolute;
