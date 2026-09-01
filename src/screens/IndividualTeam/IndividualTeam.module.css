@@ -1262,20 +1262,24 @@
     line-height: var(--font-dt-bc2-line);
   }
 
+  /*
+   * The Dt asset is an export of the whole 1280x531 section frame at 1.25x
+   * (1600x664): its black-steel gradient IS the section background, with the
+   * crest against the right edge and the copy overlaid on its dark left half.
+   * Boxing it smaller paints the asset's edges as a grey rectangle floating
+   * on the backdrop — the box has to be the section.
+   */
   .predictionImageBox {
-    top: -0.71%;
-    left: 37.91%;
-    width: 59.35%;
-    height: 101.42%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  /* The desktop asset is a 1600x664 letterbox in a 1.41 box, so the mobile
-   * `cover` crop would slice the beak off the right. Contain keeps the whole
-   * crest at its own proportions; the bars it leaves are pure black on a pure
-   * black section, so they never read as bars. */
+  /* Cover from the right, where the crest sits flush in the export. */
   .predictionImage {
-    object-fit: contain;
-    object-position: center;
+    object-fit: cover;
+    object-position: right center;
   }
 
   .favorite {
