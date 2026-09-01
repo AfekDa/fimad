@@ -797,7 +797,7 @@ test.describe('responsive integrity', () => {
           elements.flatMap((card) => {
             const box = card.getBoundingClientRect()
 
-            return [...card.querySelectorAll<HTMLElement>('h2, h3, a, button')].flatMap((part) => {
+            return [...card.querySelectorAll<HTMLElement>('h2, h3, h4, a, button')].flatMap((part) => {
               const partBox = part.getBoundingClientRect()
               const text = (part.textContent ?? '').trim().slice(0, 30)
               const spill = Math.round(
@@ -1055,7 +1055,19 @@ test.describe('responsive integrity', () => {
     await page.goto('/teams/team-1')
     await page.evaluate(async () => {
       await document.fonts.ready
-      await Promise.all(Array.from(document.images).map((image) => image.decode().catch(() => undefined)))
+      /*
+       * Only what the browser has actually fetched. The Explore carousel runs
+       * all 32 teams now, so most of its lazy card art sits thousands of pixels
+       * along a horizontal scroller and is never requested — decode() on one of
+       * those never settles, and awaiting them all would hang here rather than
+       * fail. Every card is a fixed 249x295 either way, so an undecoded one
+       * moves nothing this test measures.
+       */
+      await Promise.all(
+        Array.from(document.images)
+          .filter((image) => image.complete)
+          .map((image) => image.decode().catch(() => undefined)),
+      )
     })
     await scrollScreenToEnd(page)
 

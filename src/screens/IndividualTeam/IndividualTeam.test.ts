@@ -54,6 +54,14 @@ describe('Individual Team', () => {
     expect(screen.getByAltText('Josh Allen in a Buffalo Bills uniform')).toBeInTheDocument()
   })
 
+  it('keeps the reference carousel ungrouped, as the frame draws it', () => {
+    const carousel = body.querySelector('[data-node-id="181:1431"]') as HTMLElement
+
+    expect(carousel.querySelectorAll('article')).toHaveLength(5)
+    expect(carousel.querySelectorAll('h3')).toHaveLength(5)
+    expect(carousel.querySelectorAll('h4')).toHaveLength(0)
+  })
+
   it('ships the fail-fast search controller', () => {
     // The page's own controller plus the AppNav team search it always docks.
     expect(body.querySelectorAll('script')).toHaveLength(2)
@@ -102,16 +110,35 @@ describe('Individual Team placeholders', () => {
     expect(within(placeholder.querySelector('[data-node-id="730:3141"]') as HTMLElement).getByText('NO GAME')).toBeInTheDocument()
   })
 
-  it('points the explore carousel at other teams', () => {
-    const links = [...placeholder.querySelectorAll('[data-node-id="181:1431"] a')]
+  it('carries the whole league in the explore carousel, division by division', () => {
+    const carousel = placeholder.querySelector('[data-node-id="181:1431"]') as HTMLElement
+    const groups = [...carousel.querySelectorAll('section')]
 
-    expect(links.map((link) => link.getAttribute('href'))).toEqual([
-      '/teams/team-3',
-      '/teams/team-4',
-      '/teams/team-5',
-      '/teams/team-6',
-      '/teams/team-7',
+    // Team 2's own division leads; the other seven follow in roster order.
+    expect(groups.map((group) => group.querySelector('h3')?.textContent)).toEqual([
+      'AFC NORTH',
+      'AFC EAST',
+      'AFC SOUTH',
+      'AFC WEST',
+      'NFC NORTH',
+      'NFC EAST',
+      'NFC SOUTH',
+      'NFC WEST',
     ])
+
+    expect(groups.map((group) => group.querySelectorAll('article').length)).toEqual(
+      Array.from({ length: 8 }, () => 4),
+    )
+
+    const links = [...carousel.querySelectorAll('a')]
+    expect(links).toHaveLength(TEAMS.length)
+    expect(links.map((link) => link.getAttribute('href'))).toEqual(
+      expect.arrayContaining(TEAMS.map((team) => team.href)),
+    )
+    // Its own division's four, the page's own team among them, come first.
+    expect(links.slice(0, 4).map((link) => link.getAttribute('href'))).toEqual(
+      TEAMS.filter((team) => team.division === 'AFC NORTH').map((team) => team.href),
+    )
   })
 
   it('never schedules a team against itself', () => {

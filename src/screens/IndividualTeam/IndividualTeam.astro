@@ -318,34 +318,58 @@ const { team = BUFFALO_BILLS } = Astro.props
         />
       </div>
 
+      {/*
+        The whole league, division by division, scrolled horizontally: the
+        reader's own division leads, the other seven follow. The reference route
+        keeps its single heading-less group, so its pinned height is unchanged.
+      */}
       <div class={styles.exploreCarousel} data-node-id="181:1431">
         {
-          team.exploreCards.map((card) => (
-            <article class={styles.exploreCard} data-node-id={card.nodeId}>
-              <picture class={styles.reframedPicture}>
-                <source media="(min-width: 768px)" srcset={card.imageDesktop} />
-                <img class={styles.exploreImage} src={card.image} alt={`${card.name} player portrait`} loading="lazy" decoding="async" data-reveal />
-              </picture>
-              <div class={styles.exploreScrim} aria-hidden="true"></div>
-              <span class={styles.conference}>{card.division}</span>
-              <div class={styles.exploreDetails}>
-                <span class={styles.teamLogo}>
-                  <picture class={styles.reframedPicture}>
-                    <source media="(min-width: 768px)" srcset={card.logoDesktop} />
-                    <img class={styles.teamLogoLeaf} src={card.logo} alt="" aria-hidden="true" loading="lazy" decoding="async" data-reveal />
-                  </picture>
-                </span>
-                <h3 class={styles.exploreTeamName}>{card.name}</h3>
-                <Button
-                  variant="button"
-                  label="Team Preview"
-                  ariaLabel={`Preview ${card.name}`}
-                  href={card.href}
-                  assetSet="teams-page"
-                />
-              </div>
-            </article>
-          ))
+          team.exploreGroups.map((group, groupIndex) => {
+            const titleId = `explore-division-${groupIndex}`
+            /* Under the group heading when there is one, under the section when not. */
+            const TeamName = group.title === null ? 'h3' : 'h4'
+
+            return (
+              <section
+                class={styles.exploreGroup}
+                aria-labelledby={group.title === null ? undefined : titleId}
+              >
+                {group.title !== null && (
+                  <h3 id={titleId} class={styles.exploreGroupTitle}>{group.title}</h3>
+                )}
+
+                <div class={styles.exploreGroupCards}>
+                  {group.cards.map((card) => (
+                    <article class={styles.exploreCard} data-node-id={card.nodeId}>
+                      <picture class={styles.reframedPicture}>
+                        <source media="(min-width: 768px)" srcset={card.imageDesktop} />
+                        <img class={styles.exploreImage} src={card.image} alt={`${card.name} player portrait`} loading="lazy" decoding="async" data-reveal />
+                      </picture>
+                      <div class={styles.exploreScrim} aria-hidden="true"></div>
+                      <span class={styles.conference}>{card.conference}</span>
+                      <div class={styles.exploreDetails}>
+                        <span class={styles.teamLogo}>
+                          <picture class={styles.reframedPicture}>
+                            <source media="(min-width: 768px)" srcset={card.logoDesktop} />
+                            <img class={styles.teamLogoLeaf} src={card.logo} alt="" aria-hidden="true" loading="lazy" decoding="async" data-reveal />
+                          </picture>
+                        </span>
+                        <TeamName class={styles.exploreTeamName}>{card.name}</TeamName>
+                        <Button
+                          variant="button"
+                          label="Team Preview"
+                          ariaLabel={`Preview ${card.name}`}
+                          href={card.href}
+                          assetSet="teams-page"
+                        />
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            )
+          })
         }
       </div>
     </section>

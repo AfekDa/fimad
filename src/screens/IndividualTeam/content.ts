@@ -1,8 +1,8 @@
 import { ASSETS } from '../../assets/assets'
 import { imagesForTeam } from '../../assets/teamImages'
-import { TEAMS, TEAM_COUNT } from '../../data/teams'
+import { DIVISIONS, TEAMS, TEAM_COUNT } from '../../data/teams'
 import { withCmsContent } from './cmsContent'
-import type { Conference, Team } from '../../data/teams'
+import type { Conference, Division, Team } from '../../data/teams'
 
 /**
  * Everything the Individual Team screen renders that differs from one team to
@@ -68,18 +68,34 @@ export interface TeamDesktopScheduleGame {
 }
 
 export interface TeamExploreCard {
-  readonly nodeId: string
+  /**
+   * `undefined` past the five cards the design draws. The roster carousel runs
+   * all 32 teams, and a node id that named several elements at once would break
+   * the fidelity specs that locate by one.
+   */
+  readonly nodeId: string | undefined
   readonly name: string
   /**
-   * The pill's label — the card team's division. The Figma reference route
-   * keeps the frame's plain "AFC", which is why this is not typed `Division`.
+   * The pill's label. The division is the group heading over the card now, so
+   * the pill carries the conference the frame draws there rather than
+   * repeating "NFC EAST" four times under an "NFC EAST" heading.
    */
-  readonly division: string
+  readonly conference: Conference
   readonly href: string
   readonly image: string
   readonly imageDesktop: string
   readonly logo: string
   readonly logoDesktop: string
+}
+
+export interface TeamExploreGroup {
+  /**
+   * The division heading over the group, or `null` on the ungrouped row the
+   * `/teams/buffalo-bills` reference route keeps — the Figma frame draws five
+   * cards with no heading, and that section's pinned height is measured.
+   */
+  readonly title: Division | null
+  readonly cards: readonly TeamExploreCard[]
 }
 
 export interface TeamPageContent {
@@ -125,7 +141,7 @@ export interface TeamPageContent {
   readonly odds: readonly TeamOdd[]
   readonly schedule: readonly TeamScheduleGame[]
   readonly desktopSchedule: readonly TeamDesktopScheduleGame[]
-  readonly exploreCards: readonly TeamExploreCard[]
+  readonly exploreGroups: readonly TeamExploreGroup[]
 }
 
 /** Odds card node ids, images and crops, in the order frame 162:1605 draws them. */
@@ -191,9 +207,9 @@ const DESKTOP_SCHEDULE_WEEKS = [1, 7, 13, 2, 8, 14, 3, 9, 15, 4, 10, 16, 5, 11, 
 const DESKTOP_SCHEDULE_NODE_IDS = ['791:2111', '791:2470', '791:2480', '791:2523', '791:2534', '791:2545', '791:2556', '791:2567', '791:2578', '791:2589', '791:2600', '791:2611', '791:2622', '791:2633', '791:2644', '791:2655', '791:2666', '791:2677'] as const
 
 /**
- * Node ids of the cards in the Explore All Teams carousel (181:1431). The frame
- * draws five; a roster team shows only its three division rivals, so it uses
- * the first three ids and the reference route still fills all five.
+ * Node ids of the five cards frame 181:1431 draws in the Explore All Teams
+ * carousel. Only the `/teams/buffalo-bills` reference route uses them — a
+ * roster team's carousel runs all 32 teams, which the frame has no nodes for.
  */
 const EXPLORE_NODE_IDS = ['181:1405', '181:1418', '181:1432', '397:2369', '397:2383'] as const
 
@@ -304,16 +320,26 @@ export const BUFFALO_BILLS: TeamPageContent = {
   odds: ODDS,
   schedule: BUFFALO_SCHEDULE,
   desktopSchedule: buildDesktopSchedule(BUFFALO_SCHEDULE),
-  exploreCards: EXPLORE_NODE_IDS.map((nodeId) => ({
-    nodeId,
-    name: 'BUFFALO BILLS',
-    division: 'AFC',
-    href: '/teams/buffalo-bills',
-    image: ASSETS.teamExploreCard,
-    imageDesktop: ASSETS.teamExploreCard,
-    logo: ASSETS.teamsLogoBuffalo,
-    logoDesktop: ASSETS.teamsLogoBuffalo,
-  })),
+  /*
+   * One heading-less group, so the reference route still draws exactly the five
+   * cards frame 181:1431 does. The division grouping below is roster content,
+   * not something the frame shows, and this section's height is pinned.
+   */
+  exploreGroups: [
+    {
+      title: null,
+      cards: EXPLORE_NODE_IDS.map((nodeId) => ({
+        nodeId,
+        name: 'BUFFALO BILLS',
+        conference: 'AFC',
+        href: '/teams/buffalo-bills',
+        image: ASSETS.teamExploreCard,
+        imageDesktop: ASSETS.teamExploreCard,
+        logo: ASSETS.teamsLogoBuffalo,
+        logoDesktop: ASSETS.teamsLogoBuffalo,
+      })),
+    },
+  ],
 }
 
 /**
@@ -390,24 +416,45 @@ function createBaseTeam(team: Team): TeamPageContent {
     odds: ODDS,
     schedule,
     desktopSchedule: buildDesktopSchedule(schedule),
-    /* The team's three division rivals, in roster order. */
-    exploreCards: TEAMS.filter(
-      (rival) => rival.division === team.division && rival.number !== number,
-    ).map((rival, index) => {
-      const rivalImages = imagesForTeam(rival.number)
-
-      return {
-        nodeId: EXPLORE_NODE_IDS[index] ?? '',
-        name: rival.name,
-        division: rival.division,
-        href: rival.href,
-        image: rivalImages.explore,
-        imageDesktop: rivalImages.exploreDesktop,
-        logo: rivalImages.logo,
-        logoDesktop: rivalImages.logoDesktop,
-      }
-    }),
+    exploreGroups: buildExploreGroups(team),
   }
+}
+
+/**
+ * The whole league for the Explore carousel, split into the eight divisions and
+ * led by the one this page's team plays in.
+ *
+ * The section is titled "Explore all teams" but used to hold three — the team's
+ * division rivals — so the rest of the league was only reachable through the
+ * All Teams page. Leading with the reader's own division keeps those rivals
+ * where they were, first in the scroller, and puts the other 28 a swipe away.
+ */
+function buildExploreGroups(team: Team): readonly TeamExploreGroup[] {
+  const start = DIVISIONS.indexOf(team.division)
+
+  return DIVISIONS.map((_, offset) => {
+    const division = DIVISIONS[(start + offset) % DIVISIONS.length]
+    if (division === undefined) throw new Error(`No division at offset ${offset}`)
+
+    return {
+      title: division,
+      cards: TEAMS.filter((rival) => rival.division === division).map((rival) => {
+        const rivalImages = imagesForTeam(rival.number)
+
+        return {
+          /* Only the reference route's five cards have a node behind them. */
+          nodeId: undefined,
+          name: rival.name,
+          conference: rival.conference,
+          href: rival.href,
+          image: rivalImages.explore,
+          imageDesktop: rivalImages.exploreDesktop,
+          logo: rivalImages.logo,
+          logoDesktop: rivalImages.logoDesktop,
+        }
+      }),
+    }
+  })
 }
 
 /**

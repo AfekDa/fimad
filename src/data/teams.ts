@@ -18,7 +18,7 @@ export type Conference = 'AFC' | 'NFC'
  * the league division by division, four teams each, so a team's division is a
  * function of its roster number.
  */
-const DIVISIONS = [
+export const DIVISIONS = [
   'AFC NORTH',
   'AFC EAST',
   'AFC SOUTH',
