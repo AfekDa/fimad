@@ -95,6 +95,9 @@
 
 .filter {
   height: 33px;
+  /* Whenever a chip is wider than its content (the min-width floor below),
+   * the label sits in the middle of the pill rather than hugging the left. */
+  justify-content: center;
 }
 
 .filterDefault {
