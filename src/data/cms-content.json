@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T10:07:43.564Z",
+  "generated_at": "2026-09-02T10:08:28.905Z",
   "generated_by": "bjadhav@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
@@ -188,7 +188,7 @@
       "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/284aa9f5f_Dt_CincinnatiBengals-JaMarrChase.png",
       "future_bet_url": "https://account.sportsbook.fanduel.com/sportsbook/addToBetslip?shareCode=dY1pOl5",
       "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e7a9848a7_Dt_FF_CincinnatiBengals_JoeBurrow.png",
-      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/f3721cc27_Mb_CincinnatiBengals-JaMarrChase.png",
+      "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/8ef14d97a_Mb_CincinnatiBengals-JaMarrChase.png",
       "receivers": "This is one of the most stacked receiver rooms in the NFL, led by arguably the best receiver in the league, Ja’Marr Chase. He’s put up over 1000 receiving yards in all five of his seasons as a pro and is coming off a 1412 yard season with 8 TDs. Chase is the second-highest paid receiver in the league, earning over $40 million per season. There’s not much more that needs to be said about him, he’s an elite weapon for Joe Burrow and he can do it all. Tee Higgins would be WR1 on a lot of other teams but plays second fiddle to Chase. Higgins had a down year by his standards in 2025, finishing with just one game of 100+ yards. Andrei Iosivas, Dohnte Meyers and tight end Mike Gesicki all complement the two stars nicely. Expect big numbers from this unit in 2026, especially if Burrow stays healthy and their defense can get them on the field more often.",
       "prediction_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/e8cf7efcc_Mb_CincinnatiBengals_BlackSteel.png",
       "future_market": "OVER 32.5 PASSING TDS",
@@ -326,7 +326,7 @@
       "prediction_text": "I have the Bengals making the playoffs but narrowly missing out on the AFC North title to the Ravens. It’s really all on their defense this year, if they can make some good improvements then this team will win more games. They could go deep in playoffs if it all clicks.",
       "id": "6a9022875b73b6b687d4f144",
       "created_date": "2026-08-27T11:41:59.899000",
-      "updated_date": "2026-09-02T10:07:39.978000",
+      "updated_date": "2026-09-02T10:08:25.190000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -5335,50 +5335,50 @@
       "is_sample": false
     },
     {
-      "bet_url": "",
+      "bet_url": "https://account.sportsbook.fanduel.com/sportsbook/addToBetslip?shareCode=II27kCd",
       "player_name": "Jaylen Waddle",
       "category": "favorite_future",
       "odds": "???",
       "order": 26,
       "id": "6a91649b8b3165f5833130d6",
       "created_date": "2026-08-28T10:36:11.157000",
-      "updated_date": "2026-08-28T10:43:05.874000",
+      "updated_date": "2026-09-02T10:07:48.860000",
       "created_by_id": "6a903b034c50e33b46dcb928",
       "is_sample": false
     },
     {
-      "bet_url": "",
+      "bet_url": "https://account.sportsbook.fanduel.com/sportsbook/addToBetslip?shareCode=9eUeVCx",
       "player_name": "Kenneth Walker",
       "category": "favorite_future",
       "odds": "???",
       "order": 27,
       "id": "6a9164ab10c4df62b1932592",
       "created_date": "2026-08-28T10:36:27.931000",
-      "updated_date": "2026-08-28T10:43:04.325000",
+      "updated_date": "2026-09-02T10:08:00.069000",
       "created_by_id": "6a903b034c50e33b46dcb928",
       "is_sample": false
     },
     {
-      "bet_url": "",
+      "bet_url": "https://account.sportsbook.fanduel.com/sportsbook/addToBetslip?shareCode=BTb5zhe",
       "player_name": "Brock Bowers",
       "category": "favorite_future",
       "odds": "???",
       "order": 28,
       "id": "6a9164c48751eb63d4fedb27",
       "created_date": "2026-08-28T10:36:52.035000",
-      "updated_date": "2026-08-28T10:43:03.864000",
+      "updated_date": "2026-09-02T10:08:10.951000",
       "created_by_id": "6a903b034c50e33b46dcb928",
       "is_sample": false
     },
     {
-      "bet_url": "",
+      "bet_url": "https://account.sportsbook.fanduel.com/sportsbook/addToBetslip?shareCode=vKvlcrj",
       "player_name": "Ladd Mcconkey",
       "category": "favorite_future",
       "odds": "???",
       "order": 29,
       "id": "6a9164d7338f41b9333da26d",
       "created_date": "2026-08-28T10:37:11.950000",
-      "updated_date": "2026-08-28T10:43:03.445000",
+      "updated_date": "2026-09-02T10:08:21.067000",
       "created_by_id": "6a903b034c50e33b46dcb928",
       "is_sample": false
     },
