@@ -51,6 +51,32 @@ jobs:
       - name: Build
         run: npm run build
 
+      # A deploy replaces the whole site, which deletes the previous build's
+      # hashed /_astro files while open tabs and the CDN's ten-minute copies of
+      # every page still point at them. These three steps keep the last three
+      # days of those files published, so a page from an earlier deploy still
+      # swaps screens in place instead of flashing through a full reload. The
+      # set travels between runs in the Actions cache; see
+      # scripts/carry-assets.mjs. PR runs never publish, so they stay out of it.
+      - name: Restore earlier deploys' hashed assets
+        if: github.event_name != 'pull_request'
+        uses: actions/cache/restore@v6
+        with:
+          path: .cache/carried-assets
+          key: carried-assets-${{ github.run_id }}
+          restore-keys: carried-assets-
+
+      - name: Carry earlier deploys' hashed assets forward
+        if: github.event_name != 'pull_request'
+        run: node scripts/carry-assets.mjs
+
+      - name: Save the published asset set for the next deploy
+        if: github.event_name != 'pull_request'
+        uses: actions/cache/save@v6
+        with:
+          path: .cache/carried-assets
+          key: carried-assets-${{ github.run_id }}
+
       - uses: actions/upload-pages-artifact@v5
         with:
           path: dist

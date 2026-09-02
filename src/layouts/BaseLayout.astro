@@ -65,12 +65,16 @@ const crossFade = {
 
       /*
        * Deploy guard. The router fetches the next page, preloads its
-       * stylesheets, and swaps whether or not those preloads succeeded. After a
-       * deploy the previous build's hashed files are gone from GitHub Pages, so
-       * a tab opened before it could swap in bare HTML. Before the swap, every
-       * stylesheet and script the next page needs that this page does not
-       * already have is checked; if any is missing, the navigation is handed
-       * to the browser, which loads that page and its own assets together.
+       * stylesheets, and swaps whether or not those preloads succeeded. A
+       * deploy replaces the site's hashed files, so a tab opened before it
+       * could swap in bare HTML. Before the swap, every stylesheet and script
+       * the next page needs that this page does not already have is checked;
+       * if any is missing, the navigation is handed to the browser, which
+       * loads that page and its own assets together.
+       *
+       * This is the fallback, not the fix: the deploy keeps three days of
+       * earlier builds' assets published (scripts/carry-assets.mjs), so the
+       * hand-off -- a visible flash -- only happens for a tab older than that.
        *
        * The check is on the assets themselves, not on the build stamp: a
        * content-only deploy keeps the same hashed CSS, and reloading for a new
