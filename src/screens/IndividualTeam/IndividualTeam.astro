@@ -333,16 +333,8 @@ const { team = BUFFALO_BILLS } = Astro.props
               </picture>
               <div class={styles.exploreScrim} aria-hidden="true"></div>
               <span class={styles.conference}>{card.conference}</span>
+              {/* 2 Sep feedback: no club logo here -- it collided with the conference pill and the name. */}
               <div class={styles.exploreDetails}>
-                <span
-                  class:list={[styles.teamLogo, card.logoIsCms && styles.cmsLogo]}
-                  style={`--team-logo-scale: ${card.logoScale}`}
-                >
-                  <picture class={styles.reframedPicture}>
-                    <source media="(min-width: 768px)" srcset={card.logoDesktop} />
-                    <img class={styles.teamLogoLeaf} src={card.logo} alt="" aria-hidden="true" loading="lazy" decoding="async" data-reveal />
-                  </picture>
-                </span>
                 <h3 class={styles.exploreTeamName}>{card.name}</h3>
                 <Button
                   variant="button"
