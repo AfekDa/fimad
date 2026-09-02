@@ -11,6 +11,7 @@
  * without fading while the rest of the page cross-fades.
  */
 import { ClientRouter } from 'astro:transitions'
+import { BUILD_ID } from '../data/buildId'
 import '../styles/reset.css'
 import '../styles/fonts.css'
 import '../styles/tokens.css'
@@ -56,8 +57,36 @@ const crossFade = {
     */}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#011556" />
+    <meta name="app-build" content={BUILD_ID} />
     <title>{title}</title>
     <ClientRouter />
+    <script>
+      import type { TransitionBeforePreparationEvent } from 'astro:transitions/client'
+
+      /*
+       * Deploy guard. The router fetches the next page, preloads its
+       * stylesheets, and swaps whether or not those preloads succeeded. After a
+       * deploy the previous build's hashed CSS is gone from GitHub Pages, so a
+       * tab opened before it would swap in bare HTML. When the fetched page
+       * carries a different build stamp, hand the navigation to the browser
+       * instead, which loads that page and its own assets together.
+       */
+      document.addEventListener('astro:before-preparation', (event) => {
+        const preparation = event as TransitionBeforePreparationEvent
+        const load = preparation.loader
+        preparation.loader = async () => {
+          await load()
+          const stamp = (name: string, root: ParentNode) =>
+            root.querySelector<HTMLMetaElement>(`meta[name="${name}"]`)?.content
+          const current = stamp('app-build', document)
+          const next = stamp('app-build', preparation.newDocument)
+          if (next !== undefined && next !== current) {
+            preparation.preventDefault()
+            window.location.assign(preparation.to.href)
+          }
+        }
+      })
+    </script>
   </head>
   <body>
     <slot />
