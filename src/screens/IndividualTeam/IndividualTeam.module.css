@@ -1049,6 +1049,12 @@
    * fits both, and the design's own shorter names are unaffected by the cap.
    */
   font-size: min(var(--font-h1-size), 48px);
+  /*
+   * 2 Sep feedback: the two-line names sat too far apart. The cap above shrank
+   * the type but not the 42px line, so keep the design's 42/54 ratio instead
+   * and let the leading follow the size.
+   */
+  line-height: calc(42 / 54);
 }
 
 .visuallyHidden {
