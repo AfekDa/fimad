@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T13:52:52.838Z",
+  "generated_at": "2026-09-02T13:56:35.889Z",
   "generated_by": "darcy.cordell@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
@@ -5578,7 +5578,7 @@
   "fanduel": {
     "redeem2_url": "https://bit.ly/Bonus-FanDuel",
     "rewards_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ebe15cd76_fanduel-rewards-club-card.png",
-    "offer2_text": "FanDuel's Community Feed let's you see what other people are backing and bet together.\n\nGambling Problem? Call 1-800-GAMBLER or 1-800-MY-RESET. Call 1-888-789-7777 or visit ccpg.org/chat (CT). Hope is here. GamblingHelpLineMA.org or call (800) 327-5050 for 24/7 support (MA). Visit www.mdgamblinghelp.com (MD). Call 1-877-8HOPE-NY or text HOPENY (467369) (NY).",
+    "offer2_text": "FanDuel's Community Feed let's you see what other people are backing and bet together.\n\nGambling Problem? Call 1-800-GAMBLER or 1-800-MY-RESET. Call 1-888-789-7777 or visit ccpg.org/chat (CT). GamblingHelpLineMA.org or call (800) 327-5050 for 24/7 support (MA). Call 1-877-8HOPE-NY or text HOPENY (467369) (NY).",
     "redeem_url": "https://bit.ly/FD-PREDICTS",
     "offer_title": "NOW AVAILABLE EVERYWHERE",
     "redeem_label": "REDEEM OFFER",
@@ -5588,13 +5588,13 @@
     "rewards_label_3": "SCORE REWARDS",
     "rewards_button_url": "https://bit.ly/Bonus-FanDuel",
     "rewards_label_1": "COLLECT POINTS",
-    "offer2_title": "COMMUNITY FEED",
+    "offer2_title": "FANDUEL COMMUNITY FEED",
     "redeem2_label": "REDEEM OFFER",
     "rewards_button_label": "REDEEM OFFER",
     "offer_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/2666eae79_FDads.png",
     "id": "6a90227d4361d3edaa3fd2f2",
     "created_date": "2026-08-27T11:41:49.766000",
-    "updated_date": "2026-09-02T13:52:46.451000",
+    "updated_date": "2026-09-02T13:56:32.320000",
     "created_by_id": "6a901fa52706494618a8cf7c",
     "is_sample": false
   }
