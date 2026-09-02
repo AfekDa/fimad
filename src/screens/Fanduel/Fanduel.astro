@@ -43,6 +43,19 @@ const STANDARD_OFFERS = [
 
 const OFFER_TEXT_PLACEHOLDER =
   'Lorem ipsum dolor sit amet consectetur. Sit fermentum aliquet vestibulum et vitae. Lorem id lobortis vitae duis ac morbi eu malesuada. Nisl pellentesque aliquet aliquet aliquam enim mauris. Neque vestibulum sit quam vitae. Cursus amet morbi lectus arcu tellus mattis. A neque nisi praesent vel tempor nascetur lobortis. Aliquet ipsum sed tortor tempus.'
+
+/*
+ * 2 Sep feedback: the Rewards Club card sits second, between the two standard
+ * offers. The first card on the page loads its image eagerly, the way the
+ * Rewards image used to when it led.
+ */
+const [firstOffer, secondOffer] = STANDARD_OFFERS
+const CARDS = [
+  { kind: 'standard', offer: firstOffer, eager: true },
+  { kind: 'rewards' },
+  { kind: 'standard', offer: secondOffer, eager: false },
+] as const
+
 ---
 
 <div class={styles.page} data-node-id="803:5180" data-fanduel-page>
@@ -54,49 +67,60 @@ const OFFER_TEXT_PLACEHOLDER =
   />
 
   <section class={styles.offers} aria-label="FanDuel offers">
-    <article class:list={[styles.offer, styles.rewards]} data-node-id="803:5554" data-fanduel-offer>
-      <img class={styles.rewardsImage} src={image(fanduel?.rewards_image, ASSETS.fanduelRewardsClub)} alt="FanDuel Rewards Club" fetchpriority="high" decoding="async" data-reveal data-node-id="803:5555" />
-      <div class={styles.rewardsContent}>
-        <div class={styles.pointRows} aria-label="Rewards Club features">
-          <div class={styles.pointRow} data-node-id="803:5557"><span>{text(fanduel?.rewards_label_1, 'COLLECT POINTS')}</span><span class={styles.pointValue}>+1</span></div>
-          <div class={styles.pointRow} data-node-id="803:5560"><span>{text(fanduel?.rewards_label_2, 'UNLOCK LEVELS')}</span><img class={styles.lockIcon} src={ASSETS.fanduelLockIcon} alt="" aria-hidden="true" data-node-id="803:5562" /></div>
-          <div class={styles.pointRow} data-node-id="803:5563"><span>{text(fanduel?.rewards_label_3, 'SCORE REWARDS')}</span><img class={styles.medalIcon} src={ASSETS.fanduelMedalIcon} alt="" aria-hidden="true" data-node-id="788:2251" /></div>
-        </div>
-        <Button
-          variant="fanduel"
-          state="active"
-          label={text(fanduel?.rewards_button_label, 'REDEEM OFFER')}
-          href={url(fanduel?.rewards_button_url)}
-          nodeId="803:5566"
-          ariaLabel="Redeem Rewards Club offer"
-          width={175}
-          class={styles.offerAction}
-        />
-      </div>
-    </article>
-
     {
-      STANDARD_OFFERS.map((offer) => (
-        <article class:list={[styles.offer, styles.standardOffer]} data-node-id={offer.nodeIds.card} data-fanduel-offer>
-          <img class={styles.offerImage} src={image(offer.image, ASSETS.fanduelOffer)} alt="Your most rewarding season ever" loading="lazy" decoding="async" data-reveal data-node-id={offer.nodeIds.image} />
-          <div class={styles.standardContent}>
-            <div class={styles.copy} data-node-id={offer.nodeIds.copy}>
-              <h1 data-node-id={offer.nodeIds.title}>{text(offer.title, 'TITLE OF THE OFFER')}</h1>
-              <p data-node-id={offer.nodeIds.text}>{text(offer.text, OFFER_TEXT_PLACEHOLDER)}</p>
+      CARDS.map((card) =>
+        card.kind === 'rewards' ? (
+        <article class:list={[styles.offer, styles.rewards]} data-node-id="803:5554" data-fanduel-offer>
+          <img class={styles.rewardsImage} src={image(fanduel?.rewards_image, ASSETS.fanduelRewardsClub)} alt="FanDuel Rewards Club" loading="lazy" decoding="async" data-reveal data-node-id="803:5555" />
+          <div class={styles.rewardsContent}>
+            <div class={styles.pointRows} aria-label="Rewards Club features">
+              <div class={styles.pointRow} data-node-id="803:5557"><span>{text(fanduel?.rewards_label_1, 'COLLECT POINTS')}</span><span class={styles.pointValue}>+1</span></div>
+              <div class={styles.pointRow} data-node-id="803:5560"><span>{text(fanduel?.rewards_label_2, 'UNLOCK LEVELS')}</span><img class={styles.lockIcon} src={ASSETS.fanduelLockIcon} alt="" aria-hidden="true" data-node-id="803:5562" /></div>
+              <div class={styles.pointRow} data-node-id="803:5563"><span>{text(fanduel?.rewards_label_3, 'SCORE REWARDS')}</span><img class={styles.medalIcon} src={ASSETS.fanduelMedalIcon} alt="" aria-hidden="true" data-node-id="788:2251" /></div>
             </div>
             <Button
               variant="fanduel"
               state="active"
-              label={text(offer.buttonLabel, 'REDEEM OFFER')}
-              href={url(offer.buttonUrl)}
-              nodeId={offer.nodeIds.button}
-              ariaLabel={offer.ariaLabel}
+              label={text(fanduel?.rewards_button_label, 'REDEEM OFFER')}
+              href={url(fanduel?.rewards_button_url)}
+              nodeId="803:5566"
+              ariaLabel="Redeem Rewards Club offer"
               width={175}
               class={styles.offerAction}
             />
           </div>
         </article>
-      ))
+        ) : (
+        <article class:list={[styles.offer, styles.standardOffer]} data-node-id={card.offer.nodeIds.card} data-fanduel-offer>
+          <img
+            class={styles.offerImage}
+            src={image(card.offer.image, ASSETS.fanduelOffer)}
+            alt="Your most rewarding season ever"
+            loading={card.eager ? undefined : 'lazy'}
+            fetchpriority={card.eager ? 'high' : undefined}
+            decoding="async"
+            data-reveal
+            data-node-id={card.offer.nodeIds.image}
+          />
+          <div class={styles.standardContent}>
+            <div class={styles.copy} data-node-id={card.offer.nodeIds.copy}>
+              <h1 data-node-id={card.offer.nodeIds.title}>{text(card.offer.title, 'TITLE OF THE OFFER')}</h1>
+              <p data-node-id={card.offer.nodeIds.text}>{text(card.offer.text, OFFER_TEXT_PLACEHOLDER)}</p>
+            </div>
+            <Button
+              variant="fanduel"
+              state="active"
+              label={text(card.offer.buttonLabel, 'REDEEM OFFER')}
+              href={url(card.offer.buttonUrl)}
+              nodeId={card.offer.nodeIds.button}
+              ariaLabel={card.offer.ariaLabel}
+              width={175}
+              class={styles.offerAction}
+            />
+          </div>
+        </article>
+        )
+      )
     }
   </section>
 
