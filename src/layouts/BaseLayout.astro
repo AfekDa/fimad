@@ -80,6 +80,30 @@ const crossFade = {
 </html>
 
 <style is:global>
+  /*
+   * The nav's active line (AppNav) is its own transition group, so the browser
+   * animates its box from the old tab to the new one. Give that slide the
+   * page's own timing rather than the UA default, and a firm settle.
+   */
+  ::view-transition-group(app-nav-line) {
+    animation-duration: var(--motion-duration-page);
+    animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  @keyframes navLineHide {
+    from,
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes navLineShow {
+    from,
+    to {
+      opacity: 1;
+    }
+  }
+
   @keyframes sectionHold {
     from,
     to {

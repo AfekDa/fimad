@@ -25,6 +25,18 @@ function normalise(path: string): string {
 
 const here = normalise(currentPath ?? Astro.url.pathname)
 
+/*
+ * The active line's own transition. The browser morphs the line's box from the
+ * old tab to the new one on its own; these only stop the two snapshots from
+ * cross-fading on the way (the new one is shown outright, the old one hidden),
+ * so the bar reads as one solid line sliding across. Keyframes in BaseLayout.
+ * `transition:animate="none"` would also cancel the morph, so it is not used.
+ */
+const lineSlide = {
+  old: { name: 'navLineHide', duration: '1ms', easing: 'linear', fillMode: 'forwards' },
+  new: { name: 'navLineShow', duration: '1ms', easing: 'linear', fillMode: 'forwards' },
+}
+
 function isCurrent(href: string): boolean {
   const destination = normalise(href)
   return destination === '/' ? here === '/' : here === destination || here.startsWith(`${destination}/`)
@@ -72,6 +84,15 @@ function isCurrent(href: string): boolean {
           >
             {icon}
             <span class={styles.label}>{item.label}</span>
+            {/*
+              * 2 Sep request: the active line slides from the old tab to the
+              * new one. The line is its own view-transition group, so when a
+              * swap moves it to another tab the browser morphs it across the
+              * pill instead of cutting; the dock around it still swaps instantly.
+              */}
+            {isCurrent(item.href) && (
+              <span class={styles.activeLine} aria-hidden="true" transition:name="app-nav-line" transition:animate={{ forwards: lineSlide, backwards: lineSlide }} />
+            )}
           </a>
         )
         })
