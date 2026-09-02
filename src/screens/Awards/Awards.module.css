@@ -99,7 +99,6 @@
 .searchInput {
   flex: 1 1 auto;
   min-width: 0;
-  height: 20px;
   padding: 0;
   border: 0;
   outline: 0;
@@ -107,8 +106,18 @@
   color: var(--color-white);
   font-family: var(--font-family-base);
   font-size: var(--font-bc3-r-size);
-  line-height: var(--font-bc3-r-line);
   font-weight: var(--font-bc3-r-weight);
+  /*
+   * 2 Sep feedback: the placeholder sat below the magnifier and the text jumped
+   * on focus. Safari lays out an input's placeholder and its value differently
+   * when the input has a fixed height and line-height, so the field keeps its
+   * natural line box, drops the platform search styling, and lets the flex row
+   * centre it against the icon.
+   */
+  appearance: none;
+  -webkit-appearance: none;
+  height: auto;
+  line-height: normal;
 }
 
 .searchInput::placeholder {
