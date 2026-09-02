@@ -399,8 +399,13 @@
   .brandByline {
     top: 40px;
     width: 150px;
-    font-size: var(--font-dt-bc2-size);
-    line-height: var(--font-dt-bc2-line);
+    /*
+     * 2 Sep feedback: 488:1506 draws this at 20px, but every other desktop
+     * page sets "Cody Brown's" at 24px (377:188 and friends), so the byline
+     * shrank when you left the homepage. Same size everywhere now.
+     */
+    font-size: var(--font-dt-bc1-size);
+    line-height: 29px;
   }
 
   .brandTitle {
