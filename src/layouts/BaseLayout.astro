@@ -66,21 +66,55 @@ const crossFade = {
       /*
        * Deploy guard. The router fetches the next page, preloads its
        * stylesheets, and swaps whether or not those preloads succeeded. After a
-       * deploy the previous build's hashed CSS is gone from GitHub Pages, so a
-       * tab opened before it would swap in bare HTML. When the fetched page
-       * carries a different build stamp, hand the navigation to the browser
-       * instead, which loads that page and its own assets together.
+       * deploy the previous build's hashed files are gone from GitHub Pages, so
+       * a tab opened before it could swap in bare HTML. Before the swap, every
+       * stylesheet and script the next page needs that this page does not
+       * already have is checked; if any is missing, the navigation is handed
+       * to the browser, which loads that page and its own assets together.
+       *
+       * The check is on the assets themselves, not on the build stamp: a
+       * content-only deploy keeps the same hashed CSS, and reloading for a new
+       * stamp alone put a flash on the first tab change after every deploy
+       * (2 Sep report on the Awards page).
        */
+      type Asset = { readonly url: string; readonly as: 'style' | 'script' }
+
+      const assets = (root: ParentNode): Asset[] =>
+        [...root.querySelectorAll<HTMLLinkElement | HTMLScriptElement>('link[rel="stylesheet"], script[src]')].flatMap(
+          (el) => {
+            const isStyle = el instanceof HTMLLinkElement
+            const url = el.getAttribute(isStyle ? 'href' : 'src')
+            return url === null ? [] : [{ url, as: isStyle ? 'style' : 'script' } as const]
+          },
+        )
+
+      /*
+       * Probed with a preload link rather than fetch(): WebKit crashed the
+       * page when a fetch for a stylesheet ran alongside the router's own
+       * preload of it. A second preload of the same URL is deduplicated by
+       * the browser but still reports load or error to its own element.
+       */
+      const isMissing = (asset: Asset) =>
+        new Promise<boolean>((resolve) => {
+          const probe = document.createElement('link')
+          probe.rel = asset.as === 'style' ? 'preload' : 'modulepreload'
+          if (asset.as === 'style') probe.as = 'style'
+          probe.href = asset.url
+          probe.addEventListener('load', () => resolve(false), { once: true })
+          probe.addEventListener('error', () => resolve(true), { once: true })
+          document.head.append(probe)
+        })
+
       document.addEventListener('astro:before-preparation', (event) => {
         const preparation = event as TransitionBeforePreparationEvent
         const load = preparation.loader
         preparation.loader = async () => {
           await load()
-          const stamp = (name: string, root: ParentNode) =>
-            root.querySelector<HTMLMetaElement>(`meta[name="${name}"]`)?.content
-          const current = stamp('app-build', document)
-          const next = stamp('app-build', preparation.newDocument)
-          if (next !== undefined && next !== current) {
+          if (preparation.defaultPrevented || preparation.signal.aborted) return
+          const have = new Set(assets(document).map((asset) => asset.url))
+          const needed = assets(preparation.newDocument).filter((asset) => !have.has(asset.url))
+          const results = await Promise.all(needed.map(isMissing))
+          if (results.some(Boolean)) {
             preparation.preventDefault()
             window.location.assign(preparation.to.href)
           }
