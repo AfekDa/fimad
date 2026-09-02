@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-02T14:25:32.739Z",
-  "generated_by": "darcy.cordell@verified-global.com",
+  "generated_at": "2026-09-02T14:35:43.678Z",
+  "generated_by": "bjadhav@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
     "intro_text": "Indianapolis born, New Jersey based, sports obsessed my whole life.\n\nI spent over 10 years as a professional data analyst before I turned that into something way more fun: creating sports betting content for free. I started a Twitter account back in 2022 just to share picks with people who loved sports as much as I did. I never expected it to turn into this - over 1.5 million followers across social media and growing daily!\n\nI share free picks and analysis on every major US sport, but the NFL is where the magic really happens...\nWe’ve had some huge winners over the years including a +5500 14-leg parlay winner last season and National Tight End Day parlay winners of +4475 and +2550 odds.\n\nBut it’s not just the big wins. Every single day I'm sharing analysis and data sheets to make life easier for you and help you bet smarter. Whether you’re following me to tail my picks, use my data sheets or just be a part of a fun sports betting community, I’ve got you covered.\n\nThe best part is, it’s completely free.\n\nLet’s make 2026 the best season yet.",
@@ -4897,21 +4897,21 @@
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/183f7d67e_MVP_JoeBurrow.png",
           "description": "Burrow has a pass attempt to touchdown ratio of over 6% in four of his last five seasons, while the league average is about 4%. If he stays healthy, he can reach the heights of his 2024 season where he threw for 4918 yards, 43 touchdowns and just 9 interceptions. The Bengals have an improved defense and should be a playoff team, which gives Burrow a huge chance to be the MVP.",
-          "bet_url": "",
+          "bet_url": "https://bit.ly/JBMVP26",
           "player_name": "JOE BURROW",
           "odds": "+1000"
         },
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/7d715b578_MVP_CalebWilliams.png",
           "description": "Caleb set the Bears franchise record for passing yards last season with 3942 and he has more upside going into season 3. The Bears were Divisional Champs last year and I have them competing for the NFC North again. Williams also has a stacked receiver room with Colston Loveland, Luther Burden, Rome Odunze and Cole Kmet. His numbers should spike again and the Bears will be good, so +1800 looks value here. ",
-          "bet_url": "",
+          "bet_url": "https://bit.ly/CWMVP26",
           "player_name": "CALEB WILLIAMS",
           "odds": "+1800"
         },
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/47f54d131_MVP_BoNix.png",
           "description": "The +3000 is just disrespectful. He led the Broncos to a 14-3 record last season and the AFC Championship, but broke his ankle before then. He has 25+ touchdown passes in his first two seasons and gets a serious WR1 in Jaylen Waddle, plus breakout candidate Pat Bryant and Courtland Sutton to throw to. It’s a deep receiving corps and I have the Broncos winning the AFC West.",
-          "bet_url": "",
+          "bet_url": "https://bit.ly/BNMVP26",
           "player_name": "BO NIX",
           "odds": "+3000"
         }
@@ -4923,7 +4923,7 @@
       "order": 1,
       "id": "6a90227d4361d3edaa3fd2fd",
       "created_date": "2026-08-27T11:41:49.799000",
-      "updated_date": "2026-09-01T17:00:24.091000",
+      "updated_date": "2026-09-02T14:33:24.605000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -4932,21 +4932,21 @@
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/93133d59d_OPOY_JahmyrGibbs.png",
           "description": "Gibbs recently became the highest paid running back in the NFL and will see huge volume now David Montgomery has gone. Gibbs averaged over 100 yards from scrimmage last season and added 18 touchdowns. If he maintains the production and the Lions are good, he likely wins this award. ",
-          "bet_url": "",
+          "bet_url": "https://bit.ly/JGOPOY26",
           "player_name": "JAHMYR GIBBS",
           "odds": "+650"
         },
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/567007c75_OPOY_JamarrChase.png",
           "description": "Chase has led the NFL in targets in back-to-back seasons. He has 1200+ receiving yards in 4/5 NFL seasons and remains the focal point of one of the NFL’s best offenses. He has some real upside in touchdown numbers this year and he could return to his 2024 peak of 17 touchdowns. Chase should lead the NFL in receiving yards again I think.",
-          "bet_url": "",
+          "bet_url": "https://bit.ly/JCOPOY26",
           "player_name": "JA'MARR CHASE",
           "odds": "+1000"
         },
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/b51e97c1a_OPOY_JamesCook.png",
           "description": "Cook was the rushing yards leader in 2025 with an insane 1621 yards at 5.2 yards per carry. He saw huge volume with 309 attempts but was seriously efficient. I’m excited about HC Joe Brady mentioning they want to get Cook more involved in the passing game. This is the exact type of all-around play that gives him a big chance to win this. ",
-          "bet_url": "",
+          "bet_url": "https://bit.ly/JCOPOY",
           "player_name": "JAMES COOK",
           "odds": "+3000"
         }
@@ -4958,7 +4958,7 @@
       "order": 2,
       "id": "6a902556de26c3f177028233",
       "created_date": "2026-08-27T11:53:58.812000",
-      "updated_date": "2026-09-02T14:25:21.234000",
+      "updated_date": "2026-09-02T14:33:47.578000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -4967,21 +4967,21 @@
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/adce1cde8_DPOY_MylesGarrett.png",
           "description": "You cannot leave Garrett off this list. He has the strongest DPOTY case in football after setting the NFL's single-season sack record with 23.0 in 2025, adding 33 tackles for loss — the second-highest total in modern history — and winning his second career DPOY while playing for the 5-12 Browns. He now joins a Rams team that is Super Bowl favorite. At 30 Garrett is showing no signs of decline and another dominant campaign feels close to a certainty. ",
-          "bet_url": "",
+          "bet_url": "https://bit.ly/MGDPOY26",
           "player_name": "MYLES GARRETT",
           "odds": "+420"
         },
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/afd8c32eb_DPOY_NikBonitto.png",
           "description": "Bonitto has quietly become one of the NFL's most dominant pass rushers, posting a career-high 14 sacks last season and finishing fourth in DPOTY voting. He's now recorded 20.5 sacks since the start of 2024 while playing fewer pass-rush snaps than most premier edge rushers. I think Denver will have a top-5 defense in the NFL and I have them winning the AFC West, so I need some exposure to them here.  ",
-          "bet_url": "",
+          "bet_url": "https://bit.ly/NBDPOTY",
           "player_name": "NIK BONITTO",
           "odds": "+1900"
         },
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/002b1eae1_DPOY_TreyHendrickson.png",
           "description": "Hendrickson has one of the most dominant recent track records at his position, leading the NFL with 17.5 sacks in 2023 and 2024, finishing runner-up for DPOTY. Now signed with Baltimore on a four-year deal, a healthy Hendrickson slots into a talented defense with fresh motivation.",
-          "bet_url": "",
+          "bet_url": "https://bit.ly/THDPOY26",
           "player_name": "TREY HENDRICKSON",
           "odds": "+3000"
         }
@@ -4993,7 +4993,7 @@
       "order": 3,
       "id": "6a902556de26c3f177028234",
       "created_date": "2026-08-27T11:53:58.812000",
-      "updated_date": "2026-09-02T12:05:14.037000",
+      "updated_date": "2026-09-02T14:34:10.966000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -5002,21 +5002,21 @@
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/94277c2e0_OROY_JadarianPrice.png",
           "description": "Price is going to have a huge role with Zach Charbonnet on the PUP list to start the season and Kenneth Walker leaving in free agency. Price was selected in the first round and comes straight into a Super Bowl winning team. They should be ahead in a lot of games and Price could be the bell cow from Week 1.",
-          "bet_url": "",
+          "bet_url": "https://bit.ly/JPOROTY26",
           "player_name": "JADARIAN PRICE",
           "odds": "+650"
         },
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9cff2de43_OROY_CarnellTate.png",
           "description": "Tate arrives in Tennessee as the 4th overall pick after a decorated Ohio State career that included a National Championship. Tate has dominated Titans training camp, catching three touchdowns from Cam Ward in a single practice and beating every top cornerback on the roster, building the kind of quarterback chemistry Ward never found last season. ",
-          "bet_url": "",
+          "bet_url": "https://bit.ly/CTOROTY26",
           "player_name": "CARNELL TATE",
           "odds": "+550"
         },
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/bd219cf54_OROY_DezhaunStribling.png",
           "description": "San Francisco's second-round pick has impressed with elite 10-inch hands and he’s drawn praise from 49ers cornerback Deommodore Lenoir. Ricky Pearsall is out for the season and Mike Evans has been injury prone so there’s a big opportunity for Stribling. He has come in from +3000 to +850 but I still like it.",
-          "bet_url": "",
+          "bet_url": "https://bit.ly/DSOROTY26",
           "player_name": "DE'ZHAUN STRIBLING",
           "odds": "+850"
         }
@@ -5028,7 +5028,7 @@
       "order": 4,
       "id": "6a902556de26c3f177028235",
       "created_date": "2026-08-27T11:53:58.812000",
-      "updated_date": "2026-09-02T12:51:44.736000",
+      "updated_date": "2026-09-02T14:34:31.030000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     }
