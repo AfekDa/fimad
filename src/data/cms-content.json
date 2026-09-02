@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-02T12:20:58.474Z",
-  "generated_by": "dhana.pimputkar@verified-global.com",
+  "generated_at": "2026-09-02T12:35:28.400Z",
+  "generated_by": "darcy.cordell@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
     "intro_text": "Indianapolis born, New Jersey based, sports obsessed my whole life.\n\nI spent over 10 years as a professional data analyst before I turned that into something way more fun: creating sports betting content for free. I started a Twitter account back in 2022 just to share picks with people who loved sports as much as I did. I never expected it to turn into this - over 1.5 million followers across social media and growing daily!\n\nI share free picks and analysis on every major US sport, but the NFL is where the magic really happens...\nWe’ve had some huge winners over the years including a +5500 14-leg parlay winner last season and National Tight End Day parlay winners of +4475 and +2550 odds.\n\nBut it’s not just the big wins. Every single day I'm sharing analysis and data sheets to make life easier for you and help you bet smarter. Whether you’re following me to tail my picks, use my data sheets or just be a part of a fun sports betting community, I’ve got you covered.\n\nThe best part is, it’s completely free.\n\nLet’s make 2026 the best season yet.",
@@ -4938,7 +4938,7 @@
         },
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/567007c75_OPOY_JamarrChase.png",
-          "description": "Chase is just so consistent and has led the NFL in targets in back-to-back seasons. He has 1200+ receiving yards in 4/5 NFL seasons and remains the focal point of one of the NFL’s best offenses. He has some real upside in touchdown numbers this year and he could return to his 2024 peak of 17 touchdowns. Chase should lead the NFL in receiving yards again which gives him a big chance to win this award. ",
+          "description": "Chase has led the NFL in targets in back-to-back seasons. He has 1200+ receiving yards in 4/5 NFL seasons and remains the focal point of one of the NFL’s best offenses. He has some real upside in touchdown numbers this year and he could return to his 2024 peak of 17 touchdowns. Chase should lead the NFL in receiving yards again I think.",
           "bet_url": "",
           "player_name": "JA'MARR CHASE",
           "odds": "+1000"
@@ -4958,7 +4958,7 @@
       "order": 2,
       "id": "6a902556de26c3f177028233",
       "created_date": "2026-08-27T11:53:58.812000",
-      "updated_date": "2026-09-01T15:58:01.644000",
+      "updated_date": "2026-09-02T12:32:47.110000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -5038,11 +5038,11 @@
       "bet_url": "https://x.com/CodyBrownBets",
       "player_name": "Joe Burrow",
       "category": "mvp",
-      "odds": "+900",
+      "odds": "+1000",
       "order": 1,
       "id": "6a90227d4361d3edaa3fd2f4",
       "created_date": "2026-08-27T11:41:49.792000",
-      "updated_date": "2026-08-28T10:43:15.326000",
+      "updated_date": "2026-09-02T12:35:25.085000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -5050,11 +5050,11 @@
       "bet_url": "",
       "player_name": "Caleb Williams",
       "category": "mvp",
-      "odds": "+1500",
+      "odds": "+1800",
       "order": 2,
       "id": "6a90227d4361d3edaa3fd2f5",
       "created_date": "2026-08-27T11:41:49.792000",
-      "updated_date": "2026-08-28T10:43:15.557000",
+      "updated_date": "2026-09-02T12:35:24.336000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -5062,11 +5062,11 @@
       "bet_url": "",
       "player_name": "Bo Nix",
       "category": "mvp",
-      "odds": "+3500",
+      "odds": "+3000",
       "order": 3,
       "id": "6a90227d4361d3edaa3fd2f6",
       "created_date": "2026-08-27T11:41:49.792000",
-      "updated_date": "2026-08-28T10:43:15.951000",
+      "updated_date": "2026-09-02T12:35:23.639000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
