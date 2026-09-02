@@ -57,6 +57,11 @@ const {
 
 const active = state === 'active'
 const Element = href === undefined ? 'button' : 'a'
+/*
+ * 2 Sep feedback: links that leave the site (FanDuel bets and offers) open in a
+ * new tab. Internal routes keep the current tab so the app nav stays in place.
+ */
+const external = href !== undefined && /^(?:https?:)?\/\//i.test(href)
 
 const variantClass =
   variant === 'secondary'
@@ -71,6 +76,8 @@ const variantClass =
 <Element
   type={href === undefined ? 'button' : undefined}
   href={href}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noopener noreferrer' : undefined}
   class:list={[styles.base, variantClass, className]}
   data-node-id={nodeId ?? NODE_IDS[variant][state]}
   data-state={state}
