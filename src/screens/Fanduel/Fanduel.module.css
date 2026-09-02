@@ -116,6 +116,10 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  /* 2 Sep feedback: mobile centres the offer copy, like the button under it.
+   * The desktop frame keeps it on the start edge; reset below. */
+  width: 100%;
+  text-align: center;
 }
 
 .copy h1,
@@ -206,6 +210,7 @@
   .copy {
     width: 580px;
     height: 177px;
+    text-align: left;
   }
 
   .rewardsContent > :global(a),
