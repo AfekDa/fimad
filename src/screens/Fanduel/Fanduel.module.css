@@ -163,7 +163,12 @@
   }
 
   .standardOffer {
-    height: 322px;
+    /*
+     * 2 Sep feedback: the CMS copy ran under the REDEEM button. The frame's
+     * 322px is now a floor, so a long paragraph grows the card instead.
+     */
+    min-height: 322px;
+    height: auto;
   }
 
   .rewardsImage {
@@ -209,8 +214,14 @@
 
   .copy {
     width: 580px;
-    height: 177px;
+    min-height: 177px;
     text-align: left;
+  }
+
+  /* 2 Sep feedback: body copy a step smaller on desktop so it fits the box. */
+  .copy p {
+    font-size: 18px;
+    line-height: 24px;
   }
 
   .rewardsContent > :global(a),
