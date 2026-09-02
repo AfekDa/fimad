@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T11:22:52.395Z",
+  "generated_at": "2026-09-02T11:38:24.558Z",
   "generated_by": "darcy.cordell@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
@@ -5001,24 +5001,24 @@
       "picks": [
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ee6306af1_OROY_JordynTyson.png",
-          "description": "Tyson was taken 8th overall by the Saints out of Arizona State, where he caught 158 passes for 2,282 yards and 22 touchdowns across his college career, including a first-team All-Big 12 senior season. Saints receivers coach Keith Williams has praised his natural attributes and he has already flashed his big-play ability, breaking ankles on a sideline route against a Saints cornerback and building real rapport with quarterback Tyler Shough. Paired with All-Pro Chris Olave rather than relied upon as the lone target, Tyson should see plenty of volume as a versatile outside-slot weapon in a rebuilt Saints passing attack.  ",
+          "description": "Price is going to have a huge role with Zach Charbonnet on the PUP list to start the season and Kenneth Walker leaving in free agency. Price was selected in the first round and comes straight into a Super Bowl winning team. They should be ahead in a lot of games and Price could be the bell cow from Week 1.",
           "bet_url": "",
-          "player_name": "JORDYN TYSON",
-          "odds": "+800"
+          "player_name": "JADARIAN PRICE",
+          "odds": "+650"
         },
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9cff2de43_OROY_CarnellTate.png",
-          "description": "Tate arrives in Tennessee as the 4th overall pick after a decorated Ohio State career that included a national championship. Tate has dominated Titans training camp, catching three touchdowns from Cam Ward in a single practice period and beating every top cornerback on the roster, building the kind of quarterback chemistry Ward never found last season. Tate's polished route running and big-play ability should make him the focal point of a much-improved Tennessee passing attack from Week 1. ",
+          "description": "Tate arrives in Tennessee as the 4th overall pick after a decorated Ohio State career that included a National Championship. Tate has dominated Titans training camp, catching three touchdowns from Cam Ward in a single practice and beating every top cornerback on the roster, building the kind of quarterback chemistry Ward never found last season. ",
           "bet_url": "",
           "player_name": "CARNELL TATE",
-          "odds": "+700"
+          "odds": "+550"
         },
         {
           "image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/bd219cf54_OROY_DezhaunStribling.png",
-          "description": "This is a longshot but the beat-reporter buzz out of Santa Clara and his impressive preseason display vs Raiders are encouraging. San Francisco's second-round pick out has impressed with elite 10-inch hands and he’s drawn praise from 49ers cornerback Deommodore Lenoir. Ricky Pearsall is out for the season and Mike Evans dealing with a quad strain so there’s an opportunity opened up.  It's a long shot given the depth chart and scheme history, but the pieces are there for a breakout. ",
+          "description": "San Francisco's second-round pick has impressed with elite 10-inch hands and he’s drawn praise from 49ers cornerback Deommodore Lenoir. Ricky Pearsall is out for the season and Mike Evans has been injury prone so there’s a big opportunity for Stribling. He has come in from +3000 to +850 but I still like it.",
           "bet_url": "",
           "player_name": "DE'ZHAUN STRIBLING",
-          "odds": "+2500"
+          "odds": "+850"
         }
       ],
       "title": "OFFENSIVE ROOKIE OF THE YEAR PICKS",
@@ -5028,7 +5028,7 @@
       "order": 4,
       "id": "6a902556de26c3f177028235",
       "created_date": "2026-08-27T11:53:58.812000",
-      "updated_date": "2026-08-28T14:40:05.662000",
+      "updated_date": "2026-09-02T11:38:18.841000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     }
@@ -5096,13 +5096,13 @@
     },
     {
       "bet_url": "",
-      "player_name": "Jordyn Tyson",
+      "player_name": "Jadarian Price",
       "category": "offensive_roty",
-      "odds": "+800",
+      "odds": "+650",
       "order": 6,
       "id": "6a90227d4361d3edaa3fd2f9",
       "created_date": "2026-08-27T11:41:49.792000",
-      "updated_date": "2026-08-28T10:43:22.170000",
+      "updated_date": "2026-09-02T11:32:34.308000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -5182,11 +5182,11 @@
       "bet_url": "",
       "player_name": "Carnell Tate",
       "category": "offensive_roty",
-      "odds": "+700",
+      "odds": "+550",
       "order": 13,
       "id": "6a916374a55545e57afad0bd",
       "created_date": "2026-08-28T10:31:16.528000",
-      "updated_date": "2026-08-28T10:43:21.769000",
+      "updated_date": "2026-09-02T11:32:08.444000",
       "created_by_id": "6a903b034c50e33b46dcb928",
       "is_sample": false
     },
@@ -5194,11 +5194,11 @@
       "bet_url": "",
       "player_name": "De'zhaun Stribling",
       "category": "offensive_roty",
-      "odds": "+2500",
+      "odds": "+850",
       "order": 14,
       "id": "6a916381bb6da7623e36e0b9",
       "created_date": "2026-08-28T10:31:29.314000",
-      "updated_date": "2026-08-28T10:43:22.681000",
+      "updated_date": "2026-09-02T11:32:07.662000",
       "created_by_id": "6a903b034c50e33b46dcb928",
       "is_sample": false
     },
