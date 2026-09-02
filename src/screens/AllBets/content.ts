@@ -80,7 +80,7 @@ const BASE_SECTIONS: readonly BetSectionContent[] = [
   },
   {
     id: 'favourite-futures',
-    title: 'FAVOURITE FUTURES',
+    title: 'FAVORITE FUTURES',
     frameNodeId: '251:3252',
     headingNodeId: '251:3253',
     bets: [

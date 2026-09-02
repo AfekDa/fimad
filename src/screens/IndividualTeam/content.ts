@@ -368,7 +368,7 @@ function createBaseTeam(team: Team): TeamPageContent {
     overviewParagraphs: [
       `${name} is a placeholder franchise. Every word on this page stands in for editorial copy that has not been written yet, and it runs to roughly the length the finished article will so the layout can be reviewed at full height rather than against three short lines.`,
       `The season preview for ${name} will cover the roster, the coaching changes and the numbers behind last season's finish. Until that copy arrives this paragraph holds its place, and nothing below it will shift when the real words replace it.`,
-      `Treat every figure further down as placeholder data too. The betting lines, the projected record and the favourite future are carried over from the reference layout and are not ${name}'s actual markets.`,
+      `Treat every figure further down as placeholder data too. The betting lines, the projected record and the favorite future are carried over from the reference layout and are not ${name}'s actual markets.`,
     ],
     staff: STAFF_LAYOUT.map((member) => ({
       role: member.role,
@@ -398,7 +398,7 @@ function createBaseTeam(team: Team): TeamPageContent {
     favoriteAlt: `${name} star player in uniform`,
     favoritePlayer: `STAR PLAYER ${name}`,
     favoriteBet: '10+ RUSHING TOUCHDOWNS',
-    favoriteCopy: `Placeholder favourite future for ${name}. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.`,
+    favoriteCopy: `Placeholder favorite future for ${name}. The player, the market and the reasoning are all filler, and none of it reflects a line FanDuel is actually offering on this team.`,
     favoriteOnLight: LIGHT_FAVORITE_TEAMS.has(number),
     odds: ODDS,
     schedule,

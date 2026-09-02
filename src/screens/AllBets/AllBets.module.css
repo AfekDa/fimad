@@ -195,8 +195,12 @@
 
 .filterRow {
   display: flex;
+  /* 2 Sep feedback: "Favorite Future" ran off the phone screen beside
+   * "Offensive POTY Picks", so a pair that does not fit wraps onto its own
+   * line. Desktop turns the rows into `display: contents`, unaffected. */
+  flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-16);
+  gap: var(--space-8) var(--space-16);
   width: 100%;
   min-height: 33px;
 }
@@ -499,7 +503,7 @@
   }
 
   .betSection[data-bet-section='favourite-futures'] .sectionTitle::after {
-    content: 'FAVOURITE FUTURES';
+    content: 'FAVORITE FUTURES';
   }
 
   .betList {
