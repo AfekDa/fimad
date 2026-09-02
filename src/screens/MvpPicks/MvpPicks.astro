@@ -29,6 +29,17 @@ const {
   title = 'MOST VALUABLE PLAYER PICKS',
   subtitle,
 } = Astro.props
+
+/**
+ * 2 Sep feedback: the "... OF THE YEAR PICKS" titles overflow a phone screen on
+ * one line, so on mobile the title breaks before "OF THE" ("OFFENSIVE PLAYER" /
+ * "OF THE YEAR PICKS"). Titles without that phrase (MVP) stay on one line.
+ */
+const mobileTitleBreak = title.search(/\sOF THE\b/i)
+const mobileTitleLines =
+  mobileTitleBreak === -1
+    ? [title]
+    : [title.slice(0, mobileTitleBreak), title.slice(mobileTitleBreak + 1)]
 ---
 
 <div class:list={[styles.page, 'appScrollShell']} data-node-id="188:2186" data-mvp-picks-page>
@@ -61,7 +72,14 @@ const {
   <div class:list={[styles.scroller, 'appScrollArea']}>
   <div class={styles.intro} data-node-id="188:2480">
     <h1 class={styles.heading} data-node-id="188:2286">
-      <span class={styles.mobileHeading}>{title}</span>
+      <span class={styles.mobileHeading}>
+        {mobileTitleLines.map((line, index) => (
+          <Fragment>
+            {index > 0 && <br />}
+            {line}
+          </Fragment>
+        ))}
+      </span>
       <span class={styles.desktopHeading}>{subtitle ?? title}</span>
     </h1>
   </div>

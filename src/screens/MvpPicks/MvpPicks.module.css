@@ -45,7 +45,6 @@
   line-height: var(--font-h2-line);
   font-weight: var(--font-h2-weight);
   letter-spacing: var(--font-display-letter-spacing);
-  white-space: nowrap;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
@@ -142,6 +141,7 @@
     width: 438px;
     font-size: var(--font-dt-h2-size);
     line-height: var(--font-dt-h2-line);
+    white-space: nowrap;
   }
 
   .mobileHeading {
