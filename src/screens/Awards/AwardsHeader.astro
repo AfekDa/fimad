@@ -6,6 +6,8 @@ export interface Props {
   readonly searchId: string
   readonly searchLabel: string
   readonly clearLabel: string
+  /** Hint text in the box; each page says what its search looks for (2 Sep). */
+  readonly placeholder?: string | undefined
   /** Extra class for the band, for pages whose band holds more than the search. */
   readonly class?: string | undefined
   readonly nodeIds: {
@@ -18,7 +20,14 @@ export interface Props {
   }
 }
 
-const { searchId, searchLabel, clearLabel, nodeIds, class: className } = Astro.props
+const {
+  searchId,
+  searchLabel,
+  clearLabel,
+  placeholder = 'Search your favorite team...',
+  nodeIds,
+  class: className,
+} = Astro.props
 ---
 
 <header class:list={[styles.header, 'appScrollHeader', className]} data-node-id={nodeIds.header}>
@@ -36,7 +45,7 @@ const { searchId, searchLabel, clearLabel, nodeIds, class: className } = Astro.p
       id={searchId}
       class={styles.searchInput}
       type="search"
-      placeholder="Search your favorite team..."
+      placeholder={placeholder}
       data-award-search
     />
     <button class={styles.searchClear} type="reset" aria-label={clearLabel}>

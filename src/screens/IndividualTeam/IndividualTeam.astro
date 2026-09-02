@@ -356,6 +356,7 @@ const { team = BUFFALO_BILLS } = Astro.props
 
 <script>
   import { navigate } from 'astro:transitions/client'
+  import { teamForQuery } from '../../data/teamSearch'
 
   function startTeamDetailController() {
     const page = document.querySelector<HTMLElement>('[data-team-detail-page]')
@@ -372,13 +373,31 @@ const { team = BUFFALO_BILLS } = Astro.props
 
     const currentTeam = teamName
 
+    /*
+     * 2 Sep feedback: searching here did nothing useful. The box now works like
+     * the desktop nav search -- a full team name navigates as it is typed, and
+     * a submit also resolves nicknames and abbreviations. A query that matches
+     * no team falls through to the All Teams list, filtered by it.
+     */
+    const goToTeam = (team: { href: string; name: string } | undefined) => {
+      if (team === undefined) return false
+      // Searching for the team already on screen has nowhere to go.
+      if (team.name.toLocaleLowerCase() === currentTeam) return true
+      // Routed, not assigned, so leaving cross-fades like a tab does.
+      void navigate(team.href)
+      return true
+    }
+
+    input.addEventListener('input', () => {
+      goToTeam(teamForQuery(input.value, false))
+    })
+
     search.addEventListener('submit', (event) => {
       event.preventDefault()
-      const query = input.value.trim().toLocaleLowerCase()
-      // Searching for the team already on screen has nowhere to go.
-      if (query.length > 0 && currentTeam.includes(query)) return
-      // Routed, not assigned, so leaving for All Teams cross-fades like a tab does.
-      void navigate(`/teams?search=${encodeURIComponent(input.value.trim())}`)
+      if (goToTeam(teamForQuery(input.value, true))) return
+      const query = input.value.trim()
+      if (query.length === 0) return
+      void navigate(`/teams?search=${encodeURIComponent(query)}`)
     })
 
     /*

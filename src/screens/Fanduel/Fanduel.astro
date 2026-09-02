@@ -61,8 +61,8 @@ const CARDS = [
 <div class={styles.page} data-node-id="803:5180" data-fanduel-page>
   <AwardsHeader
     searchId="fanduel-search"
-    searchLabel="Search FanDuel offers"
-    clearLabel="Clear FanDuel offer search"
+    searchLabel="Search your favorite team"
+    clearLabel="Clear team search"
     nodeIds={{ header: '803:5181', brand: '803:5182', byline: '803:5183', title: '803:5184', search: '803:5185', searchIcon: '803:5186' }}
   />
 
@@ -126,3 +126,40 @@ const CARDS = [
 
   <AppNav />
 </div>
+
+<script>
+  import { navigate } from 'astro:transitions/client'
+  import { teamForQuery } from '../../data/teamSearch'
+
+  /*
+   * 2 Sep feedback: the FanDuel search takes you to a team, the same way the
+   * desktop nav and Individual Team searches do. There is no offer list to
+   * filter, so a query that names no team simply stays put.
+   */
+  function startFanduelSearch() {
+    const page = document.querySelector<HTMLElement>('[data-fanduel-page]')
+
+    // The router keeps this listener for the session, so other routes are a no-op.
+    if (page === null) return
+
+    const input = page.querySelector<HTMLInputElement>('[data-award-search]')
+    if (input === null) throw new Error('FanDuel page is missing its search box')
+
+    input.addEventListener('input', () => {
+      const team = teamForQuery(input.value, false)
+      if (team !== undefined) void navigate(team.href)
+    })
+    input.form?.addEventListener('submit', (event) => {
+      event.preventDefault()
+      const team = teamForQuery(input.value, true)
+      if (team !== undefined) void navigate(team.href)
+    })
+  }
+
+  /*
+   * Bundled scripts run once per document, so client-side navigation would leave
+   * the search wired to a screen the router has already discarded.
+   * astro:page-load fires on the first render and after every swap.
+   */
+  document.addEventListener('astro:page-load', startFanduelSearch)
+</script>

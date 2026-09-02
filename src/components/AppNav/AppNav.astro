@@ -88,16 +88,13 @@ function isCurrent(href: string): boolean {
 </div>
 
 <script>
-  import { TEAMS } from '../../data/teams'
-  import { TEAM_SEARCH_ALIASES, normalizeTeamQuery } from '../../data/teamSearchAliases'
+  import { teamForQuery } from '../../data/teamSearch'
 
   /*
    * The nav search is a navigator, not a filter -- the nav is global and has no
-   * card list of its own to narrow. Each keystroke navigates only on the full
-   * team name (27 Aug feedback: desktop search did not work at all), because
-   * short aliases like "ne" would fire mid-way through typing "new york jets".
-   * Submitting also resolves nicknames, abbreviations, former names, slang and
-   * misspellings through the alias table.
+   * card list of its own to narrow (27 Aug feedback: desktop search did not
+   * work at all). The name and alias matching lives in data/teamSearch so the
+   * team page and FanDuel searches behave the same way.
    */
   function startNavTeamSearch() {
     const search = document.querySelector<HTMLInputElement>('[data-nav-team-search]')
@@ -107,26 +104,13 @@ function isCurrent(href: string): boolean {
     if (search === null || search.dataset.wired === 'true') return
     search.dataset.wired = 'true'
 
-    function teamForQuery(aliasesAllowed: boolean) {
-      if (search === null) return undefined
-      const query = normalizeTeamQuery(search.value)
-      if (query.length === 0) return undefined
-
-      const byName = TEAMS.find((candidate) => normalizeTeamQuery(candidate.name) === query)
-      if (byName !== undefined || !aliasesAllowed) return byName
-
-      const nickname = TEAM_SEARCH_ALIASES[query]
-      if (nickname === undefined) return undefined
-      return TEAMS.find((candidate) => normalizeTeamQuery(candidate.name).includes(nickname))
-    }
-
     search.addEventListener('input', () => {
-      const team = teamForQuery(false)
+      const team = teamForQuery(search.value, false)
       if (team !== undefined) window.location.assign(team.href)
     })
     search.form?.addEventListener('submit', (event) => {
       event.preventDefault()
-      const team = teamForQuery(true)
+      const team = teamForQuery(search.value, true)
       if (team !== undefined) window.location.assign(team.href)
     })
   }
