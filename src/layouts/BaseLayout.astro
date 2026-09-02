@@ -7,7 +7,8 @@
  *
  * ClientRouter also makes this the owner of section-to-section motion: tabs swap
  * screens in place instead of tearing down the document. The dock is part of
- * each screen, so the fade covers the whole page, nav included.
+ * each screen but names its own transition group (see AppNav), so it swaps
+ * without fading while the rest of the page cross-fades.
  */
 import { ClientRouter } from 'astro:transitions'
 import '../styles/reset.css'
