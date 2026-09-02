@@ -1212,7 +1212,7 @@ test.describe('responsive integrity', () => {
     await expect(page.locator('[data-node-id="162:1605"] article')).toHaveCount(6)
     await expect(page.locator('[data-nav-id="teams"]')).toHaveAttribute('aria-current', 'page')
 
-    const quarterbacks = page.getByText('QUATERBACKS', { exact: true })
+    const quarterbacks = page.getByText('QUARTERBACKS', { exact: true })
     await quarterbacks.click()
     await expect(page.locator('[data-node-id="162:1670"]')).toHaveAttribute('open', '')
   })
