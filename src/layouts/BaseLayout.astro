@@ -125,6 +125,26 @@ const crossFade = {
         }
       })
     </script>
+    {/*
+      Zaraz loader. bets.codybrownbetting.com is a grey-cloud CNAME to GitHub
+      Pages, so Cloudflare never sees its traffic and cannot inject this itself;
+      orange-clouding the apex would permanently block GitHub's certificate
+      renewal, so it stays grey. Cloudflare's documented workaround for exactly
+      this case is a second, proxied subdomain that serves /cdn-cgi/zaraz/ from
+      the edge -- cdn.codybrownbetting.com, an A record to 192.0.2.1 that routes
+      nowhere because Cloudflare answers /cdn-cgi/* before any origin is asked.
+
+      The visitor's real IP reaches Cloudflare on this request, which is what
+      lets the server-side GA4 tool resolve US states. That depends on `Hide
+      Originating IP Address` being OFF in the tool's settings; switched on, GA4
+      geolocates Cloudflare's worker instead of the visitor.
+
+      `is:inline` keeps Astro from pulling a third-party URL into the bundle.
+      Placed last in <head> per Cloudflare's docs, so the pageview fires before
+      first paint; ClientRouter navigations are picked up separately, because
+      Zaraz patches pushState and listens for popstate.
+    */}
+    <script is:inline src="https://cdn.codybrownbetting.com/cdn-cgi/zaraz/i.js"></script>
   </head>
   <body>
     <slot />
