@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T10:19:05.469Z",
+  "generated_at": "2026-09-02T10:31:01.205Z",
   "generated_by": "dhana.pimputkar@verified-global.com",
   "home": {
     "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/ca06d878b_hero-poster-desktop.png",
@@ -3986,7 +3986,7 @@
       "card_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/5e09a448d_Mb_NewOrleansSaints-TylerShough.png",
       "prediction_record": "9-8",
       "hero_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/af7eb5dfc_Dt_NewOrleansSaints-TylerShough.png",
-      "future_bet_url": null,
+      "future_bet_url": "https://account.sportsbook.fanduel.com/sportsbook/addToBetslip?shareCode=uiWmryq",
       "future_image": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/bf58f6cc1_Dt_FF_NewOrleansSaints_JordynTyson.png",
       "hero_image_mobile": "https://base44.app/api/apps/6a901fa52706494618a8cf7b/files/mp/public/6a901fa52706494618a8cf7b/9bd8e5e00_Mb_NewOrleansSaints-TylerShough.png",
       "receivers": "Chris Olave caught 100 passes for 1163 yards and 9 touchdowns despite a shaky supporting cast, and first-round rookie Jordyn Tyson joins alongside third-round tight end Oscar Delp and additional Day 3 skill-position picks. Tyson looks like a real talent and showed some great signs throughout training camp before his injury. Tight end Juwan Johnson is also a nice piece in the passing game. New Orleans was 23rd in the rate of plays gaining 10-plus yards and dead last in 20-plus-yard plays last season, a genuine big-play drought this draft class was built specifically to fix.",
@@ -4126,7 +4126,7 @@
       "prediction_text": "I have the Saints winning the NFC South at 9-8. It’s a division where I have all four teams within two wins of eachother, I think it’s really close. If Shough can build on his strong rookie season then they are a big chance to win more games again. Tyson is an exciting rookie and Travis Etienne should be a good addition at running back too.",
       "id": "6a9022875b73b6b687d4f15d",
       "created_date": "2026-08-27T11:41:59.900000",
-      "updated_date": "2026-09-01T14:33:27.212000",
+      "updated_date": "2026-09-02T10:30:28.477000",
       "created_by_id": "6a901fa52706494618a8cf7c",
       "is_sample": false
     },
@@ -5503,14 +5503,14 @@
       "is_sample": false
     },
     {
-      "bet_url": "",
-      "player_name": "Jordyn Tyson",
+      "bet_url": "https://account.sportsbook.fanduel.com/sportsbook/addToBetslip?shareCode=uiWmryq",
+      "player_name": "Chris Olave",
       "category": "favorite_future",
       "odds": "???",
       "order": 40,
       "id": "6a91659a734c0c578ac65be0",
       "created_date": "2026-08-28T10:40:26.487000",
-      "updated_date": "2026-08-28T10:42:55.389000",
+      "updated_date": "2026-09-02T10:30:55.600000",
       "created_by_id": "6a903b034c50e33b46dcb928",
       "is_sample": false
     },
